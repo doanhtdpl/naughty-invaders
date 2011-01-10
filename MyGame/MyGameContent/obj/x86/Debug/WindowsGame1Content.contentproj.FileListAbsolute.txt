@@ -1,0 +1,2 @@
+D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\WindowsGame1\WindowsGame1Content\obj\x86\Debug\ResolveAssemblyReference.cache

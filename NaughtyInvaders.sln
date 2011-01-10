@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010 Express for Windows Phone
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1", "WindowsGame1\WindowsGame1\WindowsGame1.csproj", "{2DDC0FDC-6D58-4700-999F-84F8DCB3078D}"
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame\MyGame\MyGame.csproj", "{2DDC0FDC-6D58-4700-999F-84F8DCB3078D}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "WindowsGame1Content", "WindowsGame1\WindowsGame1Content\WindowsGame1Content.contentproj", "{897F27A2-6526-430D-A317-D428BC81EA4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameContent", "MyGame\MyGameContent\MyGameContent.contentproj", "{897F27A2-6526-430D-A317-D428BC81EA4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
