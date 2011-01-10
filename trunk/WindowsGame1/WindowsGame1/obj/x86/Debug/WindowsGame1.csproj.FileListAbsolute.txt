@@ -1,6 +1,0 @@
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.exe
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\bin\x86\Debug\WindowsGame1.pdb
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.exe
-D:\Ra\dev\NaughtyInvaders\WindowsGame1\WindowsGame1\obj\x86\Debug\WindowsGame1.pdb
