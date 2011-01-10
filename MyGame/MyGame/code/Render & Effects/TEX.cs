@@ -10,7 +10,7 @@ namespace MyGame
 {
     public class TEX
     {
-        public static int[] index = { 2, 0, 1, 3, 2, 1 };
+        public static short[] index = { 2, 0, 1, 3, 2, 1 };
 
         public Texture2D texture;
         public VertexPositionColorTexture[] vertex;

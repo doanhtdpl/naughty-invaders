@@ -9,7 +9,6 @@ sampler texture_sampler = sampler_state {
 
 struct VS_INPUT {
 	float3 pos : POSITION;
-	float4 color : COLOR;
 	float2 texcoord : TEXCOORD0;
 };
 
@@ -21,7 +20,7 @@ struct VS_OUTPUT {
 
 void vertex_shader( in VS_INPUT IN, out VS_OUTPUT OUT ){
 	OUT.pos = mul(float4(IN.pos.xyz,1.0f), WVP_Matrix);
-	OUT.color = IN.color;
+	OUT.color = float4(1,1,1,1);
 	OUT.texcoord = IN.texcoord;
 }
 

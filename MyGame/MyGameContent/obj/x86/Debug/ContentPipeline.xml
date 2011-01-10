@@ -7,8 +7,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Alpha.xnb</Output>
-      <Time>2009-04-23T19:56:25.96875+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Alpha.xnb</Output>
+      <Time>2011-01-10T19:34:17.2808764+01:00</Time>
     </Item>
     <Item>
       <Source>effects\Basic.fx</Source>
@@ -16,8 +16,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Basic.xnb</Output>
-      <Time>2010-12-31T13:26:40.9519972+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Basic.xnb</Output>
+      <Time>2011-01-10T20:10:58.2464298+01:00</Time>
     </Item>
     <Item>
       <Source>effects\Copy of TexturePolygonEffect.fx</Source>
@@ -25,8 +25,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Copy of TexturePolygonEffect.xnb</Output>
-      <Time>2009-03-26T22:47:45.0625+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Copy of TexturePolygonEffect.xnb</Output>
+      <Time>2011-01-10T19:34:17.2965048+01:00</Time>
     </Item>
     <Item>
       <Source>effects\Line.fx</Source>
@@ -34,8 +34,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Line.xnb</Output>
-      <Time>2008-07-29T22:54:19.171875+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\Line.xnb</Output>
+      <Time>2011-01-10T19:34:17.2965048+01:00</Time>
     </Item>
     <Item>
       <Source>effects\SpyEffect.fx</Source>
@@ -43,8 +43,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\SpyEffect.xnb</Output>
-      <Time>2008-09-22T19:11:58.515625+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\SpyEffect.xnb</Output>
+      <Time>2011-01-10T19:34:17.2965048+01:00</Time>
     </Item>
     <Item>
       <Source>effects\TexturePolygonEffect.fx</Source>
@@ -52,8 +52,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\TexturePolygonEffect.xnb</Output>
-      <Time>2009-03-27T00:52:48.328125+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\TexturePolygonEffect.xnb</Output>
+      <Time>2011-01-10T19:34:17.2808764+01:00</Time>
     </Item>
     <Item>
       <Source>fonts\font.spritefont</Source>
@@ -61,8 +61,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\fonts\font.xnb</Output>
-      <Time>2009-03-09T17:06:38.09375+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\fonts\font.xnb</Output>
+      <Time>2011-01-10T19:34:24.2823996+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\A.tga</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\A.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\A.xnb</Output>
+      <Time>2011-01-10T19:34:24.141744+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\B.tga</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\B.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\B.xnb</Output>
+      <Time>2011-01-10T19:34:24.141744+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\BACK.tga</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\BACK.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\BACK.xnb</Output>
+      <Time>2011-01-10T19:34:24.141744+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\DPAD.tga</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\DPAD.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\DPAD.xnb</Output>
+      <Time>2011-01-10T19:34:24.0948588+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\GUIDE.tga</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\GUIDE.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\GUIDE.xnb</Output>
+      <Time>2011-01-10T19:34:24.1104872+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\LB.tga</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LB.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LB.xnb</Output>
+      <Time>2011-01-10T19:34:24.1104872+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\LS.tga</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LS.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LS.xnb</Output>
+      <Time>2011-01-10T19:34:24.1261156+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\LT.tga</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LT.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\LT.xnb</Output>
+      <Time>2011-01-10T19:34:24.1261156+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\RB.tga</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RB.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RB.xnb</Output>
+      <Time>2011-01-10T19:34:24.1573724+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\RS.tga</Source>
@@ -151,8 +151,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RS.xnb</Output>
-      <Time>2007-09-25T14:24:12+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RS.xnb</Output>
+      <Time>2011-01-10T19:34:24.1573724+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\RT.tga</Source>
@@ -160,8 +160,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RT.xnb</Output>
-      <Time>2007-09-25T14:24:12+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\RT.xnb</Output>
+      <Time>2011-01-10T19:34:24.0948588+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\START.tga</Source>
@@ -169,8 +169,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\START.xnb</Output>
-      <Time>2007-09-25T14:24:12+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\START.xnb</Output>
+      <Time>2011-01-10T19:34:24.1261156+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\X.tga</Source>
@@ -178,8 +178,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\X.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\X.xnb</Output>
+      <Time>2011-01-10T19:34:24.0948588+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\textImages\Y.tga</Source>
@@ -187,8 +187,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\Y.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\textImages\Y.xnb</Output>
+      <Time>2011-01-10T19:34:24.1104872+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\black.png</Source>
@@ -196,8 +196,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\black.xnb</Output>
-      <Time>2008-09-16T13:43:37.2462337+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\black.xnb</Output>
+      <Time>2011-01-10T19:34:17.1714776+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\blackOnly.PNG</Source>
@@ -205,8 +205,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\blackOnly.xnb</Output>
-      <Time>2008-09-11T22:56:36.153476+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\blackOnly.xnb</Output>
+      <Time>2011-01-10T19:34:17.1714776+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\blue.png</Source>
@@ -214,8 +214,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\blue.xnb</Output>
-      <Time>2008-09-16T10:24:55.8807014+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\blue.xnb</Output>
+      <Time>2011-01-10T19:34:17.2027344+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\green.png</Source>
@@ -223,8 +223,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\green.xnb</Output>
-      <Time>2008-09-16T13:29:36.2667193+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\green.xnb</Output>
+      <Time>2011-01-10T19:34:17.187106+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\purple.png</Source>
@@ -232,8 +232,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\purple.xnb</Output>
-      <Time>2008-09-16T15:54:45.6877984+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\purple.xnb</Output>
+      <Time>2011-01-10T19:34:17.2027344+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\red.png</Source>
@@ -241,8 +241,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\red.xnb</Output>
-      <Time>2008-09-15T16:15:38.84375+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\red.xnb</Output>
+      <Time>2011-01-10T19:34:17.2339912+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\white.png</Source>
@@ -250,8 +250,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white.xnb</Output>
-      <Time>2009-04-26T17:32:48.65625+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white.xnb</Output>
+      <Time>2011-01-10T19:34:17.187106+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\white2.png</Source>
@@ -259,8 +259,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white2.xnb</Output>
-      <Time>2009-03-21T12:34:21.65625+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white2.xnb</Output>
+      <Time>2011-01-10T19:34:17.2027344+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\white3.png</Source>
@@ -268,8 +268,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white3.xnb</Output>
-      <Time>2008-09-16T13:56:01.6741463+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\white3.xnb</Output>
+      <Time>2011-01-10T19:34:17.2027344+01:00</Time>
     </Item>
     <Item>
       <Source>effects\PolygonTextures\yellow.png</Source>
@@ -277,8 +277,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\yellow.xnb</Output>
-      <Time>2008-09-16T13:29:54.5325781+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\effects\PolygonTextures\yellow.xnb</Output>
+      <Time>2011-01-10T19:34:17.2496196+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\menu\logo.png</Source>
@@ -286,8 +286,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\logo.xnb</Output>
-      <Time>2009-05-07T14:30:14.3125+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\logo.xnb</Output>
+      <Time>2011-01-10T19:34:22.7039312+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\menu\menu.png</Source>
@@ -295,8 +295,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\menu.xnb</Output>
-      <Time>2009-05-02T11:51:51.703125+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\menu.xnb</Output>
+      <Time>2011-01-10T19:34:22.7195596+01:00</Time>
     </Item>
     <Item>
       <Source>GUI\menu\trial.png</Source>
@@ -304,8 +304,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\trial.xnb</Output>
-      <Time>2009-05-06T14:52:14.953125+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\GUI\menu\trial.xnb</Output>
+      <Time>2011-01-10T19:34:22.7195596+01:00</Time>
     </Item>
     <Item>
       <Source>textures\A.tga</Source>
@@ -313,8 +313,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\textures\A.xnb</Output>
-      <Time>2007-09-25T14:24:10+02:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\textures\A.xnb</Output>
+      <Time>2011-01-10T19:34:17.7809852+01:00</Time>
     </Item>
     <Item>
       <Source>textures\test.tga</Source>
@@ -322,48 +322,48 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\textures\test.xnb</Output>
-      <Time>2010-12-31T12:07:58.0968564+01:00</Time>
+      <Output>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\textures\test.xnb</Output>
+      <Time>2011-01-10T19:34:17.7809852+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
-      <TargetProfile>HiDef</TargetProfile>
+      <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGameContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Documents and Settings\mtorrecillas\Desktop\xna\projects\naughty-invaders\MyGame\MyGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGameContent\</RootDirectory>
+      <LoggerRootDirectory>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\Proyectos\XNA\Naughty Invaders\MyGame\MyGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18+02:00</Value>
+        <Key>C:\Archivos de programa\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2010-10-01T09:29:33.8657684+02:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2010-12-17T23:57:14.78125+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
