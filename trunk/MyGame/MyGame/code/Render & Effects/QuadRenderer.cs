@@ -14,34 +14,34 @@ namespace MyGame
         private static EffectParameter WVP_param;
         private static EffectParameter fx_texture;
 
-        public static int[] index = { 2, 0, 1, 3, 2, 1 };
-        public static VertexPositionColorTexture[] vertex, vertexUVs;
+        public static short[] index = { 2, 0, 1, 3, 2, 1 };
+        public static VertexPositionTexture[] vertex, vertexUVs;
 
         public static void initialize()
         {
-            vertex = new VertexPositionColorTexture[4];
+            vertex = new VertexPositionTexture[4];
             vertex[0].Position = new Vector3(-0.5f,-0.5f, 0.0f);
             vertex[0].TextureCoordinate = new Vector2(0.0f, 1.0f);
-            vertex[0].Color = new Color(1, 1, 1, 1);
+            //vertex[0].Color = new Color(1, 1, 1, 1);
             vertex[1].Position = new Vector3(-0.5f, 0.5f, 0.0f);
             vertex[1].TextureCoordinate = new Vector2(0.0f, 0.0f);
-            vertex[1].Color = new Color(1, 1, 1, 1);
+            //vertex[1].Color = new Color(1, 1, 1, 1);
             vertex[2].Position = new Vector3(0.5f, -0.5f, 0.0f);
             vertex[2].TextureCoordinate = new Vector2(1.0f, 1.0f);
-            vertex[2].Color = new Color(1, 1, 1, 1);
+            //vertex[2].Color = new Color(1, 1, 1, 1);
             vertex[3].Position = new Vector3(0.5f, 0.5f, 0.0f);
             vertex[3].TextureCoordinate = new Vector2(1.0f, 0.0f);
-            vertex[3].Color = new Color(1, 1, 1, 1);
+            //vertex[3].Color = new Color(1, 1, 1, 1);
 
-            vertexUVs = new VertexPositionColorTexture[4];
+            vertexUVs = new VertexPositionTexture[4];
             vertexUVs[0].Position = new Vector3(-0.5f, -0.5f, 0.0f);
-            vertexUVs[0].Color = new Color(1, 1, 1, 1);
+            //vertexUVs[0].Color = new Color(1, 1, 1, 1);
             vertexUVs[1].Position = new Vector3(-0.5f, 0.5f, 0.0f);
-            vertexUVs[1].Color = new Color(1, 1, 1, 1);
+            //vertexUVs[1].Color = new Color(1, 1, 1, 1);
             vertexUVs[2].Position = new Vector3(0.5f, -0.5f, 0.0f);
-            vertexUVs[2].Color = new Color(1, 1, 1, 1);
+            //vertexUVs[2].Color = new Color(1, 1, 1, 1);
             vertexUVs[3].Position = new Vector3(0.5f, 0.5f, 0.0f);
-            vertexUVs[3].Color = new Color(1, 1, 1, 1);
+            //vertexUVs[3].Color = new Color(1, 1, 1, 1);
         }
 
         public static void loadContent()
@@ -69,12 +69,12 @@ namespace MyGame
 
             if (customUVs)
             {
-                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertexUVs, 0, 4, index, 0, 2);
             }
             else
             {
-                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
             }
         }

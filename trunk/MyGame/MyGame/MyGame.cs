@@ -22,6 +22,7 @@ namespace MyGame
         public Game()
         {
             SB.graphics = new GraphicsDeviceManager(this);
+            SB.graphics.GraphicsProfile = GraphicsProfile.Reach;
             SB.content = new ContentManager(Services, "Content");
             SB.random = new Random();
         }
