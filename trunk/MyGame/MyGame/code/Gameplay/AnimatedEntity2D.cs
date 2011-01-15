@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using Microsoft.Xna.Framework;
+using System.Globalization;
 
 namespace MyGame
 {
@@ -60,10 +61,11 @@ namespace MyGame
                     action.name = actionNode.GetAttribute("name");
                     action.initialFrame = int.Parse(actionNode.GetAttribute("initialFrame"));
                     action.endFrame = int.Parse(actionNode.GetAttribute("endFrame"));
-                    action.speed = float.Parse(actionNode.GetAttribute("speed"));
+                    action.frameTime = float.Parse(actionNode.GetAttribute("frameTime"), CultureInfo.InvariantCulture.NumberFormat);
                     action.loops = bool.Parse(actionNode.GetAttribute("loops"));
                     // add each action to the list
                     actions[action.name] = action;
+                    action.initialize();
                 }
                 // add each animated texture with all its actions to the list
                 animatedTextures.Add(animatedTexture);
@@ -75,7 +77,7 @@ namespace MyGame
         const float FRAME_TIME = 0.2f;
         public virtual void update()
         {
-            // if there is a new action
+            // if there is a new action, change it and reset variables
             if (newActionState != "")
             {
                 actionState = newActionState;
@@ -86,32 +88,32 @@ namespace MyGame
             actionTimer += SB.dt;
 
             AnimationAction action = actions[actionState];
-            currentTextureId = action.textureId;
-            AnimatedTexture animatedTexture = animatedTextures[currentTextureId];
-            float realFrameTime = FRAME_TIME / action.speed;
-
-            int totalFrames = action.endFrame - action.initialFrame;
-            currentFrame = (int)(actionTimer / realFrameTime);
-            if (currentFrame > totalFrames)
+ 
+            // get which would have to be the current frame
+            currentFrame = (int)(actionTimer / action.frameTime);
+            // at the end of the animation...
+            if (currentFrame >= action.totalFrames)
             {
-                if (action.loops)
-                {
-                    actionTimer -= totalFrames * realFrameTime;
-                }
-                else
+                // we want to take the time passed since the animation ended (like an error) and keep it, then update the current frame (possibly will be 0 again)
+                actionTimer -= action.totalFrames * action.frameTime;
+                currentFrame = (int)(actionTimer / action.frameTime);
+                // if the action doesnt loop, go to idle
+                if (!action.loops)
                 {
                     actionState = "idle";
                     action = actions[actionState];
                     currentTextureId = action.textureId;
                 }
-                currentFrame = 0;
             }
 
+            // calculated the current frame relative to 0, we need to transpose to the real animations initial frame
             currentFrame += action.initialFrame;
         }
 
         public virtual void render()
         {
+            currentTextureId = actions[actionState].textureId;
+
             int columns = animatedTextures[currentTextureId].columns;
             int rows = animatedTextures[currentTextureId].rows;
 
@@ -123,7 +125,7 @@ namespace MyGame
             Vector2 initialUVs = new Vector2( frameWidth * x, frameHeight * y);
             Vector2 endingUVs = new Vector2( (frameWidth) * (x + 1), (frameHeight) * (y + 1));
 
-            animatedTextures[currentTextureId].texture.renderWithUVs(position, orientation, size, initialUVs, endingUVs);
+            animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs);
         }
     }
 }

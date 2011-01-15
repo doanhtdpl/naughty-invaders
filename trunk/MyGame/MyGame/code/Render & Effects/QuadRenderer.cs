@@ -60,9 +60,9 @@ namespace MyGame
                 * Camera2D.view * Camera2D.projection;
         }
 
-        public static void render(this Texture texture, Vector2 position, float rotation, Vector2 scale, bool customUVs = false)
+        public static void render(this Texture texture, Matrix worldMatrix, bool customUVs = false)
         {
-            WVP_param.SetValue(getWVPMatrix(position, rotation, scale));
+            WVP_param.SetValue(worldMatrix * Camera2D.view * Camera2D.projection);
             fx_texture.SetValue(texture);
 
             quadEffect.Techniques[0].Passes[0].Apply();
@@ -79,13 +79,13 @@ namespace MyGame
             }
         }
 
-        public static void renderWithUVs(this Texture texture, Vector2 position, float rotation, Vector2 scale, Vector2 startingUV, Vector2 endingUV)
+        public static void renderWithUVs(this Texture texture, Matrix worldMatrix, Vector2 startingUV, Vector2 endingUV)
         {
             vertexUVs[0].TextureCoordinate = new Vector2(startingUV.X, endingUV.Y);
             vertexUVs[1].TextureCoordinate = startingUV;
             vertexUVs[2].TextureCoordinate = endingUV;
             vertexUVs[3].TextureCoordinate = new Vector2(endingUV.X, startingUV.Y);
-            render(texture, position, rotation, scale, true);
+            render(texture, worldMatrix, true);
         }
     }
 }

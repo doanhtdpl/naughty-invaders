@@ -45,8 +45,8 @@ namespace MyGame
             if (nextSpawn < 0)
             {
                 Enemy e = new Enemy();
-                e.position = new Vector2(Calc.randomScalar(-500, 500), 400);
-                e.size = new Vector2(20, 20);
+                e.position2D = new Vector2(Calc.randomScalar(-500, 500), 400);
+                e.scale2D = new Vector2(20, 20);
                 addEnemy(e);
                 nextSpawn = 1;
             }

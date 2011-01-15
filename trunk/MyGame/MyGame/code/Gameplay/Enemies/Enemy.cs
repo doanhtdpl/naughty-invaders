@@ -10,16 +10,18 @@ namespace MyGame
     {
         public Enemy()
         {
+            initializeWorldMatrix2D(Vector3.Zero, new Vector2(20, 20), 0);
         }
 
-        public void update()
+        public override void update()
         {
-            position = new Vector2(position.X, position.Y - 100 * SB.dt);
+            //base.update();
+            position = new Vector3(position.X, position.Y - 100 * SB.dt, 0);
         }
 
-        public void render()
+        public override void render()
         {
-            Player.sampleTex.render(position, orientation);
+            Player.sampleTex.render(new Vector2(position.X, position.Y), orientation);
         }
 
         // applies damage, returns true if enemy dies
