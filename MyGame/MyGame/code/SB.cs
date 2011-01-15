@@ -103,6 +103,13 @@ namespace MyGame
                 * Matrix.CreateTranslation(new Vector3(position.X + rotationPoint.X, position.Y + rotationPoint.Y, 0))
                 * Camera2D.view *Camera2D.projection;
         }
+        public static Matrix getWVP(Vector3 position, float rotation, Vector2 gameSize)
+        {
+            return Matrix.CreateTranslation(new Vector3(- gameSize.X / 2, - gameSize.Y / 2, 0))
+                * Matrix.CreateRotationZ(rotation)
+                * Matrix.CreateTranslation(new Vector3(position.X, position.Y, position.Z))
+                * Camera2D.view * Camera2D.projection;
+        }
         public static Matrix getWVP(Vector2 position, Vector2 rotationPoint, float rotation, Vector2 gameSize, float height)
         {
             return Matrix.CreateTranslation(new Vector3(-rotationPoint.X - gameSize.X / 2, -rotationPoint.Y - gameSize.Y / 2, height))

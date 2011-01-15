@@ -98,6 +98,10 @@ namespace MyGame
         {
             return setAngleBetweenPiAndMinusPi(getDeltaOfAngles(directionToAngle(from), directionToAngle(target)));
         }
+        public static float getAngleOfDirectionsXY(Vector3 from, Vector3 target)
+        {
+            return setAngleBetweenPiAndMinusPi(getDeltaOfAngles(directionToAngle(new Vector2(from.X, from.Y)), directionToAngle(new Vector2(target.X, target.Y))));
+        }
         public static float getDeltaOfAngles(float a, float b)
         {
             a = setAngleBetweenPiAndMinusPi(a);

@@ -31,13 +31,13 @@ namespace MyGame
 
         public bool update()
         {
-            position = new Vector2(position.X, position.Y + speed * SB.dt);
+            position = new Vector3(position.X, position.Y + speed * SB.dt, 0);
             return true;
         }
 
         public void render()
         {
-            TextureManager.Instance.getTexture("A").render(position, orientation, new Vector2(100,100));
+            TextureManager.Instance.getTexture("A").render(worldMatrix);
         }
 
         // returns true if projectile dies
