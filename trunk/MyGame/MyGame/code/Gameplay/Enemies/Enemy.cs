@@ -21,7 +21,7 @@ namespace MyGame
 
         public override void render()
         {
-            Player.sampleTex.render(new Vector2(position.X, position.Y), orientation);
+            base.render();
         }
 
         // applies damage, returns true if enemy dies

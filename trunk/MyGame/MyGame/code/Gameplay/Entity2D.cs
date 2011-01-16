@@ -23,7 +23,7 @@ namespace MyGame
         public Vector2 position2D
         {
             get { return new Vector2(world.Translation.X, world.Translation.Y); }
-            set { world.Translation = new Vector3(value.X, value.Y, 0); }
+            set { world.Translation = new Vector3(value.X, value.Y, world.Translation.Z); }
         }
         // gets or sets the scale
         public Vector3 scale
@@ -65,7 +65,7 @@ namespace MyGame
         {
             get
             {
-                float angle = Calc.getAngleOfDirectionsXY(Vector3.Up, world.Up);
+                float angle = Calc.getAngleOfDirectionsXY(Vector3.Right, world.Right);
                 return angle;
             }
             set
