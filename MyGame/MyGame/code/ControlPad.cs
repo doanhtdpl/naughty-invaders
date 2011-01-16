@@ -415,21 +415,21 @@ namespace MyGame
         {
             rumbling = true;
             try { GamePad.SetVibration(index, left, right); }
-            catch (Exception e) { }
+            catch (Exception ) { }
             timeToRumble = time;
         }
         public void rumble(float left, float right)
         {
             rumbling = true;
             try { GamePad.SetVibration(index, left, right); }
-            catch (Exception e) { }
+            catch (Exception ) { }
             timeToRumble = 99999999;
         }
         public void stopRumbling()
         {
             rumbling = false;
             try { GamePad.SetVibration(index, 0, 0); }
-            catch (Exception e) { }
+            catch (Exception ) { }
         }
         #endregion
     }

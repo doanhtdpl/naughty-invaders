@@ -44,7 +44,7 @@ namespace MyGame
         {
 #if EDITOR
             return;
-#endif
+#else
             if (currentSong == songName && !music.IsStopped)
                 return;
             if (music != null)
@@ -54,6 +54,7 @@ namespace MyGame
             //    music.Stop(AudioStopOptions.Immediate);
             music = soundBank.GetCue(songName);
             music.Play();
+#endif
         }
         public static void playSound(string soundName)
         {
