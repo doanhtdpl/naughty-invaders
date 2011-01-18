@@ -8,6 +8,8 @@ namespace MyGame
 {
     class Entity2D
     {
+        protected string entityName;
+
         Matrix world;
         public Matrix worldMatrix
         {
@@ -77,6 +79,14 @@ namespace MyGame
                 position = positionBackup;
             }
         }
+
+        // public constructors
+        public Entity2D(Vector3 position, Vector2 scale, float orientation, string entityName = "NoName" )
+        {
+            this.entityName = entityName;
+            initializeWorldMatrix2D(position, scale, orientation);
+        }
+        public Entity2D(string entityName = "NoName") : this(Vector3.Zero, Vector2.Zero, 0, entityName) { }
 
         // initialize the world matrix, must be called at the creation of each entity
         public void initializeWorldMatrix2D(Vector3 position, Vector2 scale, float orientation)
