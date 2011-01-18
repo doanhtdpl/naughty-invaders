@@ -69,7 +69,7 @@ namespace MyGame
             {
                 ge.Gamer = Gamer.SignedInGamers[playerIndex];
             }
-            ge.Player = new Player("bob", new Vector2(20,20));
+            ge.Player = new Player(Vector3.Zero, new Vector2(50, 50), 0, "bob");
             ge.PlayerIndex = playerIndex;
             gamerEntities.Add(ge);
         }

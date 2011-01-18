@@ -8,13 +8,7 @@ using System.Globalization;
 
 namespace MyGame
 {
-    class AnimatedEntityData
-    {
-        public Dictionary<string, AnimationAction> actions = new Dictionary<string, AnimationAction>();
-        public List<AnimatedTexture> animatedTextures = new List<AnimatedTexture>();
-    }
-
-    class AnimatedEntity2D : MovingEntity2D
+    class RenderableEntity2D : MovingEntity2D
     {
         // animations
         protected string newActionState = "";
@@ -23,23 +17,17 @@ namespace MyGame
         int currentTextureId = 0;
         int currentFrame = 0;
 
-        // to avoid loading every time for the same animated entities the same actions and textures, use a common pool
-        static Dictionary<string, AnimatedEntityData> datas = new Dictionary<string, AnimatedEntityData>();
-        // ...but keep an instance pointer for the actions and animated textures for easing the use
-        Dictionary<string, AnimationAction> actions;
-        List<AnimatedTexture> animatedTextures;
+        Dictionary<string, AnimationAction> actions = new Dictionary<string, AnimationAction>();
+        List<AnimatedTexture> animatedTextures = new List<AnimatedTexture>();
 
-        public AnimatedEntity2D(Vector3 position, Vector2 scale, float orientation, string entityName)
-            : base(position, scale, orientation, entityName)
+        public virtual void initialize(string name)
         {
-            // load actions and textures if they havent been readen yet
-            if (!datas.ContainsKey(entityName))
-            {
-                readXML();
-            }
-            // assign the pointers for this instance
-            actions = datas[entityName].actions;
-            animatedTextures = datas[entityName].animatedTextures;
+            this.entityName = name;
+        }
+
+        public virtual void loadContent()
+        {
+            readXML();
         }
 
         public void readXML()
@@ -51,8 +39,6 @@ namespace MyGame
             // read all the animatedTextures and actions of the character
             XmlNodeList animatedTextureList = xml.GetElementsByTagName("animatedTexture");
             int textureNumber = 0;
-
-            AnimatedEntityData data = new AnimatedEntityData();
 
             foreach (XmlElement animatedTextureNode in animatedTextureList)
             {
@@ -76,16 +62,14 @@ namespace MyGame
                     action.frameTime = float.Parse(actionNode.GetAttribute("frameTime"), CultureInfo.InvariantCulture.NumberFormat);
                     action.loops = bool.Parse(actionNode.GetAttribute("loops"));
                     // add each action to the list
-                    data.actions[action.name] = action;
+                    actions[action.name] = action;
                     action.initialize();
                 }
                 // add each animated texture with all its actions to the list
-                data.animatedTextures.Add(animatedTexture);
+                animatedTextures.Add(animatedTexture);
 
                 ++textureNumber;
             }
-
-            datas[entityName] = data;
         }
 
         const float FRAME_TIME = 0.2f;

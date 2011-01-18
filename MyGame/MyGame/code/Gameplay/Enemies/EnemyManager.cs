@@ -44,10 +44,10 @@ namespace MyGame
             nextSpawn -= SB.dt;
             if (nextSpawn < 0)
             {
-                Enemy e = new Enemy();
-                e.position2D = new Vector2(Calc.randomScalar(-500, 500), 400);
-                e.scale2D = new Vector2(20, 20);
-                addEnemy(e);
+                //Enemy e = new Enemy();
+                //e.position2D = new Vector2(Calc.randomScalar(-500, 500), 400);
+                //e.scale2D = new Vector2(20, 20);
+                //addEnemy(e);
                 nextSpawn = 1;
             }
 

@@ -8,9 +8,10 @@ namespace MyGame
 {
     class Enemy : AnimatedEntity2D
     {
-        public Enemy()
+        public Enemy(Vector3 position, Vector2 scale, float orientation, string entityName)
+            : base(position, scale, orientation, entityName)
         {
-            initializeWorldMatrix2D(Vector3.Zero, new Vector2(20, 20), 0);
+
         }
 
         public override void update()

@@ -15,14 +15,9 @@ namespace MyGame
 
         float cooldownTime = 0.0f;
 
-        public Player(string name, Vector2 size)
+        public Player(Vector3 position, Vector2 scale, float orientation, string entityName)
+            : base(position, scale, orientation, entityName)
         {
-            initializeWorldMatrix2D(Vector3.Zero, size * 5, 0);
-
-            sampleTex.initTEX( TextureManager.Instance.getColoredTexture(Color.White), 50, 50 );
-
-            base.initialize(name);
-            base.loadContent();
         }
 
         public void update(ControlPad controls)
@@ -31,8 +26,8 @@ namespace MyGame
 
             cooldownTime -= SB.dt;
             position2D += controls.LS * SB.dt * SPEED;
-            direction = controls.RS;
-            orientation = Calc.directionToAngle(direction);
+            direction2D = controls.RS;
+            orientation = Calc.directionToAngle(new Vector2(direction.X, direction.Y));
 
             if (controls.X_pressed() && cooldownTime <= 0.0f)
             {
