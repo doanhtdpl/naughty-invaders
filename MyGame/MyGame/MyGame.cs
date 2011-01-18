@@ -15,28 +15,37 @@ namespace MyGame
 {
     public class Game : Microsoft.Xna.Framework.Game
     {
-        public static string gameName = "MyGame";
-        SpriteBatch spriteBatch;
         StateManager stateManager = new StateManager();
+
+#if !EDITOR
+        GraphicsDeviceManager graphics;
+#endif
 
         public Game()
         {
-            SB.graphics = new GraphicsDeviceManager(this);
-            SB.graphics.GraphicsProfile = GraphicsProfile.Reach;
+#if !EDITOR
+            graphics = new GraphicsDeviceManager(this);
+            graphics.GraphicsProfile = GraphicsProfile.Reach;
+#endif
             SB.content = new ContentManager(Services, "Content");
             SB.random = new Random();
         }
 
         protected override void Initialize()
         {
-            SB.graphics.PreferredBackBufferWidth = 1280;
-            SB.graphics.PreferredBackBufferHeight = 720;
-            SB.graphics.IsFullScreen = false;
-            SB.graphics.ApplyChanges();
-            Screen.screenCenterX = SB.graphics.PreferredBackBufferWidth / 2;
-            Screen.screenCenterY = SB.graphics.PreferredBackBufferHeight / 2;
+            SB.width = 1280;
+            SB.height = 720;
+#if !EDITOR
+            SB.graphicsDevice = graphics.GraphicsDevice;
+            graphics.PreferredBackBufferWidth = SB.width;
+            graphics.PreferredBackBufferHeight = SB.height;
+            graphics.IsFullScreen = false;
+            graphics.ApplyChanges();
+#endif
+            Screen.screenCenterX = SB.width / 2;
+            Screen.screenCenterY = SB.height / 2;
             SB.cam = new Camera2D();
-            Screen.aspect = (float)SB.graphics.PreferredBackBufferWidth / (float)SB.graphics.PreferredBackBufferHeight;
+            Screen.aspect = (float)SB.width / (float)SB.height;
             Camera2D.projection = Matrix.CreatePerspectiveFieldOfView(Microsoft.Xna.Framework.MathHelper.ToRadians(45), Screen.aspect, 1, 10000000);
             SB.cam.init(800);
 
@@ -51,7 +60,6 @@ namespace MyGame
 
         protected override void LoadContent()
         {
-            spriteBatch = new SpriteBatch(GraphicsDevice);
             // load and initialize stuff (pe: quad renderer)
             SB.loadContent();
             LineManager.loadContent();

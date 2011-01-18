@@ -29,7 +29,7 @@ namespace MyGame
         public static void loadContent()
         {
             // primitive lines
-            lines_effect = new BasicEffect(SB.graphics.GraphicsDevice);
+            lines_effect = new BasicEffect(SB.graphicsDevice);
             // line effect
             lineEffect = SB.content.Load<Effect>("effects/Line");
             wvpMatrixParameter = lineEffect.Parameters["worldViewProj"];
@@ -60,7 +60,7 @@ namespace MyGame
             foreach (EffectPass pass in lines_effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.LineList, vertex, 0, primitiveCount + 1, index, 0, primitiveCount);
             }
         }
@@ -189,7 +189,7 @@ namespace MyGame
                 indices[iIndexBase + iIndex++] = (short)(iVertexBase + iPrim + 2);
             }
 
-            GraphicsDevice device = SB.graphics.GraphicsDevice;
+            GraphicsDevice device = SB.graphicsDevice;
 
             vb = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, numVertices, BufferUsage.None);
             vb.SetData<VertexPositionNormalTexture>(tri);
@@ -200,7 +200,7 @@ namespace MyGame
         }
         public static void renderEffectLines(List<CoolizionLine> lineList, float radius, Color color, String effect)
         {
-            GraphicsDevice device = SB.graphics.GraphicsDevice;
+            GraphicsDevice device = SB.graphicsDevice;
 
             // Glow es un tipo, Modern es otro
             lineEffect.CurrentTechnique = lineEffect.Techniques[effect];

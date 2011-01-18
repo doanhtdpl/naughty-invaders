@@ -32,7 +32,7 @@ namespace MyGame
 
         public override void render()
         {
-            SB.graphics.GraphicsDevice.Clear(Color.DarkGray);
+            SB.graphicsDevice.Clear(Color.DarkGray);
             SB.beginRender();
             LineManager.initRender();
             GamerManager.renderPlayers();

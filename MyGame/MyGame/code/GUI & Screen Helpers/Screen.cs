@@ -31,7 +31,7 @@ namespace MyGame
 
         public static void drawSafeArea()
         {
-            Rectangle safeArea = SB.graphics.GraphicsDevice.Viewport.TitleSafeArea;
+            Rectangle safeArea = SB.graphicsDevice.Viewport.TitleSafeArea;
             // TASK
         }
     }
