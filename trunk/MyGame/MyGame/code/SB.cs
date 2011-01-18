@@ -11,7 +11,9 @@ namespace MyGame
     public class SB
     {
         #region fields
-        static public GraphicsDeviceManager graphics;
+        //static public GraphicsDeviceManager graphics;
+        static public GraphicsDevice graphicsDevice;
+        static public int width, height;
         static public ContentManager content;
         static public SpriteBatch spriteBatch;
         static public Camera2D cam;
@@ -29,7 +31,7 @@ namespace MyGame
 
         public static void loadContent()
         {
-            spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
+            spriteBatch = new SpriteBatch(graphicsDevice);
             font = content.Load<SpriteFont>("fonts/font");
             worldZero = Matrix.CreateTranslation(new Vector3(0, 0, -5));
 
@@ -40,7 +42,7 @@ namespace MyGame
 
         public static void initializeRender()
         {
-            quad_effect = new BasicEffect(SB.graphics.GraphicsDevice);
+            quad_effect = new BasicEffect(graphicsDevice);
             quad_effect.TextureEnabled = true;
             quad_vertex_declaration = VertexPositionTexture.VertexDeclaration;
             vertexScreen = new Vector3[4];
@@ -149,7 +151,7 @@ namespace MyGame
             foreach (EffectPass pass in quad_effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertex, 0, vertex.Length, index, 0, primitiveCount);
             }
         }
@@ -167,7 +169,7 @@ namespace MyGame
             foreach (EffectPass pass in quad_effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertex, 0, vertex.Length, index, 0, primitiveCount);
             }
             //graphics.GraphicsDevice.RenderState.AlphaBlendEnable = alphaState;
@@ -198,7 +200,7 @@ namespace MyGame
             foreach (EffectPass pass in quad_effect.CurrentTechnique.Passes)
             {
                 pass.Apply();
-                graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, sight, 0, sight.Length, newIndex, 0, 1);
             }
             //graphics.GraphicsDevice.RenderState.AlphaBlendEnable = alphaState;

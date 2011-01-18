@@ -36,11 +36,11 @@ namespace MyGame
             // y que el ancho y largo son los mismos preferred. Esto es para la resolución 1024x800 así que hay que
             // adaptarlo a la resolución que tengamos.
             // para 1280 x 720 z debe ser 870
-            atZ = new Rectangle(-SB.graphics.PreferredBackBufferWidth / 2,
-                    -SB.graphics.PreferredBackBufferHeight / 2,
-                    SB.graphics.PreferredBackBufferWidth,
-                    SB.graphics.PreferredBackBufferHeight);
-            if (SB.graphics.PreferredBackBufferWidth == 1280)
+            atZ = new Rectangle(-SB.width / 2,
+                    -SB.height / 2,
+                    SB.width,
+                    SB.height);
+            if (SB.width == 1280)
             {
                 aspectZ = 870;
             }
@@ -108,18 +108,18 @@ namespace MyGame
         {
             float X = (cursor.X - screen.Left) / screen.Width;
             float Y = (cursor.Y - screen.Top) / screen.Height;
-            return new Vector2(SB.graphics.PreferredBackBufferWidth * X, SB.graphics.PreferredBackBufferHeight - SB.graphics.PreferredBackBufferHeight * Y);
+            return new Vector2(SB.width * X, SB.height - SB.height * Y);
         }
         public static Vector2 getWorldCoordinate(Vector2 coord)
         {
-            float X = (screen.Right - screen.Left) * (coord.X / SB.graphics.PreferredBackBufferWidth);
-            float Y = (screen.Bottom - screen.Top) * (coord.Y / SB.graphics.PreferredBackBufferHeight);
+            float X = (screen.Right - screen.Left) * (coord.X / SB.width);
+            float Y = (screen.Bottom - screen.Top) * (coord.Y / SB.height);
             return new Vector2(screen.Left + X, screen.Top + Y);
         }
         public static Vector2 getWorldSize(Vector2 size)
         {
-            float X = (screen.Right - screen.Left) * (size.X / SB.graphics.PreferredBackBufferWidth);
-            float Y = (screen.Bottom - screen.Top) * (size.Y / SB.graphics.PreferredBackBufferHeight);
+            float X = (screen.Right - screen.Left) * (size.X / SB.width);
+            float Y = (screen.Bottom - screen.Top) * (size.Y / SB.height);
             return new Vector2(X, Y);
         }
 

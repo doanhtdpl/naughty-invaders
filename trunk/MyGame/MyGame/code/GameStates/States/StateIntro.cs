@@ -43,7 +43,7 @@ namespace MyGame
 
         public override void render()
         {
-            SB.graphics.GraphicsDevice.Clear(Color.White);
+            SB.graphicsDevice.Clear(Color.White);
             SB.beginAlphaRender();
             logo.render(new Vector2(0,0), 0);
         }

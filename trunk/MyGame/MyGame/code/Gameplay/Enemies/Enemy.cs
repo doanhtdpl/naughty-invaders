@@ -21,7 +21,7 @@ namespace MyGame
 
         public override void render()
         {
-            base.render();
+            //base.render();
         }
 
         // applies damage, returns true if enemy dies

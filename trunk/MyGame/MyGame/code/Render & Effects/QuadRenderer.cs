@@ -69,12 +69,12 @@ namespace MyGame
 
             if (customUVs)
             {
-                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertexUVs, 0, 4, index, 0, 2);
             }
             else
             {
-                SB.graphics.GraphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
+                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
             }
         }
