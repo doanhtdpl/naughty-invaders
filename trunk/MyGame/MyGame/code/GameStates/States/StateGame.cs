@@ -17,6 +17,7 @@ namespace MyGame
             type = StateManager.tGS.Game;
             gameState = true;
             longLoad = true;
+            DebugManager.Instance.initialize();
         }
         public void restartLevel()
         {
@@ -34,12 +35,15 @@ namespace MyGame
         {
             SB.graphicsDevice.Clear(Color.DarkGray);
             SB.beginRender();
-            LineManager.initRender();
             GamerManager.renderPlayers();
             EnemyManager.Instance.render();
             ProjectileManager.Instance.render();
             ParticleManager.Instance.render();
+            DebugManager.Instance.render();
             gui.render();
+
+            DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(200, 200, 0), Color.Red);
+            DebugManager.Instance.render();
         }
         
         public override void update()

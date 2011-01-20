@@ -11,8 +11,6 @@ namespace MyGame
         List<RenderableEntity2D> staticProps = new List<RenderableEntity2D>();
         List<AnimatedEntity2D> animatedProps = new List<AnimatedEntity2D>();
 
-        float nextSpawn = 0;
-
         static LevelManager instance = null;
 
         LevelManager()
