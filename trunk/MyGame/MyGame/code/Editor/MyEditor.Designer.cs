@@ -1,6 +1,6 @@
 ﻿namespace MyGame
 {
-    partial class NaughtyEditor
+    partial class MyEditor
     {
         /// <summary>
         /// Required designer variable.
