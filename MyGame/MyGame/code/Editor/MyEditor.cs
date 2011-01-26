@@ -9,11 +9,16 @@ using System.Windows.Forms;
 
 namespace MyGame
 {
-    public partial class NaughtyEditor : Form
+    public partial class MyEditor : Form
     {
-        public NaughtyEditor()
+        public MyEditor()
         {
             InitializeComponent();
+        }
+
+        private void myEditorControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
