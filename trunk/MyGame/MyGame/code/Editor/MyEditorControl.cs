@@ -15,12 +15,14 @@ namespace MyGame
 {
     class MyEditorControl : GraphicsDeviceControl
     {
-
-        StateManager stateManager = new StateManager();
-
+        //GameTime
         GameTime gameTime;
         Stopwatch elapsedTime = new Stopwatch();
         Stopwatch totalTime = new Stopwatch();
+        Timer timer;
+
+        //Game variables
+        StateManager stateManager = new StateManager();
 
         /// <summary>
         /// Initializes the control.
@@ -28,6 +30,18 @@ namespace MyGame
         protected override void Initialize()
         {
             totalTime.Start();
+            elapsedTime.Reset();
+            elapsedTime.Start();
+
+            // Set up the frame update timer
+            timer = new Timer();
+ 
+            // Lock framerate to 40 so we can keep performance up
+            timer.Interval = 1;
+ 
+            // Hook timer's tick so we can refresh the view on cue
+            timer.Tick += new System.EventHandler(timer_Tick);
+            timer.Start();
 
             SB.graphicsDevice = GraphicsDevice;
 
@@ -58,7 +72,7 @@ namespace MyGame
 #endif
 
             // Hook the idle event to constantly redraw our animation.
-            Application.Idle += delegate { Invalidate(); };
+            //Application.Idle += delegate { Invalidate(); };
         }
 
         /// <summary>
@@ -80,12 +94,24 @@ namespace MyGame
 
             stateManager.update();
 
+            UpdateGameTime();
+
             //Render
             GraphicsDevice.Clear(Color.CornflowerBlue);
             stateManager.render();
         }
 
-// Updates the GameTime object instead of relying on Game
+        // Timer's tick causes the view to refresh
+        void timer_Tick(object sender, System.EventArgs e)
+        {
+            // Invalidate everything so the whole control refreshes
+            this.Invalidate();
+ 
+            // Force the view update
+            this.Update();
+        }
+
+        // Updates the GameTime object instead of relying on Game
         void UpdateGameTime()
         {
             // Recreate the GameTime with the current values
@@ -95,6 +121,5 @@ namespace MyGame
             elapsedTime.Reset();
             elapsedTime.Start();
         }
-
     }
 }

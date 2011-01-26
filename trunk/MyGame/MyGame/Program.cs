@@ -17,7 +17,7 @@ namespace MyGame
 #if EDITOR
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NaughtyEditor());
+            Application.Run(new MyEditor());
 #else
             using (Game game = new Game())
             {
