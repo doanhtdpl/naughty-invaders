@@ -127,13 +127,14 @@
     <Compile Include="code\ControlPad.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionLine.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
+    <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
+    <Compile Include="code\Gameplay\MovingEntity2D.cs" />
     <Compile Include="code\Gameplay\RenderableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Enemy.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemyManager.cs" />
     <Compile Include="code\Gameplay\Entity2D.cs" />
     <Compile Include="code\Gameplay\Level\LevelManager.cs" />
-    <Compile Include="code\Gameplay\MovingEntity2D.cs" />
     <Compile Include="code\Gameplay\Projectiles\BasicProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
