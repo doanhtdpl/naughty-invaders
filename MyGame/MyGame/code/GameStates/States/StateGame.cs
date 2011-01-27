@@ -43,6 +43,8 @@ namespace MyGame
             gui.render();
 
             DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(200, 200, 0), Color.Red);
+            DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(200, -200, 0), Color.Green);
+            DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(-200, 200, 0), Color.Blue);
             DebugManager.Instance.render();
         }
         
