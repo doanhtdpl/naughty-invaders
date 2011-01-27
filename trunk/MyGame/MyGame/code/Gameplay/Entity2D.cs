@@ -103,28 +103,5 @@ namespace MyGame
             Vector3 size = scale;
             return new Rectangle((int)(pos.X - size.X * 0.5), (int)(pos.Y - size.Y * 0.5), (int)size.X, (int)size.Y);
         }
-        // returns the 4 points that conforms the quad of this entity
-        public Vector3[] getQuad()
-        {
-            Vector3 pos = position;
-            Vector3 size = scale;
-
-            Vector3[] quad = new Vector3[4];
-            Vector3 point = new Vector3(position.X - size.X * 0.5f, position.Y - size.Y * 0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out quad[0]);
-            point = new Vector3(position.X - size.X * 0.5f, position.Y + size.Y * 0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out quad[1]);
-            point = new Vector3(position.X + size.X * 0.5f, position.Y + size.Y * 0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out quad[2]);
-            point = new Vector3(position.X + size.X * 0.5f, position.Y - size.Y * 0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out quad[3]);
-            return quad;
-        }
-        // renders the border lines of the quad representing this entity
-        public void renderQuadLines()
-        {
-            Vector3[] quad = getQuad();
-            
-        }
     }
 }

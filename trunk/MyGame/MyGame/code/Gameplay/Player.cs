@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
@@ -14,6 +15,8 @@ namespace MyGame
         public const float SPEED = 300;
 
         float cooldownTime = 0.0f;
+
+        bool selected = false;
 
         public Player(Vector3 position, Vector2 scale, float orientation, string entityName)
             : base(position, scale, orientation, entityName)
@@ -26,8 +29,7 @@ namespace MyGame
 
             cooldownTime -= SB.dt;
             position2D += controls.LS * SB.dt * SPEED;
-            direction2D = controls.RS;
-            orientation = Calc.directionToAngle(new Vector2(direction.X, direction.Y));
+            orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
 
             if (controls.X_pressed() && cooldownTime <= 0.0f)
             {
@@ -45,11 +47,28 @@ namespace MyGame
             {
                 newActionState = "laughing";
             }
+
+            if (controls.A_firstPressed())
+            {
+                orientation += 0.1f;
+            }
+
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                Ray ray = EditorHelper.Instance.getMouseCursorRay();
+                if (EditorHelper.Instance.rayVsEntity(ray, this))
+                {
+                    selected = !selected;
+                }
+            }
         }
 
         public override void render()
         {
             base.render();
+
+            if (selected)
+                EditorHelper.Instance.renderEntityQuad(this);
         }
     }
 }

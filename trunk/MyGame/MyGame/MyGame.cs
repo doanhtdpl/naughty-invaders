@@ -33,6 +33,9 @@ namespace MyGame
 
         protected override void Initialize()
         {
+#if DEBUG
+            this.IsMouseVisible = true;
+#endif
             SB.width = 1280;
             SB.height = 720;
 #if !EDITOR
