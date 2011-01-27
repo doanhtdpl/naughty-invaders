@@ -40,17 +40,16 @@ namespace MyGame
 
             basicEffect = new BasicEffect(SB.graphicsDevice);
             basicEffect.DiffuseColor = new Vector3(1.0f, 1.0f, 1.0f);
+            basicEffect.VertexColorEnabled = true;
 
             basicEffect.View = Camera2D.view;
             basicEffect.Projection = Camera2D.projection;
 
-            for (int i = 0; i < MAX_LINES; i++)
+            short indexs = MAX_LINES * 2;
+            for (short i = 0; i < indexs; i++)
             {
-                lineListIndices[i * 2] = (short)(i + 1);
-                lineListIndices[(i * 2) + 1] = (short)(i + 2);
+                lineListIndices[i] = i;
             }
-
-            lineListIndices[(MAX_LINES * 2) - 1] = 1;
         }
 
         public void addLine(Vector3 p1, Vector3 p2, Color color)
