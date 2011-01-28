@@ -95,7 +95,14 @@ namespace MyGame
             this.scale2D = scale;
             this.orientation = orientation;
         }
-
+        // resets rotations
+        public void resetRotation()
+        {
+            Vector3 position, scale; Quaternion quaternion;
+            world.Decompose(out scale, out quaternion, out position);
+            world = Matrix.CreateWorld(position, Vector3.Forward, Vector3.Up);
+            this.scale2D = new Vector2(scale.X, scale.Y);
+        }
         // returns the 2D rectangle. Good for 2D collisions
         public Rectangle getRectangle()
         {
