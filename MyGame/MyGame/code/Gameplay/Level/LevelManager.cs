@@ -38,6 +38,20 @@ namespace MyGame
             animatedProps.Add(ae);
         }
 
+        public List<RenderableEntity2D> getStaticProps()
+        {
+            return staticProps;
+        }
+        public List<AnimatedEntity2D> getAnimatedProps()
+        {
+            return animatedProps;
+        }
+
+        public void loadXML(string levelName)
+        {
+
+        }
+
         public void update()
         {
         }
