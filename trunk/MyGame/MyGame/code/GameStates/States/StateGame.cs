@@ -37,6 +37,7 @@ namespace MyGame
             SB.beginRender();
             GamerManager.renderPlayers();
             EnemyManager.Instance.render();
+            LevelManager.Instance.render();
             ProjectileManager.Instance.render();
             ParticleManager.Instance.render();
             DebugManager.Instance.render();
@@ -54,6 +55,7 @@ namespace MyGame
 
             GamerManager.updatePlayers();
             EnemyManager.Instance.update();
+            LevelManager.Instance.update();
             ProjectileManager.Instance.update();
             ParticleManager.Instance.update();
             gui.update();

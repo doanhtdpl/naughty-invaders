@@ -11,8 +11,8 @@ namespace MyGame
         static SoundBank soundBank;
         static WaveBank waveBank;
 
-        static Cue music;
-        static string currentSong;
+        static Cue music = null;
+        //static string currentSong = null;
         static Cue sound;
 
         static AudioCategory musicCat;

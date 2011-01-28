@@ -15,7 +15,7 @@ namespace MyGame
 
         LevelManager()
         {
-            addStaticProp(new RenderableEntity2D("A", new Vector3(0, 100,  0), Vector2.One, 0));
+            addStaticProp(new RenderableEntity2D("test", new Vector3(0, 100,  0), new Vector2(50, 50), 0));
         }
 
         public static LevelManager Instance
@@ -68,6 +68,10 @@ namespace MyGame
 
         public void render()
         {
+            foreach (RenderableEntity2D ent in staticProps)
+            {
+                ent.render();
+            }
         }
 
         public void dispose()
