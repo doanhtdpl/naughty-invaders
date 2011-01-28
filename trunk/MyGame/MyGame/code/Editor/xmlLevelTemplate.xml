@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<level name="W1-S1">
+  <!-- scene props -->
+  <staticProps>
+    <staticProp textureName="leaf" worldMatrix="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+    <staticProp textureName="leaf" worldMatrix="1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1"/>
+    <staticProp textureName="stone" worldMatrix="1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1"/>
+  </staticProps>
+  <animatedProps>
+    <animatedProp name="animatedLeaf" worldMatrix="1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1"/>
+    <animatedProp name="animatedLeaf" worldMatrix="1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1"/>
+    <animatedProp name="bell" worldMatrix="1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1"/>
+  </animatedProps>
+  <!-- trigger zones -->
+  <triggerZones>
+    <triggerZone function="startHazeW1S1N1" min="10 10 0" max="50 50 50"/>
+    <triggerZone function="startHazeW1S1N2" min="10 10 0" max="50 50 50"/>
+    <triggerZone function="startHazeW1S1N3" min="10 10 0" max="50 50 50"/>
+  </triggerZones>
+  <!-- dialogs -->
+  <dialogs>
+    <dialog stopsGame="true">
+      <phrase character="boss" mode="happy" text="Hi mother fucker." time="4"/>
+      <phrase character="player" mode="happy" text="Guadaña escopeta!!!1!!" time="5"/>
+      <phrase character="boss" mode="angry" text="Fuck you bitchlolz" time="4"/>
+    </dialog>
+  </dialogs>
+</level>
