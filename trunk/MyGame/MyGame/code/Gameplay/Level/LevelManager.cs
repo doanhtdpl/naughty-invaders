@@ -8,13 +8,14 @@ namespace MyGame
 {
     class LevelManager
     {
-        List<RenderableEntity2D> staticProps = new List<RenderableEntity2D>();
-        List<AnimatedEntity2D> animatedProps = new List<AnimatedEntity2D>();
+        List<Entity2D> staticProps = new List<Entity2D>();
+        List<Entity2D> animatedProps = new List<Entity2D>();
 
         static LevelManager instance = null;
 
         LevelManager()
         {
+            addStaticProp(new RenderableEntity2D("A", new Vector3(0, 100,  0), Vector2.One, 0));
         }
 
         public static LevelManager Instance
@@ -29,20 +30,20 @@ namespace MyGame
             }
         }
 
-        public void addStaticProp(RenderableEntity2D re)
+        public void addStaticProp(Entity2D re)
         {
             staticProps.Add(re);
         }
-        public void addAnimatedProp(AnimatedEntity2D ae)
+        public void addAnimatedProp(Entity2D ae)
         {
             animatedProps.Add(ae);
         }
 
-        public List<RenderableEntity2D> getStaticProps()
+        public List<Entity2D> getStaticProps()
         {
             return staticProps;
         }
-        public List<AnimatedEntity2D> getAnimatedProps()
+        public List<Entity2D> getAnimatedProps()
         {
             return animatedProps;
         }
