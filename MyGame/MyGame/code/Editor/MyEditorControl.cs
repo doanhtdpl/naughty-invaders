@@ -92,12 +92,14 @@ namespace MyGame
                 Application.Exit();
             }
 
+            MyEditor.Instance.update();
             stateManager.update();
 
             UpdateGameTime();
 
             //Render
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            MyEditor.Instance.render();
             stateManager.render();
         }
 

@@ -26,13 +26,12 @@ namespace MyGame
         }
 
         #region Mouse
-        public Ray getMouseCursorRay()
+        public Ray getMouseCursorRay(Vector2 mousePos)
         {
-            MouseState currentMouseState = Mouse.GetState();
             // Create 2 positions in screenspace using the cursor position.
             // 0 is as close as possible to the camera, 1 is as far away as possible.
-            Vector3 nearSource = new Vector3(currentMouseState.X, currentMouseState.Y, 0.0f);
-            Vector3 farSource = new Vector3(currentMouseState.X, currentMouseState.Y, 1.0f);
+            Vector3 nearSource = new Vector3(mousePos.X, mousePos.Y, 0.0f);
+            Vector3 farSource = new Vector3(mousePos.X, mousePos.Y, 1.0f);
 
             // Use Viewport. Unproject to tell what those two screen space positions would be in world space. 
             // We'll need the projection matrix and view matrix, which we have saved as member variables. 

@@ -28,7 +28,7 @@ namespace MyGame
         private int aspectZ;
         #endregion
 
-        private static bool inZoom = false;
+        //private static bool inZoom = false;
         public static float zoomToReach;
         public Camera2D()
         {
@@ -68,7 +68,7 @@ namespace MyGame
         public static void setZoom(float zoom)
         {
             zoomToReach = zoom;
-            inZoom = true;
+            //inZoom = true;
         }
 
         public void activate()

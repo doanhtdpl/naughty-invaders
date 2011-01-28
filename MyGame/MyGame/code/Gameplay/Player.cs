@@ -53,14 +53,14 @@ namespace MyGame
                 orientation += 0.1f;
             }
 
-            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
-            {
-                Ray ray = EditorHelper.Instance.getMouseCursorRay();
-                if (EditorHelper.Instance.rayVsEntity(ray, this))
-                {
-                    selected = !selected;
-                }
-            }
+            //if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            //{
+            //    Ray ray = EditorHelper.Instance.getMouseCursorRay();
+            //    if (EditorHelper.Instance.rayVsEntity(ray, this))
+            //    {
+            //        selected = !selected;
+            //    }
+            //}
         }
 
         public override void render()
