@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.myEditorControl1 = new MyGame.MyEditorControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // myEditorControl1
-            // 
-            this.myEditorControl1.Location = new System.Drawing.Point(0, 60);
-            this.myEditorControl1.Name = "myEditorControl1";
-            this.myEditorControl1.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl1.TabIndex = 0;
-            this.myEditorControl1.Text = "myEditorControl1";
             // 
             // tabControl1
             // 
@@ -49,31 +42,45 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1280, 60);
+            this.tabControl1.Size = new System.Drawing.Size(1920, 92);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1272, 34);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(1912, 59);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Scenario";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // NaughtyEditor
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(8, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 43);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Add Static Prop";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // MyEditor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1272, 753);
+            this.ClientSize = new System.Drawing.Size(1284, 999);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.myEditorControl1);
-            this.Name = "NaughtyEditor";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "MyEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyEditor";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -83,5 +90,6 @@
         private MyEditorControl myEditorControl1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button1;
     }
 }
