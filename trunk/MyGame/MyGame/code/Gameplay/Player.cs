@@ -53,6 +53,13 @@ namespace MyGame
                 orientation += 0.1f;
             }
 
+            //DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(200, 200, 0), Color.Red);
+            //DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(200, -200, 0), Color.Green);
+            //DebugManager.Instance.addLine(new Vector3(0, 0, 0), new Vector3(-200, 200, 0), Color.Blue);
+            //DebugManager.Instance.addRectangle(new Vector2(0, 0), new Vector2(100, 100), Color.Red);
+            //DebugManager.Instance.addRectangle(new Vector2(300, 300), new Vector2(200, 200), Color.Orange);
+            //DebugManager.Instance.addRectangle(new Vector2(-100, 0), new Vector2(0, 100), Color.Green);
+
             //if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             //{
             //    Ray ray = EditorHelper.Instance.getMouseCursorRay();

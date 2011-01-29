@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
@@ -47,7 +48,6 @@ namespace MyGame
             return new Ray(nearPoint, direction);
         }
         #endregion
-
         #region Entities
         // returns the 4 points that conforms the quad of this entity
         Vector3[] getEntityQuad(Entity2D entity)
