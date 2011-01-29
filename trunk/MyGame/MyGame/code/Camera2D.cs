@@ -60,9 +60,9 @@ namespace MyGame
 
         public void update()
         {
-            position.X = 0;
-            position.Y = 0;
-            position.Z = 800;
+            //position.X = 0;
+            //position.Y = 0;
+            //position.Z = 800;
             activate();
         }
         public static void setZoom(float zoom)

@@ -23,15 +23,7 @@ namespace MyGame
             Instance = this;
         }
 
-        private void myEditorControl_Click(object sender, EventArgs e)
-        {
-            MouseEventArgs me = (MouseEventArgs)e;
-            if (currentState != null)
-            {
-                currentState.leftClick(new Vector2(me.X, me.Y));
-            }
-        }
-
+        #region functions
         public void update()
         {
             currentState.update();
@@ -41,17 +33,13 @@ namespace MyGame
         {
             currentState.render();
         }
+        #endregion
 
-        protected void TextChange(object sender, EventArgs e)
+        private void validateInputs(object sender)
         {
-            currentState.propertiesChanged();
-        }
-
-        private void KeyPressed(object sender, KeyPressEventArgs e)
-        {
-            float value;
-            if (e.KeyChar == '\r') // PRESS ENTER
+            if (currentState != null)
             {
+                float value;
                 if (float.TryParse(((TextBox)sender).Text, out value))
                 {
                     currentState.propertiesChanged();
@@ -62,5 +50,47 @@ namespace MyGame
                 }
             }
         }
+
+        #region Events
+        protected void textChange(object sender, EventArgs e)
+        {
+            validateInputs(sender);
+        }
+
+        private void keyPressed(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r') // PRESS ENTER
+            {
+                validateInputs(sender);
+            }
+        }
+
+        private void MyEditor_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (currentState != null)
+            {
+                currentState.mouseMove(new Vector2(e.X, e.Y));
+            }
+        }
+
+        private void myEditorControl_MouseButton(object sender, MouseEventArgs e)
+        {
+            if (currentState != null)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    currentState.leftClick(new Vector2(e.X, e.Y));
+                }
+                else if (e.Button == MouseButtons.Right)
+                {
+                    currentState.rightClick(new Vector2(e.X, e.Y));
+                }
+                else
+                {
+                    currentState.mouseReleased();
+                }
+            }
+        }
+        #endregion
     }
 }

@@ -30,10 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DefaultPage = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddAnimated = new System.Windows.Forms.Button();
+            this.buttonScale = new System.Windows.Forms.Button();
+            this.buttonRotate = new System.Windows.Forms.Button();
+            this.buttonMove = new System.Windows.Forms.Button();
+            this.buttonAddStatic = new System.Windows.Forms.Button();
             this.Page2 = new System.Windows.Forms.TabPage();
             this.propertiesPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,72 +65,88 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1280, 92);
+            this.tabControl1.Size = new System.Drawing.Size(853, 60);
             this.tabControl1.TabIndex = 1;
             // 
             // DefaultPage
             // 
-            this.DefaultPage.Controls.Add(this.button4);
-            this.DefaultPage.Controls.Add(this.button3);
-            this.DefaultPage.Controls.Add(this.button2);
-            this.DefaultPage.Controls.Add(this.button1);
-            this.DefaultPage.Location = new System.Drawing.Point(4, 29);
-            this.DefaultPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DefaultPage.Controls.Add(this.buttonAddAnimated);
+            this.DefaultPage.Controls.Add(this.buttonScale);
+            this.DefaultPage.Controls.Add(this.buttonRotate);
+            this.DefaultPage.Controls.Add(this.buttonMove);
+            this.DefaultPage.Controls.Add(this.buttonAddStatic);
+            this.DefaultPage.Location = new System.Drawing.Point(4, 22);
             this.DefaultPage.Name = "DefaultPage";
-            this.DefaultPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DefaultPage.Size = new System.Drawing.Size(1272, 59);
+            this.DefaultPage.Padding = new System.Windows.Forms.Padding(3);
+            this.DefaultPage.Size = new System.Drawing.Size(845, 34);
             this.DefaultPage.TabIndex = 0;
             this.DefaultPage.Text = "Default";
             this.DefaultPage.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonAddAnimated
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(174, 8);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 43);
-            this.button4.TabIndex = 3;
-            this.button4.Tag = "";
-            this.button4.Text = "Scale";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonAddAnimated.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddAnimated.Location = new System.Drawing.Point(226, 5);
+            this.buttonAddAnimated.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddAnimated.Name = "buttonAddAnimated";
+            this.buttonAddAnimated.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddAnimated.TabIndex = 4;
+            this.buttonAddAnimated.Text = "Add Animated Prop";
+            this.buttonAddAnimated.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonScale
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(91, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 43);
-            this.button3.TabIndex = 2;
-            this.button3.Tag = "";
-            this.button3.Text = "Rotate";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonScale.Location = new System.Drawing.Point(116, 5);
+            this.buttonScale.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonScale.Name = "buttonScale";
+            this.buttonScale.Size = new System.Drawing.Size(51, 28);
+            this.buttonScale.TabIndex = 3;
+            this.buttonScale.Tag = "";
+            this.buttonScale.Text = "Scale";
+            this.buttonScale.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonRotate
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(8, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Tag = "";
-            this.button2.Text = "Move";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRotate.Location = new System.Drawing.Point(61, 5);
+            this.buttonRotate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRotate.Name = "buttonRotate";
+            this.buttonRotate.Size = new System.Drawing.Size(51, 28);
+            this.buttonRotate.TabIndex = 2;
+            this.buttonRotate.Tag = "";
+            this.buttonRotate.Text = "Rotate";
+            this.buttonRotate.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonMove
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(257, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add Static Prop";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMove.Location = new System.Drawing.Point(5, 5);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(51, 28);
+            this.buttonMove.TabIndex = 1;
+            this.buttonMove.Tag = "";
+            this.buttonMove.Text = "Move";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddStatic
+            // 
+            this.buttonAddStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddStatic.Location = new System.Drawing.Point(171, 5);
+            this.buttonAddStatic.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddStatic.Name = "buttonAddStatic";
+            this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddStatic.TabIndex = 0;
+            this.buttonAddStatic.Text = "Add Static Prop";
+            this.buttonAddStatic.UseVisualStyleBackColor = true;
             // 
             // Page2
             // 
-            this.Page2.Location = new System.Drawing.Point(4, 29);
+            this.Page2.Location = new System.Drawing.Point(4, 22);
+            this.Page2.Margin = new System.Windows.Forms.Padding(2);
             this.Page2.Name = "Page2";
-            this.Page2.Size = new System.Drawing.Size(1272, 59);
+            this.Page2.Size = new System.Drawing.Size(845, 34);
             this.Page2.TabIndex = 1;
             this.Page2.Text = "Page2";
             this.Page2.UseVisualStyleBackColor = true;
@@ -150,152 +167,178 @@
             this.propertiesPanel.Controls.Add(this.textPosY);
             this.propertiesPanel.Controls.Add(this.label1);
             this.propertiesPanel.Controls.Add(this.textPosX);
-            this.propertiesPanel.Location = new System.Drawing.Point(0, 96);
+            this.propertiesPanel.Location = new System.Drawing.Point(857, 62);
+            this.propertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.propertiesPanel.Name = "propertiesPanel";
-            this.propertiesPanel.Size = new System.Drawing.Size(407, 165);
+            this.propertiesPanel.Size = new System.Drawing.Size(261, 107);
             this.propertiesPanel.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(310, 13);
+            this.label6.Location = new System.Drawing.Point(207, 8);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 20);
+            this.label6.Size = new System.Drawing.Size(14, 13);
             this.label6.TabIndex = 21;
             this.label6.Text = "Z";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 13);
+            this.label4.Location = new System.Drawing.Point(145, 8);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 20);
+            this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "Y";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(117, 13);
+            this.label3.Location = new System.Drawing.Point(78, 8);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 20);
+            this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "X";
             // 
             // textScaleY
             // 
-            this.textScaleY.Location = new System.Drawing.Point(179, 100);
+            this.textScaleY.Location = new System.Drawing.Point(119, 65);
+            this.textScaleY.Margin = new System.Windows.Forms.Padding(2);
             this.textScaleY.Name = "textScaleY";
-            this.textScaleY.Size = new System.Drawing.Size(91, 26);
+            this.textScaleY.Size = new System.Drawing.Size(62, 20);
             this.textScaleY.TabIndex = 18;
-            this.textScaleY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textScaleY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textScaleY.Leave += new System.EventHandler(this.textChange);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 103);
+            this.label5.Location = new System.Drawing.Point(7, 67);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 17;
             this.label5.Text = "Scale";
             // 
             // textScaleX
             // 
-            this.textScaleX.Location = new System.Drawing.Point(82, 100);
+            this.textScaleX.Location = new System.Drawing.Point(55, 65);
+            this.textScaleX.Margin = new System.Windows.Forms.Padding(2);
             this.textScaleX.Name = "textScaleX";
-            this.textScaleX.Size = new System.Drawing.Size(91, 26);
+            this.textScaleX.Size = new System.Drawing.Size(62, 20);
             this.textScaleX.TabIndex = 16;
-            this.textScaleX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textScaleX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textScaleX.Leave += new System.EventHandler(this.textChange);
             // 
             // textRotZ
             // 
-            this.textRotZ.Location = new System.Drawing.Point(276, 68);
+            this.textRotZ.Location = new System.Drawing.Point(184, 44);
+            this.textRotZ.Margin = new System.Windows.Forms.Padding(2);
             this.textRotZ.Name = "textRotZ";
-            this.textRotZ.Size = new System.Drawing.Size(91, 26);
+            this.textRotZ.Size = new System.Drawing.Size(62, 20);
             this.textRotZ.TabIndex = 7;
-            this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textRotZ.Leave += new System.EventHandler(this.textChange);
             // 
             // textRotY
             // 
-            this.textRotY.Location = new System.Drawing.Point(179, 68);
+            this.textRotY.Location = new System.Drawing.Point(119, 44);
+            this.textRotY.Margin = new System.Windows.Forms.Padding(2);
             this.textRotY.Name = "textRotY";
-            this.textRotY.Size = new System.Drawing.Size(91, 26);
+            this.textRotY.Size = new System.Drawing.Size(62, 20);
             this.textRotY.TabIndex = 6;
-            this.textRotY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textRotY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textRotY.Leave += new System.EventHandler(this.textChange);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 71);
+            this.label2.Location = new System.Drawing.Point(7, 46);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Rotation";
             // 
             // textRotX
             // 
-            this.textRotX.Location = new System.Drawing.Point(82, 68);
+            this.textRotX.Location = new System.Drawing.Point(55, 44);
+            this.textRotX.Margin = new System.Windows.Forms.Padding(2);
             this.textRotX.Name = "textRotX";
-            this.textRotX.Size = new System.Drawing.Size(91, 26);
+            this.textRotX.Size = new System.Drawing.Size(62, 20);
             this.textRotX.TabIndex = 4;
-            this.textRotX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textRotX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textRotX.Leave += new System.EventHandler(this.textChange);
             // 
             // textPosZ
             // 
-            this.textPosZ.Location = new System.Drawing.Point(276, 36);
+            this.textPosZ.Location = new System.Drawing.Point(184, 23);
+            this.textPosZ.Margin = new System.Windows.Forms.Padding(2);
             this.textPosZ.Name = "textPosZ";
-            this.textPosZ.Size = new System.Drawing.Size(91, 26);
+            this.textPosZ.Size = new System.Drawing.Size(62, 20);
             this.textPosZ.TabIndex = 3;
-            this.textPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textPosZ.Leave += new System.EventHandler(this.textChange);
             // 
             // textPosY
             // 
-            this.textPosY.Location = new System.Drawing.Point(179, 36);
+            this.textPosY.Location = new System.Drawing.Point(119, 23);
+            this.textPosY.Margin = new System.Windows.Forms.Padding(2);
             this.textPosY.Name = "textPosY";
-            this.textPosY.Size = new System.Drawing.Size(91, 26);
+            this.textPosY.Size = new System.Drawing.Size(62, 20);
             this.textPosY.TabIndex = 2;
-            this.textPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textPosY.Leave += new System.EventHandler(this.textChange);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 39);
+            this.label1.Location = new System.Drawing.Point(7, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Position";
             // 
             // textPosX
             // 
-            this.textPosX.Location = new System.Drawing.Point(82, 36);
+            this.textPosX.Location = new System.Drawing.Point(55, 23);
+            this.textPosX.Margin = new System.Windows.Forms.Padding(2);
             this.textPosX.Name = "textPosX";
-            this.textPosX.Size = new System.Drawing.Size(91, 26);
+            this.textPosX.Size = new System.Drawing.Size(62, 20);
             this.textPosX.TabIndex = 0;
-            this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressed);
+            this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.textPosX.Leave += new System.EventHandler(this.textChange);
             // 
             // myEditorControl
             // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 96);
+            this.myEditorControl.Location = new System.Drawing.Point(0, 62);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
             this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.Size = new System.Drawing.Size(853, 468);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
-            this.myEditorControl.Click += new System.EventHandler(this.myEditorControl_Click);
+            this.myEditorControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.myEditorControl_MouseButton);
+            this.myEditorControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MyEditor_MouseMove);
+            this.myEditorControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.myEditorControl_MouseButton);
             // 
             // MyEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1284, 775);
+            this.ClientSize = new System.Drawing.Size(1120, 536);
             this.Controls.Add(this.propertiesPanel);
             this.Controls.Add(this.myEditorControl);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MyEditor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyEditor";
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MyEditor_MouseMove);
             this.tabControl1.ResumeLayout(false);
             this.DefaultPage.ResumeLayout(false);
             this.propertiesPanel.ResumeLayout(false);
@@ -308,12 +351,11 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage DefaultPage;
-        private System.Windows.Forms.Button button1;
-        private MyEditorControl myEditorControl;
+        private System.Windows.Forms.Button buttonAddStatic;
         private System.Windows.Forms.TabPage Page2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonMove;
+        private System.Windows.Forms.Button buttonScale;
+        private System.Windows.Forms.Button buttonRotate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -329,5 +371,7 @@
         public System.Windows.Forms.TextBox textPosZ;
         public System.Windows.Forms.TextBox textPosY;
         public System.Windows.Forms.TextBox textPosX;
+        private System.Windows.Forms.Button buttonAddAnimated;
+        public MyEditorControl myEditorControl;
     }
 }

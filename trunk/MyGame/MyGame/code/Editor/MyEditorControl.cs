@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
-    class MyEditorControl : GraphicsDeviceControl
+    public class MyEditorControl : GraphicsDeviceControl
     {
         //GameTime
         GameTime gameTime;
