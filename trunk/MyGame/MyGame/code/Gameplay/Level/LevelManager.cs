@@ -38,6 +38,14 @@ namespace MyGame
         {
             animatedProps.Add(ae);
         }
+        public void removeStaticProp(Entity2D re)
+        {
+            staticProps.Remove(re);
+        }
+        public void removeAnimatedProp(Entity2D ae)
+        {
+            animatedProps.Remove(ae);
+        }
 
         public List<Entity2D> getStaticProps()
         {

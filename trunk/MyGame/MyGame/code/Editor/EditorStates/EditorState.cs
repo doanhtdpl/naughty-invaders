@@ -11,12 +11,6 @@ namespace MyGame
     {
         protected Entity2D selectedEntity = null;
 
-        // Events
-        public virtual void leftClick(Vector2 _vPos) { }
-        public virtual void rightClick(Vector2 _vPos) { }
-        public virtual void mouseReleased() { }
-        public virtual void mouseMove(Vector2 _vPos) { }
-
         public virtual void update() { }
         public virtual void render() { }
 
