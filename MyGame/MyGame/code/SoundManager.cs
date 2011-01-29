@@ -45,15 +45,15 @@ namespace MyGame
 #if EDITOR
             return;
 #else
-            if (currentSong == songName && !music.IsStopped)
-                return;
-            if (music != null)
-                stopMusic();
-            currentSong = songName;
+            //if (currentSong == songName && !music.IsStopped)
+            //    return;
             //if (music != null)
-            //    music.Stop(AudioStopOptions.Immediate);
-            music = soundBank.GetCue(songName);
-            music.Play();
+            //    stopMusic();
+            //currentSong = songName;
+            ////if (music != null)
+            ////    music.Stop(AudioStopOptions.Immediate);
+            //music = soundBank.GetCue(songName);
+            //music.Play();
 #endif
         }
         public static void playSound(string soundName)
