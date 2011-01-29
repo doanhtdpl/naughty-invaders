@@ -64,33 +64,45 @@ namespace MyGame
                 validateInputs(sender);
             }
         }
-
-        private void MyEditor_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (currentState != null)
-            {
-                currentState.mouseMove(new Vector2(e.X, e.Y));
-            }
-        }
+        #endregion
 
         private void myEditorControl_MouseButton(object sender, MouseEventArgs e)
         {
+
+        }
+
+        private void MyEditor_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void selectButton(object button)
+        {
+            buttonMove.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
+            buttonRotate.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
+            buttonScale.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
+
+            ((Button)button).BackColor = System.Drawing.Color.Green;
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
             if (currentState != null)
             {
-                if (e.Button == MouseButtons.Left)
+                if (sender == buttonMove)
                 {
-                    currentState.leftClick(new Vector2(e.X, e.Y));
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.MOVE);
                 }
-                else if (e.Button == MouseButtons.Right)
+                else if (sender == buttonRotate)
                 {
-                    currentState.rightClick(new Vector2(e.X, e.Y));
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ROTATE);
                 }
-                else
+                else if (sender == buttonScale)
                 {
-                    currentState.mouseReleased();
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.SCALE);
                 }
+                selectButton(sender);
             }
         }
-        #endregion
     }
 }

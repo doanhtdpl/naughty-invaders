@@ -93,6 +93,7 @@
             this.buttonAddAnimated.TabIndex = 4;
             this.buttonAddAnimated.Text = "Add Animated Prop";
             this.buttonAddAnimated.UseVisualStyleBackColor = true;
+            this.buttonAddAnimated.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonScale
             // 
@@ -105,6 +106,7 @@
             this.buttonScale.Tag = "";
             this.buttonScale.Text = "Scale";
             this.buttonScale.UseVisualStyleBackColor = true;
+            this.buttonScale.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonRotate
             // 
@@ -117,6 +119,7 @@
             this.buttonRotate.Tag = "";
             this.buttonRotate.Text = "Rotate";
             this.buttonRotate.UseVisualStyleBackColor = true;
+            this.buttonRotate.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonMove
             // 
@@ -129,6 +132,7 @@
             this.buttonMove.Tag = "";
             this.buttonMove.Text = "Move";
             this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonAddStatic
             // 
@@ -140,6 +144,7 @@
             this.buttonAddStatic.TabIndex = 0;
             this.buttonAddStatic.Text = "Add Static Prop";
             this.buttonAddStatic.UseVisualStyleBackColor = true;
+            this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
             // 
             // Page2
             // 
@@ -321,9 +326,6 @@
             this.myEditorControl.Size = new System.Drawing.Size(853, 468);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
-            this.myEditorControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.myEditorControl_MouseButton);
-            this.myEditorControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MyEditor_MouseMove);
-            this.myEditorControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.myEditorControl_MouseButton);
             // 
             // MyEditor
             // 
@@ -338,7 +340,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyEditor";
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MyEditor_MouseMove);
             this.tabControl1.ResumeLayout(false);
             this.DefaultPage.ResumeLayout(false);
             this.propertiesPanel.ResumeLayout(false);
