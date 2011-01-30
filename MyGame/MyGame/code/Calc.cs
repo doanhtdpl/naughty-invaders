@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace MyGame
 {
-    class Calc
+    public static class Calc
     {
         #region PI constants
         // PI & co
@@ -155,6 +155,48 @@ namespace MyGame
             if (dif > Calc.TwoPi)
                 dif -= Calc.TwoPi;
             return dif;
+        }
+        #endregion
+        #region Ray intersections
+        public static bool intersectsTriangle(this Ray ray, Vector3 tri0, Vector3 tri1, Vector3 tri2)
+        {
+            float pickDistance, barycentricU, barycentricV;
+            // Find vectors for two edges sharing vert0
+            Vector3 edge1 = tri1 - tri0;
+            Vector3 edge2 = tri2 - tri0;
+
+            // Begin calculating determinant - also used to calculate barycentricU parameter
+            Vector3 pvec = Vector3.Cross(ray.Direction, edge2);
+
+            // If determinant is near zero, ray lies in plane of triangle
+            float det = Vector3.Dot(edge1, pvec);
+            if (det < 0.0001f)
+                return false;
+
+            // Calculate distance from vert0 to ray origin
+            Vector3 tvec = ray.Position - tri0;
+
+            // Calculate barycentricU parameter and test bounds
+            barycentricU = Vector3.Dot(tvec, pvec);
+            if (barycentricU < 0.0f || barycentricU > det)
+                return false;
+
+            // Prepare to test barycentricV parameter
+            Vector3 qvec = Vector3.Cross(tvec, edge1);
+
+            // Calculate barycentricV parameter and test bounds
+            barycentricV = Vector3.Dot(ray.Direction, qvec);
+            if (barycentricV < 0.0f || barycentricU + barycentricV > det)
+                return false;
+
+            // Calculate pickDistance, scale parameters, ray intersects triangle
+            pickDistance = Vector3.Dot(edge2, qvec);
+            float fInvDet = 1.0f / det;
+            pickDistance *= fInvDet;
+            barycentricU *= fInvDet;
+            barycentricV *= fInvDet;
+
+            return true;
         }
         #endregion
 
