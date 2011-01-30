@@ -53,9 +53,6 @@ namespace MyGame
             basicEffect.DiffuseColor = new Vector3(1.0f, 1.0f, 1.0f);
             basicEffect.VertexColorEnabled = true;
 
-            basicEffect.View = Camera2D.view;
-            basicEffect.Projection = Camera2D.projection;
-
             lineList = new VertexPositionColor[MAX_LINES * 2];
             lineListIndices = new short[(MAX_LINES * 2)];
             numberOfLines = 0;
@@ -150,6 +147,8 @@ namespace MyGame
 
         public void render()
         {
+            basicEffect.View = Camera2D.view;
+            basicEffect.Projection = Camera2D.projection;
             basicEffect.Techniques[0].Passes[0].Apply();
             renderRectangles();
             renderLines();

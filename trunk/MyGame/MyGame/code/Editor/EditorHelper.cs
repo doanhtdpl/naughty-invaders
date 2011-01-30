@@ -49,7 +49,7 @@ namespace MyGame
         }
         #endregion
         #region Entities
-        // returns the 4 points that conforms the quad of this entity
+        // returns the 4 points that conforms the quad of this entity in order: up-right, up-left, bottom-left, bottom-right
         Vector3[] getEntityQuad(Entity2D entity)
         {
             Matrix world = entity.worldMatrix;
@@ -77,15 +77,10 @@ namespace MyGame
         // returns true if the ray collides with the quad representing this entity
         public bool rayVsEntity(Ray ray, Entity2D entity)
         {
-            Vector3 min, max;
-            Matrix world = entity.worldMatrix;
-            Vector3 point = new Vector3(0.5f, 0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out min);
-            point = new Vector3(-0.5f, -0.5f, 0.0f);
-            Vector3.Transform(ref point, ref world, out max);
-            BoundingBox boundingBox = new BoundingBox(min, max);
+            Vector3[] vertexs = getEntityQuad(entity);
 
-            return ray.Intersects(boundingBox) != null;
+            return ray.intersectsTriangle(vertexs[0], vertexs[1], vertexs[2])
+                || ray.intersectsTriangle(vertexs[0], vertexs[2], vertexs[3]);
         }
         // returns the entity from the lits that collides with a ray or null if none collides
         public Entity2D rayVsEntities(Ray ray, List<Entity2D> entities)
