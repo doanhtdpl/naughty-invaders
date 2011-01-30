@@ -83,19 +83,22 @@ namespace MyGame
                             selectedEntity.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
                         }
                     }
-
+                    updateEntityProperties();
                 }
 
                 if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
                 {
                     System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(mouseState.X, mouseState.Y));
                     Vector2 pos = new Vector2(point.X, point.Y);
-                    Ray ray = EditorHelper.Instance.getMouseCursorRay(pos);
-                    selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
-
-                    if (selectedEntity != null)
+                    if (pos.X >= 0 && pos.Y >= 0 && pos.X <= 1280 && pos.Y <= 720)
                     {
-                        updateEntityProperties();
+                        Ray ray = EditorHelper.Instance.getMouseCursorRay(pos);
+                        selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
+
+                        if (selectedEntity != null)
+                        {
+                            updateEntityProperties();
+                        }
                     }
                 }
             }

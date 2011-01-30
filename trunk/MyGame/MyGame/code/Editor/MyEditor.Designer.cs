@@ -172,10 +172,10 @@
             this.propertiesPanel.Controls.Add(this.textPosY);
             this.propertiesPanel.Controls.Add(this.label1);
             this.propertiesPanel.Controls.Add(this.textPosX);
-            this.propertiesPanel.Location = new System.Drawing.Point(857, 62);
+            this.propertiesPanel.Location = new System.Drawing.Point(855, 0);
             this.propertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.propertiesPanel.Name = "propertiesPanel";
-            this.propertiesPanel.Size = new System.Drawing.Size(261, 107);
+            this.propertiesPanel.Size = new System.Drawing.Size(261, 91);
             this.propertiesPanel.TabIndex = 3;
             // 
             // label6
@@ -320,10 +320,10 @@
             // 
             // myEditorControl
             // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 62);
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
             this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
             this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(853, 468);
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
@@ -332,7 +332,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1120, 536);
+            this.ClientSize = new System.Drawing.Size(1284, 873);
             this.Controls.Add(this.propertiesPanel);
             this.Controls.Add(this.myEditorControl);
             this.Controls.Add(this.tabControl1);
