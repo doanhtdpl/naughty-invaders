@@ -30,14 +30,14 @@ namespace MyGame
         }
 
 #if EDITOR
-        public static Dictionary<String, T> LoadContent<T>(this ContentManager contentManager, string contentFolder)
+        public static List<string> LoadContent(this ContentManager contentManager, string contentFolder)
         {
             //Load directory info, abort if none
             DirectoryInfo dir = new DirectoryInfo(contentManager.RootDirectory + "\\" + contentFolder);
             if (!dir.Exists)
                 throw new DirectoryNotFoundException();
             //Init the resulting list
-            Dictionary<String, T> result = new Dictionary<String, T>();
+            List<string> result = new List<string>();
 
             //Load all files that matches the file filter
             FileInfo[] files = dir.GetFiles("*.*");
@@ -45,7 +45,8 @@ namespace MyGame
             {
                 string key = Path.GetFileNameWithoutExtension(file.Name);
 
-                result[key] = contentManager.Load<T>(contentFolder + "/" + key);
+                //result.Add(contentFolder + "/" + key);
+                result.Add(key);
             }
             //Return the result
             return result;

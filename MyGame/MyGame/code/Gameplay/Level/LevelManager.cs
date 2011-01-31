@@ -80,7 +80,11 @@ namespace MyGame
                 }
 
             }
-            
+
+            foreach (AnimatedEntity2D ent in animatedProps)
+            {
+                ent.update();
+            }
         }
 
         void removeStaticProp(int i)
@@ -95,6 +99,11 @@ namespace MyGame
         public void render()
         {
             foreach (RenderableEntity2D ent in staticProps)
+            {
+                ent.render();
+            }
+
+            foreach (AnimatedEntity2D ent in animatedProps)
             {
                 ent.render();
             }

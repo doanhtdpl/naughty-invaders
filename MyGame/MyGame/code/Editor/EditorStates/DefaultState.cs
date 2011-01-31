@@ -113,6 +113,11 @@ namespace MyGame
                         Ray ray = EditorHelper.Instance.getMouseCursorRay(pos);
                         selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
 
+                        if(selectedEntity == null)
+                        {
+                            selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
+                        }
+
                         if (selectedEntity != null)
                         {
                             updateEntityProperties();
@@ -126,11 +131,19 @@ namespace MyGame
 
         public void loadEntity(int index)
         {
-            var textures = SB.content.LoadContent<Texture2D>("textures");
-            var array = textures.Values.ToArray<Texture2D>();
-            currentIndex = (index + array.Length) % array.Length;
-            Entity2D ent = new RenderableEntity2D(array[currentIndex], new Vector3(), new Vector2(100, 100), 0);
+            var textures = SB.content.LoadContent("textures");
+            currentIndex = (index + textures.Count) % textures.Count;
+            Entity2D ent = new RenderableEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
             LevelManager.Instance.addStaticProp(ent);
+            selectedEntity = ent;
+        }
+
+        public void loadAnimatedEntity(int index)
+        {
+            var textures = SB.content.LoadContent("xml/characters");
+            currentIndex = (index + textures.Count) % textures.Count;
+            Entity2D ent = new AnimatedEntity2D(new Vector3(), new Vector2(100, 100), 0, textures[currentIndex]);
+            LevelManager.Instance.addAnimatedProp(ent);
             selectedEntity = ent;
         }
 
@@ -141,6 +154,10 @@ namespace MyGame
             if (newState == DefaultStates.ADD_STATIC)
             {
                 loadEntity(0);
+            }
+            else if (newState == DefaultStates.ADD_ANIMATED)
+            {
+                loadAnimatedEntity(0);
             }
         }
 
