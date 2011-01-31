@@ -131,20 +131,24 @@ namespace MyGame
 
         public void loadEntity(int index)
         {
+#if EDITOR
             var textures = SB.content.LoadContent("textures");
             currentIndex = (index + textures.Count) % textures.Count;
             Entity2D ent = new RenderableEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
             LevelManager.Instance.addStaticProp(ent);
             selectedEntity = ent;
+#endif
         }
 
         public void loadAnimatedEntity(int index)
         {
+#if EDITOR
             var textures = SB.content.LoadContent("xml/characters");
             currentIndex = (index + textures.Count) % textures.Count;
             Entity2D ent = new AnimatedEntity2D(new Vector3(), new Vector2(100, 100), 0, textures[currentIndex]);
             LevelManager.Instance.addAnimatedProp(ent);
             selectedEntity = ent;
+#endif
         }
 
         public void changeState(DefaultStates newState)
