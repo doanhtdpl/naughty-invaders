@@ -15,9 +15,16 @@ namespace MyGame
         protected string newActionState = "";
         Texture texture;
 
-        public RenderableEntity2D(string textureName, Vector3 position, Vector2 scale, float orientation):base(position, scale, orientation)
+        public RenderableEntity2D(string textureName, Vector3 position, Vector2 scale, float orientation)
+            : base(position, scale, orientation)
         {
             this.texture = TextureManager.Instance.getTexture(textureName);
+        }
+
+        public RenderableEntity2D(Texture2D texture, Vector3 position, Vector2 scale, float orientation)
+            : base(position, scale, orientation)
+        {
+            this.texture = texture;
         }
 
         public virtual void update()
