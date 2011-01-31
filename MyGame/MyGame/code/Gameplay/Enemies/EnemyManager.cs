@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using System.Reflection;
 
 namespace MyGame
 {
@@ -32,6 +33,21 @@ namespace MyGame
         public void addEnemy(Enemy e)
         {
             enemies.Add(e);
+        }
+        public void addEnemy(string name, Vector2 position)
+        {
+            Assembly assem = Assembly.GetExecutingAssembly();
+            
+            // convert to the class format
+            name = name.Substring(0, 1).ToUpper() + name.Substring(1);
+
+            Type t = Type.GetType("MyGame." + name);
+            Object[] args = { position, new Vector2(50, 50), 0.0f, name };
+
+            Object o = Activator.CreateInstance(t, args);
+            // NOTE: if this line fails the problem may be inside the constructors called when creating an instance of that type
+
+            enemies.Add((Enemy)o);
         }
 
         public List<Enemy> getEnemies()

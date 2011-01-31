@@ -6,10 +6,12 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    public class Enemy : AnimatedEntity2D
+    public class Grapes : Enemy
     {
-        public Enemy(Vector3 position, Vector2 scale, float orientation, string entityName)
-            : base(position, scale, orientation, entityName)
+//        public Grapes()
+        public Grapes(Vector2 position, Vector2 scale, float orientation, string entityName)
+            : base(new Vector3(position.X, position.Y, 0), scale, orientation, entityName)
+//            : base (Vector3.Zero, Vector2.Zero, 0, "woala")
         {
 
         }
@@ -17,6 +19,7 @@ namespace MyGame
         public override void update()
         {
             //base.update();
+            position = new Vector3(position.X, position.Y - 100 * SB.dt, 0);
         }
 
         public override void render()

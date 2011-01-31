@@ -6,10 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
+    struct sEnemyWaypoint
+    {
+        public string name;
+        public Vector2 position;
+        public Rectangle rectangle;
+    }
+
     class LevelManager
     {
         List<Entity2D> staticProps = new List<Entity2D>();
         List<Entity2D> animatedProps = new List<Entity2D>();
+        List<sEnemyWaypoint> enemyWaypoints = new List<sEnemyWaypoint>();
 
         static LevelManager instance = null;
 
@@ -63,6 +71,16 @@ namespace MyGame
 
         public void update()
         {
+            // if an enemy waypoint is almost entering the camera, create that new enemy
+            for(int i=0; i<enemyWaypoints.Count; ++i)
+            {
+                if (SB.cam.isVisible(enemyWaypoints[i].rectangle))
+                {
+                    EnemyManager.Instance.addEnemy(enemyWaypoints[i].name, enemyWaypoints[i].position);
+                }
+
+            }
+            
         }
 
         void removeStaticProp(int i)
@@ -86,6 +104,7 @@ namespace MyGame
         {
             staticProps.Clear();
             animatedProps.Clear();
+            enemyWaypoints.Clear();
         }
     }
 }

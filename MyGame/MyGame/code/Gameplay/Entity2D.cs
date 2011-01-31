@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class Entity2D
+    public class Entity2D
     {
         protected string entityName;
 

@@ -45,7 +45,7 @@ namespace MyGame
             }
             if (controls.Y_firstPressed())
             {
-                newActionState = "laughing";
+                EnemyManager.Instance.addEnemy("grapes", this.position2D);
             }
 
             if (controls.A_firstPressed())
