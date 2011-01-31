@@ -14,7 +14,7 @@ namespace MyGame
         public List<AnimatedTexture> animatedTextures = new List<AnimatedTexture>();
     }
 
-    class AnimatedEntity2D : MovingEntity2D
+    public class AnimatedEntity2D : MovingEntity2D
     {
         // animations
         protected string newActionState = "";
@@ -35,16 +35,17 @@ namespace MyGame
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))
             {
-                readXML();
+                readXML(entityName);
             }
             // assign the pointers for this instance
             actions = datas[entityName].actions;
             animatedTextures = datas[entityName].animatedTextures;
         }
 
-        public void readXML()
+        // reads xml and loads textures and actions for this animated entity. Can be called from outside this class
+        public static void readXML(string entityName)
         {
-            XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
+            //XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
             XmlDocument xml = new XmlDocument();
             xml.Load(SB.content.RootDirectory + "/xml/characters/" + entityName + ".xml");
 
@@ -60,8 +61,6 @@ namespace MyGame
                 animatedTexture.id = textureNumber;
                 string textureName = animatedTextureNode.GetAttribute("name");
                 animatedTexture.texture = TextureManager.Instance.getTexture(textureName);
-                animatedTexture.width = int.Parse(animatedTextureNode.GetAttribute("width"));
-                animatedTexture.height = int.Parse(animatedTextureNode.GetAttribute("height"));
                 animatedTexture.columns = int.Parse(animatedTextureNode.GetAttribute("columns"));
                 animatedTexture.rows = int.Parse(animatedTextureNode.GetAttribute("rows"));
 

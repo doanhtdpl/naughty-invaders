@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class MovingEntity2D : Entity2D
+    public class MovingEntity2D : Entity2D
     {
         Vector3 directionVector;
         Vector3 accelerationVector;

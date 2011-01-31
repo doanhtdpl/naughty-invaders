@@ -131,6 +131,7 @@
     <Compile Include="code\Editor\EditorStates\DefaultState.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
+    <Compile Include="code\Gameplay\Enemies\Grapes.cs" />
     <Compile Include="code\Gameplay\MovingEntity2D.cs" />
     <Compile Include="code\Gameplay\RenderableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Enemy.cs" />
@@ -194,7 +195,13 @@
     <Compile Include="code\Editor\ServiceContainer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="code\Editor\xmlLevelTemplate.xml" />
+    <Content Include="code\Editor\XML templates\xmlEnemyDefsTemplate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="code\Editor\XML templates\xmlAnimatedEntityTemplate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="code\Editor\XML templates\xmlLevelTemplate.xml" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

@@ -26,16 +26,16 @@ namespace MyGame
             }
         }
 
-        Dictionary<string, Texture> textures = new Dictionary<string, Texture>();
+        Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
 
-        public Texture getTexture(string name)
+        public Texture2D getTexture(string name)
         {
             if (textures.ContainsKey(name))
             {
                 return textures[name];
             }
 
-            Texture texture = SB.content.Load<Texture2D>("textures/" + name);
+            Texture2D texture = SB.content.Load<Texture2D>("textures/" + name);
             textures[name] = texture;
             return texture;
         }

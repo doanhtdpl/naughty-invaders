@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<character>
+  <animatedTexture name="grapes1" columns="4" rows="4">
+    <action name="idle" initialFrame="0" endFrame="7" frameTime="0.2" loops="true"/>
+    <action name="idle" initialFrame="8" endFrame="11" frameTime="0.2" loops="true"/>
+    <action name="laughing" initialFrame="12" endFrame="15" frameTime="1" loops="true"/>
+  </animatedTexture>
+</character>
