@@ -38,7 +38,7 @@ namespace MyGame
         {
             Assembly assem = Assembly.GetExecutingAssembly();
             
-            // convert to the class format
+            // convert to the class format (first char is upper)
             name = name.Substring(0, 1).ToUpper() + name.Substring(1);
 
             Type t = Type.GetType("MyGame." + name);

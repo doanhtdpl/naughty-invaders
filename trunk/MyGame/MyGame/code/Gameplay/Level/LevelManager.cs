@@ -11,6 +11,13 @@ namespace MyGame
         public string name;
         public Vector2 position;
         public Rectangle rectangle;
+
+        public sEnemyWaypoint(string name, Vector2 position, Rectangle rectangle)
+        {
+            this.name = name;
+            this.position = position;
+            this.rectangle = rectangle;
+        }
     }
 
     class LevelManager
@@ -23,7 +30,6 @@ namespace MyGame
 
         LevelManager()
         {
-            addStaticProp(new RenderableEntity2D("test", new Vector3(0, 100,  0), new Vector2(50, 50), 0));
         }
 
         public static LevelManager Instance
@@ -66,7 +72,10 @@ namespace MyGame
 
         public void loadXML(string levelName)
         {
+            addStaticProp(new RenderableEntity2D("test", new Vector3(0, 100, 0), new Vector2(50, 50), 0));
 
+            sEnemyWaypoint ew = new sEnemyWaypoint("grapes", new Vector2(0, 500), new Rectangle(-25, 475, 50, 50));
+            enemyWaypoints.Add(ew);
         }
 
         public void update()
@@ -77,8 +86,9 @@ namespace MyGame
                 if (SB.cam.isVisible(enemyWaypoints[i].rectangle))
                 {
                     EnemyManager.Instance.addEnemy(enemyWaypoints[i].name, enemyWaypoints[i].position);
+                    enemyWaypoints.RemoveAt(i);
+                    --i;
                 }
-
             }
 
             foreach (AnimatedEntity2D ent in animatedProps)
