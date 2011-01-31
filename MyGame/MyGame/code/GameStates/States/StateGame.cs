@@ -18,6 +18,7 @@ namespace MyGame
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();
+            LevelManager.Instance.loadXML("fruit-1-1");
         }
         public void restartLevel()
         {
