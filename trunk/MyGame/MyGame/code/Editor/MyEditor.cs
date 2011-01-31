@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Xna.Framework;
+using System.IO;
+using Microsoft.Xna.Framework.Content;
 
 namespace MyGame
 {
@@ -100,6 +102,10 @@ namespace MyGame
                 else if (sender == buttonScale)
                 {
                     ((DefaultState)currentState).changeState(DefaultState.DefaultStates.SCALE);
+                }
+                else if (sender == buttonAddStatic)
+                {
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ADD_STATIC);
                 }
                 selectButton(sender);
             }
