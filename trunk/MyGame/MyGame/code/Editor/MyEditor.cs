@@ -107,6 +107,10 @@ namespace MyGame
                 {
                     ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ADD_STATIC);
                 }
+                else if (sender == buttonAddAnimated)
+                {
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ADD_ANIMATED);
+                }
                 selectButton(sender);
             }
         }
