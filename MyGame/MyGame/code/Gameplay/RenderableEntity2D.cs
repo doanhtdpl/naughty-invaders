@@ -27,11 +27,11 @@ namespace MyGame
             this.texture = texture;
         }
 
-        public virtual void update()
+        public override void update()
         {
         }
 
-        public virtual void render()
+        public override void render()
         {
             texture.render(worldMatrix);
         }

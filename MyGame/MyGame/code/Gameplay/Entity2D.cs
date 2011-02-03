@@ -85,6 +85,7 @@ namespace MyGame
         {
             this.entityName = entityName;
             initializeWorldMatrix2D(position, scale, orientation);
+            EntityManager.Instance.registerEntity(this);
         }
         public Entity2D(string entityName = "NoName") : this(Vector3.Zero, Vector2.Zero, 0, entityName) { }
 
@@ -110,5 +111,8 @@ namespace MyGame
             Vector3 size = scale;
             return new Rectangle((int)(pos.X - size.X * 0.5), (int)(pos.Y - size.Y * 0.5), (int)size.X, (int)size.Y);
         }
+
+        public virtual void update() { }
+        public virtual void render() { }
     }
 }

@@ -30,6 +30,7 @@ namespace MyGame
             }
         }
 
+        #region ENTITY MANAGEMENT
         public void addEnemy(Enemy e)
         {
             enemies.Add(e);
@@ -49,11 +50,30 @@ namespace MyGame
 
             enemies.Add((Enemy)o);
         }
+        public void removeEnemy(int i)
+        {
+            EntityManager.Instance.removeEntity(enemies[i]);
+            enemies.RemoveAt(i);
+        }
 
+        public void deleteAllEnemies()
+        {
+            foreach (Enemy e in enemies)
+            {
+                EntityManager.Instance.removeEntity(e);
+            }
+            enemies.Clear();
+        }
+
+        public void dispose()
+        {
+            deleteAllEnemies();
+        }
         public List<Enemy> getEnemies()
         {
             return enemies;
         }
+        #endregion
 
         public void update()
         {
@@ -73,20 +93,10 @@ namespace MyGame
             }
         }
 
-        void removeEnemy(int i)
-        {
-            enemies.RemoveAt(i);
-        }
-
         public void render()
         {
-            foreach (Enemy enemy in enemies)
-                enemy.render();
-        }
-
-        public void dispose()
-        {
-            enemies.Clear();
+            //foreach (Enemy enemy in enemies)
+            //    enemy.render();
         }
     }
 }

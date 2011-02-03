@@ -29,13 +29,12 @@ namespace MyGame
             this.team = team;
         }
 
-        public bool update()
+        public override void update()
         {
             position = new Vector3(position.X, position.Y + speed * SB.dt, 0);
-            return true;
         }
 
-        public void render()
+        public override void render()
         {
             TextureManager.Instance.getTexture("A").render(worldMatrix);
         }
