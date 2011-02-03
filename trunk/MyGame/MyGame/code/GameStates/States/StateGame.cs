@@ -37,6 +37,7 @@ namespace MyGame
             SB.graphicsDevice.Clear(Color.DarkGray);
             SB.beginRender();
             GamerManager.renderPlayers();
+            EntityManager.Instance.render();
             EnemyManager.Instance.render();
             LevelManager.Instance.render();
             ProjectileManager.Instance.render();

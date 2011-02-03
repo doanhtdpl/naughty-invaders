@@ -88,7 +88,7 @@ namespace MyGame
         }
 
         const float FRAME_TIME = 0.2f;
-        public virtual void update()
+        public override void update()
         {
             // if there is a new action, change it and reset variables
             if (newActionState != "")
@@ -123,7 +123,7 @@ namespace MyGame
             currentFrame += action.initialFrame;
         }
 
-        public virtual void render()
+        public override void render()
         {
             currentTextureId = actions[actionState].textureId;
 

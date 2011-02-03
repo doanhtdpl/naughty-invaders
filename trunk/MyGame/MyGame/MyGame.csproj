@@ -167,6 +167,7 @@
     <Compile Include="code\Particles\ParticleManager.cs" />
     <Compile Include="code\Render &amp; Effects\AnimatedTexture.cs" />
     <Compile Include="code\Render &amp; Effects\AnimationAction.cs" />
+    <Compile Include="code\Render &amp; Effects\EntityManager.cs" />
     <Compile Include="code\Render &amp; Effects\DebugManager.cs" />
     <Compile Include="code\OLD code\LineManager.cs" />
     <Compile Include="code\Render &amp; Effects\QuadRenderer.cs" />

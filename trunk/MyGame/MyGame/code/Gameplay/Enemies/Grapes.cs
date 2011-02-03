@@ -28,7 +28,7 @@ namespace MyGame
         }
 
         // applies damage, returns true if enemy dies
-        public bool getsHit()
+        public override bool getsHit()
         {
             return true;
         }

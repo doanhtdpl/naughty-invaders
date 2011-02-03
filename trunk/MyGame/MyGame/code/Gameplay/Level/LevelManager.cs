@@ -44,6 +44,7 @@ namespace MyGame
             }
         }
 
+        #region ENTITY MANAGEMENT
         public void addStaticProp(Entity2D re)
         {
             staticProps.Add(re);
@@ -54,13 +55,40 @@ namespace MyGame
         }
         public void removeStaticProp(Entity2D re)
         {
+            EntityManager.Instance.removeEntity(re);
             staticProps.Remove(re);
+        }
+        public void removeStaticProp(int i)
+        {
+            removeStaticProp(staticProps[i]);
         }
         public void removeAnimatedProp(Entity2D ae)
         {
+            EntityManager.Instance.removeEntity(ae);
             animatedProps.Remove(ae);
         }
-
+        public void removeAnimatedProp(int i)
+        {
+            removeStaticProp(animatedProps[i]);
+        }
+        public void deleteAllProps()
+        {
+            foreach (Entity2D sp in staticProps)
+            {
+                EntityManager.Instance.removeEntity(sp);
+            }
+            staticProps.Clear();
+            foreach (Entity2D ae in animatedProps)
+            {
+                EntityManager.Instance.removeEntity(ae);
+            }
+            animatedProps.Clear();
+        }
+        public void dispose()
+        {
+            deleteAllProps();
+            enemyWaypoints.Clear();
+        }
         public List<Entity2D> getStaticProps()
         {
             return staticProps;
@@ -69,6 +97,7 @@ namespace MyGame
         {
             return animatedProps;
         }
+        #endregion
 
         public void loadXML(string levelName)
         {
@@ -97,33 +126,17 @@ namespace MyGame
             }
         }
 
-        void removeStaticProp(int i)
-        {
-            staticProps.RemoveAt(i);
-        }
-        void removeAnimatedProp(int i)
-        {
-            animatedProps.RemoveAt(i);
-        }
-
         public void render()
         {
-            foreach (RenderableEntity2D ent in staticProps)
-            {
-                ent.render();
-            }
+            //foreach (RenderableEntity2D ent in staticProps)
+            //{
+            //    ent.render();
+            //}
 
-            foreach (AnimatedEntity2D ent in animatedProps)
-            {
-                ent.render();
-            }
-        }
-
-        public void dispose()
-        {
-            staticProps.Clear();
-            animatedProps.Clear();
-            enemyWaypoints.Clear();
+            //foreach (AnimatedEntity2D ent in animatedProps)
+            //{
+            //    ent.render();
+            //}
         }
     }
 }

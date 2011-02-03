@@ -27,6 +27,33 @@ namespace MyGame
 
         List<Projectile> projectiles = new List<Projectile>();
 
+        #region ENTITY MANAGEMENT
+        public void addProjectile(Projectile p)
+        {
+            projectiles.Add(p);
+        }
+
+        void removeProjectile(int i)
+        {
+            EntityManager.Instance.removeEntity(projectiles[i]);
+            projectiles.RemoveAt(i);
+        }
+
+        public void deleteAllProjectiles()
+        {
+            foreach (Projectile p in projectiles)
+            {
+                EntityManager.Instance.removeEntity(p);
+            }
+            projectiles.Clear();
+        }
+
+        public void dispose()
+        {
+            deleteAllProjectiles();
+        }
+        #endregion
+
         public void update()
         {
             bool breakOuter = false;
@@ -35,9 +62,10 @@ namespace MyGame
 
             for (int i = 0; i < projectiles.Count; ++i)
             {
-                if (!projectiles[i].update())
+                projectiles[i].update();
+                if (projectiles[i].remove)
                 {
-                    projectiles.RemoveAt(i);
+                    removeProjectile(i);
                     --i;
                     continue;
                 }
@@ -52,6 +80,7 @@ namespace MyGame
                             // the enemy get hit!
                             if (enemies[j].getsHit())
                             {
+                                EnemyManager.Instance.removeEnemy(j);
                                 enemies.RemoveAt(j);
                                 --j;
                                 break;
@@ -81,25 +110,10 @@ namespace MyGame
             }
         }
 
-        public void addProjectile(Projectile p)
-        {
-            projectiles.Add(p);
-        }
-
-        void removeProjectile(int i)
-        {
-            projectiles.RemoveAt(i);
-        }
-
         public void render()
         {
-            foreach (Projectile projectile in projectiles)
-                projectile.render();
-        }
-
-        public void dispose()
-        {
-            projectiles.Clear();
+            //foreach (Projectile projectile in projectiles)
+            //    projectile.render();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace MyGame
 
         public override void update()
         {
-            //base.update();
+            base.update();
         }
 
         public override void render()
@@ -25,7 +25,7 @@ namespace MyGame
         }
 
         // applies damage, returns true if enemy dies
-        public bool getsHit()
+        public virtual bool getsHit()
         {
             return true;
         }
