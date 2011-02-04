@@ -61,8 +61,15 @@ namespace MyGame
                 animatedTexture.id = textureNumber;
                 string textureName = animatedTextureNode.GetAttribute("name");
                 animatedTexture.texture = TextureManager.Instance.getTexture(textureName);
+                animatedTexture.frameWidth = int.Parse(animatedTextureNode.GetAttribute("frameWidth"));
+                animatedTexture.frameHeight = int.Parse(animatedTextureNode.GetAttribute("frameHeight"));
                 animatedTexture.columns = int.Parse(animatedTextureNode.GetAttribute("columns"));
                 animatedTexture.rows = int.Parse(animatedTextureNode.GetAttribute("rows"));
+
+                float width = animatedTexture.columns * animatedTexture.frameWidth;
+                float height = animatedTexture.rows * animatedTexture.frameHeight;
+                animatedTexture.frameWidthUV = (width / animatedTexture.columns) / width;
+                animatedTexture.frameHeightUV = (height / animatedTexture.rows) / height;
 
                 XmlNodeList actionList = animatedTextureNode.GetElementsByTagName("action");
                 foreach (XmlElement actionNode in actionList)
@@ -70,9 +77,17 @@ namespace MyGame
                     AnimationAction action = new AnimationAction();
                     action.textureId = textureNumber;
                     action.name = actionNode.GetAttribute("name");
-                    action.initialFrame = int.Parse(actionNode.GetAttribute("initialFrame"));
-                    action.endFrame = int.Parse(actionNode.GetAttribute("endFrame"));
-                    action.frameTime = float.Parse(actionNode.GetAttribute("frameTime"), CultureInfo.InvariantCulture.NumberFormat);
+                    action.initialFrame = int.Parse(actionNode.GetAttribute("initialFrame")) - 1;
+                    action.endFrame = int.Parse(actionNode.GetAttribute("endFrame")) - 1;
+
+                    if (actionNode.HasAttribute("FPS"))
+                    {
+                        action.FPS = float.Parse(actionNode.GetAttribute("FPS"), CultureInfo.InvariantCulture.NumberFormat);
+                    }
+                    else
+                    {
+                        action.FPS = 30;
+                    }
                     action.loops = bool.Parse(actionNode.GetAttribute("loops"));
                     // add each action to the list
                     data.actions[action.name] = action;
@@ -103,13 +118,14 @@ namespace MyGame
             AnimationAction action = actions[actionState];
  
             // get which would have to be the current frame
-            currentFrame = (int)(actionTimer / action.frameTime);
+            float frameTime = 1.0f / action.FPS;
+            currentFrame = (int)(actionTimer / frameTime);
             // at the end of the animation...
             if (currentFrame >= action.totalFrames)
             {
                 // we want to take the time passed since the animation ended (like an error) and keep it, then update the current frame (possibly will be 0 again)
-                actionTimer -= action.totalFrames * action.frameTime;
-                currentFrame = (int)(actionTimer / action.frameTime);
+                actionTimer -= action.totalFrames * frameTime;
+                currentFrame = (int)(actionTimer / frameTime);
                 // if the action doesnt loop, go to idle
                 if (!action.loops)
                 {
@@ -128,15 +144,14 @@ namespace MyGame
             currentTextureId = actions[actionState].textureId;
 
             int columns = animatedTextures[currentTextureId].columns;
-            int rows = animatedTextures[currentTextureId].rows;
-
             int x = currentFrame % columns;
             int y = (int)(currentFrame / columns);
-            float frameWidth = 1.0f / columns;
-            float frameHeight = 1.0f / rows;
 
-            Vector2 initialUVs = new Vector2( frameWidth * x, frameHeight * y);
-            Vector2 endingUVs = new Vector2( (frameWidth) * (x + 1), (frameHeight) * (y + 1));
+            float frameWidthUV = animatedTextures[currentTextureId].frameWidthUV;
+            float frameHeightUV = animatedTextures[currentTextureId].frameHeightUV;
+
+            Vector2 initialUVs = new Vector2( frameWidthUV * x, frameHeightUV * y);
+            Vector2 endingUVs = new Vector2( (frameWidthUV) * (x + 1), (frameHeightUV) * (y + 1));
 
             animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs);
         }

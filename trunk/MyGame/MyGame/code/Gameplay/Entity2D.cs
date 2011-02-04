@@ -88,6 +88,7 @@ namespace MyGame
         public Entity2D(Vector3 position, Vector2 scale, float orientation, string entityName = "NoName" )
         {
             this.entityName = entityName;
+            position.Z += Calc.randomScalar(-0.02f, 0.02f);
             initializeWorldMatrix2D(position, scale, orientation);
             EntityManager.Instance.registerEntity(this);
         }

@@ -14,7 +14,9 @@ namespace MyGame
         public Texture2D texture { get; set; }
         public int columns { get; set; }
         public int rows { get; set; }
-        public int width { get; set; }
-        public int height { get; set; }
+        public int frameWidth { get; set; }
+        public int frameHeight { get; set; }
+        public float frameWidthUV { get; set; }
+        public float frameHeightUV { get; set; }
     }
 }

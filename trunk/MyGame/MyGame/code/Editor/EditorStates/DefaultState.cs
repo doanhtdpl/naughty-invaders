@@ -33,8 +33,6 @@ namespace MyGame
 
         public override void update()
         {
-            bool updateEntity = false;
-
             mouseState = Mouse.GetState();
             keyState = Keyboard.GetState();
 
