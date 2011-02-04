@@ -58,6 +58,8 @@ namespace MyGame
                 // create a matrix with scale 1
                 world = Matrix.CreateWorld(world.Translation, world.Forward, world.Up);
                 // multiply it to the new scale
+                value.X = Math.Max(0.1f, value.X);
+                value.Y = Math.Max(0.1f, value.Y);
                 world = Matrix.CreateScale(value.X, value.Y, 1) * world;
             }
         }
@@ -74,9 +76,11 @@ namespace MyGame
             {
                 // set the new orientation
                 Vector3 positionBackup = position;
+                Vector2 scaleBackup = scale2D;
                 position = new Vector3(0, 0, 0);
                 world = world * Matrix.CreateRotationZ(value - orientation);
                 position = positionBackup;
+                scale2D = scaleBackup;
             }
         }
 
