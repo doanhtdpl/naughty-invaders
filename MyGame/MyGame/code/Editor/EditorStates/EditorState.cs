@@ -24,7 +24,7 @@ namespace MyGame
 
                 ////MyEditor.Instance.textRotX.Text = entity.orientation.X.ToString();
                 ////MyEditor.Instance.textRotY.Text = entity.orientation.Y.ToString();
-                selectedEntity.orientation = float.Parse(MyEditor.Instance.textRotZ.Text, CultureInfo.InvariantCulture.NumberFormat);
+                selectedEntity.orientation = float.Parse(MyEditor.Instance.textRotZ.Text, CultureInfo.InvariantCulture.NumberFormat) / (float)(360 / (Math.PI * 2));
                 selectedEntity.scale2D = new Vector2(float.Parse(MyEditor.Instance.textScaleX.Text, CultureInfo.InvariantCulture.NumberFormat),
                     float.Parse(MyEditor.Instance.textScaleY.Text, CultureInfo.InvariantCulture.NumberFormat));
             }
@@ -39,7 +39,7 @@ namespace MyGame
                 MyEditor.Instance.textPosZ.Text = selectedEntity.position.Z.ToString();
                 //MyEditor.Instance.textRotX.Text = entity.orientation.X.ToString();
                 //MyEditor.Instance.textRotY.Text = entity.orientation.Y.ToString();
-                MyEditor.Instance.textRotZ.Text = selectedEntity.orientation.ToString();
+                MyEditor.Instance.textRotZ.Text = (selectedEntity.orientation * (float)(360 / (Math.PI * 2))).ToString();
                 MyEditor.Instance.textScaleX.Text = selectedEntity.scale2D.X.ToString();
                 MyEditor.Instance.textScaleY.Text = selectedEntity.scale2D.Y.ToString();
             }

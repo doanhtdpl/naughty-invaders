@@ -16,15 +16,30 @@ namespace MyGame
 
         DefaultStates state = DefaultStates.NONE;
 
-        MouseState lastMouseState;
-        KeyboardState lastKeyState;
+        MouseState lastMouseState, mouseState;
+        KeyboardState lastKeyState, keyState;
 
         int currentIndex = -1;
 
+        public bool isPosInScreen( Vector2 pos )
+        {
+            return pos.X >= 0 && pos.Y >= 0 && pos.X <= 1280 && pos.Y <= 720;
+        }
+
+        public bool justPressedKey(Keys key)
+        {
+            return keyState.IsKeyDown(key) && !lastKeyState.IsKeyDown(key);
+        }
+
         public override void update()
         {
-            KeyboardState keyState = Keyboard.GetState();
-            MouseState mouseState = Mouse.GetState();
+            bool updateEntity = false;
+
+            mouseState = Mouse.GetState();
+            keyState = Keyboard.GetState();
+
+            System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(mouseState.X, mouseState.Y));
+            Vector2 gameScreenPos = new Vector2(point.X, point.Y);
 
             //Check state change
             if (keyState.IsKeyDown(Keys.Q))
@@ -49,7 +64,7 @@ namespace MyGame
             {
                 Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
             }
-            else if (keyState.IsKeyDown(Keys.Delete) && lastKeyState.IsKeyUp(Keys.Delete))
+            else if (justPressedKey(Keys.Delete))
             {
                 //DELETE
                 LevelManager.Instance.removeStaticProp(selectedEntity);
@@ -57,12 +72,12 @@ namespace MyGame
             }
             else if (state == DefaultStates.ADD_STATIC)
             {
-                if (keyState.IsKeyDown(Keys.Right) && !lastKeyState.IsKeyDown(Keys.Right))
+                if (justPressedKey(Keys.Right))
                 {
                     LevelManager.Instance.removeStaticProp(selectedEntity);
                     loadEntity(currentIndex + 1);
                 }
-                else if (keyState.IsKeyDown(Keys.Left) && !lastKeyState.IsKeyDown(Keys.Left))
+                else if (justPressedKey(Keys.Left))
                 {
                     LevelManager.Instance.removeStaticProp(selectedEntity);
                     loadEntity(currentIndex - 1);
@@ -70,7 +85,30 @@ namespace MyGame
             }
             else if(keyState.GetPressedKeys().Length == 0)
             {
-                if (selectedEntity != null)
+                if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
+                {
+                    if (isPosInScreen(gameScreenPos))
+                    {
+                        Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
+                        selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
+
+                        if (selectedEntity == null)
+                        {
+                            selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
+                        }
+
+                        if (selectedEntity != null)
+                        {
+                            updateEntityProperties();
+                        }
+                    }
+                    //else
+                    //{
+                    //    selectedEntity = null;
+                    //}
+                }
+
+                if (selectedEntity != null && isPosInScreen(gameScreenPos))
                 {
                     if (state == DefaultStates.MOVE)
                     {
@@ -101,27 +139,10 @@ namespace MyGame
                             selectedEntity.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
                         }
                     }
-                    updateEntityProperties();
-                }
 
-                if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
-                {
-                    System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(mouseState.X, mouseState.Y));
-                    Vector2 pos = new Vector2(point.X, point.Y);
-                    if (pos.X >= 0 && pos.Y >= 0 && pos.X <= 1280 && pos.Y <= 720)
+                    if (mouseState.LeftButton == ButtonState.Pressed || mouseState.RightButton == ButtonState.Pressed)
                     {
-                        Ray ray = EditorHelper.Instance.getMouseCursorRay(pos);
-                        selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
-
-                        if(selectedEntity == null)
-                        {
-                            selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
-                        }
-
-                        if (selectedEntity != null)
-                        {
-                            updateEntityProperties();
-                        }
+                        updateEntityProperties();
                     }
                 }
             }
