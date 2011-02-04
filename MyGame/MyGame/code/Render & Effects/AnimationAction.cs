@@ -11,7 +11,7 @@ namespace MyGame
         public string name { get; set; }
         public int initialFrame { get; set; }
         public int endFrame { get; set; }
-        public float frameTime { get; set; }
+        public float FPS { get; set; }
         public bool loops { get; set; }
         public int textureId { get; set; }
 
