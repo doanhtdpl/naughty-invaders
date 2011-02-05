@@ -56,7 +56,7 @@ namespace MyGame
             enemies.RemoveAt(i);
         }
 
-        public void deleteAllEnemies()
+        public void clean()
         {
             foreach (Enemy e in enemies)
             {
@@ -67,7 +67,7 @@ namespace MyGame
 
         public void dispose()
         {
-            deleteAllEnemies();
+            clean();
         }
         public List<Enemy> getEnemies()
         {

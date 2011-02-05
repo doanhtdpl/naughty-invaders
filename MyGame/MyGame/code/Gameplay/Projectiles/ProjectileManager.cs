@@ -32,14 +32,12 @@ namespace MyGame
         {
             projectiles.Add(p);
         }
-
         void removeProjectile(int i)
         {
             EntityManager.Instance.removeEntity(projectiles[i]);
             projectiles.RemoveAt(i);
         }
-
-        public void deleteAllProjectiles()
+        public void clean()
         {
             foreach (Projectile p in projectiles)
             {
@@ -47,10 +45,9 @@ namespace MyGame
             }
             projectiles.Clear();
         }
-
         public void dispose()
         {
-            deleteAllProjectiles();
+            clean();
         }
         #endregion
 

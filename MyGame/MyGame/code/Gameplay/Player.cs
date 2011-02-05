@@ -19,7 +19,7 @@ namespace MyGame
         bool selected = false;
 
         public Player(Vector3 position, Vector2 scale, float orientation, string entityName)
-            : base(position, scale, orientation, entityName)
+            : base(entityName, position, scale, orientation)
         {
         }
 
@@ -33,8 +33,7 @@ namespace MyGame
 
             if (controls.X_pressed() && cooldownTime <= 0.0f)
             {
-                Projectile p = new BasicProjectile();
-                p.initializeWorldMatrix2D(position, new Vector2(50, 50), orientation);
+                Projectile p = new BasicProjectile(position, new Vector2(50, 50), orientation);
                 cooldownTime = p.cooldown;
                 ProjectileManager.Instance.addProjectile(p);
             }

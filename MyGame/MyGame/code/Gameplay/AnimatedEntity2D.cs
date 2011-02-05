@@ -29,8 +29,8 @@ namespace MyGame
         Dictionary<string, AnimationAction> actions;
         List<AnimatedTexture> animatedTextures;
 
-        public AnimatedEntity2D(Vector3 position, Vector2 scale, float orientation, string entityName)
-            : base(position, scale, orientation, entityName)
+        public AnimatedEntity2D(string entityName, Vector3 position, Vector2 scale, float orientation)
+            : base(entityName, position, scale, orientation)
         {
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))
@@ -82,7 +82,7 @@ namespace MyGame
 
                     if (actionNode.HasAttribute("FPS"))
                     {
-                        action.FPS = float.Parse(actionNode.GetAttribute("FPS"), CultureInfo.InvariantCulture.NumberFormat);
+                        action.FPS = actionNode.GetAttribute("FPS").toFloat(); ;
                     }
                     else
                     {

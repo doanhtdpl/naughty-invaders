@@ -130,6 +130,7 @@
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\DefaultState.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState.cs" />
+    <Compile Include="code\Editor\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Grapes.cs" />
     <Compile Include="code\Gameplay\MovingEntity2D.cs" />

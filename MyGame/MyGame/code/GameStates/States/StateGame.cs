@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
@@ -18,7 +19,7 @@ namespace MyGame
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();
-            LevelManager.Instance.loadXML("fruit-1-1");
+            //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
         }
         public void restartLevel()
         {
@@ -62,6 +63,15 @@ namespace MyGame
 
             if (GamerManager.getMainControls().Start_firstPressed())
                 StateManager.enqueueState(StateManager.tGS.Pause);
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                EditorHelper.Instance.saveLevelToXML("prueba1");
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.L))
+            {
+                EditorHelper.Instance.loadLevelFromXML("E:/Proyectos/XNA/Naughty Invaders/MyGame/MyGame/bin/x86/Editor/Content/xml/levels/prueba1.xml");
+            }
         }
         
         public override void dispose()
