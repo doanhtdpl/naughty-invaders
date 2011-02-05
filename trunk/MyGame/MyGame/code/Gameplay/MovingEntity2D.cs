@@ -24,11 +24,11 @@ namespace MyGame
             set { accelerationVector.X = value.X; accelerationVector.Y = value.Y; }
         }
 
-        public MovingEntity2D(Vector3 position, Vector2 scale, float orientation, string entityName = "NoName" ):base(position, scale, orientation, entityName)
+        public MovingEntity2D(string entityName, Vector3 position, Vector2 scale, float orientation)
+            : base(entityName, position, scale, orientation)
         {
             direction = Vector3.Zero;
             acceleration = Vector3.Zero;
         }
-        public MovingEntity2D(string entityName = "NoName") : this(Vector3.Zero, Vector2.Zero, 0, entityName) { }
     }
 }

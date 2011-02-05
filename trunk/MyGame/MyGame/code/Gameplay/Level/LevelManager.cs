@@ -71,7 +71,7 @@ namespace MyGame
         {
             removeStaticProp(animatedProps[i]);
         }
-        public void deleteAllProps()
+        public void clean()
         {
             foreach (Entity2D sp in staticProps)
             {
@@ -83,11 +83,12 @@ namespace MyGame
                 EntityManager.Instance.removeEntity(ae);
             }
             animatedProps.Clear();
+
+            enemyWaypoints.Clear();
         }
         public void dispose()
         {
-            deleteAllProps();
-            enemyWaypoints.Clear();
+            clean();
         }
         public List<Entity2D> getStaticProps()
         {
@@ -99,12 +100,12 @@ namespace MyGame
         }
         #endregion
 
-        public void loadXML(string levelName)
+        public void cleanLevel()
         {
-            addStaticProp(new RenderableEntity2D("test", new Vector3(0, 100, 0), new Vector2(50, 50), 0));
-
-            sEnemyWaypoint ew = new sEnemyWaypoint("grapes", new Vector2(0, 500), new Rectangle(-25, 475, 50, 50));
-            enemyWaypoints.Add(ew);
+            EntityManager.Instance.clean();
+            LevelManager.Instance.clean();
+            EnemyManager.Instance.clean();
+            ProjectileManager.Instance.clean();
         }
 
         public void update()

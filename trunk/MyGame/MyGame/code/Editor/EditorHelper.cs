@@ -5,6 +5,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml;
+using System.Globalization;
+using System.IO;
 
 namespace MyGame
 {
@@ -93,6 +96,88 @@ namespace MyGame
                 }
             }
             return null;
+        }
+        #endregion
+        #region XML
+        void writeStaticProp(XmlTextWriter writer, Entity2D entity2D)
+        {
+            writer.WriteStartElement("staticProp");
+            writer.WriteAttributeString("entityName", entity2D.entityName);
+            writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
+            writer.WriteEndElement();
+        }
+        void writeAnimatedProp(XmlTextWriter writer, Entity2D entity2D)
+        {
+            writer.WriteStartElement("animatedProp");
+            writer.WriteAttributeString("entityName", entity2D.entityName);
+            writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
+            writer.WriteEndElement();
+        }
+        public void saveLevelToXML(string name)
+        {
+            // creates directory if it doesnt already exist
+            Directory.CreateDirectory(SB.content.RootDirectory + "/xml/levels/");
+            XmlTextWriter writer = new XmlTextWriter(SB.content.RootDirectory + "/xml/levels/" + name + ".xml", null);
+            writer.Formatting = Formatting.Indented;
+            writer.WriteStartDocument();
+            writer.WriteStartElement("level");
+            // here is the general information for the level
+            
+            // static props
+            writer.WriteStartElement("staticProps");
+            for (int i = 0; i < LevelManager.Instance.getStaticProps().Count; i++)
+            {
+                Entity2D sp = LevelManager.Instance.getStaticProps()[i];
+                writeStaticProp(writer, sp);
+            }
+            writer.WriteEndElement();
+
+            // animated props
+            writer.WriteStartElement("animatedProps");
+            for (int i = 0; i < LevelManager.Instance.getAnimatedProps().Count; i++)
+            {
+                Entity2D ap = LevelManager.Instance.getAnimatedProps()[i];
+                writeStaticProp(writer, ap);
+            }
+            writer.WriteEndElement();
+
+            // close the tag <level> and the writer
+            writer.WriteEndElement();
+            writer.WriteEndDocument();
+            writer.Close();
+        }
+        // loads the specified file into the editor
+        public void loadLevelFromXML(string fileName)
+        {
+            LevelManager.Instance.cleanLevel();
+
+            if (File.Exists(fileName))
+            {
+                Stream stream = File.OpenRead(fileName);
+                XmlDocument xml_doc = new XmlDocument();
+                xml_doc.Load(stream);
+
+                XmlNodeList nodes;
+                nodes = xml_doc.GetElementsByTagName("staticProp"); // read static props
+                foreach (XmlElement node in nodes)
+                {
+                    RenderableEntity2D re =
+                        new RenderableEntity2D(node.GetAttribute("entityName"), Vector3.Zero, Vector2.Zero, 0);
+                    re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
+                    LevelManager.Instance.addStaticProp(re);
+                }
+                nodes = xml_doc.GetElementsByTagName("animatedProp"); // read animated props
+                foreach (XmlElement node in nodes)
+                {
+                    AnimatedEntity2D ae =
+                        new AnimatedEntity2D(node.GetAttribute("entityName"), Vector3.Zero, Vector2.Zero, 0);
+                    ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
+                    LevelManager.Instance.addAnimatedProp(ae);
+                }
+
+                stream.Close();
+            }
+            
         }
         #endregion
     }

@@ -18,7 +18,7 @@ namespace MyGame
         public enum tTeam { Players, Enemies };
         public tTeam team { set; get; }
 
-        public Projectile(float damage, float speed, int lifes, float cooldown, tTeam team)
+        public Projectile(Vector3 position, Vector2 scale, float orientation, string name, float damage, float speed, int lifes, float cooldown, tTeam team):base(name, position, scale, orientation)
         {
             remove = false;
             active = true;

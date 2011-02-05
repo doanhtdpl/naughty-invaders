@@ -38,10 +38,10 @@ namespace MyGame
             }
         }
 
-        #region Alpha Blended Entities
         Entity2DComparer comparer = new Entity2DComparer();
         List<Entity2D> entities = new List<Entity2D>();
-        // here we register all entities
+
+        #region ENTITY MANAGEMENT
         public void registerEntity(Entity2D entity)
         {
             entities.Add(entity);
@@ -63,6 +63,11 @@ namespace MyGame
             {
                 e.render();
             }
+        }
+
+        public void clean()
+        {
+            entities.Clear();
         }
     }
 }

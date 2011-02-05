@@ -18,15 +18,13 @@ namespace MyGame
         {
             if (selectedEntity != null)
             {
-                selectedEntity.position = new Vector3(float.Parse(MyEditor.Instance.textPosX.Text, CultureInfo.InvariantCulture.NumberFormat),
-                    float.Parse(MyEditor.Instance.textPosY.Text, CultureInfo.InvariantCulture.NumberFormat),
-                    float.Parse(MyEditor.Instance.textPosZ.Text, CultureInfo.InvariantCulture.NumberFormat));
+                selectedEntity.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
+                    MyEditor.Instance.textPosY.Text.toFloat(),
+                    MyEditor.Instance.textPosZ.Text.toFloat());
 
-                ////MyEditor.Instance.textRotX.Text = entity.orientation.X.ToString();
-                ////MyEditor.Instance.textRotY.Text = entity.orientation.Y.ToString();
-                selectedEntity.orientation = float.Parse(MyEditor.Instance.textRotZ.Text, CultureInfo.InvariantCulture.NumberFormat) / (float)(360 / (Math.PI * 2));
-                selectedEntity.scale2D = new Vector2(float.Parse(MyEditor.Instance.textScaleX.Text, CultureInfo.InvariantCulture.NumberFormat),
-                    float.Parse(MyEditor.Instance.textScaleY.Text, CultureInfo.InvariantCulture.NumberFormat));
+                selectedEntity.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
+                selectedEntity.scale2D = new Vector2(MyEditor.Instance.textScaleX.Text.toFloat(),
+                    MyEditor.Instance.textScaleY.Text.toFloat());
             }
         }
 
