@@ -116,8 +116,9 @@ namespace MyGame
         public void saveLevelToXML(string name)
         {
             // creates directory if it doesnt already exist
-            Directory.CreateDirectory(SB.content.RootDirectory + "/xml/levels/");
-            XmlTextWriter writer = new XmlTextWriter(SB.content.RootDirectory + "/xml/levels/" + name + ".xml", null);
+            //Directory.CreateDirectory(SB.content.RootDirectory + "/xml/levels/");
+            //XmlTextWriter writer = new XmlTextWriter(SB.content.RootDirectory + "/xml/levels/" + name + ".xml", null);
+            XmlTextWriter writer = new XmlTextWriter(name, null);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
             writer.WriteStartElement("level");

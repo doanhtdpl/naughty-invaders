@@ -12,7 +12,7 @@ namespace MyGame
 {
     class DefaultState : EditorState
     {
-        public enum DefaultStates { NONE, MOVE, ROTATE, SCALE, ADD_STATIC, ADD_ANIMATED };
+        public enum DefaultStates { NONE, MOVE, ROTATE, SCALE, ADD_STATIC, ADD_ANIMATED, ADD_ENEMY, LOAD, SAVE };
 
         DefaultStates state = DefaultStates.NONE;
 

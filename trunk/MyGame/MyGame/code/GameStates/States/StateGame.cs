@@ -64,14 +64,14 @@ namespace MyGame
             if (GamerManager.getMainControls().Start_firstPressed())
                 StateManager.enqueueState(StateManager.tGS.Pause);
 
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                EditorHelper.Instance.saveLevelToXML("prueba1");
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.L))
-            {
-                EditorHelper.Instance.loadLevelFromXML("E:/Proyectos/XNA/Naughty Invaders/MyGame/MyGame/bin/x86/Editor/Content/xml/levels/prueba1.xml");
-            }
+            //if (Keyboard.GetState().IsKeyDown(Keys.S))
+            //{
+            //    EditorHelper.Instance.saveLevelToXML("prueba1");
+            //}
+            //if (Keyboard.GetState().IsKeyDown(Keys.L))
+            //{
+            //    EditorHelper.Instance.loadLevelFromXML("E:/Proyectos/XNA/Naughty Invaders/MyGame/MyGame/bin/x86/Editor/Content/xml/levels/prueba1.xml");
+            //}
         }
         
         public override void dispose()
