@@ -139,5 +139,20 @@ namespace MyGame
                 ((DefaultState)currentState).changeState(DefaultState.DefaultStates.NONE);
             }
         }
+
+        private void buttonResetPosition_Click(object sender, EventArgs e)
+        {
+            ((DefaultState)currentState).resetPosition();
+        }
+
+        private void buttonResetRotation_Click(object sender, EventArgs e)
+        {
+            ((DefaultState)currentState).resetRotation();
+        }
+
+        private void buttonResetScale_Click(object sender, EventArgs e)
+        {
+            ((DefaultState)currentState).resetScale();
+        }
     }
 }

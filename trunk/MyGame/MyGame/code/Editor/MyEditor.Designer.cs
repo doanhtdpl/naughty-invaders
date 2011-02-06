@@ -364,6 +364,7 @@
             this.buttonResetRotation.TabIndex = 22;
             this.buttonResetRotation.Text = "Reset";
             this.buttonResetRotation.UseVisualStyleBackColor = true;
+            this.buttonResetRotation.Click += new System.EventHandler(this.buttonResetRotation_Click);
             // 
             // buttonResetScale
             // 
@@ -375,6 +376,7 @@
             this.buttonResetScale.TabIndex = 23;
             this.buttonResetScale.Text = "Reset";
             this.buttonResetScale.UseVisualStyleBackColor = true;
+            this.buttonResetScale.Click += new System.EventHandler(this.buttonResetScale_Click);
             // 
             // buttonResetPosition
             // 
@@ -386,6 +388,7 @@
             this.buttonResetPosition.TabIndex = 24;
             this.buttonResetPosition.Text = "Reset";
             this.buttonResetPosition.UseVisualStyleBackColor = true;
+            this.buttonResetPosition.Click += new System.EventHandler(this.buttonResetPosition_Click);
             // 
             // buttonAddEnemy
             // 
