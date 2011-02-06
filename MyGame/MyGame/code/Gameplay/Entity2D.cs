@@ -107,6 +107,14 @@ namespace MyGame
             this.scale2D = scale;
             this.orientation = orientation;
         }
+        public void rotateInX(float radians)
+        {
+            world *= Matrix.CreateRotationX(radians);
+        }
+        public void rotateInY(float radians)
+        {
+            world *= Matrix.CreateRotationY(radians);
+        }
         // resets rotations
         public void resetRotation()
         {
