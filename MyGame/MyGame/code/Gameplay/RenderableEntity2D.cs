@@ -13,7 +13,12 @@ namespace MyGame
     {
         // animations
         protected string newActionState = "";
-        Texture texture;
+        Texture2D texture;
+
+        public Texture2D Texture
+        {
+            get { return texture; }
+        }
 
         public RenderableEntity2D(string textureName, Vector3 position, Vector2 scale, float orientation)
             : base(textureName, position, scale, orientation)

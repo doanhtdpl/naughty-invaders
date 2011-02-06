@@ -153,7 +153,8 @@ namespace MyGame
 #if EDITOR
             var textures = SB.content.LoadContent("textures");
             currentIndex = (index + textures.Count) % textures.Count;
-            Entity2D ent = new RenderableEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
+            Texture2D texture = TextureManager.Instance.getTexture(textures[currentIndex]);
+            Entity2D ent = new RenderableEntity2D(textures[currentIndex], new Vector3(), new Vector2(texture.Width, texture.Height), 0);
             LevelManager.Instance.addStaticProp(ent);
             selectedEntity = ent;
 #endif
@@ -164,6 +165,7 @@ namespace MyGame
 #if EDITOR
             var textures = SB.content.LoadContent("xml/characters");
             currentIndex = (index + textures.Count) % textures.Count;
+            Texture2D texture = TextureManager.Instance.getTexture(textures[currentIndex]);
             Entity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
             LevelManager.Instance.addAnimatedProp(ent);
             selectedEntity = ent;
@@ -189,6 +191,31 @@ namespace MyGame
             if (selectedEntity != null)
             {
                 EditorHelper.Instance.renderEntityQuad(selectedEntity);
+            }
+        }
+
+        public void resetRotation()
+        {
+            if (selectedEntity != null)
+            {
+                selectedEntity.resetRotation();
+            }
+        }
+
+        public void resetPosition()
+        {
+            if (selectedEntity != null)
+            {
+                selectedEntity.position = new Vector3(0,0,0);
+            }
+        }
+
+        public void resetScale()
+        {
+            if (selectedEntity != null)
+            {
+                Texture2D texture = ((RenderableEntity2D)selectedEntity).Texture;
+                selectedEntity.scale2D = selectedEntity.scale2D = new Vector2(texture.Width, texture.Height);
             }
         }
     }
