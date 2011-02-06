@@ -105,5 +105,39 @@ namespace MyGame
             ((Button)button).BackColor = System.Drawing.Color.Green;
         }
 
+        private void buttonLoadLevel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            string relativePath = "../../../../MyGameContent/xml/levels";
+            string fullPath = Path.GetFullPath(relativePath);
+
+            fileDialog.InitialDirectory = fullPath;
+            fileDialog.Title = "Save Level";
+            fileDialog.Filter = "Level files (*.xml)|*.xml";
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                EditorHelper.Instance.loadLevelFromXML(fileDialog.FileName);
+                ((DefaultState)currentState).changeState(DefaultState.DefaultStates.NONE);
+            }
+        }
+
+        private void buttonSaveLevel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            string relativePath = "../../../../MyGameContent/xml/levels";
+            string fullPath = Path.GetFullPath(relativePath);
+
+            fileDialog.InitialDirectory = fullPath;
+            fileDialog.Title = "Save Level";
+            fileDialog.Filter = "Level files (*.xml)|*.xml";
+            fileDialog.CheckFileExists = false;
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                EditorHelper.Instance.saveLevelToXML(fileDialog.FileName);
+                ((DefaultState)currentState).changeState(DefaultState.DefaultStates.NONE);
+            }
+        }
     }
 }

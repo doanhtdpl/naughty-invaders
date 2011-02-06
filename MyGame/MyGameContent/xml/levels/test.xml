@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<level>
+  <staticProps>
+    <staticProp entityName="A" worldMatrix="100 0 0 0 0 100 0 0 0 0 1 0 113 -107 -0.007597933 1" />
+  </staticProps>
+  <animatedProps />
+</level>
