@@ -42,6 +42,11 @@ namespace MyGame
             animatedTextures = datas[entityName].animatedTextures;
         }
 
+        public Vector2 getFrameSize()
+        {
+            return new Vector2(animatedTextures[0].frameWidth, animatedTextures[0].frameHeight);
+        }
+
         // reads xml and loads textures and actions for this animated entity. Can be called from outside this class
         public static void readXML(string entityName)
         {
