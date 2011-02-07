@@ -165,8 +165,8 @@ namespace MyGame
 #if EDITOR
             var textures = SB.content.LoadContent("xml/characters");
             currentIndex = (index + textures.Count) % textures.Count;
-            Texture2D texture = TextureManager.Instance.getTexture(textures[currentIndex]);
-            Entity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
+            AnimatedEntity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
+            ent.scale2D = ent.getFrameSize();
             LevelManager.Instance.addAnimatedProp(ent);
             selectedEntity = ent;
 #endif
