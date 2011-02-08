@@ -109,11 +109,17 @@ namespace MyGame
         }
         public void rotateInX(float radians)
         {
+            Vector3 pos = world.Translation;
+            world.Translation = Vector3.Zero;
             world *= Matrix.CreateRotationX(radians);
+            world.Translation = pos;
         }
         public void rotateInY(float radians)
         {
+            Vector3 pos = world.Translation;
+            world.Translation = Vector3.Zero;
             world *= Matrix.CreateRotationY(radians);
+            world.Translation = pos;
         }
         // resets rotations
         public void resetRotation()

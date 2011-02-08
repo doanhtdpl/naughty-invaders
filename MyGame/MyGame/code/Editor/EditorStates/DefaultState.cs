@@ -136,6 +136,11 @@ namespace MyGame
                         {
                             selectedEntity.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
                         }
+                        else if (mouseState.RightButton == ButtonState.Pressed)
+                        {
+                            selectedEntity.rotateInX((mouseState.Y - lastMouseState.Y) * 0.01f);
+                            selectedEntity.rotateInY((mouseState.X - lastMouseState.X) * 0.01f);
+                        }
                     }
 
                     if (mouseState.LeftButton == ButtonState.Pressed || mouseState.RightButton == ButtonState.Pressed)
@@ -172,6 +177,18 @@ namespace MyGame
 #endif
         }
 
+        public void loadEnemy(int index)
+        {
+#if EDITOR
+            var textures = SB.content.LoadContent("xml/characters");
+            currentIndex = (index + textures.Count) % textures.Count;
+            AnimatedEntity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
+            ent.scale2D = ent.getFrameSize();
+            LevelManager.Instance.addAnimatedProp(ent);
+            selectedEntity = ent;
+#endif
+        }
+
         public void changeState(DefaultStates newState)
         {
             state = newState;
@@ -183,6 +200,10 @@ namespace MyGame
             else if (newState == DefaultStates.ADD_ANIMATED)
             {
                 loadAnimatedEntity(0);
+            }
+            else if (newState == DefaultStates.ADD_ENEMY)
+            {
+                loadEnemy(0);
             }
         }
 
