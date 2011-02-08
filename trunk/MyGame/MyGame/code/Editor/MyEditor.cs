@@ -91,6 +91,10 @@ namespace MyGame
                 {
                     ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ADD_ANIMATED);
                 }
+                else if (sender == buttonAddEnemy)
+                {
+                    ((DefaultState)currentState).changeState(DefaultState.DefaultStates.ADD_ENEMY);
+                }
                 selectButton(sender);
             }
         }
