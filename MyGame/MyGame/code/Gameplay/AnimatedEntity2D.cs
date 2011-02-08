@@ -40,6 +40,7 @@ namespace MyGame
             // assign the pointers for this instance
             actions = datas[entityName].actions;
             animatedTextures = datas[entityName].animatedTextures;
+            update();
         }
 
         public Vector2 getFrameSize()
@@ -48,7 +49,7 @@ namespace MyGame
         }
 
         // reads xml and loads textures and actions for this animated entity. Can be called from outside this class
-        public static void readXML(string entityName)
+        public void readXML(string entityName)
         {
             //XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
             XmlDocument xml = new XmlDocument();
@@ -103,7 +104,6 @@ namespace MyGame
 
                 ++textureNumber;
             }
-
             datas[entityName] = data;
         }
 

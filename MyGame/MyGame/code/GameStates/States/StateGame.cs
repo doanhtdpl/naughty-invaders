@@ -13,6 +13,11 @@ namespace MyGame
     {
         GUI gui = new GUI();
 
+        #if EDITOR
+        bool gameRunning = false;
+        bool keyPPressed = false;
+        #endif
+
         public override void initialize()
         {
             type = StateManager.tGS.Game;
@@ -53,6 +58,24 @@ namespace MyGame
         {
             base.update();
 
+#if EDITOR
+            if (Keyboard.GetState().IsKeyDown(Keys.P))
+            {
+                if (!keyPPressed)
+                {
+                    gameRunning = !gameRunning;
+                }
+                keyPPressed = true;
+            }
+            else
+            {
+                keyPPressed = false;
+            }
+            if (!gameRunning)
+            {
+                return;
+            }
+#endif
             GamerManager.updatePlayers();
             EnemyManager.Instance.update();
             LevelManager.Instance.update();
@@ -63,15 +86,6 @@ namespace MyGame
 
             if (GamerManager.getMainControls().Start_firstPressed())
                 StateManager.enqueueState(StateManager.tGS.Pause);
-
-            //if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //{
-            //    EditorHelper.Instance.saveLevelToXML("prueba1");
-            //}
-            //if (Keyboard.GetState().IsKeyDown(Keys.L))
-            //{
-            //    EditorHelper.Instance.loadLevelFromXML("E:/Proyectos/XNA/Naughty Invaders/MyGame/MyGame/bin/x86/Editor/Content/xml/levels/prueba1.xml");
-            //}
         }
         
         public override void dispose()
