@@ -9,8 +9,8 @@ namespace MyGame
     public class Grapes : Enemy
     {
 //        public Grapes()
-        public Grapes(Vector2 position, Vector2 scale, float orientation, string entityName)
-            : base(new Vector3(position.X, position.Y, 0), scale, orientation, entityName)
+        public Grapes(string entityName, Vector2 position, Vector2 scale, float orientation)
+            : base(entityName, new Vector3(position.X, position.Y, 0), scale, orientation)
 //            : base (Vector3.Zero, Vector2.Zero, 0, "woala")
         {
 

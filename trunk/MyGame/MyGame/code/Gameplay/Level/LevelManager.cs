@@ -24,7 +24,6 @@ namespace MyGame
     {
         List<Entity2D> staticProps = new List<Entity2D>();
         List<Entity2D> animatedProps = new List<Entity2D>();
-        List<sEnemyWaypoint> enemyWaypoints = new List<sEnemyWaypoint>();
 
         static LevelManager instance = null;
 
@@ -83,8 +82,6 @@ namespace MyGame
                 EntityManager.Instance.removeEntity(ae);
             }
             animatedProps.Clear();
-
-            enemyWaypoints.Clear();
         }
         public void dispose()
         {
@@ -110,17 +107,6 @@ namespace MyGame
 
         public void update()
         {
-            // if an enemy waypoint is almost entering the camera, create that new enemy
-            for(int i=0; i<enemyWaypoints.Count; ++i)
-            {
-                if (SB.cam.isVisible(enemyWaypoints[i].rectangle))
-                {
-                    EnemyManager.Instance.addEnemy(enemyWaypoints[i].name, enemyWaypoints[i].position);
-                    enemyWaypoints.RemoveAt(i);
-                    --i;
-                }
-            }
-
             foreach (AnimatedEntity2D ent in animatedProps)
             {
                 ent.update();
@@ -129,15 +115,6 @@ namespace MyGame
 
         public void render()
         {
-            //foreach (RenderableEntity2D ent in staticProps)
-            //{
-            //    ent.render();
-            //}
-
-            //foreach (AnimatedEntity2D ent in animatedProps)
-            //{
-            //    ent.render();
-            //}
         }
     }
 }
