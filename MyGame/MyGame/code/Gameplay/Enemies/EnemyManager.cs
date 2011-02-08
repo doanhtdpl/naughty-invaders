@@ -43,7 +43,7 @@ namespace MyGame
             name = name.Substring(0, 1).ToUpper() + name.Substring(1);
 
             Type t = Type.GetType("MyGame." + name);
-            Object[] args = { position, new Vector2(50, 50), 0.0f, name };
+            Object[] args = { name, position, new Vector2(50, 50), 0.0f };
 
             Object o = Activator.CreateInstance(t, args);
             // NOTE: if this line fails the problem may be inside the constructors called when creating an instance of that type
@@ -75,8 +75,22 @@ namespace MyGame
         }
         #endregion
 
+        public void updateSleepingEnemies()
+        {
+            // if an enemy waypoint is almost entering the camera, create that new enemy
+            for (int i = 0; i < enemies.Count; ++i)
+            {
+                if (!enemies[i].active && SB.cam.isVisible(enemies[i].getRectangle()))
+                {
+                    enemies[i].active = true;
+                }
+            }
+        }
+
         public void update()
         {
+            updateSleepingEnemies();
+
             nextSpawn -= SB.dt;
             if (nextSpawn < 0)
             {
@@ -89,7 +103,10 @@ namespace MyGame
 
             foreach (Enemy enemy in enemies)
             {
-                enemy.update();
+                if (enemy.active)
+                {
+                    enemy.update();
+                }
             }
         }
 

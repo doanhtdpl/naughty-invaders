@@ -99,6 +99,7 @@ namespace MyGame
         }
         #endregion
         #region XML
+        // NOTE maybe those functions can be only one passing a string with the entity to write in the xml ("staticProp", "enemy", etc)
         void writeStaticProp(XmlTextWriter writer, Entity2D entity2D)
         {
             writer.WriteStartElement("staticProp");
@@ -107,6 +108,13 @@ namespace MyGame
             writer.WriteEndElement();
         }
         void writeAnimatedProp(XmlTextWriter writer, Entity2D entity2D)
+        {
+            writer.WriteStartElement("animatedProp");
+            writer.WriteAttributeString("entityName", entity2D.entityName);
+            writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
+            writer.WriteEndElement();
+        }
+        void writeEnemy(XmlTextWriter writer, Entity2D entity2D)
         {
             writer.WriteStartElement("animatedProp");
             writer.WriteAttributeString("entityName", entity2D.entityName);
@@ -142,6 +150,15 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            // enemies
+            writer.WriteStartElement("enemies");
+            for (int i = 0; i < EnemyManager.Instance.getEnemies().Count; i++)
+            {
+                Enemy e = EnemyManager.Instance.getEnemies()[i];
+                writeEnemy(writer, e);
+            }
+            writer.WriteEndElement();
+
             // close the tag <level> and the writer
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -174,6 +191,13 @@ namespace MyGame
                         new AnimatedEntity2D(node.GetAttribute("entityName"), Vector3.Zero, Vector2.Zero, 0);
                     ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
+                }
+                nodes = xml_doc.GetElementsByTagName("enemy"); // read enemies
+                foreach (XmlElement node in nodes)
+                {
+                    Enemy e = new Enemy(node.GetAttribute("entityName"), Vector3.Zero, Vector2.Zero, 0);
+                    e.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
+                    EnemyManager.Instance.addEnemy(e);
                 }
 
                 stream.Close();
