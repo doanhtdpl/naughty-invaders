@@ -169,6 +169,8 @@ namespace MyGame
         {
             LevelManager.Instance.cleanLevel();
 
+            CameraManager.Instance.loadXMLfake();
+
             if (File.Exists(fileName))
             {
                 Stream stream = File.OpenRead(fileName);

@@ -103,6 +103,7 @@ namespace MyGame
             LevelManager.Instance.clean();
             EnemyManager.Instance.clean();
             ProjectileManager.Instance.clean();
+            CameraManager.Instance.clean();
         }
 
         public void update()
