@@ -25,6 +25,8 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
+
+
         }
         public void restartLevel()
         {
@@ -71,17 +73,20 @@ namespace MyGame
             {
                 keyPPressed = false;
             }
-            if (!gameRunning)
+            if (gameRunning)
             {
-                return;
+#endif
+                GamerManager.updatePlayers();
+                EnemyManager.Instance.update();
+                LevelManager.Instance.update();
+                ProjectileManager.Instance.update();
+                ParticleManager.Instance.update();
+                CameraManager.Instance.update();
+                gui.update();
+
+#if EDITOR
             }
 #endif
-            GamerManager.updatePlayers();
-            EnemyManager.Instance.update();
-            LevelManager.Instance.update();
-            ProjectileManager.Instance.update();
-            ParticleManager.Instance.update();
-            gui.update();
             SB.cam.update();
 
             if (GamerManager.getMainControls().Start_firstPressed())
