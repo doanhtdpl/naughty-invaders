@@ -81,7 +81,20 @@ namespace MyGame
                     loadEntity(currentIndex - 1);
                 }
             }
-            else if(keyState.GetPressedKeys().Length == 0)
+            else if (state == DefaultStates.ADD_ANIMATED)
+            {
+                if (justPressedKey(Keys.Right))
+                {
+                    LevelManager.Instance.removeAnimatedProp(selectedEntity);
+                    loadAnimatedEntity(currentIndex + 1);
+                }
+                else if (justPressedKey(Keys.Left))
+                {
+                    LevelManager.Instance.removeAnimatedProp(selectedEntity);
+                    loadAnimatedEntity(currentIndex - 1);
+                }
+            }
+            else if (keyState.GetPressedKeys().Length == 0)
             {
                 if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
                 {
