@@ -34,6 +34,13 @@ Content\GUI\menu\menu.xnb
 Content\GUI\menu\trial.xnb
 Content\textures\A.xnb
 Content\textures\test.xnb
+Content\textures\Anim_Grape.xnb
+Content\textures\Anim_Orange.xnb
+Content\textures\Anim_Pear.xnb
+Content\textures\Anim_Player.xnb
 Content\xml\characters\bob.xml
-Content\xml\characters\grapes.xml
+Content\xml\characters\grape.xml
+Content\xml\characters\orange.xml
+Content\xml\characters\pear.xml
+Content\xml\characters\player.xml
 Content\xml\levels\xmlLevelTemplate.xml

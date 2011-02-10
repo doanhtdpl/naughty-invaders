@@ -72,10 +72,10 @@ namespace MyGame
                 animatedTexture.columns = int.Parse(animatedTextureNode.GetAttribute("columns"));
                 animatedTexture.rows = int.Parse(animatedTextureNode.GetAttribute("rows"));
 
-                float width = animatedTexture.columns * animatedTexture.frameWidth;
-                float height = animatedTexture.rows * animatedTexture.frameHeight;
-                animatedTexture.frameWidthUV = (width / animatedTexture.columns) / width;
-                animatedTexture.frameHeightUV = (height / animatedTexture.rows) / height;
+                float width = animatedTexture.texture.Width;
+                float height = animatedTexture.texture.Height;
+                animatedTexture.frameWidthUV = animatedTexture.frameWidth / width;
+                animatedTexture.frameHeightUV = animatedTexture.frameHeight / height;
 
                 XmlNodeList actionList = animatedTextureNode.GetElementsByTagName("action");
                 foreach (XmlElement actionNode in actionList)
