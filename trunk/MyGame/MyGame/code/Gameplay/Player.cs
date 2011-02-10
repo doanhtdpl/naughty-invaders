@@ -27,6 +27,8 @@ namespace MyGame
         {
             base.update();
 
+            position += CameraManager.Instance.getCameraVelocityXY();
+
             cooldownTime -= SB.dt;
             position2D += controls.LS * SB.dt * SPEED;
             orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));

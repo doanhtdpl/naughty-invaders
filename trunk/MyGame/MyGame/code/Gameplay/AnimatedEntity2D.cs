@@ -17,7 +17,7 @@ namespace MyGame
     public class AnimatedEntity2D : MovingEntity2D
     {
         // animations
-        protected string newActionState = "";
+        protected string newActionState = "idle";
         string actionState = "idle";
         float actionTimer = 0.0f;
         int currentTextureId = 0;
