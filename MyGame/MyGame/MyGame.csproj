@@ -134,7 +134,7 @@
     <Compile Include="code\Camera\CameraManager.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
-    <Compile Include="code\Gameplay\Enemies\Grapes.cs" />
+    <Compile Include="code\Gameplay\Enemies\Grape.cs" />
     <Compile Include="code\Gameplay\MovingEntity2D.cs" />
     <Compile Include="code\Gameplay\RenderableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Enemy.cs" />

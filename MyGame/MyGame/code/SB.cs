@@ -28,6 +28,7 @@ namespace MyGame
 
         public static void loadContent()
         {
+            content.RootDirectory = "Content";
             spriteBatch = new SpriteBatch(graphicsDevice);
             font = content.Load<SpriteFont>("fonts/font");
             worldZero = Matrix.CreateTranslation(new Vector3(0, 0, -5));

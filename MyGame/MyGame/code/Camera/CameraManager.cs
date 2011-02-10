@@ -28,11 +28,22 @@ namespace MyGame
         NetworkNode<Vector3> nextNode;
         Network<Vector3> cameraNodes = new Network<Vector3>();
 
+        Vector3 lastFramePosition;
+        Vector3 currentFramePosition;
+
+        // returns the vector in the XY plane with origin in the last frmae camera position and ending in the current frame camera position
+        public Vector3 getCameraVelocityXY()
+        {
+            Vector3 velocity = currentFramePosition - lastFramePosition;
+            velocity.Z = 0.0f;
+            return velocity;
+        }
+
         public void loadXMLfake()
         {
             NetworkNode<Vector3> first = new NetworkNode<Vector3>(Vector3.Zero);
-            NetworkNode<Vector3> second = new NetworkNode<Vector3>(new Vector3(0, 2000, 0));
-            NetworkNode<Vector3> third = new NetworkNode<Vector3>(new Vector3(1000, 2000, 0));
+            NetworkNode<Vector3> second = new NetworkNode<Vector3>(new Vector3(0, 20000, 0));
+            NetworkNode<Vector3> third = new NetworkNode<Vector3>(new Vector3(10000, 20000, 0));
             first.addLinkedNode(second);
             second.addLinkedNode(third);
             cameraNodes.addNode(first);
@@ -45,6 +56,9 @@ namespace MyGame
         public void update()
         {
             if (currentNode == null || nextNode == null) return;
+
+            // update last frame position
+            lastFramePosition = currentFramePosition;
 
             float cameraSpeed = 100.0f;
             Vector3 targetPosition = nextNode.value;
@@ -79,6 +93,9 @@ namespace MyGame
             {
                 Camera2D.position += direction * distanceToAdvance;
             }
+
+            // update current frame position
+            currentFramePosition = Camera2D.position;
         }
 
         public void clean()

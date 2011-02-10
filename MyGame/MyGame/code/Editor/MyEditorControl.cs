@@ -57,7 +57,7 @@ namespace MyGame
             SB.cam = new Camera2D();
             Screen.aspect = (float)SB.width / (float)SB.height;
             Camera2D.projection = Matrix.CreatePerspectiveFieldOfView(Microsoft.Xna.Framework.MathHelper.ToRadians(45), Screen.aspect, 1, 10000000);
-            SB.cam.init(800);
+            SB.cam.init(1000);
 
             //Load Content
             SB.loadContent();
