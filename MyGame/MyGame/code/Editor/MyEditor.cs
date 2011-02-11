@@ -118,6 +118,7 @@ namespace MyGame
             fileDialog.InitialDirectory = fullPath;
             fileDialog.Title = "Save Level";
             fileDialog.Filter = "Level files (*.xml)|*.xml";
+            fileDialog.RestoreDirectory = true;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -136,6 +137,7 @@ namespace MyGame
             fileDialog.Title = "Save Level";
             fileDialog.Filter = "Level files (*.xml)|*.xml";
             fileDialog.CheckFileExists = false;
+            fileDialog.RestoreDirectory = true;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
