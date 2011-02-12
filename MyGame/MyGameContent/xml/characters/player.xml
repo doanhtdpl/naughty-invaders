@@ -2,7 +2,7 @@
 <character>
   <animatedTexture name="Anim_Player" frameWidth="160" frameHeight="160" columns="6" rows="6">
     <action name="attack" initialFrame="1" endFrame="9" loops="false"/>
-    <action name="die" initialFrame="10" endFrame="20" loops="false"/>
+    <action name="die" initialFrame="10" endFrame="20" FPS="15" loops="false"/>
     <action name="idle" initialFrame="24" endFrame="36" loops="true"/>
   </animatedTexture>
 </character>

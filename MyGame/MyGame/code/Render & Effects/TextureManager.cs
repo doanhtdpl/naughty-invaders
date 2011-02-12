@@ -28,16 +28,20 @@ namespace MyGame
 
         Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
 
-        public Texture2D getTexture(string name)
+        public Texture2D getTexture(string path)
         {
-            if (textures.ContainsKey(name))
+            if (textures.ContainsKey(path))
             {
-                return textures[name];
+                return textures[path];
             }
 
-            Texture2D texture = SB.content.Load<Texture2D>("textures/" + name);
-            textures[name] = texture;
+            Texture2D texture = SB.content.Load<Texture2D>("textures/" + path);
+            textures[path] = texture;
             return texture;
+        }
+        public Texture2D getTexture(string textureFolder, string name)
+        {
+            return getTexture(textureFolder + "/" + name);
         }
 
         public Texture2D getColoredTexture(Color color)

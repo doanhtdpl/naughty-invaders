@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character>
+  <animatedTexture name="Anim_GrapeWeapon" frameWidth="102.4" frameHeight="102.4" columns="5" rows="5">
+    <action name="start" initialFrame="1" endFrame="2" loops="false"/>
+    <action name="idle" initialFrame="3" endFrame="4" loops="true"/>
+    <action name="die" initialFrame="5" endFrame="8" loops="false"/>
+  </animatedTexture>
+</character>

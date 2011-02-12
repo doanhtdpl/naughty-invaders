@@ -17,7 +17,7 @@ namespace MyGame
     public class AnimatedEntity2D : MovingEntity2D
     {
         // animations
-        protected string newActionState = "idle";
+        string newActionState = "idle";
         string actionState = "idle";
         float actionTimer = 0.0f;
         int currentTextureId = 0;
@@ -29,18 +29,21 @@ namespace MyGame
         Dictionary<string, AnimationAction> actions;
         List<AnimatedTexture> animatedTextures;
 
-        public AnimatedEntity2D(string entityName, Vector3 position, Vector2 scale, float orientation)
-            : base(entityName, position, scale, orientation)
+        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation)
+            : base(entityName, position, orientation)
         {
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))
             {
-                readXML(entityName);
+                readXML(entityFolder, entityName);
             }
+
             // assign the pointers for this instance
             actions = datas[entityName].actions;
             animatedTextures = datas[entityName].animatedTextures;
             update();
+
+            scale2D = getFrameSize();
         }
 
         public Vector2 getFrameSize()
@@ -48,12 +51,17 @@ namespace MyGame
             return new Vector2(animatedTextures[0].frameWidth, animatedTextures[0].frameHeight);
         }
 
+        public void playAction(string newAction)
+        {
+            newActionState = newAction;
+        }
+
         // reads xml and loads textures and actions for this animated entity. Can be called from outside this class
-        public void readXML(string entityName)
+        public void readXML(string entityFolder, string entityName)
         {
             //XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
             XmlDocument xml = new XmlDocument();
-            xml.Load(SB.content.RootDirectory + "/xml/characters/" + entityName + ".xml");
+            xml.Load(SB.content.RootDirectory + "/xml/" + entityFolder + "/" + entityName + ".xml");
 
             // read all the animatedTextures and actions of the character
             XmlNodeList animatedTextureList = xml.GetElementsByTagName("animatedTexture");
@@ -66,9 +74,9 @@ namespace MyGame
                 AnimatedTexture animatedTexture = new AnimatedTexture();
                 animatedTexture.id = textureNumber;
                 string textureName = animatedTextureNode.GetAttribute("name");
-                animatedTexture.texture = TextureManager.Instance.getTexture(textureName);
-                animatedTexture.frameWidth = int.Parse(animatedTextureNode.GetAttribute("frameWidth"));
-                animatedTexture.frameHeight = int.Parse(animatedTextureNode.GetAttribute("frameHeight"));
+                animatedTexture.texture = TextureManager.Instance.getTexture(entityFolder, textureName);
+                animatedTexture.frameWidth = animatedTextureNode.GetAttribute("frameWidth").toFloat();
+                animatedTexture.frameHeight = animatedTextureNode.GetAttribute("frameHeight").toFloat();
                 animatedTexture.columns = int.Parse(animatedTextureNode.GetAttribute("columns"));
                 animatedTexture.rows = int.Parse(animatedTextureNode.GetAttribute("rows"));
 

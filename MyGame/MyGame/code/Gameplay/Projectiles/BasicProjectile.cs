@@ -8,8 +8,10 @@ namespace MyGame
 {
     class BasicProjectile : Projectile
     {
-        //public BasicProjectile(float damage, int lifes, tTeam team) : base(damage, lifes, team) { }
-        public BasicProjectile(Vector3 position, Vector2 scale, float orientation )
-            : base(position, scale, orientation, "basicProjectile", 100, 100, 1, 0.2f, tTeam.Players) { }
+        public BasicProjectile(string name, Vector3 position, Vector2 scale, float orientation, Vector2 direction )
+            : base(name, position, scale, orientation, direction, 100, 500, 1, 0.2f, tTeam.Players)
+        {
+            playAction("start");
+        }
     }
 }

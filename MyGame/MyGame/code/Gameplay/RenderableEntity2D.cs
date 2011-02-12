@@ -20,10 +20,11 @@ namespace MyGame
             get { return texture; }
         }
 
-        public RenderableEntity2D(string textureName, Vector3 position, Vector2 scale, float orientation)
-            : base(textureName, position, scale, orientation)
+        public RenderableEntity2D( string entityFolder, string textureName, Vector3 position, float orientation)
+            : base(textureName, position, orientation)
         {
-            this.texture = TextureManager.Instance.getTexture(textureName);
+            this.texture = TextureManager.Instance.getTexture(entityFolder, textureName);
+            scale2D = new Vector2(this.texture.Width, this.texture.Height);
         }
 
         public override void update()

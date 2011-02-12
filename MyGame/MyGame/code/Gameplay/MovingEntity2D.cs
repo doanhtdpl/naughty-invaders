@@ -24,8 +24,8 @@ namespace MyGame
             set { accelerationVector.X = value.X; accelerationVector.Y = value.Y; }
         }
 
-        public MovingEntity2D(string entityName, Vector3 position, Vector2 scale, float orientation)
-            : base(entityName, position, scale, orientation)
+        public MovingEntity2D(string entityName, Vector3 position, float orientation)
+            : base(entityName, position, orientation)
         {
             direction = Vector3.Zero;
             acceleration = Vector3.Zero;

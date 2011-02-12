@@ -15,7 +15,7 @@ namespace MyGame
         float nextAttackTimer;
 
         public Grape(Vector2 position, Vector2 scale, float orientation)
-            : base("grape", new Vector3(position.X, position.Y, 0), scale, orientation)
+            : base("grape", new Vector3(position.X, position.Y, 0), orientation)
         {
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
@@ -42,7 +42,7 @@ namespace MyGame
             }
             if (nextAttackTimer < 0)
             {
-                newActionState = "attack";
+                playAction("attack");
                 nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
             }
             if (movingTimer < 0)

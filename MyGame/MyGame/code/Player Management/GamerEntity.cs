@@ -54,7 +54,7 @@ namespace MyGame
 
         public void createPlayer()
         {
-            player = new Player(Vector3.Zero, new Vector2(50, 50), 0, "bob");
+            player = new Player("player", Vector3.Zero, 0);
         }
 
         public void updateInput()
