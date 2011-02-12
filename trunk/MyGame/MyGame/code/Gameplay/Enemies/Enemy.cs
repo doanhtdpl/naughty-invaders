@@ -10,8 +10,8 @@ namespace MyGame
     {
         public bool active { get; set; }
 
-        public Enemy(string entityName, Vector3 position, Vector2 scale, float orientation)
-            : base(entityName, position, scale, orientation)
+        public Enemy(string entityName, Vector3 position, float orientation)
+            : base("enemies", entityName, position, orientation)
         {
             active = false;
         }

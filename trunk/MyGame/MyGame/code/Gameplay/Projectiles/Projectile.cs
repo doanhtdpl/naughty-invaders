@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class Projectile : MovingEntity2D
+    class Projectile : AnimatedEntity2D
     {
         public float damage { set; get; }
         public float speed { set; get; }
@@ -18,10 +18,12 @@ namespace MyGame
         public enum tTeam { Players, Enemies };
         public tTeam team { set; get; }
 
-        public Projectile(Vector3 position, Vector2 scale, float orientation, string name, float damage, float speed, int lifes, float cooldown, tTeam team):base(name, position, scale, orientation)
+        public Projectile(string name, Vector3 position, Vector2 scale, float orientation, Vector2 direction, float damage, float speed, int lifes, float cooldown, tTeam team):base("projectiles", name, position, orientation)
         {
+            entityName = name;
             remove = false;
             active = true;
+            this.direction2D = direction;
             this.damage = damage;
             this.speed = speed;
             this.lifes = lifes;
@@ -31,12 +33,13 @@ namespace MyGame
 
         public override void update()
         {
-            position = new Vector3(position.X, position.Y + speed * SB.dt, 0);
+            base.update();
+            position2D += direction2D * speed * SB.dt;
         }
 
         public override void render()
         {
-            TextureManager.Instance.getTexture("A").render(worldMatrix);
+            base.render();
         }
 
         // returns true if projectile dies

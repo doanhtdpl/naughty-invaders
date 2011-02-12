@@ -94,6 +94,19 @@ namespace MyGame
                     loadAnimatedEntity(currentIndex - 1);
                 }
             }
+            else if (state == DefaultStates.ADD_ENEMY)
+            {
+                if (justPressedKey(Keys.Right))
+                {
+                    EnemyManager.Instance.removeEnemy(selectedEntity);
+                    loadAnimatedEntity(currentIndex + 1);
+                }
+                else if (justPressedKey(Keys.Left))
+                {
+                    LevelManager.Instance.removeAnimatedProp(selectedEntity);
+                    loadAnimatedEntity(currentIndex - 1);
+                }
+            }
             else if (keyState.GetPressedKeys().Length == 0)
             {
                 if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
@@ -101,11 +114,16 @@ namespace MyGame
                     if (isPosInScreen(gameScreenPos))
                     {
                         Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
-                        selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
+                        selectedEntity = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
 
                         if (selectedEntity == null)
                         {
                             selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
+                        }
+
+                        if (selectedEntity == null)
+                        {
+                            selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
                         }
 
                         if (selectedEntity != null)
@@ -169,10 +187,12 @@ namespace MyGame
         public void loadEntity(int index)
         {
 #if EDITOR
-            var textures = SB.content.LoadContent("textures");
+            var textures = SB.content.LoadContent("textures/staticProps");
             currentIndex = (index + textures.Count) % textures.Count;
-            Texture2D texture = TextureManager.Instance.getTexture(textures[currentIndex]);
-            Entity2D ent = new RenderableEntity2D(textures[currentIndex], new Vector3(), new Vector2(texture.Width, texture.Height), 0);
+            Texture2D texture = TextureManager.Instance.getTexture("staticProps", textures[currentIndex]);
+            Vector3 position = Camera2D.position;
+            position.Z = 0.0f;
+            Entity2D ent = new RenderableEntity2D("staticProps", textures[currentIndex], position, 0);
             LevelManager.Instance.addStaticProp(ent);
             selectedEntity = ent;
 #endif
@@ -181,10 +201,11 @@ namespace MyGame
         public void loadAnimatedEntity(int index)
         {
 #if EDITOR
-            var textures = SB.content.LoadContent("xml/characters");
+            var textures = SB.content.LoadContent("xml/animatedProps");
             currentIndex = (index + textures.Count) % textures.Count;
-            AnimatedEntity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
-            ent.scale2D = ent.getFrameSize();
+            Vector3 position = Camera2D.position;
+            position.Z = 0.0f;
+            AnimatedEntity2D ent = new AnimatedEntity2D("animatedProps", textures[currentIndex], position, 0);
             LevelManager.Instance.addAnimatedProp(ent);
             selectedEntity = ent;
 #endif
@@ -193,11 +214,12 @@ namespace MyGame
         public void loadEnemy(int index)
         {
 #if EDITOR
-            var textures = SB.content.LoadContent("xml/characters");
+            var textures = SB.content.LoadContent("xml/enemies");
             currentIndex = (index + textures.Count) % textures.Count;
-            AnimatedEntity2D ent = new AnimatedEntity2D(textures[currentIndex], new Vector3(), new Vector2(100, 100), 0);
-            ent.scale2D = ent.getFrameSize();
-            LevelManager.Instance.addAnimatedProp(ent);
+            Vector3 position = Camera2D.position;
+            position.Z = 0.0f;
+            Enemy ent = new Enemy(textures[currentIndex], position, 0);
+            EnemyManager.Instance.addEnemy(ent);
             selectedEntity = ent;
 #endif
         }

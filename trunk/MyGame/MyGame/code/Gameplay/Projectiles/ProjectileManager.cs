@@ -55,7 +55,7 @@ namespace MyGame
         {
             bool breakOuter = false;
             Rectangle projectileRectangle;
-            List<Enemy> enemies = EnemyManager.Instance.getEnemies();
+            List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
 
             for (int i = 0; i < projectiles.Count; ++i)
             {
@@ -72,13 +72,13 @@ namespace MyGame
                 {
                     for (int j = 0; j < enemies.Count; ++j)
                     {
-                        if (enemies[j].getRectangle().Intersects(projectileRectangle))
+                        Enemy e = (Enemy)enemies[j];
+                        if (e.getRectangle().Intersects(projectileRectangle))
                         {
                             // the enemy get hit!
-                            if (enemies[j].getsHit())
+                            if (e.getsHit())
                             {
                                 EnemyManager.Instance.removeEnemy(j);
-                                enemies.RemoveAt(j);
                                 --j;
                                 break;
                             }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character>
+  <animatedTexture name="Anim_PearWeapon" frameWidth="102.4" frameHeight="102.4" columns="5" rows="5">
+    <action name="start" initialFrame="1" endFrame="10" loops="false"/>
+    <action name="idle" initialFrame="11" endFrame="14" loops="true"/>
+    <action name="die" initialFrame="15" endFrame="24" loops="false"/>
+  </animatedTexture>
+</character>

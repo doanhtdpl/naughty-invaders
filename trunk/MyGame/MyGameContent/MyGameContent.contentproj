@@ -217,35 +217,50 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\A.tga">
+    <Compile Include="textures\staticProps\A.tga">
       <Name>A</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\test.tga">
+    <Compile Include="textures\animatedProps\test.tga">
       <Name>test</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Anim_Grape.tga">
+    <Compile Include="textures\enemies\Anim_Grape.tga">
       <Name>Anim_Grape</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Anim_Orange.tga">
+    <Compile Include="textures\enemies\Anim_Orange.tga">
       <Name>Anim_Orange</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Anim_Pear.tga">
+    <Compile Include="textures\enemies\Anim_Pear.tga">
       <Name>Anim_Pear</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\Anim_Player.tga">
+    <Compile Include="textures\characters\Anim_Player.tga">
       <Name>Anim_Player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\projectiles\Anim_GrapeWeapon.tga">
+      <Name>Anim_GrapeWeapon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\projectiles\Anim_PearWeapon.tga">
+      <Name>Anim_PearWeapon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\projectiles\Anim_PlayerWeapon.tga">
+      <Name>Anim_PlayerWeapon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -265,20 +280,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\characters\grape.xml">
+    <None Include="xml\enemies\grape.xml">
       <Name>grape</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="xml\characters\orange.xml">
+    <None Include="xml\enemies\orange.xml">
       <Name>orange</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="xml\characters\pear.xml">
+    <None Include="xml\enemies\pear.xml">
       <Name>pear</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -289,6 +304,38 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\projectiles\playerProjectile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>playerProjectile</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\animatedProps\test.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>test</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\projectiles\grapeProjectile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>grapeProjectile</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\projectiles\pearProjectile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>pearProjectile</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -9,7 +9,7 @@ namespace MyGame
 {
     class EnemyManager
     {
-        List<Enemy> enemies = new List<Enemy>();
+        List<Entity2D> enemies = new List<Entity2D>();
         float nextSpawn = 0;
 
         static EnemyManager instance = null;
@@ -50,6 +50,11 @@ namespace MyGame
 
             enemies.Add((Enemy)o);
         }
+        public void removeEnemy(Entity2D e)
+        {
+            EntityManager.Instance.removeEntity(e);
+            enemies.Remove(e);
+        }
         public void removeEnemy(int i)
         {
             EntityManager.Instance.removeEntity(enemies[i]);
@@ -69,7 +74,7 @@ namespace MyGame
         {
             clean();
         }
-        public List<Enemy> getEnemies()
+        public List<Entity2D> getEnemies()
         {
             return enemies;
         }
@@ -80,9 +85,10 @@ namespace MyGame
             // if an enemy waypoint is almost entering the camera, create that new enemy
             for (int i = 0; i < enemies.Count; ++i)
             {
-                if (!enemies[i].active && SB.cam.isVisible(enemies[i].getRectangle()))
+                Enemy e = (Enemy)enemies[i];
+                if (!e.active && SB.cam.isVisible(enemies[i].getRectangle()))
                 {
-                    enemies[i].active = true;
+                    e.active = true;
                 }
             }
         }

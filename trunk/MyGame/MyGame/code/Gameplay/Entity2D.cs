@@ -91,14 +91,15 @@ namespace MyGame
         }
 
         // public constructors
-        public Entity2D(string entityName, Vector3 position, Vector2 scale, float orientation)
+        public Entity2D(string entityName, Vector3 position, float orientation)
         {
             this.entityName = entityName;
             position.Z += Calc.randomScalar(-0.02f, 0.02f);
-            initializeWorldMatrix2D(position, scale, orientation);
+
+            initializeWorldMatrix2D(position, scale2D, orientation);
             EntityManager.Instance.registerEntity(this);
         }
-        public Entity2D(string entityName) : this(entityName, Vector3.Zero, Vector2.Zero, 0) { }
+        public Entity2D(string entityName) : this(entityName, Vector3.Zero, 0) { }
 
         // initialize the world matrix, must be called at the creation of each entity
         public void initializeWorldMatrix2D(Vector3 position, Vector2 scale, float orientation)
