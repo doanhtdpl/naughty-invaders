@@ -216,10 +216,9 @@ namespace MyGame
 #if EDITOR
             var textures = SB.content.LoadContent("xml/enemies");
             currentIndex = (index + textures.Count) % textures.Count;
-            Vector3 position = Camera2D.position;
-            position.Z = 0.0f;
-            Enemy ent = new Enemy(textures[currentIndex], position, 0);
-            EnemyManager.Instance.addEnemy(ent);
+            Vector2 position = new Vector2(Camera2D.position.X, Camera2D.position.Y);
+            
+            Entity2D ent = EnemyManager.Instance.addEnemy(textures[currentIndex], position);
             selectedEntity = ent;
 #endif
         }

@@ -115,8 +115,14 @@ namespace MyGame
             datas[entityName] = data;
         }
 
+        public void die()
+        {
+            playAction("die");
+            active = false;
+        }
+
         const float FRAME_TIME = 0.2f;
-        public override void update()
+        public override bool update()
         {
             // if there is a new action, change it and reset variables
             if (newActionState != "")
@@ -142,6 +148,12 @@ namespace MyGame
                 // if the action doesnt loop, go to idle
                 if (!action.loops)
                 {
+                    // if the animation played was die, delete the entity
+                    if (actionState == "die")
+                    {
+                        delete();
+                        return true;
+                    }
                     actionState = "idle";
                     action = actions[actionState];
                     currentTextureId = action.textureId;
@@ -150,6 +162,7 @@ namespace MyGame
 
             // calculated the current frame relative to 0, we need to transpose to the real animations initial frame
             currentFrame += action.initialFrame;
+            return false;
         }
 
         public override void render()
@@ -167,6 +180,11 @@ namespace MyGame
             Vector2 endingUVs = new Vector2( (frameWidthUV) * (x + 1), (frameHeightUV) * (y + 1));
 
             animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs);
+        }
+
+        public virtual void delete()
+        {
+            EntityManager.Instance.removeEntity(this);
         }
     }
 }

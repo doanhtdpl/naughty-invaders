@@ -8,17 +8,30 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
-    class Player : AnimatedEntity2D
+    class Player : CollidableEntity2D
     {
         public const float SPEED = 300;
 
         float cooldownTime = 0.0f;
-
-        bool selected = false;
+        float life = 50.0f;
 
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation)
         {
+            active = true;
+            setCollisions();
+        }
+
+        public override void setCollisions()
+        {
+            addCollision(new Vector2(0, 0), 40);
+        }
+
+        public override bool gotHitAtPart(int partIndex, float damage)
+        {
+            life -= damage;
+            //playAction("gotHit");
+            return life > 0;
         }
 
         public void update(ControlPad controls)
@@ -34,7 +47,7 @@ namespace MyGame
             if (controls.X_pressed() && cooldownTime <= 0.0f)
             {
                 playAction("attack");
-                Projectile p = new BasicProjectile("playerProjectile", position, new Vector2(50, 50), orientation, Vector2.UnitY);
+                Projectile p = new PlayerProjectile(position);
                 cooldownTime = p.cooldown;
                 ProjectileManager.Instance.addProjectile(p);
             }

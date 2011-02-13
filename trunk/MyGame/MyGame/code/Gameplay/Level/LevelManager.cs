@@ -25,6 +25,8 @@ namespace MyGame
         List<Entity2D> staticProps = new List<Entity2D>();
         List<Entity2D> animatedProps = new List<Entity2D>();
 
+        List<CoolizionLine> levelCollisions = new List<CoolizionLine>();
+
         static LevelManager instance = null;
 
         LevelManager()
@@ -82,6 +84,8 @@ namespace MyGame
                 EntityManager.Instance.removeEntity(ae);
             }
             animatedProps.Clear();
+
+            levelCollisions.Clear();
         }
         public void dispose()
         {

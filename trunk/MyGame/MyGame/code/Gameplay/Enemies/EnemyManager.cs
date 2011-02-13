@@ -35,7 +35,7 @@ namespace MyGame
         {
             enemies.Add(e);
         }
-        public void addEnemy(string name, Vector2 position)
+        public Entity2D addEnemy(string name, Vector2 position)
         {
             Assembly assem = Assembly.GetExecutingAssembly();
             
@@ -43,12 +43,13 @@ namespace MyGame
             name = name.Substring(0, 1).ToUpper() + name.Substring(1);
 
             Type t = Type.GetType("MyGame." + name);
-            Object[] args = { name, position, new Vector2(50, 50), 0.0f };
+            Object[] args = { position, 0.0f };
 
             Object o = Activator.CreateInstance(t, args);
             // NOTE: if this line fails the problem may be inside the constructors called when creating an instance of that type
-
-            enemies.Add((Enemy)o);
+            Enemy e = (Enemy)o;
+            enemies.Add(e);
+            return e;
         }
         public void removeEnemy(Entity2D e)
         {
