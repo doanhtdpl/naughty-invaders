@@ -67,9 +67,9 @@ namespace MyGame
             return true;
         }
 
-        public override bool update()
+        public override void update()
         {
-            return base.update();
+            base.update();
         }
         public override void render()
         {

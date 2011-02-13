@@ -11,7 +11,7 @@ namespace MyGame
         public Enemy(string entityName, Vector3 position, float orientation)
             : base("enemies", entityName, position, orientation)
         {
-            active = false;
+            state = Entity2D.tEntityState.Waiting;
         }
 
         public override void setCollisions()
@@ -24,9 +24,9 @@ namespace MyGame
             return true;
         }
 
-        public override bool update()
+        public override void update()
         {
-            return base.update();
+            base.update();
         }
 
         public override void render()
@@ -38,6 +38,11 @@ namespace MyGame
         {
             EnemyManager.Instance.removeEnemy(this);
             base.delete();
+        }
+        public override void requestDelete()
+        {
+            base.requestDelete();
+            EnemyManager.Instance.requestDeleteOf(this);
         }
     }
 }

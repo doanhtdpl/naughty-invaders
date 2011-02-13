@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<level>
+  <staticProps>
+    <staticProp entityName="Background_Level01" worldMatrix="1904.991 0 0 0 0 3463.986 0 0 0 0 1 0 -163 158 -8.009735 1" />
+  </staticProps>
+  <animatedProps />
+  <enemies>
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -465 2054.26 -0.002333747 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -440 2387.86 0.006527972 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -113 2244.88 0.01469513 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -214 2386.78 -0.01082105 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 11 2387.88 0.01712883 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -202 2058.64 -0.003383805 1" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -327 2233.62 -0.01926169 1" />
+  </enemies>
+</level>

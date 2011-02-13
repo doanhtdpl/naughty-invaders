@@ -14,8 +14,8 @@ namespace MyGame
         float movingTimer;
         float nextAttackTimer;
 
-        public Grape(Vector2 position, float orientation)
-            : base("grape", new Vector3(position.X, position.Y, 0), orientation)
+        public Grape(Vector3 position, float orientation)
+            : base("grape", position, orientation)
         {
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);

@@ -8,8 +8,9 @@ namespace MyGame
 {
     public class Entity2D
     {
+        public enum tEntityState { Active, Waiting, Dying, ToDelete }
         public string entityName { set; get; }
-        public bool active { get; set; }
+        public tEntityState state { get; set; }
 
         Matrix world;
         public Matrix worldMatrix

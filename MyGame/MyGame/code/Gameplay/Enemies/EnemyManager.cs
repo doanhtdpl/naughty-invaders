@@ -10,6 +10,7 @@ namespace MyGame
     class EnemyManager
     {
         List<Entity2D> enemies = new List<Entity2D>();
+        List<Enemy> enemiesToDelete = new List<Enemy>();
         float nextSpawn = 0;
 
         static EnemyManager instance = null;
@@ -35,10 +36,10 @@ namespace MyGame
         {
             enemies.Add(e);
         }
-        public Entity2D addEnemy(string name, Vector2 position)
+        public Entity2D addEnemy(string name, Vector3 position)
         {
             Assembly assem = Assembly.GetExecutingAssembly();
-            
+
             // convert to the class format (first char is upper)
             name = name.Substring(0, 1).ToUpper() + name.Substring(1);
 
@@ -61,7 +62,10 @@ namespace MyGame
             EntityManager.Instance.removeEntity(enemies[i]);
             enemies.RemoveAt(i);
         }
-
+        public void requestDeleteOf(Enemy e)
+        {
+            enemiesToDelete.Add(e);
+        }
         public void clean()
         {
             foreach (Enemy e in enemies)
@@ -87,13 +91,19 @@ namespace MyGame
             for (int i = 0; i < enemies.Count; ++i)
             {
                 Enemy e = (Enemy)enemies[i];
-                if (!e.active && SB.cam.isVisible(enemies[i].getRectangle()))
+                if (e.state == Entity2D.tEntityState.Waiting && SB.cam.isVisible(enemies[i].getRectangle()))
                 {
-                    e.active = true;
+                    e.state = Entity2D.tEntityState.Active;
                 }
             }
         }
-
+        public void deleteEnemiesToDelete()
+        {
+            for (int i = 0; i < enemiesToDelete.Count; ++i)
+            {
+                enemiesToDelete[i].delete();
+            }
+        }
         public void update()
         {
             updateSleepingEnemies();
@@ -110,11 +120,12 @@ namespace MyGame
 
             foreach (Enemy enemy in enemies)
             {
-                if (enemy.active)
+                if (enemy.state != Entity2D.tEntityState.Waiting)
                 {
                     enemy.update();
                 }
             }
+            deleteEnemiesToDelete();
         }
 
         public void render()

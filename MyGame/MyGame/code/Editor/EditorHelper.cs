@@ -116,7 +116,7 @@ namespace MyGame
         }
         void writeEnemy(XmlTextWriter writer, Entity2D entity2D)
         {
-            writer.WriteStartElement("animatedProp");
+            writer.WriteStartElement("enemy");
             writer.WriteAttributeString("entityName", entity2D.entityName);
             writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
             writer.WriteEndElement();
@@ -169,6 +169,8 @@ namespace MyGame
         {
             LevelManager.Instance.cleanLevel();
 
+            GamerManager.getGamerEntities()[0].createPlayer();
+
             // FAKE LOADING
             CameraManager.Instance.loadXMLfake();
             // END FAKE LOADING
@@ -192,16 +194,16 @@ namespace MyGame
                 foreach (XmlElement node in nodes)
                 {
                     AnimatedEntity2D ae =
-                        new AnimatedEntity2D("animatedProp", node.GetAttribute("entityName"), Vector3.Zero, 0);
+                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
                     ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
                 }
                 nodes = xml_doc.GetElementsByTagName("enemy"); // read enemies
                 foreach (XmlElement node in nodes)
                 {
-                    Enemy e = new Enemy(node.GetAttribute("entityName"), Vector3.Zero, 0);
-                    e.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
-                    EnemyManager.Instance.addEnemy(e);
+                    string name = node.GetAttribute("entityName");
+                    Matrix world = node.GetAttribute("worldMatrix").toMatrix();
+                    EnemyManager.Instance.addEnemy(name, world.Translation);
                 }
 
                 stream.Close();
