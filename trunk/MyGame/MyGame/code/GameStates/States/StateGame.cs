@@ -42,7 +42,7 @@ namespace MyGame
 
         public override void render()
         {
-            SB.graphicsDevice.Clear(Color.DarkGray);
+            SB.graphicsDevice.Clear(new Color(79, 98, 37));
             SB.beginRender();
             GamerManager.renderPlayers();
             EntityManager.Instance.render();

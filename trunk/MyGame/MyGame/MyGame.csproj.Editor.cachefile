@@ -41,6 +41,7 @@ Content\textures\characters\Anim_Player.xnb
 Content\textures\projectiles\Anim_GrapeWeapon.xnb
 Content\textures\projectiles\Anim_PearWeapon.xnb
 Content\textures\projectiles\Anim_PlayerWeapon.xnb
+Content\textures\staticProps\Background_Level01.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml

@@ -21,7 +21,7 @@ namespace MyGame
         {
             entityName = name;
             remove = false;
-            active = true;
+            state = tEntityState.Active;
             this.direction2D = direction;
             this.damage = damage;
             this.speed = speed;
@@ -57,6 +57,11 @@ namespace MyGame
         {
             ProjectileManager.Instance.removeProjectile(this);
             base.delete();
+        }
+        public override void requestDelete()
+        {
+            base.requestDelete();
+            ProjectileManager.Instance.requestDeleteOf(this);
         }
     }
 }

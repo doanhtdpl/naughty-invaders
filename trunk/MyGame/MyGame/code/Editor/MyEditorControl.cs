@@ -98,7 +98,7 @@ namespace MyGame
             UpdateGameTime();
 
             //Render
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //GraphicsDevice.Clear(new Color(79, 98, 37));
             MyEditor.Instance.render();
             stateManager.render();
         }

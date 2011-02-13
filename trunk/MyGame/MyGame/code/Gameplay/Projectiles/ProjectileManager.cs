@@ -26,6 +26,7 @@ namespace MyGame
         }
 
         List<Entity2D> projectiles = new List<Entity2D>();
+        List<Projectile> projectilesToDelete = new List<Projectile>();
 
         #region ENTITY MANAGEMENT
         public void addProjectile(Projectile p)
@@ -54,18 +55,27 @@ namespace MyGame
         {
             clean();
         }
+        public void requestDeleteOf(Projectile p)
+        {
+            projectilesToDelete.Add(p);
+        }
         #endregion
 
+        public void deleteProjectilesToDelete()
+        {
+            for (int i = 0; i < projectilesToDelete.Count; ++i)
+            {
+                projectilesToDelete[i].delete();
+            }
+        }
         public void update()
         {
-            Rectangle projectileRectangle;
             List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
-
             for (int i = 0; i < projectiles.Count; ++i)
             {
                 Projectile p = (Projectile)projectiles[i];
                 p.update();
-                if (!p.active)
+                if (p.state != Entity2D.tEntityState.Active)
                 {
                     continue;
                 }
@@ -75,7 +85,7 @@ namespace MyGame
                     for (int j = 0; j < enemies.Count; ++j)
                     {
                         Enemy e = (Enemy)enemies[j];
-                        if (!e.active)
+                        if (e.state != Entity2D.tEntityState.Active)
                         {
                             continue;
                         }
@@ -105,7 +115,7 @@ namespace MyGame
                     for (int j = 0; j < GamerManager.getGamerEntities().Count; ++j)
                     {
                         Player player = GamerManager.getGamerEntities()[j].Player;
-                        if (!player.active)
+                        if (player.state != Entity2D.tEntityState.Active)
                         {
                             continue;
                         }
@@ -130,6 +140,7 @@ namespace MyGame
                     }
                 }
             }
+            deleteProjectilesToDelete();
         }
 
         public void render()

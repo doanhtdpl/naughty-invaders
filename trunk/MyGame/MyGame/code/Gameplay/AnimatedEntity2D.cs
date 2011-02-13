@@ -118,11 +118,11 @@ namespace MyGame
         public void die()
         {
             playAction("die");
-            active = false;
+            state = tEntityState.Dying;
         }
 
         const float FRAME_TIME = 0.2f;
-        public override bool update()
+        public override void update()
         {
             // if there is a new action, change it and reset variables
             if (newActionState != "")
@@ -151,8 +151,7 @@ namespace MyGame
                     // if the animation played was die, delete the entity
                     if (actionState == "die")
                     {
-                        delete();
-                        return true;
+                        requestDelete();
                     }
                     actionState = "idle";
                     action = actions[actionState];
@@ -162,7 +161,6 @@ namespace MyGame
 
             // calculated the current frame relative to 0, we need to transpose to the real animations initial frame
             currentFrame += action.initialFrame;
-            return false;
         }
 
         public override void render()
@@ -185,6 +183,10 @@ namespace MyGame
         public virtual void delete()
         {
             EntityManager.Instance.removeEntity(this);
+        }
+        public virtual void requestDelete()
+        {
+            state = tEntityState.ToDelete;
         }
     }
 }
