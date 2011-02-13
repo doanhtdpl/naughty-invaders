@@ -25,17 +25,22 @@ namespace MyGame
             }
         }
 
-        List<Projectile> projectiles = new List<Projectile>();
+        List<Entity2D> projectiles = new List<Entity2D>();
 
         #region ENTITY MANAGEMENT
         public void addProjectile(Projectile p)
         {
             projectiles.Add(p);
         }
-        void removeProjectile(int i)
+        public void removeProjectile(int i)
         {
             EntityManager.Instance.removeEntity(projectiles[i]);
             projectiles.RemoveAt(i);
+        }
+        public void removeProjectile(Entity2D p)
+        {
+            EntityManager.Instance.removeEntity(p);
+            projectiles.Remove(p);
         }
         public void clean()
         {
@@ -53,56 +58,76 @@ namespace MyGame
 
         public void update()
         {
-            bool breakOuter = false;
             Rectangle projectileRectangle;
             List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
 
             for (int i = 0; i < projectiles.Count; ++i)
             {
-                projectiles[i].update();
-                if (projectiles[i].remove)
+                Projectile p = (Projectile)projectiles[i];
+                p.update();
+                if (!p.active)
                 {
-                    removeProjectile(i);
-                    --i;
                     continue;
                 }
-                projectileRectangle = projectiles[i].getRectangle();
                 // if projectile is from player...
-                if (projectiles[i].team == Projectile.tTeam.Players)
+                if (p.team == Projectile.tTeam.Players)
                 {
                     for (int j = 0; j < enemies.Count; ++j)
                     {
                         Enemy e = (Enemy)enemies[j];
-                        if (e.getRectangle().Intersects(projectileRectangle))
+                        if (!e.active)
                         {
-                            // the enemy get hit!
-                            if (e.getsHit())
+                            continue;
+                        }
+                        bool alive = true;
+                        if (e.collidesWith(p, ref alive))
+                        {
+                            if (!alive)
                             {
-                                EnemyManager.Instance.removeEnemy(j);
-                                --j;
+                                e.die();
+                            }
+                            // projectile dies?
+                            if (p.impact())
+                            {
                                 break;
                             }
-
-                            // projectile dies?
-                            if (projectiles[i].impact())
+                            // if the enemy died, go to the next enemy
+                            if (!alive)
                             {
-                                projectiles.RemoveAt(i);
-                                --i;
-                                breakOuter = true;
-                                break;
+                                continue;
                             }
                         }
                     }
-                    if (breakOuter)
-                    {
-                        breakOuter = false;
-                        break;
-                    }
                 }
                 // if projectile is from enemy...
-                if (projectiles[i].team == Projectile.tTeam.Enemies)
+                if (p.team == Projectile.tTeam.Enemies)
                 {
-
+                    for (int j = 0; j < GamerManager.getGamerEntities().Count; ++j)
+                    {
+                        Player player = GamerManager.getGamerEntities()[j].Player;
+                        if (!player.active)
+                        {
+                            continue;
+                        }
+                        bool alive = true;
+                        if (player.collidesWith(p, ref alive))
+                        {
+                            if (!alive)
+                            {
+                                player.die();
+                            }
+                            // projectile dies?
+                            if (p.impact())
+                            {
+                                break;
+                            }
+                            // if the enemy died, go to the next enemy
+                            if (!alive)
+                            {
+                                continue;
+                            }
+                        }
+                    }
                 }
             }
         }

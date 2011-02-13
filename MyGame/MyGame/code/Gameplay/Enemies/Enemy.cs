@@ -6,19 +6,27 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    public class Enemy : AnimatedEntity2D
+    public class Enemy : CollidableEntity2D
     {
-        public bool active { get; set; }
-
         public Enemy(string entityName, Vector3 position, float orientation)
             : base("enemies", entityName, position, orientation)
         {
             active = false;
         }
 
-        public override void update()
+        public override void setCollisions()
         {
-            base.update();
+            addCollision(new Vector2(0, 0), scale.X * 0.45f);
+        }
+
+        public override bool gotHitAtPart(int partIndex, float damage)
+        {
+            return true;
+        }
+
+        public override bool update()
+        {
+            return base.update();
         }
 
         public override void render()
@@ -26,10 +34,10 @@ namespace MyGame
             base.render();
         }
 
-        // applies damage, returns true if enemy dies
-        public virtual bool getsHit()
+        public override void delete()
         {
-            return true;
+            EnemyManager.Instance.removeEnemy(this);
+            base.delete();
         }
     }
 }

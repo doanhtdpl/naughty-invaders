@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <character>
-  <animatedTexture name="Anim_PlayerWeapon" frameWidth="170.6" frameHeight="170.6" columns="3" rows="3">
+  <animatedTexture name="Anim_PlayerWeapon" frameWidth="160" frameHeight="160" columns="3" rows="3">
     <action name="start" initialFrame="1" endFrame="3" loops="false"/>
     <action name="idle" initialFrame="3" endFrame="7" loops="true"/>
     <action name="die" initialFrame="8" endFrame="9" loops="false"/>

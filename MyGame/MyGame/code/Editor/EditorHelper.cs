@@ -171,8 +171,6 @@ namespace MyGame
 
             // FAKE LOADING
             CameraManager.Instance.loadXMLfake();
-            Grape grape = new Grape(new Vector2(-200, 1000), new Vector2(160, 160), 0);
-            EnemyManager.Instance.addEnemy(grape);
             // END FAKE LOADING
 
             if (File.Exists(fileName))

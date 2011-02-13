@@ -6,19 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class Projectile : AnimatedEntity2D
+    public class Projectile : CollidableEntity2D
     {
         public float damage { set; get; }
         public float speed { set; get; }
         public int lifes { set; get; }
         public bool remove { set; get; }
-        public bool active { set; get; }
         public float cooldown { set; get; }
 
         public enum tTeam { Players, Enemies };
         public tTeam team { set; get; }
 
-        public Projectile(string name, Vector3 position, Vector2 scale, float orientation, Vector2 direction, float damage, float speed, int lifes, float cooldown, tTeam team):base("projectiles", name, position, orientation)
+        public Projectile(string name, Vector3 position, float orientation, Vector2 direction, float damage, float speed, int lifes, float cooldown, tTeam team):base("projectiles", name, position, orientation)
         {
             entityName = name;
             remove = false;
@@ -46,7 +45,18 @@ namespace MyGame
         public virtual bool impact()
         {
             --lifes;
-            return (lifes <= 0);
+            if (lifes <= 0)
+            {
+                this.die();
+                return true;
+            }
+            return false;
+        }
+
+        public override void delete()
+        {
+            ProjectileManager.Instance.removeProjectile(this);
+            base.delete();
         }
     }
 }

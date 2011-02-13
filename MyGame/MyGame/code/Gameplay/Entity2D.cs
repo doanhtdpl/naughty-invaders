@@ -9,6 +9,7 @@ namespace MyGame
     public class Entity2D
     {
         public string entityName { set; get; }
+        public bool active { get; set; }
 
         Matrix world;
         public Matrix worldMatrix

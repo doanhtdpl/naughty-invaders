@@ -14,11 +14,23 @@ namespace MyGame
         float movingTimer;
         float nextAttackTimer;
 
-        public Grape(Vector2 position, Vector2 scale, float orientation)
+        public Grape(Vector2 position, float orientation)
             : base("grape", new Vector3(position.X, position.Y, 0), orientation)
         {
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
+
+            setCollisions();
+        }
+
+        public override void setCollisions()
+        {
+            addCollision(new Vector2(0, 20), 40);
+        }
+
+        public override bool gotHitAtPart(int partIndex, float damage)
+        {
+            return false;
         }
 
         public override void update()
@@ -43,6 +55,8 @@ namespace MyGame
             if (nextAttackTimer < 0)
             {
                 playAction("attack");
+                Projectile p = new GrapeProjectile(position);
+                ProjectileManager.Instance.addProjectile(p);
                 nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
             }
             if (movingTimer < 0)
@@ -61,13 +75,6 @@ namespace MyGame
         public override void render()
         {
             base.render();
-        }
-
-        // applies damage, returns true if enemy dies
-        public override bool getsHit()
-        {
-            base.getsHit();
-            return true;
         }
     }
 }
