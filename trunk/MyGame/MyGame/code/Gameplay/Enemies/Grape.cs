@@ -17,6 +17,8 @@ namespace MyGame
         public Grape(Vector3 position, float orientation)
             : base("grape", position, orientation)
         {
+            life = 10.0f;
+
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
 

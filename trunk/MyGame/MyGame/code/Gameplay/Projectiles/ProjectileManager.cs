@@ -75,7 +75,7 @@ namespace MyGame
             {
                 Projectile p = (Projectile)projectiles[i];
                 p.update();
-                if (p.state != Entity2D.tEntityState.Active)
+                if (p.entityState != Entity2D.tEntityState.Active)
                 {
                     continue;
                 }
@@ -85,7 +85,7 @@ namespace MyGame
                     for (int j = 0; j < enemies.Count; ++j)
                     {
                         Enemy e = (Enemy)enemies[j];
-                        if (e.state != Entity2D.tEntityState.Active)
+                        if (e.entityState != Entity2D.tEntityState.Active)
                         {
                             continue;
                         }
@@ -115,7 +115,7 @@ namespace MyGame
                     for (int j = 0; j < GamerManager.getGamerEntities().Count; ++j)
                     {
                         Player player = GamerManager.getGamerEntities()[j].Player;
-                        if (player.state != Entity2D.tEntityState.Active)
+                        if (player.entityState != Entity2D.tEntityState.Active)
                         {
                             continue;
                         }

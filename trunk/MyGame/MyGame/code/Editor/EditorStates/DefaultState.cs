@@ -99,12 +99,12 @@ namespace MyGame
                 if (justPressedKey(Keys.Right))
                 {
                     EnemyManager.Instance.removeEnemy(selectedEntity);
-                    loadAnimatedEntity(currentIndex + 1);
+                    loadEnemy(currentIndex + 1);
                 }
                 else if (justPressedKey(Keys.Left))
                 {
-                    LevelManager.Instance.removeAnimatedProp(selectedEntity);
-                    loadAnimatedEntity(currentIndex - 1);
+                    EnemyManager.Instance.removeEnemy(selectedEntity);
+                    loadEnemy(currentIndex - 1);
                 }
             }
             else if (keyState.GetPressedKeys().Length == 0)

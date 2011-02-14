@@ -91,9 +91,9 @@ namespace MyGame
             for (int i = 0; i < enemies.Count; ++i)
             {
                 Enemy e = (Enemy)enemies[i];
-                if (e.state == Entity2D.tEntityState.Waiting && SB.cam.isVisible(enemies[i].getRectangle()))
+                if (e.entityState == Entity2D.tEntityState.Waiting && SB.cam.isVisible(enemies[i].getRectangle()))
                 {
-                    e.state = Entity2D.tEntityState.Active;
+                    e.entityState = Entity2D.tEntityState.Active;
                 }
             }
         }
@@ -120,7 +120,7 @@ namespace MyGame
 
             foreach (Enemy enemy in enemies)
             {
-                if (enemy.state != Entity2D.tEntityState.Waiting)
+                if (enemy.entityState != Entity2D.tEntityState.Waiting)
                 {
                     enemy.update();
                 }
