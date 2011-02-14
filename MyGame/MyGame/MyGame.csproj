@@ -133,6 +133,8 @@
     <Compile Include="code\Editor\EditorStates\EditorState.cs" />
     <Compile Include="code\Camera\CameraManager.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
+    <Compile Include="code\Gameplay\Enemies\Orange.cs" />
+    <Compile Include="code\Gameplay\Enemies\Pear.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />

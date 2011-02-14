@@ -22,6 +22,7 @@ namespace MyGame
 
     public class CollidableEntity2D : AnimatedEntity2D
     {
+        protected float life;
         List<CollidablePart> parts = new List<CollidablePart>();
 
         public List<CollidablePart> getParts() { return parts; }

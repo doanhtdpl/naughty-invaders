@@ -18,7 +18,7 @@ namespace MyGame
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation)
         {
-            state = tEntityState.Active;
+            entityState = tEntityState.Active;
             setCollisions();
         }
 

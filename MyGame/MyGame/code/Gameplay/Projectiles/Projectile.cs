@@ -21,7 +21,7 @@ namespace MyGame
         {
             entityName = name;
             remove = false;
-            state = tEntityState.Active;
+            entityState = tEntityState.Active;
             this.direction2D = direction;
             this.damage = damage;
             this.speed = speed;

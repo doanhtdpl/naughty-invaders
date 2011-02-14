@@ -11,7 +11,7 @@ namespace MyGame
         public Enemy(string entityName, Vector3 position, float orientation)
             : base("enemies", entityName, position, orientation)
         {
-            state = Entity2D.tEntityState.Waiting;
+            entityState = Entity2D.tEntityState.Waiting;
         }
 
         public override void setCollisions()

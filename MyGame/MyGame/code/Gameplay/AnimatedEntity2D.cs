@@ -53,6 +53,8 @@ namespace MyGame
 
         public void playAction(string newAction)
         {
+            if (actionState == "die") return;
+
             newActionState = newAction;
         }
 
@@ -118,7 +120,7 @@ namespace MyGame
         public void die()
         {
             playAction("die");
-            state = tEntityState.Dying;
+            entityState = tEntityState.Dying;
         }
 
         const float FRAME_TIME = 0.2f;
@@ -186,7 +188,7 @@ namespace MyGame
         }
         public virtual void requestDelete()
         {
-            state = tEntityState.ToDelete;
+            entityState = tEntityState.ToDelete;
         }
     }
 }

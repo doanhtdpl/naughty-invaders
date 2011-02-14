@@ -10,7 +10,7 @@ namespace MyGame
     {
         public enum tEntityState { Active, Waiting, Dying, ToDelete }
         public string entityName { set; get; }
-        public tEntityState state { get; set; }
+        public tEntityState entityState { get; set; }
 
         Matrix world;
         public Matrix worldMatrix
