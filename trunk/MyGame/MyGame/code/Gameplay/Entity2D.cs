@@ -142,5 +142,10 @@ namespace MyGame
 
         public virtual void update() { }
         public virtual void render() { }
+
+        public virtual void delete()
+        {
+            EntityManager.Instance.removeEntity(this);
+        }
     }
 }

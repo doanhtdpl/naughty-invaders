@@ -30,5 +30,10 @@ namespace MyGame
             direction = Vector3.Zero;
             acceleration = Vector3.Zero;
         }
+
+        public override void delete()
+        {
+            base.delete();
+        }
     }
 }

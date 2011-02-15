@@ -17,7 +17,7 @@ namespace MyGame
         public Pear(Vector3 position, float orientation)
             : base("pear", position, orientation)
         {
-            life = 30.0f;
+            life = 50.0f;
             nextAttackTimer = Calc.randomScalar(3.0f, 3.5f);
             setCollisions();
             state = tPearState.Moving;
@@ -41,7 +41,8 @@ namespace MyGame
                 nextAttackTimer += 0.3f;
             }
             //playAction("");
-            return false;
+            life -= damage;
+            return life > 0;
         }
 
         public override void update()
