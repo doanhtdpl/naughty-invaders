@@ -65,7 +65,7 @@ namespace MyGame
             else if (justPressedKey(Keys.Delete))
             {
                 //DELETE
-                LevelManager.Instance.removeStaticProp(selectedEntity);
+                selectedEntity.delete();
                 selectedEntity = null;
             }
             else if (state == DefaultStates.ADD_STATIC)

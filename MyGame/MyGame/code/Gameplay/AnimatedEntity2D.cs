@@ -182,9 +182,9 @@ namespace MyGame
             animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs);
         }
 
-        public virtual void delete()
+        public override void delete()
         {
-            EntityManager.Instance.removeEntity(this);
+            base.delete();
         }
         public virtual void requestDelete()
         {
