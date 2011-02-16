@@ -45,9 +45,15 @@ namespace MyGame
 
             Type t = Type.GetType("MyGame." + name);
             Object[] args = { position, 0.0f };
+            if (t == null)
+            {
+                t = Type.GetType("MyGame.GenericEnemy");
+                args = new Object[]{ position, 0.0f, name };
+            }
 
             Object o = Activator.CreateInstance(t, args);
             // NOTE: if this line fails the problem may be inside the constructors called when creating an instance of that type
+
             Enemy e = (Enemy)o;
             enemies.Add(e);
             return e;
