@@ -51,4 +51,5 @@ Content\xml\projectiles\playerProjectile.xml
 Content\xml\animatedProps\test.xml
 Content\xml\projectiles\grapeProjectile.xml
 Content\xml\projectiles\pearProjectile.xml
+Content\xml\enemies\lol.xml
 Content\xml\levels\xmlLevelTemplate.xml
