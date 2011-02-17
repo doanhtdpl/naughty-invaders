@@ -129,9 +129,15 @@
     <Compile Include="code\CoolizionEngine\CoolizionLine.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_AddEnemy.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_AddAnimated.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_ScaleState.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_RotateState.cs" />
     <Compile Include="code\Editor\EditorStates\DefaultState.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState.cs" />
     <Compile Include="code\Camera\CameraManager.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />

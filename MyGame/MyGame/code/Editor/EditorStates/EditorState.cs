@@ -2,45 +2,86 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
 using System.Globalization;
+
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
-    class EditorState
+    public class EditorState
     {
-        protected Entity2D selectedEntity = null;
+        public MouseState mouseState;
+        public MouseState lastMouseState;
+        public KeyboardState keyState;
+        public KeyboardState lastKeyState;
 
-        public virtual void update() { }
+        public Vector2 gameScreenPos;
+
+        public virtual void enter() { }
+        public virtual void exit() { }
+        public virtual void update() 
+        {
+            mouseState = MyEditor.Instance.getMouseState();
+            lastMouseState = MyEditor.Instance.getLastMouseState();
+            keyState = MyEditor.Instance.getKeyState();
+            lastKeyState = MyEditor.Instance.getLastKeyState();
+
+            System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(MyEditor.Instance.getMouseState().X, MyEditor.Instance.getMouseState().Y));
+            gameScreenPos = new Vector2(point.X, point.Y);
+        }
         public virtual void render() { }
 
-        public virtual void propertiesChanged()
+        public bool isPosInScreen(Vector2 pos)
         {
-            if (selectedEntity != null)
-            {
-                selectedEntity.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
-                    MyEditor.Instance.textPosY.Text.toFloat(),
-                    MyEditor.Instance.textPosZ.Text.toFloat());
-
-                selectedEntity.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
-                selectedEntity.scale2D = new Vector2(MyEditor.Instance.textScaleX.Text.toFloat(),
-                    MyEditor.Instance.textScaleY.Text.toFloat());
-            }
+            return pos.X >= 0 && pos.Y >= 0 && pos.X <= 1280 && pos.Y <= 720;
         }
 
-        public void updateEntityProperties()
+        public bool justPressedKey(Keys key)
         {
-            if (selectedEntity != null)
-            {
-                MyEditor.Instance.textPosX.Text = selectedEntity.position.X.ToString();
-                MyEditor.Instance.textPosY.Text = selectedEntity.position.Y.ToString();
-                MyEditor.Instance.textPosZ.Text = selectedEntity.position.Z.ToString();
-                //MyEditor.Instance.textRotX.Text = entity.orientation.X.ToString();
-                //MyEditor.Instance.textRotY.Text = entity.orientation.Y.ToString();
-                MyEditor.Instance.textRotZ.Text = (selectedEntity.orientation * (float)(360 / (Math.PI * 2))).ToString();
-                MyEditor.Instance.textScaleX.Text = selectedEntity.scale2D.X.ToString();
-                MyEditor.Instance.textScaleY.Text = selectedEntity.scale2D.Y.ToString();
-            }
+            return MyEditor.Instance.justPressedKey(key);
         }
+
+        public bool selectEntity()
+        {
+            if (keyState.GetPressedKeys().Length == 0)
+            {
+                if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
+                {
+                    if (isPosInScreen(gameScreenPos))
+                    {
+                        Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
+                        MyEditor.Instance.selectedEntity = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
+
+                        if (MyEditor.Instance.selectedEntity == null)
+                        {
+                            MyEditor.Instance.selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
+                        }
+
+                        if (MyEditor.Instance.selectedEntity == null)
+                        {
+                            MyEditor.Instance.selectedEntity = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
+                        }
+
+                        if (MyEditor.Instance.selectedEntity != null)
+                        {
+                            MyEditor.Instance.updateEntityProperties();
+                        }
+                    }
+                    //else
+                    //{
+                    //    selectedEntity = null;
+                    //}
+                }
+            }
+
+            return MyEditor.Instance.selectedEntity != null;
+        }
+
+        public bool justPressedLeftButton()
+        {
+            return MyEditor.Instance.getMouseState().LeftButton == ButtonState.Pressed && MyEditor.Instance.getLastMouseState().LeftButton == ButtonState.Released;
+        }
+
     }
 }
