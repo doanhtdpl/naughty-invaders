@@ -95,7 +95,7 @@
             // buttonAddEnemy
             // 
             this.buttonAddEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddEnemy.Location = new System.Drawing.Point(391, 5);
+            this.buttonAddEnemy.Location = new System.Drawing.Point(281, 5);
             this.buttonAddEnemy.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddEnemy.Name = "buttonAddEnemy";
             this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
@@ -107,7 +107,7 @@
             // buttonSaveLevel
             // 
             this.buttonSaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveLevel.Location = new System.Drawing.Point(336, 5);
+            this.buttonSaveLevel.Location = new System.Drawing.Point(391, 6);
             this.buttonSaveLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveLevel.Name = "buttonSaveLevel";
             this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
@@ -119,7 +119,7 @@
             // buttonLoadLevel
             // 
             this.buttonLoadLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoadLevel.Location = new System.Drawing.Point(281, 5);
+            this.buttonLoadLevel.Location = new System.Drawing.Point(336, 5);
             this.buttonLoadLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadLevel.Name = "buttonLoadLevel";
             this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
