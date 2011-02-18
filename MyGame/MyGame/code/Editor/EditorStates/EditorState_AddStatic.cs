@@ -12,13 +12,23 @@ namespace MyGame
 {
     class EditorState_AddStatic : EditorState
     {
-        int currentIndex = -1;
+        int currentIndex = 0;
         private Entity2D staticEntity;
 
+        public EditorState_AddStatic()
+            : base()
+        {
+        }
+
+        public EditorState_AddStatic(int _currentIndex)
+            : base()
+        {
+            currentIndex = _currentIndex;
+        }
         public override void enter()
         {
             base.enter();
-            loadEntity(0);
+            loadEntity(currentIndex);
         }
 
         public override void update()
@@ -38,7 +48,7 @@ namespace MyGame
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
                 staticEntity = null;
-                MyEditor.Instance.changeState(new EditorState_AddStatic());
+                MyEditor.Instance.changeState(new EditorState_AddStatic(currentIndex));
             }
 
             if (staticEntity != null)
