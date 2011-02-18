@@ -12,13 +12,23 @@ namespace MyGame
 {
     class EditorState_AddEnemy : EditorState
     {
-        int currentIndex = -1;
+        int currentIndex = 0;
         private Entity2D entity;
+
+        public EditorState_AddEnemy():base()
+        {
+            currentIndex = -1;
+        }
+
+        public EditorState_AddEnemy(int _currentIndex):base()
+        {
+            currentIndex = _currentIndex;
+        }
 
         public override void enter()
         {
             base.enter();
-            loadEntity(0);
+            loadEntity(currentIndex);
         }
 
         public override void update()
@@ -38,7 +48,7 @@ namespace MyGame
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
                 entity = null;
-                MyEditor.Instance.changeState(new EditorState_AddEnemy());
+                MyEditor.Instance.changeState(new EditorState_AddEnemy(currentIndex));
             }
 
             if (entity != null)

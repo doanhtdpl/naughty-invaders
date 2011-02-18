@@ -41,7 +41,9 @@ namespace MyGame
             // assign the pointers for this instance
             actions = datas[entityName].actions;
             animatedTextures = datas[entityName].animatedTextures;
-            update();
+
+            currentFrame = actions["idle"].initialFrame; ;
+            //update();
 
             scale2D = getFrameSize();
         }
