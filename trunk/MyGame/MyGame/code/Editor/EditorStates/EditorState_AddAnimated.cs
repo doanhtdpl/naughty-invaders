@@ -12,13 +12,24 @@ namespace MyGame
 {
     class EditorState_AddAnimated : EditorState
     {
-        int currentIndex = -1;
+        int currentIndex = 0;
         private Entity2D entity;
+
+        public EditorState_AddAnimated()
+            : base()
+        {
+        }
+
+        public EditorState_AddAnimated(int _currentIndex)
+            : base()
+        {
+            currentIndex = _currentIndex;
+        }
 
         public override void enter()
         {
             base.enter();
-            loadEntity(0);
+            loadEntity(currentIndex);
         }
 
         public override void update()
@@ -38,7 +49,7 @@ namespace MyGame
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
                 entity = null;
-                MyEditor.Instance.changeState(new EditorState_AddAnimated());
+                MyEditor.Instance.changeState(new EditorState_AddAnimated(currentIndex));
             }
 
             if (entity != null)
