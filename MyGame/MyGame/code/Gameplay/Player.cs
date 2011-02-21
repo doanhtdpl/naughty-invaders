@@ -44,7 +44,20 @@ namespace MyGame
             position2D += controls.LS * SB.dt * SPEED;
             orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
 
-            if (controls.X_pressed() && cooldownTime <= 0.0f)
+            KeyboardState currentKeyState = Keyboard.GetState();
+            Vector2 keymove = Vector2.Zero;
+            if (currentKeyState.IsKeyDown(Keys.Down))
+                keymove.Y = -1;
+            if (currentKeyState.IsKeyDown(Keys.Up))
+                keymove.Y = 1;
+            if (currentKeyState.IsKeyDown(Keys.Left))
+                keymove.X = -1;
+            if (currentKeyState.IsKeyDown(Keys.Right))
+                keymove.X = 1;
+
+            position2D += keymove * SB.dt * SPEED;
+
+            if ((controls.X_pressed() || currentKeyState.IsKeyDown(Keys.A)) && cooldownTime <= 0.0f)
             {
                 playAction("attack");
                 Projectile p = new PlayerProjectile(position);
