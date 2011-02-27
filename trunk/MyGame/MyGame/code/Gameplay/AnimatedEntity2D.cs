@@ -29,8 +29,8 @@ namespace MyGame
         Dictionary<string, AnimationAction> actions;
         List<AnimatedTexture> animatedTextures;
 
-        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation)
-            : base(entityName, position, orientation)
+        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, int id = -1)
+            : base(entityName, position, orientation, id)
         {
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))

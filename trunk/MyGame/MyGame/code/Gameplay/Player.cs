@@ -16,7 +16,7 @@ namespace MyGame
         float life = 50.0f;
 
         public Player(string entityName, Vector3 position, float orientation)
-            : base("characters", entityName, position, orientation)
+            : base("characters", entityName, position, orientation, 0)
         {
             entityState = tEntityState.Active;
             setCollisions();

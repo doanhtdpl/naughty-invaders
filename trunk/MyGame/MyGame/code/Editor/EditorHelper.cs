@@ -99,26 +99,12 @@ namespace MyGame
         }
         #endregion
         #region XML
-        // NOTE maybe those functions can be only one passing a string with the entity to write in the xml ("staticProp", "enemy", etc)
-        void writeStaticProp(XmlTextWriter writer, Entity2D entity2D)
+        void writeEntity(XmlTextWriter writer, Entity2D entity2D, string element)
         {
-            writer.WriteStartElement("staticProp");
+            writer.WriteStartElement(element);
             writer.WriteAttributeString("entityName", entity2D.entityName);
             writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
-            writer.WriteEndElement();
-        }
-        void writeAnimatedProp(XmlTextWriter writer, Entity2D entity2D)
-        {
-            writer.WriteStartElement("animatedProp");
-            writer.WriteAttributeString("entityName", entity2D.entityName);
-            writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
-            writer.WriteEndElement();
-        }
-        void writeEnemy(XmlTextWriter writer, Entity2D entity2D)
-        {
-            writer.WriteStartElement("enemy");
-            writer.WriteAttributeString("entityName", entity2D.entityName);
-            writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
+            writer.WriteAttributeString("id", entity2D.id.ToString());
             writer.WriteEndElement();
         }
         public void saveLevelToXML(string name)
@@ -131,13 +117,14 @@ namespace MyGame
             writer.WriteStartDocument();
             writer.WriteStartElement("level");
             // here is the general information for the level
+            writer.WriteAttributeString("nextEntityID", Entity2D.NEXT_ENTITY_ID.ToString());
             
             // static props
             writer.WriteStartElement("staticProps");
             for (int i = 0; i < LevelManager.Instance.getStaticProps().Count; i++)
             {
                 Entity2D sp = LevelManager.Instance.getStaticProps()[i];
-                writeStaticProp(writer, sp);
+                writeEntity(writer, sp, "staticProp");
             }
             writer.WriteEndElement();
 
@@ -146,7 +133,7 @@ namespace MyGame
             for (int i = 0; i < LevelManager.Instance.getAnimatedProps().Count; i++)
             {
                 Entity2D ap = LevelManager.Instance.getAnimatedProps()[i];
-                writeStaticProp(writer, ap);
+                writeEntity(writer, ap, "animatedProp");
             }
             writer.WriteEndElement();
 
@@ -155,7 +142,7 @@ namespace MyGame
             for (int i = 0; i < EnemyManager.Instance.getEnemies().Count; i++)
             {
                 Enemy e = (Enemy)EnemyManager.Instance.getEnemies()[i];
-                writeEnemy(writer, e);
+                writeEntity(writer, e, "enemy");
             }
             writer.WriteEndElement();
 
@@ -166,7 +153,7 @@ namespace MyGame
         }
 
         // loads the specified file into the editor
-        private List<Entity2D> loadLevel(string fileName)
+        private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
@@ -175,31 +162,52 @@ namespace MyGame
                 XmlDocument xml_doc = new XmlDocument();
                 xml_doc.Load(stream);
 
+                int id;
                 XmlNodeList nodes;
+
+                if (loadIDs)
+                {
+                    nodes = xml_doc.GetElementsByTagName("level");
+                    XmlElement levelNode = (XmlElement)nodes[0];
+                    if (levelNode.HasAttribute("nextEntityID"))
+                    {
+                        Entity2D.NEXT_ENTITY_ID = int.Parse(levelNode.GetAttribute("nextEntityID"));
+                    }
+                }
+
                 nodes = xml_doc.GetElementsByTagName("staticProp"); // read static props
                 foreach (XmlElement node in nodes)
                 {
+                    id = -1;
+                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
                     RenderableEntity2D re =
-                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
+                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0, id);
                     re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addStaticProp(re);
+                    re.setInit();
                     list.Add(re);
                 }
                 nodes = xml_doc.GetElementsByTagName("animatedProp"); // read animated props
                 foreach (XmlElement node in nodes)
                 {
+                    id = -1;
+                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
                     AnimatedEntity2D ae =
-                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
+                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0, id);
                     ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
+                    ae.setInit();
                     list.Add(ae);
                 }
                 nodes = xml_doc.GetElementsByTagName("enemy"); // read enemies
                 foreach (XmlElement node in nodes)
                 {
+                    id = -1;
+                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
                     string name = node.GetAttribute("entityName");
                     Matrix world = node.GetAttribute("worldMatrix").toMatrix();
-                    Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation);
+                    Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation, id);
+                    e.setInit();
                     list.Add(e);
                 }
 
@@ -226,7 +234,7 @@ namespace MyGame
         // loads the specified file into the editor
         public List<Entity2D> importLevel(string fileName)
         {
-            return loadLevel(fileName);
+            return loadLevel(fileName, false);
         }
         #endregion
     }

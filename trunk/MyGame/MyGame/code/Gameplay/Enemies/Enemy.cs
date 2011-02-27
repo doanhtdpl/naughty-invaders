@@ -8,8 +8,8 @@ namespace MyGame
 {
     public class Enemy : CollidableEntity2D
     {
-        public Enemy(string entityName, Vector3 position, float orientation)
-            : base("enemies", entityName, position, orientation)
+        public Enemy(string entityName, Vector3 position, float orientation, int id = -1)
+            : base("enemies", entityName, position, orientation, id)
         {
             entityState = Entity2D.tEntityState.Waiting;
         }
@@ -32,6 +32,12 @@ namespace MyGame
         public override void render()
         {
             base.render();
+        }
+
+        public override void reset()
+        {
+            base.reset();
+            entityState = Entity2D.tEntityState.Waiting;
         }
 
         public override void delete()
