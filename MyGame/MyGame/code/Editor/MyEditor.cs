@@ -19,9 +19,30 @@ namespace MyGame
     {
         public static MyEditor Instance;
 
-        EditorState currentState = null;
+        #region Selected Entitie(s)
+        private List<Entity2D> selectedEntities = new List<Entity2D>();
+
+        public bool anyEntitySelected() { return selectedEntities.Count > 0; }
+        public List<Entity2D> getSelectedEntities() { return selectedEntities; }
+
+        public void selectEntity(Entity2D entity)
+        {
+            selectedEntities.Clear();
+            selectedEntities.Add(entity);
+        }
+
+        public void addEntity(Entity2D entity)
+        {
+            if (selectedEntities.IndexOf(entity) == -1)
+                selectedEntities.Add(entity);
+            else
+                selectedEntities.Remove(entity);
+        }
+
+        #endregion
+
+ EditorState currentState = null;
         EditorState nextState = null;
-        public Entity2D selectedEntity = null;
         public MouseState lastMouseState;
         public MouseState mouseState;
         public KeyboardState lastKeyState;
@@ -204,8 +225,46 @@ namespace MyGame
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete))
             {
                 //DELETE
-                selectedEntity.delete();
-                selectedEntity = null;
+                foreach (Entity2D ent in selectedEntities)
+                {
+                    ent.delete();
+                }
+                selectedEntities.Clear();
+            }
+            else if(justPressedKey(Microsoft.Xna.Framework.Input.Keys.D))
+            {
+                //Duplicate
+                if(anyEntitySelected())
+                {
+                    List<Entity2D> newEntities = new List<Entity2D>();
+
+                    foreach (Entity2D ent in selectedEntities)
+                    {
+                        Entity2D newEntity = null;
+                        if (ent is Enemy)
+                        {
+                            newEntity = EnemyManager.Instance.addEnemy(ent.entityName, ent.position);
+                        }
+                        else if (ent is AnimatedEntity2D)
+                        {
+                            newEntity = new AnimatedEntity2D("animatedProps", ent.entityName, ent.position, 0);
+                            LevelManager.Instance.addAnimatedProp(newEntity);
+                        }
+                        else if (ent is RenderableEntity2D)
+                        {
+                            newEntity = new RenderableEntity2D("staticProps", ent.entityName, ent.position, 0);
+                            LevelManager.Instance.addStaticProp(newEntity);
+                        }
+
+                        if (newEntity != null)
+                        {
+                            newEntities.Add(newEntity);
+                        }
+                    }
+
+                    selectedEntities.Clear();
+                    selectedEntities = newEntities;
+                }
             }
             else if (currentState != null)
             {
@@ -221,70 +280,92 @@ namespace MyGame
             if (currentState != null)
                 currentState.render();
 
-            if (selectedEntity != null)
+            foreach (Entity2D ent in selectedEntities)
             {
-                EditorHelper.Instance.renderEntityQuad(selectedEntity);
+                if (ent != null)
+                {
+                    EditorHelper.Instance.renderEntityQuad(ent);
+                }
             }
         }
         #endregion
 
         public virtual void propertiesChanged()
         {
-            if (selectedEntity != null)
+            foreach (Entity2D ent in selectedEntities)
             {
-                selectedEntity.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
-                    MyEditor.Instance.textPosY.Text.toFloat(),
-                    MyEditor.Instance.textPosZ.Text.toFloat());
+                if (ent != null)
+                {
+                    ent.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
+                        MyEditor.Instance.textPosY.Text.toFloat(),
+                        MyEditor.Instance.textPosZ.Text.toFloat());
 
-                selectedEntity.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
-                selectedEntity.scale2D = new Vector2(MyEditor.Instance.textScaleX.Text.toFloat(),
-                    MyEditor.Instance.textScaleY.Text.toFloat());
+                    ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
+                    ent.scale2D = new Vector2(MyEditor.Instance.textScaleX.Text.toFloat(),
+                        MyEditor.Instance.textScaleY.Text.toFloat());
+                }
             }
         }
 
         public void updateEntityProperties()
         {
-            if (selectedEntity != null)
+            if (anyEntitySelected())
             {
-                MyEditor.Instance.textPosX.Text = selectedEntity.position.X.ToString();
-                MyEditor.Instance.textPosY.Text = selectedEntity.position.Y.ToString();
-                MyEditor.Instance.textPosZ.Text = selectedEntity.position.Z.ToString();
-                //MyEditor.Instance.textRotX.Text = entity.orientation.X.ToString();
-                //MyEditor.Instance.textRotY.Text = entity.orientation.Y.ToString();
-                MyEditor.Instance.textRotZ.Text = (selectedEntity.orientation * (float)(360 / (Math.PI * 2))).ToString();
-                MyEditor.Instance.textScaleX.Text = selectedEntity.scale2D.X.ToString();
-                MyEditor.Instance.textScaleY.Text = selectedEntity.scale2D.Y.ToString();
+                Entity2D ent = selectedEntities[0];
+                if (ent != null)
+                {
+                    MyEditor.Instance.textPosX.Text = ent.position.X.ToString();
+                    MyEditor.Instance.textPosY.Text = ent.position.Y.ToString();
+                    MyEditor.Instance.textPosZ.Text = ent.position.Z.ToString();
+                    MyEditor.Instance.textRotZ.Text = (ent.orientation * (float)(360 / (Math.PI * 2))).ToString();
+                    MyEditor.Instance.textScaleX.Text = ent.scale2D.X.ToString();
+                    MyEditor.Instance.textScaleY.Text = ent.scale2D.Y.ToString();
+                }
             }
         }
 
         public void resetRotation()
         {
-            if (selectedEntity != null)
+            foreach (Entity2D ent in selectedEntities)
             {
-                selectedEntity.resetRotation();
+                if (ent != null)
+                {
+                    ent.resetRotation();
+                }
             }
         }
 
         public void resetPosition()
         {
-            if (selectedEntity != null)
+            foreach (Entity2D ent in selectedEntities)
             {
-                selectedEntity.position = new Vector3(0, 0, 0);
+                if (ent != null)
+                {
+                    ent.position = new Vector3(0, 0, 0);
+                }
             }
         }
 
         public void resetScale()
         {
-            if (selectedEntity != null)
+            foreach (Entity2D ent in selectedEntities)
             {
-                Texture2D texture = ((RenderableEntity2D)selectedEntity).Texture;
-                selectedEntity.scale2D = selectedEntity.scale2D = new Vector2(texture.Width, texture.Height);
+                if (ent != null)
+                {
+                    Texture2D texture = ((RenderableEntity2D)ent).Texture;
+                    ent.scale2D = ent.scale2D = new Vector2(texture.Width, texture.Height);
+                }
             }
         }
 
         public bool justPressedKey(Microsoft.Xna.Framework.Input.Keys key)
         {
             return keyState.IsKeyDown(key) && !lastKeyState.IsKeyDown(key);
+        }
+
+        public bool isKeyPressed(Microsoft.Xna.Framework.Input.Keys key)
+        {
+            return keyState.IsKeyDown(key);
         }
     }
 }

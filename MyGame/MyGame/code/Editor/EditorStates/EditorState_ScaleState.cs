@@ -21,15 +21,21 @@ namespace MyGame
 
             if (keyState.GetPressedKeys().Length == 0)
             {
-                if (MyEditor.Instance.selectedEntity != null && isPosInScreen(gameScreenPos))
+                if (MyEditor.Instance.anyEntitySelected() && isPosInScreen(gameScreenPos))
                 {
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
-                        MyEditor.Instance.selectedEntity.scale2D += new Vector2(mouseState.X - lastMouseState.X, -(mouseState.Y - lastMouseState.Y));
+                        foreach(Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                        {
+                            ent.scale2D += new Vector2(mouseState.X - lastMouseState.X, -(mouseState.Y - lastMouseState.Y));
+                        }
                     }
                     else if (mouseState.RightButton == ButtonState.Pressed)
                     {
-                        MyEditor.Instance.selectedEntity.scale2D += new Vector2((mouseState.Y - lastMouseState.Y), (mouseState.Y - lastMouseState.Y));
+                        foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                        {
+                            ent.scale2D += new Vector2((mouseState.Y - lastMouseState.Y), (mouseState.Y - lastMouseState.Y));
+                        }
                     }
 
                     if (mouseState.LeftButton == ButtonState.Pressed || mouseState.RightButton == ButtonState.Pressed)

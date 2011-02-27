@@ -81,8 +81,7 @@ namespace MyGame
             currentIndex = (index + textures.Count) % textures.Count;
             Vector3 position = new Vector3(Camera2D.position.X, Camera2D.position.Y, 0.0f);
 
-            Entity2D ent = EnemyManager.Instance.addEnemy(textures[currentIndex], position);
-            entity = ent;
+            entity = EnemyManager.Instance.addEnemy(textures[currentIndex], position);
 #endif
         }
 

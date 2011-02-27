@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Content;
+using System.Threading;
+using System.Globalization;
 #endif
 
 namespace MyGame
@@ -21,6 +23,8 @@ namespace MyGame
         static void Main(string[] args)
         {
 #if EDITOR
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MyEditor());
