@@ -54,6 +54,17 @@ namespace MyGame
         {
             entities.Sort(comparer);
         }
+        public Entity2D getEntityByID(int id)
+        {
+            foreach (Entity2D ent in entities)
+            {
+                if (ent.id == id)
+                {
+                    return ent;
+                }
+            }
+            return null;
+        }
         #endregion
 
         public void render()

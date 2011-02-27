@@ -155,6 +155,16 @@ namespace MyGame
         {
             resetScale();
         }
+
+        private void buttonCreateGroup_Click(object sender, EventArgs e)
+        {
+            List<int> group = new List<int>();
+            foreach (Entity2D ent in selectedEntities)
+            {
+                group.Add(ent.id);
+            }
+            LevelManager.Instance.addGroup(group);
+        }
         #endregion
 
         private void selectButton()

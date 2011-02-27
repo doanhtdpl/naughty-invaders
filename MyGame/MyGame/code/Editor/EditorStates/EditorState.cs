@@ -165,8 +165,30 @@ namespace MyGame
                             ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
                         }
 
+
                         if (ent != null)
                         {
+                            if (MyEditor.Instance.selectGroup.Checked)
+                            {
+                                foreach (List<int> group in LevelManager.Instance.getGroups())
+                                {
+                                    foreach (int id in group)
+                                    {
+                                        if (id == ent.id)
+                                        { 
+                                            //Select the group
+                                            MyEditor.Instance.getSelectedEntities().Clear();
+
+                                            foreach(int entityId in group)
+                                            {
+                                                MyEditor.Instance.addEntity(EntityManager.Instance.getEntityByID(entityId));
+                                            }
+                                            return MyEditor.Instance.anyEntitySelected();
+                                        }
+                                    }
+                                }
+                            }
+                            
                             if (isPressedKey(Keys.LeftControl))
                                 MyEditor.Instance.addEntity(ent);
                             else
