@@ -72,6 +72,13 @@ namespace MyGame
         {
             removeStaticProp(animatedProps[i]);
         }
+        public void removeEntity(Entity2D ent)
+        {
+            if (animatedProps.IndexOf(ent) >= 0)
+                removeAnimatedProp(ent);
+            else if (staticProps.IndexOf(ent) >= 0)
+                removeStaticProp(ent);
+        }
         public void clean()
         {
             foreach (Entity2D sp in staticProps)

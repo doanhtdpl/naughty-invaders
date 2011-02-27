@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<level>
+  <staticProps>
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 250 1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 200 1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 150 1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 100 1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 50 1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -297.2744 8.917847 0.01510439 1" />
+  </staticProps>
+  <animatedProps />
+  <enemies />
+</level>

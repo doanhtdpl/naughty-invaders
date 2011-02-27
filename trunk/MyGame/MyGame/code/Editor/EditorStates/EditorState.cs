@@ -51,19 +51,20 @@ namespace MyGame
 
         public bool selectEntity()
         {
-            if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
+            if (isPosInScreen(gameScreenPos))
             {
-                canSelect = true;
-            }
 
-            if(mouseState.LeftButton == ButtonState.Pressed && (lastMouseState.X != mouseState.X || lastMouseState.Y != mouseState.Y))
-            {
-                canSelect = false;
-            }
+                if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
+                {
+                    canSelect = true;
+                }
 
-            if (mouseState.LeftButton == ButtonState.Released && lastMouseState.LeftButton == ButtonState.Pressed && canSelect)
-            {
-                if (isPosInScreen(gameScreenPos))
+                if(mouseState.LeftButton == ButtonState.Pressed && (lastMouseState.X != mouseState.X || lastMouseState.Y != mouseState.Y))
+                {
+                    canSelect = false;
+                }
+
+                if (mouseState.LeftButton == ButtonState.Released && lastMouseState.LeftButton == ButtonState.Pressed && canSelect)
                 {
                     Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
                     Entity2D ent = null;
