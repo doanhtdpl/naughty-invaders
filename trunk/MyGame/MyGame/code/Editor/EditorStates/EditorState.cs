@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Globalization;
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -80,6 +79,7 @@ namespace MyGame
         {
             if (isPosInScreen(gameScreenPos))
             {
+                // RECT MULTISELECT
                 if (mouseState.MiddleButton == ButtonState.Pressed && lastMouseState.MiddleButton == ButtonState.Released)
                 {
                     MyEditor.Instance.getSelectedEntities().Clear();
@@ -134,6 +134,8 @@ namespace MyGame
                         }
                     }
                 }
+
+                //POINT CLICK SELECT
                 else
                 {
 
@@ -168,6 +170,7 @@ namespace MyGame
 
                         if (ent != null)
                         {
+                            //GROUP SELECT
                             if (MyEditor.Instance.selectGroup.Checked)
                             {
                                 foreach (List<int> group in LevelManager.Instance.getGroups())
@@ -189,6 +192,7 @@ namespace MyGame
                                 }
                             }
                             
+                            //CONTROL MULTISELECT
                             if (isPressedKey(Keys.LeftControl))
                                 MyEditor.Instance.addEntity(ent);
                             else
