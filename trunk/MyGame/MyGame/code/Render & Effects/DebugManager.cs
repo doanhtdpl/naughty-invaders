@@ -91,15 +91,16 @@ namespace MyGame
         {
             Vector2 otherPoint1 = new Vector2(initialPoint.X, endingPoint.Y);
             Vector2 otherPoint2 = new Vector2(endingPoint.X, initialPoint.Y);
-            DebugManager.Instance.addLine(initialPoint, otherPoint1, color);
-            DebugManager.Instance.addLine(otherPoint1, endingPoint, color);
-            DebugManager.Instance.addLine(endingPoint, otherPoint2, color);
-            DebugManager.Instance.addLine(otherPoint2, initialPoint, color);
-
-            rectangles[numberOfRectangles].initialPoint = initialPoint;
-            rectangles[numberOfRectangles].endingPoint = endingPoint;
-            rectangles[numberOfRectangles].color = new Color(color.R, color.G, color.B, alpha);
-            ++numberOfRectangles;
+            addLine(initialPoint, otherPoint1, color);
+            addLine(otherPoint1, endingPoint, color);
+            addLine(endingPoint, otherPoint2, color);
+            addLine(otherPoint2, initialPoint, color);
+            
+            // Ra a Marcos: Esto por qué estaba?
+            //rectangles[numberOfRectangles].initialPoint = initialPoint;
+            //rectangles[numberOfRectangles].endingPoint = endingPoint;
+            //rectangles[numberOfRectangles].color = new Color(color.R, color.G, color.B, alpha);
+            //++numberOfRectangles;
         }
 
         void renderLines()
