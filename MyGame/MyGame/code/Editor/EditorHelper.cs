@@ -227,17 +227,20 @@ namespace MyGame
                     list.Add(e);
                 }
 
-                // groups
-                nodes = xml_doc.GetElementsByTagName("group"); // read enemies
-                foreach (XmlElement node in nodes)
+                if (loadIDs)
                 {
-                    XmlNodeList ids = node.GetElementsByTagName("entity");
-                    List<int> idList = new List<int>();
-                    foreach (XmlElement entityId in ids)
+                    // groups
+                    nodes = xml_doc.GetElementsByTagName("group"); // read enemies
+                    foreach (XmlElement node in nodes)
                     {
-                        idList.Add(int.Parse(entityId.GetAttribute("id")));
+                        XmlNodeList ids = node.GetElementsByTagName("entity");
+                        List<int> idList = new List<int>();
+                        foreach (XmlElement entityId in ids)
+                        {
+                            idList.Add(int.Parse(entityId.GetAttribute("id")));
+                        }
+                        LevelManager.Instance.addGroup(idList);
                     }
-                    LevelManager.Instance.addGroup(idList);
                 }
 
                 stream.Close();

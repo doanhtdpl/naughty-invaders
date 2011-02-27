@@ -158,6 +158,12 @@ namespace MyGame
 
         private void buttonCreateGroup_Click(object sender, EventArgs e)
         {
+            createGroup();
+        }
+        #endregion
+
+        private void createGroup()
+        {
             List<int> group = new List<int>();
             foreach (Entity2D ent in selectedEntities)
             {
@@ -165,7 +171,6 @@ namespace MyGame
             }
             LevelManager.Instance.addGroup(group);
         }
-        #endregion
 
         private void selectButton()
         {
@@ -221,6 +226,7 @@ namespace MyGame
             if (openDialog("Import level", ref fileName))
             {
                 selectedEntities = EditorHelper.Instance.importLevel(fileName);
+                createGroup();
             }
         }
 
