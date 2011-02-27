@@ -24,6 +24,7 @@ namespace MyGame
     {
         List<Entity2D> staticProps = new List<Entity2D>();
         List<Entity2D> animatedProps = new List<Entity2D>();
+        List<List<int>> groupList = new List<List<int>>();
 
         List<CoolizionLine> levelCollisions = new List<CoolizionLine>();
 
@@ -105,6 +106,15 @@ namespace MyGame
         public List<Entity2D> getAnimatedProps()
         {
             return animatedProps;
+        }
+
+        public List<List<int>> getGroups()
+        {
+            return groupList;
+        }
+        public void addGroup(List<int> group)
+        {
+            groupList.Add(group);
         }
         #endregion
 

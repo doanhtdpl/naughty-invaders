@@ -137,6 +137,22 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            // groups
+            writer.WriteStartElement("groups");
+            for (int i = 0; i < LevelManager.Instance.getGroups().Count; i++)
+            {
+                List<int> group = LevelManager.Instance.getGroups()[i];
+                writer.WriteStartElement("group");
+                foreach (int id in group)
+                {
+                    writer.WriteStartElement("entity");
+                    writer.WriteAttributeString("id", id.ToString());
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
             // enemies
             writer.WriteStartElement("enemies");
             for (int i = 0; i < EnemyManager.Instance.getEnemies().Count; i++)
@@ -209,6 +225,19 @@ namespace MyGame
                     Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation, id);
                     e.setInit();
                     list.Add(e);
+                }
+
+                // groups
+                nodes = xml_doc.GetElementsByTagName("group"); // read enemies
+                foreach (XmlElement node in nodes)
+                {
+                    XmlNodeList ids = node.GetElementsByTagName("entity");
+                    List<int> idList = new List<int>();
+                    foreach (XmlElement entityId in ids)
+                    {
+                        idList.Add(int.Parse(entityId.GetAttribute("id")));
+                    }
+                    LevelManager.Instance.addGroup(idList);
                 }
 
                 stream.Close();
