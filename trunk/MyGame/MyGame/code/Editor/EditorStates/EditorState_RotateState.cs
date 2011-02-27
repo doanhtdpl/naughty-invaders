@@ -21,16 +21,22 @@ namespace MyGame
 
             if (keyState.GetPressedKeys().Length == 0)
             {
-                if (MyEditor.Instance.selectedEntity != null && isPosInScreen(gameScreenPos))
+                if (MyEditor.Instance.anyEntitySelected() && isPosInScreen(gameScreenPos))
                 {
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
-                        MyEditor.Instance.selectedEntity.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
+                        foreach(Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                        {
+                            ent.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
+                        }
                     }
                     else if (mouseState.RightButton == ButtonState.Pressed)
                     {
-                        MyEditor.Instance.selectedEntity.rotateInX((mouseState.Y - lastMouseState.Y) * 0.01f);
-                        MyEditor.Instance.selectedEntity.rotateInY((mouseState.X - lastMouseState.X) * 0.01f);
+                        foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                        {
+                            ent.rotateInX((mouseState.Y - lastMouseState.Y) * 0.01f);
+                            ent.rotateInY((mouseState.X - lastMouseState.X) * 0.01f);
+                        }
                     }
 
                     if (mouseState.LeftButton == ButtonState.Pressed || mouseState.RightButton == ButtonState.Pressed)
