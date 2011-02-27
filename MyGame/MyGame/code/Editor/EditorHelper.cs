@@ -164,17 +164,10 @@ namespace MyGame
             writer.WriteEndDocument();
             writer.Close();
         }
+
         // loads the specified file into the editor
-        public void loadLevelFromXML(string fileName)
+        private void loadLevel(string fileName)
         {
-            LevelManager.Instance.cleanLevel();
-
-            GamerManager.getGamerEntities()[0].createPlayer();
-
-            // FAKE LOADING
-            CameraManager.Instance.loadXMLfake();
-            // END FAKE LOADING
-
             if (File.Exists(fileName))
             {
                 Stream stream = File.OpenRead(fileName);
@@ -186,7 +179,7 @@ namespace MyGame
                 foreach (XmlElement node in nodes)
                 {
                     RenderableEntity2D re =
-                        new RenderableEntity2D( "staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
+                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
                     re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addStaticProp(re);
                 }
@@ -208,7 +201,26 @@ namespace MyGame
 
                 stream.Close();
             }
-            
+        }
+
+        // loads the specified file into the editor
+        public void loadNewLevel(string fileName)
+        {
+            LevelManager.Instance.cleanLevel();
+
+            GamerManager.getGamerEntities()[0].createPlayer();
+
+            // FAKE LOADING
+            CameraManager.Instance.loadXMLfake();
+            // END FAKE LOADING
+
+            loadLevel(fileName);
+        }
+
+        // loads the specified file into the editor
+        public void importLevel(string fileName)
+        {
+            loadLevel(fileName);
         }
         #endregion
     }

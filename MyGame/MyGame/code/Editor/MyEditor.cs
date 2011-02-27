@@ -177,7 +177,26 @@ namespace MyGame
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                EditorHelper.Instance.loadLevelFromXML(fileDialog.FileName);
+                EditorHelper.Instance.loadNewLevel(fileDialog.FileName);
+                currentState = null;
+            }
+        }
+
+
+        private void buttonImportLevel_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            string relativePath = "../../../../MyGameContent/xml/levels";
+            string fullPath = Path.GetFullPath(relativePath);
+
+            fileDialog.InitialDirectory = fullPath;
+            fileDialog.Title = "Save Level";
+            fileDialog.Filter = "Level files (*.xml)|*.xml";
+            fileDialog.RestoreDirectory = true;
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                EditorHelper.Instance.importLevel(fileDialog.FileName);
                 currentState = null;
             }
         }

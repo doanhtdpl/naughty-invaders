@@ -66,14 +66,17 @@ namespace MyGame
                 if (isPosInScreen(gameScreenPos))
                 {
                     Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
-                    Entity2D ent = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
+                    Entity2D ent = null;
 
-                    if (ent == null)
+                    if (MyEditor.Instance.canSelectEnemy.Checked)
+                        ent = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
+
+                    if (ent == null && MyEditor.Instance.canSelectAnimated.Checked)
                     {
                         ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
                     }
 
-                    if (ent == null)
+                    if (ent == null && MyEditor.Instance.canSelectStatic.Checked)
                     {
                         ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
                     }
