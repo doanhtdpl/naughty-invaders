@@ -87,12 +87,11 @@ namespace MyGame
             SB.dt = gameTime.ElapsedGameTime.Milliseconds * 0.001f;
 
             GamerManager.updateInputs();
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == Microsoft.Xna.Framework.Input.ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Escape))
+            if (!MyEditor.Instance.update())
             {
                 Application.Exit();
             }
 
-            MyEditor.Instance.update();
             stateManager.update();
 
             UpdateGameTime();
