@@ -19,8 +19,29 @@ namespace MyGame
     {
         public static MyEditor Instance;
 
-        #region Selected Entitie(s)
         private List<Entity2D> selectedEntities = new List<Entity2D>();
+
+        EditorState currentState = null;
+        EditorState nextState = null;
+        public MouseState lastMouseState;
+        public MouseState mouseState;
+        public KeyboardState lastKeyState;
+        public KeyboardState keyState;
+
+        public int exitBlockers = 0;
+
+        public MyEditor()
+        {
+            InitializeComponent();
+            Instance = this;
+        }
+
+        public MouseState getMouseState() { return mouseState; }
+        public MouseState getLastMouseState() { return lastMouseState; }
+        public KeyboardState getKeyState() { return lastKeyState; }
+        public KeyboardState getLastKeyState() { return keyState; }
+
+        #region Selected Entitie(s)
 
         public bool anyEntitySelected() { return selectedEntities.Count > 0; }
         public List<Entity2D> getSelectedEntities() { return selectedEntities; }
@@ -40,24 +61,6 @@ namespace MyGame
         }
 
         #endregion
-
- EditorState currentState = null;
-        EditorState nextState = null;
-        public MouseState lastMouseState;
-        public MouseState mouseState;
-        public KeyboardState lastKeyState;
-        public KeyboardState keyState;
-
-        public MyEditor()
-        {
-            InitializeComponent();
-            Instance = this;
-        }
-
-        public MouseState getMouseState() { return mouseState; }
-        public MouseState getLastMouseState() { return lastMouseState; }
-        public KeyboardState getKeyState() { return lastKeyState; }
-        public KeyboardState getLastKeyState() { return keyState; }
 
         private void validateInputs(object sender)
         {
@@ -164,20 +167,36 @@ namespace MyGame
         }
 
         #region Load/Save
-        private void buttonLoadLevel_Click(object sender, EventArgs e)
+        private bool openDialog(string title, ref string fileName)
         {
+            exitBlockers++;
+
             OpenFileDialog fileDialog = new OpenFileDialog();
             string relativePath = "../../../../MyGameContent/xml/levels";
             string fullPath = Path.GetFullPath(relativePath);
 
             fileDialog.InitialDirectory = fullPath;
-            fileDialog.Title = "Save Level";
+            fileDialog.Title = title;
             fileDialog.Filter = "Level files (*.xml)|*.xml";
+            fileDialog.CheckFileExists = false;
             fileDialog.RestoreDirectory = true;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                EditorHelper.Instance.loadNewLevel(fileDialog.FileName);
+                fileName = fileDialog.FileName;
+                exitBlockers--;
+                return true;
+            }
+            exitBlockers--;
+            return false;
+        }
+
+        private void buttonLoadLevel_Click(object sender, EventArgs e)
+        {
+            string fileName = "";
+            if (openDialog("Load Level", ref fileName))
+            {
+                EditorHelper.Instance.loadNewLevel(fileName);
                 currentState = null;
             }
         }
@@ -185,43 +204,26 @@ namespace MyGame
 
         private void buttonImportLevel_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            string relativePath = "../../../../MyGameContent/xml/levels";
-            string fullPath = Path.GetFullPath(relativePath);
-
-            fileDialog.InitialDirectory = fullPath;
-            fileDialog.Title = "Save Level";
-            fileDialog.Filter = "Level files (*.xml)|*.xml";
-            fileDialog.RestoreDirectory = true;
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            string fileName = "";
+            if (openDialog("Import level", ref fileName))
             {
-                selectedEntities = EditorHelper.Instance.importLevel(fileDialog.FileName);
+                selectedEntities = EditorHelper.Instance.importLevel(fileName);
             }
         }
 
         private void buttonSaveLevel_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            string relativePath = "../../../../MyGameContent/xml/levels";
-            string fullPath = Path.GetFullPath(relativePath);
-
-            fileDialog.InitialDirectory = fullPath;
-            fileDialog.Title = "Save Level";
-            fileDialog.Filter = "Level files (*.xml)|*.xml";
-            fileDialog.CheckFileExists = false;
-            fileDialog.RestoreDirectory = true;
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            string fileName = "";
+            if (openDialog("Save level", ref fileName))
             {
-                EditorHelper.Instance.saveLevelToXML(fileDialog.FileName);
+                EditorHelper.Instance.saveLevelToXML(fileName);
                 currentState = null;
             }
         }
         #endregion
 
         #region Update/Render
-        public void update()
+        public bool update()
         {
             if (nextState != null)
             {
@@ -231,7 +233,11 @@ namespace MyGame
             mouseState = Mouse.GetState();
             keyState = Keyboard.GetState();
 
-            if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+            if(exitBlockers <= 0 && justPressedKey(Microsoft.Xna.Framework.Input.Keys.Escape))
+            {
+                return false;
+            }
+            else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
                 Camera2D.position.X -= (mouseState.X - lastMouseState.X);
                 Camera2D.position.Y += (mouseState.Y - lastMouseState.Y);
@@ -291,6 +297,8 @@ namespace MyGame
 
             lastMouseState = mouseState;
             lastKeyState = keyState;
+
+            return true;
         }
 
         public void render()
