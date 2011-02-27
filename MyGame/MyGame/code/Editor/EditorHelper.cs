@@ -166,8 +166,9 @@ namespace MyGame
         }
 
         // loads the specified file into the editor
-        private void loadLevel(string fileName)
+        private List<Entity2D> loadLevel(string fileName)
         {
+            List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
                 Stream stream = File.OpenRead(fileName);
@@ -182,6 +183,7 @@ namespace MyGame
                         new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
                     re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addStaticProp(re);
+                    list.Add(re);
                 }
                 nodes = xml_doc.GetElementsByTagName("animatedProp"); // read animated props
                 foreach (XmlElement node in nodes)
@@ -190,21 +192,25 @@ namespace MyGame
                         new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0);
                     ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
+                    list.Add(ae);
                 }
                 nodes = xml_doc.GetElementsByTagName("enemy"); // read enemies
                 foreach (XmlElement node in nodes)
                 {
                     string name = node.GetAttribute("entityName");
                     Matrix world = node.GetAttribute("worldMatrix").toMatrix();
-                    EnemyManager.Instance.addEnemy(name, world.Translation);
+                    Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation);
+                    list.Add(e);
                 }
 
                 stream.Close();
             }
+
+            return list;
         }
 
         // loads the specified file into the editor
-        public void loadNewLevel(string fileName)
+        public List<Entity2D> loadNewLevel(string fileName)
         {
             LevelManager.Instance.cleanLevel();
 
@@ -214,13 +220,13 @@ namespace MyGame
             CameraManager.Instance.loadXMLfake();
             // END FAKE LOADING
 
-            loadLevel(fileName);
+            return loadLevel(fileName);
         }
 
         // loads the specified file into the editor
-        public void importLevel(string fileName)
+        public List<Entity2D> importLevel(string fileName)
         {
-            loadLevel(fileName);
+            return loadLevel(fileName);
         }
         #endregion
     }

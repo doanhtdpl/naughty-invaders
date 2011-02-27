@@ -196,8 +196,7 @@ namespace MyGame
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                EditorHelper.Instance.importLevel(fileDialog.FileName);
-                currentState = null;
+                selectedEntities = EditorHelper.Instance.importLevel(fileDialog.FileName);
             }
         }
 
@@ -241,7 +240,7 @@ namespace MyGame
             {
                 Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
             }
-            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete))
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && myEditorControl.Focused)
             {
                 //DELETE
                 foreach (Entity2D ent in selectedEntities)
@@ -311,8 +310,9 @@ namespace MyGame
 
         public virtual void propertiesChanged()
         {
-            foreach (Entity2D ent in selectedEntities)
+            if (anyEntitySelected())
             {
+                Entity2D ent = selectedEntities[0];
                 if (ent != null)
                 {
                     ent.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
