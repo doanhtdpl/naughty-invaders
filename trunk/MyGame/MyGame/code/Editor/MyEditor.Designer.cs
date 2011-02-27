@@ -46,17 +46,21 @@
             this.textPosY = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textPosX = new System.Windows.Forms.TextBox();
-            this.myEditorControl = new MyGame.MyEditorControl();
             this.DefaultPage = new System.Windows.Forms.TabPage();
-            this.buttonAddStatic = new System.Windows.Forms.Button();
-            this.buttonMove = new System.Windows.Forms.Button();
-            this.buttonRotate = new System.Windows.Forms.Button();
-            this.buttonScale = new System.Windows.Forms.Button();
-            this.buttonAddAnimated = new System.Windows.Forms.Button();
-            this.buttonLoadLevel = new System.Windows.Forms.Button();
-            this.buttonSaveLevel = new System.Windows.Forms.Button();
             this.buttonAddEnemy = new System.Windows.Forms.Button();
+            this.buttonSaveLevel = new System.Windows.Forms.Button();
+            this.buttonLoadLevel = new System.Windows.Forms.Button();
+            this.buttonAddAnimated = new System.Windows.Forms.Button();
+            this.buttonScale = new System.Windows.Forms.Button();
+            this.buttonRotate = new System.Windows.Forms.Button();
+            this.buttonMove = new System.Windows.Forms.Button();
+            this.buttonAddStatic = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.canSelectStatic = new System.Windows.Forms.CheckBox();
+            this.canSelectAnimated = new System.Windows.Forms.CheckBox();
+            this.canSelectEnemy = new System.Windows.Forms.CheckBox();
+            this.myEditorControl = new MyGame.MyEditorControl();
+            this.buttonImportLevel = new System.Windows.Forms.Button();
             this.propertiesPanel.SuspendLayout();
             this.DefaultPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -263,17 +267,12 @@
             this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             this.textPosX.Leave += new System.EventHandler(this.textChange);
             // 
-            // myEditorControl
-            // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            // 
             // DefaultPage
             // 
+            this.DefaultPage.Controls.Add(this.buttonImportLevel);
+            this.DefaultPage.Controls.Add(this.canSelectEnemy);
+            this.DefaultPage.Controls.Add(this.canSelectAnimated);
+            this.DefaultPage.Controls.Add(this.canSelectStatic);
             this.DefaultPage.Controls.Add(this.buttonAddEnemy);
             this.DefaultPage.Controls.Add(this.buttonSaveLevel);
             this.DefaultPage.Controls.Add(this.buttonLoadLevel);
@@ -290,43 +289,53 @@
             this.DefaultPage.Text = "Default";
             this.DefaultPage.UseVisualStyleBackColor = true;
             // 
-            // buttonAddStatic
+            // buttonAddEnemy
             // 
-            this.buttonAddStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddStatic.Location = new System.Drawing.Point(171, 5);
-            this.buttonAddStatic.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddStatic.Name = "buttonAddStatic";
-            this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddStatic.TabIndex = 0;
-            this.buttonAddStatic.Text = "Add Static Prop";
-            this.buttonAddStatic.UseVisualStyleBackColor = true;
-            this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
+            this.buttonAddEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddEnemy.Location = new System.Drawing.Point(281, 5);
+            this.buttonAddEnemy.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddEnemy.Name = "buttonAddEnemy";
+            this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddEnemy.TabIndex = 7;
+            this.buttonAddEnemy.Text = "Add Enemy";
+            this.buttonAddEnemy.UseVisualStyleBackColor = true;
+            this.buttonAddEnemy.Click += new System.EventHandler(this.button_Click);
             // 
-            // buttonMove
+            // buttonSaveLevel
             // 
-            this.buttonMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMove.Location = new System.Drawing.Point(5, 5);
-            this.buttonMove.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonMove.Name = "buttonMove";
-            this.buttonMove.Size = new System.Drawing.Size(51, 28);
-            this.buttonMove.TabIndex = 1;
-            this.buttonMove.Tag = "";
-            this.buttonMove.Text = "Move";
-            this.buttonMove.UseVisualStyleBackColor = true;
-            this.buttonMove.Click += new System.EventHandler(this.button_Click);
+            this.buttonSaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveLevel.Location = new System.Drawing.Point(445, 6);
+            this.buttonSaveLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSaveLevel.Name = "buttonSaveLevel";
+            this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonSaveLevel.TabIndex = 6;
+            this.buttonSaveLevel.Text = "Save Level";
+            this.buttonSaveLevel.UseVisualStyleBackColor = true;
+            this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevel_Click);
             // 
-            // buttonRotate
+            // buttonLoadLevel
             // 
-            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRotate.Location = new System.Drawing.Point(61, 5);
-            this.buttonRotate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonRotate.Name = "buttonRotate";
-            this.buttonRotate.Size = new System.Drawing.Size(51, 28);
-            this.buttonRotate.TabIndex = 2;
-            this.buttonRotate.Tag = "";
-            this.buttonRotate.Text = "Rotate";
-            this.buttonRotate.UseVisualStyleBackColor = true;
-            this.buttonRotate.Click += new System.EventHandler(this.button_Click);
+            this.buttonLoadLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoadLevel.Location = new System.Drawing.Point(336, 5);
+            this.buttonLoadLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLoadLevel.Name = "buttonLoadLevel";
+            this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonLoadLevel.TabIndex = 5;
+            this.buttonLoadLevel.Text = "Load Level";
+            this.buttonLoadLevel.UseVisualStyleBackColor = true;
+            this.buttonLoadLevel.Click += new System.EventHandler(this.buttonLoadLevel_Click);
+            // 
+            // buttonAddAnimated
+            // 
+            this.buttonAddAnimated.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddAnimated.Location = new System.Drawing.Point(226, 5);
+            this.buttonAddAnimated.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddAnimated.Name = "buttonAddAnimated";
+            this.buttonAddAnimated.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddAnimated.TabIndex = 4;
+            this.buttonAddAnimated.Text = "Add Animated Prop";
+            this.buttonAddAnimated.UseVisualStyleBackColor = true;
+            this.buttonAddAnimated.Click += new System.EventHandler(this.button_Click);
             // 
             // buttonScale
             // 
@@ -341,53 +350,43 @@
             this.buttonScale.UseVisualStyleBackColor = true;
             this.buttonScale.Click += new System.EventHandler(this.button_Click);
             // 
-            // buttonAddAnimated
+            // buttonRotate
             // 
-            this.buttonAddAnimated.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddAnimated.Location = new System.Drawing.Point(226, 5);
-            this.buttonAddAnimated.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddAnimated.Name = "buttonAddAnimated";
-            this.buttonAddAnimated.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddAnimated.TabIndex = 4;
-            this.buttonAddAnimated.Text = "Add Animated Prop";
-            this.buttonAddAnimated.UseVisualStyleBackColor = true;
-            this.buttonAddAnimated.Click += new System.EventHandler(this.button_Click);
+            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRotate.Location = new System.Drawing.Point(61, 5);
+            this.buttonRotate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonRotate.Name = "buttonRotate";
+            this.buttonRotate.Size = new System.Drawing.Size(51, 28);
+            this.buttonRotate.TabIndex = 2;
+            this.buttonRotate.Tag = "";
+            this.buttonRotate.Text = "Rotate";
+            this.buttonRotate.UseVisualStyleBackColor = true;
+            this.buttonRotate.Click += new System.EventHandler(this.button_Click);
             // 
-            // buttonLoadLevel
+            // buttonMove
             // 
-            this.buttonLoadLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoadLevel.Location = new System.Drawing.Point(336, 5);
-            this.buttonLoadLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonLoadLevel.Name = "buttonLoadLevel";
-            this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonLoadLevel.TabIndex = 5;
-            this.buttonLoadLevel.Text = "Load Level";
-            this.buttonLoadLevel.UseVisualStyleBackColor = true;
-            this.buttonLoadLevel.Click += new System.EventHandler(this.buttonLoadLevel_Click);
+            this.buttonMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMove.Location = new System.Drawing.Point(5, 5);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(51, 28);
+            this.buttonMove.TabIndex = 1;
+            this.buttonMove.Tag = "";
+            this.buttonMove.Text = "Move";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.button_Click);
             // 
-            // buttonSaveLevel
+            // buttonAddStatic
             // 
-            this.buttonSaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveLevel.Location = new System.Drawing.Point(391, 6);
-            this.buttonSaveLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSaveLevel.Name = "buttonSaveLevel";
-            this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonSaveLevel.TabIndex = 6;
-            this.buttonSaveLevel.Text = "Save Level";
-            this.buttonSaveLevel.UseVisualStyleBackColor = true;
-            this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevel_Click);
-            // 
-            // buttonAddEnemy
-            // 
-            this.buttonAddEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddEnemy.Location = new System.Drawing.Point(281, 5);
-            this.buttonAddEnemy.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddEnemy.Name = "buttonAddEnemy";
-            this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddEnemy.TabIndex = 7;
-            this.buttonAddEnemy.Text = "Add Enemy";
-            this.buttonAddEnemy.UseVisualStyleBackColor = true;
-            this.buttonAddEnemy.Click += new System.EventHandler(this.button_Click);
+            this.buttonAddStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddStatic.Location = new System.Drawing.Point(171, 5);
+            this.buttonAddStatic.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddStatic.Name = "buttonAddStatic";
+            this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddStatic.TabIndex = 0;
+            this.buttonAddStatic.Text = "Add Static Prop";
+            this.buttonAddStatic.UseVisualStyleBackColor = true;
+            this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
             // 
             // tabControl1
             // 
@@ -398,6 +397,63 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(853, 60);
             this.tabControl1.TabIndex = 1;
+            // 
+            // canSelectStatic
+            // 
+            this.canSelectStatic.AutoSize = true;
+            this.canSelectStatic.Checked = true;
+            this.canSelectStatic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectStatic.Location = new System.Drawing.Point(515, 10);
+            this.canSelectStatic.Name = "canSelectStatic";
+            this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
+            this.canSelectStatic.TabIndex = 8;
+            this.canSelectStatic.Text = "Static";
+            this.canSelectStatic.UseVisualStyleBackColor = true;
+            // 
+            // canSelectAnimated
+            // 
+            this.canSelectAnimated.AutoSize = true;
+            this.canSelectAnimated.Checked = true;
+            this.canSelectAnimated.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectAnimated.Location = new System.Drawing.Point(574, 10);
+            this.canSelectAnimated.Name = "canSelectAnimated";
+            this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
+            this.canSelectAnimated.TabIndex = 9;
+            this.canSelectAnimated.Text = "Animated";
+            this.canSelectAnimated.UseVisualStyleBackColor = true;
+            // 
+            // canSelectEnemy
+            // 
+            this.canSelectEnemy.AutoSize = true;
+            this.canSelectEnemy.Checked = true;
+            this.canSelectEnemy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectEnemy.Location = new System.Drawing.Point(647, 10);
+            this.canSelectEnemy.Name = "canSelectEnemy";
+            this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
+            this.canSelectEnemy.TabIndex = 10;
+            this.canSelectEnemy.Text = "Enemy";
+            this.canSelectEnemy.UseVisualStyleBackColor = true;
+            // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
+            // 
+            // buttonImportLevel
+            // 
+            this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImportLevel.Location = new System.Drawing.Point(390, 6);
+            this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImportLevel.Name = "buttonImportLevel";
+            this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonImportLevel.TabIndex = 11;
+            this.buttonImportLevel.Text = "Import Level";
+            this.buttonImportLevel.UseVisualStyleBackColor = true;
+            this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
             // 
             // MyEditor
             // 
@@ -415,6 +471,7 @@
             this.propertiesPanel.ResumeLayout(false);
             this.propertiesPanel.PerformLayout();
             this.DefaultPage.ResumeLayout(false);
+            this.DefaultPage.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -451,5 +508,9 @@
         private System.Windows.Forms.Button buttonMove;
         private System.Windows.Forms.Button buttonAddStatic;
         private System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.CheckBox canSelectEnemy;
+        public System.Windows.Forms.CheckBox canSelectAnimated;
+        public System.Windows.Forms.CheckBox canSelectStatic;
+        private System.Windows.Forms.Button buttonImportLevel;
     }
 }
