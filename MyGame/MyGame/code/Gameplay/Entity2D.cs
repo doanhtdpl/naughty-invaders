@@ -8,9 +8,14 @@ namespace MyGame
 {
     public class Entity2D
     {
+        public static int NEXT_ENTITY_ID = 1;
+
         public enum tEntityState { Active, Waiting, Dying, ToDelete }
         public string entityName { set; get; }
         public tEntityState entityState { get; set; }
+        public int id = -1;
+
+        Matrix initWorld;
 
         Matrix world;
         public Matrix worldMatrix
@@ -86,22 +91,26 @@ namespace MyGame
             }
         }
 
-        public Entity2D(string entityName, Matrix worldMatrix)
+        public void setId(int id)
         {
-            this.worldMatrix = worldMatrix;
-            this.entityName = entityName;
+            this.id = id;
         }
 
         // public constructors
-        public Entity2D(string entityName, Vector3 position, float orientation)
+        public Entity2D(string entityName, Vector3 position, float orientation, int id = -1)
         {
             this.entityName = entityName;
             position.Z += Calc.randomScalar(-0.02f, 0.02f);
 
             initializeWorldMatrix2D(position, scale2D, orientation);
+
+            if (id == -1)
+                this.id = NEXT_ENTITY_ID++;
+            else
+                this.id = id;
+
             EntityManager.Instance.registerEntity(this);
         }
-        public Entity2D(string entityName) : this(entityName, Vector3.Zero, 0) { }
 
         // initialize the world matrix, must be called at the creation of each entity
         public void initializeWorldMatrix2D(Vector3 position, Vector2 scale, float orientation)
@@ -149,5 +158,8 @@ namespace MyGame
 
             LevelManager.Instance.removeEntity(this);
         }
+
+        public virtual void setInit() { initWorld = world; }
+        public virtual void reset() { world = initWorld; }
     }
 }

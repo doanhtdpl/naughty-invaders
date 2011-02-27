@@ -36,7 +36,7 @@ namespace MyGame
         {
             enemies.Add(e);
         }
-        public Entity2D addEnemy(string name, Vector3 position)
+        public Entity2D addEnemy(string name, Vector3 position, int id = -1)
         {
             Assembly assem = Assembly.GetExecutingAssembly();
 
@@ -48,7 +48,7 @@ namespace MyGame
             if (t == null)
             {
                 t = Type.GetType("MyGame.GenericEnemy");
-                args = new Object[]{ position, 0.0f, name };
+                args = new Object[]{ position, 0.0f, name, id };
             }
 
             Object o = Activator.CreateInstance(t, args);

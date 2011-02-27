@@ -69,5 +69,13 @@ namespace MyGame
         {
             entities.Clear();
         }
+
+        public void reset()
+        {
+            foreach (Entity2D ent in entities)
+            {
+                ent.reset();
+            }
+        }
     }
 }

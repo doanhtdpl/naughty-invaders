@@ -47,6 +47,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textPosX = new System.Windows.Forms.TextBox();
             this.DefaultPage = new System.Windows.Forms.TabPage();
+            this.buttonImportLevel = new System.Windows.Forms.Button();
+            this.canSelectEnemy = new System.Windows.Forms.CheckBox();
+            this.canSelectAnimated = new System.Windows.Forms.CheckBox();
+            this.canSelectStatic = new System.Windows.Forms.CheckBox();
             this.buttonAddEnemy = new System.Windows.Forms.Button();
             this.buttonSaveLevel = new System.Windows.Forms.Button();
             this.buttonLoadLevel = new System.Windows.Forms.Button();
@@ -56,11 +60,8 @@
             this.buttonMove = new System.Windows.Forms.Button();
             this.buttonAddStatic = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.canSelectStatic = new System.Windows.Forms.CheckBox();
-            this.canSelectAnimated = new System.Windows.Forms.CheckBox();
-            this.canSelectEnemy = new System.Windows.Forms.CheckBox();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.buttonImportLevel = new System.Windows.Forms.Button();
+            this.selectGroup = new System.Windows.Forms.CheckBox();
             this.propertiesPanel.SuspendLayout();
             this.DefaultPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -269,6 +270,7 @@
             // 
             // DefaultPage
             // 
+            this.DefaultPage.Controls.Add(this.selectGroup);
             this.DefaultPage.Controls.Add(this.buttonImportLevel);
             this.DefaultPage.Controls.Add(this.canSelectEnemy);
             this.DefaultPage.Controls.Add(this.canSelectAnimated);
@@ -288,6 +290,54 @@
             this.DefaultPage.TabIndex = 0;
             this.DefaultPage.Text = "Default";
             this.DefaultPage.UseVisualStyleBackColor = true;
+            // 
+            // buttonImportLevel
+            // 
+            this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImportLevel.Location = new System.Drawing.Point(390, 6);
+            this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImportLevel.Name = "buttonImportLevel";
+            this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonImportLevel.TabIndex = 11;
+            this.buttonImportLevel.Text = "Import Level";
+            this.buttonImportLevel.UseVisualStyleBackColor = true;
+            this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
+            // 
+            // canSelectEnemy
+            // 
+            this.canSelectEnemy.AutoSize = true;
+            this.canSelectEnemy.Checked = true;
+            this.canSelectEnemy.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectEnemy.Location = new System.Drawing.Point(647, 10);
+            this.canSelectEnemy.Name = "canSelectEnemy";
+            this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
+            this.canSelectEnemy.TabIndex = 10;
+            this.canSelectEnemy.Text = "Enemy";
+            this.canSelectEnemy.UseVisualStyleBackColor = true;
+            // 
+            // canSelectAnimated
+            // 
+            this.canSelectAnimated.AutoSize = true;
+            this.canSelectAnimated.Checked = true;
+            this.canSelectAnimated.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectAnimated.Location = new System.Drawing.Point(574, 10);
+            this.canSelectAnimated.Name = "canSelectAnimated";
+            this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
+            this.canSelectAnimated.TabIndex = 9;
+            this.canSelectAnimated.Text = "Animated";
+            this.canSelectAnimated.UseVisualStyleBackColor = true;
+            // 
+            // canSelectStatic
+            // 
+            this.canSelectStatic.AutoSize = true;
+            this.canSelectStatic.Checked = true;
+            this.canSelectStatic.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.canSelectStatic.Location = new System.Drawing.Point(515, 10);
+            this.canSelectStatic.Name = "canSelectStatic";
+            this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
+            this.canSelectStatic.TabIndex = 8;
+            this.canSelectStatic.Text = "Static";
+            this.canSelectStatic.UseVisualStyleBackColor = true;
             // 
             // buttonAddEnemy
             // 
@@ -398,42 +448,6 @@
             this.tabControl1.Size = new System.Drawing.Size(853, 60);
             this.tabControl1.TabIndex = 1;
             // 
-            // canSelectStatic
-            // 
-            this.canSelectStatic.AutoSize = true;
-            this.canSelectStatic.Checked = true;
-            this.canSelectStatic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectStatic.Location = new System.Drawing.Point(515, 10);
-            this.canSelectStatic.Name = "canSelectStatic";
-            this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
-            this.canSelectStatic.TabIndex = 8;
-            this.canSelectStatic.Text = "Static";
-            this.canSelectStatic.UseVisualStyleBackColor = true;
-            // 
-            // canSelectAnimated
-            // 
-            this.canSelectAnimated.AutoSize = true;
-            this.canSelectAnimated.Checked = true;
-            this.canSelectAnimated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectAnimated.Location = new System.Drawing.Point(574, 10);
-            this.canSelectAnimated.Name = "canSelectAnimated";
-            this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
-            this.canSelectAnimated.TabIndex = 9;
-            this.canSelectAnimated.Text = "Animated";
-            this.canSelectAnimated.UseVisualStyleBackColor = true;
-            // 
-            // canSelectEnemy
-            // 
-            this.canSelectEnemy.AutoSize = true;
-            this.canSelectEnemy.Checked = true;
-            this.canSelectEnemy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectEnemy.Location = new System.Drawing.Point(647, 10);
-            this.canSelectEnemy.Name = "canSelectEnemy";
-            this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
-            this.canSelectEnemy.TabIndex = 10;
-            this.canSelectEnemy.Text = "Enemy";
-            this.canSelectEnemy.UseVisualStyleBackColor = true;
-            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 92);
@@ -443,17 +457,15 @@
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
-            // buttonImportLevel
+            // selectGroup
             // 
-            this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImportLevel.Location = new System.Drawing.Point(390, 6);
-            this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonImportLevel.Name = "buttonImportLevel";
-            this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonImportLevel.TabIndex = 11;
-            this.buttonImportLevel.Text = "Import Level";
-            this.buttonImportLevel.UseVisualStyleBackColor = true;
-            this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
+            this.selectGroup.AutoSize = true;
+            this.selectGroup.Location = new System.Drawing.Point(711, 10);
+            this.selectGroup.Name = "selectGroup";
+            this.selectGroup.Size = new System.Drawing.Size(53, 17);
+            this.selectGroup.TabIndex = 12;
+            this.selectGroup.Text = "group";
+            this.selectGroup.UseVisualStyleBackColor = true;
             // 
             // MyEditor
             // 
@@ -512,5 +524,6 @@
         public System.Windows.Forms.CheckBox canSelectAnimated;
         public System.Windows.Forms.CheckBox canSelectStatic;
         private System.Windows.Forms.Button buttonImportLevel;
+        public System.Windows.Forms.CheckBox selectGroup;
     }
 }

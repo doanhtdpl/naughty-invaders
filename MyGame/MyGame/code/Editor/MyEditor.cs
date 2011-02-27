@@ -21,6 +21,9 @@ namespace MyGame
 
         private List<Entity2D> selectedEntities = new List<Entity2D>();
 
+        public static System.Drawing.Color SELECTED_COLOR = System.Drawing.Color.Green;
+        public static System.Drawing.Color UNSELECTED_COLOR = System.Drawing.Color.FromArgb(212, 208, 200);
+
         EditorState currentState = null;
         EditorState nextState = null;
         public MouseState lastMouseState;
@@ -81,6 +84,8 @@ namespace MyGame
         public void changeState(EditorState newState)
         {
             nextState = newState;
+            selectButton();
+            myEditorControl.Focus();
         }
 
         public void doChangeState()
@@ -134,8 +139,6 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEnemy());
             }
-            selectButton(sender);
-            myEditorControl.Focus();
         }
 
         private void buttonResetPosition_Click(object sender, EventArgs e)
@@ -154,16 +157,14 @@ namespace MyGame
         }
         #endregion
 
-        private void selectButton(object button)
+        private void selectButton()
         {
-            buttonMove.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-            buttonRotate.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-            buttonScale.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-            buttonAddStatic.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-            buttonAddAnimated.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-            buttonAddEnemy.BackColor = System.Drawing.Color.FromArgb(212, 208, 200);
-
-            ((Button)button).BackColor = System.Drawing.Color.Green;
+            buttonMove.BackColor = nextState is EditorState_MoveState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonRotate.BackColor = nextState is EditorState_RotateState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonScale.BackColor = nextState is EditorState_ScaleState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddStatic.BackColor = nextState is EditorState_AddStatic ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddAnimated.BackColor = nextState is EditorState_AddAnimated ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddEnemy.BackColor = nextState is EditorState_AddEnemy ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
 
         #region Load/Save
@@ -185,9 +186,11 @@ namespace MyGame
             {
                 fileName = fileDialog.FileName;
                 exitBlockers--;
+                myEditorControl.Focus();
                 return true;
             }
             exitBlockers--;
+            myEditorControl.Focus();
             return false;
         }
 
@@ -233,10 +236,33 @@ namespace MyGame
             mouseState = Mouse.GetState();
             keyState = Keyboard.GetState();
 
+            //EXIT
             if(exitBlockers <= 0 && justPressedKey(Microsoft.Xna.Framework.Input.Keys.Escape))
             {
                 return false;
             }
+
+            //STATE CHANGE
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Q))
+            {
+                changeState(new EditorState_MoveState());
+            }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.W))
+            {
+                changeState(new EditorState_RotateState());
+            }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.E))
+            {
+                changeState(new EditorState_ScaleState());
+            }
+
+            //RESET
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.R))
+            {
+                EntityManager.Instance.reset();
+            }
+
+            //MOVE CAMERA
             else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
                 Camera2D.position.X -= (mouseState.X - lastMouseState.X);
@@ -246,19 +272,21 @@ namespace MyGame
             {
                 Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
             }
+
+            //DELETE
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && myEditorControl.Focused)
             {
-                //DELETE
                 foreach (Entity2D ent in selectedEntities)
                 {
                     ent.delete();
                 }
                 selectedEntities.Clear();
             }
-            else if(justPressedKey(Microsoft.Xna.Framework.Input.Keys.D))
+
+            //DUPLICATE
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.D))
             {
-                //Duplicate
-                if(anyEntitySelected())
+                if (anyEntitySelected())
                 {
                     List<Entity2D> newEntities = new List<Entity2D>();
 
@@ -290,6 +318,8 @@ namespace MyGame
                     selectedEntities = newEntities;
                 }
             }
+
+            //UPDATE STATE
             else if (currentState != null)
             {
                 currentState.update();
