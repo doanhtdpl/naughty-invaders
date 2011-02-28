@@ -13,8 +13,8 @@ namespace MyGame
 
     class DebugManager
     {
-        const int MAX_LINES = 100;
-        const int MAX_RECTANGLES = 30;
+        const int MAX_LINES = 500;
+        const int MAX_RECTANGLES = 200;
 
         BasicEffect basicEffect;
 
@@ -75,6 +75,9 @@ namespace MyGame
         public void addLine(Vector3 p1, Vector3 p2, Color color)
         {
             int index = numberOfLines * 2;
+
+            if (index > lineList.Length) return;
+
             lineList[index].Position = p1;
             lineList[index].Color = color;
             lineList[index + 1].Position = p2;
