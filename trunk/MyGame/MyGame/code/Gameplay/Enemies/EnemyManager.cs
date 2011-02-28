@@ -48,7 +48,7 @@ namespace MyGame
             if (t == null)
             {
                 t = Type.GetType("MyGame.GenericEnemy");
-                args = new Object[]{ position, 0.0f, name, id };
+                args = new Object[]{ position, 0.0f, name };
             }
 
             Object o = Activator.CreateInstance(t, args);
