@@ -31,31 +31,30 @@ namespace MyGame
 
         const int NUMBER_OF_COLUMNS = 100;
         const int NUMBER_OF_ROWS = 50;
-        const float GRID_SPACING = 50.0f;
-        public void renderGrid()
+        public void renderGrid(int gridSpacing)
         {
             Vector3 startingPosition = Camera2D.position - new Vector3(
-                    (NUMBER_OF_COLUMNS / 2) * GRID_SPACING,
-                    (NUMBER_OF_ROWS / 2) * GRID_SPACING,
+                    (NUMBER_OF_COLUMNS / 2) * gridSpacing,
+                    (NUMBER_OF_ROWS / 2) * gridSpacing,
                     0.0f)
                     - new Vector3( Camera2D.position.X % 50, Camera2D.position.Y % 50, 0.0f);
             startingPosition.Z = 0;
 
-            float lineLength = (NUMBER_OF_ROWS - 1) * GRID_SPACING;
+            float lineLength = (NUMBER_OF_ROWS - 1) * gridSpacing;
             for(int i=0; i<NUMBER_OF_COLUMNS; ++i)
             {
                 DebugManager.Instance.addLine(
-                    startingPosition + new Vector3(GRID_SPACING * i, 0.0f, 0.0f),
-                    startingPosition + new Vector3(GRID_SPACING * i, lineLength, 0.0f),
-                    Color.GreenYellow); 
+                    startingPosition + new Vector3(gridSpacing * i, 0.0f, 0.0f),
+                    startingPosition + new Vector3(gridSpacing * i, lineLength, 0.0f),
+                    Color.Gray); 
             }
-            lineLength = (NUMBER_OF_COLUMNS - 1) * GRID_SPACING;
+            lineLength = (NUMBER_OF_COLUMNS - 1) * gridSpacing;
             for (int i = 0; i < NUMBER_OF_ROWS; ++i)
             {
                 DebugManager.Instance.addLine(
-                    startingPosition + new Vector3(0.0f, GRID_SPACING * i, 0.0f),
-                    startingPosition + new Vector3(lineLength, GRID_SPACING * i, 0.0f),
-                    Color.GreenYellow);
+                    startingPosition + new Vector3(0.0f, gridSpacing * i, 0.0f),
+                    startingPosition + new Vector3(lineLength, gridSpacing * i, 0.0f),
+                    Color.Gray);
             }
         }
         #region Mouse

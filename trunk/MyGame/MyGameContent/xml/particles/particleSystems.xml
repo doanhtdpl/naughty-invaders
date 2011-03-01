@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  name: to identify each particle system
+  texturePath: the path of the texture relative to content/xml/particles/
+  type
+    - burst: if we want that the nParticles spawn at the same time
+    - fountain: if we want that the nParticles spawn at particlesLife/nParticles ratio
+  nParticles: number of simultaneous particles the system has
+  systemLife: time in seconds of the system
+  position: position of the whole system (will be added as an offset to each particle to the position of the system)
+  positionVarianceMin/Max: to add a random offset in position for each particle
+  direction: direction of the whole system
+  directionVarianceMin/Max: same as position variances
+  acceleration: acceleration of the whole system
+  accelerationVarianceMin/Max: same as position variances
+  color: color of the particles
+  particlesRotation: initial rotation of each particle
+  particlesRotationVariance: angle added to the base rotation of each particle. The angle is a random between - + specified value
+  particlesRotationSpeed: speed of rotation of particles
+  particlesRotationSpeedVariance: speed added to each particle. The speed is a random between - + specified value
+  size: size in meters
+  sizeIni: initial size
+  sizeEnd: ending size
+  fadeIn: time in which the particle alpha and size (from sizeIni to size) will be increasing
+  fadeOut: time in which the particle alpha and size (from size to sizeEnd) will be decreasing 
+  particlesLife: life of each particle in seconds
+-->
+
+<particle_systems>
+  <system name = "player_dust"
+    texturePath = "dust"
+    type = "burst"
+    nParticles = "3"
+    systemLife = "2"
+    position = "0 0 0"
+    positionVarianceMin = "-0.1 0 -0.1"
+    positionVarianceMax = "0.1 0.05 0.1"
+    direction = "0 0 0"
+    directionVarianceMin = "-0.1 0 -0.1"
+    directionVarianceMax = "0.1 0.1 0.1"
+    acceleration = "0 0 0"
+    accelerationVarianceMin = "0 0 0"
+    accelerationVarianceMax = "0 0 0"
+    color = "50 40 40 230"
+    particlesRotation = "0"
+    particlesRotationVariance = "1"
+    particlesRotationSpeed = "1"
+    particlesRotationSpeedVariance = "1"
+    size = "0.6"
+    sizeIni = "0.2"
+    sizeEnd = "1"
+    fadeIn = "0.75"
+    fadeOut = "0.75"
+    particlesLife = "1.5"
+  />
+  <system name = "lavaSmoke"
+    texturePath = "dust"
+    type = "fountain"
+    nParticles = "20"
+    systemLife = "99999999"
+    position = "0 0 0"
+    positionVarianceMin = "-5 0 -5"
+    positionVarianceMax = "5 0 5"
+    direction = "0 0 0"
+    directionVarianceMin = "0 3 0"
+    directionVarianceMax = "0 5 0"
+    acceleration = "0 0 0"
+    accelerationVarianceMin = "0 0 0"
+    accelerationVarianceMax = "0 0 0"
+    color = "100 100 100 255"
+    particlesRotation = "0"
+    particlesRotationVariance = "3.14"
+    particlesRotationSpeed = "3.14"
+    particlesRotationSpeedVariance = "0"
+    size = "10"
+    sizeIni = "10"
+    sizeEnd = "10"
+    fadeIn = "1.5"
+    fadeOut = "1.5"
+    particlesLife = "4"
+  />
+</particle_systems>
+

@@ -16,11 +16,24 @@ namespace MyGame
         {
             return float.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
         }
+        public static int toInt(this string value)
+        {
+            return int.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
+        }
         public static string toString(this float value)
         {
             return value.ToString(CultureInfo.InvariantCulture.NumberFormat);
         }
-
+        public static Vector3 toVector3(this string str)
+        {
+            string[] values = str.Split(' ');
+            return new Vector3(values[0].toFloat(), values[1].toFloat(), values[2].toFloat());
+        }
+        public static Color toColor(this string str)
+        {
+            string[] values = str.Split(' ');
+            return new Color(values[0].toFloat(), values[1].toFloat(), values[2].toFloat(), values[3].toFloat());
+        }
         public static string toXML(this Matrix m)
         {
             string str =

@@ -10,7 +10,6 @@ namespace MyGame
     {
         public enum tOrangeState { Wait, Start, Up, TopIdle, Down, End }
 
-        float lifetime;
         const float UP_ACCELERATION = 50.0f;
         tOrangeState state;
 
@@ -18,7 +17,6 @@ namespace MyGame
             : base("orange", position, orientation)
         {
             life = 10.0f;
-            lifetime = 0.0f;
             setCollisions();
             state = tOrangeState.Start;
         }

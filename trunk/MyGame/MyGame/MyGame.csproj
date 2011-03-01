@@ -156,6 +156,9 @@
     <Compile Include="code\Gameplay\Projectiles\PlayerProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
+    <Compile Include="code\Particles\Particle.cs" />
+    <Compile Include="code\Particles\ParticleSystem.cs" />
+    <Compile Include="code\Particles\ParticleSystemData.cs" />
     <Compile Include="code\Player Management\Achievement.cs" />
     <Compile Include="code\Player Management\GamerEntity.cs" />
     <Compile Include="code\Player Management\GamerManager.cs" />

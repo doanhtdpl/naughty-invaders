@@ -13,13 +13,13 @@ namespace MyGame
         public const float SPEED = 300;
 
         float cooldownTime = 0.0f;
-        float life = 50.0f;
 
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, 0)
         {
             entityState = tEntityState.Active;
             setCollisions();
+            life = 50.0f;
         }
 
         public override void setCollisions()
