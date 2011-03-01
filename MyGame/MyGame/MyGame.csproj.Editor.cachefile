@@ -42,6 +42,9 @@ Content\textures\projectiles\Anim_GrapeWeapon.xnb
 Content\textures\projectiles\Anim_PearWeapon.xnb
 Content\textures\projectiles\Anim_PlayerWeapon.xnb
 Content\textures\staticProps\Background_Level01.xnb
+Content\textures\enemies\Anim_Calsot.xnb
+Content\textures\enemies\Anim_CalsotFar.xnb
+Content\textures\enemies\Anim_CalsotNear.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -51,4 +54,7 @@ Content\xml\projectiles\playerProjectile.xml
 Content\xml\animatedProps\test.xml
 Content\xml\projectiles\grapeProjectile.xml
 Content\xml\projectiles\pearProjectile.xml
+Content\xml\enemies\calsot.xml
+Content\xml\enemies\calsotFar.xml
+Content\xml\enemies\calsotNear.xml
 Content\xml\levels\xmlLevelTemplate.xml
