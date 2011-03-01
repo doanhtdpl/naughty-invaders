@@ -57,4 +57,5 @@ Content\xml\projectiles\pearProjectile.xml
 Content\xml\enemies\calsot.xml
 Content\xml\enemies\calsotFar.xml
 Content\xml\enemies\calsotNear.xml
+Content\xml\particles\particleSystems.xml
 Content\xml\levels\xmlLevelTemplate.xml

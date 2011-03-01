@@ -32,6 +32,8 @@ namespace MyGame
         public KeyboardState keyState;
 
         public int exitBlockers = 0;
+        public bool drawGrid = false;
+        public int gridSpacing = 100;
 
         public MyEditor()
         {
@@ -258,6 +260,12 @@ namespace MyGame
                 return false;
             }
 
+            //GRID
+            if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.G))
+            {
+                drawGrid = !drawGrid;
+            }
+
             //STATE CHANGE
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Q))
             {
@@ -358,6 +366,11 @@ namespace MyGame
                 {
                     EditorHelper.Instance.renderEntityQuad(ent);
                 }
+            }
+
+            if (drawGrid)
+            {
+                EditorHelper.Instance.renderGrid(gridSpacing);
             }
         }
         #endregion

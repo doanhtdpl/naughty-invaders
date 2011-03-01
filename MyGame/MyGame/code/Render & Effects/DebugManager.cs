@@ -4,13 +4,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
-    struct sDebugRectangle
-    {
-        public Vector2 initialPoint;
-        public Vector2 endingPoint;
-        public Color color;
-    }
-
     class DebugManager
     {
         const int MAX_LINES = 500;
@@ -22,12 +15,6 @@ namespace MyGame
         VertexPositionColor[] lineList;
         short[] lineListIndices;
         int numberOfLines;
-        // debug rectangles
-        sDebugRectangle[] rectangles;
-        VertexPositionColor[] rectanglePoints;
-        short[] rectangleIndexes;
-        int numberOfRectangles;
-
 
         static DebugManager instance = null;
 
@@ -61,15 +48,6 @@ namespace MyGame
             {
                 lineListIndices[i] = i;
             }
-
-            rectangles = new sDebugRectangle[MAX_RECTANGLES];
-            rectangleIndexes = new short[4];
-            numberOfRectangles = 0;
-            for (short i = 0; i < 4; ++i)
-            {
-                rectangleIndexes[i] = i;
-            }
-            rectanglePoints = new VertexPositionColor[4];
         }
 
         public void addLine(Vector3 p1, Vector3 p2, Color color)
@@ -98,12 +76,6 @@ namespace MyGame
             addLine(otherPoint1, endingPoint, color);
             addLine(endingPoint, otherPoint2, color);
             addLine(otherPoint2, initialPoint, color);
-            
-            // Ra a Marcos: Esto por qué estaba?
-            //rectangles[numberOfRectangles].initialPoint = initialPoint;
-            //rectangles[numberOfRectangles].endingPoint = endingPoint;
-            //rectangles[numberOfRectangles].color = new Color(color.R, color.G, color.B, alpha);
-            //++numberOfRectangles;
         }
 
         void renderLines()
@@ -121,40 +93,12 @@ namespace MyGame
                 );
             }
         }
-        void renderRectangles()
-        {
-            for (int i = 0; i < numberOfRectangles; ++i)
-            {
-                Vector2 otherPoint1 = new Vector2(rectangles[i].initialPoint.X, rectangles[i].endingPoint.Y);
-                Vector2 otherPoint2 = new Vector2(rectangles[i].endingPoint.X, rectangles[i].initialPoint.Y);
-
-                rectanglePoints[0].Position = new Vector3(rectangles[i].initialPoint, 0);
-                rectanglePoints[1].Position = new Vector3(otherPoint1, 0);
-                rectanglePoints[2].Position = new Vector3(otherPoint2, 0);
-                rectanglePoints[3].Position = new Vector3(rectangles[i].endingPoint, 0);
-                for (int j = 0; j < rectanglePoints.Length; j++)
-                {
-                    rectanglePoints[j].Color = new Color(rectangles[i].color.R, rectangles[i].color.G, rectangles[i].color.B, rectangles[i].color.A);
-                }
-
-                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(
-                    PrimitiveType.TriangleStrip,
-                    rectanglePoints,
-                    0,  // vertex buffer offset to add to each element of the index buffer
-                    4,  // number of vertices to draw
-                    rectangleIndexes,
-                    0,  // first index element to read
-                    2   // number of primitives to draw
-                );
-            }
-        }
 
         public void render()
         {
             basicEffect.View = Camera2D.view;
             basicEffect.Projection = Camera2D.projection;
             basicEffect.Techniques[0].Passes[0].Apply();
-            renderRectangles();
             renderLines();
             endRender();
         }
@@ -162,7 +106,6 @@ namespace MyGame
         void endRender()
         {
             numberOfLines = 0;
-            numberOfRectangles = 0;
         }
     }
 }

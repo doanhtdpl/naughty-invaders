@@ -34,6 +34,50 @@ namespace MyGame
 
             System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(MyEditor.Instance.getMouseState().X, MyEditor.Instance.getMouseState().Y));
             gameScreenPos = new Vector2(point.X, point.Y);
+
+            // if using the grid mode
+            if (MyEditor.Instance.drawGrid && (isPressedKey(Keys.LeftShift) || isPressedKey(Keys.RightShift)))
+            {
+                Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                Vector3 normal = new Vector3(0, 0, -1);
+
+                float u = Vector3.Dot(normal, Vector3.Zero - near) / Vector3.Dot(normal, far - near);
+                Vector3 pos = near + u * (far - near);
+
+                Vector2 pos2D = new Vector2(pos.X, pos.Y);
+
+                int gridSpacing = MyEditor.Instance.gridSpacing;
+                // find the 4 nearest points of the grid
+                Vector2 p1;
+                p1.X = pos2D.X - ((pos2D.X + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
+                p1.Y = pos2D.Y - ((pos2D.Y + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
+                if (pos2D.X > p1.X)
+                {
+                    if (pos2D.Y > p1.Y)
+                    {
+                        pos2D = p1 + new Vector2(gridSpacing / 2, gridSpacing / 2);
+                    }
+                    else
+                    {
+                        pos2D = p1 + new Vector2(gridSpacing / 2, -gridSpacing / 2);
+                    }
+                }
+                else
+                {
+                    if (pos2D.Y > p1.Y)
+                    {
+                        pos2D = p1 + new Vector2(-gridSpacing / 2, gridSpacing / 2);
+                    }
+                    else
+                    {
+                        pos2D = p1 + new Vector2(-gridSpacing / 2, -gridSpacing / 2);
+                    }
+                }
+                Vector3 aux = SB.graphicsDevice.Viewport.Project(new Vector3(pos2D.X, pos2D.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                gameScreenPos.X = aux.X;
+                gameScreenPos.Y = aux.Y;
+            }
         }
         public virtual void render() 
         {

@@ -53,6 +53,13 @@ namespace MyGame
         {
             return min + ((float)random.NextDouble() * (max - min));
         }
+        public static Vector3 randomVector3(Vector3 varianceMin, Vector3 varianceMax)
+        {
+	        return new Vector3(
+		        randomScalar(varianceMin.X, varianceMax.X),
+                randomScalar(varianceMin.Y, varianceMax.Y),
+                randomScalar(varianceMin.Z, varianceMax.Z));
+        }
         #endregion
         #region Angles
         public static float radiansToDegrees(float radians)
