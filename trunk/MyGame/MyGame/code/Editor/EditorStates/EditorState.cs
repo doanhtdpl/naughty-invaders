@@ -157,15 +157,11 @@ namespace MyGame
                         if (MyEditor.Instance.canSelectEnemy.Checked)
                             ent = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
 
-                        if (ent == null && MyEditor.Instance.canSelectAnimated.Checked)
-                        {
-                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps());
-                        }
+                        if (MyEditor.Instance.canSelectAnimated.Checked)
+                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps(), ent);
 
-                        if (ent == null && MyEditor.Instance.canSelectStatic.Checked)
-                        {
-                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps());
-                        }
+                        if (MyEditor.Instance.canSelectStatic.Checked)
+                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps(), ent);
 
 
                         if (ent != null)
