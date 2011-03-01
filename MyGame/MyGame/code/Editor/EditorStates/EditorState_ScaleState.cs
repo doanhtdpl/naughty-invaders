@@ -34,7 +34,7 @@ namespace MyGame
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            ent.scale2D += new Vector2((mouseState.Y - lastMouseState.Y), (mouseState.Y - lastMouseState.Y));
+                            ent.scale2D *= 1.0f + ((mouseState.Y - lastMouseState.Y) / 100.0f);
                         }
                     }
 
