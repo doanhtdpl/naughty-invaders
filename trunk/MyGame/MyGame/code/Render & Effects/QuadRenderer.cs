@@ -11,8 +11,9 @@ namespace MyGame
     public static class QuadRenderer
     {
         private static Effect quadEffect;
-        private static EffectParameter WVP_param;
-        private static EffectParameter fx_texture;
+        private static EffectParameter fxWVP;
+        private static EffectParameter fxTexture;
+        private static EffectParameter fxColor;
 
         public static short[] index = { 2, 0, 1, 3, 2, 1 };
         public static VertexPositionTexture[] vertex, vertexUVs;
@@ -47,8 +48,9 @@ namespace MyGame
         public static void loadContent()
         {
             quadEffect = SB.content.Load<Effect>("effects/Basic");
-            WVP_param = quadEffect.Parameters["WVP_Matrix"];
-            fx_texture = quadEffect.Parameters["fx_Texture"];
+            fxWVP = quadEffect.Parameters["fxWVP"];
+            fxTexture = quadEffect.Parameters["fxTexture"];
+            fxColor = quadEffect.Parameters["fxColor"];
         }
 
         static Matrix getWVPMatrix(Vector2 position, float rotation, Vector2 scale)
@@ -60,11 +62,11 @@ namespace MyGame
                 * Camera2D.view * Camera2D.projection;
         }
 
-        public static void render(this Texture texture, Matrix worldMatrix, bool customUVs = false)
+        public static void render(this Texture texture, Matrix worldMatrix, Color color, bool customUVs = false)
         {
-            WVP_param.SetValue(worldMatrix * Camera2D.view * Camera2D.projection);
-            fx_texture.SetValue(texture);
-
+            fxWVP.SetValue(worldMatrix * Camera2D.view * Camera2D.projection);
+            fxTexture.SetValue(texture);
+            fxColor.SetValue(color.ToVector4());
             quadEffect.Techniques[0].Passes[0].Apply();
 
             if (customUVs)
@@ -77,6 +79,10 @@ namespace MyGame
                 SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionTexture>(
                     PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
             }
+        }
+        public static void render(this Texture texture, Matrix worldMatrix, bool customUVs = false)
+        {
+            render(texture, worldMatrix, Color.White, customUVs);
         }
 
         public static void renderWithUVs(this Texture texture, Matrix worldMatrix, Vector2 startingUV, Vector2 endingUV)

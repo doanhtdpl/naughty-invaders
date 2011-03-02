@@ -26,6 +26,8 @@ namespace MyGame
 	    public Vector3			    directionVarianceMin;
 	    public Vector3			    accelerationVarianceMin;
 	    public Color				color;
+        public Color                colorVarianceMin;
+        public Color                colorVarianceMax;
 	    public float				particlesRotation;
 	    public float				particlesRotationSpeed;
 	    public float				particlesRotationVariance;

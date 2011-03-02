@@ -33,7 +33,7 @@ namespace MyGame
 
         public int exitBlockers = 0;
         public bool drawGrid = false;
-        public int gridSpacing = 100;
+        public int gridSpacing = 128;
 
         public MyEditor()
         {

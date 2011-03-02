@@ -32,7 +32,7 @@ namespace MyGame
         public static Color toColor(this string str)
         {
             string[] values = str.Split(' ');
-            return new Color(values[0].toFloat(), values[1].toFloat(), values[2].toFloat(), values[3].toFloat());
+            return new Color(values[0].toFloat() / 255.0f, values[1].toFloat() / 255.0f, values[2].toFloat() / 255.0f, values[3].toFloat() / 255.0f);
         }
         public static string toXML(this Matrix m)
         {

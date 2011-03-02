@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using System.Xml;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
@@ -73,6 +74,8 @@ namespace MyGame
                 data.accelerationVarianceMin = bps.GetAttribute("accelerationVarianceMin").toVector3();
                 data.accelerationVarianceMax = bps.GetAttribute("accelerationVarianceMax").toVector3();
                 data.color = bps.GetAttribute("color").toColor();
+                data.colorVarianceMin = bps.GetAttribute("colorVarianceMin").toColor();
+                data.colorVarianceMax = bps.GetAttribute("colorVarianceMax").toColor();
                 data.particlesRotation = bps.GetAttribute("particlesRotation").toFloat();
                 data.particlesRotationVariance = bps.GetAttribute("particlesRotationVariance").toFloat();
                 data.particlesRotationSpeed = bps.GetAttribute("particlesRotationSpeed").toFloat();
@@ -118,6 +121,18 @@ namespace MyGame
 
         public void render()
         {
+            for(int i=0; i<particleSystems.Count; ++i)
+            {
+                particleSystems[i].render();
+            }
+        }
+
+        public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction)
+        {
+	        ParticleSystem ps = new ParticleSystem();
+	        ps.initialize(name, position, direction);
+	        particleSystems.Add(ps);
+	        return ps;
         }
     }
 }

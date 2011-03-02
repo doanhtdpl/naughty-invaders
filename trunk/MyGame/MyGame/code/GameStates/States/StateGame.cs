@@ -24,6 +24,7 @@ namespace MyGame
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();
+            ParticleManager.Instance.loadXML();
             //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
 
 
@@ -43,6 +44,7 @@ namespace MyGame
         public override void render()
         {
             SB.graphicsDevice.Clear(new Color(79, 98, 37));
+            //SB.graphicsDevice.Clear(new Color(0, 0, 0));
             SB.beginRender();
             GamerManager.renderPlayers();
             EntityManager.Instance.render();

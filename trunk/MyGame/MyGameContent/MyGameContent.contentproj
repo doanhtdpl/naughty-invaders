@@ -284,6 +284,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="textures\particles\Particle_Test.tga">
+      <Name>Particle_Test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <None Include="xml\characters\bob.xml">
       <Name>bob</Name>
       <Importer>XmlImporter</Importer>
@@ -380,9 +385,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="textures\particles\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="xml\particles\particleSystems.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
