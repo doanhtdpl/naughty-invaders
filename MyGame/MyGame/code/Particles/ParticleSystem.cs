@@ -15,7 +15,7 @@ namespace MyGame
 	    public bool isDead;
 	    List<Particle> particles = new List<Particle>();
 
-	    void initialize( string name, Vector3 position, Vector3 direction)
+	    public void initialize( string name, Vector3 position, Vector3 direction)
         {
             particles.Clear();
             data = ParticleManager.Instance.getBaseParticleSystemData(name);
@@ -31,17 +31,21 @@ namespace MyGame
                 case ParticleSystemData.tParticleSystem.Burst:
 	                for(int i=0; i<data.nParticles; i++)
 	                {
-		                particles[i].isDead = true;
-		                initializeParticle(particles[i]);
+                        Particle p = new Particle();
+		                p.isDead = true;
+		                initializeParticle(p);
+                        particles.Add(p);
 	                }
 	                break;
                 case ParticleSystemData.tParticleSystem.Fountain:
 	                for(int i=0; i<data.nParticles; i++)
 	                {
+                        Particle p = new Particle();
 		                // we want particles prepared to be spawned with the spawnRatio ratio, so we set'em all alive but invisible
-		                particles[i].life = 1.3f + spawnRatio * i;
-		                particles[i].isDead = false;
-		                particles[i].color.A = 0;
+		                p.life = 1.3f + spawnRatio * i;
+		                p.isDead = false;
+		                p.color.A = 0;
+                        particles.Add(p);
 	                }
 	                break;
                 default:
@@ -60,6 +64,11 @@ namespace MyGame
 	        particle.acceleration = data.acceleration + v;
 	        particle.rotation = data.particlesRotation + Calc.randomScalar(-data.particlesRotationVariance, data.particlesRotationVariance);
             particle.rotationSpeed = data.particlesRotationSpeed + Calc.randomScalar(-data.particlesRotationSpeedVariance, data.particlesRotationSpeedVariance);
+            particle.color = data.color;
+            particle.color.R += (byte)Calc.randomNatural(data.colorVarianceMin.R, data.colorVarianceMax.R);
+            particle.color.G += (byte)Calc.randomNatural(data.colorVarianceMin.G, data.colorVarianceMax.G);
+            particle.color.B += (byte)Calc.randomNatural(data.colorVarianceMin.B, data.colorVarianceMax.B);
+            particle.color.A += (byte)Calc.randomNatural(data.colorVarianceMin.A, data.colorVarianceMax.A);
             particle.life = data.particlesLife;
         }
 	    public void update( )
@@ -118,6 +127,13 @@ namespace MyGame
                     particles[i].size = data.size;
 		        }
 	        }
+        }
+        public void render()
+        {
+            for (int i = 0; i < particles.Count; ++i)
+            {
+                data.texture.render(SB.getWorldMatrix(particles[i].position, particles[i].rotation, particles[i].size), particles[i].color);
+            }
         }
         public void clear()
         {

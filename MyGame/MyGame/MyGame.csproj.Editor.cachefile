@@ -45,6 +45,7 @@ Content\textures\staticProps\Background_Level01.xnb
 Content\textures\enemies\Anim_Calsot.xnb
 Content\textures\enemies\Anim_CalsotFar.xnb
 Content\textures\enemies\Anim_CalsotNear.xnb
+Content\textures\particles\Particle_Test.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml

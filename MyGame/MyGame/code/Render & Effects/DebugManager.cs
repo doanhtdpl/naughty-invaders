@@ -4,10 +4,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
+    public struct sDebugText
+    {
+        public Vector2 position;
+        public string text;
+
+        public sDebugText(Vector2 position, string text)
+        {
+            this.position = position;
+            this.text = text;
+        }
+    }
+
     class DebugManager
     {
         const int MAX_LINES = 500;
-        const int MAX_RECTANGLES = 200;
+        const int MAX_TEXTS = 50;
 
         BasicEffect basicEffect;
 
@@ -15,6 +27,10 @@ namespace MyGame
         VertexPositionColor[] lineList;
         short[] lineListIndices;
         int numberOfLines;
+
+        // debug texts
+        sDebugText[] texts;
+        int numberOfTexts;
 
         static DebugManager instance = null;
 
@@ -48,6 +64,8 @@ namespace MyGame
             {
                 lineListIndices[i] = i;
             }
+
+            texts = new sDebugText[MAX_TEXTS];
         }
 
         public void addLine(Vector3 p1, Vector3 p2, Color color)
@@ -66,7 +84,6 @@ namespace MyGame
         {
             addLine(new Vector3(p1.X, p1.Y, 0), new Vector3(p2.X, p2.Y, 0), color);
         }
-
         // draws colored borders of a rectangle taking as corners the two points. With alpha the rectangle can be empty or opaque
         public void addRectangle(Vector2 initialPoint, Vector2 endingPoint, Color color, float alpha = 0.3f)
         {
@@ -94,18 +111,39 @@ namespace MyGame
             }
         }
 
+        public void addText(Vector2 position, string text)
+        {
+            if (numberOfTexts > texts.Length) return;
+
+            texts[numberOfTexts].position = position;
+            texts[numberOfTexts].text = text;
+            ++numberOfTexts;
+        }
+
+        void renderTexts()
+        {
+            SB.spriteBatch.Begin();
+            for (int i = 0; i < numberOfTexts; ++i)
+            {
+                texts[i].text.render(texts[i].position, 0.4f);
+            }
+            SB.spriteBatch.End();
+        }
+
         public void render()
         {
             basicEffect.View = Camera2D.view;
             basicEffect.Projection = Camera2D.projection;
             basicEffect.Techniques[0].Passes[0].Apply();
             renderLines();
+            renderTexts();
             endRender();
         }
 
         void endRender()
         {
             numberOfLines = 0;
+            numberOfTexts = 0;
         }
     }
 }

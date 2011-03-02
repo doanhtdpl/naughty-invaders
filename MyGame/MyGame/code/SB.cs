@@ -131,6 +131,14 @@ namespace MyGame
                 * Matrix.CreateTranslation(new Vector3(posX + rotationPoint.X, posY + rotationPoint.Y, 0));
             return world * Camera2D.view *Camera2D.projection;
         }
+        public static Matrix getWorldMatrix(Vector3 position, float rotation, float scale)
+        {
+            Matrix world =
+                Matrix.CreateScale(scale)
+                * Matrix.CreateRotationZ(rotation)
+                * Matrix.CreateTranslation(new Vector3(position.X, position.Y, position.Z));
+            return world;
+        }
         public static Matrix getWorldMatrix(float posX, float posY, float posZ, Vector2 rotationPoint, float rotation, Vector2 rotationCorrection)
         {
             Matrix world =

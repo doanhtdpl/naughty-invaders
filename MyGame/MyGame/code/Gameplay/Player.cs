@@ -63,11 +63,7 @@ namespace MyGame
                 Projectile p = new PlayerProjectile(position);
                 cooldownTime = p.cooldown;
                 ProjectileManager.Instance.addProjectile(p);
-            }
-
-            if (controls.A_firstPressed())
-            {
-                orientation += 0.1f;
+                ParticleManager.Instance.addParticles("burst", position + new Vector3(0, 50, 0), direction);
             }
         }
 
