@@ -20,16 +20,16 @@ namespace MyGame
 
         const short maxLineCol = 2;
 
-        public static List<CoolizionLine> getCoolizionRectangle(Rectangle A)
+        public static List<Line> getCoolizionRectangle(Rectangle A)
         {
-            List<CoolizionLine> coolizionRectangle = new List<CoolizionLine>();
-            coolizionRectangle.Add(new CoolizionLine(new Vector2(A.X, A.Y), new Vector2(A.X + A.Width, A.Y), CoolizionLine.NO_TYPE));
-            coolizionRectangle.Add(new CoolizionLine(new Vector2(A.X, A.Y), new Vector2(A.X, A.Y + A.Height), CoolizionLine.NO_TYPE));
-            coolizionRectangle.Add(new CoolizionLine(new Vector2(A.X + A.Width, A.Y + A.Height), new Vector2(A.X + A.Width, A.Y), CoolizionLine.NO_TYPE));
-            coolizionRectangle.Add(new CoolizionLine(new Vector2(A.X + A.Width, A.Y + A.Height), new Vector2(A.X, A.Y + A.Height), CoolizionLine.NO_TYPE));
+            List<Line> coolizionRectangle = new List<Line>();
+            coolizionRectangle.Add(new Line(new Vector2(A.X, A.Y), new Vector2(A.X + A.Width, A.Y), Line.NO_TYPE));
+            coolizionRectangle.Add(new Line(new Vector2(A.X, A.Y), new Vector2(A.X, A.Y + A.Height), Line.NO_TYPE));
+            coolizionRectangle.Add(new Line(new Vector2(A.X + A.Width, A.Y + A.Height), new Vector2(A.X + A.Width, A.Y), Line.NO_TYPE));
+            coolizionRectangle.Add(new Line(new Vector2(A.X + A.Width, A.Y + A.Height), new Vector2(A.X, A.Y + A.Height), Line.NO_TYPE));
             return coolizionRectangle;
         }
-        public static bool lineVSlines(CoolizionLine A, List<CoolizionLine> lines, ref Vector2 result)
+        public static bool lineVSlines(Line A, List<Line> lines, ref Vector2 result)
         {
             for (short i = 0; i < lines.Count; i++)
             {
@@ -38,7 +38,7 @@ namespace MyGame
             }
             return false;
         }
-        public static bool lineVSlinesUpper(CoolizionLine A, List<CoolizionLine> lines, ref Vector2 result)
+        public static bool lineVSlinesUpper(Line A, List<Line> lines, ref Vector2 result)
         {
             float Ymin = float.NegativeInfinity;
             Vector2 aux = Vector2.Zero;
@@ -56,7 +56,7 @@ namespace MyGame
             result = aux;
             return gotResult;
         }
-        public static bool lineVSline(CoolizionLine A, CoolizionLine B, ref Vector2 result)
+        public static bool lineVSline(Line A, Line B, ref Vector2 result)
         {
             float uaN, ubN, uD, uA, uB;
             Vector2 A1 = A.p1;
@@ -98,7 +98,7 @@ namespace MyGame
             result.Y = (float)(B1.Y + uA * (B2.Y - B1.Y));
             return (uA > 0 && uA < 1 && uB > 0 && uB < 1);
         }
-        public static bool linesVSlines(List<CoolizionLine> listA, List<CoolizionLine> listB, ref List<CollisionData> CD)
+        public static bool linesVSlines(List<Line> listA, List<Line> listB, ref List<CollisionData> CD)
         {
             Vector2 v = Vector2.Zero;
             bool collide = false;
@@ -115,7 +115,7 @@ namespace MyGame
             }
             return collide;
         }
-        public static bool linesVSlines(List<CoolizionLine> listA, List<CoolizionLine> listB)
+        public static bool linesVSlines(List<Line> listA, List<Line> listB)
         {
             Vector2 v = Vector2.Zero;
             for (short i = 0; i < listA.Count; i++)
@@ -196,9 +196,9 @@ namespace MyGame
             }
             return false;
         }
-        public static List<CoolizionLine> filterLines(List<CoolizionLine> lines, int coltype)
+        public static List<Line> filterLines(List<Line> lines, int coltype)
         {
-            List<CoolizionLine> res = new List<CoolizionLine>();
+            List<Line> res = new List<Line>();
             for (int i = 0; i < lines.Count; i++)
             {
                 if (lines[i].type == coltype)
@@ -209,10 +209,10 @@ namespace MyGame
             return res;
         }
 
-        public static List<CoolizionLine> getNearestLines(List<CoolizionLine> lines, Rectangle rectangle)
+        public static List<Line> getNearestLines(List<Line> lines, Rectangle rectangle)
         {
-            List<CoolizionLine> nearestLines = new List<CoolizionLine>();
-            foreach (CoolizionLine line in lines)
+            List<Line> nearestLines = new List<Line>();
+            foreach (Line line in lines)
             {
                 Rectangle lineRectangle =
                     new Rectangle((int)Math.Min(line.p1.X, line.p2.X), (int)Math.Min(line.p1.Y, line.p2.Y),

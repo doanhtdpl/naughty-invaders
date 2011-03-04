@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace MyGame
 {
-    public class CoolizionLine
+    public class Line
     {
         public short type;
         public bool opaque;
@@ -26,7 +26,7 @@ namespace MyGame
 
         public const int NO_TYPE = 0;
 
-        public CoolizionLine(Vector2 pp1, Vector2 pp2, short pType, bool pOpaque)
+        public Line(Vector2 pp1, Vector2 pp2, short pType, bool pOpaque)
         {
             p1 = pp1;
             p2 = pp2;
@@ -34,8 +34,8 @@ namespace MyGame
             opaque = pOpaque;
             recalc();
         }
-        public CoolizionLine(Vector2 pp1, Vector2 pp2, short pType):this(pp1, pp2, pType, false){}
-        public CoolizionLine(Vector2 pp1, Vector2 pp2) : this(pp1, pp2, NO_TYPE, false) { }
+        public Line(Vector2 pp1, Vector2 pp2, short pType):this(pp1, pp2, pType, false){}
+        public Line(Vector2 pp1, Vector2 pp2) : this(pp1, pp2, NO_TYPE, false) { }
 
         public void inverseLine()
         {

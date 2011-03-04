@@ -126,7 +126,7 @@
     <Compile Include="code\Camera\Camera2D.cs" />
     <Compile Include="code\Camera\Network.cs" />
     <Compile Include="code\ControlPad.cs" />
-    <Compile Include="code\CoolizionEngine\CoolizionLine.cs" />
+    <Compile Include="code\CoolizionEngine\Line.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddEnemy.cs" />
@@ -142,6 +142,7 @@
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
+    <Compile Include="code\Gameplay\GameplayHelper.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
