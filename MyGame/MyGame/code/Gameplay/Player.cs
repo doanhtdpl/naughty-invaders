@@ -10,7 +10,7 @@ namespace MyGame
 {
     class Player : CollidableEntity2D
     {
-        public const float SPEED = 300;
+        public const float SPEED = 500;
 
         float cooldownTime = 0.0f;
 

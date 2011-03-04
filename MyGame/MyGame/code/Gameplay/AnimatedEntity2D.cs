@@ -119,7 +119,7 @@ namespace MyGame
             datas[entityName] = data;
         }
 
-        public void die()
+        public virtual void die()
         {
             playAction("die");
             entityState = tEntityState.Dying;

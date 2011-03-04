@@ -17,7 +17,7 @@ namespace MyGame
         public Grape(Vector3 position, float orientation)
             : base("grape", position, orientation)
         {
-            life = 10.0f;
+            life = 40.0f;
 
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
@@ -32,7 +32,14 @@ namespace MyGame
 
         public override bool gotHitAtPart(int partIndex, float damage)
         {
-            return false;
+            life -= damage;
+            return life > 0;
+        }
+
+        public override void die()
+        {
+            base.die();
+            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero);
         }
 
         public override void update()
