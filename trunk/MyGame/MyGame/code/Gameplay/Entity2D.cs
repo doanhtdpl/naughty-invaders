@@ -141,12 +141,15 @@ namespace MyGame
             world = Matrix.CreateWorld(position, Vector3.Forward, Vector3.Up);
             this.scale2D = new Vector2(scale.X, scale.Y);
         }
-        // returns the 2D rectangle. Good for 2D collisions
+        // returns the 2D rectangle
         public Rectangle getRectangle()
         {
-            Vector3 pos = position;
-            Vector3 size = scale;
-            return new Rectangle((int)(pos.X - size.X * 0.5), (int)(pos.Y - size.Y * 0.5), (int)size.X, (int)size.Y);
+            return new Rectangle((int)(position.X - scale.X * 0.5), (int)(position.Y - scale.Y * 0.5), (int)scale.X, (int)scale.Y);
+        }
+        // returns the aproximate radius of this entity
+        public virtual float getRadius()
+        {
+            return scale.X * 0.4f;
         }
 
         public virtual void update() { }

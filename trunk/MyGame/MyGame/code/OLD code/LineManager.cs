@@ -198,7 +198,7 @@ namespace MyGame
             ib = new IndexBuffer(device, IndexElementSize.SixteenBits, numIndices * 2, BufferUsage.None);
             ib.SetData<short>(indices);
         }
-        public static void renderEffectLines(List<CoolizionLine> lineList, float radius, Color color, String effect)
+        public static void renderEffectLines(List<Line> lineList, float radius, Color color, String effect)
         {
             GraphicsDevice device = SB.graphicsDevice;
 

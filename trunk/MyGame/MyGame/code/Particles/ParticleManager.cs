@@ -134,5 +134,11 @@ namespace MyGame
 	        particleSystems.Add(ps);
 	        return ps;
         }
+
+        public void clean()
+        {
+            particleSystems.Clear();
+            baseParticleSystems.Clear();
+        }
     }
 }

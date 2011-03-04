@@ -41,7 +41,9 @@ namespace MyGame
             position += CameraManager.Instance.getCameraVelocityXY();
 
             cooldownTime -= SB.dt;
-            position2D += controls.LS * SB.dt * SPEED;
+            Vector2 nextPosition = position2D + controls.LS * SB.dt * SPEED;
+
+            GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), Camera2D.playableZoneCollisions);
             orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
 
             KeyboardState currentKeyState = Keyboard.GetState();

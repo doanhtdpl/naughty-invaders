@@ -23,6 +23,7 @@ namespace MyGame
         // este rectángulo es similar al screen, es donde el player puede moverse. Como depende del zoom
         // está situado aquí también. La cámara es accesible en todo el juego.
         static public Rectangle playableZone;
+        static public Line[] playableZoneCollisions = new Line[4];
         static public Vector2 playableMargins;
         private Rectangle atZ;
         private int aspectZ;
@@ -47,6 +48,11 @@ namespace MyGame
             else
             {
                 aspectZ = 930;
+            }
+
+            for (int i = 0; i < 4; ++i)
+            {
+                playableZoneCollisions[i] = new Line(Vector2.Zero, Vector2.Zero);
             }
         }
 
@@ -95,6 +101,15 @@ namespace MyGame
             float addWidth = playableMargins.X * (position.Z / 930);
             float addHeight = playableMargins.Y * (position.Z / 930);
             playableZone = new Rectangle((int)(screen.X - addWidth), (int)(screen.Y - addHeight), (int)(screen.Width + (addWidth * 2)), (int)(screen.Height + (addHeight * 2)));
+
+            playableZoneCollisions[0].p1.X = playableZone.Left; playableZoneCollisions[0].p1.Y = playableZone.Top;
+            playableZoneCollisions[0].p2.X = playableZone.Right; playableZoneCollisions[0].p2.Y = playableZone.Top;
+            playableZoneCollisions[1].p1.X = playableZone.Right; playableZoneCollisions[1].p1.Y = playableZone.Top;
+            playableZoneCollisions[1].p2.X = playableZone.Right; playableZoneCollisions[1].p2.Y = playableZone.Bottom;
+            playableZoneCollisions[2].p1.X = playableZone.Right; playableZoneCollisions[2].p1.Y = playableZone.Bottom;
+            playableZoneCollisions[2].p2.X = playableZone.Left; playableZoneCollisions[2].p2.Y = playableZone.Bottom;
+            playableZoneCollisions[3].p1.X = playableZone.Left; playableZoneCollisions[3].p1.Y = playableZone.Bottom;
+            playableZoneCollisions[3].p2.X = playableZone.Left; playableZoneCollisions[3].p2.Y = playableZone.Top;
         }
         public static Vector2 getScreenLeftBottomCorner()
         {
@@ -141,9 +156,9 @@ namespace MyGame
             return (p.X > playableZone.X && p.X < playableZone.X + playableZone.Width
                  && p.Y > playableZone.Y && p.Y < playableZone.Y + playableZone.Height);
         }
-        public bool isPlayable(Rectangle rectangle)
+        public static bool isPlayable(Rectangle rectangle)
         {
-            return playableZone.Intersects(rectangle);
+            return playableZone.Contains(rectangle);
         }
 
         public static bool keepInXLeft(Vector2 pos)

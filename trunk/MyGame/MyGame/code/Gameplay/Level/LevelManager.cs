@@ -26,7 +26,7 @@ namespace MyGame
         List<Entity2D> animatedProps = new List<Entity2D>();
         List<List<int>> groupList = new List<List<int>>();
 
-        List<CoolizionLine> levelCollisions = new List<CoolizionLine>();
+        List<Line> levelCollisions = new List<Line>();
 
         static LevelManager instance = null;
 
@@ -117,6 +117,11 @@ namespace MyGame
             groupList.Add(group);
         }
         #endregion
+
+        public List<Line> getLevelCollisions()
+        {
+            return levelCollisions;
+        }
 
         public void cleanLevel()
         {

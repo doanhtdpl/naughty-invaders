@@ -206,6 +206,11 @@ namespace MyGame
             return true;
         }
         #endregion
-
+        #region Rectangles
+        public static Rectangle getRectangle(Vector2 position, Vector2 size)
+        {
+            return new Rectangle((int)(position.X - size.X * 0.5), (int)(position.Y - size.Y * 0.5), (int)size.X, (int)size.Y);
+        }
+        #endregion
     }
 }
