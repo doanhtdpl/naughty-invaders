@@ -11,8 +11,10 @@ namespace MyGame
     class GamerManager
     {
         static List<GamerEntity> gamerEntities = new List<GamerEntity>();
+        static List<Entity2D> playerEntities = new List<Entity2D>();
 
         public static List<GamerEntity> getGamerEntities() { return gamerEntities; }
+        public static List<Entity2D> getPlayerEntities() { return playerEntities; }
         public static GamerEntity getSessionOwner()
         {
             foreach (GamerEntity ge in gamerEntities)
@@ -28,7 +30,7 @@ namespace MyGame
         {
             foreach(GamerEntity ge in gamerEntities)
             {
-                if (ge.Gamer.PlayerIndex == playerIndex)
+                if (ge.PlayerIndex == playerIndex)
                 {
                     return ge;
                 }
@@ -62,7 +64,7 @@ namespace MyGame
                 SB.font, 1000, 0, Color.Blue, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
         }
 
-        public static void createGamerEntity(PlayerIndex playerIndex, bool sessionOwner)
+        public static GamerEntity createGamerEntity(PlayerIndex playerIndex, bool sessionOwner)
         {
             GamerEntity ge = new GamerEntity(sessionOwner);
             if (Gamer.SignedInGamers[playerIndex] != null)
@@ -72,6 +74,8 @@ namespace MyGame
             ge.Player = new Player("player", Vector3.Zero, 0);
             ge.PlayerIndex = playerIndex;
             gamerEntities.Add(ge);
+            playerEntities.Add(ge.Player);
+            return ge;
         }
 
         public static void updateInputs()

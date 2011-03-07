@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textPosX = new System.Windows.Forms.TextBox();
             this.DefaultPage = new System.Windows.Forms.TabPage();
+            this.canSelectPlayer = new System.Windows.Forms.CheckBox();
+            this.buttonCreateGroup = new System.Windows.Forms.Button();
             this.selectGroup = new System.Windows.Forms.CheckBox();
             this.buttonImportLevel = new System.Windows.Forms.Button();
             this.canSelectEnemy = new System.Windows.Forms.CheckBox();
@@ -62,7 +64,6 @@
             this.buttonAddStatic = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.buttonCreateGroup = new System.Windows.Forms.Button();
             this.propertiesPanel.SuspendLayout();
             this.DefaultPage.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -87,7 +88,7 @@
             this.propertiesPanel.Controls.Add(this.textPosY);
             this.propertiesPanel.Controls.Add(this.label1);
             this.propertiesPanel.Controls.Add(this.textPosX);
-            this.propertiesPanel.Location = new System.Drawing.Point(855, 0);
+            this.propertiesPanel.Location = new System.Drawing.Point(970, 0);
             this.propertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.propertiesPanel.Name = "propertiesPanel";
             this.propertiesPanel.Size = new System.Drawing.Size(310, 91);
@@ -271,6 +272,7 @@
             // 
             // DefaultPage
             // 
+            this.DefaultPage.Controls.Add(this.canSelectPlayer);
             this.DefaultPage.Controls.Add(this.buttonCreateGroup);
             this.DefaultPage.Controls.Add(this.selectGroup);
             this.DefaultPage.Controls.Add(this.buttonImportLevel);
@@ -288,15 +290,37 @@
             this.DefaultPage.Location = new System.Drawing.Point(4, 22);
             this.DefaultPage.Name = "DefaultPage";
             this.DefaultPage.Padding = new System.Windows.Forms.Padding(3);
-            this.DefaultPage.Size = new System.Drawing.Size(845, 34);
+            this.DefaultPage.Size = new System.Drawing.Size(960, 34);
             this.DefaultPage.TabIndex = 0;
             this.DefaultPage.Text = "Default";
             this.DefaultPage.UseVisualStyleBackColor = true;
             // 
+            // canSelectPlayer
+            // 
+            this.canSelectPlayer.AutoSize = true;
+            this.canSelectPlayer.Location = new System.Drawing.Point(755, 11);
+            this.canSelectPlayer.Name = "canSelectPlayer";
+            this.canSelectPlayer.Size = new System.Drawing.Size(54, 17);
+            this.canSelectPlayer.TabIndex = 14;
+            this.canSelectPlayer.Text = "player";
+            this.canSelectPlayer.UseVisualStyleBackColor = true;
+            // 
+            // buttonCreateGroup
+            // 
+            this.buttonCreateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateGroup.Location = new System.Drawing.Point(500, 6);
+            this.buttonCreateGroup.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreateGroup.Name = "buttonCreateGroup";
+            this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
+            this.buttonCreateGroup.TabIndex = 13;
+            this.buttonCreateGroup.Text = "Create Group";
+            this.buttonCreateGroup.UseVisualStyleBackColor = true;
+            this.buttonCreateGroup.Click += new System.EventHandler(this.buttonCreateGroup_Click);
+            // 
             // selectGroup
             // 
             this.selectGroup.AutoSize = true;
-            this.selectGroup.Location = new System.Drawing.Point(783, 10);
+            this.selectGroup.Location = new System.Drawing.Point(815, 11);
             this.selectGroup.Name = "selectGroup";
             this.selectGroup.Size = new System.Drawing.Size(53, 17);
             this.selectGroup.TabIndex = 12;
@@ -320,7 +344,7 @@
             this.canSelectEnemy.AutoSize = true;
             this.canSelectEnemy.Checked = true;
             this.canSelectEnemy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectEnemy.Location = new System.Drawing.Point(719, 10);
+            this.canSelectEnemy.Location = new System.Drawing.Point(691, 11);
             this.canSelectEnemy.Name = "canSelectEnemy";
             this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
             this.canSelectEnemy.TabIndex = 10;
@@ -332,7 +356,7 @@
             this.canSelectAnimated.AutoSize = true;
             this.canSelectAnimated.Checked = true;
             this.canSelectAnimated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectAnimated.Location = new System.Drawing.Point(646, 10);
+            this.canSelectAnimated.Location = new System.Drawing.Point(615, 11);
             this.canSelectAnimated.Name = "canSelectAnimated";
             this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
             this.canSelectAnimated.TabIndex = 9;
@@ -344,7 +368,7 @@
             this.canSelectStatic.AutoSize = true;
             this.canSelectStatic.Checked = true;
             this.canSelectStatic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectStatic.Location = new System.Drawing.Point(587, 10);
+            this.canSelectStatic.Location = new System.Drawing.Point(556, 11);
             this.canSelectStatic.Name = "canSelectStatic";
             this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
             this.canSelectStatic.TabIndex = 8;
@@ -457,7 +481,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(853, 60);
+            this.tabControl1.Size = new System.Drawing.Size(968, 60);
             this.tabControl1.TabIndex = 1;
             // 
             // myEditorControl
@@ -468,18 +492,6 @@
             this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
-            // 
-            // buttonCreateGroup
-            // 
-            this.buttonCreateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateGroup.Location = new System.Drawing.Point(500, 6);
-            this.buttonCreateGroup.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreateGroup.Name = "buttonCreateGroup";
-            this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
-            this.buttonCreateGroup.TabIndex = 13;
-            this.buttonCreateGroup.Text = "Create Group";
-            this.buttonCreateGroup.UseVisualStyleBackColor = true;
-            this.buttonCreateGroup.Click += new System.EventHandler(this.buttonCreateGroup_Click);
             // 
             // MyEditor
             // 
@@ -540,5 +552,6 @@
         private System.Windows.Forms.Button buttonImportLevel;
         public System.Windows.Forms.CheckBox selectGroup;
         private System.Windows.Forms.Button buttonCreateGroup;
+        public System.Windows.Forms.CheckBox canSelectPlayer;
     }
 }

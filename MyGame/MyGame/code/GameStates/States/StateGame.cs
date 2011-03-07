@@ -91,7 +91,7 @@ namespace MyGame
 #endif
             SB.cam.update();
 
-            if (GamerManager.getMainControls().Start_firstPressed())
+            if (GamerManager.getGamerEntities().Count > 0 && GamerManager.getMainControls().Start_firstPressed())
                 StateManager.enqueueState(StateManager.tGS.Pause);
         }
         
