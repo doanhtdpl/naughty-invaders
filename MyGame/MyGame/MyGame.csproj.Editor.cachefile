@@ -46,6 +46,8 @@ Content\textures\enemies\Anim_Calsot.xnb
 Content\textures\enemies\Anim_CalsotFar.xnb
 Content\textures\enemies\Anim_CalsotNear.xnb
 Content\textures\particles\Particle_Test.xnb
+Content\textures\staticProps\leaf_4_4.xnb
+Content\textures\animatedProps\leaf_4_4.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -58,5 +60,6 @@ Content\xml\projectiles\pearProjectile.xml
 Content\xml\enemies\calsot.xml
 Content\xml\enemies\calsotFar.xml
 Content\xml\enemies\calsotNear.xml
+Content\xml\animatedProps\leaf.xml
 Content\xml\particles\particleSystems.xml
 Content\xml\levels\xmlLevelTemplate.xml
