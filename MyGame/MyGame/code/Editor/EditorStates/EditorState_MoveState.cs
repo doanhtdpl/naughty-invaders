@@ -27,7 +27,12 @@ namespace MyGame
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            ent.position += new Vector3(mouseState.X - lastMouseState.X, -(mouseState.Y - lastMouseState.Y), 0);
+                            Vector2 current = new Vector2(mouseState.X, mouseState.Y);
+                            Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
+                            Vector3 currentZ = getMousePosInZ(current, ent.position.Z);
+                            Vector3 lastZ = getMousePosInZ(last, ent.position.Z);
+
+                            ent.position += (currentZ - lastZ);
                         }
                     }
                     else if (mouseState.RightButton == ButtonState.Pressed)
