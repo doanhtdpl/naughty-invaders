@@ -195,6 +195,21 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            //player
+            if (GamerManager.getGamerEntities().Count <= 0)
+                GamerManager.createGamerEntity(PlayerIndex.One, true);
+
+            writer.WriteStartElement("players");
+            for (int i = 0; i < GamerManager.getGamerEntities().Count; i++)
+            {
+                Player player = GamerManager.getGamerEntity((PlayerIndex)i).Player;
+                writer.WriteStartElement("player");
+                writer.WriteAttributeString("playerIndex", i.ToString());
+                writer.WriteAttributeString("worldMatrix", player.worldMatrix.toXML());
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
             // close the tag <level> and the writer
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -259,6 +274,19 @@ namespace MyGame
                     e.setInit();
                     list.Add(e);
                 }
+                nodes = xml_doc.GetElementsByTagName("player"); // read enemies
+                foreach (XmlElement node in nodes)
+                {
+                    PlayerIndex index = (PlayerIndex) node.GetAttribute("playerIndex").toInt();
+                    Matrix world = node.GetAttribute("worldMatrix").toMatrix();
+                    GamerEntity gamer = GamerManager.createGamerEntity(index, index == PlayerIndex.One);
+                    gamer.Player.worldMatrix = world;
+                    gamer.Player.setInit();
+                }
+
+                //Check player
+                if(GamerManager.getGamerEntities().Count <= 0)
+                    GamerManager.createGamerEntity(PlayerIndex.One, true);
 
                 if (loadIDs)
                 {
@@ -286,8 +314,6 @@ namespace MyGame
         public List<Entity2D> loadNewLevel(string fileName)
         {
             LevelManager.Instance.cleanLevel();
-
-            GamerManager.getGamerEntities()[0].createPlayer();
 
             // FAKE LOADING
             CameraManager.Instance.loadXMLfake();
