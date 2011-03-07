@@ -313,6 +313,8 @@ namespace MyGame
             {
                 EditorHelper.Instance.renderGrid(gridSpacing);
             }
+
+            CameraManager.Instance.render();
         }
         #endregion
 

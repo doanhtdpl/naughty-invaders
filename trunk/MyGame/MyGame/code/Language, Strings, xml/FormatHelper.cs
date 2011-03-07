@@ -20,9 +20,17 @@ namespace MyGame
         {
             return int.Parse(value, CultureInfo.InvariantCulture.NumberFormat);
         }
+        public static bool toBool(this string value)
+        {
+            return bool.Parse(value);
+        }
         public static string toString(this float value)
         {
             return value.ToString(CultureInfo.InvariantCulture.NumberFormat);
+        }
+        public static string toXML(this Vector3 v)
+        {
+            return v.X.toString() + " " + v.Y.toString() + " " + v.Z.toString();
         }
         public static Vector3 toVector3(this string str)
         {
