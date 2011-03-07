@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<level nextEntityID="4">
+  <staticProps>
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -354.4115 121.9728 0.00441612 1" id="1" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 161.0961 -136.9317 0.01159138 1" id="2" />
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -476.3842 266.9593 -0.008844888 1" id="3" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 0.006935396 1" />
+  </players>
+  <camera />
+</level>
