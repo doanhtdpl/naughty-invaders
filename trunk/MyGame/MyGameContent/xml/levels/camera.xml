@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<level nextEntityID="8">
+  <staticProps>
+    <staticProp entityName="A" worldMatrix="64 0 0 0 0 64 0 0 0 0 1 0 -209.425 -84.00011 0.0160699 1" id="5" />
+  </staticProps>
+  <animatedProps>
+    <animatedProp entityName="leaf" worldMatrix="128 0 0 0 0 128 0 0 0 0 1 0 -252.0004 172.603 0.001339278 1" id="1" />
+  </animatedProps>
+  <groups />
+  <enemies>
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 168.0003 142.6852 0.004726999 1" id="7" />
+  </enemies>
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 -0.004867227 1" />
+  </players>
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+</level>
