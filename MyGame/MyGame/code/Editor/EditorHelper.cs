@@ -57,6 +57,7 @@ namespace MyGame
                     Color.Gray);
             }
         }
+
         #region Mouse
         public Ray getMouseCursorRay(Vector2 mousePos)
         {
@@ -79,6 +80,7 @@ namespace MyGame
             return new Ray(nearPoint, direction);
         }
         #endregion
+
         #region Entities
         // returns the 4 points that conforms the quad of this entity in order: up-right, up-left, bottom-left, bottom-right
         Vector3[] getEntityQuad(Entity2D entity)
@@ -131,6 +133,7 @@ namespace MyGame
             return ent;
         }
         #endregion
+
         #region XML
         void writeEntity(XmlTextWriter writer, Entity2D entity2D, string element)
         {
@@ -196,9 +199,6 @@ namespace MyGame
             writer.WriteEndElement();
 
             //player
-            if (GamerManager.getGamerEntities().Count <= 0)
-                GamerManager.createGamerEntity(PlayerIndex.One, true);
-
             writer.WriteStartElement("players");
             for (int i = 0; i < GamerManager.getGamerEntities().Count; i++)
             {
@@ -206,6 +206,21 @@ namespace MyGame
                 writer.WriteStartElement("player");
                 writer.WriteAttributeString("playerIndex", i.ToString());
                 writer.WriteAttributeString("worldMatrix", player.worldMatrix.toXML());
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
+            //camera
+            writer.WriteStartElement("camera");
+            foreach(NetworkNode<CameraData> cameraNode in CameraManager.Instance.getNodes().getNodes() )
+            {
+                writer.WriteStartElement("cameraNode");
+                writer.WriteAttributeString("id", cameraNode.value.id.ToString());
+                writer.WriteAttributeString("position", cameraNode.value.position.toXML());
+                writer.WriteAttributeString("target", cameraNode.value.target.toXML());
+                writer.WriteAttributeString("isFirst", cameraNode.value.isFirst.ToString());
+                if (cameraNode.getNext() != null)
+                    writer.WriteAttributeString("link", cameraNode.getNext().value.id.ToString());
                 writer.WriteEndElement();
             }
             writer.WriteEndElement();
@@ -274,19 +289,39 @@ namespace MyGame
                     e.setInit();
                     list.Add(e);
                 }
-                nodes = xml_doc.GetElementsByTagName("player"); // read enemies
+                nodes = xml_doc.GetElementsByTagName("player"); // read players
                 foreach (XmlElement node in nodes)
                 {
-                    PlayerIndex index = (PlayerIndex) node.GetAttribute("playerIndex").toInt();
+                    PlayerIndex index = (PlayerIndex)node.GetAttribute("playerIndex").toInt();
                     Matrix world = node.GetAttribute("worldMatrix").toMatrix();
-                    GamerEntity gamer = GamerManager.createGamerEntity(index, index == PlayerIndex.One);
+                    GamerEntity gamer = GamerManager.getGamerEntity(index);
                     gamer.Player.worldMatrix = world;
                     gamer.Player.setInit();
+
+                    //Register player again as we don't destroy it (yet...)
+                    EntityManager.Instance.registerEntity(gamer.Player);
                 }
 
-                //Check player
-                if(GamerManager.getGamerEntities().Count <= 0)
-                    GamerManager.createGamerEntity(PlayerIndex.One, true);
+                //Camera
+                nodes = xml_doc.GetElementsByTagName("cameraNode");
+                foreach (XmlElement node in nodes)
+                {
+                    Vector3 position = node.GetAttribute("position").toVector3();
+                    Vector3 target = node.GetAttribute("target").toVector3();
+                    int nodeId = node.GetAttribute("id").toInt();
+                    bool isFirst = node.GetAttribute("isFirst").toBool();
+                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(position, target, nodeId));
+                    if(node.HasAttribute("link"))
+                        cameraNode.value.next = node.GetAttribute("link").toInt();
+
+                    CameraManager.Instance.addNode(cameraNode);
+                }
+
+                //link camera nodes
+                foreach(NetworkNode<CameraData> cameraNode in CameraManager.Instance.getNodes().getNodes())
+                {
+                    cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
+                }
 
                 if (loadIDs)
                 {
@@ -315,11 +350,13 @@ namespace MyGame
         {
             LevelManager.Instance.cleanLevel();
 
+            List<Entity2D> list = loadLevel(fileName);
+
             // FAKE LOADING
             CameraManager.Instance.loadXMLfake();
             // END FAKE LOADING
 
-            return loadLevel(fileName);
+            return list;
         }
 
         // loads the specified file into the editor

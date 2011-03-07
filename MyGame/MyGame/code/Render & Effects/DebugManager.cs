@@ -94,6 +94,15 @@ namespace MyGame
             addLine(endingPoint, otherPoint2, color);
             addLine(otherPoint2, initialPoint, color);
         }
+        public void addRectangle(Vector3 initialPoint, Vector3 endingPoint, Color color, float alpha = 0.3f)
+        {
+            Vector3 otherPoint1 = new Vector3(initialPoint.X, endingPoint.Y, initialPoint.Z);
+            Vector3 otherPoint2 = new Vector3(endingPoint.X, initialPoint.Y, initialPoint.Z);
+            addLine(initialPoint, otherPoint1, color);
+            addLine(otherPoint1, endingPoint, color);
+            addLine(endingPoint, otherPoint2, color);
+            addLine(otherPoint2, initialPoint, color);
+        }
 
         void renderLines()
         {

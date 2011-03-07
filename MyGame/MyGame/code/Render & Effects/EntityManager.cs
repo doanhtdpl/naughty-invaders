@@ -44,7 +44,8 @@ namespace MyGame
         #region ENTITY MANAGEMENT
         public void registerEntity(Entity2D entity)
         {
-            entities.Add(entity);
+            if(!entities.Contains(entity))
+                entities.Add(entity);
         }
         public void removeEntity(Entity2D entity)
         {

@@ -55,7 +55,7 @@ namespace MyGame
 
             // if we want to test gameplay, we will manually add a gamer
 #if ONLY_GAMEPLAY
-            //GamerManager.createGamerEntity(PlayerIndex.One, true);
+            GamerManager.createGamerEntity(PlayerIndex.One, true);
 #endif
 
             base.Initialize();

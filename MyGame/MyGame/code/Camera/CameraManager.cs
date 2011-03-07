@@ -8,13 +8,31 @@ namespace MyGame
 {
     public struct CameraData
     {
+        public static int NEXT_ID = 0;
+
         public Vector3 position;
         public Vector3 target;
+        public int id;
+        public int next;
+        public bool isFirst;
 
-        public CameraData(Vector3 position, Vector3 target)
+        public CameraData(Vector3 position, Vector3 target, int id, bool isFirst = false)
         {
             this.position = position;
             this.target = target;
+            this.id = id;
+            NEXT_ID = Math.Max(NEXT_ID, id + 1);
+            next = -1;
+            this.isFirst = isFirst;
+        }
+
+        public CameraData(Vector3 position, Vector3 target, bool isFirst = false)
+        {
+            this.position = position;
+            this.target = target;
+            this.id = NEXT_ID++;
+            next = -1;
+            this.isFirst = isFirst;
         }
     }
 
@@ -53,18 +71,46 @@ namespace MyGame
 
         public void loadXMLfake()
         {
-            NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0)));
-            NetworkNode<CameraData> second = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 20000, 1400), new Vector3(0, 20000, 0)));
-            NetworkNode<CameraData> third = new NetworkNode<CameraData>(new CameraData(new Vector3(10000, 20000, 1400), new Vector3(10000, 20000, 0)));
+            NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));
+            NetworkNode<CameraData> second = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 20000, 1400), new Vector3(0, 20000, 0), 1));
+            NetworkNode<CameraData> third = new NetworkNode<CameraData>(new CameraData(new Vector3(10000, 20000, 1400), new Vector3(10000, 20000, 0), 2));
+
             first.addLinkedNode(second);
             second.addLinkedNode(third);
+
             cameraNodes.addNode(first);
             cameraNodes.addNode(second);
             cameraNodes.addNode(third);
-            currentNode = first;
-            nextNode = second;
 
             initialize();
+        }
+
+        public Network<CameraData> getNodes()
+        {
+            return cameraNodes;
+        }
+
+        public NetworkNode<CameraData> getNode(int id)
+        {
+            for (int i = 0; i < cameraNodes.getNodes().Count; i++)
+            {
+                if (cameraNodes.getNodes()[i].value.id == id)
+                    return cameraNodes.getNodes()[i];
+            }
+            return null;
+        }
+
+        public void addNode(NetworkNode<CameraData> node)
+        {
+            cameraNodes.addNode(node);
+            if (node.value.isFirst)
+                setCurrentNode(node);
+        }
+
+        public void setCurrentNode(NetworkNode<CameraData> node)
+        {
+            currentNode = node;
+            nextNode = node.getNext();
         }
 
         public void initialize()
@@ -107,6 +153,21 @@ namespace MyGame
 
             // update current frame position
             currentFrameData.position = Camera2D.position;
+        }
+
+        public void render()
+        {
+            foreach(NetworkNode<CameraData> cameraNode in cameraNodes.getNodes())
+            {
+                Vector3 position = cameraNode.value.target;
+                DebugManager.Instance.addRectangle(position - new Vector3(50, 50, 0), position + new Vector3(50, 50, 0), Color.Yellow, 1.0f);
+
+                if (cameraNode.getNext() != null)
+                {
+                    Vector3 target = cameraNode.getNext().value.target;
+                    DebugManager.Instance.addLine(position, target, Color.Yellow);
+                }
+            }
         }
 
         public void clean()
