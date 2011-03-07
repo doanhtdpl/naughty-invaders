@@ -133,7 +133,6 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddAnimated.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_ScaleState.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_RotateState.cs" />
-    <Compile Include="code\Editor\EditorStates\DefaultState.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState.cs" />
     <Compile Include="code\Camera\CameraManager.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />

@@ -41,11 +41,6 @@ namespace MyGame
             Instance = this;
         }
 
-        public MouseState getMouseState() { return mouseState; }
-        public MouseState getLastMouseState() { return lastMouseState; }
-        public KeyboardState getKeyState() { return lastKeyState; }
-        public KeyboardState getLastKeyState() { return keyState; }
-
         #region Selected Entitie(s)
 
         public bool anyEntitySelected() { return selectedEntities.Count > 0; }
@@ -66,40 +61,6 @@ namespace MyGame
         }
 
         #endregion
-
-        private void validateInputs(object sender)
-        {
-            if (currentState != null)
-            {
-                float value;
-                if (float.TryParse(((TextBox)sender).Text, out value))
-                {
-                    propertiesChanged();
-                }
-                else
-                {
-                    updateEntityProperties();
-                }
-            }
-        }
-
-        public void changeState(EditorState newState)
-        {
-            nextState = newState;
-            selectButton();
-            myEditorControl.Focus();
-        }
-
-        public void doChangeState()
-        {
-            if (currentState != null)
-                currentState.exit();
-
-            currentState = nextState;
-            currentState.enter();
-
-            nextState = null;
-        }
 
         #region Events
         protected void textChange(object sender, EventArgs e)
@@ -163,26 +124,6 @@ namespace MyGame
             createGroup();
         }
         #endregion
-
-        private void createGroup()
-        {
-            List<int> group = new List<int>();
-            foreach (Entity2D ent in selectedEntities)
-            {
-                group.Add(ent.id);
-            }
-            LevelManager.Instance.addGroup(group);
-        }
-
-        private void selectButton()
-        {
-            buttonMove.BackColor = nextState is EditorState_MoveState ? SELECTED_COLOR : UNSELECTED_COLOR;
-            buttonRotate.BackColor = nextState is EditorState_RotateState ? SELECTED_COLOR : UNSELECTED_COLOR;
-            buttonScale.BackColor = nextState is EditorState_ScaleState ? SELECTED_COLOR : UNSELECTED_COLOR;
-            buttonAddStatic.BackColor = nextState is EditorState_AddStatic ? SELECTED_COLOR : UNSELECTED_COLOR;
-            buttonAddAnimated.BackColor = nextState is EditorState_AddAnimated ? SELECTED_COLOR : UNSELECTED_COLOR;
-            buttonAddEnemy.BackColor = nextState is EditorState_AddEnemy ? SELECTED_COLOR : UNSELECTED_COLOR;
-        }
 
         #region Load/Save
         private bool openDialog(string title, ref string fileName)
@@ -375,6 +316,63 @@ namespace MyGame
         }
         #endregion
 
+        #region State
+        public void changeState(EditorState newState)
+        {
+            nextState = newState;
+            selectButton();
+            myEditorControl.Focus();
+        }
+
+        public void doChangeState()
+        {
+            if (currentState != null)
+                currentState.exit();
+
+            currentState = nextState;
+            currentState.enter();
+
+            nextState = null;
+        }
+
+        private void selectButton()
+        {
+            buttonMove.BackColor = nextState is EditorState_MoveState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonRotate.BackColor = nextState is EditorState_RotateState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonScale.BackColor = nextState is EditorState_ScaleState ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddStatic.BackColor = nextState is EditorState_AddStatic ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddAnimated.BackColor = nextState is EditorState_AddAnimated ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddEnemy.BackColor = nextState is EditorState_AddEnemy ? SELECTED_COLOR : UNSELECTED_COLOR;
+        }
+        #endregion
+
+        private void createGroup()
+        {
+            List<int> group = new List<int>();
+            foreach (Entity2D ent in selectedEntities)
+            {
+                group.Add(ent.id);
+            }
+            LevelManager.Instance.addGroup(group);
+        }
+
+        #region Properties fields
+        private void validateInputs(object sender)
+        {
+            if (currentState != null)
+            {
+                float value;
+                if (float.TryParse(((TextBox)sender).Text, out value))
+                {
+                    propertiesChanged();
+                }
+                else
+                {
+                    updateEntityProperties();
+                }
+            }
+        }
+
         public virtual void propertiesChanged()
         {
             if (anyEntitySelected())
@@ -409,7 +407,9 @@ namespace MyGame
                 }
             }
         }
+        #endregion
 
+        #region Reset
         public void resetRotation()
         {
             foreach (Entity2D ent in selectedEntities)
@@ -443,6 +443,13 @@ namespace MyGame
                 }
             }
         }
+        #endregion
+
+        #region Input
+        public MouseState getMouseState() { return mouseState; }
+        public MouseState getLastMouseState() { return lastMouseState; }
+        public KeyboardState getKeyState() { return lastKeyState; }
+        public KeyboardState getLastKeyState() { return keyState; }
 
         public bool justPressedKey(Microsoft.Xna.Framework.Input.Keys key)
         {
@@ -453,5 +460,6 @@ namespace MyGame
         {
             return keyState.IsKeyDown(key);
         }
+        #endregion
     }
 }

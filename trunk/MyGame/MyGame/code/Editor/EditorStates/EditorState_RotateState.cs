@@ -19,7 +19,7 @@ namespace MyGame
 
             selectEntity();
 
-            if (keyState.GetPressedKeys().Length == 0)
+            //if (keyState.GetPressedKeys().Length == 0)
             {
                 if (MyEditor.Instance.anyEntitySelected() && isPosInScreen(gameScreenPos))
                 {

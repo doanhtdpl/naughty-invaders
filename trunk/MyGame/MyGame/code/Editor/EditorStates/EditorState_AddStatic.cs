@@ -53,14 +53,7 @@ namespace MyGame
 
             if (staticEntity != null)
             {
-                Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-                Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-                Vector3 normal = new Vector3(0, 0, -1);
-
-                float u = Vector3.Dot(normal, Vector3.Zero - near) / Vector3.Dot(normal, far - near);
-                Vector3 pos = near + u * (far - near);
-
-                staticEntity.position2D = new Vector2(pos.X, pos.Y);
+                staticEntity.position2D = new Vector2(mouseInSetaZero.X, mouseInSetaZero.Y);
             }
         }
 

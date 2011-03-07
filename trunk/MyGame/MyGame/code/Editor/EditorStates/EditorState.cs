@@ -15,16 +15,18 @@ namespace MyGame
         public KeyboardState keyState;
         public KeyboardState lastKeyState;
 
-        private Vector2 initPoint, endPoint;
+        private Vector3 initPoint, endPoint;
         private Vector2 initPointSelect, endPointSelect;
         private bool multiSelecting = false;
 
         public Vector2 gameScreenPos;
+        public Vector3 mouseInSetaZero;
 
         public bool canSelect = true;
 
         public virtual void enter() { }
         public virtual void exit() { }
+
         public virtual void update() 
         {
             mouseState = MyEditor.Instance.getMouseState();
@@ -35,46 +37,41 @@ namespace MyGame
             System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(MyEditor.Instance.getMouseState().X, MyEditor.Instance.getMouseState().Y));
             gameScreenPos = new Vector2(point.X, point.Y);
 
+            //Calculate the position in Z = 0;
+            mouseInSetaZero = getMousePosInZ();
+
             // if using the grid mode
             if (MyEditor.Instance.drawGrid && (isPressedKey(Keys.LeftShift) || isPressedKey(Keys.RightShift)))
             {
-                Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-                Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-                Vector3 normal = new Vector3(0, 0, -1);
-
-                float u = Vector3.Dot(normal, Vector3.Zero - near) / Vector3.Dot(normal, far - near);
-                Vector3 pos = near + u * (far - near);
-
-                Vector2 pos2D = new Vector2(pos.X, pos.Y);
-
                 int gridSpacing = MyEditor.Instance.gridSpacing;
                 // find the 4 nearest points of the grid
-                Vector2 p1;
-                p1.X = pos2D.X - ((pos2D.X + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
-                p1.Y = pos2D.Y - ((pos2D.Y + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
-                if (pos2D.X > p1.X)
+                Vector3 p1;
+                p1.X = mouseInSetaZero.X - ((mouseInSetaZero.X + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
+                p1.Y = mouseInSetaZero.Y - ((mouseInSetaZero.Y + (gridSpacing * 10000.0f)) % gridSpacing) + (gridSpacing / 2);
+                p1.Z = 0.0f;
+                if (mouseInSetaZero.X > p1.X)
                 {
-                    if (pos2D.Y > p1.Y)
+                    if (mouseInSetaZero.Y > p1.Y)
                     {
-                        pos2D = p1 + new Vector2(gridSpacing / 2, gridSpacing / 2);
+                        mouseInSetaZero = p1 + new Vector3(gridSpacing / 2, gridSpacing / 2, 0.0f);
                     }
                     else
                     {
-                        pos2D = p1 + new Vector2(gridSpacing / 2, -gridSpacing / 2);
+                        mouseInSetaZero = p1 + new Vector3(gridSpacing / 2, -gridSpacing / 2, 0.0f);
                     }
                 }
                 else
                 {
-                    if (pos2D.Y > p1.Y)
+                    if (mouseInSetaZero.Y > p1.Y)
                     {
-                        pos2D = p1 + new Vector2(-gridSpacing / 2, gridSpacing / 2);
+                        mouseInSetaZero = p1 + new Vector3(-gridSpacing / 2, gridSpacing / 2, 0.0f);
                     }
                     else
                     {
-                        pos2D = p1 + new Vector2(-gridSpacing / 2, -gridSpacing / 2);
+                        mouseInSetaZero = p1 + new Vector3(-gridSpacing / 2, -gridSpacing / 2, 0.0f);
                     }
                 }
-                Vector3 aux = SB.graphicsDevice.Viewport.Project(new Vector3(pos2D.X, pos2D.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                Vector3 aux = SB.graphicsDevice.Viewport.Project(new Vector3(mouseInSetaZero.X, mouseInSetaZero.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
                 gameScreenPos.X = aux.X;
                 gameScreenPos.Y = aux.Y;
             }
@@ -83,7 +80,7 @@ namespace MyGame
         {
             if (multiSelecting)
             {
-                DebugManager.Instance.addRectangle(initPoint, endPoint, Color.Green, 1.0f);
+                DebugManager.Instance.addRectangle(new Vector2(initPoint.X, initPoint.Y), new Vector2(endPoint.X, endPoint.Y), Color.Green, 1.0f);
             }
         }
 
@@ -102,15 +99,20 @@ namespace MyGame
             return MyEditor.Instance.isKeyPressed(key);
         }
 
-        public Vector2 getMousePosInZeroZ()
+        public Vector3 getMousePosInZ(Vector2 mousePos, float z = 0.0f)
         {
-            Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-            Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(gameScreenPos.X, gameScreenPos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
             Vector3 normal = new Vector3(0, 0, -1);
 
-            float u = Vector3.Dot(normal, Vector3.Zero - near) / Vector3.Dot(normal, far - near);
+            float u = Vector3.Dot(normal, new Vector3(0.0f, 0.0f, z) - near) / Vector3.Dot(normal, far - near);
             Vector3 pos = near + u * (far - near);
-            return new Vector2(pos.X, pos.Y);
+            return new Vector3(pos.X, pos.Y, z);
+        }
+
+        public Vector3 getMousePosInZ(float z = 0.0f)
+        {
+            return getMousePosInZ(gameScreenPos, z);
         }
 
         private bool isPointInRect(Vector2 point, Vector2 initRect, Vector2 endRect)
@@ -129,18 +131,18 @@ namespace MyGame
                     MyEditor.Instance.getSelectedEntities().Clear();
 
                     initPointSelect = gameScreenPos;
-                    initPoint = getMousePosInZeroZ();
+                    initPoint = mouseInSetaZero;
                     multiSelecting = true;
                 }
                 else if (mouseState.MiddleButton == ButtonState.Pressed)
                 {
                     endPointSelect = gameScreenPos;
-                    endPoint = getMousePosInZeroZ();
+                    endPoint = mouseInSetaZero;
                 }
                 else if (mouseState.MiddleButton == ButtonState.Released && lastMouseState.MiddleButton == ButtonState.Pressed)
                 {
                     endPointSelect = gameScreenPos;
-                    endPoint = getMousePosInZeroZ();
+                    endPoint = mouseInSetaZero;
                     multiSelecting = false;
 
                     //Select entities inside the rect
