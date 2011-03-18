@@ -234,11 +234,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\enemies\Anim_Orange.tga">
-      <Name>Anim_Orange</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="textures\enemies\Anim_Pear.tga">
       <Name>Anim_Pear</Name>
       <Importer>TextureImporter</Importer>
