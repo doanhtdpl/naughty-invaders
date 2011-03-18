@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<level nextEntityID="383">
+  <staticProps>
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 -397.6666 82.02894 -447.9832 1" id="72" />
+    <staticProp entityName="struc-24" worldMatrix="-878.4993 51.36934 0 0 -79.27223 -1355.684 0 0 0 0 1 0 391.2335 -3.45206 -634.0139 1" id="73" />
+    <staticProp entityName="esmeral" worldMatrix="164.8897 0 0 0 0 72.08291 0 0 0 0 1 0 378.8286 67.09033 -2.981262 1" id="77" />
+    <staticProp entityName="esmeral" worldMatrix="149.7414 46.82998 -18.88237 0 -23.68861 72.67668 -7.611191 0 0.08368575 0.1307343 0.9878792 0 263.1031 46.66266 -5.00539 1" id="78" />
+    <staticProp entityName="struc-02" worldMatrix="1077 0 0 0 0 612 0 0 0 0 1 0 -471.4371 587.0282 328.0048 1" id="93" />
+    <staticProp entityName="struc-06" worldMatrix="471 0 0 0 0 526 0 0 0 0 1 0 255.4526 -283.0689 -0.005391217 1" id="98" />
+    <staticProp entityName="struc-06" worldMatrix="421.9738 -147.8541 148.0471 0 230.994 273.0653 -385.6854 0 0.06699862 0.7949562 0.6029559 0 404.2124 -45.0495 -5.005386 1" id="99" />
+    <staticProp entityName="pincho" worldMatrix="136.9048 32.91258 14.08718 0 -24.34019 128.6017 -63.91118 0 -0.1899487 0.4078734 0.8930615 0 198.7806 -57.94721 31.99463 1" id="107" />
+    <staticProp entityName="struc-09" worldMatrix="237 0 0 0 0 244 0 0 0 0 1 0 241.8466 -270.1842 20.00224 1" id="122" />
+    <staticProp entityName="struc-09" worldMatrix="237 0 0 0 0 244 0 0 0 0 1 0 303.6543 -91.72226 18.99461 1" id="124" />
+    <staticProp entityName="struc-09" worldMatrix="237 0 0 0 0 244 0 0 0 0 1 0 404.5721 -248.5405 113.0153 1" id="125" />
+    <staticProp entityName="struc-09" worldMatrix="37.97616 146.2941 0 0 -150.6149 39.09779 0 0 0 0 1 0 469.8929 -76.46284 -0.005391217 1" id="126" />
+    <staticProp entityName="struc-02" worldMatrix="-329.4586 -19.26489 0 0 10.94718 -187.2131 0 0 0 0 1 0 164.2698 266.2419 1093.997 1" id="127" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 -397.6667 1430.13 -447.97 1" id="128" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 361.868 1262.249 -447.9882 1" id="129" />
+    <staticProp entityName="struc-03" worldMatrix="452 0 0 0 0 374 0 0 0 0 1 0 544.967 -307.226 248.9857 1" id="139" />
+    <staticProp entityName="struc-03" worldMatrix="135.8028 92.22264 2.927776 0 -76.85457 114.8235 -52.0072 0 -0.2117424 0.2820957 0.9357281 0 414.0453 -202.5034 245.9961 1" id="141" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 371.1133 2588.904 -447.9888 1" id="142" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 -493.2947 2750.694 -447.9987 1" id="143" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 375.7357 3887.826 -447.998 1" id="144" />
+    <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 -493.2947 4017.263 -448.0138 1" id="145" />
+    <staticProp entityName="struc-10" worldMatrix="-740.9026 -277.5312 0 0 274.6989 -733.3417 0 0 0 0 1 0 -591.2255 -256.724 0.005592327 1" id="160" />
+    <staticProp entityName="struc-11" worldMatrix="266 0 0 0 0 313 0 0 0 0 1 0 -734.1847 -220.5742 4.988262 1" id="181" />
+    <staticProp entityName="struc-11" worldMatrix="134.535 0 0 0 0 158.3062 0 0 0 0 1 0 -662.0574 -308.4794 4.990121 1" id="183" />
+    <staticProp entityName="struc-03" worldMatrix="227.2943 -46.07508 0 0 38.12403 188.0708 0 0 0 0 1 0 527.7271 -157.785 245.9803 1" id="184" />
+    <staticProp entityName="esmeral" worldMatrix="142.6389 -83.05076 36.09033 0 44.91159 75.08221 -4.724432 0 -0.1565444 0.1550169 0.97543 0 -418.1931 61.67052 45.03037 1" id="185" />
+    <staticProp entityName="esmeral" worldMatrix="89.50292 -132.9194 -18.92247 0 63.87169 44.42692 -9.961535 0 0.1710363 -0.02504798 0.9849463 0 -311.3579 -23.50664 17.01112 1" id="186" />
+    <staticProp entityName="struc-05" worldMatrix="110.2545 75.42921 0 0 -104.5233 152.7811 0 0 0 0 1 0 -612.9725 125.2308 -44.99712 1" id="196" />
+    <staticProp entityName="struc-12" worldMatrix="258 0 0 0 0 467 0 0 0 0 1 0 578.3353 -116.6752 -0.0008533334 1" id="204" />
+    <staticProp entityName="struc-13" worldMatrix="134.6019 0 0 0 0 116.2471 0 0 0 0 1 0 -540.3247 -202.3802 54.99487 1" id="206" />
+    <staticProp entityName="struc-13" worldMatrix="68.37093 0 0 0 0 59.0476 0 0 0 0 1 0 -498.5687 -272.1049 20.9861 1" id="208" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -278.0001 253.0001 -0.01004412 1" />
+  </players>
+  <camera />
+</level>
