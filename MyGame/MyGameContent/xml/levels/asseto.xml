@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<level nextEntityID="58">
+  <staticProps>
+    <staticProp entityName="struc-06" worldMatrix="471 0 0 0 0 526 0 0 0 0 1 0 -337.1512 102.4111 -0.001810337 1" id="13" />
+    <staticProp entityName="struc-06" worldMatrix="-463.7881 -82.10773 0 0 91.69563 -517.9456 0 0 0 0 1 0 -113.9145 -40.26854 5.989234 1" id="14" />
+    <staticProp entityName="struc-06" worldMatrix="32.27725 455.158 0 0 -559.7122 39.69165 0 0 0 0 1 0 -243.9456 -81.69878 3.999364 1" id="15" />
+    <staticProp entityName="struc-06" worldMatrix="-52.48766 -465.048 0 0 503.801 -56.86152 0 0 0 0 1 0 -191.9081 170.1796 -2.018597 1" id="16" />
+    <staticProp entityName="struc-07" worldMatrix="629.8187 0 0 0 0 532.9872 0 0 0 0 1 0 -218.1278 193.3493 56.01703 1" id="29" />
+    <staticProp entityName="struc-07" worldMatrix="-566.1779 80.70642 0 0 -62.8172 -440.6801 0 0 0 0 1 0 -188.7993 -32.58746 54.01163 1" id="31" />
+    <staticProp entityName="struc-03" worldMatrix="150.6492 0 0 0 0 124.6523 0 0 0 0 1 0 -193.8803 72.13027 86.01395 1" id="41" />
+    <staticProp entityName="pincho" worldMatrix="596 0 0 0 0 520 0 0 0 0 1 0 -450.412 -158.7947 -0.00822663 1" id="55" />
+    <staticProp entityName="pincho" worldMatrix="-441.1892 397.8506 -47.78134 0 -341.5492 -360.1292 155.0849 0 0.1435633 0.27343 0.9511181 0 36.79013 169.5522 -31.01492 1" id="56" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 -0.008712186 1" />
+  </players>
+  <camera />
+</level>

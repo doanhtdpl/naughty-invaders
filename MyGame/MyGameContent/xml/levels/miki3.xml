@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<level nextEntityID="31">
+  <staticProps>
+    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 -461.4248 199.0668 0.008572056 1" id="27" />
+    <staticProp entityName="struc-07" worldMatrix="-113.192 247.3289 0 0 -198.2269 -90.72007 0 0 0 0 1 0 -483.6137 115.0759 14.98556 1" id="28" />
+    <staticProp entityName="struc-07" worldMatrix="-271.5363 -15.87755 0 0 12.72538 -217.6283 0 0 0 0 1 0 -418.851 92.05446 -0.009036634 1" id="29" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 -0.01127581 1" />
+  </players>
+  <camera />
+</level>
