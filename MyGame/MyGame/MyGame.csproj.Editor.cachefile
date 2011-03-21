@@ -35,7 +35,6 @@ Content\GUI\menu\trial.xnb
 Content\textures\staticProps\A.xnb
 Content\textures\animatedProps\test.xnb
 Content\textures\enemies\Anim_Grape.xnb
-Content\textures\enemies\Anim_Orange.xnb
 Content\textures\enemies\Anim_Pear.xnb
 Content\textures\characters\Anim_Player.xnb
 Content\textures\projectiles\Anim_GrapeWeapon.xnb
@@ -72,6 +71,10 @@ Content\textures\staticProps\struc-21.xnb
 Content\textures\staticProps\struc-22.xnb
 Content\textures\staticProps\struc-23.xnb
 Content\textures\staticProps\struc-24.xnb
+Content\textures\enemies\Anim_ElderOnion.xnb
+Content\textures\enemies\Anim_KingTomato.xnb
+Content\textures\enemies\Anim_Orange.xnb
+Content\textures\enemies\Anim_Tomato.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -84,4 +87,7 @@ Content\xml\projectiles\pearProjectile.xml
 Content\xml\enemies\calsot.xml
 Content\xml\animatedProps\leaf.xml
 Content\xml\particles\particleSystems.xml
+Content\xml\enemies\Tomato.xml
+Content\xml\enemies\ElderOnion.xml
+Content\xml\enemies\KingTomato.xml
 Content\xml\levels\xmlLevelTemplate.xml

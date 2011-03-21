@@ -32,4 +32,7 @@
     <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 108 3890.14 0.0263483 1" />
     <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 222 4348.98 0.01498038 1" />
   </enemies>
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 -0.008712186 1" />
+  </players>
 </level>
