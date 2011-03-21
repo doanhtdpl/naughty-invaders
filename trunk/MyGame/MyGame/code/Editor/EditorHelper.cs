@@ -37,7 +37,7 @@ namespace MyGame
                     (NUMBER_OF_COLUMNS / 2) * gridSpacing,
                     (NUMBER_OF_ROWS / 2) * gridSpacing,
                     0.0f)
-                    - new Vector3( Camera2D.position.X % 50, Camera2D.position.Y % 50, 0.0f);
+                    - new Vector3(Camera2D.position.X % gridSpacing, Camera2D.position.Y % gridSpacing, 0.0f);
             startingPosition.Z = 0;
 
             float lineLength = (NUMBER_OF_ROWS - 1) * gridSpacing;

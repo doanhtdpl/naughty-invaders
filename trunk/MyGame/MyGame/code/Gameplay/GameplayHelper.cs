@@ -25,46 +25,40 @@ namespace MyGame
             }
         }
 
-        /*
-        #region WALL COLLISION
-        bool collided = false;
-        for (int i = 0; i < StageManager.walls.Count; i++)
-        {
-            Vector2 v = StageManager.walls[i].vectorToPoint(position + speed);
-            if (Vector2.Distance(position + speed, v) < radius + StageManager.WALL_SIZE)
-            {
-                collided = true;
-                position -= Vector2.Normalize(v - position);
-            }
-        }
-        if (!collided)
-            position += speed;
-        #endregion
-        */
-
-        public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, Line[] cameraLines = null)
+        // updates the position of an entity within the level lines passed as parameter and in the playable zone
+        public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, bool keepInPlayableZone = false)
         {
             bool collided = false;
+            float distanceToLine = 0.0f;
+
+            // set the new position
+            entity.position2D = newPosition;
+
+            // update the position controlling the collisions with all the scene and camera lines
             for (int i = 0; i < levelLines.Count; ++i)
             {
                 Vector2 v = levelLines[i].vectorToPoint(newPosition);
-                if (Vector2.Distance(newPosition, v) < entity.getRadius())
+                distanceToLine = Vector2.Distance(newPosition, v) - entity.getRadius();
+                if (distanceToLine < 0)
                 {
                     collided = true;
-                    entity.position2D -= Vector2.Normalize(v - entity.position2D);
+                    entity.position2D -= Vector2.Normalize(entity.position2D - v) * distanceToLine;
                 }
             }
-            for (int i = 0; i < 4; ++i)
+            if (keepInPlayableZone)
             {
-                Vector2 v = cameraLines[i].vectorToPoint(newPosition);
-                if (Vector2.Distance(newPosition, v) < entity.getRadius())
+                Line[] cameraLines = Camera2D.playableZoneCollisions;
+                for (int i = 0; i < 4; ++i)
                 {
-                    collided = true;
-                    entity.position2D -= Vector2.Normalize(v - entity.position2D);
+                    Vector2 v = cameraLines[i].vectorToPoint(newPosition);
+                    distanceToLine = Vector2.Distance(newPosition, v) - entity.getRadius();
+                    if (distanceToLine < 0)
+                    {
+                        collided = true;
+                        entity.position2D -= Vector2.Normalize(entity.position2D - v) * distanceToLine;
+                    }
                 }
             }
-            if (!collided)
-                entity.position2D = newPosition;
         }
     }
 }

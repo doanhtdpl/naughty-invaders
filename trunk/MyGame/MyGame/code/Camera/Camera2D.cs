@@ -98,9 +98,12 @@ namespace MyGame
         // donde el juego calcula todo lo que ocurre
         private void calculatePlayableZone()
         {
-            float addWidth = playableMargins.X * (position.Z / 930);
-            float addHeight = playableMargins.Y * (position.Z / 930);
-            playableZone = new Rectangle((int)(screen.X - addWidth), (int)(screen.Y - addHeight), (int)(screen.Width + (addWidth * 2)), (int)(screen.Height + (addHeight * 2)));
+            // limit the width to playable margins on all tvs (20% safe zone)
+            float width = screen.Right - screen.Left;
+            float height = screen.Top - screen.Bottom;
+            width *= 0.8f;
+            height *= 0.8f;
+            playableZone = new Rectangle((int)(screen.Center.X - (width*0.5f)), (int)(screen.Center.Y - (height*0.5f)), (int)(width), (int)(height));
 
             playableZoneCollisions[0].p1.X = playableZone.Left; playableZoneCollisions[0].p1.Y = playableZone.Top;
             playableZoneCollisions[0].p2.X = playableZone.Right; playableZoneCollisions[0].p2.Y = playableZone.Top;

@@ -75,6 +75,12 @@ namespace MyGame
             {
                 Projectile p = (Projectile)projectiles[i];
                 p.update();
+                // if the projectile is out of screen, delete it
+                if (!CoolizionManager.pointVSrectangle(p.position2D, Camera2D.screen, (int)p.getRadius()))
+                {
+                    requestDeleteOf(p);
+                    continue;
+                }
                 if (p.entityState != Entity2D.tEntityState.Active)
                 {
                     continue;
