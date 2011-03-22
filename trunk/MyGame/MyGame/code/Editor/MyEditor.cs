@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -264,12 +263,12 @@ namespace MyGame
                         }
                         else if (ent is AnimatedEntity2D)
                         {
-                            newEntity = new AnimatedEntity2D("animatedProps", ent.entityName, ent.position, 0);
+                            newEntity = new AnimatedEntity2D("animatedProps", ent.entityName, ent.position, 0, Color.White);
                             LevelManager.Instance.addAnimatedProp(newEntity);
                         }
                         else if (ent is RenderableEntity2D)
                         {
-                            newEntity = new RenderableEntity2D("staticProps", ent.entityName, ent.position, 0);
+                            newEntity = new RenderableEntity2D("staticProps", ent.entityName, ent.position, 0, Color.White);
                             LevelManager.Instance.addStaticProp(newEntity);
                         }
 

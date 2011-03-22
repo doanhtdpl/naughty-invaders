@@ -14,7 +14,7 @@ namespace MyGame
         public List<AnimatedTexture> animatedTextures = new List<AnimatedTexture>();
     }
 
-    public class AnimatedEntity2D : MovingEntity2D
+    public class AnimatedEntity2D : RenderableEntity2D
     {
         // animations
         string newActionState = "idle";
@@ -29,8 +29,8 @@ namespace MyGame
         Dictionary<string, AnimationAction> actions;
         List<AnimatedTexture> animatedTextures;
 
-        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, int id = -1)
-            : base(entityName, position, orientation, id)
+        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, int id = -1)
+            : base("animated", entityName, position, orientation, color, id)
         {
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))
@@ -169,6 +169,8 @@ namespace MyGame
 
         public override void render()
         {
+            if (renderState == tRenderState.NoRender) return;
+
             currentTextureId = actions[actionState].textureId;
 
             int columns = animatedTextures[currentTextureId].columns;
@@ -181,7 +183,7 @@ namespace MyGame
             Vector2 initialUVs = new Vector2( frameWidthUV * x, frameHeightUV * y);
             Vector2 endingUVs = new Vector2( (frameWidthUV) * (x + 1), (frameHeightUV) * (y + 1));
 
-            animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs);
+            animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs, color);
         }
 
         public override void delete()

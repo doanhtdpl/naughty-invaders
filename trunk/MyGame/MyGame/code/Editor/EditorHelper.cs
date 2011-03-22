@@ -260,7 +260,7 @@ namespace MyGame
                     id = -1;
                     if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
                     RenderableEntity2D re =
-                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0, id);
+                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0, Color.White, id);
                     re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
@@ -272,7 +272,7 @@ namespace MyGame
                     id = -1;
                     if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
                     AnimatedEntity2D ae =
-                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0, id);
+                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0, Color.White, id);
                     ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();

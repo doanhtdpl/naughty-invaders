@@ -28,7 +28,6 @@ namespace MyGame
         // updates the position of an entity within the level lines passed as parameter and in the playable zone
         public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, bool keepInPlayableZone = false)
         {
-            bool collided = false;
             float distanceToLine = 0.0f;
 
             // set the new position
@@ -41,7 +40,6 @@ namespace MyGame
                 distanceToLine = Vector2.Distance(newPosition, v) - entity.getRadius();
                 if (distanceToLine < 0)
                 {
-                    collided = true;
                     entity.position2D -= Vector2.Normalize(entity.position2D - v) * distanceToLine;
                 }
             }
@@ -54,7 +52,6 @@ namespace MyGame
                     distanceToLine = Vector2.Distance(newPosition, v) - entity.getRadius();
                     if (distanceToLine < 0)
                     {
-                        collided = true;
                         entity.position2D -= Vector2.Normalize(entity.position2D - v) * distanceToLine;
                     }
                 }

@@ -85,13 +85,13 @@ namespace MyGame
             render(texture, worldMatrix, Color.White, customUVs);
         }
 
-        public static void renderWithUVs(this Texture texture, Matrix worldMatrix, Vector2 startingUV, Vector2 endingUV)
+        public static void renderWithUVs(this Texture texture, Matrix worldMatrix, Vector2 startingUV, Vector2 endingUV, Color color)
         {
             vertexUVs[0].TextureCoordinate = new Vector2(startingUV.X, endingUV.Y);
             vertexUVs[1].TextureCoordinate = startingUV;
             vertexUVs[2].TextureCoordinate = endingUV;
             vertexUVs[3].TextureCoordinate = new Vector2(endingUV.X, startingUV.Y);
-            render(texture, worldMatrix, true);
+            render(texture, worldMatrix, color, true);
         }
     }
 }

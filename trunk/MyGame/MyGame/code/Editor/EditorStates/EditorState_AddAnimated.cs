@@ -75,7 +75,7 @@ namespace MyGame
             currentIndex = (index + textures.Count) % textures.Count;
             Vector3 position = Camera2D.position;
             position.Z = 0.0f;
-            AnimatedEntity2D ent = new AnimatedEntity2D("animatedProps", textures[currentIndex], position, 0);
+            AnimatedEntity2D ent = new AnimatedEntity2D("animatedProps", textures[currentIndex], position, 0, Color.White);
             LevelManager.Instance.addAnimatedProp(ent);
             entity = ent;
 #endif
