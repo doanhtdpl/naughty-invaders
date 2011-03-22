@@ -11,15 +11,19 @@ namespace MyGame
     class Player : CollidableEntity2D
     {
         public const float SPEED = 500;
+        public const float INVULNERABLE_TIME = 3.0f;
 
-        float cooldownTime = 0.0f;
+        float cooldownTime;
+        int lifes;
+        float invulnerableTime;
 
         public Player(string entityName, Vector3 position, float orientation)
-            : base("characters", entityName, position, orientation, 0)
+            : base("characters", entityName, position, orientation, Color.White, 0)
         {
+            cooldownTime = 0.0f;
             entityState = tEntityState.Active;
             setCollisions();
-            life = 50.0f;
+            lifes = 3;
         }
 
         public override void setCollisions()
@@ -29,14 +33,33 @@ namespace MyGame
 
         public override bool gotHitAtPart(int partIndex, float damage)
         {
-            life -= damage;
-            //playAction("gotHit");
-            return life > 0;
+            if (invulnerableTime > 0.0f) return true;
+
+            --lifes;
+            if (lifes > 0)
+            {
+                invulnerableTime = INVULNERABLE_TIME;
+            }
+            return lifes > 0;
         }
 
         public void update(ControlPad controls)
         {
             base.update();
+
+            // if invulnerable, update rendering
+            if (invulnerableTime > 0.0f)
+            {
+                invulnerableTime -= SB.dt;
+                if (invulnerableTime % 0.3f > 0.15f)
+                {
+                    renderState = tRenderState.NoRender;
+                }
+                else
+                {
+                    renderState = tRenderState.Render;
+                }
+            }
 
             position += CameraManager.Instance.getCameraVelocityXY();
 

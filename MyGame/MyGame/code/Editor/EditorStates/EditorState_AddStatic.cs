@@ -75,7 +75,7 @@ namespace MyGame
             Texture2D texture = TextureManager.Instance.getTexture("staticProps", textures[currentIndex]);
             Vector3 position = Camera2D.position;
             position.Z = 0.0f;
-            staticEntity = new RenderableEntity2D("staticProps", textures[currentIndex], position, 0);
+            staticEntity = new RenderableEntity2D("staticProps", textures[currentIndex], position, 0, Color.White);
             LevelManager.Instance.addStaticProp(staticEntity);
 #endif
         }

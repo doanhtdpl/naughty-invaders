@@ -27,8 +27,8 @@ namespace MyGame
 
         public List<CollidablePart> getParts() { return parts; }
 
-        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, int id = -1)
-            : base(entityFolder, entityName, position, orientation, id)
+        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, int id = -1)
+            : base(entityFolder, entityName, position, orientation, color, id)
         {
         }
 
