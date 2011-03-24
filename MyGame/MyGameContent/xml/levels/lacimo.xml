@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<level nextEntityID="236">
+  <staticProps>
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="34" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="35" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="36" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="37" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="38" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="39" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="40" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="41" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="42" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="43" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="44" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="45" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="46" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="47" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="48" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="49" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="50" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="52" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="53" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="54" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="102" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="103" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="104" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="105" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="106" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="107" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="108" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="109" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="110" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="111" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="112" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="113" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="114" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="115" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="116" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="117" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="118" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="119" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="120" />
+    <staticProp entityName="struc-23" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="128" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 11.33328 -10.31961 0 0" id="134" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="135" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" id="136" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -220.8006 418.7191 -0.009544147 1" id="169" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -176.6008 478.7855 -0.00779275 1" id="170" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -265.0004 479.9188 0.009427168 1" id="171" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -210.6006 553.5851 -0.01525217 1" id="172" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -271.8004 559.2518 0.007939026 1" id="173" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -214.0006 509.3853 0.005663652 1" id="174" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -267.2671 509.3853 -0.01010874 1" id="175" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -312.6002 452.7189 -0.0130262 1" id="176" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -257.0671 416.4525 -0.01190831 1" id="177" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -241.2005 383.5859 -0.00575163 1" id="178" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -250.2671 352.9861 -0.01297234 1" id="179" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -314.3498 394.0042 -33.00042 1" id="180" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="106.0534 0 0 0 0 75.43232 0 0 0 0 1 0 -201.8234 329.3849 -32.99272 1" id="181" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="74.37653 0 0 0 0 52.90162 0 0 0 0 1 0 -189.1394 320.8518 -57.99126 1" id="182" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -191.3341 368.8527 0.006997318 1" id="183" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="119.3176 0 0 0 0 84.86671 0 0 0 0 1 0 -157.3342 440.8793 0.01410855 1" id="184" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="105.3371 0 0 0 0 74.9229 0 0 0 0 1 0 -139.2009 478.7855 0.01847087 1" id="185" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -142.601 536.5852 -0.01937838 1" id="186" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="184.3413 0 0 0 0 133.116 0 0 0 0 1 0 -220.7121 559.2277 0.01440535 1" id="187" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -344.3333 553.5851 -95.01443 1" id="188" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="115.3268 0 0 0 0 80.07049 0 0 0 0 1 0 -322.0682 508.3084 0.007267708 1" id="189" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -275.2003 359.7861 -0.009085725 1" id="190" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -227.2063 297.8632 -50.98251 1" id="191" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -236.1677 460.1159 -0.01602278 1" id="192" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -340.9333 469.7189 -0.01443298 1" id="193" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -272.9337 567.1851 -0.0004660308 1" id="194" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -190.2007 590.985 -0.01918331 1" id="195" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="124.2718 0 0 0 0 88.3905 0 0 0 0 1 0 -140.3343 588.7183 0.009921324 1" id="196" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -252.8321 620.7699 -63.99869 1" id="197" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="88.49821 0 0 0 0 62.94593 0 0 0 0 1 0 -286.4142 606.7716 -0.01188595 1" id="198" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="195.0119 501.4482 32.26656 0 -247.8391 93.81059 39.99281 0 0.1178756 -0.1093511 0.9869892 0 -130.1874 768.1116 0.01997763 1" id="232" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-359.1227 401.9352 0 0 -196.1205 -175.2306 0 0 0 0 1 0 -306.7291 759.6524 -10.98829 1" id="233" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="311.8869 177.8167 7.977152 0 -77.59401 136.7773 -15.1348 0 -0.06667039 0.0722943 0.9951526 0 -82.34137 678.0192 -19.98041 1" id="234" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+  </players>
+  <camera />
+</level>

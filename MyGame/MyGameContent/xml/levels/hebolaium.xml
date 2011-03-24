@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<level nextEntityID="159">
+  <staticProps>
+    <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 690.4063 112.7666 0.01094175 1" id="75" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="400.476 76.5051 352.5437 0 -60.5479 260.7862 12.18712 0 -0.6300096 -0.181558 0.7550659 0 646.9822 126.4909 91.98582 1" id="76" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-69.44717 534.5073 0 0 -264.7745 -34.40147 0 0 0 0 1 0 520.1091 335.9982 0.004952412 1" id="77" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="346.9205 -0.591405 411.2055 0 -3.899912 267.9464 3.675593 0 -0.7641846 -0.01996618 0.6446885 0 638.0488 112.8204 210.9803 1" id="78" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-6.677351 -538.9585 0 0 267.9794 -3.320093 0 0 0 0 1 0 484.4385 -51.78148 0.004203787 1" id="79" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-538.8344 13.35384 0 0 -6.639757 -267.9177 0 0 0 0 1 0 325.6445 162.2413 0.01592444 1" id="80" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-461.6546 259.3474 -100.6728 0 -135.8675 -228.3878 34.68765 0 -0.09689216 0.2055481 0.9738388 0 345.4555 227.4243 41.00183 1" id="81" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="250.9139 414.1186 236.7889 0 -228.686 139.7245 -2.03564 0 -0.2348747 -0.3713303 0.8983028 0 597.1287 277.2604 132.9858 1" id="82" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="19.25937 -304.4859 444.3405 0 260.4158 56.9165 27.71484 0 -0.2334968 0.797355 0.556511 0 469.6354 11.44955 204.9998 1" id="83" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="56.96105 0 0 0 0 40.51457 0 0 0 0 1 0 491.5698 137.2863 148.0122 1" id="148" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 441.0919 232.8263 -0.008803188 1" id="157" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 0 0 0.001196122 1" />
+  </players>
+  <camera />
+</level>

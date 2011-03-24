@@ -75,6 +75,15 @@ Content\textures\enemies\Anim_ElderOnion.xnb
 Content\textures\enemies\Anim_KingTomato.xnb
 Content\textures\enemies\Anim_Orange.xnb
 Content\textures\enemies\Anim_Tomato.xnb
+Content\textures\animatedProps\ventosaseq.xnb
+Content\textures\staticProps\bg01_struct-27.xnb
+Content\textures\staticProps\bg01_struct-28.xnb
+Content\textures\staticProps\bg01_struct-29.xnb
+Content\textures\staticProps\bg01_struct-30.xnb
+Content\textures\staticProps\bg01_struct-31.xnb
+Content\textures\staticProps\bg01_struct-32.xnb
+Content\textures\staticProps\bg01_struct-33.xnb
+Content\textures\animatedProps\ventose.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
