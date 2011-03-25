@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    public class Entity2D
+    public class Entity2D : SortableEntity
     {
         public static int NEXT_ENTITY_ID = 1;
 
@@ -22,6 +22,10 @@ namespace MyGame
         {
             get { return world; }
             set { world = value; }
+        }
+        public override float getZ()
+        {
+            return world.Translation.Z;
         }
         // gets or set the position
         public Vector3 position
@@ -108,8 +112,6 @@ namespace MyGame
                 this.id = NEXT_ENTITY_ID++;
             else
                 this.id = id;
-
-            EntityManager.Instance.registerEntity(this);
         }
 
         // initialize the world matrix, must be called at the creation of each entity
@@ -153,7 +155,6 @@ namespace MyGame
         }
 
         public virtual void update() { }
-        public virtual void render() { }
 
         public virtual void delete()
         {

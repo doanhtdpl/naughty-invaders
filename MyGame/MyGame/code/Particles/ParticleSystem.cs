@@ -70,6 +70,7 @@ namespace MyGame
             particle.color.B += (byte)Calc.randomNatural(data.colorVarianceMin.B, data.colorVarianceMax.B);
             particle.color.A += (byte)Calc.randomNatural(data.colorVarianceMin.A, data.colorVarianceMax.A);
             particle.life = data.particlesLife;
+            particle.texture = data.texture;
         }
 	    public void update( )
         {
@@ -128,15 +129,13 @@ namespace MyGame
 		        }
 	        }
         }
-        public void render()
+
+        public void clear()
         {
             for (int i = 0; i < particles.Count; ++i)
             {
-                data.texture.render(SB.getWorldMatrix(particles[i].position, particles[i].rotation, particles[i].size), particles[i].color);
+                EntityManager.Instance.removeEntity(particles[i]);
             }
-        }
-        public void clear()
-        {
             particles.Clear();
         }
     }
