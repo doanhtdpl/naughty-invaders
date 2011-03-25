@@ -5,14 +5,14 @@ using System.Text;
 
 namespace MyGame
 {
-    public class Entity2DComparer : IComparer<Entity2D>
+    public class EntityComparer : IComparer<SortableEntity>
     {
         // sorts in descending order
-        public int Compare(Entity2D e1, Entity2D e2)
+        public int Compare(SortableEntity e1, SortableEntity e2)
         {
-            if (e1.position.Z > e2.position.Z)
+            if (e1.getZ() > e2.getZ())
                 return 1;
-            if (e1.position.Z < e2.position.Z)
+            if (e1.getZ() < e2.getZ())
                 return -1;
             // equal
             return 0;
@@ -38,16 +38,16 @@ namespace MyGame
             }
         }
 
-        Entity2DComparer comparer = new Entity2DComparer();
-        List<Entity2D> entities = new List<Entity2D>();
+        EntityComparer comparer = new EntityComparer();
+        List<SortableEntity> entities = new List<SortableEntity>();
 
         #region ENTITY MANAGEMENT
-        public void registerEntity(Entity2D entity)
+        public void registerEntity(SortableEntity entity)
         {
             if(!entities.Contains(entity))
                 entities.Add(entity);
         }
-        public void removeEntity(Entity2D entity)
+        public void removeEntity(SortableEntity entity)
         {
             entities.Remove(entity);
         }
@@ -71,7 +71,7 @@ namespace MyGame
         public void render()
         {
             sortEntities();
-            foreach (Entity2D e in entities)
+            foreach (SortableEntity e in entities)
             {
                 e.render();
             }
@@ -84,7 +84,7 @@ namespace MyGame
 
         public void reset()
         {
-            foreach (Entity2D ent in entities)
+            foreach (SortableEntity ent in entities)
             {
                 ent.reset();
             }

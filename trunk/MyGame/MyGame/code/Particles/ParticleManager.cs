@@ -119,14 +119,6 @@ namespace MyGame
 	        }
         }
 
-        public void render()
-        {
-            for(int i=0; i<particleSystems.Count; ++i)
-            {
-                particleSystems[i].render();
-            }
-        }
-
         public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction)
         {
 	        ParticleSystem ps = new ParticleSystem();

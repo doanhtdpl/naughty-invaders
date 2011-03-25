@@ -51,7 +51,6 @@ namespace MyGame
             EnemyManager.Instance.render();
             LevelManager.Instance.render();
             ProjectileManager.Instance.render();
-            ParticleManager.Instance.render();
             DebugManager.Instance.render();
             gui.render();
 
