@@ -617,11 +617,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="xml\animatedProps\ventose.xml">
+    <None Include="xml\animatedProps\ventose.xml">
       <Name>ventose</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
-    </Compile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

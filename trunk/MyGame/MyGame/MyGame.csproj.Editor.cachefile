@@ -45,6 +45,7 @@ Content\textures\enemies\Anim_Calsot.xnb
 Content\textures\particles\Particle_Test.xnb
 Content\textures\staticProps\leaf_4_4.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
+Content\textures\animatedProps\ventose.xnb
 Content\textures\staticProps\esmeral.xnb
 Content\textures\staticProps\pincho.xnb
 Content\textures\staticProps\struc-01.xnb
@@ -83,7 +84,6 @@ Content\textures\staticProps\bg01_struct-30.xnb
 Content\textures\staticProps\bg01_struct-31.xnb
 Content\textures\staticProps\bg01_struct-32.xnb
 Content\textures\staticProps\bg01_struct-33.xnb
-Content\textures\animatedProps\ventose.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -99,4 +99,5 @@ Content\xml\particles\particleSystems.xml
 Content\xml\enemies\Tomato.xml
 Content\xml\enemies\ElderOnion.xml
 Content\xml\enemies\KingTomato.xml
+Content\xml\animatedProps\ventose.xml
 Content\xml\levels\xmlLevelTemplate.xml
