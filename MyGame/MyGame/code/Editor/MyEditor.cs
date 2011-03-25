@@ -221,10 +221,10 @@ namespace MyGame
             }
 
             //RESET
-            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.R))
-            {
-                EntityManager.Instance.reset();
-            }
+            //else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.R))
+            //{
+            //    EntityManager.Instance.reset();
+            //}
 
             //MOVE CAMERA
             else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
