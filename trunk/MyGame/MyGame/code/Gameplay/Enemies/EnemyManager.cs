@@ -110,6 +110,24 @@ namespace MyGame
                 enemiesToDelete[i].delete();
             }
         }
+        public void checkCollisionsWithPlayers()
+        {
+            bool alive = true;
+            foreach (Player p in GamerManager.getPlayerEntities())
+            {
+                foreach (Enemy enemy in enemies)
+                {
+                    if (p.collidesWith(enemy, 0.0f, ref alive))
+                    {
+                        if (!alive)
+                        {
+                            p.die();
+                        }
+                    }
+                }
+            }
+        }
+
         public void update()
         {
             updateSleepingEnemies();
@@ -124,6 +142,8 @@ namespace MyGame
                 nextSpawn = 1;
             }
 
+            checkCollisionsWithPlayers();
+
             foreach (Enemy enemy in enemies)
             {
                 if (enemy.entityState != Entity2D.tEntityState.Waiting)
@@ -132,12 +152,6 @@ namespace MyGame
                 }
             }
             deleteEnemiesToDelete();
-        }
-
-        public void render()
-        {
-            //foreach (Enemy enemy in enemies)
-            //    enemy.render();
         }
     }
 }

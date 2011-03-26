@@ -93,13 +93,5 @@ namespace MyGame
                 g.updatePlayer();
             }
         }
-
-        public static void renderPlayers()
-        {
-            foreach (GamerEntity g in gamerEntities)
-            {
-                //g.Player.render();
-            }
-        }
     }
 }

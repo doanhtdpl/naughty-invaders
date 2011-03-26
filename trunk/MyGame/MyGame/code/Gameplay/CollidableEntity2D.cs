@@ -42,18 +42,18 @@ namespace MyGame
             parts.Add(new CollidablePart(centerOfMass, radius));
         }
 
-        // returns true if collides
-        public bool collidesWith(Projectile p, ref bool entityAlive)
+        // returns true if collides with the projectile. This method calls gotHitAtPart child method to see if the entity dies
+        public bool collidesWith(CollidableEntity2D ce, float damage, ref bool entityAlive)
         {
             for (int i = 0; i < parts.Count; ++i)
             {
-                List<CollidablePart> projectileParts = p.getParts();
+                List<CollidablePart> projectileParts = ce.getParts();
                 for (int j = 0; j < projectileParts.Count; ++j)
                 {
-                    Vector2 v = (position2D + parts[i].centerOfMass) - (p.position2D + projectileParts[j].centerOfMass);
+                    Vector2 v = (position2D + parts[i].centerOfMass) - (ce.position2D + projectileParts[j].centerOfMass);
                     if (v.Length() < parts[i].radius + projectileParts[j].radius)
                     {
-                        entityAlive = gotHitAtPart(i, p.damage);
+                        entityAlive = gotHitAtPart(i, damage);
                         return true;
                     }
                 }
