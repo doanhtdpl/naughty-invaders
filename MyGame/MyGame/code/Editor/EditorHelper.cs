@@ -143,6 +143,13 @@ namespace MyGame
             writer.WriteAttributeString("id", entity2D.id.ToString());
             writer.WriteEndElement();
         }
+        void writeLevelCollision(XmlTextWriter writer, Line line)
+        {
+            writer.WriteStartElement("levelCollision");
+            writer.WriteAttributeString("p1", line.p1.toXML());
+            writer.WriteAttributeString("p2", line.p2.toXML());
+            writer.WriteEndElement();
+        }
         public void saveLevelToXML(string name)
         {
             // creates directory if it doesnt already exist
@@ -195,6 +202,14 @@ namespace MyGame
             {
                 Enemy e = (Enemy)EnemyManager.Instance.getEnemies()[i];
                 writeEntity(writer, e, "enemy");
+            }
+            writer.WriteEndElement();
+
+            // level lines
+            writer.WriteStartElement("levelCollisions");
+            for (int i = 0; i < LevelManager.Instance.getLevelCollisions().Count; i++)
+            {
+                writeLevelCollision(writer, LevelManager.Instance.getLevelCollisions()[i]);
             }
             writer.WriteEndElement();
 
@@ -254,7 +269,8 @@ namespace MyGame
                     }
                 }
 
-                nodes = xml_doc.GetElementsByTagName("staticProp"); // read static props
+                // read static props
+                nodes = xml_doc.GetElementsByTagName("staticProp"); 
                 foreach (XmlElement node in nodes)
                 {
                     id = -1;
@@ -266,7 +282,9 @@ namespace MyGame
                     re.setInit();
                     list.Add(re);
                 }
-                nodes = xml_doc.GetElementsByTagName("animatedProp"); // read animated props
+
+                // read animated props
+                nodes = xml_doc.GetElementsByTagName("animatedProp");
                 foreach (XmlElement node in nodes)
                 {
                     id = -1;
@@ -278,7 +296,9 @@ namespace MyGame
                     ae.setInit();
                     list.Add(ae);
                 }
-                nodes = xml_doc.GetElementsByTagName("enemy"); // read enemies
+
+                // read enemies
+                nodes = xml_doc.GetElementsByTagName("enemy");
                 foreach (XmlElement node in nodes)
                 {
                     id = -1;
@@ -289,7 +309,16 @@ namespace MyGame
                     e.setInit();
                     list.Add(e);
                 }
-                nodes = xml_doc.GetElementsByTagName("player"); // read players
+
+                // read level collisions
+                nodes = xml_doc.GetElementsByTagName("levelCollision");
+                foreach (XmlElement node in nodes)
+                {
+                    Line l = new Line(node.GetAttribute("p1").toVector2(), node.GetAttribute("p2").toVector2());
+                    LevelManager.Instance.addLevelCollision(l);
+                }
+                // read players
+                nodes = xml_doc.GetElementsByTagName("player");
                 foreach (XmlElement node in nodes)
                 {
                     PlayerIndex index = (PlayerIndex)node.GetAttribute("playerIndex").toInt();

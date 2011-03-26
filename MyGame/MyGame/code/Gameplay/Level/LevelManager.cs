@@ -118,6 +118,10 @@ namespace MyGame
         }
         #endregion
 
+        public void addLevelCollision(Line l)
+        {
+            levelCollisions.Add(l);
+        }
         public List<Line> getLevelCollisions()
         {
             return levelCollisions;
