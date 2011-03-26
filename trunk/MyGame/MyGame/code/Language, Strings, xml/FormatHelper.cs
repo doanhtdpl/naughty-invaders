@@ -28,6 +28,15 @@ namespace MyGame
         {
             return value.ToString(CultureInfo.InvariantCulture.NumberFormat);
         }
+        public static string toXML(this Vector2 v)
+        {
+            return v.X.toString() + " " + v.Y.toString();
+        }
+        public static Vector2 toVector2(this string str)
+        {
+            string[] values = str.Split(' ');
+            return new Vector2(values[0].toFloat(), values[1].toFloat());
+        }
         public static string toXML(this Vector3 v)
         {
             return v.X.toString() + " " + v.Y.toString() + " " + v.Z.toString();
