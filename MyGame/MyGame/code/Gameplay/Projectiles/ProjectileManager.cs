@@ -96,7 +96,7 @@ namespace MyGame
                             continue;
                         }
                         bool alive = true;
-                        if (e.collidesWith(p, ref alive))
+                        if (e.collidesWith(p, p.damage, ref alive))
                         {
                             if (!alive)
                             {
@@ -126,7 +126,7 @@ namespace MyGame
                             continue;
                         }
                         bool alive = true;
-                        if (player.collidesWith(p, ref alive))
+                        if (player.collidesWith(p, p.damage, ref alive))
                         {
                             if (!alive)
                             {
@@ -147,12 +147,6 @@ namespace MyGame
                 }
             }
             deleteProjectilesToDelete();
-        }
-
-        public void render()
-        {
-            //foreach (Projectile projectile in projectiles)
-            //    projectile.render();
         }
     }
 }

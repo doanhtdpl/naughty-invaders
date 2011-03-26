@@ -164,6 +164,6 @@ namespace MyGame
         }
 
         public virtual void setInit() { initWorld = world; }
-        public virtual void reset() { world = initWorld; }
+        public override void reset() { world = initWorld; }
     }
 }

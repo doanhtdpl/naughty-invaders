@@ -26,8 +26,6 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
-
-
         }
         public void restartLevel()
         {
@@ -46,11 +44,8 @@ namespace MyGame
             SB.graphicsDevice.Clear(new Color(79, 98, 37));
             //SB.graphicsDevice.Clear(new Color(0, 0, 0));
             SB.beginRender();
-            GamerManager.renderPlayers();
             EntityManager.Instance.render();
-            EnemyManager.Instance.render();
             LevelManager.Instance.render();
-            ProjectileManager.Instance.render();
             DebugManager.Instance.render();
             gui.render();
 
