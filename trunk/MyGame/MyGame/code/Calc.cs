@@ -133,18 +133,6 @@ namespace MyGame
             }
             return angle;
         }
-        public static float distanceBetweenAngles(float alpha, float beta, float value, bool right)
-        {
-            float dif = getDeltaOfAngles(alpha, beta);
-            if (right)
-            {
-                return -dif * value;
-            }
-            else
-            {
-                return dif * value;
-            }
-        }
         public static float interpolateAngles(float alpha, float beta, float value, bool right)
         {
             float dif = Math.Abs(getDeltaOfAngles(alpha, beta));
@@ -162,6 +150,18 @@ namespace MyGame
             if (dif > Calc.TwoPi)
                 dif -= Calc.TwoPi;
             return dif;
+        }
+        public static float clampAngle(float value, float min, float max)
+        {
+            if (getDeltaOfAngles(value, min) > 0)
+            {
+                return min;
+            }
+            else if (getDeltaOfAngles(value, max) < 0)
+            {
+                return max;
+            }
+            return value;
         }
         #endregion
         #region Ray intersections

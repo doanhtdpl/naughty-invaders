@@ -8,7 +8,11 @@ namespace MyGame
 {
     public class Grape : Enemy
     {
-        const float SPEED = 20.0f;
+        const float SPEED = 30.0f;
+        const float LATERAL_SPEED = 800.0f;
+        const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 0.6f;
+        const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 0.6f;
+
         bool moveRight;
         float nextMoveTimer;
         float movingTimer;
@@ -53,30 +57,50 @@ namespace MyGame
             nextAttackTimer -= SB.dt;
             movingTimer -= SB.dt;
 
+            // next move
             if (nextMoveTimer < 0)
             {
                 // prepare move
-                movingTimer = Calc.randomScalar(0.5f, 2.0f);
-                moveRight = Calc.randomScalar() < 0.5f;
-                // prepare next move
-                nextMoveTimer = Calc.randomScalar(2.0f, 3.0f);
-            }
-            if (nextAttackTimer < 0)
-            {
-                playAction("attack");
-                Projectile p = new GrapeProjectile(position);
-                ProjectileManager.Instance.addProjectile(p);
-                nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
-            }
-            if (movingTimer < 0)
-            {
-                if (moveRight)
+                movingTimer = Calc.randomScalar(0.1f, 0.5f);
+                // grape moves to the player's X position except 5% of time, that moves opposite
+                if (Calc.randomScalar() > 0.05f)
                 {
-                    position += new Vector3(30.0f, 0.0f, 0.0f) * SB.dt;
+                    moveRight = position2D.X < GamerManager.getSessionOwner().Player.position2D.X;
                 }
                 else
                 {
-                    position += new Vector3(-30.0f, 0.0f, 0.0f) * SB.dt;
+                    moveRight = position2D.X > GamerManager.getSessionOwner().Player.position2D.X;
+                }
+                // prepare next move
+                nextMoveTimer = Calc.randomScalar(2.0f, 4.0f);
+            }
+            // next attack
+            if (nextAttackTimer < 0)
+            {
+                playAction("attack");
+                float orientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
+                orientation += Calc.randomAngle(-0.3f, +0.3f);
+                // clamp the angle to the grape's shot cone
+                orientation = Calc.clampAngle(orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
+                Projectile p = new GrapeProjectile(position, orientation + Calc.PiOver2, Calc.angleToDirection(orientation));
+                ProjectileManager.Instance.addProjectile(p);
+                nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
+            }
+
+            // update position
+            if (movingTimer > 0)
+            {
+                if (moveRight)
+                {
+                    GameplayHelper.Instance.updateEntityPosition(this,
+                        position2D + (new Vector2(LATERAL_SPEED, 0.0f) * SB.dt),
+                        LevelManager.Instance.getLevelCollisions(), false);
+                }
+                else
+                {
+                    GameplayHelper.Instance.updateEntityPosition(this,
+                        position2D + (new Vector2(-LATERAL_SPEED, 0.0f) * SB.dt),
+                        LevelManager.Instance.getLevelCollisions(), false);
                 }
             }
         }
