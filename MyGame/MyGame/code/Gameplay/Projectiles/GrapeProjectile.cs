@@ -8,8 +8,8 @@ namespace MyGame
 {
     class GrapeProjectile : Projectile
     {
-        public GrapeProjectile(Vector3 position)
-            : base("grapeProjectile", position, 0, -Vector2.UnitY, 10, 300, 1, 0.2f, tTeam.Enemies)
+        public GrapeProjectile(Vector3 position, float orientation, Vector2 direction)
+            : base("grapeProjectile", position, orientation, direction, 10, 300, 1, 0.2f, tTeam.Enemies)
         {
             playAction("start");
             setCollisions();
