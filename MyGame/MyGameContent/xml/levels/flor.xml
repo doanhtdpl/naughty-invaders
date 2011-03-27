@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<level nextEntityID="23">
+  <staticProps />
+  <animatedProps>
+    <animatedProp entityName="AAleaf" worldMatrix="310.5365 -199.2646 4.69806 0 182.759 285.4466 26.82395 0 -0.05329271 -0.05955043 0.9968017 0 -278.0107 81.81539 -10.98835 1" id="1" />
+    <animatedProp entityName="AAleaf" worldMatrix="-197.8154 -311.2953 11.1995 0 281.3707 -180.9812 -60.63402 0 0.1666029 -0.0704858 0.9835018 0 -468.0311 81.98544 -45.9898 1" id="2" />
+    <animatedProp entityName="AAleaf" worldMatrix="233.341 98.65498 0 0 -78.20562 184.9738 0 0 0 0 1 0 -276.8825 237.0779 -3.006212 1" id="3" />
+    <animatedProp entityName="AAleaf" worldMatrix="-294.8607 193.3645 108.7591 0 -101.4353 -262.2154 191.1916 0 0.5219825 0.3614129 0.7726036 0 -456.595 287.4634 -10.98835 1" id="5" />
+    <animatedProp entityName="ventose" worldMatrix="151.5423 -97.13379 0 0 97.13379 151.5423 0 0 0 0 1 0 -355.778 191.8265 -1.994781 1" id="11" />
+    <animatedProp entityName="AAtentacle" worldMatrix="126.2852 -80.94485 0 0 94.43568 147.3327 0 0 0 0 1 0 -435.434 181.4868 66.985 1" id="14" />
+    <animatedProp entityName="AAleaf" worldMatrix="102.2452 -174.3879 2.57395 0 160.1005 94.08524 14.69637 0 -0.07448366 -0.02895774 0.9968017 0 -219.6197 339.0485 -10.98835 1" id="16" />
+    <animatedProp entityName="AAleaf" worldMatrix="-173.8681 -102.9755 6.135988 0 92.53568 -158.2205 -33.22032 0 0.1166158 -0.1382951 0.9835016 0 -317.8743 408.5278 -45.9898 1" id="17" />
+    <animatedProp entityName="AAleaf" worldMatrix="138.4595 -9.708063 0 0 7.695766 109.7595 0 0 0 0 1 0 -174.7882 408.7368 -3.006212 1" id="18" />
+    <animatedProp entityName="AAleaf" worldMatrix="-96.05224 167.6161 59.58693 0 -114.6113 -102.9163 104.7504 0 0.6290617 0.08582553 0.772603 0 -243.7759 496.1245 -10.98835 1" id="19" />
+    <animatedProp entityName="ventose" worldMatrix="49.92267 -85.04893 0 0 85.04893 49.92267 0 0 0 0 1 0 -236.7092 414.9763 -1.994781 1" id="20" />
+    <animatedProp entityName="AAtentacle" worldMatrix="41.60221 -70.87419 0 0 82.6865 48.53588 0 0 0 0 1 0 -267.8997 426.174 66.985 1" id="21" />
+  </animatedProps>
+  <groups>
+    <group>
+      <entity id="1" />
+      <entity id="2" />
+      <entity id="3" />
+      <entity id="5" />
+      <entity id="11" />
+      <entity id="14" />
+    </group>
+    <group>
+      <entity id="1" />
+      <entity id="2" />
+      <entity id="3" />
+      <entity id="5" />
+      <entity id="11" />
+      <entity id="14" />
+    </group>
+    <group>
+      <entity id="1" />
+      <entity id="2" />
+      <entity id="3" />
+      <entity id="5" />
+      <entity id="11" />
+      <entity id="14" />
+      <entity id="16" />
+      <entity id="17" />
+      <entity id="18" />
+      <entity id="19" />
+      <entity id="20" />
+      <entity id="21" />
+    </group>
+  </groups>
+  <enemies />
+  <levelCollisions />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 12 20 -0.0002706349 1" />
+  </players>
+  <camera />
+</level>

@@ -32,8 +32,6 @@ Content\effects\PolygonTextures\yellow.xnb
 Content\GUI\menu\logo.xnb
 Content\GUI\menu\menu.xnb
 Content\GUI\menu\trial.xnb
-Content\textures\staticProps\A.xnb
-Content\textures\animatedProps\test.xnb
 Content\textures\enemies\Anim_Grape.xnb
 Content\textures\enemies\Anim_Pear.xnb
 Content\textures\characters\Anim_Player.xnb
@@ -42,9 +40,7 @@ Content\textures\projectiles\Anim_PearWeapon.xnb
 Content\textures\projectiles\Anim_PlayerWeapon.xnb
 Content\textures\staticProps\Background_Level01.xnb
 Content\textures\particles\Particle_Test.xnb
-Content\textures\staticProps\leaf_4_4.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
-Content\textures\animatedProps\ventose.xnb
 Content\textures\staticProps\esmeral.xnb
 Content\textures\staticProps\pincho.xnb
 Content\textures\staticProps\struc-01.xnb
@@ -84,13 +80,15 @@ Content\textures\staticProps\bg01_struct-31.xnb
 Content\textures\staticProps\bg01_struct-32.xnb
 Content\textures\staticProps\bg01_struct-33.xnb
 Content\textures\enemies\Anim_Calsot.xnb
+Content\textures\animatedProps\AAtentacle.xnb
+Content\textures\animatedProps\AAleaf.xnb
+Content\textures\staticProps\struc-02transparent.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
 Content\xml\enemies\pear.xml
 Content\xml\characters\player.xml
 Content\xml\projectiles\playerProjectile.xml
-Content\xml\animatedProps\test.xml
 Content\xml\projectiles\grapeProjectile.xml
 Content\xml\projectiles\pearProjectile.xml
 Content\xml\enemies\calsot.xml
@@ -100,4 +98,6 @@ Content\xml\enemies\Tomato.xml
 Content\xml\enemies\ElderOnion.xml
 Content\xml\enemies\KingTomato.xml
 Content\xml\animatedProps\ventose.xml
+Content\xml\animatedProps\AAtentacle.xml
+Content\xml\animatedProps\AAleaf.xml
 Content\xml\levels\xmlLevelTemplate.xml

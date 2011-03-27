@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <character>
-  <animatedTexture name="AAtentacle" frameWidth="150" frameHeight="175" columns="4" rows="4">
- 
+  <animatedTexture name="AAleaf" frameWidth="369" frameHeight="340" columns="4" rows="4">
+
     <action name="idle" initialFrame="1" endFrame="16" FPS="15" loops="true"/>
   </animatedTexture>
 </character>
