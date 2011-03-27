@@ -23,19 +23,28 @@ namespace MyGame
             {
                 if (MyEditor.Instance.anyEntitySelected() && isPosInScreen(gameScreenPos))
                 {
+                    Vector3 rotatingCenter = Vector3.Zero;
+                    foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                    {
+                        rotatingCenter += ent.position;
+                    }
+
+                    rotatingCenter /= MyEditor.Instance.getSelectedEntities().Count;
+
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         foreach(Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            ent.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
+                            //ent.orientation += ((mouseState.Y - lastMouseState.Y) * 0.1f);
+                            ent.rotateInZ((mouseState.Y - lastMouseState.Y) * 0.01f, ent.position - rotatingCenter);
                         }
                     }
                     else if (mouseState.RightButton == ButtonState.Pressed)
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            ent.rotateInX((mouseState.Y - lastMouseState.Y) * 0.01f);
-                            ent.rotateInY((mouseState.X - lastMouseState.X) * 0.01f);
+                            ent.rotateInX((mouseState.Y - lastMouseState.Y) * 0.01f, ent.position - rotatingCenter);
+                            ent.rotateInY((mouseState.X - lastMouseState.X) * 0.01f, ent.position - rotatingCenter);
                         }
                     }
 

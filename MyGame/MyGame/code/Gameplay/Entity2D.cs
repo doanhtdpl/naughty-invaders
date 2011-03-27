@@ -121,19 +121,38 @@ namespace MyGame
             this.scale2D = scale;
             this.orientation = orientation;
         }
+        public void rotateInX(float radians, Vector3 offset)
+        {
+            Vector3 pos = world.Translation - offset;
+            world.Translation = offset;
+            world *= Matrix.CreateRotationX(radians);
+            world.Translation += pos;
+        }
         public void rotateInX(float radians)
         {
-            Vector3 pos = world.Translation;
-            world.Translation = Vector3.Zero;
-            world *= Matrix.CreateRotationX(radians);
-            world.Translation = pos;
+            rotateInX(radians, Vector3.Zero);
+        }
+        public void rotateInY(float radians, Vector3 offset)
+        {
+            Vector3 pos = world.Translation - offset;
+            world.Translation = offset;
+            world *= Matrix.CreateRotationY(radians);
+            world.Translation += pos;
         }
         public void rotateInY(float radians)
         {
-            Vector3 pos = world.Translation;
-            world.Translation = Vector3.Zero;
-            world *= Matrix.CreateRotationY(radians);
-            world.Translation = pos;
+            rotateInY(radians, Vector3.Zero);
+        }
+        public void rotateInZ(float radians, Vector3 offset)
+        {
+            Vector3 pos = world.Translation - offset;
+            world.Translation = offset;
+            world *= Matrix.CreateRotationZ(radians);
+            world.Translation += pos;
+        }
+        public void rotateInZ(float radians)
+        {
+            rotateInZ(radians, Vector3.Zero);
         }
         // resets rotations
         public void resetRotation()
