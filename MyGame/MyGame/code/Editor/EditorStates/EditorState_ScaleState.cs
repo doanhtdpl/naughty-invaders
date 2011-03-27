@@ -23,6 +23,13 @@ namespace MyGame
             {
                 if (MyEditor.Instance.anyEntitySelected() && isPosInScreen(gameScreenPos))
                 {
+                    Vector3 center = Vector3.Zero;
+                    foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                    {
+                        center += ent.position;
+                    }
+                    center /= MyEditor.Instance.getSelectedEntities().Count;
+
                     if (mouseState.LeftButton == ButtonState.Pressed)
                     {
                         foreach(Entity2D ent in MyEditor.Instance.getSelectedEntities())
@@ -34,7 +41,10 @@ namespace MyGame
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            ent.scale2D *= 1.0f + ((mouseState.Y - lastMouseState.Y) / 100.0f);
+                            Vector3 offset = ent.position - center;
+                            float scale = 1.0f + ((mouseState.Y - lastMouseState.Y) / 100.0f);
+                            ent.scale2D *= scale;
+                            ent.position = center + offset * scale;
                         }
                     }
 
