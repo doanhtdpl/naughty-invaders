@@ -41,7 +41,6 @@ Content\textures\projectiles\Anim_GrapeWeapon.xnb
 Content\textures\projectiles\Anim_PearWeapon.xnb
 Content\textures\projectiles\Anim_PlayerWeapon.xnb
 Content\textures\staticProps\Background_Level01.xnb
-Content\textures\enemies\Anim_Calsot.xnb
 Content\textures\particles\Particle_Test.xnb
 Content\textures\staticProps\leaf_4_4.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
@@ -84,6 +83,7 @@ Content\textures\staticProps\bg01_struct-30.xnb
 Content\textures\staticProps\bg01_struct-31.xnb
 Content\textures\staticProps\bg01_struct-32.xnb
 Content\textures\staticProps\bg01_struct-33.xnb
+Content\textures\enemies\Anim_Calsot.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
