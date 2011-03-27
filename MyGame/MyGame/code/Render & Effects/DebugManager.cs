@@ -18,7 +18,7 @@ namespace MyGame
 
     class DebugManager
     {
-        const int MAX_LINES = 500;
+        const int MAX_LINES = 4000;
         const int MAX_TEXTS = 50;
 
         BasicEffect basicEffect;
@@ -74,7 +74,7 @@ namespace MyGame
 
             if (index > lineList.Length) return;
 
-            lineList[index].Position = p1;
+             lineList[index].Position = p1;
             lineList[index].Color = color;
             lineList[index + 1].Position = p2;
             lineList[index + 1].Color = color;
