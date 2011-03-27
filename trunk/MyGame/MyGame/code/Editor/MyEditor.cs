@@ -190,6 +190,7 @@ namespace MyGame
         #region Update/Render
         public bool update()
         {
+            //skip frame f.e. when coming back from load/save dialog
             if (skipNextFrame)
             {
                 skipNextFrame = false;
@@ -281,6 +282,8 @@ namespace MyGame
                             newEntity = new RenderableEntity2D("staticProps", ent.entityName, ent.position, 0, Color.White);
                             LevelManager.Instance.addStaticProp(newEntity);
                         }
+
+                        newEntity.worldMatrix = ent.worldMatrix;
 
                         if (newEntity != null)
                         {
