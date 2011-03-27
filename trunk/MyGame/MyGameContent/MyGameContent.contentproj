@@ -217,13 +217,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\staticProps\A.tga">
-      <Name>A</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\animatedProps\test.tga">
       <Name>test</Name>
       <Importer>TextureImporter</Importer>
@@ -266,11 +259,6 @@
     </Compile>
     <Compile Include="textures\particles\Particle_Test.tga">
       <Name>Particle_Test</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\staticProps\leaf_4_4.tga">
-      <Name>leaf_4_4</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
