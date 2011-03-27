@@ -34,6 +34,8 @@ namespace MyGame
         public bool drawGrid = false;
         public int gridSpacing = 128;
 
+        public bool skipNextFrame = false;
+
         public MyEditor()
         {
             InitializeComponent();
@@ -139,6 +141,8 @@ namespace MyGame
             fileDialog.CheckFileExists = false;
             fileDialog.RestoreDirectory = true;
 
+            skipNextFrame = true;
+
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 fileName = fileDialog.FileName;
@@ -186,6 +190,11 @@ namespace MyGame
         #region Update/Render
         public bool update()
         {
+            if (skipNextFrame)
+            {
+                skipNextFrame = false;
+            } 
+
             if (nextState != null)
             {
                 doChangeState();
@@ -229,12 +238,13 @@ namespace MyGame
             //MOVE CAMERA
             else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.LeftButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
-                Camera2D.position.X -= (mouseState.X - lastMouseState.X);
-                Camera2D.position.Y += (mouseState.Y - lastMouseState.Y);
+                Camera2D.position.X -= (mouseState.X - lastMouseState.X) * (Camera2D.position.Z / 1000);
+                Camera2D.position.Y += (mouseState.Y - lastMouseState.Y) * (Camera2D.position.Z / 1000);
             }
             else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space) && mouseState.RightButton == Microsoft.Xna.Framework.Input.ButtonState.Pressed)
             {
-                Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
+                //Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
+                Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y) * (Camera2D.position.Z / 400);
             }
 
             //DELETE
