@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 namespace MyGame
 {
     // align the types of BaseParticleData with the shader
-    public class BaseParticleData : SortableEntity
+    public class BaseParticleData
     {
 	    public Vector3     position;
 	    public float       size;
@@ -27,12 +27,5 @@ namespace MyGame
 	    public float		rotationSpeed;
 	    public float		life;
 	    public bool		    isDead;
-
-        // for render
-        public Texture texture;
-        public override void render()
-        {
-            texture.render(SB.getWorldMatrix(position, rotation, size), color);
-        }
     };
 }

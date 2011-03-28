@@ -127,6 +127,14 @@ namespace MyGame
 	        return ps;
         }
 
+        public void render()
+        {
+            for (int i = 0; i < particleSystems.Count; ++i)
+            {
+                particleSystems[i].render();
+            }
+        }
+
         public void clean()
         {
             particleSystems.Clear();

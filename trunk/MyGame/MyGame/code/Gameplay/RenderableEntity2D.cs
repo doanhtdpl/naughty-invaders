@@ -11,8 +11,6 @@ namespace MyGame
 {
     public class RenderableEntity2D : MovingEntity2D
     {
-        // animations
-        protected string newActionState = "";
         Texture2D texture;
         public Color color { get; set; }
 
@@ -43,7 +41,6 @@ namespace MyGame
         public override void render()
         {
             if (renderState == tRenderState.NoRender) return;
-
             texture.render(worldMatrix, color);
         }
     }

@@ -5,14 +5,14 @@ using System.Text;
 
 namespace MyGame
 {
-    public class EntityComparer : IComparer<SortableEntity>
+    public class EntityComparer : IComparer<Entity2D>
     {
         // sorts in descending order
-        public int Compare(SortableEntity e1, SortableEntity e2)
+        public int Compare(Entity2D e1, Entity2D e2)
         {
-            if (e1.getZ() > e2.getZ())
+            if (e1.position.Z > e2.position.Z)
                 return 1;
-            if (e1.getZ() < e2.getZ())
+            if (e1.position.Z < e2.position.Z)
                 return -1;
             // equal
             return 0;
@@ -39,15 +39,15 @@ namespace MyGame
         }
 
         EntityComparer comparer = new EntityComparer();
-        List<SortableEntity> entities = new List<SortableEntity>();
+        List<Entity2D> entities = new List<Entity2D>();
 
         #region ENTITY MANAGEMENT
-        public void registerEntity(SortableEntity entity)
+        public void registerEntity(Entity2D entity)
         {
             if(!entities.Contains(entity))
                 entities.Add(entity);
         }
-        public void removeEntity(SortableEntity entity)
+        public void removeEntity(Entity2D entity)
         {
             entities.Remove(entity);
         }
@@ -70,9 +70,19 @@ namespace MyGame
 
         public void render()
         {
+            bool Z0rendered = false;
             sortEntities();
-            foreach (SortableEntity e in entities)
+            foreach (Entity2D e in entities)
             {
+                // render all things that must be rendered at Z = 0
+                if (!Z0rendered)
+                {
+                    if (e.position.Z > 0.0f)
+                    {
+                        ParticleManager.Instance.render();
+                        Z0rendered = true;
+                    }
+                }
                 e.render();
             }
         }
@@ -84,7 +94,7 @@ namespace MyGame
 
         public void reset()
         {
-            foreach (SortableEntity ent in entities)
+            foreach (Entity2D ent in entities)
             {
                 ent.reset();
             }
