@@ -24,6 +24,12 @@ namespace MyGame
             return true;
         }
 
+        public virtual void die()
+        {
+            OrbManager.Instance.addOrbs(position2D, 5, 5, 5, 5);
+            base.die();
+        }
+
         public override void update()
         {
             base.update();

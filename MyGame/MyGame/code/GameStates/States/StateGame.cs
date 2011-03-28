@@ -77,6 +77,7 @@ namespace MyGame
                 LevelManager.Instance.update();
                 ProjectileManager.Instance.update();
                 ParticleManager.Instance.update();
+                OrbManager.Instance.update();
                 CameraManager.Instance.update();
                 gui.update();
 

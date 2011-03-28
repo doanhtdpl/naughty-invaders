@@ -68,6 +68,12 @@ namespace MyGame
         }
         #endregion
 
+        void renderZ0Stuff()
+        {
+            ParticleManager.Instance.render();
+            OrbManager.Instance.render();
+        }
+
         public void render()
         {
             bool Z0rendered = false;
@@ -79,11 +85,16 @@ namespace MyGame
                 {
                     if (e.position.Z > 0.0f)
                     {
-                        ParticleManager.Instance.render();
+                        renderZ0Stuff();
                         Z0rendered = true;
                     }
                 }
                 e.render();
+            }
+
+            if (!Z0rendered)
+            {
+                renderZ0Stuff();
             }
         }
 
