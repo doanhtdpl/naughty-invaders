@@ -95,7 +95,6 @@ namespace MyGame
 
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(new Color(79, 98, 37));
             stateManager.render();
             base.Draw(gameTime);
         }
