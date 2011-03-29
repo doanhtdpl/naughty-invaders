@@ -29,21 +29,35 @@ namespace MyGame
         {
             base.enter();
             loadEntity(currentIndex);
+
+            MyEditor.Instance.texturesCombo.Items.Clear();
+            var textures = SB.content.LoadContent("textures/staticProps");
+            for (int i = 0; i < textures.Count(); i++)
+            {
+                MyEditor.Instance.texturesCombo.Items.Add(textures[i]);
+            }
+
+            MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+            MyEditor.Instance.myEditorControl.Focus();
         }
 
         public override void update()
         {
             base.update();
 
-            if (justPressedKey(Keys.Right))
+            if (justPressedKey(Keys.PageDown))
             {
                 LevelManager.Instance.removeStaticProp(staticEntity);
                 loadEntity(currentIndex + 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
-            else if (justPressedKey(Keys.Left))
+            else if (justPressedKey(Keys.PageUp))
             {
                 LevelManager.Instance.removeStaticProp(staticEntity);
                 loadEntity(currentIndex - 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
@@ -78,6 +92,12 @@ namespace MyGame
             staticEntity = new RenderableEntity2D("staticProps", textures[currentIndex], position, 0, Color.White);
             LevelManager.Instance.addStaticProp(staticEntity);
 #endif
+        }
+
+        public void selectEntity(int index)
+        {
+            LevelManager.Instance.removeStaticProp(staticEntity);
+            loadEntity(index);
         }
 
         public override void render()
