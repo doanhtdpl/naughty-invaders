@@ -26,7 +26,7 @@ namespace MyGame
 
         public override void die()
         {
-            OrbManager.Instance.addOrbs(position2D, 3, 3, 3, 3);
+            OrbManager.Instance.addRandomOrbs( 3, position2D);
             base.die();
         }
 
