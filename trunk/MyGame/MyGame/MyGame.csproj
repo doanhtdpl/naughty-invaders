@@ -145,6 +145,7 @@
     <Compile Include="code\Gameplay\GameplayHelper.cs" />
     <Compile Include="code\Gameplay\Orbs\Orb.cs" />
     <Compile Include="code\Gameplay\Orbs\OrbManager.cs" />
+    <Compile Include="code\Gameplay\PlayerData.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />

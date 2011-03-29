@@ -17,6 +17,11 @@ namespace MyGame
         int lifes;
         float invulnerableTime;
 
+        int XP;
+        int lifeOrbs;
+        int wishOrbs;
+        int petOrbs;
+
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)
         {
@@ -24,6 +29,15 @@ namespace MyGame
             entityState = tEntityState.Active;
             setCollisions();
             lifes = 3;
+
+        }
+
+        public void initStage(Vector2 position)
+        {
+            position2D = position;
+            lifeOrbs = 0;
+            wishOrbs = 0;
+            petOrbs = 0;
         }
 
         public override void setCollisions()
@@ -41,6 +55,25 @@ namespace MyGame
                 invulnerableTime = INVULNERABLE_TIME;
             }
             return lifes > 0;
+        }
+
+        public void addOrb(Orb.tOrb type)
+        {
+            switch (type)
+            {
+                case Orb.tOrb.XP:
+                    ++XP;
+                    break;
+                case Orb.tOrb.Life:
+                    ++lifeOrbs;
+                    break;
+                case Orb.tOrb.Wish:
+                    ++wishOrbs;
+                    break;
+                case Orb.tOrb.Pet:
+                    ++petOrbs;
+                    break;
+            }
         }
 
         public void update(ControlPad controls)

@@ -15,6 +15,7 @@ namespace MyGame
         
 	    public Vector2 position;
         public Vector2 velocity;
+        public tOrb type;
         public Color color;
         public bool render;
         public float life;
@@ -22,26 +23,27 @@ namespace MyGame
 
         public Orb(tOrb orbType, Vector2 position)
         {
+            this.type = orbType;
             this.position = position;
-            toPlayer = false;
-            life = LIFE_TIME;
-            render = true;
+            this.toPlayer = false;
+            this.life = LIFE_TIME;
+            this.render = true;
 
-            velocity = Calc.randomDirection() * Calc.randomScalar() * 20.0f;
+            this.velocity = Calc.randomDirection() * Calc.randomScalar() * 20.0f;
 
             switch (orbType)
             {
                 case tOrb.XP:
-                    color = Color.Yellow;
+                    this.color = Color.Yellow;
                     break;
                 case tOrb.Life:
-                    color = Color.Green;
+                    this.color = Color.Green;
                     break;
                 case tOrb.Wish:
-                    color = Color.Red;
+                    this.color = Color.Red;
                     break;
                 case tOrb.Pet:
-                    color = Color.Blue;
+                    this.color = Color.Blue;
                     break;
             }
         }
