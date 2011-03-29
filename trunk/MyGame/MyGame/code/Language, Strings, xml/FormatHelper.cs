@@ -28,6 +28,10 @@ namespace MyGame
         {
             return value.ToString(CultureInfo.InvariantCulture.NumberFormat);
         }
+        public static byte toByte(this float value)
+        {
+            return (byte)(value * 255);
+        }
         public static string toXML(this Vector2 v)
         {
             return v.X.toString() + " " + v.Y.toString();

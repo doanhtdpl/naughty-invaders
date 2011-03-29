@@ -10,11 +10,13 @@ namespace MyGame
 
         public const float SIZE = 35.0f;
         public const float FRICTION = 10.0f;
+        public const float LIFE_TIME = 8.0f;
         public static Texture texture;
         
 	    public Vector2 position;
         public Vector2 velocity;
         public Color color;
+        public bool render;
         public float life;
         public bool toPlayer;
 
@@ -22,7 +24,8 @@ namespace MyGame
         {
             this.position = position;
             toPlayer = false;
-            life = 5.0f;
+            life = LIFE_TIME;
+            render = true;
 
             velocity = Calc.randomDirection() * Calc.randomScalar() * 20.0f;
 
