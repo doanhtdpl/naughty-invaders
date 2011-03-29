@@ -10,7 +10,8 @@ namespace MyGame
     {
         const float PLAYER_DISTANCE = 50000.0f;
         const float PICK_DISTANCE = 900.0f;
-        const float ORB_SPEED = 500.0f;
+        const float ORB_SPEED = 800.0f;
+        const float ORB_IDLE_SPEED = 1.0f;
 
         static OrbManager instance = null;
         OrbManager()
@@ -61,23 +62,54 @@ namespace MyGame
 	        // update each orb
 	        for(int i=0; i<orbs.Count; ++i)
 	        {
-                orbs[i].life -= SB.dt;
+                // update time and delete the old orbs only if are not already attracted by the player
+                if (!orbs[i].toPlayer)
+                {
+                    orbs[i].life -= SB.dt;
+                    if (orbs[i].life < 0.0f)
+                    {
+                        orbs.RemoveAt(i);
+                        --i;
+                        continue;
+                    }
+                }
+                else
+                {
+                    orbs[i].life = 5.0f;
+                }
+
+                // update velocity and position
                 orbs[i].velocity -= orbs[i].velocity * Orb.FRICTION * SB.dt;
                 orbs[i].position += orbs[i].velocity;
+
+                orbs[i].position += Vector2.UnitY * 20.0f * (float)Math.Sin(orbs[i].life * 8.0f) * SB.dt;
 
                 if (orbs[i].toPlayer)
                 {
                     orbs[i].position += Vector2.Normalize(playerPosition - orbs[i].position) * ORB_SPEED * SB.dt;
                     if (Vector2.DistanceSquared(playerPosition, orbs[i].position) < PICK_DISTANCE)
                     {
-                        // delete de orb
+                        // pick the orb and delete it
                         orbs.RemoveAt(i);
                         --i;
+                        continue;
                     }
+                    orbs[i].color.A = 255;
                 }
                 else if (Vector2.DistanceSquared(playerPosition, orbs[i].position) < PLAYER_DISTANCE)
                 {
                     orbs[i].toPlayer = true;
+                }
+                else
+                {
+                    if (orbs[i].life < 1.0f)
+                    {
+                        orbs[i].render = orbs[i].life % 0.15f > 0.075f;
+                    }
+                    else if (orbs[i].life < 2.0f)
+                    {
+                        orbs[i].render = orbs[i].life % 0.2f > 0.1f;
+                    }
                 }
 	        }
         }
@@ -86,8 +118,10 @@ namespace MyGame
         {
             for (int i = 0; i < orbs.Count; ++i)
             {
-                Orb.texture.render(SB.getWorldMatrix(new Vector3(orbs[i].position,0.0f), 0.0f, Orb.SIZE), orbs[i].color);
-                Orb.texture.render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE * 0.5f), Color.White);
+                if (orbs[i].render)
+                {
+                    Orb.texture.render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE), orbs[i].color);
+                }
             }
         }
 
