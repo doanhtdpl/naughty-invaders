@@ -63,6 +63,7 @@
             this.buttonMove = new System.Windows.Forms.Button();
             this.buttonAddStatic = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.texturesCombo = new System.Windows.Forms.ComboBox();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.propertiesPanel.SuspendLayout();
             this.DefaultPage.SuspendLayout();
@@ -484,6 +485,16 @@
             this.tabControl1.Size = new System.Drawing.Size(968, 60);
             this.tabControl1.TabIndex = 1;
             // 
+            // texturesCombo
+            // 
+            this.texturesCombo.FormattingEnabled = true;
+            this.texturesCombo.Location = new System.Drawing.Point(759, 66);
+            this.texturesCombo.Name = "texturesCombo";
+            this.texturesCombo.Size = new System.Drawing.Size(183, 21);
+            this.texturesCombo.TabIndex = 4;
+            this.texturesCombo.TabStop = false;
+            this.texturesCombo.SelectedIndexChanged += new System.EventHandler(this.texturesCombo_SelectedIndexChanged);
+            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 92);
@@ -499,6 +510,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.texturesCombo);
             this.Controls.Add(this.propertiesPanel);
             this.Controls.Add(this.myEditorControl);
             this.Controls.Add(this.tabControl1);
@@ -553,5 +565,6 @@
         public System.Windows.Forms.CheckBox selectGroup;
         private System.Windows.Forms.Button buttonCreateGroup;
         public System.Windows.Forms.CheckBox canSelectPlayer;
+        public System.Windows.Forms.ComboBox texturesCombo;
     }
 }

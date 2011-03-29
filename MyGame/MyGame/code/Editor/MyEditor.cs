@@ -35,6 +35,7 @@ namespace MyGame
         public int gridSpacing = 128;
 
         public bool skipNextFrame = false;
+        public int noUpdate = 0;
 
         public MyEditor()
         {
@@ -130,6 +131,7 @@ namespace MyGame
         private bool openDialog(string title, ref string fileName)
         {
             exitBlockers++;
+            noUpdate++;
 
             OpenFileDialog fileDialog = new OpenFileDialog();
             string relativePath = "../../../../MyGameContent/xml/levels";
@@ -147,10 +149,12 @@ namespace MyGame
             {
                 fileName = fileDialog.FileName;
                 exitBlockers--;
+                noUpdate--;
                 myEditorControl.Focus();
                 return true;
             }
             exitBlockers--;
+            noUpdate--;
             myEditorControl.Focus();
             return false;
         }
@@ -190,19 +194,30 @@ namespace MyGame
         #region Update/Render
         public bool update()
         {
+            mouseState = Mouse.GetState();
+            keyState = Keyboard.GetState();
+
+            if (noUpdate > 0)
+            {
+                return true;
+            }
+
             //skip frame f.e. when coming back from load/save dialog
             if (skipNextFrame)
             {
                 skipNextFrame = false;
-            } 
+                return true;
+            }
+
+            if (texturesCombo.Focused)
+            {
+                return true;
+            }
 
             if (nextState != null)
             {
                 doChangeState();
             }
-
-            mouseState = Mouse.GetState();
-            keyState = Keyboard.GetState();
 
             //EXIT
             if(exitBlockers <= 0 && justPressedKey(Microsoft.Xna.Framework.Input.Keys.Escape))
@@ -452,8 +467,18 @@ namespace MyGame
             {
                 if (ent != null)
                 {
-                    Texture2D texture = ((RenderableEntity2D)ent).Texture;
-                    ent.scale2D = ent.scale2D = new Vector2(texture.Width, texture.Height);
+                    if(ent is AnimatedEntity2D)
+                    {
+                        ent.scale2D = ((AnimatedEntity2D)ent).getFrameSize();
+                    }
+                    else
+                    {
+                        Texture2D texture = ((RenderableEntity2D)ent).Texture;
+                        if (texture != null)
+                        {
+                            ent.scale2D = new Vector2(texture.Width, texture.Height);
+                        }
+                    }
                 }
             }
         }
@@ -475,5 +500,15 @@ namespace MyGame
             return keyState.IsKeyDown(key);
         }
         #endregion
+
+        private void texturesCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_AddStatic)
+            {
+                //skipNextFrame = true;
+                ((EditorState_AddStatic)currentState).selectEntity(((ComboBox)sender).SelectedIndex);
+                myEditorControl.Focus();
+            }
+        }
     }
 }

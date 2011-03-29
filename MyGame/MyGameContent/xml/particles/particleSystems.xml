@@ -30,7 +30,7 @@
   <particleSystem name = "burst"
     texturePath = "Particle_Test"
     type = "burst"
-    nParticles = "20"
+    nParticles = "4"
     systemLife = "2"
     position = "0 0 0"
     positionVarianceMin = "-10 -10 -10"
