@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<level nextEntityID="97">
+  <staticProps />
+  <animatedProps>
+    <animatedProp entityName="AAtentacle" worldMatrix="149.9925 1.499975 0 0 -1.749971 174.9912 0 0 0 0 1 0 -133.4808 105.8632 0.01516741 1" id="49" />
+    <animatedProp entityName="AAtentacle" worldMatrix="-42.55048 -3.775995 5.87897 0 -0.1903312 -56.5452 -37.6959 0 0.1620144 -0.5477402 0.8208119 0 -8.947929 302.2567 -0.005859375 1" id="50" />
+    <animatedProp entityName="ventose" worldMatrix="187.254 0 0 0 0 198.4892 0 0 0 0 1 0 13.60291 207.3668 0.01423329 1" id="57" />
+    <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 -63.28776 143.8358 -0.01281699 1" id="58" />
+    <animatedProp entityName="ventose" worldMatrix="130.3897 0 0 0 0 130.3897 0 0 0 0 1 0 -64.43822 235.8908 0.009444833 1" id="59" />
+    <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 -81.99161 270.871 -15.01334 1" id="60" />
+    <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 38.41832 154.7716 -197.0171 1" id="61" />
+    <animatedProp entityName="ventose" worldMatrix="98.65769 0 0 0 0 98.65769 0 0 0 0 1 0 -113.9187 202.5213 0.008040693 1" id="62" />
+    <animatedProp entityName="ventose" worldMatrix="113.2209 0 0 0 0 91.47797 0 0 0 0 1 0 -21.86104 285.3708 -0.009443598 1" id="63" />
+    <animatedProp entityName="ventose" worldMatrix="107.2916 0 0 0 0 107.2916 0 0 0 0 1 0 -2.056 106.0889 -11.01122 1" id="64" />
+    <animatedProp entityName="AAleaf" worldMatrix="331.7734 160.4946 -18.13582 0 -136.1995 293.3877 104.7537 0 0.1764167 -0.2573282 0.950084 0 107.7337 142.7593 -0.01516282 1" id="66" />
+    <animatedProp entityName="AAleaf" worldMatrix="182.6145 0 0 0 0 168.2626 0 0 0 0 1 0 74.86154 228.8484 -42.98021 1" id="67" />
+    <animatedProp entityName="AAleaf" worldMatrix="238.899 -272.7911 68.36156 0 198.4086 216.6512 171.1615 0 -0.4902117 -0.2178129 0.8439493 0 77.12883 58.3881 -114.0092 1" id="68" />
+    <animatedProp entityName="AAleaf" worldMatrix="265.8972 253.9555 31.08633 0 -177.9693 156.4952 243.7954 0 0.4547137 -0.5607919 0.6919169 0 86.03691 302.7231 -114.0092 1" id="70" />
+    <animatedProp entityName="AAleaf" worldMatrix="-306.3034 190.4934 -77.79217 0 -152.0556 -286.3308 -102.4395 0 -0.3330808 -0.155817 0.9299349 0 -117.5908 351.4133 -173.0038 1" id="92" />
+    <animatedProp entityName="AAleaf" worldMatrix="-261.893 140.2269 0 0 -105.9359 -197.8497 0 0 0 0 1 0 -179.9072 296.7151 -95.99149 1" id="93" />
+    <animatedProp entityName="AAleaf" worldMatrix="-81.15299 -359.1537 24.16446 0 244.5191 -39.58032 232.9036 0 -0.6591078 0.1977479 0.7255852 0 -107.7146 93.63701 -35.98457 1" id="94" />
+    <animatedProp entityName="AAleaf" worldMatrix="-249.4771 -9.586432 0 0 8.833027 -229.8705 0 0 0 0 1 0 -171.6209 171.6504 -21.00552 1" id="95" />
+  </animatedProps>
+  <groups />
+  <enemies />
+  <levelCollisions />
+  <players>
+    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 117 213.9355 0.01903426 1" />
+  </players>
+  <camera />
+</level>
