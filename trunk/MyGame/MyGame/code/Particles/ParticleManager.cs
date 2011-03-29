@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using System.Xml;
 using Microsoft.Xna.Framework.Graphics;
+using System.Xml.Linq;
 
 namespace MyGame
 {
@@ -41,16 +42,15 @@ namespace MyGame
         {
             baseParticleSystems.Clear();
 
-            XmlDocument xml = new XmlDocument();
-            xml.Load(SB.content.RootDirectory + "/xml/particles/particleSystems.xml");
+            XDocument xml = XDocument.Load(SB.content.RootDirectory + "/xml/particles/particleSystems.xml");
 
-            XmlNodeList baseParticleSystemList = xml.GetElementsByTagName("particleSystem");
+            IEnumerable<XElement> baseParticleSystemList = xml.Descendants("particleSystem");
 
-            foreach (XmlElement bps in baseParticleSystemList)
+            foreach (XElement bps in baseParticleSystemList)
             {
                 ParticleSystemData data = new ParticleSystemData();
-                data.name = bps.GetAttribute("name");
-                string type = bps.GetAttribute("type");
+                data.name = bps.Attribute("name").Value;
+                string type = bps.Attribute("type").Value;
                 switch(type)
                 {
                     case "burst":
@@ -60,32 +60,32 @@ namespace MyGame
                         data.type = ParticleSystemData.tParticleSystem.Fountain;
                     break;
                 }
-                string path = bps.GetAttribute("texturePath");
+                string path = bps.Attribute("texturePath").Value;
                 data.texture = TextureManager.Instance.getTexture("particles/" + path);
-                data.nParticles = bps.GetAttribute("nParticles").toInt();
-                data.systemLife = bps.GetAttribute("systemLife").toInt();
-                data.position = bps.GetAttribute("position").toVector3();
-                data.positionVarianceMin = bps.GetAttribute("positionVarianceMin").toVector3();
-                data.positionVarianceMax = bps.GetAttribute("positionVarianceMax").toVector3();
-                data.direction = bps.GetAttribute("direction").toVector3();
-                data.directionVarianceMin = bps.GetAttribute("directionVarianceMin").toVector3();
-                data.directionVarianceMax = bps.GetAttribute("directionVarianceMax").toVector3();
-                data.acceleration = bps.GetAttribute("acceleration").toVector3();
-                data.accelerationVarianceMin = bps.GetAttribute("accelerationVarianceMin").toVector3();
-                data.accelerationVarianceMax = bps.GetAttribute("accelerationVarianceMax").toVector3();
-                data.color = bps.GetAttribute("color").toColor();
-                data.colorVarianceMin = bps.GetAttribute("colorVarianceMin").toColor();
-                data.colorVarianceMax = bps.GetAttribute("colorVarianceMax").toColor();
-                data.particlesRotation = bps.GetAttribute("particlesRotation").toFloat();
-                data.particlesRotationVariance = bps.GetAttribute("particlesRotationVariance").toFloat();
-                data.particlesRotationSpeed = bps.GetAttribute("particlesRotationSpeed").toFloat();
-                data.particlesRotationSpeedVariance = bps.GetAttribute("particlesRotationSpeedVariance").toFloat();
-                data.size = bps.GetAttribute("size").toFloat();
-                data.sizeIni = bps.GetAttribute("sizeIni").toFloat();
-                data.sizeEnd = bps.GetAttribute("sizeEnd").toFloat();
-                data.fadeIn = bps.GetAttribute("fadeIn").toFloat();
-                data.fadeOut = bps.GetAttribute("fadeOut").toFloat();
-                data.particlesLife = bps.GetAttribute("particlesLife").toFloat();
+                data.nParticles = bps.Attribute("nParticles").Value.toInt();
+                data.systemLife = bps.Attribute("systemLife").Value.toInt();
+                data.position = bps.Attribute("position").Value.toVector3();
+                data.positionVarianceMin = bps.Attribute("positionVarianceMin").Value.toVector3();
+                data.positionVarianceMax = bps.Attribute("positionVarianceMax").Value.toVector3();
+                data.direction = bps.Attribute("direction").Value.toVector3();
+                data.directionVarianceMin = bps.Attribute("directionVarianceMin").Value.toVector3();
+                data.directionVarianceMax = bps.Attribute("directionVarianceMax").Value.toVector3();
+                data.acceleration = bps.Attribute("acceleration").Value.toVector3();
+                data.accelerationVarianceMin = bps.Attribute("accelerationVarianceMin").Value.toVector3();
+                data.accelerationVarianceMax = bps.Attribute("accelerationVarianceMax").Value.toVector3();
+                data.color = bps.Attribute("color").Value.toColor();
+                data.colorVarianceMin = bps.Attribute("colorVarianceMin").Value.toColor();
+                data.colorVarianceMax = bps.Attribute("colorVarianceMax").Value.toColor();
+                data.particlesRotation = bps.Attribute("particlesRotation").Value.toFloat();
+                data.particlesRotationVariance = bps.Attribute("particlesRotationVariance").Value.toFloat();
+                data.particlesRotationSpeed = bps.Attribute("particlesRotationSpeed").Value.toFloat();
+                data.particlesRotationSpeedVariance = bps.Attribute("particlesRotationSpeedVariance").Value.toFloat();
+                data.size = bps.Attribute("size").Value.toFloat();
+                data.sizeIni = bps.Attribute("sizeIni").Value.toFloat();
+                data.sizeEnd = bps.Attribute("sizeEnd").Value.toFloat();
+                data.fadeIn = bps.Attribute("fadeIn").Value.toFloat();
+                data.fadeOut = bps.Attribute("fadeOut").Value.toFloat();
+                data.particlesLife = bps.Attribute("particlesLife").Value.toFloat();
 
                 //SB::ownAssert(info.fadeIn + info.fadeOut <= info.particlesLife);
                 //SB::ownAssert(info.positionVarianceMin.x <= info.positionVarianceMax.x);

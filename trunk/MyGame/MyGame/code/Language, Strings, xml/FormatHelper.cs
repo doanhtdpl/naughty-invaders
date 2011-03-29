@@ -63,7 +63,7 @@ namespace MyGame
         public static Matrix toMatrix(this string str)
         {
             string[] values = str.Split(' ');
-            Matrix m;
+            Matrix m = Matrix.Identity;
             m.M11 = values[0].toFloat();  m.M12 = values[1].toFloat();  m.M13 = values[2].toFloat();  m.M14 = values[3].toFloat();
             m.M21 = values[4].toFloat();  m.M22 = values[5].toFloat();  m.M23 = values[6].toFloat();  m.M24 = values[7].toFloat();
             m.M31 = values[8].toFloat();  m.M32 = values[9].toFloat();  m.M33 = values[10].toFloat(); m.M34 = values[11].toFloat();

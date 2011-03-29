@@ -5,6 +5,7 @@ using System.Text;
 using System.Xml;
 using Microsoft.Xna.Framework;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace MyGame
 {
@@ -64,49 +65,48 @@ namespace MyGame
         public void readXML(string entityFolder, string entityName)
         {
             //XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
-            XmlDocument xml = new XmlDocument();
-            xml.Load(SB.content.RootDirectory + "/xml/" + entityFolder + "/" + entityName + ".xml");
+            XDocument xml = XDocument.Load(SB.content.RootDirectory + "/xml/" + entityFolder + "/" + entityName + ".xml");
 
             // read all the animatedTextures and actions of the character
-            XmlNodeList animatedTextureList = xml.GetElementsByTagName("animatedTexture");
+            IEnumerable<XElement> animatedTextureList = xml.Descendants("animatedTexture");
             int textureNumber = 0;
 
             AnimatedEntityData data = new AnimatedEntityData();
 
-            foreach (XmlElement animatedTextureNode in animatedTextureList)
+            foreach (XElement animatedTextureNode in animatedTextureList)
             {
                 AnimatedTexture animatedTexture = new AnimatedTexture();
                 animatedTexture.id = textureNumber;
-                string textureName = animatedTextureNode.GetAttribute("name");
+                string textureName = animatedTextureNode.Attribute("name").Value;
                 animatedTexture.texture = TextureManager.Instance.getTexture(entityFolder, textureName);
-                animatedTexture.frameWidth = animatedTextureNode.GetAttribute("frameWidth").toFloat();
-                animatedTexture.frameHeight = animatedTextureNode.GetAttribute("frameHeight").toFloat();
-                animatedTexture.columns = int.Parse(animatedTextureNode.GetAttribute("columns"));
-                animatedTexture.rows = int.Parse(animatedTextureNode.GetAttribute("rows"));
+                animatedTexture.frameWidth = animatedTextureNode.Attribute("frameWidth").Value.toFloat();
+                animatedTexture.frameHeight = animatedTextureNode.Attribute("frameHeight").Value.toFloat();
+                animatedTexture.columns = animatedTextureNode.Attribute("columns").Value.toInt();
+                animatedTexture.rows = animatedTextureNode.Attribute("rows").Value.toInt();
 
                 float width = animatedTexture.texture.Width;
                 float height = animatedTexture.texture.Height;
                 animatedTexture.frameWidthUV = animatedTexture.frameWidth / width;
                 animatedTexture.frameHeightUV = animatedTexture.frameHeight / height;
 
-                XmlNodeList actionList = animatedTextureNode.GetElementsByTagName("action");
-                foreach (XmlElement actionNode in actionList)
+                IEnumerable<XElement> actionList = animatedTextureNode.Descendants("action");
+                foreach (XElement actionNode in actionList)
                 {
                     AnimationAction action = new AnimationAction();
                     action.textureId = textureNumber;
-                    action.name = actionNode.GetAttribute("name");
-                    action.initialFrame = int.Parse(actionNode.GetAttribute("initialFrame")) - 1;
-                    action.endFrame = int.Parse(actionNode.GetAttribute("endFrame")) - 1;
+                    action.name = actionNode.Attribute("name").Value;
+                    action.initialFrame = actionNode.Attribute("initialFrame").Value.toInt() - 1;
+                    action.endFrame = actionNode.Attribute("endFrame").Value.toInt() - 1;
 
-                    if (actionNode.HasAttribute("FPS"))
+                    if (actionNode.Attributes("FPS").Count() > 0)
                     {
-                        action.FPS = actionNode.GetAttribute("FPS").toFloat(); ;
+                        action.FPS = actionNode.Attribute("FPS").Value.toFloat(); ;
                     }
                     else
                     {
                         action.FPS = 30;
                     }
-                    action.loops = bool.Parse(actionNode.GetAttribute("loops"));
+                    action.loops = actionNode.Attribute("loops").Value.toBool();
                     // add each action to the list
                     data.actions[action.name] = action;
                     action.initialize();

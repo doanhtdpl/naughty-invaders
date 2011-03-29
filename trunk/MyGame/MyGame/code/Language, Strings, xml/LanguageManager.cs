@@ -82,8 +82,9 @@ namespace MyGame
         /// <param name="language">Supported Language</param>
         public void SetCulture(SupportedLanguage language)
         {
-            SetCulture(CultureInfo.GetCultureInfo(
-                supportedLanguageCultures[(int)language]));
+            SetCulture(CultureInfo.CurrentCulture);
+            //SetCulture(CultureInfo.GetCultureInfo(
+            //    supportedLanguageCultures[(int)language]));
         }
     }
 

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Xml;
 using System.Globalization;
 using System.IO;
+using System.Xml.Linq;
 
 namespace MyGame
 {
@@ -135,6 +136,7 @@ namespace MyGame
         #endregion
 
         #region XML
+#if !XBOX360
         void writeEntity(XmlTextWriter writer, Entity2D entity2D, string element)
         {
             writer.WriteStartElement(element);
@@ -245,84 +247,82 @@ namespace MyGame
             writer.WriteEndDocument();
             writer.Close();
         }
-
+#endif
         // loads the specified file into the editor
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
-                Stream stream = File.OpenRead(fileName);
-                XmlDocument xml_doc = new XmlDocument();
-                xml_doc.Load(stream);
+                XDocument xml_doc = XDocument.Load(fileName);
 
                 int id;
-                XmlNodeList nodes;
+                IEnumerable<XElement> nodes;
 
                 if (loadIDs)
                 {
-                    nodes = xml_doc.GetElementsByTagName("level");
-                    XmlElement levelNode = (XmlElement)nodes[0];
-                    if (levelNode.HasAttribute("nextEntityID"))
+                    nodes = xml_doc.Descendants("level");
+                    XElement levelNode = nodes.First();
+                    if (levelNode.Attributes("nextEntityID").Count() > 0)
                     {
-                        Entity2D.NEXT_ENTITY_ID = int.Parse(levelNode.GetAttribute("nextEntityID"));
+                        Entity2D.NEXT_ENTITY_ID = levelNode.Attribute("nextEntityID").Value.toInt();
                     }
                 }
 
                 // read static props
-                nodes = xml_doc.GetElementsByTagName("staticProp"); 
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("staticProp"); 
+                foreach (XElement node in nodes)
                 {
                     id = -1;
-                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
+                    if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     RenderableEntity2D re =
-                        new RenderableEntity2D("staticProps", node.GetAttribute("entityName"), Vector3.Zero, 0, Color.White, id);
-                    re.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
+                        new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    re.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
                     list.Add(re);
                 }
 
                 // read animated props
-                nodes = xml_doc.GetElementsByTagName("animatedProp");
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("animatedProp");
+                foreach (XElement node in nodes)
                 {
                     id = -1;
-                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
+                    if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     AnimatedEntity2D ae =
-                        new AnimatedEntity2D("animatedProps", node.GetAttribute("entityName"), Vector3.Zero, 0, Color.White, id);
-                    ae.worldMatrix = node.GetAttribute("worldMatrix").toMatrix();
+                        new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    ae.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();
                     list.Add(ae);
                 }
 
                 // read enemies
-                nodes = xml_doc.GetElementsByTagName("enemy");
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("enemy");
+                foreach (XElement node in nodes)
                 {
                     id = -1;
-                    if (loadIDs && node.HasAttribute("id")) id = int.Parse(node.GetAttribute("id"));
-                    string name = node.GetAttribute("entityName");
-                    Matrix world = node.GetAttribute("worldMatrix").toMatrix();
+                    if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
+                    string name = node.Attribute("entityName").Value;
+                    Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
                     Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation, id);
                     e.setInit();
                     list.Add(e);
                 }
 
                 // read level collisions
-                nodes = xml_doc.GetElementsByTagName("levelCollision");
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("levelCollision");
+                foreach (XElement node in nodes)
                 {
-                    Line l = new Line(node.GetAttribute("p1").toVector2(), node.GetAttribute("p2").toVector2());
+                    Line l = new Line(node.Attribute("p1").Value.toVector2(), node.Attribute("p2").Value.toVector2());
                     LevelManager.Instance.addLevelCollision(l);
                 }
                 // read players
-                nodes = xml_doc.GetElementsByTagName("player");
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("player");
+                foreach (XElement node in nodes)
                 {
-                    PlayerIndex index = (PlayerIndex)node.GetAttribute("playerIndex").toInt();
-                    Matrix world = node.GetAttribute("worldMatrix").toMatrix();
+                    PlayerIndex index = (PlayerIndex)node.Attribute("playerIndex").Value.toInt();
+                    Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
                     GamerEntity gamer = GamerManager.getGamerEntity(index);
                     gamer.Player.worldMatrix = world;
                     gamer.Player.setInit();
@@ -332,16 +332,16 @@ namespace MyGame
                 }
 
                 //Camera
-                nodes = xml_doc.GetElementsByTagName("cameraNode");
-                foreach (XmlElement node in nodes)
+                nodes = xml_doc.Descendants("cameraNode");
+                foreach (XElement node in nodes)
                 {
-                    Vector3 position = node.GetAttribute("position").toVector3();
-                    Vector3 target = node.GetAttribute("target").toVector3();
-                    int nodeId = node.GetAttribute("id").toInt();
-                    bool isFirst = node.GetAttribute("isFirst").toBool();
+                    Vector3 position = node.Attribute("position").Value.toVector3();
+                    Vector3 target = node.Attribute("target").Value.toVector3();
+                    int nodeId = node.Attribute("id").Value.toInt();
+                    bool isFirst = node.Attribute("isFirst").Value.toBool();
                     NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(position, target, nodeId));
-                    if(node.HasAttribute("link"))
-                        cameraNode.value.next = node.GetAttribute("link").toInt();
+                    if(node.Attributes("link").Count() > 0)
+                        cameraNode.value.next = node.Attribute("link").Value.toInt();
 
                     CameraManager.Instance.addNode(cameraNode);
                 }
@@ -355,20 +355,18 @@ namespace MyGame
                 if (loadIDs)
                 {
                     // groups
-                    nodes = xml_doc.GetElementsByTagName("group"); // read enemies
-                    foreach (XmlElement node in nodes)
+                    nodes = xml_doc.Descendants("group"); // read enemies
+                    foreach (XElement node in nodes)
                     {
-                        XmlNodeList ids = node.GetElementsByTagName("entity");
+                        IEnumerable<XElement> ids = node.Descendants("entity");
                         List<int> idList = new List<int>();
-                        foreach (XmlElement entityId in ids)
+                        foreach (XElement entityId in ids)
                         {
-                            idList.Add(int.Parse(entityId.GetAttribute("id")));
+                            idList.Add(entityId.Attribute("id").Value.toInt());
                         }
                         LevelManager.Instance.addGroup(idList);
                     }
                 }
-
-                stream.Close();
             }
 
             return list;
