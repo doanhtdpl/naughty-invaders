@@ -13,6 +13,9 @@ namespace MyGame
         const float ORB_SPEED = 800.0f;
         const float ORB_IDLE_SPEED = 1.0f;
 
+        const float LIFE_ORB_PROBABILITY = 0.1f;
+        const float WISH_ORB_PROBABILITY = 0.45f;
+
         static OrbManager instance = null;
         OrbManager()
         {
@@ -30,6 +33,23 @@ namespace MyGame
             }
         }
 	    List<Orb> orbs = new List<Orb>();
+
+        public void addRandomOrbs(int enemyLevel, Vector2 position)
+        {
+            int XP = enemyLevel * 2;
+            if (Calc.randomScalar() < LIFE_ORB_PROBABILITY)
+            {
+                addOrbs(position, XP, enemyLevel, 0, 0);
+            }
+            else if (Calc.randomScalar() < LIFE_ORB_PROBABILITY + WISH_ORB_PROBABILITY)
+            {
+                addOrbs(position, XP, 0, enemyLevel, 0);
+            }
+            else
+            {
+                addOrbs(position, XP, 0, 0, enemyLevel);
+            }
+        }
 
         public void addOrbs(Vector2 position, int XP, int life, int wish, int pet)
         {
