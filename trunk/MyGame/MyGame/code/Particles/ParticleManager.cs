@@ -63,7 +63,7 @@ namespace MyGame
                 string path = bps.Attribute("texturePath").Value;
                 data.texture = TextureManager.Instance.getTexture("particles/" + path);
                 data.nParticles = bps.Attribute("nParticles").Value.toInt();
-                data.systemLife = bps.Attribute("systemLife").Value.toInt();
+                data.systemLife = bps.Attribute("systemLife").Value.toFloat();
                 data.position = bps.Attribute("position").Value.toVector3();
                 data.positionVarianceMin = bps.Attribute("positionVarianceMin").Value.toVector3();
                 data.positionVarianceMax = bps.Attribute("positionVarianceMax").Value.toVector3();

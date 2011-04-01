@@ -13,6 +13,7 @@ namespace MyGame
         public int lifes { set; get; }
         public bool remove { set; get; }
         public float cooldown { set; get; }
+        public Vector2 direction { set; get; }
 
         public enum tTeam { Players, Enemies };
         public tTeam team { set; get; }
@@ -22,7 +23,7 @@ namespace MyGame
             entityName = name;
             remove = false;
             entityState = tEntityState.Active;
-            this.direction2D = direction;
+            this.direction = direction;
             this.damage = damage;
             this.speed = speed;
             this.lifes = lifes;
@@ -33,7 +34,7 @@ namespace MyGame
         public override void update()
         {
             base.update();
-            position2D += direction2D * speed * SB.dt;
+            position2D += direction * speed * SB.dt;
         }
 
         public override void render()
