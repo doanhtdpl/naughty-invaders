@@ -94,6 +94,7 @@ namespace MyGame
 		        isDead = false;
 		        particles[i].direction += particles[i].acceleration * SB.dt;
 		        particles[i].position += particles[i].direction * SB.dt;
+                particles[i].position += direction * SB.dt;
 		        particles[i].rotation += particles[i].rotationSpeed * SB.dt;
 		        particles[i].life -= SB.dt;
 

@@ -9,7 +9,7 @@ namespace MyGame
     class PearProjectile : Projectile
     {
         public PearProjectile(Vector3 position, Vector2 direction)
-            : base("pearProjectile", position, Calc.directionToAngle(direction) + MathHelper.ToRadians(90.0f), direction, 10, 300, 1, 0.2f, tTeam.Enemies)
+            : base("pearProjectile", position, Calc.directionToAngle(direction) + MathHelper.ToRadians(90.0f), direction, 10, 200, 1, 0.2f, tTeam.Enemies)
         {
             playAction("start");
             setCollisions();

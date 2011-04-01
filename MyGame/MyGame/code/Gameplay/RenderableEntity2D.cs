@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
-    public class RenderableEntity2D : MovingEntity2D
+    public class RenderableEntity2D : Entity2D
     {
         Texture2D texture;
         public Color color { get; set; }

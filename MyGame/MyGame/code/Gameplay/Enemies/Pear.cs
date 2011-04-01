@@ -26,7 +26,7 @@ namespace MyGame
             : base("pear", position, orientation)
         {
             life = 100.0f;
-            nextAttackTimer = Calc.randomScalar(3.0f, 3.5f);
+            nextAttackTimer = Calc.randomScalar(4.0f, 5.5f);
             nextMoveTimer = Calc.randomScalar(0.5f, 1.5f);
             currentMoveTimer = Calc.randomScalar(2.0f, 3.0f);
             moveRight = Calc.randomScalar() < 0.5f;
@@ -97,7 +97,7 @@ namespace MyGame
                         Vector2 direction = Calc.angleToDirection(THIRD_SHOT_ANGLE);
                         Projectile p = new PearProjectile(position, direction);
                         ProjectileManager.Instance.addProjectile(p);
-                        nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
+                        nextAttackTimer = Calc.randomScalar(3.5f, 4.5f);
                         state = tPearState.Moving;
                     }
                 break;
