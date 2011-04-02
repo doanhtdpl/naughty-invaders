@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
@@ -138,15 +137,6 @@ namespace MyGame
 
         public void render()
         {
-            // TODO: organize a RenderClass with the graphicsDevice and put predefined BlendStates
-            BlendState bs = new BlendState();
-
-            bs.AlphaBlendFunction = BlendFunction.Add;
-            bs.ColorDestinationBlend = Blend.One;
-            bs.AlphaDestinationBlend = Blend.One;
-            BlendState backup = SB.graphicsDevice.BlendState;
-            SB.graphicsDevice.BlendState = bs;
-
             for (int i = 0; i < orbs.Count; ++i)
             {
                 if (orbs[i].render)
@@ -154,7 +144,6 @@ namespace MyGame
                     Orb.texture.render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE), orbs[i].color);
                 }
             }
-            SB.graphicsDevice.BlendState = backup;
         }
 
         public void clear()

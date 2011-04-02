@@ -12,6 +12,7 @@ namespace MyGame
     {
         public const float SPEED = 500;
         public const float INVULNERABLE_TIME = 3.0f;
+
         public const float DASH_FRICTION = 5.0f;
         public const float DASH_VELOCITY = 2000.0f;
         public const float DASH_SPEED_THRESHOLD = 500.0f;
@@ -27,6 +28,8 @@ namespace MyGame
         Vector2 dashVelocity;
         float dashParticleTimer;
         float bigShotChargeTimer;
+        bool bigShotCharging;
+        float bigShotCooldownTime;
 
         PlayerData data = new PlayerData();
 
@@ -46,6 +49,8 @@ namespace MyGame
             dashVelocity = Vector2.Zero;
             dashParticleTimer = 0.0f;
             bigShotChargeTimer = 0.0f;
+            bigShotCharging = false;
+            bigShotCooldownTime = 0.0f;
 
             data.initNewData();
         }
@@ -110,6 +115,7 @@ namespace MyGame
             }
 
             fastShotCooldownTime -= SB.dt;
+            bigShotCooldownTime -= SB.dt;
             dashCooldownTime -= SB.dt;
 
             Vector2 direction = Vector2.Zero;
@@ -120,7 +126,7 @@ namespace MyGame
                 if (dashParticleTimer < 0.0f)
                 {
                     dashParticleTimer = DASH_PARTICLE_SPAWN_TIME;
-                    ParticleManager.Instance.addParticles("dash", position, new Vector3(dashVelocity * 0.05f, 0.0f));
+                    ParticleManager.Instance.addParticles("dash", position, new Vector3(dashVelocity * 0.05f, 0.0f), Color.White);
                 }
                 position2D += dashVelocity * SB.dt;
 
@@ -140,7 +146,7 @@ namespace MyGame
             orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
 
             // dash move
-            if (data.skills["dash"].obtained)
+            if (data.skills["dash1"].obtained)
             {
                 // update dash velocity
                 dashVelocity -= dashVelocity * DASH_FRICTION * SB.dt;
@@ -149,25 +155,46 @@ namespace MyGame
                 {
                     //playAction("attack");
                     dashVelocity = direction * DASH_VELOCITY;
-                    dashCooldownTime = PlayerData.DASH_COOLDOWN;
+                    dashCooldownTime = data.getDashCooldown();
                 }
             }
             // fast shot attack
             if (controls.X_pressed() && fastShotCooldownTime <= 0.0f)
             {
                 playAction("attack");
-                Projectile p = new PlayerProjectile(position);
+                Projectile p = new PlayerFastShot(position);
                 fastShotCooldownTime = p.cooldown;
                 ProjectileManager.Instance.addProjectile(p);
-                ParticleManager.Instance.addParticles("burst", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f));
+                ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
             }
             // big shot attack
             if (data.skills["powerShot"].obtained)
             {
-                if (controls.Y_firstPressed() && dashCooldownTime <= 0.0f)
+                if (controls.Y_firstPressed() && bigShotCooldownTime <= 0.0f)
                 {
-                    dashVelocity = direction * DASH_VELOCITY;
-                    dashCooldownTime = PlayerData.DASH_COOLDOWN;
+                    bigShotCharging = true;
+                }
+
+                if (bigShotCharging)
+                {
+                    if (controls.Y_pressed())
+                    {
+                        bigShotChargeTimer += SB.dt;
+                    }
+                    else if (controls.Y_firstReleased())
+                    {
+                        playAction("attack");
+                        float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, 1.0f) + 1.0f;
+                        Projectile p = new PlayerBigShot(position, bigShotValue);
+                        p.damage *= bigShotValue;
+                        ProjectileManager.Instance.addProjectile(p);
+                        ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
+                            bigShotValue, (int)(10 * bigShotValue), bigShotValue);
+
+                        bigShotCooldownTime = p.cooldown;
+                        bigShotChargeTimer = 0.0f;
+                        bigShotCharging = false;
+                    }
                 }
             }
         }

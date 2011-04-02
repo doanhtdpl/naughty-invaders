@@ -23,8 +23,6 @@ namespace MyGame
 
     class PlayerData
     {
-        public const float DASH_COOLDOWN = 0.8f;
-
         public int XP;
         public int lifeOrbs;
         public int wishOrbs;
@@ -35,7 +33,9 @@ namespace MyGame
         // initialize the tree with the costs and links between skills
         public void initSkills()
         {
-            skills["dash"] = new PlayerSkill("Dash", 100);
+            skills["dash1"] = new PlayerSkill("Dash", 100);
+            skills["dash2"] = new PlayerSkill("Super Dash", 1000);
+            skills["dash3"] = new PlayerSkill("Mega Dash", 3000);
             skills["powerShot"] = new PlayerSkill("Power Shot", 300);
             skills["doublePowerShot"] = new PlayerSkill("Double Power Shot", 300, "powerShot");
 
@@ -60,6 +60,27 @@ namespace MyGame
         public void saveDataToXML()
         {
 
+        }
+
+        // methods to pick the right const value
+        public const float DASH1_COOLDOWN = 0.8f;
+        public const float DASH2_COOLDOWN = 0.6f;
+        public const float DASH3_COOLDOWN = 0.4f;
+        public float getDashCooldown()
+        {
+            if (skills["dash3"].obtained)
+            {
+                return DASH3_COOLDOWN;
+            }
+            else if (skills["dash2"].obtained)
+            {
+                return DASH2_COOLDOWN;
+            }
+            else if (skills["dash1"].obtained)
+            {
+                return DASH1_COOLDOWN;
+            }
+            return 0.0f;
         }
     }
 }
