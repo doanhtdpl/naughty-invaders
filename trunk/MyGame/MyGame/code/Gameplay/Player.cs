@@ -159,16 +159,19 @@ namespace MyGame
                 }
             }
             // fast shot attack
-            if (controls.X_pressed() && fastShotCooldownTime <= 0.0f)
+            if (controls.X_pressed())
             {
-                playAction("attack");
-                Projectile p = new PlayerFastShot(position);
-                fastShotCooldownTime = p.cooldown;
-                ProjectileManager.Instance.addProjectile(p);
-                ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
+                if (fastShotCooldownTime <= 0.0f)
+                {
+                    playAction("attack");
+                    Projectile p = new PlayerFastShot(position);
+                    fastShotCooldownTime = p.cooldown;
+                    ProjectileManager.Instance.addProjectile(p);
+                    ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
+                }
             }
             // big shot attack
-            if (data.skills["powerShot"].obtained)
+            else if (data.skills["powerShot"].obtained)
             {
                 if (controls.Y_firstPressed() && bigShotCooldownTime <= 0.0f)
                 {

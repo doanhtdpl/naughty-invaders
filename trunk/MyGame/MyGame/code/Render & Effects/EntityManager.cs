@@ -78,12 +78,12 @@ namespace MyGame
             bs.ColorDestinationBlend = Blend.One;
             bs.AlphaDestinationBlend = Blend.One;
             BlendState backup = SB.graphicsDevice.BlendState;
-            SB.graphicsDevice.BlendState = bs;
+            //SB.graphicsDevice.BlendState = bs;
 
             ParticleManager.Instance.render();
             OrbManager.Instance.render();
 
-            SB.graphicsDevice.BlendState = backup;
+            //SB.graphicsDevice.BlendState = backup;
         }
 
         public void render()
