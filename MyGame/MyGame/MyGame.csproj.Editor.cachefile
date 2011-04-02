@@ -32,7 +32,6 @@ Content\effects\PolygonTextures\yellow.xnb
 Content\GUI\menu\logo.xnb
 Content\GUI\menu\menu.xnb
 Content\GUI\menu\trial.xnb
-Content\textures\enemies\Anim_Grape.xnb
 Content\textures\enemies\Anim_Pear.xnb
 Content\textures\characters\Anim_Player.xnb
 Content\textures\projectiles\Anim_GrapeWeapon.xnb
@@ -85,6 +84,8 @@ Content\textures\animatedProps\AAtentacle.xnb
 Content\textures\animatedProps\AAleaf.xnb
 Content\textures\staticProps\struc-02transparent.xnb
 Content\textures\particles\orb.xnb
+Content\textures\enemies\Anim_Grape.xnb
+Content\textures\enemies\Anim_WaterMelon.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -102,4 +103,5 @@ Content\xml\enemies\KingTomato.xml
 Content\xml\animatedProps\ventose.xml
 Content\xml\animatedProps\AAtentacle.xml
 Content\xml\animatedProps\AAleaf.xml
+Content\xml\enemies\WaterMelon.xml
 Content\xml\levels\xmlLevelTemplate.xml

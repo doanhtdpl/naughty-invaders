@@ -32,6 +32,11 @@ namespace MyGame
 
         const int NUMBER_OF_COLUMNS = 100;
         const int NUMBER_OF_ROWS = 50;
+
+        public void loadFakeStuff()
+        {
+            CameraManager.Instance.loadXMLfake();
+        }
         public void renderGrid(int gridSpacing)
         {
             Vector3 startingPosition = Camera2D.position - new Vector3(
@@ -251,6 +256,8 @@ namespace MyGame
         // loads the specified file into the editor
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
+            EditorHelper.Instance.loadFakeStuff();
+
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
