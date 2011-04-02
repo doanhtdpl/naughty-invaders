@@ -119,10 +119,11 @@ namespace MyGame
 	        }
         }
 
-        public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction)
+        public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction, Color color,
+            float scaleModifier = 1.0f, int nParticlesModifier = 0, float lifetimeModifier = 0.0f)
         {
 	        ParticleSystem ps = new ParticleSystem();
-	        ps.initialize(name, position, direction);
+	        ps.initialize(name, position, direction, color, scaleModifier, nParticlesModifier, lifetimeModifier);
 	        particleSystems.Add(ps);
 	        return ps;
         }

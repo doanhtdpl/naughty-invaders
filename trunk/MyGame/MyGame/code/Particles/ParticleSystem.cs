@@ -15,12 +15,34 @@ namespace MyGame
 	    public bool isDead;
 	    List<Particle> particles = new List<Particle>();
 
-	    public void initialize( string name, Vector3 position, Vector3 direction)
+	    public void initialize( string name, Vector3 position, Vector3 direction, Color color, float scaleModifier = 1.0f, int nParticlesModifier = 0, float lifetimeModifier = 0.0f)
         {
             particles.Clear();
             data = ParticleManager.Instance.getBaseParticleSystemData(name);
             this.position = position;
             this.direction = direction;
+
+            // modify the base data with the parameters
+            if (nParticlesModifier != 0)
+            {
+                data.nParticles = nParticlesModifier;
+            }
+            if (lifetimeModifier != 0.0f)
+            {
+                data.systemLife = lifetimeModifier;
+                data.particlesLife = lifetimeModifier;
+            }
+
+            data.size *= scaleModifier;
+            data.sizeIni *= scaleModifier;
+            data.sizeEnd *= scaleModifier;
+            data.positionVarianceMin *= scaleModifier;
+            data.positionVarianceMax *= scaleModifier;
+            data.directionVarianceMin *= scaleModifier;
+            data.directionVarianceMax *= scaleModifier;
+            data.accelerationVarianceMin *= scaleModifier;
+            data.accelerationVarianceMax *= scaleModifier;
+            data.color = new Color(data.color.ToVector4() * color.ToVector4());
 
 	        // get an aproximate number of the simultaneous particles that will have the system
 	        float spawnRatio = data.particlesLife / (float)data.nParticles;

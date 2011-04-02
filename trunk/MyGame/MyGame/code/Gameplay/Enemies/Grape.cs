@@ -43,7 +43,7 @@ namespace MyGame
         public override void die()
         {
             base.die();
-            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero);
+            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero, Color.White);
         }
 
         public override void update()

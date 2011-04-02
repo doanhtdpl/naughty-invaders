@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
@@ -70,8 +71,19 @@ namespace MyGame
 
         void renderZ0Stuff()
         {
+            // TODO: organize a RenderClass with the graphicsDevice and put predefined BlendStates
+            BlendState bs = new BlendState();
+
+            bs.AlphaBlendFunction = BlendFunction.Add;
+            bs.ColorDestinationBlend = Blend.One;
+            bs.AlphaDestinationBlend = Blend.One;
+            BlendState backup = SB.graphicsDevice.BlendState;
+            SB.graphicsDevice.BlendState = bs;
+
             ParticleManager.Instance.render();
             OrbManager.Instance.render();
+
+            SB.graphicsDevice.BlendState = backup;
         }
 
         public void render()

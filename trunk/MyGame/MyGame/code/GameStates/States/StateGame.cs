@@ -41,8 +41,14 @@ namespace MyGame
 
         public override void render()
         {
-            SB.graphicsDevice.Clear(new Color(79, 98, 37));
-            //SB.graphicsDevice.Clear(new Color(0, 0, 0));
+            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.B_pressed())
+            {
+                SB.graphicsDevice.Clear(new Color(0, 0, 0));
+            }
+            else
+            {
+                SB.graphicsDevice.Clear(new Color(79, 98, 37));
+            }
             SB.beginRender();
             EntityManager.Instance.render();
             LevelManager.Instance.render();

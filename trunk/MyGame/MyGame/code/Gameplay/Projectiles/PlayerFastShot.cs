@@ -6,9 +6,9 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class PlayerProjectile : Projectile
+    class PlayerFastShot : Projectile
     {
-        public PlayerProjectile(Vector3 position)
+        public PlayerFastShot(Vector3 position)
             : base("playerProjectile", position, 0, Vector2.UnitY, 10, 800, 1, 0.08f, tTeam.Players)
         {
             playAction("start");

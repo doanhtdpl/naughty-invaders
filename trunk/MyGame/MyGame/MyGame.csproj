@@ -146,6 +146,7 @@
     <Compile Include="code\Gameplay\Orbs\Orb.cs" />
     <Compile Include="code\Gameplay\Orbs\OrbManager.cs" />
     <Compile Include="code\Gameplay\PlayerData.cs" />
+    <Compile Include="code\Gameplay\Projectiles\PlayerBigShot.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
@@ -156,7 +157,7 @@
     <Compile Include="code\Gameplay\Enemies\EnemyManager.cs" />
     <Compile Include="code\Gameplay\Entity2D.cs" />
     <Compile Include="code\Gameplay\Level\LevelManager.cs" />
-    <Compile Include="code\Gameplay\Projectiles\PlayerProjectile.cs" />
+    <Compile Include="code\Gameplay\Projectiles\PlayerFastShot.cs" />
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
     <Compile Include="code\Particles\Particle.cs" />

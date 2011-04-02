@@ -187,11 +187,19 @@ namespace MyGame
         }
         public bool A_firstReleased()
         {
-            return (currentState.Buttons.A == ButtonState.Released && lastState.Buttons.A == ButtonState.Pressed);
+            return (currentState.Buttons.A == ButtonState.Released && lastState.Buttons.A == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.Z) && kbLastState.IsKeyDown(Keys.Z))
+#endif
+                ;
         }
         public bool A_released()
         {
-            return (currentState.Buttons.A == ButtonState.Released);
+            return (currentState.Buttons.A == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.Z)
+#endif
+                ;
         }
         public bool X_pressed()
         {
@@ -211,11 +219,19 @@ namespace MyGame
         }
         public bool X_firstReleased()
         {
-            return (currentState.Buttons.X == ButtonState.Released && lastState.Buttons.X == ButtonState.Pressed);
+            return (currentState.Buttons.X == ButtonState.Released && lastState.Buttons.X == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.A) && kbLastState.IsKeyDown(Keys.A))
+#endif
+                ;
         }
         public bool X_released()
         {
-            return (currentState.Buttons.X == ButtonState.Released);
+            return (currentState.Buttons.X == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.A)
+#endif
+                ;
         }
         public bool Y_pressed()
         {
@@ -235,11 +251,19 @@ namespace MyGame
         }
         public bool Y_firstReleased()
         {
-            return (currentState.Buttons.Y == ButtonState.Released && lastState.Buttons.Y == ButtonState.Pressed);
+            return (currentState.Buttons.Y == ButtonState.Released && lastState.Buttons.Y == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.S) && kbLastState.IsKeyDown(Keys.S))
+#endif
+                ;
         }
         public bool Y_released()
         {
-            return (currentState.Buttons.Y == ButtonState.Released);
+            return (currentState.Buttons.Y == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.S)
+#endif
+                ;
         }
         public bool B_pressed()
         {
@@ -259,11 +283,19 @@ namespace MyGame
         }
         public bool B_firstReleased()
         {
-            return (currentState.Buttons.B == ButtonState.Released && lastState.Buttons.B == ButtonState.Pressed);
+            return (currentState.Buttons.B == ButtonState.Released && lastState.Buttons.B == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.X) && kbLastState.IsKeyDown(Keys.X))
+#endif
+                ;
         }
         public bool B_released()
         {
-            return (currentState.Buttons.B == ButtonState.Released);
+            return (currentState.Buttons.B == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.X)
+#endif
+                ;
         }
         #endregion
         #region Start & Back & Guide
@@ -273,7 +305,11 @@ namespace MyGame
         }
         public bool Start_firstPressed()
         {
-            return (currentState.Buttons.Start == ButtonState.Pressed && lastState.Buttons.Start == ButtonState.Released);
+            return (currentState.Buttons.Start == ButtonState.Pressed && lastState.Buttons.Start == ButtonState.Released)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.Escape) && kbLastState.IsKeyUp(Keys.Escape))
+#endif
+                ;
         }
         public bool Start_firstReleased()
         {
