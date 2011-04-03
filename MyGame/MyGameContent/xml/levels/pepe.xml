@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="1319">
+<level nextEntityID="1323">
   <staticProps>
     <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 -448.1808 88.62245 -447.9832 1" id="72" />
     <staticProp entityName="struc-24" worldMatrix="-878.4993 51.36934 0 0 -79.27223 -1355.684 0 0 0 0 1 0 391.2335 -3.45206 -634.0139 1" id="73" />
@@ -21,7 +21,7 @@
     <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 375.0756 2586.467 -447.9888 1" id="142" />
     <staticProp entityName="struc-24" worldMatrix="881 0 0 0 0 1358 0 0 0 0 1 0 -493.2947 2750.694 -447.9987 1" id="143" />
     <staticProp entityName="struc-24" worldMatrix="880 0 0 0 0 1358 0 0 0 0 1 0 390.4449 3922.798 -447.998 1" id="144" />
-    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 -465.9431 4042.661 -448.0138 1" id="145" />
+    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 -465.9431 4042.661 -494.0138 1" id="145" />
     <staticProp entityName="struc-10" worldMatrix="-740.9026 -277.5312 0 0 274.6989 -733.3417 0 0 0 0 1 0 -591.2255 -256.724 -0.9944077 1" id="160" />
     <staticProp entityName="struc-11" worldMatrix="266 0 0 0 0 313 0 0 0 0 1 0 -734.1847 -220.5742 4.988262 1" id="181" />
     <staticProp entityName="struc-11" worldMatrix="134.535 0 0 0 0 158.3062 0 0 0 0 1 0 -662.0574 -308.4794 4.990121 1" id="183" />
@@ -287,7 +287,7 @@
     <staticProp entityName="bg01_struct-29" worldMatrix="679.5452 68.1819 0 0 -33.90121 337.8815 0 0 0 0 1 0 622.2643 3210.295 -284.9787 1" id="1058" />
     <staticProp entityName="struc-06" worldMatrix="885.7971 373.0493 19.17455 0 -407.1114 960.7535 115.2383 0 0.02434345 -0.1088816 0.9937567 0 672.5322 3226.24 -420.0046 1" id="1146" />
     <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 1008.488 2502.252 -325.9932 1" id="1148" />
-    <staticProp entityName="struc-06" worldMatrix="-1455.727 -874.8792 45.94158 0 974.3105 -1615.255 112.6859 0 -0.007593191 0.06503368 0.9978542 0 -616.19 3054.047 -426.0192 1" id="1149" />
+    <staticProp entityName="struc-06" worldMatrix="-1455.727 -874.8792 45.94158 0 974.3105 -1615.255 112.6859 0 -0.007593191 0.06503368 0.9978542 0 -616.19 3054.047 -440.0192 1" id="1149" />
     <staticProp entityName="struc-02transparent" worldMatrix="1077 0 0 0 0 612 0 0 0 0 1 0 32.23221 517.0908 947.004 1" id="1194" />
     <staticProp entityName="struc-02transparent" worldMatrix="-480.0492 19.97811 0 0 -11.22262 -269.6656 0 0 0 0 1 0 139.7773 748.338 650.0073 1" id="1196" />
     <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 -782.2739 1656.179 -400.0053 1" id="1204" />
@@ -368,6 +368,10 @@
     <staticProp entityName="bg01_struct-29" worldMatrix="71.21124 541.3358 0 0 -268.6852 35.3448 0 0 0 0 1 0 847.5529 4009.528 -325.9883 1" id="1280" />
     <staticProp entityName="bg01_struct-29" worldMatrix="355.3634 -87.65381 8.132678 0 39.90958 160.3249 -15.90124 0 0.001479993 0.09833218 0.9951526 0 958.8131 3798.557 -334.9804 1" id="1281" />
     <staticProp entityName="struc-02transparent" worldMatrix="1325.841 -910.432 -1089.184 0 663.4708 1158.875 -161.057 0 0.5392457 -0.1948619 0.8192943 0 -281.2369 1232.797 627.004 1" id="1282" />
+    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 -488.9383 5345.719 -485.0138 1" id="1319" />
+    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 354.2172 5242.241 -545.0138 1" id="1320" />
+    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 285.232 6468.649 -518.0138 1" id="1321" />
+    <staticProp entityName="struc-24" worldMatrix="879.4922 28.59246 8.712202 0 -41.50191 1340.869 -210.9826 0 -0.01482329 0.1549705 0.987808 0 -509.3029 6595.123 -545.0138 1" id="1322" />
   </staticProps>
   <animatedProps>
     <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 -842.4113 3097.396 -394.9887 1" id="1151" />
@@ -398,11 +402,11 @@
     <animatedProp entityName="ventose" worldMatrix="151.5423 -97.13379 0 0 97.13379 151.5423 0 0 0 0 1 0 -25.98486 5963.595 -598.9948 1" id="1299" />
     <animatedProp entityName="AAtentacle" worldMatrix="-134.963 -65.45992 0 0 76.36984 -157.4569 0 0 0 0 1 0 4.006104 5991.824 -530.015 1" id="1300" />
     <animatedProp entityName="AAleaf" worldMatrix="102.2452 -174.3879 2.57395 0 160.1005 94.08524 14.69637 0 -0.07448366 -0.02895774 0.9968017 0 1082.424 6320.621 -607.9883 1" id="1301" />
-    <animatedProp entityName="AAleaf" worldMatrix="-173.8681 -102.9755 6.135988 0 92.53568 -158.2205 -33.22032 0 0.1166158 -0.1382951 0.9835016 0 1023.219 6422.69 -642.9898 1" id="1302" />
+    <animatedProp entityName="AAleaf" worldMatrix="-173.8681 -102.9755 6.135988 0 92.53568 -158.2205 -33.22032 0 0.1166158 -0.1382951 0.9835016 0 1023.219 6422.69 -749.9898 1" id="1302" />
     <animatedProp entityName="AAleaf" worldMatrix="138.4595 -9.708063 0 0 7.695766 109.7595 0 0 0 0 1 0 1122.599 6376.93 -600.0062 1" id="1303" />
     <animatedProp entityName="AAleaf" worldMatrix="-96.05224 167.6161 59.58693 0 -114.6113 -102.9163 104.7504 0 0.6290617 0.08582553 0.772603 0 1058.268 6477.698 -607.9883 1" id="1304" />
     <animatedProp entityName="ventose" worldMatrix="49.92267 -85.04893 0 0 85.04893 49.92267 0 0 0 0 1 0 1060.088 6381.473 -598.9948 1" id="1305" />
-    <animatedProp entityName="AAtentacle" worldMatrix="41.60221 -70.87419 0 0 82.6865 48.53588 0 0 0 0 1 0 987.1785 6339.13 -530.015 1" id="1306" />
+    <animatedProp entityName="AAtentacle" worldMatrix="41.60221 -70.87419 0 0 82.6865 48.53588 0 0 0 0 1 0 987.1785 6339.13 -637.015 1" id="1306" />
     <animatedProp entityName="AAleaf" worldMatrix="310.5365 -199.2646 4.69806 0 182.759 285.4466 26.82395 0 -0.05329271 -0.05955043 0.9968017 0 738.4739 3770.172 -264.9883 1" id="1307" />
     <animatedProp entityName="AAleaf" worldMatrix="-197.8154 -311.2953 11.1995 0 281.3707 -180.9812 -60.63402 0 0.1666029 -0.0704858 0.9835018 0 553.6594 3812.547 -299.9898 1" id="1308" />
     <animatedProp entityName="AAleaf" worldMatrix="233.341 98.65498 0 0 -78.20562 184.9738 0 0 0 0 1 0 722.4023 3941.831 -257.0062 1" id="1309" />
@@ -3937,6 +3941,9 @@
     <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 12.00699 -70 -0.0002706349 1" />
   </players>
   <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="False" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
     <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="False" link="1" />
     <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
     <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
