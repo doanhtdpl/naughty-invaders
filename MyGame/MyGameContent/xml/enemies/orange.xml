@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<character>
+<animatedEntity>
   <animatedTexture name="Anim_Orange" frameWidth="160" frameHeight="160" columns="6" rows="6">
     <action name="idle" initialFrame="11" endFrame="22" FPS="15" loops="false"/>
     <action name="die" initialFrame="1" endFrame="10" loops="false"/>
   </animatedTexture>
-</character>
+</animatedEntity>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<character>
+<animatedEntity>
 	<animatedTexture name="test" frameWidth="128" frameHeight="128" columns="4" rows="4">
 		<action name="lal" initialFrame="1" endFrame="8" loops="false"/>
 		<action name="idle" initialFrame="9" endFrame="12" loops="true"/>
 		<action name="laughing" initialFrame="13" endFrame="16" loops="true"/>
 	</animatedTexture>
-</character>
+</animatedEntity>

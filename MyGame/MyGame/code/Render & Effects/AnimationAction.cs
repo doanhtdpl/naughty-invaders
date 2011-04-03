@@ -14,6 +14,13 @@ namespace MyGame
         public float FPS { get; set; }
         public bool loops { get; set; }
         public int textureId { get; set; }
+        public string playAtEnd { get; set; }
+
+        public string playRandom { get; set; }  
+        public float playRandomMin { get; set; }
+        public float playRandomMax { get; set; }
+
+        
 
         // calculated from XML data
         public int totalFrames { get; set; }

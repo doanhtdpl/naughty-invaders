@@ -11,6 +11,7 @@ namespace MyGame
 {
     class AnimatedEntityData
     {
+        public bool idleOffset = false;
         public Dictionary<string, AnimationAction> actions = new Dictionary<string, AnimationAction>();
         public List<AnimatedTexture> animatedTextures = new List<AnimatedTexture>();
     }
@@ -18,11 +19,15 @@ namespace MyGame
     public class AnimatedEntity2D : RenderableEntity2D
     {
         // animations
-        string newActionState = "idle";
+        string newActionState = "";
         string actionState = "idle";
         float actionTimer = 0.0f;
         int currentTextureId = 0;
         int currentFrame = 0;
+
+        // random action
+        string randomAction = "";
+        float nextRandomActionTime;
 
         // to avoid loading every time for the same animated entities the same actions and textures, use a common pool
         static Dictionary<string, AnimatedEntityData> datas = new Dictionary<string, AnimatedEntityData>();
@@ -43,10 +48,17 @@ namespace MyGame
             actions = datas[entityName].actions;
             animatedTextures = datas[entityName].animatedTextures;
 
-            currentFrame = actions["idle"].initialFrame; ;
-            //update();
+            currentFrame = actions["idle"].initialFrame;
+            if (datas[entityName].idleOffset)
+            {
+                currentFrame = Calc.randomNatural(actions["idle"].initialFrame, actions["idle"].endFrame);
+                float frameTime = 1.0f / actions["idle"].FPS;
+                actionTimer = frameTime * (currentFrame - actions["idle"].initialFrame);
+            }
 
             scale2D = getFrameSize();
+
+            playAction("idle");
         }
 
         public Vector2 getFrameSize()
@@ -54,9 +66,14 @@ namespace MyGame
             return new Vector2(animatedTextures[0].frameWidth, animatedTextures[0].frameHeight);
         }
 
-        public void playAction(string newAction)
+        public void playAction(string newAction, bool forcePlay = false)
         {
-            if (actionState == "die") return;
+            if (actionState == "die" && !forcePlay) return;
+
+            if (actions[newAction].playRandom != null)
+            {
+                nextRandomActionTime = Calc.randomScalar(actions[newAction].playRandomMin, actions[newAction].playRandomMax);
+            }
 
             newActionState = newAction;
         }
@@ -67,11 +84,21 @@ namespace MyGame
             //XmlTextReader textReader = new XmlTextReader(SB.content.RootDirectory + "/xml/characters/" + entityName);
             XDocument xml = XDocument.Load(SB.content.RootDirectory + "/xml/" + entityFolder + "/" + entityName + ".xml");
 
+            AnimatedEntityData data = new AnimatedEntityData();
+
+            // read
+            IEnumerable<XElement> animatedEntityList = xml.Descendants("animatedEntity");
+            foreach (XElement animatedEntityNode in animatedEntityList)
+            {
+                if (animatedEntityNode.Attribute("idleOffset") != null)
+                {
+                    data.idleOffset = animatedEntityNode.Attribute("idleOffset").Value.toBool();
+                }
+            }
+
             // read all the animatedTextures and actions of the character
             IEnumerable<XElement> animatedTextureList = xml.Descendants("animatedTexture");
             int textureNumber = 0;
-
-            AnimatedEntityData data = new AnimatedEntityData();
 
             foreach (XElement animatedTextureNode in animatedTextureList)
             {
@@ -98,15 +125,43 @@ namespace MyGame
                     action.initialFrame = actionNode.Attribute("initialFrame").Value.toInt() - 1;
                     action.endFrame = actionNode.Attribute("endFrame").Value.toInt() - 1;
 
-                    if (actionNode.Attributes("FPS").Count() > 0)
+                    if (actionNode.Attribute("FPS") != null)
                     {
-                        action.FPS = actionNode.Attribute("FPS").Value.toFloat(); ;
+                        action.FPS = actionNode.Attribute("FPS").Value.toFloat();
                     }
                     else
                     {
                         action.FPS = 30;
                     }
-                    action.loops = actionNode.Attribute("loops").Value.toBool();
+                    if (actionNode.Attribute("loops") != null)
+                    {
+                        action.loops = actionNode.Attribute("loops").Value.toBool();
+                    }
+                    else
+                    {
+                        action.loops = false;
+                    }
+                    if (actionNode.Attribute("playAtEnd") != null)
+                    {
+                        action.playAtEnd = actionNode.Attribute("playAtEnd").Value;
+                    }
+                    else
+                    {
+                        action.playAtEnd = null;
+                    }
+                    if (actionNode.Attribute("playRandom") != null)
+                    {
+                        action.playRandom = actionNode.Attribute("playRandom").Value;
+                        action.playRandomMin = actionNode.Attribute("playRandomMin").Value.toFloat();
+                        action.playRandomMax = actionNode.Attribute("playRandomMax").Value.toFloat();
+                    }
+                    else
+                    {
+                        action.playRandom = null;
+                        action.playRandomMin = 0.0f;
+                        action.playRandomMax = 0.0f;
+                    }
+
                     // add each action to the list
                     data.actions[action.name] = action;
                     action.initialize();
@@ -139,6 +194,17 @@ namespace MyGame
             actionTimer += SB.dt;
 
             AnimationAction action = actions[actionState];
+            currentTextureId = action.textureId;
+
+            // play a the random action if necessary
+            if (action.playRandom != null)
+            {
+                nextRandomActionTime -= SB.dt;
+                if (nextRandomActionTime < 0.0f)
+                {
+                    playAction(action.playRandom);
+                }
+            }
  
             // get which would have to be the current frame
             float frameTime = 1.0f / action.FPS;
@@ -157,9 +223,14 @@ namespace MyGame
                     {
                         requestDelete();
                     }
-                    actionState = "idle";
-                    action = actions[actionState];
-                    currentTextureId = action.textureId;
+                    else if (action.playAtEnd != null)
+                    {
+                        newActionState = action.playAtEnd;
+                    }
+                    else
+                    {
+                        playAction("idle");
+                    }
                 }
             }
 

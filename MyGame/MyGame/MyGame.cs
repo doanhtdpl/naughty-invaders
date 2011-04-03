@@ -86,6 +86,11 @@ namespace MyGame
 
             GamerManager.updateInputs();
 
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                this.Exit();
+            }
+
             stateManager.update();
             base.Update(gameTime);
         }

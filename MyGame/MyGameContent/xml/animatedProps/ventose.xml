@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<character>
+<animatedEntity>
   <animatedTexture name="ventosaseq" frameWidth="180" frameHeight="180" columns="4" rows="4">
     <action name="attack" initialFrame="1" endFrame="8" loops="false"/>
     <action name="die" initialFrame="9" endFrame="12" loops="false"/>
     <action name="idle" initialFrame="1" endFrame="16" FPS="15" loops="true"/>
   </animatedTexture>
-</character>
+</animatedEntity>
