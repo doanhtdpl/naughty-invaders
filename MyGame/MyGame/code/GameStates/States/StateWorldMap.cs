@@ -19,7 +19,7 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevel("mapa");
-            CameraManager.Instance.setCameraMode(CameraManager.tCameraMode.FollowPlayer);
+            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.FollowPlayer;
         }
 
         public override void loadContent()

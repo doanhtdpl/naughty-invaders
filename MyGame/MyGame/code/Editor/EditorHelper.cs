@@ -386,10 +386,6 @@ namespace MyGame
 
             List<Entity2D> list = loadLevel(fileName);
 
-            // FAKE LOADING
-            CameraManager.Instance.loadXMLfake();
-            // END FAKE LOADING
-
             return list;
         }
 

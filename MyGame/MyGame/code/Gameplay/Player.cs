@@ -119,7 +119,10 @@ namespace MyGame
             dashCooldownTime -= SB.dt;
 
             Vector2 direction = Vector2.Zero;
-            position += CameraManager.Instance.getCameraVelocityXY();
+            if (CameraManager.Instance.cameraMode == CameraManager.tCameraMode.Nodes)
+            {
+                position += CameraManager.Instance.getCameraVelocityXY();
+            }
 
             if (dashVelocity != Vector2.Zero)
             {
