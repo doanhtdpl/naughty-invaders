@@ -39,7 +39,7 @@ namespace MyGame
             SB.width = 1280;
             SB.height = 720;
 #if !EDITOR
-            SB.graphicsDevice = graphics.GraphicsDevice;
+            GraphicsManager.Instance.graphicsDevice = graphics.GraphicsDevice;
             graphics.PreferredBackBufferWidth = SB.width;
             graphics.PreferredBackBufferHeight = SB.height;
             graphics.IsFullScreen = false;
@@ -65,10 +65,11 @@ namespace MyGame
         {
             // load and initialize stuff (pe: quad renderer)
             SB.loadContent();
+            GraphicsManager.Instance.loadContent();
             LineManager.loadContent();
             TEX.loadContent();
             StringManager.loadContent();
-            GUI.loadContent();
+            GUIManager.Instance.loadContent();
         }
 
         protected override void UnloadContent()

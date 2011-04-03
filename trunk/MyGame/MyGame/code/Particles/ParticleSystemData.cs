@@ -12,7 +12,7 @@ namespace MyGame
         public enum tParticleSystem { Fountain, Burst };
 
 	    public string			    name;
-	    public tParticleSystem		type;
+        public tParticleSystem      type;
 	    public Texture         	    texture;
 	    public int					nParticles;
 	    public float				systemLife;

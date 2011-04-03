@@ -43,7 +43,7 @@ namespace MyGame
             timer.Tick += new System.EventHandler(timer_Tick);
             timer.Start();
 
-            SB.graphicsDevice = GraphicsDevice;
+            GraphicsManager.Instance.graphicsDevice = GraphicsDevice;
 
             //Constructor
             SB.content = new ContentManager(Services, "Content");
@@ -61,10 +61,11 @@ namespace MyGame
 
             //Load Content
             SB.loadContent();
+            GraphicsManager.Instance.loadContent();
             LineManager.loadContent();
             TEX.loadContent();
             StringManager.loadContent();
-            GUI.loadContent();
+            GUIManager.Instance.loadContent();
 
             // if we want to test gameplay, we will manually add a gamer
 #if ONLY_GAMEPLAY

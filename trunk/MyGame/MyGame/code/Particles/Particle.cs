@@ -27,5 +27,6 @@ namespace MyGame
 	    public float		rotationSpeed;
 	    public float		life;
 	    public bool		    isDead;
+        public Color        baseColor;
     };
 }

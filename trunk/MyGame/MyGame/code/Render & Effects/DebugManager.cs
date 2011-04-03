@@ -52,7 +52,7 @@ namespace MyGame
 
         public void initialize()
         {
-            basicEffect = new BasicEffect(SB.graphicsDevice);
+            basicEffect = new BasicEffect(GraphicsManager.Instance.graphicsDevice);
             basicEffect.DiffuseColor = new Vector3(1.0f, 1.0f, 1.0f);
             basicEffect.VertexColorEnabled = true;
 
@@ -108,7 +108,7 @@ namespace MyGame
         {
             if (numberOfLines > 0)
             {
-                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(
+                GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColor>(
                     PrimitiveType.LineList,
                     lineList,
                     0,  // vertex buffer offset to add to each element of the index buffer
@@ -131,12 +131,12 @@ namespace MyGame
 
         void renderTexts()
         {
-            SB.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Begin();
             for (int i = 0; i < numberOfTexts; ++i)
             {
                 texts[i].text.render(texts[i].position, 0.4f);
             }
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public void render()

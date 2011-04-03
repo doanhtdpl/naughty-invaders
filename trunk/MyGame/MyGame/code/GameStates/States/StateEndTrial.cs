@@ -43,8 +43,8 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
-            SB.spriteBatch.Draw(texTrial.texture, Screen.getXYfromCenter(-550, 330), null, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            GraphicsManager.Instance.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Draw(texTrial.texture, Screen.getXYfromCenter(-550, 330), null, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             TextKey.Trial.Translate().render
                 (Screen.getXYfromCenter(new Vector2(250, 250)), 0.75f, Color.LightBlue, StringManager.tTextAlignment.Centered,
                 SB.font, 500, 35, Color.Blue, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
@@ -53,7 +53,7 @@ namespace MyGame
                     Screen.getXYfromCenter(new Vector2(0, -230)), 0.9f, Color.Gray, StringManager.tTextAlignment.Centered,
                     SB.font, 1000, 0, Color.Black, 1.0f, new Vector2(2, 2), StringManager.tStyle.Shadowed);
 
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

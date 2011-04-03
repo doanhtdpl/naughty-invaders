@@ -10,11 +10,27 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace MyGame
 {
-    class GUI
+    class GUIManager
     {
+        static GUIManager instance = null;
+        GUIManager()
+        {
+        }
+        public static GUIManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GUIManager();
+                }
+                return instance;
+            }
+        }
+
         public static Vector2 r = new Vector2(1, 1);
 
-        public static void loadContent()
+        public void loadContent()
         {
         }
 
@@ -24,46 +40,17 @@ namespace MyGame
 
         public void render()
         {
-            SB.spriteBatch.Begin();
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         #region Crono & time
         public void renderCrono(int time)
         {
-            string strTime = getTimeString(time);
+            string strTime = time.toTimeString();
             float offset = SB.font.MeasureString(strTime).X / 2;
             string str = strTime.ToString() + " " + TextKey.Seconds.Translate();
             str.renderSC(Screen.getXYfromCenter(-offset, 0), 1.0f, Color.White, Color.Black, StringManager.tTextAlignment.Centered);
-        }
-        // Obtiene una string en el tipo de formato printable minutos y segundos "1:44"
-        public static string getTimeString(int time)
-        {
-            // si es menos de un segundo devolvemos 0
-            if (time < 1000)
-                return "0";
-            // si es menos que 10 segundos, devolvemos el primer número, que representa los segundos
-            if (time < 10000)
-                return time.ToString()[0].ToString();
-
-            string t = time.ToString();
-            // pasamos de milisegundos a segundos
-            t = t.Remove(t.Length - 3, 3);
-            time = int.Parse(t);
-            if (time > 59)
-            {
-                int aux = time / 60;
-                int aux2 = time % 60;
-                // si quedan menos de 10 segundos para acabar el minuto actual, tenemos que pintar un cero para no confundir
-                if (aux2 < 10)
-                    return aux.ToString() + ":0" + aux2.ToString();
-                else
-                    return aux.ToString() + ":" + aux2.ToString();
-            }
-            else
-            {
-                return time.ToString();
-            }
         }
         public static string drawTime(int time)
         {

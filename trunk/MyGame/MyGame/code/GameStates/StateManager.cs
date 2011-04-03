@@ -51,9 +51,9 @@ namespace MyGame
                         float dark = gameStates[i].darkTransition*((float)gameStates[i].timeRunning / (float)TRANSITION_TIME);
                         if (dark > gameStates[i].darkTransition)
                             dark = gameStates[i].darkTransition;
-                        SB.spriteBatch.Begin();
-                        SB.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), new Color(211.0f * 0.00392f, 240.0f * 0.00392f, 13.0f * 0.00392f, dark));
-                        SB.spriteBatch.End();
+                        GraphicsManager.Instance.spriteBatch.Begin();
+                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), new Color(211.0f * 0.00392f, 240.0f * 0.00392f, 13.0f * 0.00392f, dark));
+                        GraphicsManager.Instance.spriteBatch.End();
                     }
                     gameStates[i].render();
                 }

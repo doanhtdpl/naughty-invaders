@@ -21,7 +21,7 @@ namespace MyGame
         public override void initialize()
         {
             type = StateManager.tGS.Prompt;
-            SB.initializeRender();
+            GraphicsManager.Instance.initializeRender();
 
             // si alguien cierra la sesión podemos llegar aquí desde cualquier estado...
             promptState = tPromptState.PressA;
@@ -95,13 +95,13 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Begin();
             if (promptState == tPromptState.PressA)
             {
                 TextKey.PressAToStart.Translate().renderSC
                     (Screen.getXYfromCenter(0, 0), 1.5f, Color.GreenYellow, Color.Black, StringManager.tTextAlignment.Centered);
             }
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

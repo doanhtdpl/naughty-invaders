@@ -46,9 +46,9 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Begin();
             menu.render();
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

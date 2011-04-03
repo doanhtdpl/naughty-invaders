@@ -38,8 +38,8 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

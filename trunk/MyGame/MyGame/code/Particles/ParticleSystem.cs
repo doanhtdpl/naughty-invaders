@@ -43,7 +43,7 @@ namespace MyGame
             data.accelerationVarianceMin *= scaleModifier;
             data.accelerationVarianceMax *= scaleModifier;
             data.color = new Color(data.color.ToVector4() * color.ToVector4());
-
+            
 	        // get an aproximate number of the simultaneous particles that will have the system
 	        float spawnRatio = data.particlesLife / (float)data.nParticles;
             particles.Capacity = data.nParticles;
@@ -66,7 +66,7 @@ namespace MyGame
 		                // we want particles prepared to be spawned with the spawnRatio ratio, so we set'em all alive but invisible
 		                p.life = 1.3f + spawnRatio * i;
 		                p.isDead = false;
-		                p.color.A = 0;
+		                p.color *= 0;
                         particles.Add(p);
 	                }
 	                break;
@@ -76,7 +76,6 @@ namespace MyGame
         }
 	    void initializeParticle(Particle particle)
         {
-	        particle.color = data.color;
             particle.size = data.sizeIni;
 	        Vector3 v = Calc.randomVector3(data.positionVarianceMin, data.positionVarianceMax);
 	        particle.position = position + data.position + v;
@@ -86,11 +85,11 @@ namespace MyGame
 	        particle.acceleration = data.acceleration + v;
 	        particle.rotation = data.particlesRotation + Calc.randomScalar(-data.particlesRotationVariance, data.particlesRotationVariance);
             particle.rotationSpeed = data.particlesRotationSpeed + Calc.randomScalar(-data.particlesRotationSpeedVariance, data.particlesRotationSpeedVariance);
-            particle.color = data.color;
-            particle.color.R += (byte)Calc.randomNatural(data.colorVarianceMin.R, data.colorVarianceMax.R);
-            particle.color.G += (byte)Calc.randomNatural(data.colorVarianceMin.G, data.colorVarianceMax.G);
-            particle.color.B += (byte)Calc.randomNatural(data.colorVarianceMin.B, data.colorVarianceMax.B);
-            particle.color.A += (byte)Calc.randomNatural(data.colorVarianceMin.A, data.colorVarianceMax.A);
+            particle.baseColor = data.color;
+            particle.baseColor.R += (byte)Calc.randomNatural(data.colorVarianceMin.R, data.colorVarianceMax.R);
+            particle.baseColor.G += (byte)Calc.randomNatural(data.colorVarianceMin.G, data.colorVarianceMax.G);
+            particle.baseColor.B += (byte)Calc.randomNatural(data.colorVarianceMin.B, data.colorVarianceMax.B);
+            particle.baseColor.A += (byte)Calc.randomNatural(data.colorVarianceMin.A, data.colorVarianceMax.A);
             particle.life = data.particlesLife;
         }
 	    public void update( )
@@ -133,9 +132,7 @@ namespace MyGame
 			        alpha = particles[i].life/aux;
 		        }
                 // multiply by the real alpha of the color
-                alpha *= ((float)data.color.A / 255.0f);
-                // transform it to a byte
-                particles[i].color.A = (byte)(alpha * 255);
+                particles[i].color = particles[i].baseColor * alpha;
 
                 if (particles[i].life > data.particlesLife - data.fadeIn)
 		        {
