@@ -149,6 +149,7 @@
     <Compile Include="code\Gameplay\Projectiles\PlayerBigShot.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
+    <Compile Include="code\GameStates\States\StateWorldMap.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Grape.cs" />
