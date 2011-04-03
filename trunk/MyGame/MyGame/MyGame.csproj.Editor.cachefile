@@ -40,7 +40,6 @@ Content\textures\projectiles\Anim_PlayerWeapon.xnb
 Content\textures\staticProps\Background_Level01.xnb
 Content\textures\particles\Particle_Test.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
-Content\textures\particles\Gusyluz.xnb
 Content\textures\staticProps\esmeral.xnb
 Content\textures\staticProps\pincho.xnb
 Content\textures\staticProps\struc-01.xnb
@@ -83,6 +82,7 @@ Content\textures\enemies\Anim_Calsot.xnb
 Content\textures\animatedProps\AAtentacle.xnb
 Content\textures\animatedProps\AAleaf.xnb
 Content\textures\staticProps\struc-02transparent.xnb
+Content\textures\particles\Gusyluz.xnb
 Content\textures\particles\orb.xnb
 Content\textures\enemies\Anim_Grape.xnb
 Content\textures\enemies\Anim_WaterMelon.xnb
