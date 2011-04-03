@@ -210,5 +210,11 @@ namespace MyGame
         {
             base.render();
         }
+        public override void requestDelete()
+        {
+            base.requestDelete();
+            lifes = 3;
+            playAction("idle", true);
+        }
     }
 }

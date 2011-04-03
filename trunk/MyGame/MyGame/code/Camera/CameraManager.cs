@@ -127,7 +127,7 @@ namespace MyGame
         {
             if (currentNode == null || nextNode == null) return;
 
-            float cameraSpeed = 100.0f;
+            float cameraSpeed = 50.0f;
             Vector3 targetPosition = nextNode.value.position;
             Vector3 direction = targetPosition - Camera2D.position;
             float distance = direction.Length();
