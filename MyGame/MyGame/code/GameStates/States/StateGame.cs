@@ -24,6 +24,7 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
+            CameraManager.Instance.setCameraMode(CameraManager.tCameraMode.Node);
         }
         public void restartLevel()
         {
@@ -51,8 +52,6 @@ namespace MyGame
             LevelManager.Instance.render();
             DebugManager.Instance.render();
             GUIManager.Instance.render();
-
-            DebugManager.Instance.render();
         }
         
         public override void update()

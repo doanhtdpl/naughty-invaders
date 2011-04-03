@@ -341,7 +341,7 @@ namespace MyGame
                 EditorHelper.Instance.renderGrid(gridSpacing);
             }
 
-            CameraManager.Instance.render();
+            CameraManager.Instance.renderDebug();
         }
         #endregion
 

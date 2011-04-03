@@ -54,6 +54,10 @@ namespace MyGame
             }
         }
 
+        public enum tCameraMode { FollowPlayer, Node }
+        tCameraMode cameraMode;
+
+        // node mode stuff
         NetworkNode<CameraData> currentNode;
         NetworkNode<CameraData> nextNode;
         Network<CameraData> cameraNodes = new Network<CameraData>();
@@ -68,7 +72,10 @@ namespace MyGame
             velocity.Z = 0.0f;
             return velocity;
         }
-
+        public void setCameraMode(tCameraMode cameraMode)
+        {
+            this.cameraMode = cameraMode;
+        }
         public void loadXMLfake()
         {
             NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));
@@ -118,13 +125,12 @@ namespace MyGame
             Camera2D.position = cameraNodes.getNodes()[0].value.position;
         }
 
-        public void update()
+        void updateFollowPlayerMode()
         {
-            if (currentNode == null || nextNode == null) return;
-
-            // update last frame position
-            lastFrameData = currentFrameData;
-
+            Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;
+        }
+        void updateNodeMode()
+        {
             float cameraSpeed = 100.0f;
             Vector3 targetPosition = nextNode.value.position;
             Vector3 direction = targetPosition - Camera2D.position;
@@ -141,7 +147,7 @@ namespace MyGame
                 currentNode = nextNode;
                 nextNode = currentNode.getNext();
                 if (nextNode == null) return;
-                float timeRemaining = SB.dt - ((SB.dt * distance)/distanceToAdvance);
+                float timeRemaining = SB.dt - ((SB.dt * distance) / distanceToAdvance);
                 // get the new values to move the camera to the new next node
                 targetPosition = nextNode.value.position;
                 direction = targetPosition - Camera2D.position;
@@ -150,23 +156,48 @@ namespace MyGame
                 distanceToAdvance = cameraSpeed * timeRemaining;
             }
             Camera2D.position += direction * distanceToAdvance;
+        }
+
+        public void update()
+        {
+            // update last frame position
+            lastFrameData = currentFrameData;
+
+            // update the current used camera mode
+            switch(cameraMode)
+            {
+                case tCameraMode.FollowPlayer:
+                    updateFollowPlayerMode();
+                    break;
+                case tCameraMode.Node:
+                    updateNodeMode();
+                    break;
+            }
+            if (currentNode == null || nextNode == null) return;
 
             // update current frame position
             currentFrameData.position = Camera2D.position;
         }
 
-        public void render()
+        public void renderDebug()
         {
-            foreach(NetworkNode<CameraData> cameraNode in cameraNodes.getNodes())
+            switch (cameraMode)
             {
-                Vector3 position = cameraNode.value.target;
-                DebugManager.Instance.addRectangle(position - new Vector3(50, 50, 0), position + new Vector3(50, 50, 0), Color.Yellow, 1.0f);
+                case tCameraMode.FollowPlayer:
+                    break;
+                case tCameraMode.Node:
+                    foreach (NetworkNode<CameraData> cameraNode in cameraNodes.getNodes())
+                    {
+                        Vector3 position = cameraNode.value.target;
+                        DebugManager.Instance.addRectangle(position - new Vector3(50, 50, 0), position + new Vector3(50, 50, 0), Color.Yellow, 1.0f);
 
-                if (cameraNode.getNext() != null)
-                {
-                    Vector3 target = cameraNode.getNext().value.target;
-                    DebugManager.Instance.addLine(position, target, Color.Yellow);
-                }
+                        if (cameraNode.getNext() != null)
+                        {
+                            Vector3 target = cameraNode.getNext().value.target;
+                            DebugManager.Instance.addLine(position, target, Color.Yellow);
+                        }
+                    }
+                    break;
             }
         }
 
