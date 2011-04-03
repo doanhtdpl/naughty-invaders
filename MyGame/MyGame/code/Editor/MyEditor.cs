@@ -75,6 +75,7 @@ namespace MyGame
             if (e.KeyChar == '\r') // PRESS ENTER
             {
                 validateInputs(sender);
+                myEditorControl.Focus();
             }
         }
 
@@ -388,17 +389,15 @@ namespace MyGame
         #region Properties fields
         private void validateInputs(object sender)
         {
-            if (currentState != null)
+            float value;
+            if (float.TryParse(((TextBox)sender).Text, out value))
             {
-                float value;
-                if (float.TryParse(((TextBox)sender).Text, out value))
-                {
-                    propertiesChanged();
-                }
-                else
-                {
-                    updateEntityProperties();
-                }
+                propertiesChanged();
+            }
+            else
+            {
+                //If it's not valid, we reset the textbox
+                updateEntityProperties();
             }
         }
 
@@ -409,13 +408,18 @@ namespace MyGame
                 Entity2D ent = selectedEntities[0];
                 if (ent != null)
                 {
-                    ent.position = new Vector3(MyEditor.Instance.textPosX.Text.toFloat(),
-                        MyEditor.Instance.textPosY.Text.toFloat(),
-                        MyEditor.Instance.textPosZ.Text.toFloat());
+                    ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
 
                     ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
-                    ent.scale2D = new Vector2(MyEditor.Instance.textScaleX.Text.toFloat(),
-                        MyEditor.Instance.textScaleY.Text.toFloat());
+                    ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
+
+                    if (ent is RenderableEntity2D)
+                    {
+                        ((RenderableEntity2D)ent).color.R = Byte.Parse(this.colorR.Text);
+                        ((RenderableEntity2D)ent).color.G = Byte.Parse(this.colorG.Text);
+                        ((RenderableEntity2D)ent).color.B = Byte.Parse(this.colorB.Text);
+                        ((RenderableEntity2D)ent).color.A = Byte.Parse(this.colorA.Text);
+                    }
                 }
             }
         }
@@ -433,6 +437,15 @@ namespace MyGame
                     MyEditor.Instance.textRotZ.Text = (ent.orientation * (float)(360 / (Math.PI * 2))).ToString();
                     MyEditor.Instance.textScaleX.Text = ent.scale2D.X.ToString();
                     MyEditor.Instance.textScaleY.Text = ent.scale2D.Y.ToString();
+
+                    if (ent is RenderableEntity2D)
+                    {
+                        this.colorR.Text = ((RenderableEntity2D)ent).color.R.ToString();
+                        this.colorG.Text = ((RenderableEntity2D)ent).color.G.ToString();
+                        this.colorB.Text = ((RenderableEntity2D)ent).color.B.ToString();
+                        this.colorA.Text = ((RenderableEntity2D)ent).color.A.ToString();
+                    }
+
                 }
             }
         }
@@ -508,6 +521,48 @@ namespace MyGame
                 //skipNextFrame = true;
                 ((EditorState_AddStatic)currentState).selectEntity(((ComboBox)sender).SelectedIndex);
                 myEditorControl.Focus();
+            }
+        }
+
+        private System.Drawing.Color getDialogColor(System.Drawing.Color currentColor)
+        {
+            exitBlockers++;
+            noUpdate++;
+
+            colorDialog.FullOpen = true;
+            colorDialog.Color = currentColor;
+            colorDialog.ShowDialog();
+
+            exitBlockers--;
+            noUpdate--;
+
+            return colorDialog.Color;
+        }
+
+        private void colorButton_Click(object sender, EventArgs e)
+        {
+            if (anyEntitySelected())
+            {
+                System.Drawing.Color newColor = getDialogColor(System.Drawing.Color.FromArgb(int.Parse(colorA.Text), int.Parse(colorR.Text), int.Parse(colorG.Text), int.Parse(colorB.Text)));
+                this.colorR.Text = newColor.R.ToString();
+                this.colorG.Text = newColor.G.ToString();
+                this.colorB.Text = newColor.B.ToString();
+                this.colorA.Text = newColor.A.ToString();
+                propertiesChanged();
+            }
+        }
+
+        private void BGColorButton_Click(object sender, EventArgs e)
+        {
+            System.Drawing.Color newColor = getDialogColor(System.Drawing.Color.FromArgb(SB.BGColor.A, SB.BGColor.R, SB.BGColor.G, SB.BGColor.B));
+            SB.BGColor = new Color(newColor.R, newColor.G, newColor.B, newColor.A);
+        }
+
+        private void addDefaultCamerasButton_Click(object sender, EventArgs e)
+        {
+            if (CameraManager.Instance.getNodes().getNodes().Count == 0)
+            {
+                CameraManager.Instance.loadXMLfake();
             }
         }
     }

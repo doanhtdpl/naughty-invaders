@@ -109,8 +109,18 @@ namespace MyGame
         public void addNode(NetworkNode<CameraData> node)
         {
             cameraNodes.addNode(node);
-            if (node.value.isFirst)
-                setCurrentNode(node);
+        }
+
+        public void setupCamera()
+        {
+            for (int i = 0; i < cameraNodes.getNodes().Count; i++)
+            {
+                if (cameraNodes.getNodes()[i].value.isFirst)
+                {
+                    setCurrentNode(cameraNodes.getNodes()[i]);
+                    Camera2D.position = cameraNodes.getNodes()[i].value.position;
+                }
+            }
         }
 
         public void setCurrentNode(NetworkNode<CameraData> node)

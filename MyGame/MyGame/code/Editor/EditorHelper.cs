@@ -33,10 +33,6 @@ namespace MyGame
         const int NUMBER_OF_COLUMNS = 100;
         const int NUMBER_OF_ROWS = 50;
 
-        public void loadFakeStuff()
-        {
-            CameraManager.Instance.loadXMLfake();
-        }
         public void renderGrid(int gridSpacing)
         {
             Vector3 startingPosition = Camera2D.position - new Vector3(
@@ -168,7 +164,8 @@ namespace MyGame
             writer.WriteStartElement("level");
             // here is the general information for the level
             writer.WriteAttributeString("nextEntityID", Entity2D.NEXT_ENTITY_ID.ToString());
-            
+            writer.WriteAttributeString("BGColor", SB.BGColor.toXML());
+
             // static props
             writer.WriteStartElement("staticProps");
             for (int i = 0; i < LevelManager.Instance.getStaticProps().Count; i++)
@@ -256,8 +253,6 @@ namespace MyGame
         // loads the specified file into the editor
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
-            EditorHelper.Instance.loadFakeStuff();
-
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
@@ -273,6 +268,11 @@ namespace MyGame
                     if (levelNode.Attributes("nextEntityID").Count() > 0)
                     {
                         Entity2D.NEXT_ENTITY_ID = levelNode.Attribute("nextEntityID").Value.toInt();
+                    }
+
+                    if (levelNode.Attributes("BGColor").Count() > 0)
+                    {
+                        SB.BGColor = levelNode.Attribute("BGColor").Value.toColor();
                     }
                 }
 
@@ -346,7 +346,7 @@ namespace MyGame
                     Vector3 target = node.Attribute("target").Value.toVector3();
                     int nodeId = node.Attribute("id").Value.toInt();
                     bool isFirst = node.Attribute("isFirst").Value.toBool();
-                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(position, target, nodeId));
+                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(position, target, nodeId, isFirst));
                     if(node.Attributes("link").Count() > 0)
                         cameraNode.value.next = node.Attribute("link").Value.toInt();
 
@@ -358,6 +358,8 @@ namespace MyGame
                 {
                     cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
                 }
+
+                CameraManager.Instance.setupCamera();
 
                 if (loadIDs)
                 {

@@ -12,7 +12,7 @@ namespace MyGame
     public class RenderableEntity2D : Entity2D
     {
         Texture2D texture;
-        public Color color { get; set; }
+        public Color color;
 
         public enum tRenderState { Render, NoRender }
         public tRenderState renderState { get; set; }

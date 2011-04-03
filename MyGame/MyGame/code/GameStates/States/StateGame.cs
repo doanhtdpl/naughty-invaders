@@ -38,23 +38,12 @@ namespace MyGame
 
         }
 
-        bool backgroundBlack = true;
         bool addCameraNodes = true;
         public override void render()
         {
             // START PROVISIONAL CODE
-            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.B_firstPressed())
-            {
-                backgroundBlack = !backgroundBlack;
-            }
-            if (backgroundBlack)
-            {
-                GraphicsManager.Instance.graphicsDevice.Clear(new Color(0, 0, 0));
-            }
-            else
-            {
-                GraphicsManager.Instance.graphicsDevice.Clear(new Color(79, 98, 37));
-            }
+            GraphicsManager.Instance.graphicsDevice.Clear(SB.BGColor);
+
             if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.LB_firstPressed())
             {
                 if (addCameraNodes)

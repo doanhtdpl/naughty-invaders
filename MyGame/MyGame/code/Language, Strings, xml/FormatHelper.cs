@@ -79,10 +79,14 @@ namespace MyGame
                 return timeInSeconds.ToString();
             }
         }
+        public static string toXML(this Color c)
+        {
+            return c.R.ToString() + " " + c.G.ToString() + " " + c.B.ToString() + " " + c.A.ToString();
+        }
         public static Color toColor(this string str)
         {
             string[] values = str.Split(' ');
-            return new Color(values[0].toFloat() / 255.0f, values[1].toFloat() / 255.0f, values[2].toFloat() / 255.0f, values[3].toFloat() / 255.0f);
+            return new Color(values[0].toInt(), values[1].toInt(), values[2].toInt(), values[3].toInt());
         }
         public static string toXML(this Matrix m)
         {

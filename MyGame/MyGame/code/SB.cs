@@ -17,6 +17,7 @@ namespace MyGame
         static public Random random;
         public const float SafeAreaPortion = 0.05f;
         public static SpriteFont font;
+        public static Color BGColor = Color.Black;
         #endregion
 
         public static void loadContent()

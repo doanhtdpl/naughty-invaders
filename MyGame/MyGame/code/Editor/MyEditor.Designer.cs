@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.propertiesPanel = new System.Windows.Forms.Panel();
+            this.staticPropertiesPanel = new System.Windows.Forms.Panel();
+            this.colorButton = new System.Windows.Forms.Button();
+            this.colorB = new System.Windows.Forms.TextBox();
+            this.colorG = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.colorA = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.colorR = new System.Windows.Forms.TextBox();
             this.buttonResetPosition = new System.Windows.Forms.Button();
             this.buttonResetScale = new System.Windows.Forms.Button();
             this.buttonResetRotation = new System.Windows.Forms.Button();
@@ -39,61 +46,135 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textScaleX = new System.Windows.Forms.TextBox();
             this.textRotZ = new System.Windows.Forms.TextBox();
-            this.textRotY = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textRotX = new System.Windows.Forms.TextBox();
             this.textPosZ = new System.Windows.Forms.TextBox();
             this.textPosY = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textPosX = new System.Windows.Forms.TextBox();
-            this.DefaultPage = new System.Windows.Forms.TabPage();
             this.canSelectPlayer = new System.Windows.Forms.CheckBox();
-            this.buttonCreateGroup = new System.Windows.Forms.Button();
             this.selectGroup = new System.Windows.Forms.CheckBox();
-            this.buttonImportLevel = new System.Windows.Forms.Button();
             this.canSelectEnemy = new System.Windows.Forms.CheckBox();
             this.canSelectAnimated = new System.Windows.Forms.CheckBox();
             this.canSelectStatic = new System.Windows.Forms.CheckBox();
-            this.buttonAddEnemy = new System.Windows.Forms.Button();
+            this.buttonImportLevel = new System.Windows.Forms.Button();
             this.buttonSaveLevel = new System.Windows.Forms.Button();
             this.buttonLoadLevel = new System.Windows.Forms.Button();
             this.buttonAddAnimated = new System.Windows.Forms.Button();
+            this.buttonAddStatic = new System.Windows.Forms.Button();
+            this.buttonCreateGroup = new System.Windows.Forms.Button();
+            this.buttonAddEnemy = new System.Windows.Forms.Button();
             this.buttonScale = new System.Windows.Forms.Button();
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
-            this.buttonAddStatic = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.texturesCombo = new System.Windows.Forms.ComboBox();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.propertiesPanel.SuspendLayout();
-            this.DefaultPage.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.BGColorButton = new System.Windows.Forms.Button();
+            this.addDefaultCamerasButton = new System.Windows.Forms.Button();
+            this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // propertiesPanel
+            // staticPropertiesPanel
             // 
-            this.propertiesPanel.Controls.Add(this.buttonResetPosition);
-            this.propertiesPanel.Controls.Add(this.buttonResetScale);
-            this.propertiesPanel.Controls.Add(this.buttonResetRotation);
-            this.propertiesPanel.Controls.Add(this.label6);
-            this.propertiesPanel.Controls.Add(this.label4);
-            this.propertiesPanel.Controls.Add(this.label3);
-            this.propertiesPanel.Controls.Add(this.textScaleY);
-            this.propertiesPanel.Controls.Add(this.label5);
-            this.propertiesPanel.Controls.Add(this.textScaleX);
-            this.propertiesPanel.Controls.Add(this.textRotZ);
-            this.propertiesPanel.Controls.Add(this.textRotY);
-            this.propertiesPanel.Controls.Add(this.label2);
-            this.propertiesPanel.Controls.Add(this.textRotX);
-            this.propertiesPanel.Controls.Add(this.textPosZ);
-            this.propertiesPanel.Controls.Add(this.textPosY);
-            this.propertiesPanel.Controls.Add(this.label1);
-            this.propertiesPanel.Controls.Add(this.textPosX);
-            this.propertiesPanel.Location = new System.Drawing.Point(970, 0);
-            this.propertiesPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.propertiesPanel.Name = "propertiesPanel";
-            this.propertiesPanel.Size = new System.Drawing.Size(310, 91);
-            this.propertiesPanel.TabIndex = 3;
+            this.staticPropertiesPanel.Controls.Add(this.colorButton);
+            this.staticPropertiesPanel.Controls.Add(this.colorB);
+            this.staticPropertiesPanel.Controls.Add(this.colorG);
+            this.staticPropertiesPanel.Controls.Add(this.label8);
+            this.staticPropertiesPanel.Controls.Add(this.colorA);
+            this.staticPropertiesPanel.Controls.Add(this.label7);
+            this.staticPropertiesPanel.Controls.Add(this.colorR);
+            this.staticPropertiesPanel.Controls.Add(this.buttonResetPosition);
+            this.staticPropertiesPanel.Controls.Add(this.buttonResetScale);
+            this.staticPropertiesPanel.Controls.Add(this.buttonResetRotation);
+            this.staticPropertiesPanel.Controls.Add(this.label6);
+            this.staticPropertiesPanel.Controls.Add(this.label4);
+            this.staticPropertiesPanel.Controls.Add(this.label3);
+            this.staticPropertiesPanel.Controls.Add(this.textScaleY);
+            this.staticPropertiesPanel.Controls.Add(this.label5);
+            this.staticPropertiesPanel.Controls.Add(this.textScaleX);
+            this.staticPropertiesPanel.Controls.Add(this.textRotZ);
+            this.staticPropertiesPanel.Controls.Add(this.label2);
+            this.staticPropertiesPanel.Controls.Add(this.textPosZ);
+            this.staticPropertiesPanel.Controls.Add(this.textPosY);
+            this.staticPropertiesPanel.Controls.Add(this.label1);
+            this.staticPropertiesPanel.Controls.Add(this.textPosX);
+            this.staticPropertiesPanel.Location = new System.Drawing.Point(552, 0);
+            this.staticPropertiesPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.staticPropertiesPanel.Name = "staticPropertiesPanel";
+            this.staticPropertiesPanel.Size = new System.Drawing.Size(601, 91);
+            this.staticPropertiesPanel.TabIndex = 3;
+            // 
+            // colorButton
+            // 
+            this.colorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorButton.Location = new System.Drawing.Point(438, 22);
+            this.colorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.colorButton.Name = "colorButton";
+            this.colorButton.Size = new System.Drawing.Size(40, 20);
+            this.colorButton.TabIndex = 31;
+            this.colorButton.Text = "Color";
+            this.colorButton.UseVisualStyleBackColor = true;
+            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
+            // 
+            // colorB
+            // 
+            this.colorB.Location = new System.Drawing.Point(404, 22);
+            this.colorB.Margin = new System.Windows.Forms.Padding(2);
+            this.colorB.Name = "colorB";
+            this.colorB.Size = new System.Drawing.Size(30, 20);
+            this.colorB.TabIndex = 30;
+            this.colorB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.colorB.Leave += new System.EventHandler(this.textChange);
+            // 
+            // colorG
+            // 
+            this.colorG.Location = new System.Drawing.Point(372, 22);
+            this.colorG.Margin = new System.Windows.Forms.Padding(2);
+            this.colorG.Name = "colorG";
+            this.colorG.Size = new System.Drawing.Size(30, 20);
+            this.colorG.TabIndex = 29;
+            this.colorG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.colorG.Leave += new System.EventHandler(this.textChange);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(305, 46);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Alpha";
+            // 
+            // colorA
+            // 
+            this.colorA.Location = new System.Drawing.Point(340, 46);
+            this.colorA.Margin = new System.Windows.Forms.Padding(2);
+            this.colorA.Name = "colorA";
+            this.colorA.Size = new System.Drawing.Size(30, 20);
+            this.colorA.TabIndex = 27;
+            this.colorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.colorA.Leave += new System.EventHandler(this.textChange);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(305, 26);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Color";
+            // 
+            // colorR
+            // 
+            this.colorR.Location = new System.Drawing.Point(340, 22);
+            this.colorR.Margin = new System.Windows.Forms.Padding(2);
+            this.colorR.Name = "colorR";
+            this.colorR.Size = new System.Drawing.Size(30, 20);
+            this.colorR.TabIndex = 25;
+            this.colorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
+            this.colorR.Leave += new System.EventHandler(this.textChange);
             // 
             // buttonResetPosition
             // 
@@ -193,23 +274,13 @@
             // 
             // textRotZ
             // 
-            this.textRotZ.Location = new System.Drawing.Point(184, 44);
+            this.textRotZ.Location = new System.Drawing.Point(55, 44);
             this.textRotZ.Margin = new System.Windows.Forms.Padding(2);
             this.textRotZ.Name = "textRotZ";
             this.textRotZ.Size = new System.Drawing.Size(62, 20);
             this.textRotZ.TabIndex = 7;
             this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             this.textRotZ.Leave += new System.EventHandler(this.textChange);
-            // 
-            // textRotY
-            // 
-            this.textRotY.Location = new System.Drawing.Point(119, 44);
-            this.textRotY.Margin = new System.Windows.Forms.Padding(2);
-            this.textRotY.Name = "textRotY";
-            this.textRotY.Size = new System.Drawing.Size(62, 20);
-            this.textRotY.TabIndex = 6;
-            this.textRotY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textRotY.Leave += new System.EventHandler(this.textChange);
             // 
             // label2
             // 
@@ -220,16 +291,6 @@
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Rotation";
-            // 
-            // textRotX
-            // 
-            this.textRotX.Location = new System.Drawing.Point(55, 44);
-            this.textRotX.Margin = new System.Windows.Forms.Padding(2);
-            this.textRotX.Name = "textRotX";
-            this.textRotX.Size = new System.Drawing.Size(62, 20);
-            this.textRotX.TabIndex = 4;
-            this.textRotX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textRotX.Leave += new System.EventHandler(this.textChange);
             // 
             // textPosZ
             // 
@@ -271,81 +332,32 @@
             this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             this.textPosX.Leave += new System.EventHandler(this.textChange);
             // 
-            // DefaultPage
-            // 
-            this.DefaultPage.Controls.Add(this.canSelectPlayer);
-            this.DefaultPage.Controls.Add(this.buttonCreateGroup);
-            this.DefaultPage.Controls.Add(this.selectGroup);
-            this.DefaultPage.Controls.Add(this.buttonImportLevel);
-            this.DefaultPage.Controls.Add(this.canSelectEnemy);
-            this.DefaultPage.Controls.Add(this.canSelectAnimated);
-            this.DefaultPage.Controls.Add(this.canSelectStatic);
-            this.DefaultPage.Controls.Add(this.buttonAddEnemy);
-            this.DefaultPage.Controls.Add(this.buttonSaveLevel);
-            this.DefaultPage.Controls.Add(this.buttonLoadLevel);
-            this.DefaultPage.Controls.Add(this.buttonAddAnimated);
-            this.DefaultPage.Controls.Add(this.buttonScale);
-            this.DefaultPage.Controls.Add(this.buttonRotate);
-            this.DefaultPage.Controls.Add(this.buttonMove);
-            this.DefaultPage.Controls.Add(this.buttonAddStatic);
-            this.DefaultPage.Location = new System.Drawing.Point(4, 22);
-            this.DefaultPage.Name = "DefaultPage";
-            this.DefaultPage.Padding = new System.Windows.Forms.Padding(3);
-            this.DefaultPage.Size = new System.Drawing.Size(960, 34);
-            this.DefaultPage.TabIndex = 0;
-            this.DefaultPage.Text = "Default";
-            this.DefaultPage.UseVisualStyleBackColor = true;
-            // 
             // canSelectPlayer
             // 
             this.canSelectPlayer.AutoSize = true;
-            this.canSelectPlayer.Location = new System.Drawing.Point(755, 11);
+            this.canSelectPlayer.Location = new System.Drawing.Point(442, 70);
             this.canSelectPlayer.Name = "canSelectPlayer";
             this.canSelectPlayer.Size = new System.Drawing.Size(54, 17);
             this.canSelectPlayer.TabIndex = 14;
             this.canSelectPlayer.Text = "player";
             this.canSelectPlayer.UseVisualStyleBackColor = true;
             // 
-            // buttonCreateGroup
-            // 
-            this.buttonCreateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateGroup.Location = new System.Drawing.Point(500, 6);
-            this.buttonCreateGroup.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonCreateGroup.Name = "buttonCreateGroup";
-            this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
-            this.buttonCreateGroup.TabIndex = 13;
-            this.buttonCreateGroup.Text = "Create Group";
-            this.buttonCreateGroup.UseVisualStyleBackColor = true;
-            this.buttonCreateGroup.Click += new System.EventHandler(this.buttonCreateGroup_Click);
-            // 
             // selectGroup
             // 
             this.selectGroup.AutoSize = true;
-            this.selectGroup.Location = new System.Drawing.Point(815, 11);
+            this.selectGroup.Location = new System.Drawing.Point(383, 70);
             this.selectGroup.Name = "selectGroup";
             this.selectGroup.Size = new System.Drawing.Size(53, 17);
             this.selectGroup.TabIndex = 12;
             this.selectGroup.Text = "group";
             this.selectGroup.UseVisualStyleBackColor = true;
             // 
-            // buttonImportLevel
-            // 
-            this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImportLevel.Location = new System.Drawing.Point(390, 6);
-            this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonImportLevel.Name = "buttonImportLevel";
-            this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonImportLevel.TabIndex = 11;
-            this.buttonImportLevel.Text = "Import Level";
-            this.buttonImportLevel.UseVisualStyleBackColor = true;
-            this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
-            // 
             // canSelectEnemy
             // 
             this.canSelectEnemy.AutoSize = true;
             this.canSelectEnemy.Checked = true;
             this.canSelectEnemy.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectEnemy.Location = new System.Drawing.Point(691, 11);
+            this.canSelectEnemy.Location = new System.Drawing.Point(136, 74);
             this.canSelectEnemy.Name = "canSelectEnemy";
             this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
             this.canSelectEnemy.TabIndex = 10;
@@ -357,7 +369,7 @@
             this.canSelectAnimated.AutoSize = true;
             this.canSelectAnimated.Checked = true;
             this.canSelectAnimated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectAnimated.Location = new System.Drawing.Point(615, 11);
+            this.canSelectAnimated.Location = new System.Drawing.Point(63, 74);
             this.canSelectAnimated.Name = "canSelectAnimated";
             this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
             this.canSelectAnimated.TabIndex = 9;
@@ -369,33 +381,33 @@
             this.canSelectStatic.AutoSize = true;
             this.canSelectStatic.Checked = true;
             this.canSelectStatic.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.canSelectStatic.Location = new System.Drawing.Point(556, 11);
+            this.canSelectStatic.Location = new System.Drawing.Point(5, 74);
             this.canSelectStatic.Name = "canSelectStatic";
             this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
             this.canSelectStatic.TabIndex = 8;
             this.canSelectStatic.Text = "Static";
             this.canSelectStatic.UseVisualStyleBackColor = true;
             // 
-            // buttonAddEnemy
+            // buttonImportLevel
             // 
-            this.buttonAddEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddEnemy.Location = new System.Drawing.Point(281, 5);
-            this.buttonAddEnemy.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddEnemy.Name = "buttonAddEnemy";
-            this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddEnemy.TabIndex = 7;
-            this.buttonAddEnemy.Text = "Add Enemy";
-            this.buttonAddEnemy.UseVisualStyleBackColor = true;
-            this.buttonAddEnemy.Click += new System.EventHandler(this.button_Click);
+            this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonImportLevel.Location = new System.Drawing.Point(247, 2);
+            this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonImportLevel.Name = "buttonImportLevel";
+            this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonImportLevel.TabIndex = 29;
+            this.buttonImportLevel.Text = "Import Level";
+            this.buttonImportLevel.UseVisualStyleBackColor = true;
+            this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
             // 
             // buttonSaveLevel
             // 
             this.buttonSaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveLevel.Location = new System.Drawing.Point(445, 6);
+            this.buttonSaveLevel.Location = new System.Drawing.Point(302, 2);
             this.buttonSaveLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveLevel.Name = "buttonSaveLevel";
             this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonSaveLevel.TabIndex = 6;
+            this.buttonSaveLevel.TabIndex = 28;
             this.buttonSaveLevel.Text = "Save Level";
             this.buttonSaveLevel.UseVisualStyleBackColor = true;
             this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevel_Click);
@@ -403,11 +415,11 @@
             // buttonLoadLevel
             // 
             this.buttonLoadLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoadLevel.Location = new System.Drawing.Point(336, 5);
+            this.buttonLoadLevel.Location = new System.Drawing.Point(192, 2);
             this.buttonLoadLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadLevel.Name = "buttonLoadLevel";
             this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
-            this.buttonLoadLevel.TabIndex = 5;
+            this.buttonLoadLevel.TabIndex = 27;
             this.buttonLoadLevel.Text = "Load Level";
             this.buttonLoadLevel.UseVisualStyleBackColor = true;
             this.buttonLoadLevel.Click += new System.EventHandler(this.buttonLoadLevel_Click);
@@ -415,23 +427,59 @@
             // buttonAddAnimated
             // 
             this.buttonAddAnimated.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddAnimated.Location = new System.Drawing.Point(226, 5);
+            this.buttonAddAnimated.Location = new System.Drawing.Point(72, 36);
             this.buttonAddAnimated.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddAnimated.Name = "buttonAddAnimated";
             this.buttonAddAnimated.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddAnimated.TabIndex = 4;
+            this.buttonAddAnimated.TabIndex = 26;
             this.buttonAddAnimated.Text = "Add Animated Prop";
             this.buttonAddAnimated.UseVisualStyleBackColor = true;
             this.buttonAddAnimated.Click += new System.EventHandler(this.button_Click);
             // 
+            // buttonAddStatic
+            // 
+            this.buttonAddStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddStatic.Location = new System.Drawing.Point(7, 36);
+            this.buttonAddStatic.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddStatic.Name = "buttonAddStatic";
+            this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddStatic.TabIndex = 25;
+            this.buttonAddStatic.Text = "Add Static Prop";
+            this.buttonAddStatic.UseVisualStyleBackColor = true;
+            this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
+            // 
+            // buttonCreateGroup
+            // 
+            this.buttonCreateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateGroup.Location = new System.Drawing.Point(385, 36);
+            this.buttonCreateGroup.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonCreateGroup.Name = "buttonCreateGroup";
+            this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
+            this.buttonCreateGroup.TabIndex = 24;
+            this.buttonCreateGroup.Text = "Create Group";
+            this.buttonCreateGroup.UseVisualStyleBackColor = true;
+            this.buttonCreateGroup.Click += new System.EventHandler(this.buttonCreateGroup_Click);
+            // 
+            // buttonAddEnemy
+            // 
+            this.buttonAddEnemy.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddEnemy.Location = new System.Drawing.Point(136, 36);
+            this.buttonAddEnemy.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddEnemy.Name = "buttonAddEnemy";
+            this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
+            this.buttonAddEnemy.TabIndex = 23;
+            this.buttonAddEnemy.Text = "Add Enemy";
+            this.buttonAddEnemy.UseVisualStyleBackColor = true;
+            this.buttonAddEnemy.Click += new System.EventHandler(this.button_Click);
+            // 
             // buttonScale
             // 
             this.buttonScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonScale.Location = new System.Drawing.Point(116, 5);
+            this.buttonScale.Location = new System.Drawing.Point(136, 2);
             this.buttonScale.Margin = new System.Windows.Forms.Padding(2);
             this.buttonScale.Name = "buttonScale";
             this.buttonScale.Size = new System.Drawing.Size(51, 28);
-            this.buttonScale.TabIndex = 3;
+            this.buttonScale.TabIndex = 22;
             this.buttonScale.Tag = "";
             this.buttonScale.Text = "Scale";
             this.buttonScale.UseVisualStyleBackColor = true;
@@ -440,11 +488,11 @@
             // buttonRotate
             // 
             this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRotate.Location = new System.Drawing.Point(61, 5);
+            this.buttonRotate.Location = new System.Drawing.Point(72, 2);
             this.buttonRotate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonRotate.Name = "buttonRotate";
             this.buttonRotate.Size = new System.Drawing.Size(51, 28);
-            this.buttonRotate.TabIndex = 2;
+            this.buttonRotate.TabIndex = 21;
             this.buttonRotate.Tag = "";
             this.buttonRotate.Text = "Rotate";
             this.buttonRotate.UseVisualStyleBackColor = true;
@@ -453,42 +501,20 @@
             // buttonMove
             // 
             this.buttonMove.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMove.Location = new System.Drawing.Point(5, 5);
+            this.buttonMove.Location = new System.Drawing.Point(7, 2);
             this.buttonMove.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(51, 28);
-            this.buttonMove.TabIndex = 1;
+            this.buttonMove.TabIndex = 20;
             this.buttonMove.Tag = "";
             this.buttonMove.Text = "Move";
             this.buttonMove.UseVisualStyleBackColor = true;
             this.buttonMove.Click += new System.EventHandler(this.button_Click);
             // 
-            // buttonAddStatic
-            // 
-            this.buttonAddStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddStatic.Location = new System.Drawing.Point(171, 5);
-            this.buttonAddStatic.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddStatic.Name = "buttonAddStatic";
-            this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
-            this.buttonAddStatic.TabIndex = 0;
-            this.buttonAddStatic.Text = "Add Static Prop";
-            this.buttonAddStatic.UseVisualStyleBackColor = true;
-            this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.DefaultPage);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(968, 60);
-            this.tabControl1.TabIndex = 1;
-            // 
             // texturesCombo
             // 
             this.texturesCombo.FormattingEnabled = true;
-            this.texturesCombo.Location = new System.Drawing.Point(759, 66);
+            this.texturesCombo.Location = new System.Drawing.Point(192, 39);
             this.texturesCombo.Name = "texturesCombo";
             this.texturesCombo.Size = new System.Drawing.Size(183, 21);
             this.texturesCombo.TabIndex = 4;
@@ -504,26 +530,64 @@
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
+            // BGColorButton
+            // 
+            this.BGColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BGColorButton.Location = new System.Drawing.Point(385, 2);
+            this.BGColorButton.Margin = new System.Windows.Forms.Padding(2);
+            this.BGColorButton.Name = "BGColorButton";
+            this.BGColorButton.Size = new System.Drawing.Size(51, 28);
+            this.BGColorButton.TabIndex = 30;
+            this.BGColorButton.Text = "BG Color";
+            this.BGColorButton.UseVisualStyleBackColor = true;
+            this.BGColorButton.Click += new System.EventHandler(this.BGColorButton_Click);
+            // 
+            // addDefaultCamerasButton
+            // 
+            this.addDefaultCamerasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDefaultCamerasButton.Location = new System.Drawing.Point(462, 2);
+            this.addDefaultCamerasButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addDefaultCamerasButton.Name = "addDefaultCamerasButton";
+            this.addDefaultCamerasButton.Size = new System.Drawing.Size(60, 28);
+            this.addDefaultCamerasButton.TabIndex = 31;
+            this.addDefaultCamerasButton.Text = "Add Default Cameras";
+            this.addDefaultCamerasButton.UseVisualStyleBackColor = true;
+            this.addDefaultCamerasButton.Click += new System.EventHandler(this.addDefaultCamerasButton_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.addDefaultCamerasButton);
+            this.Controls.Add(this.BGColorButton);
             this.Controls.Add(this.texturesCombo);
-            this.Controls.Add(this.propertiesPanel);
+            this.Controls.Add(this.selectGroup);
+            this.Controls.Add(this.canSelectPlayer);
+            this.Controls.Add(this.buttonImportLevel);
+            this.Controls.Add(this.buttonSaveLevel);
+            this.Controls.Add(this.canSelectEnemy);
+            this.Controls.Add(this.buttonLoadLevel);
+            this.Controls.Add(this.canSelectAnimated);
+            this.Controls.Add(this.buttonAddAnimated);
+            this.Controls.Add(this.canSelectStatic);
+            this.Controls.Add(this.buttonAddStatic);
+            this.Controls.Add(this.buttonCreateGroup);
+            this.Controls.Add(this.buttonAddEnemy);
+            this.Controls.Add(this.buttonScale);
+            this.Controls.Add(this.buttonRotate);
+            this.Controls.Add(this.buttonMove);
+            this.Controls.Add(this.staticPropertiesPanel);
             this.Controls.Add(this.myEditorControl);
-            this.Controls.Add(this.tabControl1);
             this.Name = "MyEditor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyEditor";
-            this.propertiesPanel.ResumeLayout(false);
-            this.propertiesPanel.PerformLayout();
-            this.DefaultPage.ResumeLayout(false);
-            this.DefaultPage.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.staticPropertiesPanel.ResumeLayout(false);
+            this.staticPropertiesPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -535,12 +599,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Panel propertiesPanel;
+        public System.Windows.Forms.Panel staticPropertiesPanel;
         public System.Windows.Forms.TextBox textScaleY;
         public System.Windows.Forms.TextBox textScaleX;
         public System.Windows.Forms.TextBox textRotZ;
-        public System.Windows.Forms.TextBox textRotY;
-        public System.Windows.Forms.TextBox textRotX;
         public System.Windows.Forms.TextBox textPosZ;
         public System.Windows.Forms.TextBox textPosY;
         public System.Windows.Forms.TextBox textPosX;
@@ -548,23 +610,31 @@
         private System.Windows.Forms.Button buttonResetPosition;
         private System.Windows.Forms.Button buttonResetScale;
         private System.Windows.Forms.Button buttonResetRotation;
-        private System.Windows.Forms.TabPage DefaultPage;
-        private System.Windows.Forms.Button buttonAddEnemy;
-        private System.Windows.Forms.Button buttonSaveLevel;
-        private System.Windows.Forms.Button buttonLoadLevel;
-        private System.Windows.Forms.Button buttonAddAnimated;
-        private System.Windows.Forms.Button buttonScale;
-        private System.Windows.Forms.Button buttonRotate;
-        private System.Windows.Forms.Button buttonMove;
-        private System.Windows.Forms.Button buttonAddStatic;
-        private System.Windows.Forms.TabControl tabControl1;
         public System.Windows.Forms.CheckBox canSelectEnemy;
         public System.Windows.Forms.CheckBox canSelectAnimated;
         public System.Windows.Forms.CheckBox canSelectStatic;
-        private System.Windows.Forms.Button buttonImportLevel;
         public System.Windows.Forms.CheckBox selectGroup;
-        private System.Windows.Forms.Button buttonCreateGroup;
         public System.Windows.Forms.CheckBox canSelectPlayer;
+        private System.Windows.Forms.Button buttonImportLevel;
+        private System.Windows.Forms.Button buttonSaveLevel;
+        private System.Windows.Forms.Button buttonLoadLevel;
+        private System.Windows.Forms.Button buttonAddAnimated;
+        private System.Windows.Forms.Button buttonAddStatic;
+        private System.Windows.Forms.Button buttonCreateGroup;
+        private System.Windows.Forms.Button buttonAddEnemy;
+        private System.Windows.Forms.Button buttonScale;
+        private System.Windows.Forms.Button buttonRotate;
+        private System.Windows.Forms.Button buttonMove;
         public System.Windows.Forms.ComboBox texturesCombo;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox colorA;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox colorR;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        public System.Windows.Forms.TextBox colorB;
+        public System.Windows.Forms.TextBox colorG;
+        private System.Windows.Forms.Button colorButton;
+        private System.Windows.Forms.Button BGColorButton;
+        private System.Windows.Forms.Button addDefaultCamerasButton;
     }
 }
