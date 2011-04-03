@@ -43,8 +43,8 @@ namespace MyGame
 
         public override void render()
         {
-            SB.graphicsDevice.Clear(Color.White);
-            SB.beginAlphaRender();
+            GraphicsManager.Instance.graphicsDevice.Clear(Color.White);
+            //GraphicsManager.Instance.beginAlphaRender();
             logo.render(new Vector2(0,0), 0);
         }
 

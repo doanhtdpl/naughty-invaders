@@ -74,7 +74,7 @@ namespace MyGame
 
             basicEffect.Techniques[0].Passes[0].Apply();
 
-            SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+            GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                 PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
 
@@ -89,7 +89,7 @@ namespace MyGame
 
             basicEffect.Techniques[0].Passes[0].Apply();
 
-            SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+            GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                 PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
 
@@ -107,7 +107,7 @@ namespace MyGame
 
             basicEffect.Techniques[0].Passes[0].Apply();
 
-            SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+            GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                 PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
         public void render(Vector2 position, float height, Vector2 rotationPoint, float rotation)
@@ -115,7 +115,7 @@ namespace MyGame
             bfx_texture.SetValue(texture);
             bWVP_param.SetValue(SB.getWVP(position, rotationPoint, rotation, gameSize, height));
             basicEffect.Techniques[0].Passes[0].Apply();
-            SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+            GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                 PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
         public void alphaRender(Vector2 position, float rotation, float alpha, float Zrender)
@@ -130,7 +130,7 @@ namespace MyGame
 
             alphaEffect.Techniques[0].Passes[0].Apply();
 
-            SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+            GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                 PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
         #endregion

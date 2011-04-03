@@ -11,8 +11,6 @@ namespace MyGame
 {
     class StateGame : GameState
     {
-        GUI gui = new GUI();
-
         #if EDITOR
         bool gameRunning = false;
         bool keyPPressed = false;
@@ -43,17 +41,16 @@ namespace MyGame
         {
             if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.B_pressed())
             {
-                SB.graphicsDevice.Clear(new Color(0, 0, 0));
+                GraphicsManager.Instance.graphicsDevice.Clear(new Color(0, 0, 0));
             }
             else
             {
-                SB.graphicsDevice.Clear(new Color(79, 98, 37));
+                GraphicsManager.Instance.graphicsDevice.Clear(new Color(79, 98, 37));
             }
-            SB.beginRender();
             EntityManager.Instance.render();
             LevelManager.Instance.render();
             DebugManager.Instance.render();
-            gui.render();
+            GUIManager.Instance.render();
 
             DebugManager.Instance.render();
         }
@@ -85,7 +82,7 @@ namespace MyGame
                 ParticleManager.Instance.update();
                 OrbManager.Instance.update();
                 CameraManager.Instance.update();
-                gui.update();
+                GUIManager.Instance.update();
 
 #if EDITOR
             }

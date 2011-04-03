@@ -71,7 +71,7 @@ namespace MyGame
                         mouseInSetaZero = p1 + new Vector3(-gridSpacing / 2, -gridSpacing / 2, 0.0f);
                     }
                 }
-                Vector3 aux = SB.graphicsDevice.Viewport.Project(new Vector3(mouseInSetaZero.X, mouseInSetaZero.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                Vector3 aux = GraphicsManager.Instance.graphicsDevice.Viewport.Project(new Vector3(mouseInSetaZero.X, mouseInSetaZero.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
                 gameScreenPos.X = aux.X;
                 gameScreenPos.Y = aux.Y;
             }
@@ -101,8 +101,8 @@ namespace MyGame
 
         public Vector3 getMousePosInZ(Vector2 mousePos, float z = 0.0f)
         {
-            Vector3 near = SB.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-            Vector3 far = SB.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 near = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 far = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
             Vector3 normal = new Vector3(0, 0, -1);
 
             float u = Vector3.Dot(normal, new Vector3(0.0f, 0.0f, z) - near) / Vector3.Dot(normal, far - near);
@@ -150,7 +150,7 @@ namespace MyGame
                     {
                         foreach (Entity2D e in EnemyManager.Instance.getEnemies())
                         {
-                            Vector3 pos = SB.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
                             if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                             {
                                 MyEditor.Instance.getSelectedEntities().Add(e);
@@ -161,7 +161,7 @@ namespace MyGame
                     {
                         foreach (Entity2D e in LevelManager.Instance.getAnimatedProps())
                         {
-                            Vector3 pos = SB.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
                             if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                             {
                                 MyEditor.Instance.getSelectedEntities().Add(e);
@@ -172,7 +172,7 @@ namespace MyGame
                     {
                         foreach (Entity2D e in LevelManager.Instance.getStaticProps())
                         {
-                            Vector3 pos = SB.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
                             if (MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                             {
                                 MyEditor.Instance.getSelectedEntities().Add(e);
@@ -183,7 +183,7 @@ namespace MyGame
                     {
                         foreach (GamerEntity e in GamerManager.getGamerEntities())
                         {
-                            Vector3 pos = SB.graphicsDevice.Viewport.Project(e.Player.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.Player.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
                             if (MyEditor.Instance.getSelectedEntities().IndexOf(e.Player) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                             {
                                 MyEditor.Instance.getSelectedEntities().Add(e.Player);

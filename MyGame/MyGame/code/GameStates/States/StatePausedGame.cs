@@ -39,7 +39,7 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Begin();
             TextKey.Pause.Translate().render(
                     Screen.getXYfromCenter(new Vector2(0, 125)), 1.4f, Color.Black, StringManager.tTextAlignment.Centered,
                     SB.font, 1000, 0, Color.White, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
@@ -49,7 +49,7 @@ namespace MyGame
             TextKey.PressBToMenu.Translate().render(
                     Screen.getXYfromCenter(new Vector2(0, -25)), 1.1f, Color.Red, StringManager.tTextAlignment.Centered,
                     SB.font, 1000, 0, Color.Black, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

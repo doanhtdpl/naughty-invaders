@@ -48,13 +48,13 @@ namespace MyGame
                     alpha = 1;
                 }
                 string str = "You got an imaginary achievement!";
-                SB.spriteBatch.Begin();
+                GraphicsManager.Instance.spriteBatch.Begin();
                 str.renderSC(new Vector2(0, renderPositionY), 1.0f,
                     Color.White, Color.Black, StringManager.tTextAlignment.Centered);
                 str = toRenderAchievements[0].achievement.message + " - " + toRenderAchievements[0].achievement.points.ToString() + " imaginary points";
                 str.renderSC(new Vector2(0, renderPositionY -50), 0.9f,
                     Color.White, Color.Black, StringManager.tTextAlignment.Centered);
-                SB.spriteBatch.End();
+                GraphicsManager.Instance.spriteBatch.End();
             }
         }
     }

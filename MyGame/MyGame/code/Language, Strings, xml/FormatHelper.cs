@@ -50,6 +50,35 @@ namespace MyGame
             string[] values = str.Split(' ');
             return new Vector3(values[0].toFloat(), values[1].toFloat(), values[2].toFloat());
         }
+        // transforms an integer (number of seconds) to the format "1:44"
+        public static string toTimeString(this int timeInSeconds)
+        {
+            // si es menos de un segundo devolvemos 0
+            if (timeInSeconds < 1000)
+                return "0";
+            // si es menos que 10 segundos, devolvemos el primer número, que representa los segundos
+            if (timeInSeconds < 10000)
+                return timeInSeconds.ToString()[0].ToString();
+
+            string t = timeInSeconds.ToString();
+            // pasamos de milisegundos a segundos
+            t = t.Remove(t.Length - 3, 3);
+            timeInSeconds = int.Parse(t);
+            if (timeInSeconds > 59)
+            {
+                int aux = timeInSeconds / 60;
+                int aux2 = timeInSeconds % 60;
+                // si quedan menos de 10 segundos para acabar el minuto actual, tenemos que pintar un cero para no confundir
+                if (aux2 < 10)
+                    return aux.ToString() + ":0" + aux2.ToString();
+                else
+                    return aux.ToString() + ":" + aux2.ToString();
+            }
+            else
+            {
+                return timeInSeconds.ToString();
+            }
+        }
         public static Color toColor(this string str)
         {
             string[] values = str.Split(' ');

@@ -75,8 +75,8 @@ namespace MyGame
             // Use Viewport. Unproject to tell what those two screen space positions would be in world space. 
             // We'll need the projection matrix and view matrix, which we have saved as member variables. 
             // We also need a world matrix, which can just be identity.
-            Vector3 nearPoint = SB.graphicsDevice.Viewport.Unproject(nearSource, Camera2D.projection, Camera2D.view, Matrix.Identity);
-            Vector3 farPoint = SB.graphicsDevice.Viewport.Unproject(farSource, Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 nearPoint = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(nearSource, Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 farPoint = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(farSource, Camera2D.projection, Camera2D.view, Matrix.Identity);
 
             // Find the direction vector that goes from the nearPoint to the farPoint and normalize it...
             Vector3 direction = farPoint - nearPoint;

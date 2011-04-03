@@ -60,6 +60,9 @@ namespace MyGame
                         data.type = ParticleSystemData.tParticleSystem.Fountain;
                     break;
                 }
+                string render = bps.Attribute("render").Value;
+                bool additive = render == "additive";
+
                 string path = bps.Attribute("texturePath").Value;
                 data.texture = TextureManager.Instance.getTexture("particles/" + path);
                 data.nParticles = bps.Attribute("nParticles").Value.toInt();
@@ -86,6 +89,14 @@ namespace MyGame
                 data.fadeIn = bps.Attribute("fadeIn").Value.toFloat();
                 data.fadeOut = bps.Attribute("fadeOut").Value.toFloat();
                 data.particlesLife = bps.Attribute("particlesLife").Value.toFloat();
+
+                // we are using premultiplied alpha so in order to render those particles in additive mode we need to set alpha to 0
+                if (additive)
+                {
+                    data.color.A = 0;
+                    data.colorVarianceMin.A = 0;
+                    data.colorVarianceMax.A = 0;
+                }
 
                 //SB::ownAssert(info.fadeIn + info.fadeOut <= info.particlesLife);
                 //SB::ownAssert(info.positionVarianceMin.x <= info.positionVarianceMax.x);

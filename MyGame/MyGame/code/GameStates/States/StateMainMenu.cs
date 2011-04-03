@@ -24,7 +24,6 @@ namespace MyGame
         public override void initialize()
         {
             type = StateManager.tGS.Menu;
-            SB.initializeRender();
             initializeMenu();
             SoundManager.playMusic("menuSong");
         }
@@ -57,10 +56,10 @@ namespace MyGame
 
         public override void render()
         {
-            SB.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Begin();
             menu.render();
             GamerManager.renderTrialMessage(new Vector2(0, -190), 1.3f);
-            SB.spriteBatch.End();
+            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()

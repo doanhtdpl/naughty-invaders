@@ -46,7 +46,7 @@ namespace MyGame
 
         public Texture2D getColoredTexture(Color color)
         {
-            Texture2D tex = new Texture2D(SB.graphicsDevice, 1, 1);
+            Texture2D tex = new Texture2D(GraphicsManager.Instance.graphicsDevice, 1, 1);
             Color[] data = new Color[1];
             data[0] = color;
             tex.SetData<Color>(data);

@@ -46,6 +46,8 @@ namespace MyGame
                     this.color = Color.Blue;
                     break;
             }
+            // as we want additive rendering for orbs and we have premultiplied alpha, set alpha to 0
+            this.color.A = 0;
         }
     };
 }

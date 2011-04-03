@@ -68,8 +68,8 @@ namespace MyGame
         public void render(bool mirrored, Vector2 position, Vector2 rotationPoint, float rotation)
         {
             // inicializamos texturas y variables
-            SB.graphicsDevice.Textures[0] = texture;
-            SB.graphicsDevice.Textures[1] = normalmap;
+            GraphicsManager.Instance.graphicsDevice.Textures[0] = texture;
+            GraphicsManager.Instance.graphicsDevice.Textures[1] = normalmap;
             W_param.SetValue(SB.getWorldMatrix(position.X, position.Y, Zrender, rotationPoint, rotation, gameSize));
             WVP_param.SetValue(SB.getRotationWVP(position.X, position.Y, Zrender, rotationPoint, rotation, gameSize));
             fx_rotation.SetValue(rotation);
@@ -77,10 +77,10 @@ namespace MyGame
             // preparamos el efecto y la técnica
             lightEffect.CurrentTechnique.Passes[0].Apply();
             if (mirrored)
-                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+                GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                     PrimitiveType.TriangleList, vertexMirror, 0, 4, index, 0, 2);
             else
-                SB.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
+                GraphicsManager.Instance.graphicsDevice.DrawUserIndexedPrimitives<VertexPositionColorTexture>(
                     PrimitiveType.TriangleList, vertex, 0, 4, index, 0, 2);
         }
     }

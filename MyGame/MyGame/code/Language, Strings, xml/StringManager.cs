@@ -42,14 +42,14 @@ namespace MyGame
             {
                 if (texture != null)
                 {
-                    SB.spriteBatch.Draw(texture, position + offset, null, Color.White, 0, Vector2.Zero, scale, SpriteEffects.None, 0);
+                    GraphicsManager.Instance.spriteBatch.Draw(texture, position + offset, null, Color.White, 0, Vector2.Zero, scale, SpriteEffects.None, 0);
                 }
                 else
                 {
                     switch (textStyle)
                     {
                         case tStyle.Normal:
-                            SB.spriteBatch.DrawString(textFont, str, position + offset, new Color(textColor.R, textColor.G, textColor.B, textAlpha), 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+                            GraphicsManager.Instance.spriteBatch.DrawString(textFont, str, position + offset, new Color(textColor.R, textColor.G, textColor.B, textAlpha), 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
                             break;
                         case tStyle.Border:
                             drawSurroundedString(str, position + offset, textColor, textShadowColor, textScale, textAlpha);
@@ -189,7 +189,7 @@ namespace MyGame
                         sizeX = 0;
                         firstElementInLine = i;
                     }
-                    //SB.spriteBatch.Draw(st.texture, new Vector2(position.X + sizeX, position.Y - st.getHeight() * scale * 0.5f + halfFontHeight), null, Color.White, 0, Vector2.Zero, scale * st.scale, SpriteEffects.None, 0);
+                    //GraphicsManager.Instance.spriteBatch.Draw(st.texture, new Vector2(position.X + sizeX, position.Y - st.getHeight() * scale * 0.5f + halfFontHeight), null, Color.White, 0, Vector2.Zero, scale * st.scale, SpriteEffects.None, 0);
                     textElements[i].initialize(st.texture, new Vector2(position.X + sizeX, position.Y - st.getHeight() * scale * 0.5f + halfFontHeight), scale * st.scale);
                     sizeX += st.getWidth() * scale + spaceWidth;                    
                 }
@@ -203,7 +203,7 @@ namespace MyGame
                         sizeX = 0;
                         firstElementInLine = i;
                     }      
-                    //SB.spriteBatch.DrawString(font, strToRender[i], new Vector2(position.X + sizeX, position.Y), color, 0, Vector2.Zero, scale, SpriteEffects.None, 0);
+                    //GraphicsManager.Instance.spriteBatch.DrawString(font, strToRender[i], new Vector2(position.X + sizeX, position.Y), color, 0, Vector2.Zero, scale, SpriteEffects.None, 0);
                     textElements[i].initialize(strToRender[i], new Vector2(position.X + sizeX, position.Y));
                     sizeX += sizeToAdd;      
                 }
@@ -247,16 +247,16 @@ namespace MyGame
 
         public static void drawSurroundedString(String text, Vector2 position, Color primal, Color shadow, float scale, float alpha)
         {
-            SB.spriteBatch.DrawString(SB.font, text, position - textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            SB.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            SB.spriteBatch.DrawString(SB.font, text, position + new Vector2(-textBorder.X, textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            SB.spriteBatch.DrawString(SB.font, text, position + new Vector2(textBorder.X, -textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            SB.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position - textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(-textBorder.X, textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(textBorder.X, -textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
         }
         public static void drawShadowedString(String text, Vector2 position, Color primal, Color shadow, float scale, float alpha)
         {
-            SB.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            SB.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
         }
     }
 

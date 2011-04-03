@@ -120,6 +120,7 @@ namespace MyGame
 
             Vector2 direction = Vector2.Zero;
             position += CameraManager.Instance.getCameraVelocityXY();
+
             if (dashVelocity != Vector2.Zero)
             {
                 dashParticleTimer -= SB.dt;
@@ -135,7 +136,7 @@ namespace MyGame
                     dashVelocity = Vector2.Zero;
                 }
             }
-            else
+            else // in the middle of a dash the controls are blocked...
             {
                 direction = controls.LS;
             }
@@ -192,7 +193,7 @@ namespace MyGame
                         p.damage *= bigShotValue;
                         ProjectileManager.Instance.addProjectile(p);
                         ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
-                            bigShotValue, (int)(10 * bigShotValue), bigShotValue);
+                            bigShotValue * 0.6f, (int)(20 * bigShotValue), bigShotValue);
 
                         bigShotCooldownTime = p.cooldown;
                         bigShotChargeTimer = 0.0f;
