@@ -443,61 +443,117 @@ namespace MyGame
         #region Bumpers
         public bool RB_pressed()
         {
-            return (currentState.Buttons.RightShoulder == ButtonState.Pressed);
+            return (currentState.Buttons.RightShoulder == ButtonState.Pressed)
+#if DEBUG
+ || kbCurrentState.IsKeyDown(Keys.V)
+#endif
+                ;
         }
         public bool RB_firstPressed()
         {
-            return (currentState.Buttons.RightShoulder == ButtonState.Pressed && lastState.Buttons.RightShoulder == ButtonState.Released);
+            return (currentState.Buttons.RightShoulder == ButtonState.Pressed && lastState.Buttons.RightShoulder == ButtonState.Released)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.V) && kbLastState.IsKeyUp(Keys.V))
+#endif
+                ;
         }
         public bool RB_firstReleased()
         {
-            return (currentState.Buttons.RightShoulder == ButtonState.Released && lastState.Buttons.RightShoulder == ButtonState.Pressed);
+            return (currentState.Buttons.RightShoulder == ButtonState.Released && lastState.Buttons.RightShoulder == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.V) && kbLastState.IsKeyDown(Keys.V))
+#endif
+                ;
         }
         public bool RB_released()
         {
-            return (currentState.Buttons.RightShoulder == ButtonState.Released);
+            return (currentState.Buttons.RightShoulder == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.V)
+#endif
+                ;
         }
         public bool LB_pressed()
         {
-            return (currentState.Buttons.LeftShoulder == ButtonState.Pressed);
+            return (currentState.Buttons.LeftShoulder == ButtonState.Pressed)
+#if DEBUG
+ || kbCurrentState.IsKeyDown(Keys.C)
+#endif
+                ;
         }
         public bool LB_firstPressed()
         {
-            return (currentState.Buttons.LeftShoulder == ButtonState.Pressed && lastState.Buttons.LeftShoulder == ButtonState.Released);
+            return (currentState.Buttons.LeftShoulder == ButtonState.Pressed && lastState.Buttons.LeftShoulder == ButtonState.Released)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.C) && kbLastState.IsKeyUp(Keys.C))
+#endif
+                ;
         }
         public bool LB_firstReleased()
         {
-            return (currentState.Buttons.LeftShoulder == ButtonState.Released && lastState.Buttons.LeftShoulder == ButtonState.Pressed);
+            return (currentState.Buttons.LeftShoulder == ButtonState.Released && lastState.Buttons.LeftShoulder == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.C) && kbLastState.IsKeyDown(Keys.C))
+#endif
+                ;
         }
         public bool LB_released()
         {
-            return (currentState.Buttons.LeftShoulder == ButtonState.Released);
+            return (currentState.Buttons.LeftShoulder == ButtonState.Released)
+#if DEBUG
+ || kbCurrentState.IsKeyUp(Keys.C)
+#endif
+                ;
         }
         #endregion
         #region Triggers
         public bool LT_pressed()
         {
-            return (currentState.Triggers.Left > THRESHOLD);
+            return (currentState.Triggers.Left > THRESHOLD)
+#if DEBUG
+ || kbCurrentState.IsKeyDown(Keys.D)
+#endif
+                ;
         }
         public bool LT_firstPressed()
         {
-            return (currentState.Triggers.Left > THRESHOLD && lastState.Triggers.Left < THRESHOLD);
+            return (currentState.Triggers.Left > THRESHOLD && lastState.Triggers.Left < THRESHOLD)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.D) && kbLastState.IsKeyUp(Keys.D))
+#endif
+                ;
         }
         public bool LT_firstReleased()
         {
-            return (currentState.Triggers.Left < THRESHOLD && lastState.Triggers.Left > THRESHOLD);
+            return (currentState.Triggers.Left < THRESHOLD && lastState.Triggers.Left > THRESHOLD)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.D) && kbLastState.IsKeyDown(Keys.D))
+#endif
+                ;
         }
         public bool RT_pressed()
         {
-            return (currentState.Triggers.Right > THRESHOLD);
+            return (currentState.Triggers.Right > THRESHOLD)
+#if DEBUG
+ || kbCurrentState.IsKeyDown(Keys.F)
+#endif
+                ;
         }
         public bool RT_firstPressed()
         {
-            return (currentState.Triggers.Right > THRESHOLD && lastState.Triggers.Right < THRESHOLD);
+            return (currentState.Triggers.Right > THRESHOLD && lastState.Triggers.Right < THRESHOLD)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.F) && kbLastState.IsKeyUp(Keys.F))
+#endif
+                ;
         }
         public bool RT_firstReleased()
         {
-            return (currentState.Triggers.Right < THRESHOLD && lastState.Triggers.Right > THRESHOLD);
+            return (currentState.Triggers.Right < THRESHOLD && lastState.Triggers.Right > THRESHOLD)
+#if DEBUG
+ || (kbCurrentState.IsKeyUp(Keys.F) && kbLastState.IsKeyDown(Keys.F))
+#endif
+                ;
         }
         #endregion
 

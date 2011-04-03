@@ -24,7 +24,7 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
-            CameraManager.Instance.setCameraMode(CameraManager.tCameraMode.Node);
+            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.Nodes;
         }
         public void restartLevel()
         {
@@ -38,9 +38,16 @@ namespace MyGame
 
         }
 
+        bool backgroundBlack = true;
+        bool addCameraNodes = true;
         public override void render()
         {
-            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.B_pressed())
+            // START PROVISIONAL CODE
+            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.B_firstPressed())
+            {
+                backgroundBlack = !backgroundBlack;
+            }
+            if (backgroundBlack)
             {
                 GraphicsManager.Instance.graphicsDevice.Clear(new Color(0, 0, 0));
             }
@@ -48,6 +55,21 @@ namespace MyGame
             {
                 GraphicsManager.Instance.graphicsDevice.Clear(new Color(79, 98, 37));
             }
+            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.LB_firstPressed())
+            {
+                if (addCameraNodes)
+                {
+                    addCameraNodes = false;
+                    CameraManager.Instance.loadXMLfake();
+                }
+                else
+                {
+                    addCameraNodes = true;
+                    CameraManager.Instance.clean();
+                }
+            }
+            // END OF PROVISIONAL
+
             EntityManager.Instance.render();
             LevelManager.Instance.render();
             DebugManager.Instance.render();

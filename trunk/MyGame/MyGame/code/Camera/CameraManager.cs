@@ -54,8 +54,8 @@ namespace MyGame
             }
         }
 
-        public enum tCameraMode { FollowPlayer, Node }
-        tCameraMode cameraMode;
+        public enum tCameraMode { None, FollowPlayer, Nodes }
+        public tCameraMode cameraMode { set; get; }
 
         // node mode stuff
         NetworkNode<CameraData> currentNode;
@@ -72,10 +72,6 @@ namespace MyGame
             velocity.Z = 0.0f;
             return velocity;
         }
-        public void setCameraMode(tCameraMode cameraMode)
-        {
-            this.cameraMode = cameraMode;
-        }
         public void loadXMLfake()
         {
             NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));
@@ -89,7 +85,10 @@ namespace MyGame
             cameraNodes.addNode(second);
             cameraNodes.addNode(third);
 
-            initialize();
+            currentNode = first;
+            nextNode = second;
+
+            Camera2D.position = cameraNodes.getNodes()[0].value.position;
         }
 
         public Network<CameraData> getNodes()
@@ -120,17 +119,14 @@ namespace MyGame
             nextNode = node.getNext();
         }
 
-        public void initialize()
-        {
-            Camera2D.position = cameraNodes.getNodes()[0].value.position;
-        }
-
         void updateFollowPlayerMode()
         {
             Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;
         }
-        void updateNodeMode()
+        void updateNodesMode()
         {
+            if (currentNode == null || nextNode == null) return;
+
             float cameraSpeed = 100.0f;
             Vector3 targetPosition = nextNode.value.position;
             Vector3 direction = targetPosition - Camera2D.position;
@@ -166,14 +162,15 @@ namespace MyGame
             // update the current used camera mode
             switch(cameraMode)
             {
+                case tCameraMode.None:
+                    break;
                 case tCameraMode.FollowPlayer:
                     updateFollowPlayerMode();
                     break;
-                case tCameraMode.Node:
-                    updateNodeMode();
+                case tCameraMode.Nodes:
+                    updateNodesMode();
                     break;
             }
-            if (currentNode == null || nextNode == null) return;
 
             // update current frame position
             currentFrameData.position = Camera2D.position;
@@ -183,9 +180,11 @@ namespace MyGame
         {
             switch (cameraMode)
             {
+                case tCameraMode.None:
+                    break;
                 case tCameraMode.FollowPlayer:
                     break;
-                case tCameraMode.Node:
+                case tCameraMode.Nodes:
                     foreach (NetworkNode<CameraData> cameraNode in cameraNodes.getNodes())
                     {
                         Vector3 position = cameraNode.value.target;
@@ -204,6 +203,8 @@ namespace MyGame
         public void clean()
         {
             cameraNodes.Clear();
+            currentNode = null;
+            nextNode = null;
         }
     }
 }
