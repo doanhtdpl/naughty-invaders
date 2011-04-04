@@ -282,8 +282,7 @@ namespace MyGame
                 {
                     id = -1;
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
-                    RenderableEntity2D re =
-                        new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    RenderableEntity2D re = new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
                     re.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
@@ -296,8 +295,7 @@ namespace MyGame
                 {
                     id = -1;
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
-                    AnimatedEntity2D ae =
-                        new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    AnimatedEntity2D ae = new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
                     ae.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();
@@ -324,6 +322,7 @@ namespace MyGame
                     Line l = new Line(node.Attribute("p1").Value.toVector2(), node.Attribute("p2").Value.toVector2());
                     LevelManager.Instance.addLevelCollision(l);
                 }
+
                 // read players
                 nodes = xml_doc.Descendants("player");
                 foreach (XElement node in nodes)
@@ -360,6 +359,7 @@ namespace MyGame
                 }
 
                 CameraManager.Instance.setupCamera();
+
 
                 if (loadIDs)
                 {
