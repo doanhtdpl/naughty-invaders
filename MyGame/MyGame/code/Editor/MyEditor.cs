@@ -215,6 +215,11 @@ namespace MyGame
                 return true;
             }
 
+            if (currentState == null)
+            {
+                changeState(new EditorState_MoveState());
+            }
+
             if (nextState != null)
             {
                 doChangeState();

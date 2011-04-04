@@ -15,6 +15,11 @@ namespace MyGame
         public KeyboardState keyState;
         public KeyboardState lastKeyState;
 
+        public long timeLastMouseClick = 0;
+
+        public Vector2 lastScreenPos;
+        public List<Entity2D> ignoreEntities = new List<Entity2D>();
+
         private Vector3 initPoint, endPoint;
         private Vector2 initPointSelect, endPointSelect;
         private bool multiSelecting = false;
@@ -76,6 +81,7 @@ namespace MyGame
                 gameScreenPos.Y = aux.Y;
             }
         }
+
         public virtual void render() 
         {
             if (multiSelecting)
@@ -121,146 +127,169 @@ namespace MyGame
             return rect.Contains(new Point((int)point.X, (int)point.Y));
         }
 
+        public Entity2D selectPoint(Vector2 pos)
+        {
+            Ray ray = EditorHelper.Instance.getMouseCursorRay(pos);
+            Entity2D ent = null;
+
+            if (MyEditor.Instance.canSelectEnemy.Checked)
+                ent = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies(), null, ignoreEntities);
+
+            if (MyEditor.Instance.canSelectAnimated.Checked)
+                ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps(), ent, ignoreEntities);
+
+            if (MyEditor.Instance.canSelectStatic.Checked)
+                ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps(), ent, ignoreEntities);
+
+            if (MyEditor.Instance.canSelectPlayer.Checked)
+                ent = EditorHelper.Instance.rayVsEntities(ray, GamerManager.getPlayerEntities(), ent, ignoreEntities);
+
+            return ent;
+        }
+
         public bool selectEntity()
         {
-            if (isPosInScreen(gameScreenPos))
+            if (!isPosInScreen(gameScreenPos))
             {
-                // RECT MULTISELECT
-                if (mouseState.MiddleButton == ButtonState.Pressed && lastMouseState.MiddleButton == ButtonState.Released)
-                {
-                    MyEditor.Instance.getSelectedEntities().Clear();
+                return MyEditor.Instance.anyEntitySelected();
+            }
+    
+            // RECT MULTISELECT
+            if (mouseState.MiddleButton == ButtonState.Pressed && lastMouseState.MiddleButton == ButtonState.Released)
+            {
+                MyEditor.Instance.getSelectedEntities().Clear();
 
-                    initPointSelect = gameScreenPos;
-                    initPoint = mouseInSetaZero;
-                    multiSelecting = true;
-                }
-                else if (mouseState.MiddleButton == ButtonState.Pressed)
-                {
-                    endPointSelect = gameScreenPos;
-                    endPoint = mouseInSetaZero;
-                }
-                else if (mouseState.MiddleButton == ButtonState.Released && lastMouseState.MiddleButton == ButtonState.Pressed)
-                {
-                    endPointSelect = gameScreenPos;
-                    endPoint = mouseInSetaZero;
-                    multiSelecting = false;
+                initPointSelect = gameScreenPos;
+                initPoint = mouseInSetaZero;
+                multiSelecting = true;
+            }
+            else if (mouseState.MiddleButton == ButtonState.Pressed)
+            {
+                endPointSelect = gameScreenPos;
+                endPoint = mouseInSetaZero;
+            }
+            else if (mouseState.MiddleButton == ButtonState.Released && lastMouseState.MiddleButton == ButtonState.Pressed)
+            {
+                endPointSelect = gameScreenPos;
+                endPoint = mouseInSetaZero;
+                multiSelecting = false;
 
-                    //Select entities inside the rect
-                    if (MyEditor.Instance.canSelectEnemy.Checked)
+                //Select entities inside the rect
+                if (MyEditor.Instance.canSelectEnemy.Checked)
+                {
+                    foreach (Entity2D e in EnemyManager.Instance.getEnemies())
                     {
-                        foreach (Entity2D e in EnemyManager.Instance.getEnemies())
+                        Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                        if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                         {
-                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
-                            if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
-                            {
-                                MyEditor.Instance.getSelectedEntities().Add(e);
-                            }
-                        }
-                    }
-                    if (MyEditor.Instance.canSelectAnimated.Checked)
-                    {
-                        foreach (Entity2D e in LevelManager.Instance.getAnimatedProps())
-                        {
-                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
-                            if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
-                            {
-                                MyEditor.Instance.getSelectedEntities().Add(e);
-                            }
-                        }
-                    }
-                    if (MyEditor.Instance.canSelectStatic.Checked)
-                    {
-                        foreach (Entity2D e in LevelManager.Instance.getStaticProps())
-                        {
-                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
-                            if (MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
-                            {
-                                MyEditor.Instance.getSelectedEntities().Add(e);
-                            }
-                        }
-                    }
-                    if (MyEditor.Instance.canSelectPlayer.Checked)
-                    {
-                        foreach (GamerEntity e in GamerManager.getGamerEntities())
-                        {
-                            Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.Player.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
-                            if (MyEditor.Instance.getSelectedEntities().IndexOf(e.Player) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
-                            {
-                                MyEditor.Instance.getSelectedEntities().Add(e.Player);
-                            }
+                            MyEditor.Instance.getSelectedEntities().Add(e);
                         }
                     }
                 }
-
-                //POINT CLICK SELECT
-                else
+                if (MyEditor.Instance.canSelectAnimated.Checked)
                 {
-
-                    if (mouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released)
+                    foreach (Entity2D e in LevelManager.Instance.getAnimatedProps())
                     {
-                        canSelect = true;
-                    }
-
-                    if (mouseState.LeftButton == ButtonState.Pressed && (lastMouseState.X != mouseState.X || lastMouseState.Y != mouseState.Y))
-                    {
-                        canSelect = false;
-                    }
-
-                    if (mouseState.LeftButton == ButtonState.Released && lastMouseState.LeftButton == ButtonState.Pressed && canSelect)
-                    {
-                        Ray ray = EditorHelper.Instance.getMouseCursorRay(gameScreenPos);
-                        Entity2D ent = null;
-
-                        if (MyEditor.Instance.canSelectEnemy.Checked)
-                            ent = EditorHelper.Instance.rayVsEntities(ray, EnemyManager.Instance.getEnemies());
-
-                        if (MyEditor.Instance.canSelectAnimated.Checked)
-                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getAnimatedProps(), ent);
-
-                        if (MyEditor.Instance.canSelectStatic.Checked)
-                            ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps(), ent);
-
-                        if (MyEditor.Instance.canSelectPlayer.Checked)
-                            ent = EditorHelper.Instance.rayVsEntities(ray, GamerManager.getPlayerEntities(), ent);
-
-                        if (ent != null)
+                        Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                        if(MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                         {
-                            //GROUP SELECT
-                            if (MyEditor.Instance.selectGroup.Checked)
+                            MyEditor.Instance.getSelectedEntities().Add(e);
+                        }
+                    }
+                }
+                if (MyEditor.Instance.canSelectStatic.Checked)
+                {
+                    foreach (Entity2D e in LevelManager.Instance.getStaticProps())
+                    {
+                        Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                        if (MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
+                        {
+                            MyEditor.Instance.getSelectedEntities().Add(e);
+                        }
+                    }
+                }
+                if (MyEditor.Instance.canSelectPlayer.Checked)
+                {
+                    foreach (GamerEntity e in GamerManager.getGamerEntities())
+                    {
+                        Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.Player.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
+                        if (MyEditor.Instance.getSelectedEntities().IndexOf(e.Player) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
+                        {
+                            MyEditor.Instance.getSelectedEntities().Add(e.Player);
+                        }
+                    }
+                }
+            }
+
+            else if (justPressedKey(Keys.M))
+            {
+                Entity2D ent = selectPoint(lastScreenPos);
+                ignoreEntities.Add(ent);
+
+                MyEditor.Instance.selectEntity(ent);
+                MyEditor.Instance.updateEntityProperties();
+            }
+
+            //POINT CLICK SELECT
+            else
+            {
+
+                if (justPressedLeftButton())
+                {
+                    canSelect = true;
+                }
+
+                if (mouseState.LeftButton == ButtonState.Pressed && (Math.Abs(lastMouseState.X - mouseState.X) > 2 || Math.Abs(lastMouseState.Y - mouseState.Y) > 2))
+                {
+                    canSelect = false;
+                }
+
+                if (justReleasedLeftButton() && canSelect)
+                {
+                    ignoreEntities.Clear();
+                    Entity2D ent = selectPoint(gameScreenPos);
+                    ignoreEntities.Add(ent);
+                    lastScreenPos = gameScreenPos;
+
+                    if (ent != null)
+                    {
+                        //GROUP SELECT
+                        if (MyEditor.Instance.selectGroup.Checked || MyEditor.Instance.myEditorControl.totalTime.ElapsedMilliseconds - timeLastMouseClick <= 400 )
+                        {
+                            foreach (List<int> group in LevelManager.Instance.getGroups())
                             {
-                                foreach (List<int> group in LevelManager.Instance.getGroups())
+                                foreach (int id in group)
                                 {
-                                    foreach (int id in group)
-                                    {
-                                        if (id == ent.id)
-                                        { 
-                                            //Select the group
-                                            MyEditor.Instance.getSelectedEntities().Clear();
+                                    if (id == ent.id)
+                                    { 
+                                        //Select the group
+                                        MyEditor.Instance.getSelectedEntities().Clear();
 
-                                            foreach(int entityId in group)
-                                            {
-                                                MyEditor.Instance.addEntity(EntityManager.Instance.getEntityByID(entityId));
-                                            }
-                                            return MyEditor.Instance.anyEntitySelected();
+                                        foreach(int entityId in group)
+                                        {
+                                            MyEditor.Instance.addEntity(EntityManager.Instance.getEntityByID(entityId));
                                         }
+                                        return MyEditor.Instance.anyEntitySelected();
                                     }
                                 }
                             }
+                        }
                             
-                            //CONTROL MULTISELECT
-                            if (isPressedKey(Keys.LeftControl))
-                                MyEditor.Instance.addEntity(ent);
-                            else
-                                MyEditor.Instance.selectEntity(ent);
-
-                            MyEditor.Instance.updateEntityProperties();
-                        }
+                        //CONTROL MULTISELECT
+                        if (isPressedKey(Keys.LeftControl))
+                            MyEditor.Instance.addEntity(ent);
                         else
-                        {
-                            if (!isPressedKey(Keys.LeftControl))
-                                MyEditor.Instance.getSelectedEntities().Clear();
-                        }
+                            MyEditor.Instance.selectEntity(ent);
+
+                        MyEditor.Instance.updateEntityProperties();
                     }
+                    else
+                    {
+                        if (!isPressedKey(Keys.LeftControl))
+                            MyEditor.Instance.getSelectedEntities().Clear();
+                    }
+
+                    timeLastMouseClick = MyEditor.Instance.myEditorControl.totalTime.ElapsedMilliseconds;
                 }
             }
 
@@ -270,6 +299,11 @@ namespace MyGame
         public bool justPressedLeftButton()
         {
             return MyEditor.Instance.getMouseState().LeftButton == ButtonState.Pressed && MyEditor.Instance.getLastMouseState().LeftButton == ButtonState.Released;
+        }
+
+        public bool justReleasedLeftButton()
+        {
+            return MyEditor.Instance.getMouseState().LeftButton == ButtonState.Released && MyEditor.Instance.getLastMouseState().LeftButton == ButtonState.Pressed;
         }
 
         public virtual void selectEntity(int index)
