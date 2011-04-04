@@ -46,14 +46,14 @@ namespace MyGame
         {
             base.update();
 
-            if (justPressedKey(Keys.PageDown))
+            if (justPressedKey(Keys.PageDown) || justPressedKey(Keys.O))
             {
                 LevelManager.Instance.removeAnimatedProp(entity);
                 loadEntity(currentIndex + 1);
                 MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
                 MyEditor.Instance.myEditorControl.Focus();
             }
-            else if (justPressedKey(Keys.PageUp))
+            else if (justPressedKey(Keys.PageUp) || justPressedKey(Keys.I))
             {
                 LevelManager.Instance.removeAnimatedProp(entity);
                 loadEntity(currentIndex - 1);
