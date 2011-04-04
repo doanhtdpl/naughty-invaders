@@ -118,12 +118,12 @@ namespace MyGame
                 || ray.intersectsTriangle(vertexs[0], vertexs[2], vertexs[3]);
         }
         // returns the entity from the lits that collides with a ray or null if none collides
-        public Entity2D rayVsEntities(Ray ray, List<Entity2D> entities, Entity2D ent = null)
+        public Entity2D rayVsEntities(Ray ray, List<Entity2D> entities, Entity2D ent = null, List<Entity2D> ignoreEntities = null)
         {
             float currentSeta = ent != null ? ent.position.Z : float.MinValue;
             foreach (Entity2D e in entities)
             {
-                if (rayVsEntity(ray, e))
+                if (ignoreEntities.IndexOf(e) == -1 &&  rayVsEntity(ray, e))
                 {
                     if (ent == null || e.position.Z > currentSeta)
                     {

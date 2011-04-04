@@ -18,7 +18,7 @@ namespace MyGame
         //GameTime
         GameTime gameTime;
         Stopwatch elapsedTime = new Stopwatch();
-        Stopwatch totalTime = new Stopwatch();
+        public Stopwatch totalTime = new Stopwatch();
         Timer timer;
 
         //Game variables
