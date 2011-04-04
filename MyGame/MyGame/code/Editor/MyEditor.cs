@@ -203,6 +203,13 @@ namespace MyGame
                 return true;
             }
 
+            if ( (isKeyPressed(Microsoft.Xna.Framework.Input.Keys.LeftControl) || isKeyPressed(Microsoft.Xna.Framework.Input.Keys.RightControl)) && justPressedKey(Microsoft.Xna.Framework.Input.Keys.Z))
+            {
+                noUpdate++;
+                MessageBox.Show(MyEditor.ActiveForm, "PULSA OK PARA FORMATEAR EL DISCO DURO.");
+                noUpdate--;
+            }
+
             //skip frame f.e. when coming back from load/save dialog
             if (skipNextFrame)
             {

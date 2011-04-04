@@ -221,7 +221,7 @@ namespace MyGame
                 }
             }
 
-            else if (justPressedKey(Keys.M))
+            else if (justPressedKey(Keys.M) || justPressedRightButton())
             {
                 Entity2D ent = selectPoint(lastScreenPos);
                 ignoreEntities.Add(ent);
@@ -294,6 +294,11 @@ namespace MyGame
             }
 
             return MyEditor.Instance.anyEntitySelected();
+        }
+
+        public bool justPressedRightButton()
+        {
+            return MyEditor.Instance.getMouseState().RightButton == ButtonState.Pressed && MyEditor.Instance.getLastMouseState().RightButton == ButtonState.Released;
         }
 
         public bool justPressedLeftButton()
