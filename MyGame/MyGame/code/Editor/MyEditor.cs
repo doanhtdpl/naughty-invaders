@@ -415,10 +415,13 @@ namespace MyGame
 
                     if (ent is RenderableEntity2D)
                     {
-                        ((RenderableEntity2D)ent).color.R = Byte.Parse(this.colorR.Text);
-                        ((RenderableEntity2D)ent).color.G = Byte.Parse(this.colorG.Text);
-                        ((RenderableEntity2D)ent).color.B = Byte.Parse(this.colorB.Text);
                         ((RenderableEntity2D)ent).color.A = Byte.Parse(this.colorA.Text);
+
+                        float alpha = ((RenderableEntity2D)ent).color.A / 255.0f;
+
+                        ((RenderableEntity2D)ent).color.R = (byte)(Byte.Parse(this.colorR.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
+                        ((RenderableEntity2D)ent).color.G = (byte)(Byte.Parse(this.colorG.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
+                        ((RenderableEntity2D)ent).color.B = (byte)(Byte.Parse(this.colorB.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
                     }
                 }
             }
@@ -440,9 +443,11 @@ namespace MyGame
 
                     if (ent is RenderableEntity2D)
                     {
-                        this.colorR.Text = ((RenderableEntity2D)ent).color.R.ToString();
-                        this.colorG.Text = ((RenderableEntity2D)ent).color.G.ToString();
-                        this.colorB.Text = ((RenderableEntity2D)ent).color.B.ToString();
+                        float alpha = ((RenderableEntity2D)ent).color.A / 255.0f;
+
+                        this.colorR.Text = (((RenderableEntity2D)ent).color.R / alpha).toString();
+                        this.colorG.Text = (((RenderableEntity2D)ent).color.G / alpha).toString();
+                        this.colorB.Text = (((RenderableEntity2D)ent).color.B / alpha).toString();
                         this.colorA.Text = ((RenderableEntity2D)ent).color.A.ToString();
                     }
 
@@ -516,12 +521,9 @@ namespace MyGame
 
         private void texturesCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (currentState is EditorState_AddStatic)
-            {
-                //skipNextFrame = true;
-                ((EditorState_AddStatic)currentState).selectEntity(((ComboBox)sender).SelectedIndex);
-                myEditorControl.Focus();
-            }
+            //skipNextFrame = true;
+            currentState.selectEntity(((ComboBox)sender).SelectedIndex);
+            myEditorControl.Focus();
         }
 
         private System.Drawing.Color getDialogColor(System.Drawing.Color currentColor)
@@ -533,6 +535,7 @@ namespace MyGame
             colorDialog.Color = currentColor;
             colorDialog.ShowDialog();
 
+            skipNextFrame = true;
             exitBlockers--;
             noUpdate--;
 

@@ -272,5 +272,8 @@ namespace MyGame
             return MyEditor.Instance.getMouseState().LeftButton == ButtonState.Pressed && MyEditor.Instance.getLastMouseState().LeftButton == ButtonState.Released;
         }
 
+        public virtual void selectEntity(int index)
+        {
+        }
     }
 }

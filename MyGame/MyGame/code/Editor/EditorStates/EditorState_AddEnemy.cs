@@ -15,12 +15,13 @@ namespace MyGame
         int currentIndex = 0;
         private Entity2D entity;
 
-        public EditorState_AddEnemy():base()
+        public EditorState_AddEnemy()
+            : base()
         {
-            currentIndex = -1;
         }
 
-        public EditorState_AddEnemy(int _currentIndex):base()
+        public EditorState_AddEnemy(int _currentIndex)
+            : base()
         {
             currentIndex = _currentIndex;
         }
@@ -29,21 +30,35 @@ namespace MyGame
         {
             base.enter();
             loadEntity(currentIndex);
+
+            MyEditor.Instance.texturesCombo.Items.Clear();
+            var textures = SB.content.LoadContent("xml/enemies");
+            for (int i = 0; i < textures.Count(); i++)
+            {
+                MyEditor.Instance.texturesCombo.Items.Add(textures[i]);
+            }
+
+            MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+            MyEditor.Instance.myEditorControl.Focus();
         }
 
         public override void update()
         {
             base.update();
 
-            if (justPressedKey(Keys.Right))
+            if (justPressedKey(Keys.PageDown))
             {
                 EnemyManager.Instance.removeEnemy(entity);
                 loadEntity(currentIndex + 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
-            else if (justPressedKey(Keys.Left))
+            else if (justPressedKey(Keys.PageUp))
             {
                 EnemyManager.Instance.removeEnemy(entity);
                 loadEntity(currentIndex - 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
@@ -76,6 +91,12 @@ namespace MyGame
 
             entity = EnemyManager.Instance.addEnemy(textures[currentIndex], position);
 #endif
+        }
+
+        public override void selectEntity(int index)
+        {
+            EnemyManager.Instance.removeEnemy(entity);
+            loadEntity(index);
         }
 
         public override void render()

@@ -25,6 +25,7 @@ namespace MyGame
         {
             currentIndex = _currentIndex;
         }
+
         public override void enter()
         {
             base.enter();
@@ -94,7 +95,7 @@ namespace MyGame
 #endif
         }
 
-        public void selectEntity(int index)
+        public override void selectEntity(int index)
         {
             LevelManager.Instance.removeStaticProp(staticEntity);
             loadEntity(index);
