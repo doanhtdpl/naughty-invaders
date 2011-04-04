@@ -27,7 +27,7 @@ namespace MyGame
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
                         {
-                            Vector2 current = new Vector2(mouseState.X, mouseState.Y);
+                            Vector2 current = new Vector2(mouseState.X, mouseState.Y);  
                             Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
                             Vector3 currentZ = getMousePosInZ(current, ent.position.Z);
                             Vector3 lastZ = getMousePosInZ(last, ent.position.Z);
