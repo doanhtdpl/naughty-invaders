@@ -87,13 +87,11 @@
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Grape.cs" />
-    <Compile Include="code\Gameplay\MovingEntity2D.cs" />
     <Compile Include="code\Gameplay\RenderableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Enemy.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemyManager.cs" />
     <Compile Include="code\Gameplay\Entity2D.cs" />
     <Compile Include="code\Gameplay\Level\LevelManager.cs" />
-    <Compile Include="code\Gameplay\Projectiles\PlayerProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
     <Compile Include="code\Particles\Particle.cs" />
