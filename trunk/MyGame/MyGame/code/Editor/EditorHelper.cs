@@ -218,16 +218,16 @@ namespace MyGame
             writer.WriteEndElement();
 
             //player
-            writer.WriteStartElement("players");
-            for (int i = 0; i < GamerManager.getGamerEntities().Count; i++)
-            {
-                Player player = GamerManager.getGamerEntity((PlayerIndex)i).Player;
-                writer.WriteStartElement("player");
-                writer.WriteAttributeString("playerIndex", i.ToString());
-                writer.WriteAttributeString("worldMatrix", player.worldMatrix.toXML());
-                writer.WriteEndElement();
-            }
-            writer.WriteEndElement();
+            //writer.WriteStartElement("players");
+            //for (int i = 0; i < GamerManager.getGamerEntities().Count; i++)
+            //{
+            //    Player player = GamerManager.getGamerEntity((PlayerIndex)i).Player;
+            //    writer.WriteStartElement("player");
+            //    writer.WriteAttributeString("playerIndex", i.ToString());
+            //    writer.WriteAttributeString("worldMatrix", player.worldMatrix.toXML());
+            //    writer.WriteEndElement();
+            //}
+            //writer.WriteEndElement();
 
             //camera
             writer.WriteStartElement("camera");
@@ -324,18 +324,18 @@ namespace MyGame
                 }
 
                 // read players
-                nodes = xml_doc.Descendants("player");
-                foreach (XElement node in nodes)
-                {
-                    PlayerIndex index = (PlayerIndex)node.Attribute("playerIndex").Value.toInt();
-                    Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
-                    GamerEntity gamer = GamerManager.getGamerEntity(index);
-                    gamer.Player.worldMatrix = world;
-                    gamer.Player.setInit();
+                //nodes = xml_doc.Descendants("player");
+                //foreach (XElement node in nodes)
+                //{
+                //    PlayerIndex index = (PlayerIndex)node.Attribute("playerIndex").Value.toInt();
+                //    Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
+                //    GamerEntity gamer = GamerManager.getGamerEntity(index);
+                //    gamer.Player.worldMatrix = world;
+                //    gamer.Player.setInit();
 
-                    //Register player again as we don't destroy it (yet...)
-                    EntityManager.Instance.registerEntity(gamer.Player);
-                }
+                //    //Register player again as we don't destroy it (yet...)
+                //    EntityManager.Instance.registerEntity(gamer.Player);
+                //}
 
                 //Camera
                 nodes = xml_doc.Descendants("cameraNode");

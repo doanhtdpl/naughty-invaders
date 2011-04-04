@@ -221,7 +221,7 @@ namespace MyGame
                 }
             }
 
-            else if (justPressedKey(Keys.M) || justPressedRightButton())
+            else if (justPressedKey(Keys.M))
             {
                 Entity2D ent = selectPoint(lastScreenPos);
                 ignoreEntities.Add(ent);
