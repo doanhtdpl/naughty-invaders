@@ -337,6 +337,9 @@ namespace MyGame
                 //    EntityManager.Instance.registerEntity(gamer.Player);
                 //}
 
+                //Re-add the player in the entity manager
+                EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
+
                 //Camera
                 nodes = xml_doc.Descendants("cameraNode");
                 foreach (XElement node in nodes)
