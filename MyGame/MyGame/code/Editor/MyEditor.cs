@@ -206,7 +206,8 @@ namespace MyGame
             if ( (isKeyPressed(Microsoft.Xna.Framework.Input.Keys.LeftControl) || isKeyPressed(Microsoft.Xna.Framework.Input.Keys.RightControl)) && justPressedKey(Microsoft.Xna.Framework.Input.Keys.Z))
             {
                 noUpdate++;
-                MessageBox.Show(MyEditor.ActiveForm, "PULSA OK PARA FORMATEAR EL DISCO DURO.");
+                MessageBox.Show(MyEditor.ActiveForm, "PULSA OK PARA FORMATEAR EL DISCO DURO.", "Control SETA");
+                MessageBox.Show(MyEditor.ActiveForm, "FORMATEANDO...", "Control SETA");
                 noUpdate--;
             }
 
