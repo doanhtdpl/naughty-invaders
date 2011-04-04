@@ -30,21 +30,35 @@ namespace MyGame
         {
             base.enter();
             loadEntity(currentIndex);
+
+            MyEditor.Instance.texturesCombo.Items.Clear();
+            var textures = SB.content.LoadContent("xml/animatedProps");
+            for (int i = 0; i < textures.Count(); i++)
+            {
+                MyEditor.Instance.texturesCombo.Items.Add(textures[i]);
+            }
+
+            MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+            MyEditor.Instance.myEditorControl.Focus();
         }
 
         public override void update()
         {
             base.update();
 
-            if (justPressedKey(Keys.Right))
+            if (justPressedKey(Keys.PageDown))
             {
                 LevelManager.Instance.removeAnimatedProp(entity);
                 loadEntity(currentIndex + 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
-            else if (justPressedKey(Keys.Left))
+            else if (justPressedKey(Keys.PageUp))
             {
                 LevelManager.Instance.removeAnimatedProp(entity);
                 loadEntity(currentIndex - 1);
+                MyEditor.Instance.texturesCombo.SelectedIndex = currentIndex;
+                MyEditor.Instance.myEditorControl.Focus();
             }
             else if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
@@ -79,6 +93,12 @@ namespace MyGame
             LevelManager.Instance.addAnimatedProp(ent);
             entity = ent;
 #endif
+        }
+
+        public override void selectEntity(int index)
+        {
+            LevelManager.Instance.removeAnimatedProp(entity);
+            loadEntity(index);
         }
 
         public override void render()
