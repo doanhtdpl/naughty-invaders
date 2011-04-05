@@ -81,6 +81,17 @@ namespace MyGame
             // ... and then create a new ray using nearPoint as the source.
             return new Ray(nearPoint, direction);
         }
+
+        public Vector3 getMousePosInZ(Vector2 mousePos, float z = 0.0f)
+        {
+            Vector3 near = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 far = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            Vector3 normal = new Vector3(0, 0, -1);
+
+            float u = Vector3.Dot(normal, new Vector3(0.0f, 0.0f, z) - near) / Vector3.Dot(normal, far - near);
+            Vector3 pos = near + u * (far - near);
+            return new Vector3(pos.X, pos.Y, z);
+        }
         #endregion
 
         #region Entities

@@ -39,8 +39,7 @@ namespace MyGame
             keyState = MyEditor.Instance.getKeyState();
             lastKeyState = MyEditor.Instance.getLastKeyState();
 
-            System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(MyEditor.Instance.getMouseState().X, MyEditor.Instance.getMouseState().Y));
-            gameScreenPos = new Vector2(point.X, point.Y);
+            gameScreenPos = MyEditor.Instance.gameScreenPos;
 
             //Calculate the position in Z = 0;
             mouseInSetaZero = getMousePosInZ();
@@ -105,20 +104,9 @@ namespace MyGame
             return MyEditor.Instance.isKeyPressed(key);
         }
 
-        public Vector3 getMousePosInZ(Vector2 mousePos, float z = 0.0f)
-        {
-            Vector3 near = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 0.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-            Vector3 far = GraphicsManager.Instance.graphicsDevice.Viewport.Unproject(new Vector3(mousePos.X, mousePos.Y, 1.0f), Camera2D.projection, Camera2D.view, Matrix.Identity);
-            Vector3 normal = new Vector3(0, 0, -1);
-
-            float u = Vector3.Dot(normal, new Vector3(0.0f, 0.0f, z) - near) / Vector3.Dot(normal, far - near);
-            Vector3 pos = near + u * (far - near);
-            return new Vector3(pos.X, pos.Y, z);
-        }
-
         public Vector3 getMousePosInZ(float z = 0.0f)
         {
-            return getMousePosInZ(gameScreenPos, z);
+            return EditorHelper.Instance.getMousePosInZ(gameScreenPos, z);
         }
 
         private bool isPointInRect(Vector2 point, Vector2 initRect, Vector2 endRect)
