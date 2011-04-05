@@ -71,6 +71,7 @@
             this.BGColorButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.superPizzaButton = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -557,12 +558,25 @@
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
+            // superPizzaButton
+            // 
+            this.superPizzaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.superPizzaButton.Location = new System.Drawing.Point(1220, 2);
+            this.superPizzaButton.Margin = new System.Windows.Forms.Padding(2);
+            this.superPizzaButton.Name = "superPizzaButton";
+            this.superPizzaButton.Size = new System.Drawing.Size(60, 28);
+            this.superPizzaButton.TabIndex = 201;
+            this.superPizzaButton.Text = "SuperPizza";
+            this.superPizzaButton.UseVisualStyleBackColor = true;
+            this.superPizzaButton.Click += new System.EventHandler(this.superPizzaButton_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.superPizzaButton);
             this.Controls.Add(this.addDefaultCamerasButton);
             this.Controls.Add(this.BGColorButton);
             this.Controls.Add(this.texturesCombo);
@@ -639,5 +653,6 @@
         private System.Windows.Forms.Button colorButton;
         private System.Windows.Forms.Button BGColorButton;
         private System.Windows.Forms.Button addDefaultCamerasButton;
+        private System.Windows.Forms.Button superPizzaButton;
     }
 }
