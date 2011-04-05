@@ -30,12 +30,14 @@ namespace MyGame
         public KeyboardState lastKeyState;
         public KeyboardState keyState;
 
-        public int exitBlockers = 0;
+        public Vector2 gameScreenPos;
+
         public bool drawGrid = false;
         public int gridSpacing = 128;
 
         public bool skipNextFrame = false;
         public int noUpdate = 0;
+        public int exitBlockers = 0;
 
         public MyEditor()
         {
@@ -197,6 +199,9 @@ namespace MyGame
         {
             mouseState = Mouse.GetState();
             keyState = Keyboard.GetState();
+
+            System.Drawing.Point point = MyEditor.Instance.myEditorControl.PointToClient(new System.Drawing.Point(MyEditor.Instance.getMouseState().X, MyEditor.Instance.getMouseState().Y));
+            gameScreenPos = new Vector2(point.X, point.Y);
 
             if (noUpdate > 0)
             {
@@ -597,6 +602,25 @@ namespace MyGame
             noUpdate++;
             MessageBox.Show(MyEditor.ActiveForm, "933510165\nCabrales for the win!", "SuperPizza");
             noUpdate--;
+        }
+
+        private void addCameraNode()
+        {
+            Vector3 pos = EditorHelper.Instance.getMousePosInZ(gameScreenPos, 0);
+
+            NetworkNode<CameraData> newNode = new NetworkNode<CameraData>(new CameraData(pos + new Vector3(0, 0, 1000), pos, false));
+
+            CameraManager.Instance.addNode(newNode);
+
+            if (CameraManager.Instance.getNodes().getNodes().Count == 2)
+            {
+                CameraManager.Instance.setupCamera();
+            }
+        }
+
+        private void addCameraLink(NetworkNode<CameraData> src, NetworkNode<CameraData> dst)
+        {
+            src.addLinkedNode(dst);
         }
     }
 }

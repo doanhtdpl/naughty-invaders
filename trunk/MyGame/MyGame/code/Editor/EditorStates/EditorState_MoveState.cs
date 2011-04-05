@@ -29,8 +29,8 @@ namespace MyGame
                         {
                             Vector2 current = new Vector2(mouseState.X, mouseState.Y);  
                             Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
-                            Vector3 currentZ = getMousePosInZ(current, ent.position.Z);
-                            Vector3 lastZ = getMousePosInZ(last, ent.position.Z);
+                            Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, ent.position.Z);
+                            Vector3 lastZ = EditorHelper.Instance.getMousePosInZ(last, ent.position.Z);
 
                             ent.position += (currentZ - lastZ);
                         }
