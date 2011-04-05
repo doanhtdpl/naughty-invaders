@@ -432,9 +432,14 @@ namespace MyGame
 
                         float alpha = ((RenderableEntity2D)ent).color.A / 255.0f;
 
-                        ((RenderableEntity2D)ent).color.R = (byte)(Byte.Parse(this.colorR.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
-                        ((RenderableEntity2D)ent).color.G = (byte)(Byte.Parse(this.colorG.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
-                        ((RenderableEntity2D)ent).color.B = (byte)(Byte.Parse(this.colorB.Text) * (((RenderableEntity2D)ent).color.A / 255.0f));
+                        if (alpha == 0)
+                        {
+                            alpha = 1.0f;
+                        }
+                        
+                        ((RenderableEntity2D)ent).color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
+                        ((RenderableEntity2D)ent).color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
+                        ((RenderableEntity2D)ent).color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
                     }
                 }
             }
@@ -457,6 +462,11 @@ namespace MyGame
                     if (ent is RenderableEntity2D)
                     {
                         float alpha = ((RenderableEntity2D)ent).color.A / 255.0f;
+
+                        if (((RenderableEntity2D)ent).color.A == 0)
+                        {
+                            alpha = 1;
+                        }
 
                         this.colorR.Text = (((RenderableEntity2D)ent).color.R / alpha).toString();
                         this.colorG.Text = (((RenderableEntity2D)ent).color.G / alpha).toString();

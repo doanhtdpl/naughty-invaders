@@ -70,8 +70,8 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.BGColorButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
-            this.myEditorControl = new MyGame.MyEditorControl();
             this.superPizzaButton = new System.Windows.Forms.Button();
+            this.myEditorControl = new MyGame.MyEditorControl();
             this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -549,15 +549,6 @@
             this.addDefaultCamerasButton.UseVisualStyleBackColor = true;
             this.addDefaultCamerasButton.Click += new System.EventHandler(this.addDefaultCamerasButton_Click);
             // 
-            // myEditorControl
-            // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            // 
             // superPizzaButton
             // 
             this.superPizzaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -569,6 +560,15 @@
             this.superPizzaButton.Text = "SuperPizza";
             this.superPizzaButton.UseVisualStyleBackColor = true;
             this.superPizzaButton.Click += new System.EventHandler(this.superPizzaButton_Click);
+            // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
             // 
             // MyEditor
             // 
