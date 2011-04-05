@@ -8,17 +8,21 @@ namespace MyGame
 {
     public class Orange : Enemy
     {
-        public enum tOrangeState { Wait, Start, Up, TopIdle, Down, End }
+        public enum tOrangeState { Wait, Parabola }
 
-        const float UP_ACCELERATION = 50.0f;
+        const float ORANGE_GRAVITY = -10.0f;
         tOrangeState state;
 
+        Vector2 velocity;
+        
         public Orange(Vector3 position, float orientation)
             : base("orange", position, orientation)
         {
             life = 10.0f;
             setCollisions();
-            state = tOrangeState.Start;
+            state = tOrangeState.Parabola;
+
+            velocity = new Vector2(Calc.randomScalar(-4.0f, 4.0f), Calc.randomScalar(12.0f, 17.0f));
         }
 
         public override void setCollisions()
@@ -35,9 +39,6 @@ namespace MyGame
         {
             base.update();
 
-            // update the parabolic move
-            position += new Vector3(0, -UP_ACCELERATION, 0) * SB.dt;
-
             switch (state)
             {
                 case tOrangeState.Wait:
@@ -51,15 +52,10 @@ namespace MyGame
                         position2D = new Vector2(Camera2D.getScreenCenter().X - 200.0f, Camera2D.getScreenLeftBottomCorner().Y - 100.0f);
                     }
                 break;
-                case tOrangeState.Start:
-                break;
-                case tOrangeState.Up:
-                break;
-                case tOrangeState.TopIdle:
-                break;
-                case tOrangeState.Down:
-                break;
-                case tOrangeState.End:
+                case tOrangeState.Parabola:
+                    Vector2 acceleration = new Vector2(0.0f, 0.0f + ORANGE_GRAVITY);
+                    velocity += acceleration * SB.dt;
+                    position2D += velocity;
                 break;
             }
         }
