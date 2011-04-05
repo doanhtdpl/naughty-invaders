@@ -581,5 +581,12 @@ namespace MyGame
                 CameraManager.Instance.loadXMLfake();
             }
         }
+
+        private void superPizzaButton_Click(object sender, EventArgs e)
+        {
+            noUpdate++;
+            MessageBox.Show(MyEditor.ActiveForm, "933510165\nCabrales for the win!", "SuperPizza");
+            noUpdate--;
+        }
     }
 }
