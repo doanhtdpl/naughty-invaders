@@ -83,7 +83,7 @@ namespace MyGame
                     }
                 break;
                 case tPearState.SecondAttack:
-                    if (nextAttackTimer < 0.55f)
+                    if (nextAttackTimer < 0.4f)
                     {
                         Vector2 direction = Calc.angleToDirection(SECOND_SHOT_ANGLE);
                         Projectile p = new PearProjectile(position, direction);
@@ -92,7 +92,7 @@ namespace MyGame
                     }
                 break;
                 case tPearState.ThirdAttack:
-                    if (nextAttackTimer < 0.5f)
+                    if (nextAttackTimer < 0.2f)
                     {
                         Vector2 direction = Calc.angleToDirection(THIRD_SHOT_ANGLE);
                         Projectile p = new PearProjectile(position, direction);

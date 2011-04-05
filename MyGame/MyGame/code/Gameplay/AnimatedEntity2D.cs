@@ -19,7 +19,6 @@ namespace MyGame
     public class AnimatedEntity2D : RenderableEntity2D
     {
         // animations
-        string newActionState = "";
         string actionState = "idle";
         float actionTimer = 0.0f;
         int currentTextureId = 0;
@@ -75,7 +74,8 @@ namespace MyGame
                 nextRandomActionTime = Calc.randomScalar(actions[newAction].playRandomMin, actions[newAction].playRandomMax);
             }
 
-            newActionState = newAction;
+            actionState = newAction;
+            actionTimer = 0.0f;
         }
 
         // reads xml and loads textures and actions for this animated entity. Can be called from outside this class
@@ -183,14 +183,6 @@ namespace MyGame
         const float FRAME_TIME = 0.2f;
         public override void update()
         {
-            // if there is a new action, change it and reset variables
-            if (newActionState != "")
-            {
-                actionState = newActionState;
-                newActionState = "";
-                actionTimer = 0.0f;
-            }
-
             actionTimer += SB.dt;
 
             AnimationAction action = actions[actionState];
@@ -225,7 +217,7 @@ namespace MyGame
                     }
                     else if (action.playAtEnd != null)
                     {
-                        newActionState = action.playAtEnd;
+                        playAction(action.playAtEnd);
                     }
                     else
                     {
@@ -235,7 +227,8 @@ namespace MyGame
             }
 
             // calculated the current frame relative to 0, we need to transpose to the real animations initial frame
-            currentFrame += action.initialFrame;
+            // we dont use the local variable action because maybe the action state has changed, and the action initial frame is another
+            currentFrame += actions[actionState].initialFrame;
         }
 
         public override void render()

@@ -14,7 +14,7 @@ namespace MyGame
             playAction("start");
             setCollisions(scale);
             scale2D = new Vector2(80 * scale, 80 * scale);
-            color = Color.Red;
+            color = Color.OrangeRed;
         }
 
         public virtual void setCollisions(float scale)
