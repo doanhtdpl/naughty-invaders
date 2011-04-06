@@ -17,6 +17,7 @@ namespace MyGame
         public const float DASH_VELOCITY = 2000.0f;
         public const float DASH_SPEED_THRESHOLD = 500.0f;
         public const float DASH_PARTICLE_SPAWN_TIME = 0.03f;
+        public const float MAX_BIG_SHOT_CHARGE = 2.0f;
 
         // life stuff
         int lifes;
@@ -32,6 +33,8 @@ namespace MyGame
         float bigShotCooldownTime;
 
         PlayerData data = new PlayerData();
+
+        static Texture bigShotBall = null;
 
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)
@@ -53,6 +56,11 @@ namespace MyGame
             bigShotCooldownTime = 0.0f;
 
             data.initNewData();
+
+            if (bigShotBall == null)
+            {
+                bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
+            }
         }
 
         public void initStage(Vector2 position)
@@ -191,7 +199,7 @@ namespace MyGame
                     else if (controls.Y_firstReleased())
                     {
                         playAction("attack");
-                        float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, 1.0f) + 1.0f;
+                        float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) + 1.0f;
                         Projectile p = new PlayerBigShot(position, bigShotValue);
                         p.damage *= bigShotValue;
                         ProjectileManager.Instance.addProjectile(p);
@@ -208,8 +216,26 @@ namespace MyGame
 
         public override void render()
         {
+            renderBigShot();
             base.render();
         }
+
+        public void renderBigShot()
+        {
+            if (!bigShotCharging) return;
+            
+            float forceValue = (MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) / MAX_BIG_SHOT_CHARGE);
+
+            if (forceValue == 1.0f)
+            {
+                forceValue += (float)Math.Sin((bigShotChargeTimer - MAX_BIG_SHOT_CHARGE) * 8.0f) * 0.05f;
+            }
+
+            bigShotBall.render( 
+                SB.getWorldMatrix(position + new Vector3(0.0f, 60.0f, 0.0f), 0.0f, forceValue * 120.0f),
+                new Color(forceValue, forceValue - 0.3f, forceValue - 0.3f, forceValue));
+        }
+
         public override void requestDelete()
         {
             base.requestDelete();

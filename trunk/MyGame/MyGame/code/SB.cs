@@ -25,15 +25,6 @@ namespace MyGame
             font = content.Load<SpriteFont>("fonts/font");
         }
 
-        public static void beginAlphaRender()
-        {
-            //graphics.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-            //graphics.GraphicsDevice.RenderState.AlphaBlendOperation = BlendFunction.Add;
-            //graphics.GraphicsDevice.RenderState.SourceBlend = Blend.SourceAlpha;
-            //graphics.GraphicsDevice.RenderState.DestinationBlend = Blend.InverseSourceAlpha;
-            //graphics.GraphicsDevice.RenderState.SeparateAlphaBlendEnabled = false;
-        }
-
         public static Matrix getWVP(Vector2 v)
         {
             Matrix world = Matrix.CreateTranslation(new Vector3(v, 0));
@@ -67,6 +58,7 @@ namespace MyGame
         public static Matrix getWVP(Vector3 position, float rotation, Vector2 gameSize)
         {
             return Matrix.CreateTranslation(new Vector3(- gameSize.X / 2, - gameSize.Y / 2, 0))
+                * Matrix.CreateScale(gameSize.X, gameSize.Y, 1.0f)
                 * Matrix.CreateRotationZ(rotation)
                 * Matrix.CreateTranslation(new Vector3(position.X, position.Y, position.Z))
                 * Camera2D.view * Camera2D.projection;
