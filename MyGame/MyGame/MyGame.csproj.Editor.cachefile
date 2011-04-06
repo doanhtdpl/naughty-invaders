@@ -124,6 +124,7 @@ Content\textures\staticProps\artmapa-20.xnb
 Content\textures\animatedProps\SpriteSheetpelos.xnb
 Content\textures\animatedProps\SpriteSheetojos.xnb
 Content\textures\animatedProps\SpriteSheetojitos.xnb
+Content\textures\projectiles\bigShotPlayer.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
