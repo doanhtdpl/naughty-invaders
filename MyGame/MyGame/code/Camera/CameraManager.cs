@@ -15,6 +15,7 @@ namespace MyGame
         public int id;
         public int next;
         public bool isFirst;
+        public float speed = 50.0f;
 
         public CameraData(Vector3 position, Vector3 target, int id, bool isFirst = false)
         {
@@ -33,6 +34,11 @@ namespace MyGame
             this.id = NEXT_ID++;
             next = -1;
             this.isFirst = isFirst;
+        }
+
+        public void setSpeed(, float speed)
+        {
+            this.speed = speed;
         }
     }
 
