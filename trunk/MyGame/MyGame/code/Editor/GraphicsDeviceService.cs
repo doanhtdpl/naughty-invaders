@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -138,3 +139,4 @@ namespace MyGame
         public event EventHandler<EventArgs> DeviceResetting;
     }
 }
+#endif

@@ -1,4 +1,5 @@
-﻿namespace MyGame
+﻿#if EDITOR
+namespace MyGame
 {
     partial class MyEditor
     {
@@ -656,3 +657,4 @@
         private System.Windows.Forms.Button superPizzaButton;
     }
 }
+#endif
