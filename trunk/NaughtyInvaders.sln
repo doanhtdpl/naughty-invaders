@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame\MyGame\MyG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameContent", "MyGame\MyGameContent\MyGameContent.contentproj", "{897F27A2-6526-430D-A317-D428BC81EA4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xbox 360 Copy of MyGame", "MyGame\MyGame\Xbox 360 Copy of MyGame.csproj", "{9692A9C1-582B-4809-BF17-1D981AD4DF38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z Game 360", "MyGame\MyGame\Z Game 360.csproj", "{9692A9C1-582B-4809-BF17-1D981AD4DF38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
