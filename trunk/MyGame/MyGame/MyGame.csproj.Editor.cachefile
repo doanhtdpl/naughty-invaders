@@ -40,6 +40,7 @@ Content\textures\projectiles\Anim_PlayerWeapon.xnb
 Content\textures\staticProps\Background_Level01.xnb
 Content\textures\particles\Particle_Test.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
+Content\textures\particles\Gusyluz.xnb
 Content\textures\staticProps\esmeral.xnb
 Content\textures\staticProps\pincho.xnb
 Content\textures\staticProps\struc-01.xnb
@@ -70,7 +71,6 @@ Content\textures\enemies\Anim_ElderOnion.xnb
 Content\textures\enemies\Anim_KingTomato.xnb
 Content\textures\enemies\Anim_Orange.xnb
 Content\textures\enemies\Anim_Tomato.xnb
-Content\textures\particles\Gusyluz.xnb
 Content\textures\animatedProps\ventosaseq.xnb
 Content\textures\staticProps\bg01_struct-27.xnb
 Content\textures\staticProps\bg01_struct-28.xnb
