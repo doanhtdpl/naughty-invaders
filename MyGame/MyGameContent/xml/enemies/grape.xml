@@ -4,10 +4,10 @@
     <action name="attack" initialFrame="1" endFrame="8" loops="false"/>
     <action name="die" initialFrame="9" endFrame="18" loops="false"/>
     <action name="idle" initialFrame="20" endFrame="28" FPS="15" loops="true"/>
-    <action name="DashLeftStart" initialFrame="29" endFrame="29" FPS="15" loops="false"/>
+    <action name="DashLeftStart" initialFrame="29" endFrame="29" FPS="15" loops="false" playAtEnd="DashLeftIdle"/>
     <action name="DashLeftIdle" initialFrame="30" endFrame="31" FPS="15" loops="true"/>
     <action name="DashLeftEnd" initialFrame="32" endFrame="32" FPS="15" loops="false"/>
-    <action name="DashRightStart" initialFrame="33" endFrame="33" FPS="15" loops="false"/>
+    <action name="DashRightStart" initialFrame="33" endFrame="33" FPS="15" loops="false" playAtEnd="DashRightIdle"/>
     <action name="DashRightIdle" initialFrame="34" endFrame="35" FPS="15" loops="true"/>
     <action name="DashRightEnd" initialFrame="36" endFrame="36" FPS="15" loops="false"/>
   </animatedTexture>

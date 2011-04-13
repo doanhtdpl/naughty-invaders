@@ -14,6 +14,8 @@ namespace MyGame
         const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 0.6f;
 
         bool moveRight;
+        bool moveStarted;
+        bool moveEnded;
         float nextMoveTimer;
         float movingTimer;
         float nextAttackTimer;
@@ -73,35 +75,74 @@ namespace MyGame
                 }
                 // prepare next move
                 nextMoveTimer = Calc.randomScalar(2.0f, 4.0f);
+                moveStarted = false;
+                moveEnded = false;
             }
-            // next attack
-            if (nextAttackTimer < 0)
-            {
-                playAction("attack");
-                float orientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
-                orientation += Calc.randomAngle(-0.3f, +0.3f);
-                // clamp the angle to the grape's shot cone
-                orientation = Calc.clampAngle(orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
-                Projectile p = new GrapeProjectile(position, orientation + Calc.PiOver2, Calc.angleToDirection(orientation));
-                ProjectileManager.Instance.addProjectile(p);
-                nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
-            }
-
+            
             // update position
             if (movingTimer > 0)
             {
+                this.orientation = 0.0f;
+
                 if (moveRight)
                 {
+                    if (!moveStarted)
+                    {
+                        playAction("DashLeftStart");
+                        moveStarted = true;
+                    }
                     GameplayHelper.Instance.updateEntityPosition(this,
                         position2D + (new Vector2(LATERAL_SPEED, 0.0f) * SB.dt),
                         LevelManager.Instance.getLevelCollisions(), false);
                 }
                 else
                 {
+                    if (!moveStarted)
+                    {
+                        playAction("DashRightStart");
+                        moveStarted = true;
+                    }
                     GameplayHelper.Instance.updateEntityPosition(this,
                         position2D + (new Vector2(-LATERAL_SPEED, 0.0f) * SB.dt),
                         LevelManager.Instance.getLevelCollisions(), false);
                 }
+            }
+            else if (!moveEnded)
+            {
+                if (moveRight)
+                {
+                    playAction("DashLeftEnd");
+                }
+                else
+                {
+                    playAction("DashLeftEnd");
+                }
+                moveEnded = true;
+            }
+            else // update orientation
+            {
+                if (position2D.Y < GamerManager.getSessionOwner().Player.position2D.Y)
+                {
+                    orientation = 0.0f;
+                }
+                else
+                {
+                    orientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
+                    orientation = Calc.clampAngle(this.orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE) + Calc.PiOver2;
+                }
+            }
+
+            // next attack
+            if (movingTimer < 0 && nextAttackTimer < 0)
+            {
+                playAction("attack");
+                float attackOrientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
+                attackOrientation += Calc.randomAngle(-0.3f, +0.3f);
+                // clamp the angle to the grape's shot cone
+                attackOrientation = Calc.clampAngle(orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
+                Projectile p = new GrapeProjectile(position, attackOrientation + Calc.PiOver2, Calc.angleToDirection(orientation));
+                ProjectileManager.Instance.addProjectile(p);
+                nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
             }
         }
 
