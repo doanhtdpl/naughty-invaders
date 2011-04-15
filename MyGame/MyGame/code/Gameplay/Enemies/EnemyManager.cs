@@ -117,7 +117,7 @@ namespace MyGame
             {
                 foreach (Enemy enemy in enemies)
                 {
-                    if (p.collidesWith(enemy, 0.0f, ref alive))
+                    if (p.collidesWith(enemy, ref alive))
                     {
                         if (!alive)
                         {

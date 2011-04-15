@@ -111,5 +111,19 @@ namespace MyGame
                 ent.reset();
             }
         }
+
+#if DEBUG
+        public void renderCollisionParts()
+        {
+            foreach (Entity2D e in entities)
+            {
+                if (e is CollidableEntity2D)
+                {
+                    CollidableEntity2D ce = (CollidableEntity2D)e;
+                    ce.renderCollisionParts();
+                }
+            }
+        }
+#endif
     }
 }

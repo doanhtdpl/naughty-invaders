@@ -68,13 +68,29 @@ namespace MyGame
             texts = new sDebugText[MAX_TEXTS];
         }
 
+        public void addCircle(Vector2 position, float radius, int segments)
+        {
+            float angleStep = Calc.TwoPi / (float)segments;
+            float currentAngle = 0.0f;
+            Vector2 p1, p2;
+            p2 = new Vector2(position.X + radius, position.Y);
+            for (int i = 0; i < segments; ++i)
+            {
+                currentAngle += angleStep;
+                p1 = p2;
+                p2 = new Vector2((float)(position.X + Math.Cos(currentAngle) * radius),
+                                 (float)(position.Y + Math.Sin(currentAngle) * radius));
+                addLine(p1, p2, Color.White);
+            }
+        }
+
         public void addLine(Vector3 p1, Vector3 p2, Color color)
         {
             int index = numberOfLines * 2;
 
             if (index > lineList.Length) return;
 
-             lineList[index].Position = p1;
+            lineList[index].Position = p1;
             lineList[index].Color = color;
             lineList[index + 1].Position = p2;
             lineList[index + 1].Color = color;

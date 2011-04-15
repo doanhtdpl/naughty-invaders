@@ -30,7 +30,7 @@ namespace MyGame
             addCollision(new Vector2(0, 20), 40);
         }
 
-        public override bool gotHitAtPart(int partIndex, float damage)
+        public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
             return false;
         }
