@@ -16,6 +16,7 @@ namespace MyGame
         bool moveRight;
         bool moveStarted;
         bool moveEnded;
+        float afterAttackTimer;
         float nextMoveTimer;
         float movingTimer;
         float nextAttackTimer;
@@ -27,6 +28,8 @@ namespace MyGame
 
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
+
+            afterAttackTimer = 999999.0f;
 
             setCollisions();
         }
@@ -58,6 +61,7 @@ namespace MyGame
             nextMoveTimer -= SB.dt;
             nextAttackTimer -= SB.dt;
             movingTimer -= SB.dt;
+            afterAttackTimer -= SB.dt;
 
             // next move
             if (nextMoveTimer < 0)
@@ -119,18 +123,6 @@ namespace MyGame
                 }
                 moveEnded = true;
             }
-            else // update orientation
-            {
-                if (position2D.Y < GamerManager.getSessionOwner().Player.position2D.Y)
-                {
-                    orientation = 0.0f;
-                }
-                else
-                {
-                    orientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
-                    orientation = Calc.clampAngle(this.orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE) + Calc.PiOver2;
-                }
-            }
 
             // next attack
             if (movingTimer < 0 && nextAttackTimer < 0)
@@ -139,10 +131,19 @@ namespace MyGame
                 float attackOrientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
                 attackOrientation += Calc.randomAngle(-0.3f, +0.3f);
                 // clamp the angle to the grape's shot cone
-                attackOrientation = Calc.clampAngle(orientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
-                Projectile p = new GrapeProjectile(position, attackOrientation + Calc.PiOver2, Calc.angleToDirection(orientation));
+                attackOrientation = Calc.clampAngle(attackOrientation, MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
+                orientation = attackOrientation + Calc.PiOver2;
+                Projectile p = new GrapeProjectile(position, attackOrientation + Calc.PiOver2, Calc.angleToDirection(attackOrientation));
                 ProjectileManager.Instance.addProjectile(p);
                 nextAttackTimer = Calc.randomScalar(1.0f, 3.0f);
+                afterAttackTimer = 0.2f;
+            }
+
+            // to get back to orientation 0
+            if (afterAttackTimer < 0.0f)
+            {
+                afterAttackTimer = 999999.0f;
+                orientation = 0.0f;
             }
         }
 

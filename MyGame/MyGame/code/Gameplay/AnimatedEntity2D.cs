@@ -221,10 +221,6 @@ namespace MyGame
                     }
                     else
                     {
-                        if (entityName == "grape")
-                        {
-                            int lal = 1;
-                        }
                         playAction("idle");
                     }
                 }
