@@ -514,26 +514,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\Tomato.xml">
+    <None Include="xml\enemies\tomato.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Tomato</Name>
+      <Name>tomato</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\ElderOnion.xml">
+    <None Include="xml\enemies\elderOnion.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>ElderOnion</Name>
+      <Name>elderOnion</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\KingTomato.xml">
+    <None Include="xml\enemies\kingTomato.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>KingTomato</Name>
+      <Name>kingTomato</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </None>
@@ -656,10 +656,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\WaterMelon.xml">
+    <None Include="xml\enemies\watermelon.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>WaterMelon</Name>
+      <Name>watermelon</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </None>
