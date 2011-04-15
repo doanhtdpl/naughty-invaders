@@ -22,14 +22,19 @@ namespace MyGame
 
     public class CollidableEntity2D : AnimatedEntity2D
     {
+        public enum tSpecial { BreaksGuard };
         protected float life;
         List<CollidablePart> parts = new List<CollidablePart>();
 
         public List<CollidablePart> getParts() { return parts; }
+        public tSpecial special { get; set; }
 
-        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, int id = -1)
+        public float damage { set; get; }
+
+        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, float damage = 0.0f, int id = -1)
             : base(entityFolder, entityName, position, orientation, color, id)
         {
+            this.damage = damage;
         }
 
         public virtual void setCollisions()
@@ -43,17 +48,17 @@ namespace MyGame
         }
 
         // returns true if collides with the projectile. This method calls gotHitAtPart child method to see if the entity dies
-        public bool collidesWith(CollidableEntity2D ce, float damage, ref bool entityAlive)
+        public bool collidesWith(CollidableEntity2D ce, ref bool entityAlive)
         {
             for (int i = 0; i < parts.Count; ++i)
             {
-                List<CollidablePart> projectileParts = ce.getParts();
-                for (int j = 0; j < projectileParts.Count; ++j)
+                List<CollidablePart> ceParts = ce.getParts();
+                for (int j = 0; j < ceParts.Count; ++j)
                 {
-                    Vector2 v = (position2D + parts[i].centerOfMass) - (ce.position2D + projectileParts[j].centerOfMass);
-                    if (v.Length() < parts[i].radius + projectileParts[j].radius)
+                    Vector2 v = (position2D + parts[i].centerOfMass) - (ce.position2D + ceParts[j].centerOfMass);
+                    if (v.Length() < parts[i].radius + ceParts[j].radius)
                     {
-                        entityAlive = gotHitAtPart(i, damage);
+                        entityAlive = gotHitAtPart(ce, i);
                         return true;
                     }
                 }
@@ -62,7 +67,7 @@ namespace MyGame
         }
 
         // returns true if this collidable entity dies
-        public virtual bool gotHitAtPart(int partIndex, float damage)
+        public virtual bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
             // OVERRIDE at each entity who wants specific behavior when hit
             return true;
@@ -76,5 +81,15 @@ namespace MyGame
         {
             base.render();
         }
+
+#if DEBUG
+        public void renderCollisionParts()
+        {
+            for (int i = 0; i < parts.Count; ++i)
+            {
+                DebugManager.Instance.addCircle(position2D + parts[i].centerOfMass, parts[i].radius, 15);
+            }
+        }
+#endif
     }
 }

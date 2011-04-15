@@ -25,7 +25,6 @@ namespace MyGame
         int currentFrame = 0;
 
         // random action
-        string randomAction = "";
         float nextRandomActionTime;
 
         // to avoid loading every time for the same animated entities the same actions and textures, use a common pool

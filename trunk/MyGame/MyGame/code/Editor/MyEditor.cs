@@ -250,6 +250,10 @@ namespace MyGame
             {
                 drawGrid = !drawGrid;
             }
+            if (isKeyPressed(Microsoft.Xna.Framework.Input.Keys.H))
+            {
+                EntityManager.Instance.renderCollisionParts();
+            }
 
             //STATE CHANGE
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Q))

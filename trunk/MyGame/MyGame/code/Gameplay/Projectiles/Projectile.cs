@@ -8,7 +8,6 @@ namespace MyGame
 {
     public class Projectile : CollidableEntity2D
     {
-        public float damage { set; get; }
         public float speed { set; get; }
         public int lifes { set; get; }
         public bool remove { set; get; }
@@ -18,13 +17,12 @@ namespace MyGame
         public enum tTeam { Players, Enemies };
         public tTeam team { set; get; }
 
-        public Projectile(string name, Vector3 position, float orientation, Vector2 direction, float damage, float speed, int lifes, float cooldown, tTeam team):base("projectiles", name, position, orientation, Color.White)
+        public Projectile(string name, Vector3 position, float orientation, Vector2 direction, float damage, float speed, int lifes, float cooldown, tTeam team):base("projectiles", name, position, orientation, Color.White, damage)
         {
             entityName = name;
             remove = false;
             entityState = tEntityState.Active;
             this.direction = direction;
-            this.damage = damage;
             this.speed = speed;
             this.lifes = lifes;
             this.cooldown = cooldown;

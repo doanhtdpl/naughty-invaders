@@ -12,9 +12,10 @@ namespace MyGame
 
         tWatermelonState state;
 
-        const float SPEED = 30.0f;
+        const float SPEED = 0.0f;
         const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 0.6f;
         const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 0.6f;
+        const int NUMBER_OF_PROJECTILES = 5;
 
         float vulnerableTime;
         float nextAttackTimer;
@@ -28,7 +29,6 @@ namespace MyGame
             nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);
 
             playAction("idleProt");
-            //scale2D *= 1.5f;
             setCollisions();
         }
 
@@ -37,15 +37,15 @@ namespace MyGame
             addCollision(new Vector2(0, 20), 40);
         }
 
-        public override bool gotHitAtPart(int partIndex, float damage)
+        public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
-            if (getCurrentAction() == "idleProt")
+            if (getCurrentAction() == "idleProt" && ce.special != tSpecial.BreaksGuard)
             {
-                life -= damage * 0.1f;
+                life -= ce.damage * 0.1f;
             }
             else
             {
-                life -= damage;
+                life -= ce.damage;
             }
             return life > 0;
         }
@@ -69,7 +69,7 @@ namespace MyGame
             {
                 case tWatermelonState.IdleProt:
                     // turn to idle position
-                    if (nextAttackTimer < 1.0f)
+                    if (nextAttackTimer < 0.8f)
                     {
                         // prepare move
                         playAction("FromIdleProtToIdle");
@@ -82,6 +82,7 @@ namespace MyGame
                         // prepare move
                         playAction("attack");
                         state = tWatermelonState.ReadyToIdle;
+                        throwProjectiles();
                     }
                     break;
                 case tWatermelonState.ReadyToIdle:
@@ -94,6 +95,16 @@ namespace MyGame
                         nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);
                     }
                     break;
+            }
+        }
+
+        void throwProjectiles()
+        {
+            for (int i = 0; i < NUMBER_OF_PROJECTILES; ++i)
+            {
+                float attackOrientation = Calc.randomAngle(MIN_SHOT_ANGLE, MAX_SHOT_ANGLE);
+                Projectile p = new WatermelonProjectile(position, attackOrientation, Calc.angleToDirection(attackOrientation), Calc.randomScalar(200.0f, 350.0f));
+                ProjectileManager.Instance.addProjectile(p);
             }
         }
 

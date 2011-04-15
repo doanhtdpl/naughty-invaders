@@ -73,7 +73,7 @@ namespace MyGame
             addCollision(new Vector2(0, 0), 40);
         }
 
-        public override bool gotHitAtPart(int partIndex, float damage)
+        public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
             if (invulnerableTime > 0.0f) return true;
 
@@ -199,9 +199,11 @@ namespace MyGame
                     else if (controls.Y_firstReleased())
                     {
                         playAction("attack");
+                        // value that goes from 1 to 3 (minimum and maximum charge)
                         float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) + 1.0f;
-                        Projectile p = new PlayerBigShot(position, bigShotValue);
-                        p.damage *= bigShotValue;
+                        // from 0 to 1
+                        float chargeValue = (bigShotValue - 1) * 0.5f;
+                        Projectile p = new PlayerBigShot(position, bigShotValue, chargeValue);
                         ProjectileManager.Instance.addProjectile(p);
                         ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
                             bigShotValue * 0.6f, (int)(20 * bigShotValue), bigShotValue);
