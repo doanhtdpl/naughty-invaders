@@ -86,6 +86,7 @@
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
+    <Compile Include="code\Gameplay\Enemies\Watermelon.cs" />
     <Compile Include="code\Gameplay\GameplayHelper.cs" />
     <Compile Include="code\Gameplay\Orbs\Orb.cs" />
     <Compile Include="code\Gameplay\Orbs\OrbManager.cs" />

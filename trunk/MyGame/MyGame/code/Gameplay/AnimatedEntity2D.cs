@@ -64,6 +64,10 @@ namespace MyGame
         {
             return new Vector2(animatedTextures[0].frameWidth, animatedTextures[0].frameHeight);
         }
+        public string getCurrentAction()
+        {
+            return actionState;
+        }
 
         public void playAction(string newAction, bool forcePlay = false)
         {

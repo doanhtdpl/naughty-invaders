@@ -136,11 +136,11 @@ Content\xml\projectiles\pearProjectile.xml
 Content\xml\enemies\calsot.xml
 Content\xml\animatedProps\leaf.xml
 Content\xml\particles\particleSystems.xml
-Content\xml\enemies\Tomato.xml
-Content\xml\enemies\ElderOnion.xml
-Content\xml\enemies\KingTomato.xml
+Content\xml\enemies\tomato.xml
+Content\xml\enemies\elderOnion.xml
+Content\xml\enemies\kingTomato.xml
 Content\xml\animatedProps\ventose.xml
 Content\xml\animatedProps\AAtentacle.xml
 Content\xml\animatedProps\AAleaf.xml
-Content\xml\enemies\WaterMelon.xml
+Content\xml\enemies\watermelon.xml
 Content\xml\levels\xmlLevelTemplate.xml
