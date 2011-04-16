@@ -105,10 +105,10 @@ namespace MyGame
             this.staticPropertiesPanel.Controls.Add(this.textPosY);
             this.staticPropertiesPanel.Controls.Add(this.label1);
             this.staticPropertiesPanel.Controls.Add(this.textPosX);
-            this.staticPropertiesPanel.Location = new System.Drawing.Point(599, 0);
+            this.staticPropertiesPanel.Location = new System.Drawing.Point(724, 0);
             this.staticPropertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.staticPropertiesPanel.Name = "staticPropertiesPanel";
-            this.staticPropertiesPanel.Size = new System.Drawing.Size(601, 91);
+            this.staticPropertiesPanel.Size = new System.Drawing.Size(492, 91);
             this.staticPropertiesPanel.TabIndex = 3;
             // 
             // flipVerticalCheck
