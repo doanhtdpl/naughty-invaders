@@ -472,7 +472,7 @@ namespace MyGame
         {
             if (anyEntitySelected())
             {
-                Entity2D ent = selectedEntities[0];
+                RenderableEntity2D ent = (RenderableEntity2D)selectedEntities[0];
                 if (ent != null)
                 {
                     ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
@@ -480,24 +480,25 @@ namespace MyGame
                     ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
                     ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
 
-                    if (ent is RenderableEntity2D)
+                }
+
+                foreach (RenderableEntity2D rent in selectedEntities)
+                {
+                    rent.color.A = Byte.Parse(this.colorA.Text);
+
+                    float alpha = rent.color.A / 255.0f;
+
+                    if (alpha == 0)
                     {
-                        ((RenderableEntity2D)ent).color.A = Byte.Parse(this.colorA.Text);
-
-                        float alpha = ((RenderableEntity2D)ent).color.A / 255.0f;
-
-                        if (alpha == 0)
-                        {
-                            alpha = 1.0f;
-                        }
-                        
-                        ((RenderableEntity2D)ent).color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
-                        ((RenderableEntity2D)ent).color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
-                        ((RenderableEntity2D)ent).color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
-
-                        ((RenderableEntity2D)ent).flipHorizontal = flipHorizontalCheck.Checked;
-                        ((RenderableEntity2D)ent).flipVertical = flipVerticalCheck.Checked;
+                        alpha = 1.0f;
                     }
+
+                    rent.color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
+                    rent.color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
+                    rent.color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
+
+                    rent.flipHorizontal = flipHorizontalCheck.Checked;
+                    rent.flipVertical = flipVerticalCheck.Checked;
                 }
             }
         }
