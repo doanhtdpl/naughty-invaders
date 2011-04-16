@@ -48,7 +48,7 @@ namespace MyGame
 
         #region Selected Entitie(s)
 
-        public bool anyEntitySelected() { return selectedEntities.Count > 0; }
+        public bool anyEntitySelected() { return selectedEntities.Count > 0 && selectedEntities[0] != null; }
         public List<Entity2D> getSelectedEntities() { return selectedEntities; }
 
         public void selectEntity(Entity2D entity)
@@ -277,6 +277,10 @@ namespace MyGame
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.E))
             {
                 changeState(new EditorState_ScaleState());
+            }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.B))
+            {
+                colorButton_Click(null, null);
             }
 
             //RESET
@@ -643,7 +647,7 @@ namespace MyGame
         {
             Vector3 pos = EditorHelper.Instance.getMousePosInZ(gameScreenPos, 0);
 
-            NetworkNode<CameraData> newNode = new NetworkNode<CameraData>(new CameraData(pos + new Vector3(0, 0, 1000), pos, false));
+            NetworkNode<CameraData> newNode = new NetworkNode<CameraData>(new CameraData(pos + new Vector3(0, 0, 1000), pos, -1, false));
 
             CameraManager.Instance.addNode(newNode);
 
