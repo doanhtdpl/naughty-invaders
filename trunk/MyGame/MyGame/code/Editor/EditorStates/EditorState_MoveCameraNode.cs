@@ -15,6 +15,7 @@ namespace MyGame
     class EditorState_MoveCameraNode : EditorState
     {
         NetworkNode<CameraData> cameraNode = null;
+        bool selectingLink = false;
 
         public override void enter()
         {
@@ -35,31 +36,41 @@ namespace MyGame
         {
             base.update();
 
-            if (selectCameraNode() && isPosInScreen(gameScreenPos))
+            if (selectingLink)
             {
-                if (keyState.IsKeyDown(Keys.Delete) && lastKeyState.IsKeyUp(Keys.Delete))
+                if (selectCameraNode())
                 {
-                    CameraManager.Instance.getNodes().getNodes().Remove(cameraNode);
-                    cameraNode = null;
-                    return;
-                }
 
-                if (mouseState.LeftButton == ButtonState.Pressed)
-                {
-                    Vector2 current = new Vector2(mouseState.X, mouseState.Y);
-                    Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
-
-                    Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, 0);
-                    Vector3 lastZ = EditorHelper.Instance.getMousePosInZ(last, 0);
-
-                    cameraNode.value.position += (currentZ - lastZ);
-                    cameraNode.value.target += (currentZ - lastZ);
                 }
             }
-
-            if (mouseState.LeftButton == ButtonState.Pressed || justReleasedLeftButton())
+            else
             {
-                cameraToFields();
+                if (selectCameraNode() && isPosInScreen(gameScreenPos))
+                {
+                    if (keyState.IsKeyDown(Keys.Delete) && lastKeyState.IsKeyUp(Keys.Delete))
+                    {
+                        CameraManager.Instance.getNodes().getNodes().Remove(cameraNode);
+                        cameraNode = null;
+                        return;
+                    }
+
+                    if (mouseState.LeftButton == ButtonState.Pressed)
+                    {
+                        Vector2 current = new Vector2(mouseState.X, mouseState.Y);
+                        Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
+
+                        Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, 0);
+                        Vector3 lastZ = EditorHelper.Instance.getMousePosInZ(last, 0);
+
+                        cameraNode.value.position += (currentZ - lastZ);
+                        cameraNode.value.target += (currentZ - lastZ);
+                    }
+                }
+
+                if (mouseState.LeftButton == ButtonState.Pressed || justReleasedLeftButton())
+                {
+                    cameraToFields();
+                }
             }
         }
 
@@ -113,19 +124,36 @@ namespace MyGame
 
             if (justReleasedLeftButton() && canSelect)
             {
-                cameraNode = null;
+                if(!selectingLink)
+                    cameraNode = null;
+
                 foreach(NetworkNode<CameraData> node in CameraManager.Instance.getNodes().getNodes())
                 {
                     Vector3 pos = node.value.target;
                     pos.Z = 0;
                     if ((node.value.target - mouseInSetaZero).Length() < 70.0f)
                     {
-                        cameraNode = node;
+                        if (selectingLink)
+                        {
+                            cameraNode.addLinkedNode(node);
+                            selectingLink = false;
+                        }
+                        else
+                        {
+                            cameraNode = node;
+                        }
+
+                        break;
                     }
                 }
             }
 
             return cameraNode != null;
+        }
+
+        public void selectLink()
+        {
+            selectingLink = !selectingLink;
         }
 
         public override void render()
