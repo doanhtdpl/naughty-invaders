@@ -18,6 +18,7 @@ namespace MyGame
         // este rectángulo abarca lo que vemos en la pantalla. Se actualiza cuando se modifica la Z que es el
         // zoom de la cámara. Utilizamos para ver si los objetos están o no en pantalla.
         static public Rectangle screen;
+        static public Rectangle screenWithMargins;
         static public Matrix view;
         static public Matrix projection;
         // este rectángulo es similar al screen, es donde el player puede moverse. Como depende del zoom
@@ -93,6 +94,10 @@ namespace MyGame
             int height = (int)(atZ.Height * (position.Z / aspectZ));
 
             screen = new Rectangle((int)screenPos.X, (int)screenPos.Y, width, height);
+            screenWithMargins = screen;
+            int margin = (int)(width * 0.2f);
+            screenWithMargins.Width += margin;
+            screenWithMargins.Height += margin;
         }
         // playable zone = la zona comprendida por la screen y unos márgenes de fuera de la screen
         // donde el juego calcula todo lo que ocurre

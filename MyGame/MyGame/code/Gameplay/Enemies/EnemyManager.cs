@@ -12,7 +12,6 @@ namespace MyGame
         List<Entity2D> enemies = new List<Entity2D>();
         List<Entity2D> activeEnemies = new List<Entity2D>();
         List<Enemy> enemiesToDelete = new List<Enemy>();
-        float nextSpawn = 0;
 
         static EnemyManager instance = null;
 
@@ -149,6 +148,8 @@ namespace MyGame
             {
                 foreach (Enemy enemy in activeEnemies)
                 {
+                    if (enemy.entityState == Entity2D.tEntityState.Dying) continue;
+
                     if (p.collidesWith(enemy, ref alive))
                     {
                         if (!alive)
@@ -164,22 +165,12 @@ namespace MyGame
         {
             updateSleepingEnemies();
 
-            nextSpawn -= SB.dt;
-            if (nextSpawn < 0)
-            {
-                //Enemy e = new Enemy();
-                //e.position2D = new Vector2(Calc.randomScalar(-500, 500), 400);
-                //e.scale2D = new Vector2(20, 20);
-                //addEnemy(e);
-                nextSpawn = 1;
-            }
-
             checkCollisionsWithPlayers();
 
             foreach (Enemy enemy in activeEnemies)
             {
                 // if the projectile is out of screen, delete it
-                if (!CoolizionManager.pointVSrectangle(enemy.position2D, Camera2D.screen, (int)enemy.getRadius()))
+                if (!CoolizionManager.pointVSrectangle(enemy.position2D, Camera2D.screenWithMargins, (int)enemy.getRadius()))
                 {
                     requestDeleteOf(enemy);
                     continue;
