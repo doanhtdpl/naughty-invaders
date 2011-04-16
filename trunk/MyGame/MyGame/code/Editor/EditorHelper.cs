@@ -155,6 +155,8 @@ namespace MyGame
             writer.WriteAttributeString("entityName", entity2D.entityName);
             writer.WriteAttributeString("worldMatrix", entity2D.worldMatrix.toXML());
             writer.WriteAttributeString("id", entity2D.id.ToString());
+            RenderableEntity2D ent = (RenderableEntity2D) entity2D;
+            writer.WriteAttributeString("color", ent.color.toXML());
             writer.WriteEndElement();
         }
         void writeLevelCollision(XmlTextWriter writer, Line line)
@@ -295,6 +297,10 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     RenderableEntity2D re = new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
                     re.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
+                    if (node.Attributes("color").Count() > 0)
+                    {
+                        re.color = node.Attribute("color").Value.toColor();
+                    }
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
                     list.Add(re);
@@ -308,6 +314,10 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     AnimatedEntity2D ae = new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
                     ae.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
+                    if (node.Attributes("color").Count() > 0)
+                    {
+                        ae.color = node.Attribute("color").Value.toColor();
+                    }
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();
                     list.Add(ae);
@@ -322,6 +332,11 @@ namespace MyGame
                     string name = node.Attribute("entityName").Value;
                     Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
                     Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation, id);
+                    if (node.Attributes("color").Count() > 0)
+                    {
+                        
+                        ((RenderableEntity2D)e).color = node.Attribute("color").Value.toColor();
+                    }
                     e.setInit();
                     list.Add(e);
                 }
@@ -385,7 +400,11 @@ namespace MyGame
                         List<int> idList = new List<int>();
                         foreach (XElement entityId in ids)
                         {
-                            idList.Add(entityId.Attribute("id").Value.toInt());
+                            int entityID = entityId.Attribute("id").Value.toInt();
+                            if (EntityManager.Instance.getEntityByID(entityID) != null)
+                            {
+                                idList.Add(entityID);
+                            }
                         }
                         LevelManager.Instance.addGroup(idList);
                     }
