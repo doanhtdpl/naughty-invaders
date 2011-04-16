@@ -71,7 +71,7 @@ namespace MyGame
         }
         public void update()
         {
-            List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
+            List<Entity2D> enemies = EnemyManager.Instance.getActiveEnemies();
             for (int i = 0; i < projectiles.Count; ++i)
             {
                 Projectile p = (Projectile)projectiles[i];

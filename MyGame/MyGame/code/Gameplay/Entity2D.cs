@@ -34,6 +34,21 @@ namespace MyGame
             get { return new Vector2(world.Translation.X, world.Translation.Y); }
             set { world.Translation = new Vector3(value.X, value.Y, world.Translation.Z); }
         }
+        public float positionX
+        {
+            get { return world.M41; }
+            set { world.M41 = value; }
+        }
+        public float positionY
+        {
+            get { return world.M42; }
+            set { world.M42 = value; }
+        }
+        public float positionZ
+        {
+            get { return world.M43; }
+            set { world.M43 = value; }
+        }
         // gets or sets the scale
         public Vector3 scale
         {
