@@ -44,6 +44,8 @@ namespace MyGame
         {
             InitializeComponent();
             Instance = this;
+
+            cameraNodePanel.Hide();
         }
 
         #region Selected Entitie(s)
@@ -289,6 +291,10 @@ namespace MyGame
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.B))
             {
                 colorButton_Click(null, null);
+            }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.D8))
+            {
+                CameraManager.Instance.speedMultiplier = 1.0f;
             }
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.D9))
             {
@@ -680,6 +686,37 @@ namespace MyGame
         private void addCameraLink(NetworkNode<CameraData> src, NetworkNode<CameraData> dst)
         {
             src.addLinkedNode(dst);
+        }
+
+
+        private void linkNodeButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void isFirstCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            ((EditorState_MoveCameraNode)currentState).fieldsToCamera();
+            myEditorControl.Focus();
+        }
+
+        private void keyPressed_cameraNode(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r') // PRESS ENTER
+            {
+                ((EditorState_MoveCameraNode)currentState).fieldsToCamera();
+                myEditorControl.Focus();
+            }
+        }
+
+        protected void textChange_cameraNode(object sender, EventArgs e)
+        {
+            ((EditorState_MoveCameraNode)currentState).fieldsToCamera();
+            myEditorControl.Focus();
+        }
+
+        private void buttonSetupCamera_Click(object sender, EventArgs e)
+        {
+            CameraManager.Instance.setupCamera();
         }
     }
 }
