@@ -67,6 +67,7 @@ namespace MyGame
             {
                 projectilesToDelete[i].delete();
             }
+            projectilesToDelete.Clear();
         }
         public void update()
         {
