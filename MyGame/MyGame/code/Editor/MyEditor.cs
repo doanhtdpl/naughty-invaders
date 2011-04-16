@@ -108,26 +108,31 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEnemy());
             }
+            myEditorControl.Focus();
         }
 
         private void buttonResetPosition_Click(object sender, EventArgs e)
         {
             resetPosition();
+            myEditorControl.Focus();
         }
 
         private void buttonResetRotation_Click(object sender, EventArgs e)
         {
             resetRotation();
+            myEditorControl.Focus();
         }
 
         private void buttonResetScale_Click(object sender, EventArgs e)
         {
             resetScale();
+            myEditorControl.Focus();
         }
 
         private void buttonCreateGroup_Click(object sender, EventArgs e)
         {
             createGroup();
+            myEditorControl.Focus();
         }
         #endregion
 
@@ -503,6 +508,8 @@ namespace MyGame
         private void flip_CheckedChanged(object sender, EventArgs e)
         {
             propertiesChanged();
+
+            myEditorControl.Focus();
         }
         #endregion
 
@@ -588,6 +595,8 @@ namespace MyGame
             skipNextFrame = true;
             exitBlockers--;
             noUpdate--;
+
+            myEditorControl.Focus();
 
             return colorDialog.Color;
         }
