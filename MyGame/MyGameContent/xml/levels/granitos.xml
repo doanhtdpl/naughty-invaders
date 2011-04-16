@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<level nextEntityID="78" BGColor="0 0 0 255">
+  <staticProps>
+    <staticProp entityName="struc-15" worldMatrix="90.6883 0 0 0 0 80.32693 0 0 0 0 1 0 -517.6376 290.3393 -0.9865894 1" id="35" />
+    <staticProp entityName="struc-15" worldMatrix="44.49214 0 0 0 0 40.74615 0 0 0 0 1 0 -455.567 326.6996 0.006404907 1" id="37" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -475.6904 162.7545 0.01407035 1" id="39" />
+    <staticProp entityName="struc-15" worldMatrix="65.54804 11.92775 0 0 -10.07232 55.35165 0 0 0 0 1 0 -557.6702 358.7 -23.99529 1" id="41" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -440.7572 265.9653 -0.00916243 1" id="43" />
+    <staticProp entityName="struc-15" worldMatrix="59.25944 0 0 0 0 50.04131 0 0 0 0 1 0 -372.8225 260.0552 0.01831792 1" id="45" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -521.261 215.1784 -0.00109648 1" id="47" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -553.6157 146.2727 -0.01186109 1" id="49" />
+    <staticProp entityName="struc-15" worldMatrix="59.20665 0 0 0 0 49.99672 0 0 0 0 1 0 -510.5254 384.2303 0.01180055 1" id="51" />
+    <staticProp entityName="struc-15" worldMatrix="58.61542 0 0 0 0 48.6683 0 0 0 0 1 0 -534.6237 426.829 0.01385156 1" id="53" />
+    <staticProp entityName="struc-15" worldMatrix="36.83015 0 0 0 0 31.10101 0 0 0 0 1 0 -553.4359 392.3642 0.004959037 1" id="55" />
+    <staticProp entityName="struc-15" worldMatrix="57.25544 0 0 0 0 48.34904 0 0 0 0 1 0 -491.9297 347.0609 0.01775794 1" id="57" />
+    <staticProp entityName="struc-15" worldMatrix="41.17477 0 0 0 0 34.7698 0 0 0 0 1 0 -452.7721 218.4283 0.01969151 1" id="59" />
+    <staticProp entityName="struc-15" worldMatrix="53.58309 0 0 0 0 45.24795 0 0 0 0 1 0 -399.523 221.6615 -0.01094212 1" id="61" />
+    <staticProp entityName="struc-15" worldMatrix="90.6883 0 0 0 0 80.32693 0 0 0 0 1 0 -497.0107 630.6846 -0.9865894 1" id="64" />
+    <staticProp entityName="struc-15" worldMatrix="44.49214 0 0 0 0 40.74615 0 0 0 0 1 0 -434.9561 666.781 0.006404907 1" id="65" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -455.0795 502.8339 0.01407035 1" id="66" />
+    <staticProp entityName="struc-15" worldMatrix="65.54804 11.92775 0 0 -10.07232 55.35165 0 0 0 0 1 0 -536.6725 705.1599 -23.99529 1" id="67" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -420.1458 606.0509 -0.00916243 1" id="68" />
+    <staticProp entityName="struc-15" worldMatrix="59.25944 0 0 0 0 50.04131 0 0 0 0 1 0 -352.2118 600.1334 0.01831792 1" id="69" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -500.6499 555.2619 -0.00109648 1" id="70" />
+    <staticProp entityName="struc-15" worldMatrix="90 0 0 0 0 76 0 0 0 0 1 0 -533.0043 486.3589 -0.01186109 1" id="71" />
+    <staticProp entityName="struc-15" worldMatrix="59.20665 0 0 0 0 49.99672 0 0 0 0 1 0 -489.9145 724.3104 0.01180055 1" id="72" />
+    <staticProp entityName="struc-15" worldMatrix="58.61542 0 0 0 0 48.6683 0 0 0 0 1 0 -514.0127 766.9084 0.01385156 1" id="73" />
+    <staticProp entityName="struc-15" worldMatrix="36.83015 0 0 0 0 31.10101 0 0 0 0 1 0 -532.8248 732.4459 0.004959037 1" id="74" />
+    <staticProp entityName="struc-15" worldMatrix="57.25544 0 0 0 0 48.34904 0 0 0 0 1 0 -471.3189 687.1395 0.01775794 1" id="75" />
+    <staticProp entityName="struc-15" worldMatrix="41.17477 0 0 0 0 34.7698 0 0 0 0 1 0 -432.1613 558.5061 0.01969151 1" id="76" />
+    <staticProp entityName="struc-15" worldMatrix="53.58309 0 0 0 0 45.24795 0 0 0 0 1 0 -378.9117 561.7474 -0.01094212 1" id="77" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <levelCollisions />
+  <camera />
+</level>

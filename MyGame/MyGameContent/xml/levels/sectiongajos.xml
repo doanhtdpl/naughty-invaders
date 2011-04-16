@@ -1,31 +1,1252 @@
 <?xml version="1.0"?>
-<level nextEntityID="246">
+<level nextEntityID="246" BGColor="0 0 0 255">
   <staticProps>
-    <staticProp entityName="bg01str2-22" worldMatrix="506 0 0 0 0 339 0 0 0 0 1 0 426.9826 866.6754 -0.01463495 1" id="49" />
-    <staticProp entityName="bg01str2-22" worldMatrix="186.2217 470.4603 4.962098 0 -306.4654 120.4582 80.55923 0 0.2174623 -0.0963225 0.9713045 0 619.6856 743.7562 147.9861 1" id="51" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-323.2785 389.2331 4.962098 0 -252.8075 -210.9968 80.55923 0 0.1889031 0.1445113 0.9713045 0 639.3968 658.9797 -206.0139 1" id="54" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-34.9891 504.7888 0 0 -338.1886 -23.44131 0 0 0 0 1 0 715.6005 485.925 -267.0146 1" id="55" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-276.935 422.5362 28.39567 0 -280.0432 -186.3662 42.00611 0 0.1343237 0.02145894 0.9907054 0 826.7274 329.5938 -402.0139 1" id="56" />
-    <staticProp entityName="bg01str2-22" worldMatrix="423.4205 268.4075 68.62061 0 -184.9958 280.7349 43.42289 0 -0.04435962 -0.1811925 0.9824469 0 441.1317 1017.308 96.98605 1" id="57" />
-    <staticProp entityName="bg01str2-22" worldMatrix="502.3796 -60.217 4.962098 0 38.40469 327.0417 80.55923 0 -0.03774091 -0.2348267 0.9713045 0 584.6516 1358.393 -198.0139 1" id="58" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-11.06075 291.7748 9.060927 0 -193.1247 -8.27201 30.62251 0 0.1575904 -0.02468289 0.9871961 0 613.2328 118.7255 0.9860535 1" id="59" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-346.0482 -693.2581 -49.10408 0 443.6207 -226.8481 76.3703 0 -0.163748 0.01186703 0.9864308 0 1009.718 1006.508 -242.0139 1" id="60" />
-    <staticProp entityName="bg01str2-22" worldMatrix="-110.6632 372.7216 -24.64008 0 -248.0228 -71.0253 39.54373 0 0.1277375 0.1031376 0.9864308 0 604.0297 398.0587 -214.0139 1" id="61" />
-    <staticProp entityName="bg01str2-22" worldMatrix="281.7876 419.1291 -31.02658 0 -275.3323 189.3397 57.12848 0 0.1738359 -0.0440465 0.9837892 0 623.0133 290.5996 -79.01395 1" id="62" />
-    <staticProp entityName="bg01str2-22" worldMatrix="259.6816 289.3669 -24.64008 0 -190.3279 174.1699 39.54373 0 0.1547378 -0.05486743 0.9864308 0 473.578 382.1371 -139.0139 1" id="73" />
-    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 740.6174 1136.561 -59.98163 1" id="117" />
-    <staticProp entityName="bg01str2-21" worldMatrix="322.4294 527.0786 -12.30362 0 -426.13 262.5616 80.76878 0 0.1461799 -0.06638226 0.9870284 0 927.0062 380.853 -139.0128 1" id="119" />
-    <staticProp entityName="bg01str2-21" worldMatrix="-97.97276 -610.1846 0 0 500.5884 -80.37572 0 0 0 0 1 0 464.0514 664.6087 -0.01405831 1" id="121" />
-    <staticProp entityName="artmapa-04" worldMatrix="325 0 0 0 0 238 0 0 0 0 1 0 771.4895 1277.06 -177.9836 1" id="130" />
-    <staticProp entityName="bg01str2-36" worldMatrix="2931.319 0 0 0 0 2786.01 0 0 0 0 1 0 182.797 711.7444 -431.0107 1" id="170" />
-    <staticProp entityName="struc-24" worldMatrix="1117.509 0 0 0 0 1724.52 0 0 0 0 1 0 63.31314 681.8834 -389.0098 1" id="243" />
+    <staticProp entityName="bg01str2-22" worldMatrix="506 0 0 0 0 339 0 0 0 0 1 0 426.9826 866.6754 -0.01463495 1" id="49" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="186.2218 470.4602 4.96208 0 -306.4654 120.4582 80.5592 0 0.2174623 -0.09632248 0.9713044 0 619.6856 743.7562 147.9861 1" id="51" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-323.2785 389.2331 4.962098 0 -252.8075 -210.9968 80.55923 0 0.1889031 0.1445113 0.9713045 0 639.3968 658.9797 -206.0139 1" id="54" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-34.9891 504.7888 0 0 -338.1886 -23.44131 0 0 0 0 1 0 715.6005 485.925 -267.0146 1" id="55" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-276.935 422.5362 28.39567 0 -280.0432 -186.3662 42.00611 0 0.1343237 0.02145894 0.9907054 0 826.7274 329.5938 -402.0139 1" id="56" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="423.4205 268.4075 68.62061 0 -184.9958 280.7349 43.42289 0 -0.04435962 -0.1811925 0.9824469 0 441.1317 1017.308 96.98605 1" id="57" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="502.3796 -60.217 4.962098 0 38.40469 327.0417 80.55923 0 -0.03774091 -0.2348267 0.9713045 0 584.6516 1358.393 -198.0139 1" id="58" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-11.06075 291.7748 9.060927 0 -193.1247 -8.27201 30.62251 0 0.1575904 -0.02468289 0.9871961 0 613.2328 118.7255 0.9860535 1" id="59" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-346.0482 -693.2581 -49.10408 0 443.6207 -226.8481 76.3703 0 -0.163748 0.01186703 0.9864308 0 1009.718 1006.508 -242.0139 1" id="60" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="-110.6632 372.7216 -24.64008 0 -248.0228 -71.0253 39.54373 0 0.1277375 0.1031376 0.9864308 0 604.0297 398.0587 -214.0139 1" id="61" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="281.7876 419.1291 -31.02658 0 -275.3323 189.3397 57.12848 0 0.1738359 -0.0440465 0.9837892 0 623.0133 290.5996 -79.01395 1" id="62" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-22" worldMatrix="259.6816 289.3669 -24.64008 0 -190.3279 174.1699 39.54373 0 0.1547378 -0.05486743 0.9864308 0 473.578 382.1371 -139.0139 1" id="73" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 740.6174 1136.561 -59.98163 1" id="117" color="143 143 143 255" />
+    <staticProp entityName="bg01str2-21" worldMatrix="322.4294 527.0786 -12.30362 0 -426.13 262.5616 80.76878 0 0.1461799 -0.06638226 0.9870284 0 927.0062 380.853 -139.0128 1" id="119" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-21" worldMatrix="-97.97276 -610.1846 0 0 500.5884 -80.37572 0 0 0 0 1 0 464.0514 664.6087 -0.01405831 1" id="121" color="255 255 255 255" />
+    <staticProp entityName="artmapa-04" worldMatrix="325 0 0 0 0 238 0 0 0 0 1 0 771.4895 1277.06 -177.9836 1" id="130" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-36" worldMatrix="2931.319 0 0 0 0 2786.01 0 0 0 0 1 0 182.797 711.7444 -431.0107 1" id="170" color="255 255 255 255" />
+    <staticProp entityName="struc-24" worldMatrix="1117.509 0 0 0 0 1724.52 0 0 0 0 1 0 63.31314 681.8834 -389.0098 1" id="243" color="255 255 255 255" />
   </staticProps>
   <animatedProps />
-  <groups />
+  <groups>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="750" />
+      <entity id="751" />
+      <entity id="752" />
+      <entity id="753" />
+      <entity id="754" />
+      <entity id="755" />
+      <entity id="756" />
+      <entity id="757" />
+      <entity id="758" />
+      <entity id="759" />
+      <entity id="760" />
+      <entity id="761" />
+      <entity id="762" />
+      <entity id="763" />
+      <entity id="764" />
+      <entity id="765" />
+      <entity id="766" />
+      <entity id="767" />
+      <entity id="768" />
+    </group>
+    <group>
+      <entity id="896" />
+      <entity id="897" />
+      <entity id="898" />
+      <entity id="899" />
+      <entity id="900" />
+      <entity id="901" />
+      <entity id="902" />
+      <entity id="903" />
+      <entity id="904" />
+      <entity id="905" />
+      <entity id="906" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="750" />
+      <entity id="751" />
+      <entity id="752" />
+      <entity id="753" />
+      <entity id="754" />
+      <entity id="755" />
+      <entity id="756" />
+      <entity id="757" />
+      <entity id="758" />
+      <entity id="759" />
+      <entity id="760" />
+      <entity id="761" />
+      <entity id="762" />
+      <entity id="763" />
+      <entity id="764" />
+      <entity id="765" />
+      <entity id="766" />
+      <entity id="767" />
+      <entity id="768" />
+    </group>
+    <group>
+      <entity id="896" />
+      <entity id="897" />
+      <entity id="898" />
+      <entity id="899" />
+      <entity id="900" />
+      <entity id="901" />
+      <entity id="902" />
+      <entity id="903" />
+      <entity id="904" />
+      <entity id="905" />
+      <entity id="906" />
+    </group>
+    <group>
+      <entity id="907" />
+      <entity id="908" />
+      <entity id="909" />
+      <entity id="910" />
+      <entity id="911" />
+      <entity id="912" />
+      <entity id="913" />
+      <entity id="914" />
+      <entity id="915" />
+      <entity id="916" />
+      <entity id="917" />
+      <entity id="918" />
+      <entity id="919" />
+      <entity id="920" />
+      <entity id="921" />
+      <entity id="922" />
+      <entity id="923" />
+      <entity id="924" />
+      <entity id="925" />
+      <entity id="926" />
+      <entity id="927" />
+      <entity id="928" />
+      <entity id="929" />
+      <entity id="930" />
+      <entity id="931" />
+      <entity id="932" />
+      <entity id="933" />
+      <entity id="934" />
+      <entity id="935" />
+      <entity id="936" />
+      <entity id="937" />
+      <entity id="938" />
+      <entity id="939" />
+      <entity id="940" />
+      <entity id="941" />
+      <entity id="942" />
+      <entity id="943" />
+      <entity id="944" />
+      <entity id="945" />
+      <entity id="946" />
+      <entity id="947" />
+      <entity id="948" />
+      <entity id="949" />
+      <entity id="950" />
+      <entity id="951" />
+      <entity id="952" />
+      <entity id="953" />
+      <entity id="954" />
+      <entity id="955" />
+      <entity id="956" />
+      <entity id="957" />
+      <entity id="958" />
+      <entity id="959" />
+      <entity id="960" />
+      <entity id="961" />
+      <entity id="962" />
+      <entity id="963" />
+      <entity id="964" />
+      <entity id="965" />
+      <entity id="966" />
+      <entity id="967" />
+      <entity id="968" />
+      <entity id="969" />
+      <entity id="970" />
+      <entity id="971" />
+      <entity id="972" />
+      <entity id="973" />
+      <entity id="974" />
+      <entity id="975" />
+      <entity id="976" />
+      <entity id="977" />
+      <entity id="978" />
+      <entity id="979" />
+      <entity id="980" />
+      <entity id="981" />
+      <entity id="982" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+      <entity id="1319" />
+      <entity id="1320" />
+      <entity id="1321" />
+      <entity id="1322" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+      <entity id="1319" />
+      <entity id="1320" />
+      <entity id="1321" />
+      <entity id="1322" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+      <entity id="1319" />
+      <entity id="1320" />
+      <entity id="1321" />
+      <entity id="1322" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+      <entity id="1319" />
+      <entity id="1320" />
+      <entity id="1321" />
+      <entity id="1322" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+      <entity id="1319" />
+      <entity id="1320" />
+      <entity id="1321" />
+      <entity id="1322" />
+    </group>
+    <group>
+      <entity id="1146" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="750" />
+      <entity id="751" />
+      <entity id="752" />
+      <entity id="753" />
+      <entity id="754" />
+      <entity id="755" />
+      <entity id="756" />
+      <entity id="757" />
+      <entity id="758" />
+      <entity id="759" />
+      <entity id="760" />
+      <entity id="761" />
+      <entity id="762" />
+      <entity id="763" />
+      <entity id="764" />
+      <entity id="765" />
+      <entity id="766" />
+      <entity id="767" />
+      <entity id="768" />
+    </group>
+    <group>
+      <entity id="896" />
+      <entity id="897" />
+      <entity id="898" />
+      <entity id="899" />
+      <entity id="900" />
+      <entity id="901" />
+      <entity id="902" />
+      <entity id="903" />
+      <entity id="904" />
+      <entity id="905" />
+      <entity id="906" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group>
+      <entity id="383" />
+      <entity id="384" />
+      <entity id="385" />
+      <entity id="386" />
+      <entity id="387" />
+      <entity id="388" />
+      <entity id="389" />
+      <entity id="390" />
+      <entity id="391" />
+    </group>
+    <group>
+      <entity id="483" />
+      <entity id="484" />
+      <entity id="485" />
+      <entity id="486" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="127" />
+    </group>
+    <group>
+      <entity id="492" />
+      <entity id="493" />
+      <entity id="494" />
+    </group>
+    <group>
+      <entity id="495" />
+      <entity id="496" />
+      <entity id="497" />
+    </group>
+    <group />
+    <group>
+      <entity id="750" />
+      <entity id="751" />
+      <entity id="752" />
+      <entity id="753" />
+      <entity id="754" />
+      <entity id="755" />
+      <entity id="756" />
+      <entity id="757" />
+      <entity id="758" />
+      <entity id="759" />
+      <entity id="760" />
+      <entity id="761" />
+      <entity id="762" />
+      <entity id="763" />
+      <entity id="764" />
+      <entity id="765" />
+      <entity id="766" />
+      <entity id="767" />
+      <entity id="768" />
+    </group>
+    <group>
+      <entity id="896" />
+      <entity id="897" />
+      <entity id="898" />
+      <entity id="899" />
+      <entity id="900" />
+      <entity id="901" />
+      <entity id="902" />
+      <entity id="903" />
+      <entity id="904" />
+      <entity id="905" />
+      <entity id="906" />
+    </group>
+    <group>
+      <entity id="907" />
+      <entity id="908" />
+      <entity id="909" />
+      <entity id="910" />
+      <entity id="911" />
+      <entity id="912" />
+      <entity id="913" />
+      <entity id="914" />
+      <entity id="915" />
+      <entity id="916" />
+      <entity id="917" />
+      <entity id="918" />
+      <entity id="919" />
+      <entity id="920" />
+      <entity id="921" />
+      <entity id="922" />
+      <entity id="923" />
+      <entity id="924" />
+      <entity id="925" />
+      <entity id="926" />
+      <entity id="927" />
+      <entity id="928" />
+      <entity id="929" />
+      <entity id="930" />
+      <entity id="931" />
+      <entity id="932" />
+      <entity id="933" />
+      <entity id="934" />
+      <entity id="935" />
+      <entity id="936" />
+      <entity id="937" />
+      <entity id="938" />
+      <entity id="939" />
+      <entity id="940" />
+      <entity id="941" />
+      <entity id="942" />
+      <entity id="943" />
+      <entity id="944" />
+      <entity id="945" />
+      <entity id="946" />
+      <entity id="947" />
+      <entity id="948" />
+      <entity id="949" />
+      <entity id="950" />
+      <entity id="951" />
+      <entity id="952" />
+      <entity id="953" />
+      <entity id="954" />
+      <entity id="955" />
+      <entity id="956" />
+      <entity id="957" />
+      <entity id="958" />
+      <entity id="959" />
+      <entity id="960" />
+      <entity id="961" />
+      <entity id="962" />
+      <entity id="963" />
+      <entity id="964" />
+      <entity id="965" />
+      <entity id="966" />
+      <entity id="967" />
+      <entity id="968" />
+      <entity id="969" />
+      <entity id="970" />
+      <entity id="971" />
+      <entity id="972" />
+      <entity id="973" />
+      <entity id="974" />
+      <entity id="975" />
+      <entity id="976" />
+      <entity id="977" />
+      <entity id="978" />
+      <entity id="979" />
+      <entity id="980" />
+      <entity id="981" />
+      <entity id="982" />
+    </group>
+    <group>
+      <entity id="1283" />
+      <entity id="1284" />
+      <entity id="1285" />
+      <entity id="1286" />
+      <entity id="1287" />
+      <entity id="1288" />
+      <entity id="1289" />
+      <entity id="1290" />
+      <entity id="1291" />
+      <entity id="1292" />
+      <entity id="1293" />
+      <entity id="1294" />
+    </group>
+    <group>
+      <entity id="1295" />
+      <entity id="1296" />
+      <entity id="1297" />
+      <entity id="1298" />
+      <entity id="1299" />
+      <entity id="1300" />
+      <entity id="1301" />
+      <entity id="1302" />
+      <entity id="1303" />
+      <entity id="1304" />
+      <entity id="1305" />
+      <entity id="1306" />
+    </group>
+    <group>
+      <entity id="1307" />
+      <entity id="1308" />
+      <entity id="1309" />
+      <entity id="1310" />
+      <entity id="1311" />
+      <entity id="1312" />
+      <entity id="1313" />
+      <entity id="1314" />
+      <entity id="1315" />
+      <entity id="1316" />
+      <entity id="1317" />
+      <entity id="1318" />
+    </group>
+  </groups>
   <enemies />
   <levelCollisions />
-  <players>
-    <player playerIndex="0" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -31.21142 49.28858 0.01046762 1" />
-  </players>
-  <camera />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
 </level>

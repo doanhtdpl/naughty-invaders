@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<level nextEntityID="1107" BGColor="0 0 0 255">
+  <staticProps>
+    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -32.0681 378.6458 0.0122876 1" id="85" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-30" worldMatrix="-75.55878 83.27454 -5.830069 0 -148.5394 -133.7957 14.01011 0 0.01713517 0.08529231 0.9962087 0 -213.3788 483.9109 58.00569 1" id="483" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-30" worldMatrix="88.63377 49.00537 -10.22235 0 -78.39214 144.1838 11.50302 0 0.1216697 -0.01302941 0.9924852 0 161.6878 515.4023 19.00887 1" id="485" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-30" worldMatrix="-0.9299917 -57.45303 -1.23326 0 72.98972 -1.227011 2.120931 0 -0.02939162 -0.02097577 0.9993479 0 -64.27365 405.2733 58.00569 1" id="488" color="141 141 141 255" />
+    <staticProp entityName="bg01str2-29" worldMatrix="189.3273 0 0 0 0 230.6822 0 0 0 0 1 0 -145.274 462.8937 52.99731 1" id="594" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-29" worldMatrix="-60.51265 -179.3078 -5.636397 0 218.571 -73.76291 -0.006911805 0 -0.009491056 -0.02821723 0.9995568 0 135.3795 450.8201 9.997307 1" id="597" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-29" worldMatrix="-31.36095 195.5981 16.63728 0 -225.5153 -35.93489 -2.619181 0 0.001884425 -0.08445235 0.9964257 0 -67.70972 226.3228 52.99731 1" id="598" color="255 255 255 255" />
+    <staticProp entityName="bg01str2-34" worldMatrix="338.7073 0 0 0 0 352.0985 0 0 0 0 1 0 -53.58917 384.3364 0.9920921 1" id="690" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-31" worldMatrix="110 0 0 0 0 279 0 0 0 0 1 0 226.5025 514.5012 17.99423 1" id="930" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-31" worldMatrix="-41.73969 101.7733 0 0 -258.1341 -105.867 0 0 0 0 1 0 -259.6156 536.4441 17.99423 1" id="933" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-31" worldMatrix="-17.75087 -123.8206 0 0 246.0045 -35.2671 0 0 0 0 1 0 43.29254 158.4151 17.99423 1" id="934" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="267.0805 40.36527 0 0 -20.0703 132.797 0 0 0 0 1 0 235.4519 336.5717 -2.984737 1" id="1100" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 243.5332 316.0908 -2.991638 1" id="1102" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-251.9897 -97.27604 0 0 48.36733 -125.2936 0 0 0 0 1 0 -378.6691 328.4268 -2.984737 1" id="1105" color="255 255 255 255" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="-132.8988 -133.701 0 0 66.47836 -66.07949 0 0 0 0 1 0 -311.8814 294.2184 -2.984737 1" id="1106" color="255 255 255 255" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+</level>

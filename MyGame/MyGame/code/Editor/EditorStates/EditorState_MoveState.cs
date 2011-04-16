@@ -35,7 +35,7 @@ namespace MyGame
 
                             ent.position += (currentZ - lastZ);
                         }
-                    }
+                    }        
                     else if (mouseState.RightButton == ButtonState.Pressed)
                     {
                         foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
