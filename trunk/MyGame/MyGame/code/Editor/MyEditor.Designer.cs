@@ -30,6 +30,8 @@ namespace MyGame
         private void InitializeComponent()
         {
             this.staticPropertiesPanel = new System.Windows.Forms.Panel();
+            this.flipVerticalCheck = new System.Windows.Forms.CheckBox();
+            this.flipHorizontalCheck = new System.Windows.Forms.CheckBox();
             this.colorButton = new System.Windows.Forms.Button();
             this.colorB = new System.Windows.Forms.TextBox();
             this.colorG = new System.Windows.Forms.TextBox();
@@ -72,13 +74,15 @@ namespace MyGame
             this.BGColorButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
             this.superPizzaButton = new System.Windows.Forms.Button();
-            this.myEditorControl = new MyGame.MyEditorControl();
             this.buttonNewLevel = new System.Windows.Forms.Button();
+            this.myEditorControl = new MyGame.MyEditorControl();
             this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // staticPropertiesPanel
             // 
+            this.staticPropertiesPanel.Controls.Add(this.flipVerticalCheck);
+            this.staticPropertiesPanel.Controls.Add(this.flipHorizontalCheck);
             this.staticPropertiesPanel.Controls.Add(this.colorButton);
             this.staticPropertiesPanel.Controls.Add(this.colorB);
             this.staticPropertiesPanel.Controls.Add(this.colorG);
@@ -106,6 +110,28 @@ namespace MyGame
             this.staticPropertiesPanel.Name = "staticPropertiesPanel";
             this.staticPropertiesPanel.Size = new System.Drawing.Size(601, 91);
             this.staticPropertiesPanel.TabIndex = 3;
+            // 
+            // flipVerticalCheck
+            // 
+            this.flipVerticalCheck.AutoSize = true;
+            this.flipVerticalCheck.Location = new System.Drawing.Point(404, 70);
+            this.flipVerticalCheck.Name = "flipVerticalCheck";
+            this.flipVerticalCheck.Size = new System.Drawing.Size(46, 17);
+            this.flipVerticalCheck.TabIndex = 33;
+            this.flipVerticalCheck.Text = "flipV";
+            this.flipVerticalCheck.UseVisualStyleBackColor = true;
+            this.flipVerticalCheck.CheckedChanged += new System.EventHandler(this.flip_CheckedChanged);
+            // 
+            // flipHorizontalCheck
+            // 
+            this.flipHorizontalCheck.AutoSize = true;
+            this.flipHorizontalCheck.Location = new System.Drawing.Point(340, 70);
+            this.flipHorizontalCheck.Name = "flipHorizontalCheck";
+            this.flipHorizontalCheck.Size = new System.Drawing.Size(47, 17);
+            this.flipHorizontalCheck.TabIndex = 32;
+            this.flipHorizontalCheck.Text = "flipH";
+            this.flipHorizontalCheck.UseVisualStyleBackColor = true;
+            this.flipHorizontalCheck.CheckedChanged += new System.EventHandler(this.flip_CheckedChanged);
             // 
             // colorButton
             // 
@@ -563,15 +589,6 @@ namespace MyGame
             this.superPizzaButton.UseVisualStyleBackColor = true;
             this.superPizzaButton.Click += new System.EventHandler(this.superPizzaButton_Click);
             // 
-            // myEditorControl
-            // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            // 
             // buttonNewLevel
             // 
             this.buttonNewLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -583,6 +600,15 @@ namespace MyGame
             this.buttonNewLevel.Text = "New Level";
             this.buttonNewLevel.UseVisualStyleBackColor = true;
             this.buttonNewLevel.Click += new System.EventHandler(this.buttonNewLevel_Click);
+            // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
             // 
             // MyEditor
             // 
@@ -670,6 +696,8 @@ namespace MyGame
         private System.Windows.Forms.Button addDefaultCamerasButton;
         private System.Windows.Forms.Button superPizzaButton;
         private System.Windows.Forms.Button buttonNewLevel;
+        public System.Windows.Forms.CheckBox flipHorizontalCheck;
+        public System.Windows.Forms.CheckBox flipVerticalCheck;
     }
 }
 #endif

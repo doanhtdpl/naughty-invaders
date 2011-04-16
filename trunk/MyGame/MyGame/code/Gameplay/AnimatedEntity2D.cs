@@ -250,6 +250,20 @@ namespace MyGame
             Vector2 initialUVs = new Vector2( frameWidthUV * x, frameHeightUV * y);
             Vector2 endingUVs = new Vector2( (frameWidthUV) * (x + 1), (frameHeightUV) * (y + 1));
 
+            if (flipHorizontal)
+            {
+                float temp = endingUVs.X;
+                endingUVs.X = initialUVs.X;
+                initialUVs.X = temp;
+            }
+
+            if (flipVertical)
+            {
+                float temp = endingUVs.Y;
+                endingUVs.Y = initialUVs.Y;
+                initialUVs.Y = temp;
+            }
+
             animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs, color);
         }
 

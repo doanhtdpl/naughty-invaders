@@ -13,6 +13,8 @@ namespace MyGame
     {
         Texture2D texture;
         public Color color;
+        public bool flipHorizontal = false;
+        public bool flipVertical = false;
 
         public enum tRenderState { Render, NoRender }
         public tRenderState renderState { get; set; }
@@ -41,7 +43,19 @@ namespace MyGame
         public override void render()
         {
             if (renderState == tRenderState.NoRender) return;
-            texture.render(worldMatrix, color);
+
+            if(flipHorizontal || flipVertical)
+            {
+
+                Vector2 startUV = new Vector2(0.0f + (flipHorizontal ? 1.0f : 0.0f), 0.0f + (flipVertical ? 1.0f : 0.0f));
+                Vector2 endUV = new Vector2(1.0f - (flipHorizontal ? 1.0f : 0.0f), 1.0f - (flipVertical ? 1.0f : 0.0f));
+
+                texture.renderWithUVs(worldMatrix, startUV, endUV, color);
+            }
+            else
+            {
+                texture.render(worldMatrix, color);
+            }
         }
     }
 }
