@@ -73,6 +73,7 @@ namespace MyGame
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
             this.superPizzaButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.buttonNewLevel = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@ namespace MyGame
             this.staticPropertiesPanel.Controls.Add(this.textPosY);
             this.staticPropertiesPanel.Controls.Add(this.label1);
             this.staticPropertiesPanel.Controls.Add(this.textPosX);
-            this.staticPropertiesPanel.Location = new System.Drawing.Point(552, 0);
+            this.staticPropertiesPanel.Location = new System.Drawing.Point(599, 0);
             this.staticPropertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.staticPropertiesPanel.Name = "staticPropertiesPanel";
             this.staticPropertiesPanel.Size = new System.Drawing.Size(601, 91);
@@ -337,7 +338,7 @@ namespace MyGame
             // canSelectPlayer
             // 
             this.canSelectPlayer.AutoSize = true;
-            this.canSelectPlayer.Location = new System.Drawing.Point(442, 70);
+            this.canSelectPlayer.Location = new System.Drawing.Point(507, 70);
             this.canSelectPlayer.Name = "canSelectPlayer";
             this.canSelectPlayer.Size = new System.Drawing.Size(54, 17);
             this.canSelectPlayer.TabIndex = 14;
@@ -347,7 +348,7 @@ namespace MyGame
             // selectGroup
             // 
             this.selectGroup.AutoSize = true;
-            this.selectGroup.Location = new System.Drawing.Point(383, 70);
+            this.selectGroup.Location = new System.Drawing.Point(448, 70);
             this.selectGroup.Name = "selectGroup";
             this.selectGroup.Size = new System.Drawing.Size(53, 17);
             this.selectGroup.TabIndex = 12;
@@ -453,7 +454,7 @@ namespace MyGame
             // buttonCreateGroup
             // 
             this.buttonCreateGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateGroup.Location = new System.Drawing.Point(385, 36);
+            this.buttonCreateGroup.Location = new System.Drawing.Point(450, 36);
             this.buttonCreateGroup.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCreateGroup.Name = "buttonCreateGroup";
             this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
@@ -529,7 +530,7 @@ namespace MyGame
             // BGColorButton
             // 
             this.BGColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGColorButton.Location = new System.Drawing.Point(385, 2);
+            this.BGColorButton.Location = new System.Drawing.Point(450, 2);
             this.BGColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.BGColorButton.Name = "BGColorButton";
             this.BGColorButton.Size = new System.Drawing.Size(51, 28);
@@ -541,7 +542,7 @@ namespace MyGame
             // addDefaultCamerasButton
             // 
             this.addDefaultCamerasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDefaultCamerasButton.Location = new System.Drawing.Point(462, 2);
+            this.addDefaultCamerasButton.Location = new System.Drawing.Point(514, 2);
             this.addDefaultCamerasButton.Margin = new System.Windows.Forms.Padding(2);
             this.addDefaultCamerasButton.Name = "addDefaultCamerasButton";
             this.addDefaultCamerasButton.Size = new System.Drawing.Size(60, 28);
@@ -571,12 +572,25 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
+            // buttonNewLevel
+            // 
+            this.buttonNewLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNewLevel.Location = new System.Drawing.Point(357, 2);
+            this.buttonNewLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonNewLevel.Name = "buttonNewLevel";
+            this.buttonNewLevel.Size = new System.Drawing.Size(51, 28);
+            this.buttonNewLevel.TabIndex = 202;
+            this.buttonNewLevel.Text = "New Level";
+            this.buttonNewLevel.UseVisualStyleBackColor = true;
+            this.buttonNewLevel.Click += new System.EventHandler(this.buttonNewLevel_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.buttonNewLevel);
             this.Controls.Add(this.superPizzaButton);
             this.Controls.Add(this.addDefaultCamerasButton);
             this.Controls.Add(this.BGColorButton);
@@ -655,6 +669,7 @@ namespace MyGame
         private System.Windows.Forms.Button BGColorButton;
         private System.Windows.Forms.Button addDefaultCamerasButton;
         private System.Windows.Forms.Button superPizzaButton;
+        private System.Windows.Forms.Button buttonNewLevel;
     }
 }
 #endif

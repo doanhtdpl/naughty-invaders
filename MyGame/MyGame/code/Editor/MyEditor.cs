@@ -193,6 +193,11 @@ namespace MyGame
                 currentState = null;
             }
         }
+
+        private void buttonNewLevel_Click(object sender, EventArgs e)
+        {
+            LevelManager.Instance.cleanLevel();
+        }
         #endregion
 
         #region Update/Render
