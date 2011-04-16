@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<level nextEntityID="247" BGColor="0 0 0 255">
+  <staticProps>
+    <staticProp entityName="struc-05" worldMatrix="280 0 0 0 0 388 0 0 0 0 1 0 -113.4434 308.5873 0.01761173 1" id="141" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-05" worldMatrix="163.0547 55.85028 0 0 -77.39255 225.9472 0 0 0 0 1 0 -62.64575 244.1551 -43.00844 1" id="143" color="190 190 190 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-05" worldMatrix="138.4623 -59.03453 14.83132 0 75.3952 177.6343 3.180134 0 -0.0966827 0.02322206 0.9950443 0 -187.4242 220.5305 -0.008897011 1" id="145" color="159 159 159 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-05" worldMatrix="117.1569 20.11077 0 0 -25.66168 149.4941 0 0 0 0 1 0 -156.4637 159.595 -40.0089 1" id="148" color="92 92 92 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-05" worldMatrix="204.7802 43.64732 0 0 -55.69471 261.3029 0 0 0 0 1 0 -93.19778 174.0172 -56.0089 1" id="149" color="68 68 68 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps>
+    <animatedProp entityName="AAtentacle" worldMatrix="107.6866 104.4203 0 0 -121.8237 125.6344 0 0 0 0 1 0 -136.8153 94.95244 -0.008948432 1" id="233" color="255 255 255 255" flipH="False" flipV="False" />
+  </animatedProps>
+  <groups />
+  <enemies />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+</level>
