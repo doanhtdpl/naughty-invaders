@@ -76,6 +76,8 @@ namespace MyGame
             this.superPizzaButton = new System.Windows.Forms.Button();
             this.buttonNewLevel = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.cameraCheck = new System.Windows.Forms.CheckBox();
+            this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -610,12 +612,35 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
+            // cameraCheck
+            // 
+            this.cameraCheck.AutoSize = true;
+            this.cameraCheck.Location = new System.Drawing.Point(576, 70);
+            this.cameraCheck.Name = "cameraCheck";
+            this.cameraCheck.Size = new System.Drawing.Size(61, 17);
+            this.cameraCheck.TabIndex = 203;
+            this.cameraCheck.Text = "camera";
+            this.cameraCheck.UseVisualStyleBackColor = true;
+            // 
+            // addCameraNodeButton
+            // 
+            this.addCameraNodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCameraNodeButton.Location = new System.Drawing.Point(587, 2);
+            this.addCameraNodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addCameraNodeButton.Name = "addCameraNodeButton";
+            this.addCameraNodeButton.Size = new System.Drawing.Size(60, 28);
+            this.addCameraNodeButton.TabIndex = 204;
+            this.addCameraNodeButton.Text = "Add Camera Node";
+            this.addCameraNodeButton.UseVisualStyleBackColor = true;
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.addCameraNodeButton);
+            this.Controls.Add(this.cameraCheck);
             this.Controls.Add(this.buttonNewLevel);
             this.Controls.Add(this.superPizzaButton);
             this.Controls.Add(this.addDefaultCamerasButton);
@@ -698,6 +723,8 @@ namespace MyGame
         private System.Windows.Forms.Button buttonNewLevel;
         public System.Windows.Forms.CheckBox flipHorizontalCheck;
         public System.Windows.Forms.CheckBox flipVerticalCheck;
+        public System.Windows.Forms.CheckBox cameraCheck;
+        private System.Windows.Forms.Button addCameraNodeButton;
     }
 }
 #endif

@@ -130,12 +130,11 @@ namespace MyGame
         {
             if (currentNode == null || nextNode == null) return;
 
-            float cameraSpeed = 50.0f;
             Vector3 targetPosition = nextNode.value.position;
             Vector3 direction = targetPosition - Camera2D.position;
             float distance = direction.Length();
             direction.Normalize();
-            float distanceToAdvance = cameraSpeed * SB.dt;
+            float distanceToAdvance = currentNode.value.speed * SB.dt;
 
             // always check if the camera arrives to the next node in this frame
             if (distanceToAdvance > distance)
@@ -152,7 +151,7 @@ namespace MyGame
                 direction = targetPosition - Camera2D.position;
                 distance = direction.Length();
                 direction.Normalize();
-                distanceToAdvance = cameraSpeed * timeRemaining;
+                distanceToAdvance = currentNode.value.speed * timeRemaining;
             }
             Camera2D.position += direction * distanceToAdvance;
         }
