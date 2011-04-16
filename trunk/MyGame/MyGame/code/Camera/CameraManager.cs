@@ -65,6 +65,10 @@ namespace MyGame
             velocity.Z = 0.0f;
             return velocity;
         }
+        public Vector2 getCameraPositionXY()
+        {
+            return new Vector2(Camera2D.position.X, Camera2D.position.Y);
+        }
         public void loadXMLfake()
         {
             NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));

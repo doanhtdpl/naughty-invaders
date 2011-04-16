@@ -21,8 +21,11 @@ namespace MyGame
             life = 10.0f;
             setCollisions();
             state = tOrangeState.Parabola;
+            float randomX = Calc.randomScalar(-4.0f, 4.0f);
+            velocity = new Vector2(randomX, Calc.randomScalar(12.0f, 17.0f));
+            //positionX = (-randomX + Calc.randomScalar(-2.0f, 2.0f)) * 50.0f;
 
-            velocity = new Vector2(Calc.randomScalar(-4.0f, 4.0f), Calc.randomScalar(12.0f, 17.0f));
+            renderState = RenderableEntity2D.tRenderState.NoRender;
         }
 
         public override void setCollisions()

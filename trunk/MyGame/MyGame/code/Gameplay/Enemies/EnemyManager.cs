@@ -10,6 +10,7 @@ namespace MyGame
     class EnemyManager
     {
         List<Entity2D> enemies = new List<Entity2D>();
+        List<Entity2D> activeEnemies = new List<Entity2D>();
         List<Enemy> enemiesToDelete = new List<Enemy>();
         float nextSpawn = 0;
 
@@ -61,12 +62,14 @@ namespace MyGame
         public void removeEnemy(Entity2D e)
         {
             EntityManager.Instance.removeEntity(e);
-            enemies.Remove(e);
-        }
-        public void removeEnemy(int i)
-        {
-            EntityManager.Instance.removeEntity(enemies[i]);
-            enemies.RemoveAt(i);
+            if (enemies.Contains(e))
+            {
+                enemies.Remove(e);
+            }
+            else
+            {
+                activeEnemies.Remove(e);
+            }
         }
         public void requestDeleteOf(Enemy e)
         {
@@ -78,7 +81,12 @@ namespace MyGame
             {
                 EntityManager.Instance.removeEntity(e);
             }
+            foreach (Enemy e in activeEnemies)
+            {
+                EntityManager.Instance.removeEntity(e);
+            }
             enemies.Clear();
+            activeEnemies.Clear();
         }
 
         public void dispose()
@@ -89,6 +97,10 @@ namespace MyGame
         {
             return enemies;
         }
+        public List<Entity2D> getActiveEnemies()
+        {
+            return activeEnemies;
+        }
         #endregion
 
         public void updateSleepingEnemies()
@@ -97,9 +109,28 @@ namespace MyGame
             for (int i = 0; i < enemies.Count; ++i)
             {
                 Enemy e = (Enemy)enemies[i];
-                if (e.entityState == Entity2D.tEntityState.Waiting && SB.cam.isVisible(enemies[i].getRectangle()))
+                if (SB.cam.isVisible(enemies[i].getRectangle()))
                 {
-                    e.entityState = Entity2D.tEntityState.Active;
+                    if (e is Orange)
+                    {
+                        if (e.positionY < CameraManager.Instance.getCameraPositionXY().Y)
+                        {
+                            if (Math.Abs(e.positionX - CameraManager.Instance.getCameraPositionXY().X) < 800.0f)
+                            {
+                                e.positionY = Camera2D.playableZone.Bottom - e.getRadius();
+                                e.renderState = RenderableEntity2D.tRenderState.Render;
+                                // activate
+                                activeEnemies.Add(e);
+                                enemies.RemoveAt(i);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // activate
+                        activeEnemies.Add(e);
+                        enemies.RemoveAt(i);
+                    }
                 }
             }
         }
@@ -109,13 +140,14 @@ namespace MyGame
             {
                 enemiesToDelete[i].delete();
             }
+            enemiesToDelete.Clear();
         }
         public void checkCollisionsWithPlayers()
         {
             bool alive = true;
             foreach (Player p in GamerManager.getPlayerEntities())
             {
-                foreach (Enemy enemy in enemies)
+                foreach (Enemy enemy in activeEnemies)
                 {
                     if (p.collidesWith(enemy, ref alive))
                     {
@@ -144,12 +176,16 @@ namespace MyGame
 
             checkCollisionsWithPlayers();
 
-            foreach (Enemy enemy in enemies)
+            foreach (Enemy enemy in activeEnemies)
             {
-                if (enemy.entityState != Entity2D.tEntityState.Waiting)
+                // if the projectile is out of screen, delete it
+                if (!CoolizionManager.pointVSrectangle(enemy.position2D, Camera2D.screen, (int)enemy.getRadius()))
                 {
-                    enemy.update();
+                    requestDeleteOf(enemy);
+                    continue;
                 }
+
+                enemy.update();
             }
             deleteEnemiesToDelete();
         }
