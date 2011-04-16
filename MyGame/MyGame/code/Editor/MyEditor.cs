@@ -455,6 +455,9 @@ namespace MyGame
                         ((RenderableEntity2D)ent).color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
                         ((RenderableEntity2D)ent).color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
                         ((RenderableEntity2D)ent).color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
+
+                        ((RenderableEntity2D)ent).flipHorizontal = flipHorizontalCheck.Checked;
+                        ((RenderableEntity2D)ent).flipVertical = flipVerticalCheck.Checked;
                     }
                 }
             }
@@ -487,10 +490,19 @@ namespace MyGame
                         this.colorG.Text = (((RenderableEntity2D)ent).color.G / alpha).toString();
                         this.colorB.Text = (((RenderableEntity2D)ent).color.B / alpha).toString();
                         this.colorA.Text = ((RenderableEntity2D)ent).color.A.ToString();
+
+                        flipHorizontalCheck.Checked = ((RenderableEntity2D)ent).flipHorizontal;
+                        flipVerticalCheck.Checked = ((RenderableEntity2D)ent).flipVertical;
                     }
 
                 }
             }
+        }
+
+
+        private void flip_CheckedChanged(object sender, EventArgs e)
+        {
+            propertiesChanged();
         }
         #endregion
 

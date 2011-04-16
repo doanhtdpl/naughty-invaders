@@ -157,6 +157,8 @@ namespace MyGame
             writer.WriteAttributeString("id", entity2D.id.ToString());
             RenderableEntity2D ent = (RenderableEntity2D) entity2D;
             writer.WriteAttributeString("color", ent.color.toXML());
+            writer.WriteAttributeString("flipH", ent.flipHorizontal.ToString());
+            writer.WriteAttributeString("flipV", ent.flipVertical.ToString());
             writer.WriteEndElement();
         }
         void writeLevelCollision(XmlTextWriter writer, Line line)
@@ -301,6 +303,11 @@ namespace MyGame
                     {
                         re.color = node.Attribute("color").Value.toColor();
                     }
+                    if (node.Attributes("flipH").Count() > 0)
+                    {
+                        re.flipHorizontal = node.Attribute("flipH").Value.toBool();
+                        re.flipVertical = node.Attribute("flipV").Value.toBool();
+                    }
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
                     list.Add(re);
@@ -318,6 +325,11 @@ namespace MyGame
                     {
                         ae.color = node.Attribute("color").Value.toColor();
                     }
+                    if (node.Attributes("flipH").Count() > 0)
+                    {
+                        ae.flipHorizontal = node.Attribute("flipH").Value.toBool();
+                        ae.flipVertical = node.Attribute("flipV").Value.toBool();
+                    }
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();
                     list.Add(ae);
@@ -331,12 +343,17 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     string name = node.Attribute("entityName").Value;
                     Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
-                    Entity2D e = EnemyManager.Instance.addEnemy(name, world.Translation, id);
+                    RenderableEntity2D e = (RenderableEntity2D)EnemyManager.Instance.addEnemy(name, world.Translation, id);
                     if (node.Attributes("color").Count() > 0)
                     {
-                        
-                        ((RenderableEntity2D)e).color = node.Attribute("color").Value.toColor();
+                        e.color = node.Attribute("color").Value.toColor();
                     }
+                    if (node.Attributes("flipH").Count() > 0)
+                    {
+                        e.flipHorizontal = node.Attribute("flipH").Value.toBool();
+                        e.flipVertical = node.Attribute("flipV").Value.toBool();
+                    }
+
                     e.setInit();
                     list.Add(e);
                 }
