@@ -691,6 +691,7 @@ namespace MyGame
 
         private void linkNodeButton_Click(object sender, EventArgs e)
         {
+            ((EditorState_MoveCameraNode)currentState).selectLink();
         }
 
         private void isFirstCheck_CheckedChanged(object sender, EventArgs e)
