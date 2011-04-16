@@ -92,7 +92,7 @@ namespace MyGame
                 {
                     if (!moveStarted)
                     {
-                        playAction("DashLeftStart");
+                        playAction("dashLeftStart");
                         moveStarted = true;
                     }
                     GameplayHelper.Instance.updateEntityPosition(this,
@@ -103,7 +103,7 @@ namespace MyGame
                 {
                     if (!moveStarted)
                     {
-                        playAction("DashRightStart");
+                        playAction("dashRightStart");
                         moveStarted = true;
                     }
                     GameplayHelper.Instance.updateEntityPosition(this,
@@ -111,18 +111,10 @@ namespace MyGame
                         LevelManager.Instance.getLevelCollisions(), false);
                 }
             }
-            //else if (!moveEnded)
-            //{
-            //    if (moveRight)
-            //    {
-            //        playAction("DashLeftEnd");
-            //    }
-            //    else
-            //    {
-            //        playAction("DashLeftEnd");
-            //    }
-            //    moveEnded = true;
-            //}
+            else if (!moveEnded)
+            {
+                playAction("idle");
+            }
 
             // next attack
             if (movingTimer < 0 && nextAttackTimer < 0)
