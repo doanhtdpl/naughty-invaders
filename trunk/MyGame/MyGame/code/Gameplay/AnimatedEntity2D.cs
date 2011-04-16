@@ -77,6 +77,17 @@ namespace MyGame
                 nextRandomActionTime = Calc.randomScalar(actions[newAction].playRandomMin, actions[newAction].playRandomMax);
             }
 
+            // see if a transition exists
+            foreach (AnimationAction action in actions.Values)
+            {
+                if (action.from == actionState && action.to == newAction)
+                {
+                    action.playAtEnd = newAction;
+                    newAction = action.name;
+                    break;
+                }
+            }
+
             actionState = newAction;
             actionTimer = 0.0f;
         }
@@ -125,6 +136,22 @@ namespace MyGame
                     AnimationAction action = new AnimationAction();
                     action.textureId = textureNumber;
                     action.name = actionNode.Attribute("name").Value;
+                    if (actionNode.Attribute("from") != null)
+                    {
+                        action.from = actionNode.Attribute("from").Value;
+                    }
+                    else
+                    {
+                        action.from = null;
+                    }
+                    if (actionNode.Attribute("to") != null)
+                    {
+                        action.to = actionNode.Attribute("to").Value;
+                    }
+                    else
+                    {
+                        action.to = null;
+                    }
                     action.initialFrame = actionNode.Attribute("initialFrame").Value.toInt() - 1;
                     action.endFrame = actionNode.Attribute("endFrame").Value.toInt() - 1;
 

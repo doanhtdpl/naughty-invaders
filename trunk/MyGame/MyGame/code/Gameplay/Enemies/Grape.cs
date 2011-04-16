@@ -111,18 +111,18 @@ namespace MyGame
                         LevelManager.Instance.getLevelCollisions(), false);
                 }
             }
-            else if (!moveEnded)
-            {
-                if (moveRight)
-                {
-                    playAction("DashLeftEnd");
-                }
-                else
-                {
-                    playAction("DashLeftEnd");
-                }
-                moveEnded = true;
-            }
+            //else if (!moveEnded)
+            //{
+            //    if (moveRight)
+            //    {
+            //        playAction("DashLeftEnd");
+            //    }
+            //    else
+            //    {
+            //        playAction("DashLeftEnd");
+            //    }
+            //    moveEnded = true;
+            //}
 
             // next attack
             if (movingTimer < 0 && nextAttackTimer < 0)
