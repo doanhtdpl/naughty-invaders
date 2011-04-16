@@ -25,7 +25,6 @@ namespace MyGame
         {
 #if !EDITOR
             graphics = new GraphicsDeviceManager(this);
-            graphics.GraphicsProfile = GraphicsProfile.Reach;
 #endif
             SB.content = new ContentManager(Services, "Content");
             SB.random = new Random();
@@ -70,6 +69,8 @@ namespace MyGame
             TEX.loadContent();
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
+
+            EditorHelper.Instance.loadNewLevel(SB.content.RootDirectory + "/xml/levels/pepe.xml");
         }
 
         protected override void UnloadContent()
