@@ -78,6 +78,9 @@ namespace MyGame
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
             this.cameraNodePanel = new System.Windows.Forms.Panel();
+            this.buttonSetupCamera = new System.Windows.Forms.Button();
+            this.linkNodeButton = new System.Windows.Forms.Button();
+            this.isFirstCheck = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -87,10 +90,8 @@ namespace MyGame
             this.cameraPosY = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cameraPosX = new System.Windows.Forms.TextBox();
-            this.isFirstCheck = new System.Windows.Forms.CheckBox();
-            this.linkNodeButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.buttonSetupCamera = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.cameraNodePanel.SuspendLayout();
             this.SuspendLayout();
@@ -643,6 +644,7 @@ namespace MyGame
             // 
             // cameraNodePanel
             // 
+            this.cameraNodePanel.Controls.Add(this.button1);
             this.cameraNodePanel.Controls.Add(this.buttonSetupCamera);
             this.cameraNodePanel.Controls.Add(this.linkNodeButton);
             this.cameraNodePanel.Controls.Add(this.isFirstCheck);
@@ -660,6 +662,41 @@ namespace MyGame
             this.cameraNodePanel.Name = "cameraNodePanel";
             this.cameraNodePanel.Size = new System.Drawing.Size(336, 91);
             this.cameraNodePanel.TabIndex = 206;
+            // 
+            // buttonSetupCamera
+            // 
+            this.buttonSetupCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetupCamera.Location = new System.Drawing.Point(250, 46);
+            this.buttonSetupCamera.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSetupCamera.Name = "buttonSetupCamera";
+            this.buttonSetupCamera.Size = new System.Drawing.Size(60, 28);
+            this.buttonSetupCamera.TabIndex = 207;
+            this.buttonSetupCamera.Text = "Setup Camera";
+            this.buttonSetupCamera.UseVisualStyleBackColor = true;
+            this.buttonSetupCamera.Click += new System.EventHandler(this.buttonSetupCamera_Click);
+            // 
+            // linkNodeButton
+            // 
+            this.linkNodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkNodeButton.Location = new System.Drawing.Point(186, 46);
+            this.linkNodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.linkNodeButton.Name = "linkNodeButton";
+            this.linkNodeButton.Size = new System.Drawing.Size(60, 28);
+            this.linkNodeButton.TabIndex = 206;
+            this.linkNodeButton.Text = "Link Node";
+            this.linkNodeButton.UseVisualStyleBackColor = true;
+            this.linkNodeButton.Click += new System.EventHandler(this.linkNodeButton_Click);
+            // 
+            // isFirstCheck
+            // 
+            this.isFirstCheck.AutoSize = true;
+            this.isFirstCheck.Location = new System.Drawing.Point(122, 47);
+            this.isFirstCheck.Name = "isFirstCheck";
+            this.isFirstCheck.Size = new System.Drawing.Size(52, 17);
+            this.isFirstCheck.TabIndex = 22;
+            this.isFirstCheck.Text = "isFirst";
+            this.isFirstCheck.UseVisualStyleBackColor = true;
+            this.isFirstCheck.Click += new System.EventHandler(this.isFirstCheck_CheckedChanged);
             // 
             // label11
             // 
@@ -751,29 +788,6 @@ namespace MyGame
             this.cameraPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             this.cameraPosX.Leave += new System.EventHandler(this.textChange_cameraNode);
             // 
-            // isFirstCheck
-            // 
-            this.isFirstCheck.AutoSize = true;
-            this.isFirstCheck.Location = new System.Drawing.Point(122, 47);
-            this.isFirstCheck.Name = "isFirstCheck";
-            this.isFirstCheck.Size = new System.Drawing.Size(52, 17);
-            this.isFirstCheck.TabIndex = 22;
-            this.isFirstCheck.Text = "isFirst";
-            this.isFirstCheck.UseVisualStyleBackColor = true;
-            this.isFirstCheck.Click += new System.EventHandler(this.isFirstCheck_CheckedChanged);
-            // 
-            // linkNodeButton
-            // 
-            this.linkNodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkNodeButton.Location = new System.Drawing.Point(186, 46);
-            this.linkNodeButton.Margin = new System.Windows.Forms.Padding(2);
-            this.linkNodeButton.Name = "linkNodeButton";
-            this.linkNodeButton.Size = new System.Drawing.Size(60, 28);
-            this.linkNodeButton.TabIndex = 206;
-            this.linkNodeButton.Text = "Link Node";
-            this.linkNodeButton.UseVisualStyleBackColor = true;
-            this.linkNodeButton.Click += new System.EventHandler(this.linkNodeButton_Click);
-            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 92);
@@ -783,17 +797,17 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
-            // buttonSetupCamera
+            // button1
             // 
-            this.buttonSetupCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSetupCamera.Location = new System.Drawing.Point(250, 46);
-            this.buttonSetupCamera.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSetupCamera.Name = "buttonSetupCamera";
-            this.buttonSetupCamera.Size = new System.Drawing.Size(60, 28);
-            this.buttonSetupCamera.TabIndex = 207;
-            this.buttonSetupCamera.Text = "Setup Camera";
-            this.buttonSetupCamera.UseVisualStyleBackColor = true;
-            this.buttonSetupCamera.Click += new System.EventHandler(this.buttonSetupCamera_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(250, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 28);
+            this.button1.TabIndex = 208;
+            this.button1.Text = "Set Camera byTheFace";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MyEditor
             // 
@@ -903,6 +917,7 @@ namespace MyGame
         private System.Windows.Forms.Button linkNodeButton;
         public System.Windows.Forms.CheckBox isFirstCheck;
         private System.Windows.Forms.Button buttonSetupCamera;
+        private System.Windows.Forms.Button button1;
     }
 }
 #endif
