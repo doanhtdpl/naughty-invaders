@@ -133,9 +133,9 @@ namespace MyGame
                     pos.Z = 0;
                     if ((node.value.target - mouseInSetaZero).Length() < 70.0f)
                     {
-                        if (selectingLink)
+                        if (selectingLink && cameraNode != null)
                         {
-                            cameraNode.addLinkedNode(node);
+                            cameraNode.setLinkedNode(node);
                             selectingLink = false;
                         }
                         else
@@ -154,6 +154,16 @@ namespace MyGame
         public void selectLink()
         {
             selectingLink = !selectingLink;
+        }
+
+        public void setCameraByTheFace()
+        {
+            if (cameraNode != null)
+            {
+                cameraNode.value.position = Camera2D.position;
+                cameraNode.value.target = Camera2D.position;
+                cameraNode.value.target.Z = 0;
+            }
         }
 
         public override void render()

@@ -19,6 +19,11 @@ namespace MyGame
         {
             linkedNodes.Add(nodeToLink);
         }
+        public void setLinkedNode(NetworkNode<T> nodeToLink)
+        {
+            linkedNodes.Clear();
+            linkedNodes.Add(nodeToLink);
+        }
         public NetworkNode<T> getNext()
         {
             if (linkedNodes.Count > 0)
