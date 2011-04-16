@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="Anim_WaterMelon" frameWidth="160" frameHeight="160" columns="6" rows="11">
+    <action name="attack" initialFrame="1" endFrame="14" FPS="20"/>
+    <action name="die" initialFrame="15" endFrame="24"/>
+    <action name="idle" initialFrame="48" endFrame="62" FPS="15" loops="true"/>
+    <action name="idleProt" initialFrame="33" endFrame="47" FPS="15" loops="true"/>
+    <action name="FromIdleToIdleProt" initialFrame="29" endFrame="32" FPS="15" playAtEnd="idleProt"/>
+    <action name="FromIdleProtToIdle" initialFrame="25" endFrame="28" FPS="15" playAtEnd="idle"/>
+  </animatedTexture> 
+</animatedEntity>

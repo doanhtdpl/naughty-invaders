@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="Anim_KingTomato" frameWidth="320" frameHeight="320" columns="6" rows="6">
+    <action name="attack" initialFrame="1" endFrame="8" loops="false"/>
+    <action name="die" initialFrame="9" endFrame="18" loops="false"/>
+    <action name="idle" initialFrame="20" endFrame="28" FPS="15" loops="true"/>
+  </animatedTexture>
+</animatedEntity>
