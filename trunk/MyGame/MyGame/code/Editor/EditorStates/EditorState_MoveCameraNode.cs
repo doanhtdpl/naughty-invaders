@@ -20,12 +20,15 @@ namespace MyGame
         {
             base.enter();
             MyEditor.Instance.staticPropertiesPanel.Hide();
+            MyEditor.Instance.cameraNodePanel.Show();
+            MyEditor.Instance.cameraNodePanel.Bounds = MyEditor.Instance.staticPropertiesPanel.Bounds;
         }
 
         public override void exit()
         {
             base.exit();
             MyEditor.Instance.staticPropertiesPanel.Show();
+            MyEditor.Instance.cameraNodePanel.Hide();
         }
 
         public override void update()
@@ -52,12 +55,43 @@ namespace MyGame
                     cameraNode.value.position += (currentZ - lastZ);
                     cameraNode.value.target += (currentZ - lastZ);
                 }
-
-                if (mouseState.LeftButton == ButtonState.Pressed || mouseState.RightButton == ButtonState.Pressed)
-                {
-                    //MyEditor.Instance.updateCameraProperties();
-                }
             }
+
+            if (mouseState.LeftButton == ButtonState.Pressed || justReleasedLeftButton())
+            {
+                cameraToFields();
+            }
+        }
+
+        public void cameraToFields()
+        {
+            if (cameraNode != null)
+            {
+                MyEditor.Instance.cameraPosX.Text = cameraNode.value.position.X.toString();
+                MyEditor.Instance.cameraPosY.Text = cameraNode.value.position.Y.toString();
+                MyEditor.Instance.cameraPosZ.Text = cameraNode.value.position.Z.toString();
+                MyEditor.Instance.cameraNodeSpeed.Text = cameraNode.value.speed.toString();
+                MyEditor.Instance.isFirstCheck.Checked = cameraNode.value.isFirst;
+            }
+            else
+            {
+                MyEditor.Instance.cameraPosX.Text = "";
+                MyEditor.Instance.cameraPosY.Text = "";
+                MyEditor.Instance.cameraPosZ.Text = "";
+                MyEditor.Instance.cameraNodeSpeed.Text = "";
+                MyEditor.Instance.isFirstCheck.Checked = false;
+            }
+        }
+
+        public void fieldsToCamera()
+        {
+            cameraNode.value.position = new Vector3(MyEditor.Instance.cameraPosX.Text.toFloat(),
+                MyEditor.Instance.cameraPosY.Text.toFloat(),
+                MyEditor.Instance.cameraPosZ.Text.toFloat());
+            cameraNode.value.target = cameraNode.value.position;
+            cameraNode.value.target.Z = 0;
+            cameraNode.value.speed = MyEditor.Instance.cameraNodeSpeed.Text.toFloat();
+            cameraNode.value.isFirst = MyEditor.Instance.isFirstCheck.Checked;
         }
 
         public bool selectCameraNode()

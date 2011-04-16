@@ -77,21 +77,22 @@ namespace MyGame
             this.buttonNewLevel = new System.Windows.Forms.Button();
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
-            this.myEditorControl = new MyGame.MyEditorControl();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cameraNodePanel = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.Distance = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.cameraNodeSpeed = new System.Windows.Forms.TextBox();
             this.cameraPosZ = new System.Windows.Forms.TextBox();
             this.cameraPosY = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cameraPosX = new System.Windows.Forms.TextBox();
+            this.isFirstCheck = new System.Windows.Forms.CheckBox();
+            this.linkNodeButton = new System.Windows.Forms.Button();
+            this.myEditorControl = new MyGame.MyEditorControl();
+            this.buttonSetupCamera = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.cameraNodePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // staticPropertiesPanel
@@ -640,33 +641,25 @@ namespace MyGame
             this.buttonMoveCameraNode.UseVisualStyleBackColor = true;
             this.buttonMoveCameraNode.Click += new System.EventHandler(this.button_Click);
             // 
-            // myEditorControl
+            // cameraNodePanel
             // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.Distance);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.cameraPosZ);
-            this.panel1.Controls.Add(this.cameraPosY);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.cameraPosX);
-            this.panel1.Location = new System.Drawing.Point(724, 95);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(492, 91);
-            this.panel1.TabIndex = 206;
+            this.cameraNodePanel.Controls.Add(this.buttonSetupCamera);
+            this.cameraNodePanel.Controls.Add(this.linkNodeButton);
+            this.cameraNodePanel.Controls.Add(this.isFirstCheck);
+            this.cameraNodePanel.Controls.Add(this.label11);
+            this.cameraNodePanel.Controls.Add(this.label12);
+            this.cameraNodePanel.Controls.Add(this.label13);
+            this.cameraNodePanel.Controls.Add(this.label14);
+            this.cameraNodePanel.Controls.Add(this.cameraNodeSpeed);
+            this.cameraNodePanel.Controls.Add(this.cameraPosZ);
+            this.cameraNodePanel.Controls.Add(this.cameraPosY);
+            this.cameraNodePanel.Controls.Add(this.label16);
+            this.cameraNodePanel.Controls.Add(this.cameraPosX);
+            this.cameraNodePanel.Location = new System.Drawing.Point(724, 95);
+            this.cameraNodePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.cameraNodePanel.Name = "cameraNodePanel";
+            this.cameraNodePanel.Size = new System.Drawing.Size(336, 91);
+            this.cameraNodePanel.TabIndex = 206;
             // 
             // label11
             // 
@@ -701,38 +694,22 @@ namespace MyGame
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 67);
+            this.label14.Location = new System.Drawing.Point(7, 46);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 13);
             this.label14.TabIndex = 17;
             this.label14.Text = "Speed";
             // 
-            // textBox6
+            // cameraNodeSpeed
             // 
-            this.textBox6.Location = new System.Drawing.Point(55, 65);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(62, 20);
-            this.textBox6.TabIndex = 16;
-            // 
-            // Distance
-            // 
-            this.Distance.Location = new System.Drawing.Point(55, 44);
-            this.Distance.Margin = new System.Windows.Forms.Padding(2);
-            this.Distance.Name = "Distance";
-            this.Distance.Size = new System.Drawing.Size(62, 20);
-            this.Distance.TabIndex = 7;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(7, 46);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Target";
+            this.cameraNodeSpeed.Location = new System.Drawing.Point(55, 44);
+            this.cameraNodeSpeed.Margin = new System.Windows.Forms.Padding(2);
+            this.cameraNodeSpeed.Name = "cameraNodeSpeed";
+            this.cameraNodeSpeed.Size = new System.Drawing.Size(62, 20);
+            this.cameraNodeSpeed.TabIndex = 16;
+            this.cameraNodeSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
+            this.cameraNodeSpeed.Leave += new System.EventHandler(this.textChange_cameraNode);
             // 
             // cameraPosZ
             // 
@@ -741,6 +718,8 @@ namespace MyGame
             this.cameraPosZ.Name = "cameraPosZ";
             this.cameraPosZ.Size = new System.Drawing.Size(62, 20);
             this.cameraPosZ.TabIndex = 3;
+            this.cameraPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
+            this.cameraPosZ.Leave += new System.EventHandler(this.textChange_cameraNode);
             // 
             // cameraPosY
             // 
@@ -749,6 +728,8 @@ namespace MyGame
             this.cameraPosY.Name = "cameraPosY";
             this.cameraPosY.Size = new System.Drawing.Size(62, 20);
             this.cameraPosY.TabIndex = 2;
+            this.cameraPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
+            this.cameraPosY.Leave += new System.EventHandler(this.textChange_cameraNode);
             // 
             // label16
             // 
@@ -767,6 +748,52 @@ namespace MyGame
             this.cameraPosX.Name = "cameraPosX";
             this.cameraPosX.Size = new System.Drawing.Size(62, 20);
             this.cameraPosX.TabIndex = 0;
+            this.cameraPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
+            this.cameraPosX.Leave += new System.EventHandler(this.textChange_cameraNode);
+            // 
+            // isFirstCheck
+            // 
+            this.isFirstCheck.AutoSize = true;
+            this.isFirstCheck.Location = new System.Drawing.Point(122, 47);
+            this.isFirstCheck.Name = "isFirstCheck";
+            this.isFirstCheck.Size = new System.Drawing.Size(52, 17);
+            this.isFirstCheck.TabIndex = 22;
+            this.isFirstCheck.Text = "isFirst";
+            this.isFirstCheck.UseVisualStyleBackColor = true;
+            this.isFirstCheck.Click += new System.EventHandler(this.isFirstCheck_CheckedChanged);
+            // 
+            // linkNodeButton
+            // 
+            this.linkNodeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkNodeButton.Location = new System.Drawing.Point(186, 46);
+            this.linkNodeButton.Margin = new System.Windows.Forms.Padding(2);
+            this.linkNodeButton.Name = "linkNodeButton";
+            this.linkNodeButton.Size = new System.Drawing.Size(60, 28);
+            this.linkNodeButton.TabIndex = 206;
+            this.linkNodeButton.Text = "Link Node";
+            this.linkNodeButton.UseVisualStyleBackColor = true;
+            this.linkNodeButton.Click += new System.EventHandler(this.linkNodeButton_Click);
+            // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
+            // 
+            // buttonSetupCamera
+            // 
+            this.buttonSetupCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetupCamera.Location = new System.Drawing.Point(250, 46);
+            this.buttonSetupCamera.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSetupCamera.Name = "buttonSetupCamera";
+            this.buttonSetupCamera.Size = new System.Drawing.Size(60, 28);
+            this.buttonSetupCamera.TabIndex = 207;
+            this.buttonSetupCamera.Text = "Setup Camera";
+            this.buttonSetupCamera.UseVisualStyleBackColor = true;
+            this.buttonSetupCamera.Click += new System.EventHandler(this.buttonSetupCamera_Click);
             // 
             // MyEditor
             // 
@@ -774,7 +801,7 @@ namespace MyGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cameraNodePanel);
             this.Controls.Add(this.buttonMoveCameraNode);
             this.Controls.Add(this.addCameraNodeButton);
             this.Controls.Add(this.buttonNewLevel);
@@ -805,8 +832,8 @@ namespace MyGame
             this.Text = "MyEditor";
             this.staticPropertiesPanel.ResumeLayout(false);
             this.staticPropertiesPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.cameraNodePanel.ResumeLayout(false);
+            this.cameraNodePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,18 +890,19 @@ namespace MyGame
         public System.Windows.Forms.CheckBox flipVerticalCheck;
         private System.Windows.Forms.Button addCameraNodeButton;
         private System.Windows.Forms.Button buttonMoveCameraNode;
-        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel cameraNodePanel;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox Distance;
-        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox cameraNodeSpeed;
         public System.Windows.Forms.TextBox cameraPosZ;
         public System.Windows.Forms.TextBox cameraPosY;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox cameraPosX;
+        private System.Windows.Forms.Button linkNodeButton;
+        public System.Windows.Forms.CheckBox isFirstCheck;
+        private System.Windows.Forms.Button buttonSetupCamera;
     }
 }
 #endif
