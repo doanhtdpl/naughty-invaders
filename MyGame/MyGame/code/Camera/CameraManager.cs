@@ -58,6 +58,8 @@ namespace MyGame
         CameraData lastFrameData;
         CameraData currentFrameData;
 
+        public float speedMultiplier = 1.0f;
+
         // returns the vector in the XY plane with origin in the last frmae camera position and ending in the current frame camera position
         public Vector3 getCameraVelocityXY()
         {
@@ -71,6 +73,9 @@ namespace MyGame
         }
         public void loadXMLfake()
         {
+            if (cameraNodes.getNodes().Count > 0)
+                return;
+
             NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));
             NetworkNode<CameraData> second = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 20000, 1400), new Vector3(0, 20000, 0), 1));
             NetworkNode<CameraData> third = new NetworkNode<CameraData>(new CameraData(new Vector3(10000, 20000, 1400), new Vector3(10000, 20000, 0), 2));
@@ -138,7 +143,7 @@ namespace MyGame
             Vector3 direction = targetPosition - Camera2D.position;
             float distance = direction.Length();
             direction.Normalize();
-            float distanceToAdvance = currentNode.value.speed * SB.dt;
+            float distanceToAdvance = currentNode.value.speed * SB.dt * speedMultiplier;
 
             // always check if the camera arrives to the next node in this frame
             if (distanceToAdvance > distance)

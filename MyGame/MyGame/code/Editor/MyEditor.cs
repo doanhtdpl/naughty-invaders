@@ -108,6 +108,14 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEnemy());
             }
+            else if (sender == addCameraNodeButton)
+            {
+                changeState(new EditorState_AddCameraNode());
+            }
+            else if (sender == buttonMoveCameraNode)
+            {
+                changeState(new EditorState_MoveCameraNode());
+            }
             myEditorControl.Focus();
         }
 
@@ -282,6 +290,14 @@ namespace MyGame
             {
                 colorButton_Click(null, null);
             }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.D9))
+            {
+                CameraManager.Instance.speedMultiplier -= 0.5f;
+            }
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.D0))
+            {
+                CameraManager.Instance.speedMultiplier += 0.5f;
+            }
 
             //RESET
             //else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.R))
@@ -347,6 +363,8 @@ namespace MyGame
                             newEntities.Add(newEntity);
                         }
                     }
+
+                    createGroup();
 
                     selectedEntities.Clear();
                     selectedEntities = newEntities;
@@ -414,6 +432,8 @@ namespace MyGame
             buttonAddStatic.BackColor = nextState is EditorState_AddStatic ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonAddAnimated.BackColor = nextState is EditorState_AddAnimated ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonAddEnemy.BackColor = nextState is EditorState_AddEnemy ? SELECTED_COLOR : UNSELECTED_COLOR;
+            addCameraNodeButton.BackColor = nextState is EditorState_AddCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonMoveCameraNode.BackColor = nextState is EditorState_MoveCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 
