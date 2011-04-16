@@ -70,7 +70,7 @@ namespace MyGame
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
-            EditorHelper.Instance.loadNewLevel(SB.content.RootDirectory + "/xml/levels/pepe.xml");
+            EditorHelper.Instance.loadNewLevel(SB.content.RootDirectory + "/xml/levels/final_Level01.xml");
         }
 
         protected override void UnloadContent()

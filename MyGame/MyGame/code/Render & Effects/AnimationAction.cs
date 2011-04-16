@@ -9,6 +9,8 @@ namespace MyGame
     {
         // from XML
         public string name { get; set; }
+        public string from { get; set; }
+        public string to { get; set; }
         public int initialFrame { get; set; }
         public int endFrame { get; set; }
         public float FPS { get; set; }
@@ -19,8 +21,6 @@ namespace MyGame
         public string playRandom { get; set; }  
         public float playRandomMin { get; set; }
         public float playRandomMax { get; set; }
-
-        
 
         // calculated from XML data
         public int totalFrames { get; set; }

@@ -16,15 +16,9 @@ action:
 - playAtEnd (optional): action that will be played at the end, default is none
 - playRandom (optional): action that is played randomly, default is none
 - playRandomMin/playRandomMax (must if playRandom is not null): determines the random value of the playRandom action, in seconds
-
-<animatedEntity>
-  <animatedTexture name="Anim_Player" frameWidth="160" frameHeight="160" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="9" loops="false"/>
-    <action name="die" initialFrame="10" endFrame="20" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="24" endFrame="36" loops="true"/>
-  </animatedTexture>
-</animatedEntity>
+- from / to (optional): to define a transition action tht will be automatically played, put the names of the from and to actions.
 -->
+
 <animatedEntity>
   <animatedTexture name="Anim_Player" frameWidth="160" frameHeight="160" columns="6" rows="6">
     <action name="attack" initialFrame="1" endFrame="9" loops="false"/>
