@@ -314,12 +314,12 @@ namespace MyGame
                 {
                     List<Entity2D> newEntities = new List<Entity2D>();
 
-                    foreach (Entity2D ent in selectedEntities)
+                    foreach (RenderableEntity2D ent in selectedEntities)
                     {
-                        Entity2D newEntity = null;
+                        RenderableEntity2D newEntity = null;
                         if (ent is Enemy)
                         {
-                            newEntity = EnemyManager.Instance.addEnemy(ent.entityName, ent.position);
+                            newEntity = (RenderableEntity2D)EnemyManager.Instance.addEnemy(ent.entityName, ent.position);
                         }
                         else if (ent is AnimatedEntity2D)
                         {
@@ -331,6 +331,10 @@ namespace MyGame
                             newEntity = new RenderableEntity2D("staticProps", ent.entityName, ent.position, 0, Color.White);
                             LevelManager.Instance.addStaticProp(newEntity);
                         }
+
+                        newEntity.color = ent.color;
+                        newEntity.flipHorizontal = ent.flipHorizontal;
+                        newEntity.flipVertical = ent.flipVertical;
 
                         newEntity.worldMatrix = ent.worldMatrix;
 
