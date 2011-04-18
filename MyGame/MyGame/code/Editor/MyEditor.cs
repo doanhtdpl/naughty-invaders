@@ -118,6 +118,10 @@ namespace MyGame
             {
                 changeState(new EditorState_MoveCameraNode());
             }
+            else if (sender == buttonAddColisions)
+            {
+                changeState(new EditorState_AddColisions());
+            }
             myEditorControl.Focus();
         }
 
@@ -440,6 +444,7 @@ namespace MyGame
             buttonAddEnemy.BackColor = nextState is EditorState_AddEnemy ? SELECTED_COLOR : UNSELECTED_COLOR;
             addCameraNodeButton.BackColor = nextState is EditorState_AddCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonMoveCameraNode.BackColor = nextState is EditorState_MoveCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonAddColisions.BackColor = nextState is EditorState_AddColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 

@@ -130,6 +130,7 @@
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddCameraNode.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_AddColisions.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddEnemy.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddAnimated.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveCameraNode.cs" />
