@@ -91,8 +91,9 @@ namespace MyGame
             this.cameraPosY = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cameraPosX = new System.Windows.Forms.TextBox();
-            this.myEditorControl = new MyGame.MyEditorControl();
             this.buttonAddColisions = new System.Windows.Forms.Button();
+            this.myEditorControl = new MyGame.MyEditorControl();
+            this.buttonEditColisions = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.cameraNodePanel.SuspendLayout();
             this.SuspendLayout();
@@ -801,15 +802,6 @@ namespace MyGame
             this.cameraPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             this.cameraPosX.Leave += new System.EventHandler(this.textChange_cameraNode);
             // 
-            // myEditorControl
-            // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            // 
             // buttonAddColisions
             // 
             this.buttonAddColisions.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -822,12 +814,34 @@ namespace MyGame
             this.buttonAddColisions.UseVisualStyleBackColor = true;
             this.buttonAddColisions.Click += new System.EventHandler(this.button_Click);
             // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 92);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
+            // 
+            // buttonEditColisions
+            // 
+            this.buttonEditColisions.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditColisions.Location = new System.Drawing.Point(660, 36);
+            this.buttonEditColisions.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEditColisions.Name = "buttonEditColisions";
+            this.buttonEditColisions.Size = new System.Drawing.Size(60, 28);
+            this.buttonEditColisions.TabIndex = 208;
+            this.buttonEditColisions.Text = "Edit Colisions";
+            this.buttonEditColisions.UseVisualStyleBackColor = true;
+            this.buttonEditColisions.Click += new System.EventHandler(this.button_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.buttonEditColisions);
             this.Controls.Add(this.buttonAddColisions);
             this.Controls.Add(this.cameraNodePanel);
             this.Controls.Add(this.buttonMoveCameraNode);
@@ -933,6 +947,7 @@ namespace MyGame
         private System.Windows.Forms.Button buttonSetupCamera;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonAddColisions;
+        private System.Windows.Forms.Button buttonEditColisions;
     }
 }
 #endif
