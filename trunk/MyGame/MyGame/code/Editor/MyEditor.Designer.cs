@@ -78,6 +78,7 @@ namespace MyGame
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
             this.cameraNodePanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonSetupCamera = new System.Windows.Forms.Button();
             this.linkNodeButton = new System.Windows.Forms.Button();
             this.isFirstCheck = new System.Windows.Forms.CheckBox();
@@ -91,7 +92,7 @@ namespace MyGame
             this.label16 = new System.Windows.Forms.Label();
             this.cameraPosX = new System.Windows.Forms.TextBox();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddColisions = new System.Windows.Forms.Button();
             this.staticPropertiesPanel.SuspendLayout();
             this.cameraNodePanel.SuspendLayout();
             this.SuspendLayout();
@@ -663,6 +664,18 @@ namespace MyGame
             this.cameraNodePanel.Size = new System.Drawing.Size(336, 91);
             this.cameraNodePanel.TabIndex = 206;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(250, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 28);
+            this.button1.TabIndex = 208;
+            this.button1.Text = "Set Camera byTheFace";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // buttonSetupCamera
             // 
             this.buttonSetupCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -797,17 +810,17 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
-            // button1
+            // buttonAddColisions
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(250, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 28);
-            this.button1.TabIndex = 208;
-            this.button1.Text = "Set Camera byTheFace";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddColisions.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddColisions.Location = new System.Drawing.Point(587, 36);
+            this.buttonAddColisions.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddColisions.Name = "buttonAddColisions";
+            this.buttonAddColisions.Size = new System.Drawing.Size(60, 28);
+            this.buttonAddColisions.TabIndex = 207;
+            this.buttonAddColisions.Text = "Add Colisions";
+            this.buttonAddColisions.UseVisualStyleBackColor = true;
+            this.buttonAddColisions.Click += new System.EventHandler(this.button_Click);
             // 
             // MyEditor
             // 
@@ -815,6 +828,7 @@ namespace MyGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.buttonAddColisions);
             this.Controls.Add(this.cameraNodePanel);
             this.Controls.Add(this.buttonMoveCameraNode);
             this.Controls.Add(this.addCameraNodeButton);
@@ -918,6 +932,7 @@ namespace MyGame
         public System.Windows.Forms.CheckBox isFirstCheck;
         private System.Windows.Forms.Button buttonSetupCamera;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddColisions;
     }
 }
 #endif
