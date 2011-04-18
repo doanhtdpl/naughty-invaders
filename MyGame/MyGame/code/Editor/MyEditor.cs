@@ -122,6 +122,10 @@ namespace MyGame
             {
                 changeState(new EditorState_AddColisions());
             }
+            else if (sender == buttonEditColisions)
+            {
+                changeState(new EditorState_EditColisions());
+            }
             myEditorControl.Focus();
         }
 
@@ -328,7 +332,7 @@ namespace MyGame
             }
 
             //DELETE
-            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && myEditorControl.Focused)
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && myEditorControl.Focused && anyEntitySelected())
             {
                 foreach (Entity2D ent in selectedEntities)
                 {
@@ -445,6 +449,7 @@ namespace MyGame
             addCameraNodeButton.BackColor = nextState is EditorState_AddCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonMoveCameraNode.BackColor = nextState is EditorState_MoveCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonAddColisions.BackColor = nextState is EditorState_AddColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
+            buttonEditColisions.BackColor = nextState is EditorState_EditColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 

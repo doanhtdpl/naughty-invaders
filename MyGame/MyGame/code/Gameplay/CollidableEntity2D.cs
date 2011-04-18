@@ -87,7 +87,7 @@ namespace MyGame
         {
             for (int i = 0; i < parts.Count; ++i)
             {
-                DebugManager.Instance.addCircle(position2D + parts[i].centerOfMass, parts[i].radius, 15);
+                DebugManager.Instance.addCircle(position2D + parts[i].centerOfMass, parts[i].radius, 15, Color.White);
             }
         }
 #endif

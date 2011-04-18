@@ -68,7 +68,7 @@ namespace MyGame
             texts = new sDebugText[MAX_TEXTS];
         }
 
-        public void addCircle(Vector2 position, float radius, int segments)
+        public void addCircle(Vector2 position, float radius, int segments, Color color)
         {
             float angleStep = Calc.TwoPi / (float)segments;
             float currentAngle = 0.0f;
@@ -80,7 +80,7 @@ namespace MyGame
                 p1 = p2;
                 p2 = new Vector2((float)(position.X + Math.Cos(currentAngle) * radius),
                                  (float)(position.Y + Math.Sin(currentAngle) * radius));
-                addLine(p1, p2, Color.White);
+                addLine(p1, p2, color);
             }
         }
 

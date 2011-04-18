@@ -45,6 +45,10 @@ namespace MyGame
         {
             return v.X.toString() + " " + v.Y.toString() + " " + v.Z.toString();
         }
+        public static Vector2 toVector2(this Vector3 v)
+        {
+            return new Vector2(v.X, v.Y);
+        }
         public static Vector3 toVector3(this string str)
         {
             string[] values = str.Split(' ');
