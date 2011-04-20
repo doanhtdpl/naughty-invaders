@@ -173,6 +173,7 @@ namespace MyGame
             // fast shot attack
             if (controls.X_pressed())
             {
+                //EnemyManager.Instance.renderDebug();
                 if (fastShotCooldownTime <= 0.0f)
                 {
                     playAction("attack");
@@ -213,6 +214,12 @@ namespace MyGame
                         bigShotCharging = false;
                     }
                 }
+            }
+
+            if (controls.RB_firstPressed())
+            {
+                EnemySpawnZone esz = new EnemySpawnZone("grape", new Rectangle(-300, 900, 600, 500), 3);
+                EnemyManager.Instance.addEnemySpawnZone(esz);
             }
         }
 

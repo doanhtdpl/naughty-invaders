@@ -119,6 +119,12 @@ namespace MyGame
             addLine(endingPoint, otherPoint2, color);
             addLine(otherPoint2, initialPoint, color);
         }
+        public void addRectangle(Rectangle rectangle, Color color, float alpha = 0.3f)
+        {
+            Vector2 initialPoint = new Vector2(rectangle.Left, rectangle.Top);
+            Vector2 endingPoint = new Vector2(rectangle.Right, rectangle.Bottom);
+            addRectangle(initialPoint, endingPoint, color, alpha);
+        }
 
         void renderLines()
         {
