@@ -87,6 +87,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
+    <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
@@ -159,6 +160,7 @@
       <DependentUpon>MyEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="code\Editor\MyEditorControl.cs" />
+    <Compile Include="code\Triggers\TriggerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="MyGame.cs" />

@@ -12,6 +12,7 @@ namespace MyGame
         List<Entity2D> enemies = new List<Entity2D>();
         List<Entity2D> activeEnemies = new List<Entity2D>();
         List<Enemy> enemiesToDelete = new List<Enemy>();
+        List<EnemySpawnZone> enemySpawnZones = new List<EnemySpawnZone>();
 
         static EnemyManager instance = null;
 
@@ -32,6 +33,10 @@ namespace MyGame
         }
 
         #region ENTITY MANAGEMENT
+        public void addEnemySpawnZone(EnemySpawnZone enemySpawnZone)
+        {
+            enemySpawnZones.Add(enemySpawnZone);
+        }
         public void addEnemy(Enemy e)
         {
             enemies.Add(e);
@@ -160,9 +165,22 @@ namespace MyGame
                 }
             }
         }
+        public void updateEnemySpawnZones()
+        {
+            float cameraTopY = Camera2D.screen.Bottom;
+            for (int i = 0; i < enemySpawnZones.Count; ++i)
+            {
+                if (!enemySpawnZones[i].update(cameraTopY))
+                {
+                    enemySpawnZones.RemoveAt(i);
+                    --i;
+                }
+            }
+        }
 
         public void update()
         {
+            updateEnemySpawnZones();
             updateSleepingEnemies();
 
             checkCollisionsWithPlayers();
@@ -180,5 +198,15 @@ namespace MyGame
             }
             deleteEnemiesToDelete();
         }
+
+#if DEBUG
+        public void renderDebug()
+        {
+            for (int i = 0; i < enemySpawnZones.Count; ++i)
+            {
+                DebugManager.Instance.addRectangle(enemySpawnZones[i].getZone(), Color.White);
+            }
+        }
+#endif
     }
 }
