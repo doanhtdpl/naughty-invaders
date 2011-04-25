@@ -10,7 +10,7 @@ namespace MyGame
 {
     class StateEndTrial : GameState
     {
-        public static TEX texTrial = new TEX();
+        public static Texture2D texTrial;
         public override void initialize()
         {
             type = StateManager.tGS.Credits;
@@ -20,7 +20,7 @@ namespace MyGame
         {
             Menu.loadContent();
             loaded = true;
-            //texTrial.initTEX("GUI/menu/trial", 800, 800);
+            texTrial = TextureManager.Instance.getTexture("GUI/menu/trial");
         }
 
         public override void update()
@@ -44,7 +44,7 @@ namespace MyGame
         public override void render()
         {
             GraphicsManager.Instance.spriteBatch.Begin();
-            GraphicsManager.Instance.spriteBatch.Draw(texTrial.texture, Screen.getXYfromCenter(-550, 330), null, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            GraphicsManager.Instance.spriteBatch.Draw(texTrial, Screen.getXYfromCenter(-550, 330), null, Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             TextKey.Trial.Translate().render
                 (Screen.getXYfromCenter(new Vector2(250, 250)), 0.75f, Color.LightBlue, StringManager.tTextAlignment.Centered,
                 SB.font, 500, 35, Color.Blue, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);

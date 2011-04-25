@@ -12,7 +12,7 @@ namespace MyGame
     {
         public const int TOTAL_SCORE_PAGES = 2;
 
-        public static TEX award = new TEX();
+        //public static TEX award = new TEX();
         Color normalColor = Color.LightGray;
         Color gotColor = Color.White;
         Menu menu = new Menu(1f, Color.Gray, Color.LightGray, Color.Black, Color.White);

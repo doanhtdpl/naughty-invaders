@@ -14,7 +14,7 @@ namespace MyGame
 {
     class StateIntro : GameState
     {
-        public static TEX logo = new TEX();
+        public static Texture logo;
         public float timer = 0;
 
         public const int introTime = 1000;
@@ -25,7 +25,7 @@ namespace MyGame
 
         public override void loadContent()
         {
-            logo.initTEX("GUI/menu/logo", 512, 512);
+            logo = TextureManager.Instance.getTexture("GUI/menu/logo");
         }
 
         public override void update()
@@ -45,7 +45,7 @@ namespace MyGame
         {
             GraphicsManager.Instance.graphicsDevice.Clear(Color.White);
             //GraphicsManager.Instance.beginAlphaRender();
-            logo.render(new Vector2(0,0), 0);
+            logo.render(SB.getWorldMatrix(new Vector3(0.0f, 0.0f, 0.0f), 0.0f, 0.0f));
         }
 
         public override void dispose()

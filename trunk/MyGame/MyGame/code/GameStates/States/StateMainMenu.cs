@@ -14,7 +14,7 @@ namespace MyGame
 {
     class StateMainMenu : GameState
     {
-        public static TEX mainMenu = new TEX();
+        public static Texture mainMenu;
         Menu menu = new Menu(1.2f, Color.DarkGreen, Color.Green, Color.Black);
 
         public const int MENU_X = 160;

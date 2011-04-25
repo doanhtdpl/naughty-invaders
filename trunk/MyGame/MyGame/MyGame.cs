@@ -65,8 +65,6 @@ namespace MyGame
             // load and initialize stuff (pe: quad renderer)
             SB.loadContent();
             GraphicsManager.Instance.loadContent();
-            LineManager.loadContent();
-            TEX.loadContent();
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
