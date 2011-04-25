@@ -1,9 +1,3 @@
-Content\effects\Alpha.xnb
-Content\effects\Basic.xnb
-Content\effects\Copy of TexturePolygonEffect.xnb
-Content\effects\Line.xnb
-Content\effects\SpyEffect.xnb
-Content\effects\TexturePolygonEffect.xnb
 Content\fonts\font.xnb
 Content\GUI\textImages\A.xnb
 Content\GUI\textImages\B.xnb
@@ -19,16 +13,6 @@ Content\GUI\textImages\RT.xnb
 Content\GUI\textImages\START.xnb
 Content\GUI\textImages\X.xnb
 Content\GUI\textImages\Y.xnb
-Content\effects\PolygonTextures\black.xnb
-Content\effects\PolygonTextures\blackOnly.xnb
-Content\effects\PolygonTextures\blue.xnb
-Content\effects\PolygonTextures\green.xnb
-Content\effects\PolygonTextures\purple.xnb
-Content\effects\PolygonTextures\red.xnb
-Content\effects\PolygonTextures\white.xnb
-Content\effects\PolygonTextures\white2.xnb
-Content\effects\PolygonTextures\white3.xnb
-Content\effects\PolygonTextures\yellow.xnb
 Content\GUI\menu\logo.xnb
 Content\GUI\menu\menu.xnb
 Content\GUI\menu\trial.xnb
@@ -125,6 +109,7 @@ Content\textures\animatedProps\SpriteSheetpelos.xnb
 Content\textures\animatedProps\SpriteSheetojos.xnb
 Content\textures\animatedProps\SpriteSheetojitos.xnb
 Content\textures\projectiles\bigShotPlayer.xnb
+Content\effects\Basic.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml

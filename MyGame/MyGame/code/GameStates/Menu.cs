@@ -14,7 +14,7 @@ namespace MyGame
         public List<Option> options = new List<Option>();
         public Vector2 cursorPosition;
         public int selectedOption;
-        public static TEX cursor = new TEX();
+        public static Texture cursor;
         public float menuScale;
         public Color normalColor;
         public Color selectedColor;
@@ -40,7 +40,7 @@ namespace MyGame
 
         public static void loadContent()
         {
-            cursor.initTEX("GUI/menu/cursor", 110, 60);
+            cursor = TextureManager.Instance.getTexture("GUI/menu/cursor");
         }
 
         public void update()

@@ -63,8 +63,6 @@ namespace MyGame
             //Load Content
             SB.loadContent();
             GraphicsManager.Instance.loadContent();
-            LineManager.loadContent();
-            TEX.loadContent();
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
