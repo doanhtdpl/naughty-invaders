@@ -93,7 +93,7 @@ namespace MyGame
                 OrbManager.Instance.update();
                 CameraManager.Instance.update();
                 GUIManager.Instance.update();
-
+                TriggerManager.Instance.update();
 #if EDITOR
             }
 #endif

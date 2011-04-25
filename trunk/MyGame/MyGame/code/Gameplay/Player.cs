@@ -20,7 +20,7 @@ namespace MyGame
         public const float MAX_BIG_SHOT_CHARGE = 2.0f;
 
         // life stuff
-        int lifes;
+        public int lifes { get; set; }
         float invulnerableTime;
         
         // actions stuff
@@ -197,7 +197,7 @@ namespace MyGame
                     {
                         bigShotChargeTimer += SB.dt;
                     }
-                    else if (controls.Y_firstReleased())
+                    else if (controls.Y_released())
                     {
                         playAction("attack");
                         // value that goes from 1 to 3 (minimum and maximum charge)
@@ -220,6 +220,13 @@ namespace MyGame
             {
                 EnemySpawnZone esz = new EnemySpawnZone("grape", new Rectangle(-300, 900, 600, 500), 3);
                 EnemyManager.Instance.addEnemySpawnZone(esz);
+            }
+            if (controls.LT_firstPressed())
+            {
+                Trigger t = new Trigger();
+                t.addFunction(true, "isPlayersLastLife", null);
+                t.addFunction(false, "addParticles", null);
+                TriggerManager.Instance.addTrigger(t);
             }
         }
 

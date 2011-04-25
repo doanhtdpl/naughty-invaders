@@ -4,49 +4,10 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Reflection;
 
 namespace MyGame
 {
-    class TriggerFunction
-    {
-        public string functionName;
-        public List<TriggerParameter> parameters = new List<TriggerParameter>();
-    }
-    class TriggerParameter
-    {
-        public enum tParameterType { Integer, Float, Double, String, Vector2, Vector3, Rectangle }
-        string value;
-    }
-
-    class Trigger
-    {
-        public int executionTimes = 1;
-
-        List<TriggerFunction> conditions = new List<TriggerFunction>();
-        List<TriggerFunction> executions = new List<TriggerFunction>();
-
-        public bool isTriggered()
-        {
-            bool isTriggered = false;
-            foreach (TriggerFunction condition in conditions)
-            {
-                // call the function of the condition
-                isTriggered = true;
-            }
-            return isTriggered;
-        }
-        public bool execute()
-        {
-            foreach (TriggerFunction condition in conditions)
-            {
-                // call the function to trigger
-
-            }
-            --executionTimes;
-            return executionTimes > 0;
-        }
-    }
-
     class TriggerManager
     {
         static TriggerManager instance = null;
@@ -65,6 +26,11 @@ namespace MyGame
             }
         }
         List<Trigger> triggers = new List<Trigger>();
+
+        public void addTrigger(Trigger trigger)
+        {
+            triggers.Add(trigger);
+        }
 
         // check all triggers
         public void update()

@@ -222,6 +222,10 @@
     <Compile Include="code\Editor\MyEditorControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="code\Triggers\ConditionFunctions.cs" />
+    <Compile Include="code\Triggers\ConsequenceFunctions.cs" />
+    <Compile Include="code\Triggers\Trigger.cs" />
+    <Compile Include="code\Triggers\TriggerFunction.cs" />
     <Compile Include="code\Triggers\TriggerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

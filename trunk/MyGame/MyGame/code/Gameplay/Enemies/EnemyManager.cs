@@ -43,8 +43,6 @@ namespace MyGame
         }
         public Entity2D addEnemy(string name, Vector3 position, int id = -1)
         {
-            Assembly assem = Assembly.GetExecutingAssembly();
-
             // convert to the class format (first char is upper)
             name = name.Substring(0, 1).ToUpper() + name.Substring(1);
 
