@@ -99,6 +99,10 @@ namespace MyGame
         {
             return enemies;
         }
+        public List<EnemySpawnZone> getEnemySpawnZones()
+        {
+            return enemySpawnZones;
+        }
         public List<Entity2D> getActiveEnemies()
         {
             return activeEnemies;

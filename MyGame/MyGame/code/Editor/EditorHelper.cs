@@ -161,6 +161,7 @@ namespace MyGame
             writer.WriteAttributeString("flipV", ent.flipVertical.ToString());
             writer.WriteEndElement();
         }
+
         void writeLevelCollision(XmlTextWriter writer, Line line)
         {
             writer.WriteStartElement("levelCollision");
@@ -168,15 +169,23 @@ namespace MyGame
             writer.WriteAttributeString("p2", line.p2.toXML());
             writer.WriteEndElement();
         }
+
+        private void writeEnemyZone(XmlTextWriter writer, EnemySpawnZone esz)
+        {
+            writer.WriteStartElement("enemySpawnZone");
+            writer.WriteAttributeString("zone", esz.getZone().toXML());
+            writer.WriteAttributeString("enemy", esz.getEnemyName());
+            writer.WriteAttributeString("count", esz.getTotalSpawns().ToString());
+            writer.WriteEndElement();
+        }
+
         public void saveLevelToXML(string name)
         {
-            // creates directory if it doesnt already exist
-            //Directory.CreateDirectory(SB.content.RootDirectory + "/xml/levels/");
-            //XmlTextWriter writer = new XmlTextWriter(SB.content.RootDirectory + "/xml/levels/" + name + ".xml", null);
             XmlTextWriter writer = new XmlTextWriter(name, null);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
             writer.WriteStartElement("level");
+
             // here is the general information for the level
             writer.WriteAttributeString("nextEntityID", Entity2D.NEXT_ENTITY_ID.ToString());
             writer.WriteAttributeString("BGColor", SB.BGColor.toXML());
@@ -224,6 +233,15 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            //enemy zones
+            writer.WriteStartElement("enemySpawnZones");
+            for (int i = 0; i < EnemyManager.Instance.getEnemies().Count; i++)
+            {
+                EnemySpawnZone esz = EnemyManager.Instance.getEnemySpawnZones()[i];
+                writeEnemyZone(writer, esz);
+            }
+            writer.WriteEndElement();
+
             // level lines
             writer.WriteStartElement("levelCollisions");
             for (int i = 0; i < LevelManager.Instance.getLevelCollisions().Count; i++)
@@ -231,18 +249,6 @@ namespace MyGame
                 writeLevelCollision(writer, LevelManager.Instance.getLevelCollisions()[i]);
             }
             writer.WriteEndElement();
-
-            //player
-            //writer.WriteStartElement("players");
-            //for (int i = 0; i < GamerManager.getGamerEntities().Count; i++)
-            //{
-            //    Player player = GamerManager.getGamerEntity((PlayerIndex)i).Player;
-            //    writer.WriteStartElement("player");
-            //    writer.WriteAttributeString("playerIndex", i.ToString());
-            //    writer.WriteAttributeString("worldMatrix", player.worldMatrix.toXML());
-            //    writer.WriteEndElement();
-            //}
-            //writer.WriteEndElement();
 
             //camera
             writer.WriteStartElement("camera");
@@ -358,6 +364,17 @@ namespace MyGame
                     list.Add(e);
                 }
 
+                //Enemy spaws zones
+                nodes = xml_doc.Descendants("enemySpawnZone");
+                foreach (XElement node in nodes)
+                {
+                    string name = node.Attribute("enemy").Value;
+                    Rectangle rect = node.Attribute("zone").Value.toRectangle();
+                    int count = node.Attribute("count").Value.toInt();
+
+                    EnemyManager.Instance.addEnemySpawnZone(new EnemySpawnZone(name, rect, count));
+                }
+
                 // read level collisions
                 nodes = xml_doc.Descendants("levelCollision");
                 foreach (XElement node in nodes)
@@ -365,20 +382,6 @@ namespace MyGame
                     Line l = new Line(node.Attribute("p1").Value.toVector2(), node.Attribute("p2").Value.toVector2());
                     LevelManager.Instance.addLevelCollision(l);
                 }
-
-                // read players
-                //nodes = xml_doc.Descendants("player");
-                //foreach (XElement node in nodes)
-                //{
-                //    PlayerIndex index = (PlayerIndex)node.Attribute("playerIndex").Value.toInt();
-                //    Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
-                //    GamerEntity gamer = GamerManager.getGamerEntity(index);
-                //    gamer.Player.worldMatrix = world;
-                //    gamer.Player.setInit();
-
-                //    //Register player again as we don't destroy it (yet...)
-                //    EntityManager.Instance.registerEntity(gamer.Player);
-                //}
 
                 //Re-add the player in the entity manager
                 EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
