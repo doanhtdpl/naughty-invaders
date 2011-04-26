@@ -32,6 +32,14 @@ namespace MyGame
             this.totalSpawns = totalSpawns;
             spawnPositions = new Vector2[totalSpawns];
         }
+        public string getEnemyName()
+        {
+            return enemyName;
+        }
+        public int getTotalSpawns()
+        {
+            return totalSpawns;
+        }
         public Rectangle getZone()
         {
             return zone;

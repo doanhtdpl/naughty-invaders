@@ -126,6 +126,10 @@ namespace MyGame
             {
                 changeState(new EditorState_EditColisions());
             }
+            else if (sender == addEnemyZoneButton)
+            {
+                changeState(new EditorState_AddEnemySpawnZone());
+            }
             myEditorControl.Focus();
         }
 
@@ -450,6 +454,7 @@ namespace MyGame
             buttonMoveCameraNode.BackColor = nextState is EditorState_MoveCameraNode ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonAddColisions.BackColor = nextState is EditorState_AddColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonEditColisions.BackColor = nextState is EditorState_EditColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
+            addEnemyZoneButton.BackColor = nextState is EditorState_AddEnemySpawnZone ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 

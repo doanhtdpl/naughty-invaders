@@ -77,6 +77,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddColisions.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddEnemy.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddAnimated.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_AddEnemySpawnZone.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditColisions.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveCameraNode.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_ScaleState.cs" />

@@ -130,9 +130,6 @@ namespace MyGame
             if (MyEditor.Instance.canSelectStatic.Checked)
                 ent = EditorHelper.Instance.rayVsEntities(ray, LevelManager.Instance.getStaticProps(), ent, ignoreEntities);
 
-            if (MyEditor.Instance.canSelectPlayer.Checked)
-                ent = EditorHelper.Instance.rayVsEntities(ray, GamerManager.getPlayerEntities(), ent, ignoreEntities);
-
             return ent;
         }
 
@@ -194,17 +191,6 @@ namespace MyGame
                         if (MyEditor.Instance.getSelectedEntities().IndexOf(e) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
                         {
                             MyEditor.Instance.getSelectedEntities().Add(e);
-                        }
-                    }
-                }
-                if (MyEditor.Instance.canSelectPlayer.Checked)
-                {
-                    foreach (GamerEntity e in GamerManager.getGamerEntities())
-                    {
-                        Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.Player.position, Camera2D.projection, Camera2D.view, Matrix.Identity);
-                        if (MyEditor.Instance.getSelectedEntities().IndexOf(e.Player) < 0 && isPointInRect(new Vector2(pos.X, pos.Y), initPointSelect, endPointSelect))
-                        {
-                            MyEditor.Instance.getSelectedEntities().Add(e.Player);
                         }
                     }
                 }

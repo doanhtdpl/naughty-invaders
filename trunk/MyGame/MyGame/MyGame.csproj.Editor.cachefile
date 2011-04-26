@@ -1,3 +1,4 @@
+Content\effects\Basic.xnb
 Content\fonts\font.xnb
 Content\GUI\textImages\A.xnb
 Content\GUI\textImages\B.xnb
@@ -109,7 +110,6 @@ Content\textures\animatedProps\SpriteSheetpelos.xnb
 Content\textures\animatedProps\SpriteSheetojos.xnb
 Content\textures\animatedProps\SpriteSheetojitos.xnb
 Content\textures\projectiles\bigShotPlayer.xnb
-Content\effects\Basic.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml

@@ -92,6 +92,17 @@ namespace MyGame
             string[] values = str.Split(' ');
             return new Color(values[0].toInt(), values[1].toInt(), values[2].toInt(), values[3].toInt());
         }
+
+        public static string toXML(this Rectangle r)
+        {
+            return r.X.ToString() + " " + r.Y.ToString() + " " + r.Width.ToString() + " " + r.Height.ToString();
+        }
+        public static Rectangle toRectangle(this string str)
+        {
+            string[] values = str.Split(' ');
+            return new Rectangle(values[0].toInt(), values[1].toInt(), values[2].toInt(), values[3].toInt());
+        }
+        
         public static string toXML(this Matrix m)
         {
             string str =
