@@ -736,7 +736,7 @@ namespace MyGame
             CameraManager.Instance.setupCamera();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSetCameraByTheFace_Click(object sender, EventArgs e)
         {
             ((EditorState_MoveCameraNode)currentState).setCameraByTheFace();
         }
