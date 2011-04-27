@@ -37,7 +37,7 @@ namespace MyGame
             this.superPizzaButton = new System.Windows.Forms.Button();
             this.buttonNewLevel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.Entities = new System.Windows.Forms.TabPage();
+            this.entities = new System.Windows.Forms.TabPage();
             this.staticPropertiesPanel = new System.Windows.Forms.Panel();
             this.flipVerticalCheck = new System.Windows.Forms.CheckBox();
             this.flipHorizontalCheck = new System.Windows.Forms.CheckBox();
@@ -75,7 +75,7 @@ namespace MyGame
             this.buttonScale = new System.Windows.Forms.Button();
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
-            this.Cameras = new System.Windows.Forms.TabPage();
+            this.cameras = new System.Windows.Forms.TabPage();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
@@ -93,22 +93,23 @@ namespace MyGame
             this.cameraPosY = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.cameraPosX = new System.Windows.Forms.TextBox();
-            this.Colisions = new System.Windows.Forms.TabPage();
+            this.colisions = new System.Windows.Forms.TabPage();
             this.buttonEditColisions = new System.Windows.Forms.Button();
             this.buttonAddColisions = new System.Windows.Forms.Button();
-            this.EnemyZones = new System.Windows.Forms.TabPage();
-            this.Triggers = new System.Windows.Forms.TabPage();
-            this.addEnemyZoneButton = new System.Windows.Forms.Button();
-            this.enemiesCombo = new System.Windows.Forms.ComboBox();
+            this.enemyZones = new System.Windows.Forms.TabPage();
             this.enemyCount = new System.Windows.Forms.TextBox();
+            this.enemiesCombo = new System.Windows.Forms.ComboBox();
+            this.addEnemyZoneButton = new System.Windows.Forms.Button();
+            this.triggers = new System.Windows.Forms.TabPage();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.effects = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.Entities.SuspendLayout();
+            this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
-            this.Cameras.SuspendLayout();
+            this.cameras.SuspendLayout();
             this.cameraNodePanel.SuspendLayout();
-            this.Colisions.SuspendLayout();
-            this.EnemyZones.SuspendLayout();
+            this.colisions.SuspendLayout();
+            this.enemyZones.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonImportLevel
@@ -185,39 +186,40 @@ namespace MyGame
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.Entities);
-            this.tabControl1.Controls.Add(this.Cameras);
-            this.tabControl1.Controls.Add(this.Colisions);
-            this.tabControl1.Controls.Add(this.EnemyZones);
-            this.tabControl1.Controls.Add(this.Triggers);
+            this.tabControl1.Controls.Add(this.entities);
+            this.tabControl1.Controls.Add(this.cameras);
+            this.tabControl1.Controls.Add(this.colisions);
+            this.tabControl1.Controls.Add(this.enemyZones);
+            this.tabControl1.Controls.Add(this.triggers);
+            this.tabControl1.Controls.Add(this.effects);
             this.tabControl1.Location = new System.Drawing.Point(0, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(885, 126);
             this.tabControl1.TabIndex = 209;
             // 
-            // Entities
+            // entities
             // 
-            this.Entities.Controls.Add(this.staticPropertiesPanel);
-            this.Entities.Controls.Add(this.texturesCombo);
-            this.Entities.Controls.Add(this.selectGroup);
-            this.Entities.Controls.Add(this.canSelectEnemy);
-            this.Entities.Controls.Add(this.canSelectAnimated);
-            this.Entities.Controls.Add(this.buttonAddAnimated);
-            this.Entities.Controls.Add(this.canSelectStatic);
-            this.Entities.Controls.Add(this.buttonAddStatic);
-            this.Entities.Controls.Add(this.buttonCreateGroup);
-            this.Entities.Controls.Add(this.buttonAddEnemy);
-            this.Entities.Controls.Add(this.buttonScale);
-            this.Entities.Controls.Add(this.buttonRotate);
-            this.Entities.Controls.Add(this.buttonMove);
-            this.Entities.Location = new System.Drawing.Point(4, 22);
-            this.Entities.Name = "Entities";
-            this.Entities.Padding = new System.Windows.Forms.Padding(3);
-            this.Entities.Size = new System.Drawing.Size(877, 100);
-            this.Entities.TabIndex = 0;
-            this.Entities.Text = "Entities";
-            this.Entities.UseVisualStyleBackColor = true;
+            this.entities.Controls.Add(this.staticPropertiesPanel);
+            this.entities.Controls.Add(this.texturesCombo);
+            this.entities.Controls.Add(this.selectGroup);
+            this.entities.Controls.Add(this.canSelectEnemy);
+            this.entities.Controls.Add(this.canSelectAnimated);
+            this.entities.Controls.Add(this.buttonAddAnimated);
+            this.entities.Controls.Add(this.canSelectStatic);
+            this.entities.Controls.Add(this.buttonAddStatic);
+            this.entities.Controls.Add(this.buttonCreateGroup);
+            this.entities.Controls.Add(this.buttonAddEnemy);
+            this.entities.Controls.Add(this.buttonScale);
+            this.entities.Controls.Add(this.buttonRotate);
+            this.entities.Controls.Add(this.buttonMove);
+            this.entities.Location = new System.Drawing.Point(4, 22);
+            this.entities.Name = "entities";
+            this.entities.Padding = new System.Windows.Forms.Padding(3);
+            this.entities.Size = new System.Drawing.Size(877, 100);
+            this.entities.TabIndex = 0;
+            this.entities.Text = "Entities";
+            this.entities.UseVisualStyleBackColor = true;
             // 
             // staticPropertiesPanel
             // 
@@ -260,6 +262,7 @@ namespace MyGame
             this.flipVerticalCheck.TabIndex = 33;
             this.flipVerticalCheck.Text = "flipV";
             this.flipVerticalCheck.UseVisualStyleBackColor = true;
+            this.flipVerticalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
             // 
             // flipHorizontalCheck
             // 
@@ -270,6 +273,7 @@ namespace MyGame
             this.flipHorizontalCheck.TabIndex = 32;
             this.flipHorizontalCheck.Text = "flipH";
             this.flipHorizontalCheck.UseVisualStyleBackColor = true;
+            this.flipHorizontalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
             // 
             // colorButton
             // 
@@ -289,6 +293,8 @@ namespace MyGame
             this.colorB.Name = "colorB";
             this.colorB.Size = new System.Drawing.Size(30, 20);
             this.colorB.TabIndex = 30;
+            this.colorB.TextChanged += new System.EventHandler(this.textChange);
+            this.colorB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // colorG
             // 
@@ -297,6 +303,8 @@ namespace MyGame
             this.colorG.Name = "colorG";
             this.colorG.Size = new System.Drawing.Size(30, 20);
             this.colorG.TabIndex = 29;
+            this.colorG.TextChanged += new System.EventHandler(this.textChange);
+            this.colorG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // label8
             // 
@@ -315,6 +323,8 @@ namespace MyGame
             this.colorA.Name = "colorA";
             this.colorA.Size = new System.Drawing.Size(30, 20);
             this.colorA.TabIndex = 27;
+            this.colorA.TextChanged += new System.EventHandler(this.textChange);
+            this.colorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // label7
             // 
@@ -333,6 +343,8 @@ namespace MyGame
             this.colorR.Name = "colorR";
             this.colorR.Size = new System.Drawing.Size(30, 20);
             this.colorR.TabIndex = 25;
+            this.colorR.TextChanged += new System.EventHandler(this.textChange);
+            this.colorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // buttonResetPosition
             // 
@@ -407,6 +419,8 @@ namespace MyGame
             this.textScaleY.Name = "textScaleY";
             this.textScaleY.Size = new System.Drawing.Size(62, 20);
             this.textScaleY.TabIndex = 18;
+            this.textScaleY.TextChanged += new System.EventHandler(this.textChange);
+            this.textScaleY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // label5
             // 
@@ -425,6 +439,8 @@ namespace MyGame
             this.textScaleX.Name = "textScaleX";
             this.textScaleX.Size = new System.Drawing.Size(62, 20);
             this.textScaleX.TabIndex = 16;
+            this.textScaleX.TextChanged += new System.EventHandler(this.textChange);
+            this.textScaleX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // textRotZ
             // 
@@ -433,6 +449,8 @@ namespace MyGame
             this.textRotZ.Name = "textRotZ";
             this.textRotZ.Size = new System.Drawing.Size(62, 20);
             this.textRotZ.TabIndex = 7;
+            this.textRotZ.TextChanged += new System.EventHandler(this.textChange);
+            this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // label2
             // 
@@ -451,6 +469,8 @@ namespace MyGame
             this.textPosZ.Name = "textPosZ";
             this.textPosZ.Size = new System.Drawing.Size(62, 20);
             this.textPosZ.TabIndex = 3;
+            this.textPosZ.TextChanged += new System.EventHandler(this.textChange);
+            this.textPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // textPosY
             // 
@@ -459,6 +479,8 @@ namespace MyGame
             this.textPosY.Name = "textPosY";
             this.textPosY.Size = new System.Drawing.Size(62, 20);
             this.textPosY.TabIndex = 2;
+            this.textPosY.TextChanged += new System.EventHandler(this.textChange);
+            this.textPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // label1
             // 
@@ -477,6 +499,8 @@ namespace MyGame
             this.textPosX.Name = "textPosX";
             this.textPosX.Size = new System.Drawing.Size(62, 20);
             this.textPosX.TabIndex = 0;
+            this.textPosX.TextChanged += new System.EventHandler(this.textChange);
+            this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
             // 
             // texturesCombo
             // 
@@ -623,19 +647,19 @@ namespace MyGame
             this.buttonMove.UseVisualStyleBackColor = true;
             this.buttonMove.Click += new System.EventHandler(this.button_Click);
             // 
-            // Cameras
+            // cameras
             // 
-            this.Cameras.Controls.Add(this.buttonMoveCameraNode);
-            this.Cameras.Controls.Add(this.addCameraNodeButton);
-            this.Cameras.Controls.Add(this.addDefaultCamerasButton);
-            this.Cameras.Controls.Add(this.cameraNodePanel);
-            this.Cameras.Location = new System.Drawing.Point(4, 22);
-            this.Cameras.Name = "Cameras";
-            this.Cameras.Padding = new System.Windows.Forms.Padding(3);
-            this.Cameras.Size = new System.Drawing.Size(877, 100);
-            this.Cameras.TabIndex = 1;
-            this.Cameras.Text = "Cameras";
-            this.Cameras.UseVisualStyleBackColor = true;
+            this.cameras.Controls.Add(this.buttonMoveCameraNode);
+            this.cameras.Controls.Add(this.addCameraNodeButton);
+            this.cameras.Controls.Add(this.addDefaultCamerasButton);
+            this.cameras.Controls.Add(this.cameraNodePanel);
+            this.cameras.Location = new System.Drawing.Point(4, 22);
+            this.cameras.Name = "cameras";
+            this.cameras.Padding = new System.Windows.Forms.Padding(3);
+            this.cameras.Size = new System.Drawing.Size(877, 100);
+            this.cameras.TabIndex = 1;
+            this.cameras.Text = "Cameras";
+            this.cameras.UseVisualStyleBackColor = true;
             // 
             // buttonMoveCameraNode
             // 
@@ -671,7 +695,7 @@ namespace MyGame
             this.addDefaultCamerasButton.TabIndex = 208;
             this.addDefaultCamerasButton.Text = "Add Default Cameras";
             this.addDefaultCamerasButton.UseVisualStyleBackColor = true;
-            this.addDefaultCamerasButton.Click += new System.EventHandler(this.button_Click);
+            this.addDefaultCamerasButton.Click += new System.EventHandler(this.addDefaultCamerasButton_Click);
             // 
             // cameraNodePanel
             // 
@@ -704,6 +728,7 @@ namespace MyGame
             this.button1.TabIndex = 208;
             this.button1.Text = "Set Camera byTheFace";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonSetCameraByTheFace_Click);
             // 
             // buttonSetupCamera
             // 
@@ -715,6 +740,7 @@ namespace MyGame
             this.buttonSetupCamera.TabIndex = 207;
             this.buttonSetupCamera.Text = "Setup Camera";
             this.buttonSetupCamera.UseVisualStyleBackColor = true;
+            this.buttonSetupCamera.Click += new System.EventHandler(this.buttonSetupCamera_Click);
             // 
             // linkNodeButton
             // 
@@ -726,6 +752,7 @@ namespace MyGame
             this.linkNodeButton.TabIndex = 206;
             this.linkNodeButton.Text = "Link Node";
             this.linkNodeButton.UseVisualStyleBackColor = true;
+            this.linkNodeButton.Click += new System.EventHandler(this.linkNodeButton_Click);
             // 
             // isFirstCheck
             // 
@@ -736,6 +763,7 @@ namespace MyGame
             this.isFirstCheck.TabIndex = 22;
             this.isFirstCheck.Text = "isFirst";
             this.isFirstCheck.UseVisualStyleBackColor = true;
+            this.isFirstCheck.CheckStateChanged += new System.EventHandler(this.isFirstCheck_CheckedChanged);
             // 
             // label11
             // 
@@ -784,6 +812,8 @@ namespace MyGame
             this.cameraNodeSpeed.Name = "cameraNodeSpeed";
             this.cameraNodeSpeed.Size = new System.Drawing.Size(62, 20);
             this.cameraNodeSpeed.TabIndex = 16;
+            this.cameraNodeSpeed.TextChanged += new System.EventHandler(this.textChange_cameraNode);
+            this.cameraNodeSpeed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             // 
             // cameraPosZ
             // 
@@ -792,6 +822,8 @@ namespace MyGame
             this.cameraPosZ.Name = "cameraPosZ";
             this.cameraPosZ.Size = new System.Drawing.Size(62, 20);
             this.cameraPosZ.TabIndex = 3;
+            this.cameraPosZ.TextChanged += new System.EventHandler(this.textChange_cameraNode);
+            this.cameraPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             // 
             // cameraPosY
             // 
@@ -800,6 +832,8 @@ namespace MyGame
             this.cameraPosY.Name = "cameraPosY";
             this.cameraPosY.Size = new System.Drawing.Size(62, 20);
             this.cameraPosY.TabIndex = 2;
+            this.cameraPosY.TextChanged += new System.EventHandler(this.textChange_cameraNode);
+            this.cameraPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             // 
             // label16
             // 
@@ -818,17 +852,19 @@ namespace MyGame
             this.cameraPosX.Name = "cameraPosX";
             this.cameraPosX.Size = new System.Drawing.Size(62, 20);
             this.cameraPosX.TabIndex = 0;
+            this.cameraPosX.TextChanged += new System.EventHandler(this.textChange_cameraNode);
+            this.cameraPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed_cameraNode);
             // 
-            // Colisions
+            // colisions
             // 
-            this.Colisions.Controls.Add(this.buttonEditColisions);
-            this.Colisions.Controls.Add(this.buttonAddColisions);
-            this.Colisions.Location = new System.Drawing.Point(4, 22);
-            this.Colisions.Name = "Colisions";
-            this.Colisions.Size = new System.Drawing.Size(877, 100);
-            this.Colisions.TabIndex = 2;
-            this.Colisions.Text = "Colisions";
-            this.Colisions.UseVisualStyleBackColor = true;
+            this.colisions.Controls.Add(this.buttonEditColisions);
+            this.colisions.Controls.Add(this.buttonAddColisions);
+            this.colisions.Location = new System.Drawing.Point(4, 22);
+            this.colisions.Name = "colisions";
+            this.colisions.Size = new System.Drawing.Size(877, 100);
+            this.colisions.TabIndex = 2;
+            this.colisions.Text = "Colisions";
+            this.colisions.UseVisualStyleBackColor = true;
             // 
             // buttonEditColisions
             // 
@@ -854,38 +890,24 @@ namespace MyGame
             this.buttonAddColisions.UseVisualStyleBackColor = true;
             this.buttonAddColisions.Click += new System.EventHandler(this.button_Click);
             // 
-            // EnemyZones
+            // enemyZones
             // 
-            this.EnemyZones.Controls.Add(this.enemyCount);
-            this.EnemyZones.Controls.Add(this.enemiesCombo);
-            this.EnemyZones.Controls.Add(this.addEnemyZoneButton);
-            this.EnemyZones.Location = new System.Drawing.Point(4, 22);
-            this.EnemyZones.Name = "EnemyZones";
-            this.EnemyZones.Size = new System.Drawing.Size(877, 100);
-            this.EnemyZones.TabIndex = 3;
-            this.EnemyZones.Text = "EnemyZones";
-            this.EnemyZones.UseVisualStyleBackColor = true;
+            this.enemyZones.Controls.Add(this.enemyCount);
+            this.enemyZones.Controls.Add(this.enemiesCombo);
+            this.enemyZones.Controls.Add(this.addEnemyZoneButton);
+            this.enemyZones.Location = new System.Drawing.Point(4, 22);
+            this.enemyZones.Name = "enemyZones";
+            this.enemyZones.Size = new System.Drawing.Size(877, 100);
+            this.enemyZones.TabIndex = 3;
+            this.enemyZones.Text = "EnemyZones";
+            this.enemyZones.UseVisualStyleBackColor = true;
             // 
-            // Triggers
+            // enemyCount
             // 
-            this.Triggers.Location = new System.Drawing.Point(4, 22);
-            this.Triggers.Name = "Triggers";
-            this.Triggers.Size = new System.Drawing.Size(877, 100);
-            this.Triggers.TabIndex = 4;
-            this.Triggers.Text = "Triggers";
-            this.Triggers.UseVisualStyleBackColor = true;
-            // 
-            // addEnemyZoneButton
-            // 
-            this.addEnemyZoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEnemyZoneButton.Location = new System.Drawing.Point(7, 10);
-            this.addEnemyZoneButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addEnemyZoneButton.Name = "addEnemyZoneButton";
-            this.addEnemyZoneButton.Size = new System.Drawing.Size(60, 28);
-            this.addEnemyZoneButton.TabIndex = 210;
-            this.addEnemyZoneButton.Text = "Add Enemy Zone";
-            this.addEnemyZoneButton.UseVisualStyleBackColor = true;
-            this.addEnemyZoneButton.Click += new System.EventHandler(this.button_Click);
+            this.enemyCount.Location = new System.Drawing.Point(261, 14);
+            this.enemyCount.Name = "enemyCount";
+            this.enemyCount.Size = new System.Drawing.Size(50, 20);
+            this.enemyCount.TabIndex = 214;
             // 
             // enemiesCombo
             // 
@@ -899,12 +921,26 @@ namespace MyGame
             this.enemiesCombo.TabIndex = 213;
             this.enemiesCombo.TabStop = false;
             // 
-            // enemyCount
+            // addEnemyZoneButton
             // 
-            this.enemyCount.Location = new System.Drawing.Point(261, 14);
-            this.enemyCount.Name = "enemyCount";
-            this.enemyCount.Size = new System.Drawing.Size(50, 20);
-            this.enemyCount.TabIndex = 214;
+            this.addEnemyZoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEnemyZoneButton.Location = new System.Drawing.Point(7, 10);
+            this.addEnemyZoneButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addEnemyZoneButton.Name = "addEnemyZoneButton";
+            this.addEnemyZoneButton.Size = new System.Drawing.Size(60, 28);
+            this.addEnemyZoneButton.TabIndex = 210;
+            this.addEnemyZoneButton.Text = "Add Enemy Zone";
+            this.addEnemyZoneButton.UseVisualStyleBackColor = true;
+            this.addEnemyZoneButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // triggers
+            // 
+            this.triggers.Location = new System.Drawing.Point(4, 22);
+            this.triggers.Name = "triggers";
+            this.triggers.Size = new System.Drawing.Size(877, 100);
+            this.triggers.TabIndex = 4;
+            this.triggers.Text = "Triggers";
+            this.triggers.UseVisualStyleBackColor = true;
             // 
             // myEditorControl
             // 
@@ -914,6 +950,15 @@ namespace MyGame
             this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
+            // 
+            // effects
+            // 
+            this.effects.Location = new System.Drawing.Point(4, 22);
+            this.effects.Name = "effects";
+            this.effects.Size = new System.Drawing.Size(877, 100);
+            this.effects.TabIndex = 5;
+            this.effects.Text = "Effects";
+            this.effects.UseVisualStyleBackColor = true;
             // 
             // MyEditor
             // 
@@ -934,16 +979,16 @@ namespace MyGame
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyEditor";
             this.tabControl1.ResumeLayout(false);
-            this.Entities.ResumeLayout(false);
-            this.Entities.PerformLayout();
+            this.entities.ResumeLayout(false);
+            this.entities.PerformLayout();
             this.staticPropertiesPanel.ResumeLayout(false);
             this.staticPropertiesPanel.PerformLayout();
-            this.Cameras.ResumeLayout(false);
+            this.cameras.ResumeLayout(false);
             this.cameraNodePanel.ResumeLayout(false);
             this.cameraNodePanel.PerformLayout();
-            this.Colisions.ResumeLayout(false);
-            this.EnemyZones.ResumeLayout(false);
-            this.EnemyZones.PerformLayout();
+            this.colisions.ResumeLayout(false);
+            this.enemyZones.ResumeLayout(false);
+            this.enemyZones.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -959,7 +1004,7 @@ namespace MyGame
         private System.Windows.Forms.Button superPizzaButton;
         private System.Windows.Forms.Button buttonNewLevel;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage Entities;
+        private System.Windows.Forms.TabPage entities;
         public System.Windows.Forms.Panel staticPropertiesPanel;
         public System.Windows.Forms.CheckBox flipVerticalCheck;
         public System.Windows.Forms.CheckBox flipHorizontalCheck;
@@ -997,7 +1042,7 @@ namespace MyGame
         private System.Windows.Forms.Button buttonScale;
         private System.Windows.Forms.Button buttonRotate;
         private System.Windows.Forms.Button buttonMove;
-        private System.Windows.Forms.TabPage Cameras;
+        private System.Windows.Forms.TabPage cameras;
         private System.Windows.Forms.Button buttonMoveCameraNode;
         private System.Windows.Forms.Button addCameraNodeButton;
         private System.Windows.Forms.Button addDefaultCamerasButton;
@@ -1015,14 +1060,15 @@ namespace MyGame
         public System.Windows.Forms.TextBox cameraPosY;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox cameraPosX;
-        private System.Windows.Forms.TabPage Colisions;
+        private System.Windows.Forms.TabPage colisions;
         private System.Windows.Forms.Button buttonEditColisions;
         private System.Windows.Forms.Button buttonAddColisions;
-        private System.Windows.Forms.TabPage EnemyZones;
-        private System.Windows.Forms.TabPage Triggers;
+        private System.Windows.Forms.TabPage enemyZones;
+        private System.Windows.Forms.TabPage triggers;
         private System.Windows.Forms.Button addEnemyZoneButton;
         public System.Windows.Forms.ComboBox enemiesCombo;
         public System.Windows.Forms.TextBox enemyCount;
+        private System.Windows.Forms.TabPage effects;
     }
 }
 #endif
