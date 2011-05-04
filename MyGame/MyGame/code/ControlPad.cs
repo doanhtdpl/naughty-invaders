@@ -307,7 +307,7 @@ namespace MyGame
         {
             return (currentState.Buttons.Start == ButtonState.Pressed && lastState.Buttons.Start == ButtonState.Released)
 #if DEBUG
- || (kbCurrentState.IsKeyDown(Keys.Escape) && kbLastState.IsKeyUp(Keys.Escape))
+ || (kbCurrentState.IsKeyDown(Keys.Tab) && kbLastState.IsKeyUp(Keys.Tab))
 #endif
                 ;
         }

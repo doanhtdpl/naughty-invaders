@@ -40,6 +40,12 @@ namespace MyGame
 
         public void initializeRender()
         {
+            SamplerState ss = new SamplerState();
+            // set clamp to address mode
+            ss.AddressU = TextureAddressMode.Clamp;
+            ss.AddressV = TextureAddressMode.Clamp;
+            GraphicsManager.Instance.graphicsDevice.SamplerStates[0] = ss;
+
             vertexScreen = new Vector3[4];
             vertexScreen[0] = new Vector3(1000, 1000, 0);
             vertexScreen[1] = new Vector3(1000, -1000, 0);

@@ -79,6 +79,7 @@ namespace MyGame
         {
             bool Z0rendered = false;
             sortEntities();
+
             foreach (Entity2D e in entities)
             {
                 // render all things that must be rendered at Z = 0

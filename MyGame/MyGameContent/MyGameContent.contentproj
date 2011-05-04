@@ -68,89 +68,89 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\A.tga">
+    <Compile Include="textures\GUI\textImages\A.tga">
       <Name>A</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\B.tga">
+    <Compile Include="textures\GUI\textImages\B.tga">
       <Name>B</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\BACK.tga">
+    <Compile Include="textures\GUI\textImages\BACK.tga">
       <Name>BACK</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\DPAD.tga">
+    <Compile Include="textures\GUI\textImages\DPAD.tga">
       <Name>DPAD</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\GUIDE.tga">
+    <Compile Include="textures\GUI\textImages\GUIDE.tga">
       <Name>GUIDE</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\LB.tga">
+    <Compile Include="textures\GUI\textImages\LB.tga">
       <Name>LB</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\LS.tga">
+    <Compile Include="textures\GUI\textImages\LS.tga">
       <Name>LS</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\LT.tga">
+    <Compile Include="textures\GUI\textImages\LT.tga">
       <Name>LT</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\RB.tga">
+    <Compile Include="textures\GUI\textImages\RB.tga">
       <Name>RB</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\RS.tga">
+    <Compile Include="textures\GUI\textImages\RS.tga">
       <Name>RS</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\RT.tga">
+    <Compile Include="textures\GUI\textImages\RT.tga">
       <Name>RT</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\START.tga">
+    <Compile Include="textures\GUI\textImages\START.tga">
       <Name>START</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\X.tga">
+    <Compile Include="textures\GUI\textImages\X.tga">
       <Name>X</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\textImages\Y.tga">
+    <Compile Include="textures\GUI\textImages\Y.tga">
       <Name>Y</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\menu\logo.png">
+    <Compile Include="textures\GUI\menu\logo.png">
       <Name>logo</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\menu\menu.png">
+    <Compile Include="textures\GUI\menu\menu.png">
       <Name>menu</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="GUI\menu\trial.png">
+    <Compile Include="textures\GUI\menu\trial.png">
       <Name>trial</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -931,6 +931,33 @@
     </Compile>
     <Compile Include="textures\staticProps\logo-51.png">
       <Name>logo-51</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\menu\largeHeader.png">
+      <Name>largeHeader</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\option1.png">
+      <Name>option1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\option2.png">
+      <Name>option2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\option3.png">
+      <Name>option3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\smallHeader.png">
+      <Name>smallHeader</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
