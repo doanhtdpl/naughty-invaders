@@ -18,7 +18,7 @@ namespace MyGame
         public bool floating = false;
         public StateManager.tGS type;
         public float timeRunning = 0;
-        public float darkTransition = 0.85f;
+        public Color transitionColor = Color.Black;
 
         public abstract void initialize();
         public abstract void loadContent();

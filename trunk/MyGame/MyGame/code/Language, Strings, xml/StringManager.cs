@@ -14,7 +14,7 @@ namespace MyGame
     {
         // texts with more than MAX_TEXT_ELEMENTS words and images won't be fully rendered
         const int MAX_TEXT_ELEMENTS = 500;
-        const string imagesPath = "GUI/textImages/";
+        const string imagesPath = "textures/GUI/textImages/";
         // TextElement is used to save at the parsing step the elements to render after
         public struct TextElement
         {

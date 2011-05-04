@@ -13,7 +13,7 @@ namespace MyGame
     {
         public static List<GameState> gameStates = new List<GameState>();
 
-        public const int TRANSITION_TIME = 300;
+        public const float TRANSITION_TIME = 0.3f;
 
         public StateManager()
         {
@@ -48,17 +48,18 @@ namespace MyGame
                     // si hay más de un estado se pinta una pantalla oscura encima de los de debajo
                     if (gameStates.Count > 1 && i == gameStates.Count - 1)
                     {
-                        float dark = gameStates[i].darkTransition*((float)gameStates[i].timeRunning / (float)TRANSITION_TIME);
-                        if (dark > gameStates[i].darkTransition)
-                            dark = gameStates[i].darkTransition;
+                        float opacy = ((float)gameStates[i].timeRunning / TRANSITION_TIME);
+                        float maxOpacy = (float)gameStates[i].transitionColor.A / 255.0f;
+                        if (opacy > maxOpacy)
+                            opacy = maxOpacy;
+                        Color color = gameStates[i].transitionColor;
+                        color *= opacy;
                         GraphicsManager.Instance.spriteBatch.Begin();
-                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), new Color(211.0f * 0.00392f, 240.0f * 0.00392f, 13.0f * 0.00392f, dark));
+                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), color);
                         GraphicsManager.Instance.spriteBatch.End();
                     }
                     gameStates[i].render();
                 }
-                //else if (gameStates[i].longLoad)
-                //    renderLoadingScreen();
             }
         }
 

@@ -99,8 +99,11 @@ namespace MyGame
 #endif
             SB.cam.update();
 
-            if (GamerManager.getGamerEntities().Count > 0 && GamerManager.getMainControls().Start_firstPressed())
+#if !EDITOR
+            // state changes
+            if (GamerManager.getMainControls().Start_firstPressed())
                 StateManager.enqueueState(StateManager.tGS.Pause);
+#endif
         }
         
         public override void dispose()

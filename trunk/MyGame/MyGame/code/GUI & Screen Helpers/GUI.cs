@@ -28,10 +28,16 @@ namespace MyGame
             }
         }
 
+        public Texture2D largeHeader, smallHeader, option1, option2, option3;
         public static Vector2 r = new Vector2(1, 1);
 
         public void loadContent()
         {
+            largeHeader = TextureManager.Instance.getTexture("GUI/menu/largeHeader");
+            smallHeader = TextureManager.Instance.getTexture("GUI/menu/smallHeader");
+            option1 = TextureManager.Instance.getTexture("GUI/menu/option1");
+            option2 = TextureManager.Instance.getTexture("GUI/menu/option2");
+            option3 = TextureManager.Instance.getTexture("GUI/menu/option3");
         }
 
         public void update()
