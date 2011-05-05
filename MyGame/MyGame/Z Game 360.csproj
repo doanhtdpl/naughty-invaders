@@ -103,6 +103,8 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\GameStates\States\StateWorldMap.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\Menu.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\Option.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Grape.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="code\Gameplay\Projectiles\PlayerFastShot.cs" />
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
+    <Compile Include="code\OLD code\MenuOld.cs" />
     <Compile Include="code\Particles\Particle.cs" />
     <Compile Include="code\Particles\ParticleSystem.cs" />
     <Compile Include="code\Particles\ParticleSystemData.cs" />
@@ -124,8 +127,6 @@
     <Compile Include="code\Player Management\SaveData.cs" />
     <Compile Include="code\Player Management\SaveGameManager.cs" />
     <Compile Include="code\GameStates\GameState.cs" />
-    <Compile Include="code\GameStates\Menu.cs" />
-    <Compile Include="code\GameStates\Option.cs" />
     <Compile Include="code\GameStates\StateManager.cs" />
     <Compile Include="code\GameStates\States\StateCredits.cs" />
     <Compile Include="code\GameStates\States\StateEndTrial.cs" />

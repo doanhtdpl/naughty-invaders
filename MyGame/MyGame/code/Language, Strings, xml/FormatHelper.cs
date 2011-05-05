@@ -54,6 +54,10 @@ namespace MyGame
             string[] values = str.Split(' ');
             return new Vector3(values[0].toFloat(), values[1].toFloat(), values[2].toFloat());
         }
+        public static Vector3 toVector3(this Vector2 v)
+        {
+            return new Vector3(v.X, v.Y, 0.0f);
+        }
         // transforms an integer (number of seconds) to the format "1:44"
         public static string toTimeString(this int timeInSeconds)
         {

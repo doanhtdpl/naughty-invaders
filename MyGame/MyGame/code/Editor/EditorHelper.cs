@@ -256,7 +256,7 @@ namespace MyGame
             {
                 writer.WriteStartElement("cameraNode");
                 writer.WriteAttributeString("id", cameraNode.value.id.ToString());
-                writer.WriteAttributeString("position", cameraNode.value.position.toXML());
+                writer.WriteAttributeString("position", cameraNode.position.toXML());
                 writer.WriteAttributeString("target", cameraNode.value.target.toXML());
                 writer.WriteAttributeString("isFirst", cameraNode.value.isFirst.ToString());
                 if (cameraNode.getNext() != null)
@@ -394,7 +394,7 @@ namespace MyGame
                     Vector3 target = node.Attribute("target").Value.toVector3();
                     int nodeId = node.Attribute("id").Value.toInt();
                     bool isFirst = node.Attribute("isFirst").Value.toBool();
-                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(position, target, nodeId, isFirst));
+                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(target, nodeId, isFirst), position);
                     if(node.Attributes("link").Count() > 0)
                         cameraNode.value.next = node.Attribute("link").Value.toInt();
 

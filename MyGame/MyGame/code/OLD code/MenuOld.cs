@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace MyGame
 {
-    class Menu
+    class MenuOld
     {
         public List<Option> options = new List<Option>();
         public Vector2 cursorPosition;
@@ -28,8 +28,8 @@ namespace MyGame
         public const int SUBDESCRIPTION_X = 675;
         public const int SUBDESCRIPTION_Y = 625;
 
-        public Menu(float scale, Color normalColor, Color selectedColor, Color effectColor) : this(scale, normalColor, selectedColor, effectColor, normalColor) { }
-        public Menu(float scale, Color normalColor, Color selectedColor, Color effectColor, Color descriptionColor)
+        public MenuOld(float scale, Color normalColor, Color selectedColor, Color effectColor) : this(scale, normalColor, selectedColor, effectColor, normalColor) { }
+        public MenuOld(float scale, Color normalColor, Color selectedColor, Color effectColor, Color descriptionColor)
         {
             this.menuScale = scale;
             this.normalColor = normalColor;

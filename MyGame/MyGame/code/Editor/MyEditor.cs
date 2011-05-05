@@ -689,7 +689,7 @@ namespace MyGame
         {
             Vector3 pos = EditorHelper.Instance.getMousePosInZ(gameScreenPos, 0);
 
-            NetworkNode<CameraData> newNode = new NetworkNode<CameraData>(new CameraData(pos + new Vector3(0, 0, 1000), pos, -1, false));
+            NetworkNode<CameraData> newNode = new NetworkNode<CameraData>(new CameraData(pos, -1, false), pos + new Vector3(0, 0, 1000));
 
             CameraManager.Instance.addNode(newNode);
 

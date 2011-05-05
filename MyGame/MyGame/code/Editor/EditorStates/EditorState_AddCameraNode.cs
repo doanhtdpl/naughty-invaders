@@ -35,7 +35,7 @@ namespace MyGame
             {
                 Vector3 position = new Vector3(mouseInSetaZero.X, mouseInSetaZero.Y, 800);
                 Vector3 target = new Vector3(mouseInSetaZero.X, mouseInSetaZero.Y, 0);
-                CameraManager.Instance.addNode(new NetworkNode<CameraData>(new CameraData(position, target)));
+                CameraManager.Instance.addNode(new NetworkNode<CameraData>(new CameraData(target),position));
 
                 MyEditor.Instance.changeState(new EditorState_AddCameraNode());
             }

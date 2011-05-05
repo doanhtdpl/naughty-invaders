@@ -191,7 +191,6 @@ namespace MyGame
         public virtual void delete()
         {
             EntityManager.Instance.removeEntity(this);
-
             LevelManager.Instance.removeEntity(this);
         }
 

@@ -18,7 +18,6 @@ namespace MyGame
 
         public override void loadContent()
         {
-            Menu.loadContent();
             loaded = true;
             texTrial = TextureManager.Instance.getTexture("GUI/menu/trial");
         }

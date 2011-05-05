@@ -62,7 +62,7 @@ namespace MyGame
                         Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, 0);
                         Vector3 lastZ = EditorHelper.Instance.getMousePosInZ(last, 0);
 
-                        cameraNode.value.position += (currentZ - lastZ);
+                        cameraNode.position += (currentZ - lastZ);
                         cameraNode.value.target += (currentZ - lastZ);
                     }
                 }
@@ -78,9 +78,9 @@ namespace MyGame
         {
             if (cameraNode != null)
             {
-                MyEditor.Instance.cameraPosX.Text = cameraNode.value.position.X.toString();
-                MyEditor.Instance.cameraPosY.Text = cameraNode.value.position.Y.toString();
-                MyEditor.Instance.cameraPosZ.Text = cameraNode.value.position.Z.toString();
+                MyEditor.Instance.cameraPosX.Text = cameraNode.position.X.toString();
+                MyEditor.Instance.cameraPosY.Text = cameraNode.position.Y.toString();
+                MyEditor.Instance.cameraPosZ.Text = cameraNode.position.Z.toString();
                 MyEditor.Instance.cameraNodeSpeed.Text = cameraNode.value.speed.toString();
                 MyEditor.Instance.isFirstCheck.Checked = cameraNode.value.isFirst;
             }
@@ -96,10 +96,10 @@ namespace MyGame
 
         public void fieldsToCamera()
         {
-            cameraNode.value.position = new Vector3(MyEditor.Instance.cameraPosX.Text.toFloat(),
+            cameraNode.position = new Vector3(MyEditor.Instance.cameraPosX.Text.toFloat(),
                 MyEditor.Instance.cameraPosY.Text.toFloat(),
                 MyEditor.Instance.cameraPosZ.Text.toFloat());
-            cameraNode.value.target = cameraNode.value.position;
+            cameraNode.value.target = cameraNode.position;
             cameraNode.value.target.Z = 0;
             cameraNode.value.speed = MyEditor.Instance.cameraNodeSpeed.Text.toFloat();
             cameraNode.value.isFirst = MyEditor.Instance.isFirstCheck.Checked;
@@ -160,7 +160,7 @@ namespace MyGame
         {
             if (cameraNode != null)
             {
-                cameraNode.value.position = Camera2D.position;
+                cameraNode.position = Camera2D.position;
                 cameraNode.value.target = Camera2D.position;
                 cameraNode.value.target.Z = 0;
             }
