@@ -10,16 +10,14 @@ namespace MyGame
     {
         public static int NEXT_ID = 0;
 
-        public Vector3 position;
         public Vector3 target;
         public int id;
         public int next;
         public bool isFirst;
         public float speed;
 
-        public CameraData(Vector3 position, Vector3 target, int id = -1, bool isFirst = false, float speed = 50.0f)
+        public CameraData(Vector3 target, int id = -1, bool isFirst = false, float speed = 50.0f)
         {
-            this.position = position;
             this.target = target;
             this.id = id;
             NEXT_ID = Math.Max(NEXT_ID, id + 1);
@@ -34,6 +32,7 @@ namespace MyGame
         static CameraManager instance = null;
         CameraManager()
         {
+            CameraData cd = new CameraData(Vector3.Zero);
         }
         public static CameraManager Instance
         {
@@ -55,15 +54,15 @@ namespace MyGame
         NetworkNode<CameraData> nextNode;
         Network<CameraData> cameraNodes = new Network<CameraData>();
 
-        CameraData lastFrameData;
-        CameraData currentFrameData;
+        Vector3 lastPosition = Vector3.Zero;
+        Vector3 currentPosition = Vector3.Zero;
 
         public float speedMultiplier = 1.0f;
 
         // returns the vector in the XY plane with origin in the last frmae camera position and ending in the current frame camera position
         public Vector3 getCameraVelocityXY()
         {
-            Vector3 velocity = currentFrameData.position - lastFrameData.position;
+            Vector3 velocity = currentPosition - lastPosition;
             velocity.Z = 0.0f;
             return velocity;
         }
@@ -76,9 +75,9 @@ namespace MyGame
             if (cameraNodes.getNodes().Count > 0)
                 return;
 
-            NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0,0,1400), new Vector3(0,0,0), 0, true));
-            NetworkNode<CameraData> second = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 20000, 1400), new Vector3(0, 20000, 0), 1));
-            NetworkNode<CameraData> third = new NetworkNode<CameraData>(new CameraData(new Vector3(10000, 20000, 1400), new Vector3(10000, 20000, 0), 2));
+            NetworkNode<CameraData> first = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 0, 0), 0, true), new Vector3(0, 0, 1400));
+            NetworkNode<CameraData> second = new NetworkNode<CameraData>(new CameraData(new Vector3(0, 20000, 0), 1), new Vector3(0, 20000, 1400));
+            NetworkNode<CameraData> third = new NetworkNode<CameraData>(new CameraData(new Vector3(10000, 20000, 0), 2), new Vector3(10000, 20000, 1400));
 
             first.addLinkedNode(second);
             second.addLinkedNode(third);
@@ -90,7 +89,7 @@ namespace MyGame
             currentNode = first;
             nextNode = second;
 
-            Camera2D.position = cameraNodes.getNodes()[0].value.position;
+            Camera2D.position = cameraNodes.getNodes()[0].position;
         }
 
         public Network<CameraData> getNodes()
@@ -120,7 +119,7 @@ namespace MyGame
                 if (cameraNodes.getNodes()[i].value.isFirst)
                 {
                     setCurrentNode(cameraNodes.getNodes()[i]);
-                    Camera2D.position = cameraNodes.getNodes()[i].value.position;
+                    Camera2D.position = cameraNodes.getNodes()[i].position;
                 }
             }
         }
@@ -139,7 +138,7 @@ namespace MyGame
         {
             if (currentNode == null || nextNode == null) return;
 
-            Vector3 targetPosition = nextNode.value.position;
+            Vector3 targetPosition = nextNode.position;
             Vector3 direction = targetPosition - Camera2D.position;
             float distance = direction.Length();
             direction.Normalize();
@@ -149,14 +148,14 @@ namespace MyGame
             if (distanceToAdvance > distance)
             {
                 // camera arrives to the new node
-                Camera2D.position = nextNode.value.position;
+                Camera2D.position = nextNode.position;
                 // after that, how much time remains to keep moving to the new next node?
                 currentNode = nextNode;
                 nextNode = currentNode.getNext();
                 if (nextNode == null) return;
                 float timeRemaining = SB.dt - ((SB.dt * distance) / distanceToAdvance);
                 // get the new values to move the camera to the new next node
-                targetPosition = nextNode.value.position;
+                targetPosition = nextNode.position;
                 direction = targetPosition - Camera2D.position;
                 distance = direction.Length();
                 direction.Normalize();
@@ -168,7 +167,7 @@ namespace MyGame
         public void update()
         {
             // update last frame position
-            lastFrameData = currentFrameData;
+            lastPosition = currentPosition;
 
             // update the current used camera mode
             switch(cameraMode)
@@ -184,7 +183,7 @@ namespace MyGame
             }
 
             // update current frame position
-            currentFrameData.position = Camera2D.position;
+            currentPosition = Camera2D.position;
         }
 
         public void renderDebug()

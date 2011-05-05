@@ -12,11 +12,6 @@ namespace MyGame
     {
         public const int TOTAL_SCORE_PAGES = 2;
 
-        //public static TEX award = new TEX();
-        Color normalColor = Color.LightGray;
-        Color gotColor = Color.White;
-        Menu menu = new Menu(1f, Color.Gray, Color.LightGray, Color.Black, Color.White);
-
         //public static TEX mainMenu = new TEX();
         public override void initialize()
         {
@@ -25,14 +20,12 @@ namespace MyGame
 
         public override void loadContent()
         {
-            Menu.loadContent();
             loaded = true;
         }
 
         public override void update()
         {
             base.update();
-            menu.update();
 
             if (GamerManager.getMainControls().A_firstPressed())
             {
@@ -46,14 +39,10 @@ namespace MyGame
 
         public override void render()
         {
-            GraphicsManager.Instance.spriteBatch.Begin();
-            menu.render();
-            GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()
         {
-
         }
     }
 }
