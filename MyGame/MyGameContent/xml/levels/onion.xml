@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<level nextEntityID="383" BGColor="69 47 14 255">
+  <staticProps>
+    <staticProp entityName="onion-44" worldMatrix="1008 0 0 0 0 2018 0 0 0 0 1 0 -846.4433 267.9357 0.006461449 1" id="76" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-45" worldMatrix="1017.523 30.53485 0 0 -14.68137 489.2327 0 0 0 0 1 0 -51.41917 1136.805 0.01570019 1" id="120" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-47" worldMatrix="373.8442 270.1096 26.93076 0 -389.6839 545.3656 -60.43196 0 -0.0997355 0.03890849 0.9942529 0 672.2134 -216.6752 18.0168 1" id="188" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-47" worldMatrix="462 0 0 0 0 673 0 0 0 0 1 0 -750.9307 -204.6145 0.01540874 1" id="189" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-49" worldMatrix="263 0 0 0 0 172 0 0 0 0 1 0 -796.1575 139.1108 -0.01508797 1" id="194" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="504 0 0 0 0 534 0 0 0 0 1 0 1006.893 -74.96274 0.008547789 1" id="198" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="504 0 0 0 0 534 0 0 0 0 1 0 -1049.429 781.3347 0.01035925 1" id="199" color="255 200 200 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-51" worldMatrix="355.8736 41.20965 44.52508 0 -20.55156 179.9237 -2.264706 0 -0.1239566 -0.001668841 0.9922863 0 790.5156 383.9203 28.00127 1" id="203" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-52" worldMatrix="660.842 0 0 0 0 499.4737 0 0 0 0 1 0 172.3543 920.6843 -0.001060164 1" id="205" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-56" worldMatrix="870 0 0 0 0 1592 0 0 0 0 1 0 -463.9739 1511.336 -49.98684 1" id="210" color="255 255 200 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-52" worldMatrix="309.8636 -582.8309 31.70217 0 441.1123 233.416 -20.27054 0 0.01337431 0.06139642 0.9980239 0 820.2314 514.2905 -0.001060164 1" id="213" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-52" worldMatrix="-29.42832 659.9425 17.95717 0 -498.8647 -22.51918 10.05681 0 0.02133249 -0.02624339 0.999428 0 -732.84 326.049 -0.001060164 1" id="214" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-44" worldMatrix="1008 0 0 0 0 2018 0 0 0 0 1 0 961.6703 288.0824 0.006461449 1" id="215" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="artmapa-03" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="242" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-57" worldMatrix="478.774 508.3753 19.85056 0 -337.9433 319.4382 -30.02608 0 -0.06636651 0.02355205 0.9975173 0 766.5377 732.5908 -250.017 1" id="327" color="39 39 39 200" flipH="False" flipV="False" />
+    <staticProp entityName="onion-57" worldMatrix="-702.8141 36.29211 0 0 -30.93813 -599.1317 0 0 0 0 1 0 -610.7001 -116.2823 164.9962 1" id="328" color="160 160 160 160" flipH="False" flipV="False" />
+    <staticProp entityName="onion-56" worldMatrix="-423.9913 343.9836 0 0 -629.4507 -775.8555 0 0 0 0 1 0 491.8865 776.3696 -49.98684 1" id="330" color="255 255 255 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps />
+  <groups>
+    <group>
+      <entity id="76" />
+    </group>
+    <group>
+      <entity id="205" />
+    </group>
+    <group>
+      <entity id="205" />
+    </group>
+    <group>
+      <entity id="76" />
+    </group>
+    <group>
+      <entity id="210" />
+    </group>
+  </groups>
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+</level>
