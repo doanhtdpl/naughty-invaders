@@ -66,9 +66,13 @@ namespace MyGame
             velocity.Z = 0.0f;
             return velocity;
         }
+        public Vector3 getCameraPosition()
+        {
+            return Camera2D.position;
+        }
         public Vector2 getCameraPositionXY()
         {
-            return new Vector2(Camera2D.position.X, Camera2D.position.Y);
+            return Camera2D.position.toVector2();
         }
         public void loadXMLfake()
         {

@@ -58,6 +58,10 @@ namespace MyGame
         {
             return new Vector3(v.X, v.Y, 0.0f);
         }
+        public static int toInt(this MyGame.MenuElement.tInputType type)
+        {
+            return (int)type;
+        }
         // transforms an integer (number of seconds) to the format "1:44"
         public static string toTimeString(this int timeInSeconds)
         {

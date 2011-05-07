@@ -31,8 +31,8 @@ namespace MyGame
 
         public float damage { set; get; }
 
-        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, float damage = 0.0f, int id = -1)
-            : base(entityFolder, entityName, position, orientation, color, id)
+        public CollidableEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, float damage = 0.0f, bool register = true, int id = -1)
+            : base(entityFolder, entityName, position, orientation, color, register, id)
         {
             this.damage = damage;
         }

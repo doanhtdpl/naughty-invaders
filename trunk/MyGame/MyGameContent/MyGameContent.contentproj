@@ -202,6 +202,11 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="textures\GUI\menu\A.tga">
+      <Name>A</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <None Include="xml\characters\bob.xml">
       <Name>bob</Name>
       <Importer>XmlImporter</Importer>
@@ -986,11 +991,6 @@
     </Compile>
     <Compile Include="textures\staticProps\onion-45.png">
       <Name>onion-45</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\staticProps\onion-46.png">
-      <Name>onion-46</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
