@@ -114,6 +114,7 @@ namespace MyGame
             else if (!moveEnded)
             {
                 playAction("idle");
+                moveEnded = true;
             }
 
             // next attack
