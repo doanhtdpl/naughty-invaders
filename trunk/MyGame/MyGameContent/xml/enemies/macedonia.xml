@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity idleOffset="true">
   <animatedTexture name="Anim_Macedonia" frameWidth="275" frameHeight="215" columns="7" rows="5">
-    <action name="attack" initialFrame="5" endFrame="13"/>
-    <action name="die" initialFrame="18" endFrame="27"/>
+    <action name="attack" initialFrame="5" endFrame="13" FPS="15"/>
+    <action name="die" initialFrame="18" endFrame="27" FPS="15"/>
     <action name="idle" initialFrame="18" endFrame="27" FPS="15" loops="true"/>
     <action name="attackIdle" initialFrame="1" endFrame="4" FPS="15" loops="true"/>
     <action name="laugh" initialFrame="28" endFrame="29" FPS="15" loops="true"/>
