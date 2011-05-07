@@ -33,8 +33,8 @@ namespace MyGame
         Dictionary<string, AnimationAction> actions;
         List<AnimatedTexture> animatedTextures;
 
-        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, int id = -1)
-            : base("animated", entityName, position, orientation, color, id)
+        public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)
+            : base("animated", entityName, position, orientation, color, register, id)
         {
             // load actions and textures if they havent been readen yet
             if (!datas.ContainsKey(entityName))

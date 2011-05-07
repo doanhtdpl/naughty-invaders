@@ -112,7 +112,7 @@ namespace MyGame
         }
 
         // public constructors
-        public Entity2D(string entityName, Vector3 position, float orientation, int id = -1)
+        public Entity2D(string entityName, Vector3 position, float orientation, bool register = true, int id = -1)
         {
             this.entityName = entityName;
             position.Z += Calc.randomScalar(-0.02f, 0.02f);
@@ -124,7 +124,10 @@ namespace MyGame
             else
                 this.id = id;
 
-            EntityManager.Instance.registerEntity(this);
+            if (register)
+            {
+                EntityManager.Instance.registerEntity(this);
+            }
         }
 
         // initialize the world matrix, must be called at the creation of each entity

@@ -103,6 +103,7 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\GameStates\States\StateWorldMap.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\MenuFunctions.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menu.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Option.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />

@@ -351,19 +351,35 @@ namespace MyGame
         }
         public bool DUp_firstPressed()
         {
-            return (currentState.DPad.Up == ButtonState.Pressed && lastState.DPad.Up == ButtonState.Released);
+            return (currentState.DPad.Up == ButtonState.Pressed && lastState.DPad.Up == ButtonState.Released)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.Up) && kbLastState.IsKeyUp(Keys.Up))
+#endif
+                ;
         }
         public bool DDown_firstPressed()
         {
-            return (currentState.DPad.Down == ButtonState.Pressed && lastState.DPad.Down == ButtonState.Released);
+            return (currentState.DPad.Down == ButtonState.Pressed && lastState.DPad.Down == ButtonState.Released)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.Down) && kbLastState.IsKeyUp(Keys.Down))
+#endif    
+                ;
         }
         public bool DLeft_pressed()
         {
-            return (currentState.DPad.Left == ButtonState.Pressed);
+            return (currentState.DPad.Left == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.Left) && kbLastState.IsKeyUp(Keys.Left))
+#endif  
+                ;
         }
         public bool DRight_pressed()
         {
-            return (currentState.DPad.Right == ButtonState.Pressed);
+            return (currentState.DPad.Right == ButtonState.Pressed)
+#if DEBUG
+ || (kbCurrentState.IsKeyDown(Keys.Right) && kbLastState.IsKeyUp(Keys.Right))
+#endif     
+                ;
         }
         public bool DUp_pressed()
         {
@@ -377,7 +393,7 @@ namespace MyGame
         #region Directions
         public bool Left_firstPressed()
         {
-            if (menuDelay > MENU_DELAY)
+            //if (menuDelay > MENU_DELAY)
             {
                 if (LSfirstLeft() || DLeft_firstPressed())
                 {
@@ -389,7 +405,7 @@ namespace MyGame
         }
         public bool Right_firstPressed()
         {
-            if (menuDelay > MENU_DELAY)
+            //if (menuDelay > MENU_DELAY)
             {
                 if (LSfirstRight() || DRight_firstPressed())
                 {
@@ -401,7 +417,7 @@ namespace MyGame
         }
         public bool Down_firstPressed()
         {
-            if (menuDelay > MENU_DELAY)
+            //if (menuDelay > MENU_DELAY)
             {
                 if (LSfirstDown() || DDown_firstPressed())
                 {
@@ -413,7 +429,7 @@ namespace MyGame
         }
         public bool Up_firstPressed()
         {
-            if (menuDelay > MENU_DELAY)
+            //if (menuDelay > MENU_DELAY)
             {
                 if (LSfirstUp() || DUp_firstPressed())
                 {

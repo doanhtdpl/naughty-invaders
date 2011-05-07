@@ -25,7 +25,7 @@ namespace MyGame
             : base("grape", position, orientation)
         {
             life = 40.0f;
-
+             
             nextMoveTimer = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);
 

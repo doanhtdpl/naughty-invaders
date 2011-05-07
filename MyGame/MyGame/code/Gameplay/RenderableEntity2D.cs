@@ -24,8 +24,8 @@ namespace MyGame
             get { return texture; }
         }
 
-        public RenderableEntity2D( string entityFolder, string textureName, Vector3 position, float orientation, Color color, int id = -1)
-            : base(textureName, position, orientation, id)
+        public RenderableEntity2D( string entityFolder, string textureName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)
+            : base(textureName, position, orientation, register, id)
         {
             // if its an animated entity, it doesnt have a texture
             if (entityFolder != "animated")

@@ -131,6 +131,20 @@ Content\textures\GUI\menu\option1.xnb
 Content\textures\GUI\menu\option2.xnb
 Content\textures\GUI\menu\option3.xnb
 Content\textures\GUI\menu\smallHeader.xnb
+Content\textures\enemies\Anim_Macedonia.xnb
+Content\textures\staticProps\onion-44.xnb
+Content\textures\staticProps\onion-45.xnb
+Content\textures\staticProps\onion-47.xnb
+Content\textures\staticProps\onion-48.xnb
+Content\textures\staticProps\onion-49.xnb
+Content\textures\staticProps\onion-50.xnb
+Content\textures\staticProps\onion-51.xnb
+Content\textures\staticProps\onion-52.xnb
+Content\textures\staticProps\onion-53.xnb
+Content\textures\staticProps\onion-54.xnb
+Content\textures\staticProps\onion-55.xnb
+Content\textures\staticProps\onion-56.xnb
+Content\textures\staticProps\onion-57.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
@@ -151,4 +165,5 @@ Content\xml\animatedProps\AAleaf.xml
 Content\xml\enemies\watermelon.xml
 Content\xml\levels\pepe.xml
 Content\xml\levels\final_Level01.xml
+Content\xml\enemies\macedonia.xml
 Content\xml\levels\xmlLevelTemplate.xml

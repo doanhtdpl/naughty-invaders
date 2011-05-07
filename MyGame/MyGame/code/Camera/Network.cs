@@ -35,7 +35,7 @@ namespace MyGame
             }
             return null;
         }
-        const float ANGLE_CHOICE_THRESHOLD = 0.5f;
+        const float ANGLE_CHOICE_THRESHOLD = 1.3f;
         public NetworkNode<T> getNext(Vector2 direction)
         {
             NetworkNode<T> bestChoice = null;
@@ -54,8 +54,22 @@ namespace MyGame
         }
     }
 
-    public class Network<T>
+    public class Network<T>// where T:IComparable
     {
+        private class compareNodes : IComparer<object>
+        {
+            int IComparer<object>.Compare(object a, object b)
+            {
+                Type t = a.GetType();
+                if (a.GetType() == Type.GetType("MyGame.MenuButton"))
+                {
+                    if (((MenuElement)a).text == ((MenuElement)b).text)
+                        return 0;
+                }
+                return 1;
+            }
+        }
+
         List<NetworkNode<T>> nodes = new List<NetworkNode<T>>();
 
         public List<NetworkNode<T>> getNodes()
@@ -70,9 +84,31 @@ namespace MyGame
         {
             nodes.Add(newValue);
         }
+        public bool addLink(T from, T to)
+        {
+            NetworkNode<T> fromNode = getNode(from);
+            NetworkNode<T> toNode = getNode(to);
+            if (fromNode != null && toNode != null)
+            {
+                fromNode.addLinkedNode(toNode);
+                return true;
+            }
+            return false;
+        }
         public void addLink(NetworkNode<T> from, NetworkNode<T> to)
         {
             from.addLinkedNode(to);
+        }
+        public NetworkNode<T> getNode(T value)
+        {
+            for (int i = 0; i < nodes.Count; ++i)
+            {
+                if (compareNodes.Equals(value, nodes[i].value))
+                {
+                    return nodes[i];
+                }
+            }
+            return null;
         }
 
         public void Clear()

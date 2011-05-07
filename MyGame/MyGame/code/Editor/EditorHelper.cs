@@ -303,7 +303,7 @@ namespace MyGame
                 {
                     id = -1;
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
-                    RenderableEntity2D re = new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    RenderableEntity2D re = new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, true, id);
                     re.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     if (node.Attributes("color").Count() > 0)
                     {
@@ -325,7 +325,7 @@ namespace MyGame
                 {
                     id = -1;
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
-                    AnimatedEntity2D ae = new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, id);
+                    AnimatedEntity2D ae = new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, true, id);
                     ae.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
                     if (node.Attributes("color").Count() > 0)
                     {
