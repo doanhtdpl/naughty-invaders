@@ -143,6 +143,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
+    <Compile Include="code\Gameplay\WorldMapPlayer.cs" />
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
     <Compile Include="code\Gameplay\Enemies\Tomato.cs" />
@@ -158,10 +159,11 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\WatermelonProjectile.cs" />
-    <Compile Include="code\GUI &amp; Screen Helpers\MenuFunctions.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuElement.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuFunctions.cs" />
     <Compile Include="code\OLD code\MenuOld.cs" />
     <Compile Include="code\GameStates\States\StateWorldMap.cs" />
-    <Compile Include="code\GUI &amp; Screen Helpers\Menu.cs" />
+    <Compile Include="code\GUI &amp; Screen Helpers\Menus\Menu.cs" />
     <Compile Include="code\Language, Strings, xml\FormatHelper.cs" />
     <Compile Include="code\Gameplay\AnimatedEntity2D.cs" />
     <Compile Include="code\Gameplay\Enemies\Grape.cs" />

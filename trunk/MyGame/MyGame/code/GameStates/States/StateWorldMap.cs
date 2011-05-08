@@ -11,15 +11,19 @@ namespace MyGame
 {
     class StateWorldMap : GameState
     {
+        WorldMapPlayer player;
+
         public override void initialize()
         {
-            type = StateManager.tGS.Game;
+            type = StateManager.tGS.WorldMap;
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevel("mapa");
-            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.FollowPlayer;
+            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
+
+            player = new WorldMapPlayer(new Vector3(0.0f, 100.0f, 0.0f));
         }
 
         public override void loadContent()
@@ -43,6 +47,7 @@ namespace MyGame
             ProjectileManager.Instance.update();
             ParticleManager.Instance.update();
             OrbManager.Instance.update();
+            CameraManager.Instance.worldMapPosition = player.position;
             CameraManager.Instance.update();
             GUIManager.Instance.update();
 

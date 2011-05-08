@@ -60,12 +60,12 @@ namespace MyGame
         {
             int IComparer<object>.Compare(object a, object b)
             {
-                Type t = a.GetType();
-                if (a.GetType() == Type.GetType("MyGame.MenuButton"))
-                {
-                    if (((MenuElement)a).text == ((MenuElement)b).text)
-                        return 0;
-                }
+                //Type t = a.GetType();
+                //if (a.GetType() == Type.GetType("MyGame.MenuButton"))
+                //{
+                //    if (((MenuElement)a).text == ((MenuElement)b).text)
+                //        return 0;
+                //}
                 return 1;
             }
         }

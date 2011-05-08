@@ -68,7 +68,7 @@ namespace MyGame
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
-            EditorHelper.Instance.loadNewLevel(SB.content.RootDirectory + "/xml/levels/final_Level01.xml");
+            EditorHelper.Instance.loadNewLevel("final_Level01");
         }
 
         protected override void UnloadContent()

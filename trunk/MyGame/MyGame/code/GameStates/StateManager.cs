@@ -19,7 +19,8 @@ namespace MyGame
         {
             // inicializamos el primer estado del juego
 #if ONLY_GAMEPLAY
-            gameStates.Add(new StateGame());
+            gameStates.Add(new StateWorldMap());
+            //gameStates.Add(new StateGame());
 #else
             gameStates.Add(new StateIntro());
 #endif
@@ -78,7 +79,7 @@ namespace MyGame
         }
 
         #region State definitions
-        public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, Game, EndStage, EndTrial };
+        public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, WorldMap, Game, EndStage, EndTrial };
 
         #endregion
         public static void enqueueState(tGS state)
@@ -98,6 +99,12 @@ namespace MyGame
                     break;
                 case tGS.Options:
                     gameStates.Add(new StateOptions());
+                    break;
+                case tGS.WorldMap:
+                    gameStates.Add(new StateWorldMap());
+                    break;
+                case tGS.Game:
+                    gameStates.Add(new StateGame());
                     break;
                 case tGS.Scores:
                     gameStates.Add(new StateScores());

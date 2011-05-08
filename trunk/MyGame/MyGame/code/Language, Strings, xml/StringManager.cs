@@ -222,6 +222,11 @@ namespace MyGame
             render(str, position, scale, color, alignment, SB.font, 1000, 30 * scale, shadowColor, 1.0f, new Vector2(1,1), tStyle.Border);
         }
 
+        public static void renderNI(this String str, Vector2 position, float scale)
+        {
+            render(str, position, scale, Color.BlueViolet, tTextAlignment.Centered, SB.font, 1000, 30 * scale, Color.Purple, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Border);
+        }
+
         private static void updateAlignment(tTextAlignment alignment, int positionX, int sizeX, int first, int last)
         {
             int xOffset = 0;
