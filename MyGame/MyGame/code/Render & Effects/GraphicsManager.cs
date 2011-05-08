@@ -38,6 +38,15 @@ namespace MyGame
             spriteBatch = new SpriteBatch(graphicsDevice);
         }
 
+        public void spriteBatchBegin()
+        {
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+        }
+        public void spriteBatchEnd()
+        {
+            spriteBatch.End();
+        }
+
         public void initializeRender()
         {
             SamplerState ss = new SamplerState();

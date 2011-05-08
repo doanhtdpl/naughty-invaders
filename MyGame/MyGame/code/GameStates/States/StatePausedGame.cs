@@ -15,14 +15,20 @@ namespace MyGame
         void initializeMenu()
         {
             menu = new Menu();
-            MenuElement mbHeader = new MenuElement("smallHeader", "", new Vector2(0,300));
-            MenuElement mb1 = new MenuElement("option1", "", new Vector2(0, 150));
+            Vector2 scale = new Vector2(0.8f, 0.8f);
+            MenuElement mbHeader = new MenuElement("smallHeader", new Vector2(0, 200), scale);
+            MenuElement mb1 = new MenuElement("option1", new Vector2(0, 50), scale);
             mb1.setFunction("unpause", MenuElement.tInputType.A);
-            MenuElement mb2 = new MenuElement("option2", "", new Vector2(0, 50));
+            MenuElement mb2 = new MenuElement("option2", new Vector2(0, -50), scale);
             mb2.setFunction("", MenuElement.tInputType.A);
-            MenuElement mb3 = new MenuElement("option3", "", new Vector2(0, -50));
+            MenuElement mb3 = new MenuElement("option3", new Vector2(0, -150), scale);
             mb3.setFunction("exitGame", MenuElement.tInputType.A);
-            mb3.scale2D = new Vector2(mb3.scale.X, mb3.scale.Y*0.8f);
+            mb3.Scale = new Vector2(mb3.Scale.X, mb3.Scale.Y*0.8f);
+
+            menu.menuTexts.Add(new MenuText("Paused game", new Vector2(0, 230), 1.2f));
+            menu.menuTexts.Add(new MenuText("Continue game", new Vector2(20, 70), 1.0f));
+            menu.menuTexts.Add(new MenuText("Nothing", new Vector2(15, -25), 1.0f));
+            menu.menuTexts.Add(new MenuText("Exit game", new Vector2(5, -130), 1.0f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;
@@ -62,44 +68,16 @@ namespace MyGame
                 StateManager.dequeueState(1);
                 //SoundManager.playSound("pause");
             }
-            //else if (GamerManager.getMainControls().B_firstPressed())
-            //{
-            //    StateManager.clearStates();
-            //    StateManager.enqueueState(StateManager.tGS.Menu);
-            //    //SoundManager.playSound("pause");
-            //}
         }
 
         public override void render()
         {
             menu.render();
-
-            //GraphicsManager.Instance.spriteBatch.Begin();
-            //Vector2 pos = Screen.getXYfromCenter(-180, 200);
-            //GraphicsManager.Instance.spriteBatch.Draw(GUIManager.Instance.smallHeader, new Rectangle((int)pos.X, (int)pos.Y,360,160), Color.White);
-            //pos.X += 20;
-            //pos.Y += 120;
-            //GraphicsManager.Instance.spriteBatch.Draw(GUIManager.Instance.option1, new Rectangle((int)pos.X, (int)pos.Y, 320, 100), Color.White);
-            //pos.X -= 20;
-            //pos.Y += 80;
-            //GraphicsManager.Instance.spriteBatch.Draw(GUIManager.Instance.option2, new Rectangle((int)pos.X, (int)pos.Y, 320, 100), Color.White);
-            //pos.X += 30;
-            //pos.Y += 80;
-            //GraphicsManager.Instance.spriteBatch.Draw(GUIManager.Instance.option3, new Rectangle((int)pos.X, (int)pos.Y, 320, 90), Color.White);
-            //TextKey.Pause.Translate().render(
-            //        Screen.getXYfromCenter(new Vector2(0, 125)), 1.4f, Color.Black, StringManager.tTextAlignment.Centered,
-            //        SB.font, 1000, 0, Color.White, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
-            //TextKey.PressStartToCont.Translate().render(
-            //        Screen.getXYfromCenter(new Vector2(0, 25)), 1.1f, Color.White, StringManager.tTextAlignment.Centered,
-            //        SB.font, 1000, 0, Color.Black, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
-            //TextKey.PressBToMenu.Translate().render(
-            //        Screen.getXYfromCenter(new Vector2(0, -25)), 1.1f, Color.Red, StringManager.tTextAlignment.Centered,
-            //        SB.font, 1000, 0, Color.Black, 1.0f, new Vector2(1, 1), StringManager.tStyle.Border);
-            //GraphicsManager.Instance.spriteBatch.End();
         }
 
         public override void dispose()
         {
+            menu.clean();
         }
     }
 }

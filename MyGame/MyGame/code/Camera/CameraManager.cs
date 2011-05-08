@@ -46,8 +46,11 @@ namespace MyGame
             }
         }
 
-        public enum tCameraMode { None, FollowPlayer, Nodes }
+        public enum tCameraMode { None, FollowPlayer, WorldMap, Nodes }
         public tCameraMode cameraMode { set; get; }
+
+        // world map mode data
+        public Vector3 worldMapPosition { get; set; }
 
         // node mode stuff
         NetworkNode<CameraData> currentNode;
@@ -136,7 +139,18 @@ namespace MyGame
 
         void updateFollowPlayerMode()
         {
-            Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;
+            //Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;
+        }
+        const float WORLDMAP_IDLE_X = 20.0f;
+        const float WORLDMAP_IDLE_Y = 30.0f;
+        void updateWorldMapMode()
+        {
+            Vector3 cameraPosition = worldMapPosition;
+            float time = (float)SB.gameTime.TotalGameTime.TotalMilliseconds * 0.001f;
+            cameraPosition.X += (float)Math.Sin(time * 0.75f) * WORLDMAP_IDLE_X;
+            cameraPosition.Y += (float)Math.Sin(time * 2.0f) * WORLDMAP_IDLE_Y;
+            cameraPosition.Z += 1400.0f;
+            Camera2D.position = cameraPosition;
         }
         void updateNodesMode()
         {
@@ -181,6 +195,9 @@ namespace MyGame
                 case tCameraMode.FollowPlayer:
                     updateFollowPlayerMode();
                     break;
+                case tCameraMode.WorldMap:
+                    updateWorldMapMode();
+                    break;
                 case tCameraMode.Nodes:
                     updateNodesMode();
                     break;
@@ -197,6 +214,8 @@ namespace MyGame
                 case tCameraMode.None:
                     break;
                 case tCameraMode.FollowPlayer:
+                    break;
+                case tCameraMode.WorldMap:
                     break;
                 case tCameraMode.Nodes:
                     foreach (NetworkNode<CameraData> cameraNode in cameraNodes.getNodes())

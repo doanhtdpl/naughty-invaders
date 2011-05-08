@@ -11,27 +11,72 @@ using System.Reflection;
 
 namespace MyGame
 {
-    public class MenuElement : RenderableEntity2D
+    public class MenuText
     {
+        public string text { get; set; }
+        public float scale { get; set; }
+        public Vector2 position { get; set; }
+
+        public MenuText(string text, Vector2 position, float scale)
+        {
+            this.text = text;
+            this.position = Screen.getXYfromCenter(position);
+            this.scale = scale;
+        }
+
+        public void render()
+        {
+            text.renderNI(position, scale);
+        }
+    }
+
+    public class MenuElement
+    {
+        Rectangle toDraw;
+        Texture2D texture;
+        Vector2 position;
+        public Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
+            set
+            {
+                position = value;
+                updateToDrawRectangle();
+            }
+        }
+        Vector2 scale;
+        public Vector2 Scale
+        {
+            get
+            {
+                return scale;
+            }
+            set
+            {
+                scale = value;
+                updateToDrawRectangle();
+            }
+        }
+
         public enum tInputType { A = 0, Up, Down, Right, Left }
         const int INPUTS = 5;
         MethodInfo[] functions;
 
-        public string text { get; set; }
-
         public MenuElement upNode { set; get; }
         public MenuElement downNode { set; get; }
 
-        // used to backup at the render method
-        static Vector3 originalPosition;
-
-        public MenuElement(string texture, string text, Vector2 position):base("GUI/menu", texture, position.toVector3(), 0.0f, Color.White, false)
+        public MenuElement(string textureName, Vector2 position, Vector2 scale)
         {
-            this.delete();
+            this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
+            this.position = Screen.getXYfromCenter(position);
+            this.scale = scale;
+            updateToDrawRectangle();
+
             upNode = null;
             downNode = null;
-
-            this.text = text;
 
             functions = new MethodInfo[INPUTS];
             for (int i = 0; i < INPUTS; ++i)
@@ -39,7 +84,18 @@ namespace MyGame
                 functions[i] = null;
             }
         }
-        
+
+        void updateToDrawRectangle()
+        {
+            float scaledWidth = texture.Width * scale.X;
+            float scaledHeight = texture.Height * scale.Y;
+
+            toDraw = new Rectangle(
+                (int)(this.position.X - scaledWidth * 0.5f),
+                (int)(this.position.Y - scaledHeight * 0.5f),
+                (int)scaledWidth, (int)scaledHeight);
+        }
+
         public void setFunction(string functionName, tInputType functionType)
         {
             Type type = Type.GetType("MyGame.MenuFunctions");
@@ -78,56 +134,9 @@ namespace MyGame
             return false;
         }
 
-        public override void render()
-        {
-            originalPosition = position;
-            position2D += CameraManager.Instance.getCameraPositionXY();
-            base.render();
-            position = originalPosition;
-        }
-    }
-
-    class Menu
-    {
-        public MenuElement selectionCursor { get; set; }
-        public MenuElement currentNode { get; set; }
-        public void setCurrentNode(MenuElement value)
-        {
-            currentNode = value;
-            selectionCursor.position2D = currentNode.position2D;
-        }
-        public List<MenuElement> menuElements { get; set; }
-
-        public Menu()
-        {
-            menuElements = new List<MenuElement>();
-            selectionCursor = new MenuElement("A", "", Vector2.Zero);
-        }
-
-        public void update()
-        {
-            ControlPad cp = GamerManager.getMainControls();
-
-            // if the button does something in his own update, return to skip other menu updates
-            if (currentNode.updateOptions()) return;
-
-            if (cp.Up_firstPressed() && currentNode.upNode != null)
-            {
-                setCurrentNode(currentNode.upNode);
-            }
-            else if (cp.Down_firstPressed() && currentNode.downNode != null)
-            {
-                setCurrentNode(currentNode.downNode);
-            }
-        }
-
         public void render()
         {
-            for (int i = 0; i < menuElements.Count; ++i)
-            {
-                menuElements[i].render();
-            }
-            selectionCursor.render();
+            GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, Color.White);
         }
     }
 }
