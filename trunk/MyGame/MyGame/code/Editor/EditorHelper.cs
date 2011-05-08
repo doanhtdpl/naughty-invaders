@@ -401,13 +401,11 @@ namespace MyGame
 
                     CameraManager.Instance.addNode(cameraNode);
                 }
-
                 //link camera nodes
                 foreach(NetworkNode<CameraData> cameraNode in CameraManager.Instance.getNodes().getNodes())
                 {
                     cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
                 }
-
                 CameraManager.Instance.setupCamera();
 
 

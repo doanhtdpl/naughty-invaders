@@ -51,6 +51,12 @@ namespace MyGame
             CameraManager.Instance.update();
             GUIManager.Instance.update();
 
+            if (GamerManager.getMainControls().A_firstPressed())
+            {
+                StateManager.clearStates();
+                StateManager.gameStates.Add(new StateGame("final_Level01"));
+            }
+
             SB.cam.update();
         }
         

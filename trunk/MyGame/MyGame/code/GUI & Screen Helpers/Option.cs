@@ -69,32 +69,32 @@ namespace MyGame
             StartGame, SeeGamepadControls, DepauseGame };
         public void executeOption()
         {
-            switch (type)
-            {
-                case tOption.ToOptions:
-                    StateManager.enqueueState(StateManager.tGS.Options);
-                    break;
-                case tOption.ToScores:
-                    StateManager.enqueueState(StateManager.tGS.Scores);
-                    break;
-                case tOption.ToCredits:
-                    StateManager.enqueueState(StateManager.tGS.Credits);
-                    break;
-                case tOption.ToMainmenu:
-                    // from options, only need to desenqueue
-                    StateManager.dequeueState(1);
-                    break;
-                case tOption.ToGame:
-                    StateManager.gameStates.Clear();
-                    StateManager.enqueueState(StateManager.tGS.Game);
-                    break;
-                case tOption.SeeGamepadControls:
-                    //StatePausedGame.showControls = true;
-                    break;
-                case tOption.DepauseGame:
-                    StateManager.dequeueState(1);
-                    break;
-            }
+            //switch (type)
+            //{
+            //    case tOption.ToOptions:
+            //        StateManager.enqueueState(StateManager.tGS.Options);
+            //        break;
+            //    case tOption.ToScores:
+            //        StateManager.enqueueState(StateManager.tGS.Scores);
+            //        break;
+            //    case tOption.ToCredits:
+            //        StateManager.enqueueState(StateManager.tGS.Credits);
+            //        break;
+            //    case tOption.ToMainmenu:
+            //        // from options, only need to desenqueue
+            //        StateManager.dequeueState(1);
+            //        break;
+            //    case tOption.ToGame:
+            //        StateManager.gameStates.Clear();
+            //        StateManager.enqueueState(StateManager.tGS.Game);
+            //        break;
+            //    case tOption.SeeGamepadControls:
+            //        //StatePausedGame.showControls = true;
+            //        break;
+            //    case tOption.DepauseGame:
+            //        StateManager.dequeueState(1);
+            //        break;
+            //}
         }
 
         public void nextOption()

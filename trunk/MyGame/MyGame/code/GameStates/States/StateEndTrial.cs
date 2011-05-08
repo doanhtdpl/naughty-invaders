@@ -30,13 +30,13 @@ namespace MyGame
             {
                 // dequeue end trial and game states
                 StateManager.dequeueState(2);
-                StateManager.enqueueState(StateManager.tGS.Menu);
+                StateManager.gameStates.Add(new StateMainMenu());
             }
             // if the gamer buys the game, go back to the end of the stage to save his progress
             if (!GamerManager.isTrial())
             {
-                StateManager.dequeueState(1);
-                StateManager.enqueueState(StateManager.tGS.EndStage);
+                //StateManager.dequeueState(1);
+                //StateManager.gameStates.Add(new StateScores());
             }
         }
 
