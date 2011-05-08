@@ -78,48 +78,7 @@ namespace MyGame
             return gameStates[gameStates.Count - 1];
         }
 
-        #region State definitions
         public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, WorldMap, Game, EndStage, EndTrial };
-
-        #endregion
-        public static void enqueueState(tGS state)
-        {
-            switch (state)
-            {
-                case tGS.Intro:
-                    gameStates.Add(new StateIntro());
-                    break;
-                case tGS.Prompt:
-                    clearStates();
-                    gameStates.Add(new StatePrompt());
-                    break;
-                case tGS.Menu:
-                    clearStates();
-                    gameStates.Add(new StateMainMenu());
-                    break;
-                case tGS.Options:
-                    gameStates.Add(new StateOptions());
-                    break;
-                case tGS.WorldMap:
-                    gameStates.Add(new StateWorldMap());
-                    break;
-                case tGS.Game:
-                    gameStates.Add(new StateGame());
-                    break;
-                case tGS.Scores:
-                    gameStates.Add(new StateScores());
-                    break;
-                case tGS.Credits:
-                    gameStates.Add(new StateCredits());
-                    break;
-                case tGS.Pause:
-                    gameStates.Add(new StatePausedGame());
-                    break;
-                case tGS.EndTrial:
-                    gameStates.Add(new StateEndTrial());
-                    break;
-            }
-        }
         public static void dequeueState(int num)
         {
             for (int i = 0; i < num; i++)

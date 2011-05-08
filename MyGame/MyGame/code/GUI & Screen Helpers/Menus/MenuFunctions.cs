@@ -19,7 +19,7 @@ namespace MyGame
         public static void exitGame()
         {
             StateManager.clearStates();
-            StateManager.enqueueState(StateManager.tGS.Menu);
+            StateManager.gameStates.Add(new StateWorldMap());
             //SoundManager.playSound("pause");
         }
     }

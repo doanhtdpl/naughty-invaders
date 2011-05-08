@@ -37,7 +37,7 @@ namespace MyGame
             else
             {
                 StateManager.clearStates();
-                StateManager.enqueueState(StateManager.tGS.Prompt);
+                StateManager.gameStates.Add(new StatePrompt());
             }
         }
 

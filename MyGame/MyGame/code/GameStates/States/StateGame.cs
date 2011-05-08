@@ -16,6 +16,13 @@ namespace MyGame
         bool keyPPressed = false;
         #endif
 
+        string level;
+
+        public StateGame(string level)
+        {
+            this.level = level; 
+        }
+
         public override void initialize()
         {
             type = StateManager.tGS.Game;
@@ -23,8 +30,9 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
-            //EditorHelper.Instance.loadLevelFromXML("fruit-1-1");
+            EditorHelper.Instance.loadNewLevel(level);
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.Nodes;
+            GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = CameraManager.Instance.getCameraPosition().toVector2();
         }
         public void restartLevel()
         {
@@ -102,7 +110,9 @@ namespace MyGame
 #if !EDITOR
             // state changes
             if (GamerManager.getMainControls().Start_firstPressed())
-                StateManager.enqueueState(StateManager.tGS.Pause);
+            {
+                StateManager.gameStates.Add(new StatePausedGame());
+            }
 #endif
         }
         

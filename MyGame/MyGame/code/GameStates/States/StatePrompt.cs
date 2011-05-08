@@ -87,7 +87,7 @@ namespace MyGame
                     SoundManager.initVolumes();
                     initializeAfterLoading();
                     StateManager.clearStates();
-                    StateManager.enqueueState(StateManager.tGS.Menu);
+                    StateManager.gameStates.Add(new StateMainMenu());
                     break;
             }
         }
