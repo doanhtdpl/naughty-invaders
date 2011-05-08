@@ -72,6 +72,7 @@
     <Compile Include="code\ControlPad.cs" />
     <Compile Include="code\CoolizionEngine\Line.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
+    <Compile Include="code\Dialogs\DialogManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddCameraNode.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddColisions.cs" />
