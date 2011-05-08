@@ -35,21 +35,37 @@ namespace MyGame
             }
             return null;
         }
+        public NetworkNode<T> getNext(NetworkNode<T> previous)
+        {
+            if (linkedNodes.Count > 0)
+            {
+                if (linkedNodes[0] == previous && linkedNodes.Count > 1)
+                {
+                    return linkedNodes[1];
+                }
+                return linkedNodes[0];
+            }
+            return null;
+        }
         const float ANGLE_CHOICE_THRESHOLD = 1.3f;
         public NetworkNode<T> getNext(Vector2 direction)
         {
+            if (direction.Length() < 0.4f) return null;
+
             NetworkNode<T> bestChoice = null;
             float angle = Calc.directionToAngle(direction);
             float lowerDistance = Calc.TwoPi;
             for (int i = 0; i < linkedNodes.Count; ++i)
             {
                 float distance = Calc.getDeltaOfAngles(angle, Calc.directionToAngle(linkedNodes[i].position.toVector2() - position.toVector2()));
-                if (distance < lowerDistance)
+                distance = Math.Abs(distance);
+                if (distance < ANGLE_CHOICE_THRESHOLD && distance < lowerDistance)
                 {
                     lowerDistance = distance;
                     bestChoice = linkedNodes[i];
                 }
             }
+            if (bestChoice == null) return null;
             return bestChoice;
         }
     }
@@ -76,9 +92,11 @@ namespace MyGame
         {
             return nodes;
         }
-        public void addNode(T newValue, Vector3 position)
+        public NetworkNode<T> addNode(T newValue, Vector3 position)
         {
-            nodes.Add(new NetworkNode<T>(newValue, position));
+            NetworkNode<T> newNode = new NetworkNode<T>(newValue, position);
+            nodes.Add(newNode);
+            return newNode;
         }
         public void addNode(NetworkNode<T> newValue)
         {
@@ -98,6 +116,11 @@ namespace MyGame
         public void addLink(NetworkNode<T> from, NetworkNode<T> to)
         {
             from.addLinkedNode(to);
+        }
+        public void addDoubleLink(NetworkNode<T> nodeA, NetworkNode<T> nodeB)
+        {
+            nodeA.addLinkedNode(nodeB);
+            nodeB.addLinkedNode(nodeA);
         }
         public NetworkNode<T> getNode(T value)
         {

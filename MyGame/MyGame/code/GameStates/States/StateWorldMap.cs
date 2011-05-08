@@ -9,9 +9,43 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
+    struct WorldMapLocation
+    {
+        // if level is "", then the node is a follow next node
+        public string level;
+
+        public WorldMapLocation(string level)
+        {
+            this.level = level;
+        }
+    }
+
     class StateWorldMap : GameState
     {
         WorldMapPlayer player;
+        public NetworkNode<WorldMapLocation> lastNode { get; set; }
+        public NetworkNode<WorldMapLocation> currentNode { get; set; }
+        public Network<WorldMapLocation> nodes { get; set; }
+
+        public void initializeNetwork()
+        {
+            WorldMapLocation ml1 = new WorldMapLocation("final_Level01");
+            NetworkNode<WorldMapLocation> nn1 = nodes.addNode(ml1, new Vector3(-450.0f, 120.0f, 200.0f));
+            WorldMapLocation ml2 = new WorldMapLocation("onionVillage");
+            NetworkNode<WorldMapLocation> nn2 = nodes.addNode(ml2, new Vector3(200.0f, 300.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nnInter1 = nodes.addNode(new WorldMapLocation(""), new Vector3(200.0f, 295.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nnInter2 = nodes.addNode(new WorldMapLocation(""), new Vector3(150.0f, 250.0f, 200.0f));
+            WorldMapLocation ml3 = new WorldMapLocation("epilepticMacedonia");
+            NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml2, new Vector3(100.0f, 0.0f, 200.0f));
+            WorldMapLocation ml4 = new WorldMapLocation("final_Level02");
+            NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml2, new Vector3(600.0f, 100.0f, 200.0f));
+            currentNode = nn1;
+            nodes.addDoubleLink(nn1, nn2);
+            nodes.addDoubleLink(nn2, nnInter1);
+            nodes.addDoubleLink(nnInter1, nnInter2);
+            nodes.addDoubleLink(nnInter2, nn3);
+            nodes.addDoubleLink(nn2, nn4);
+        }
 
         public override void initialize()
         {
@@ -23,7 +57,11 @@ namespace MyGame
             EditorHelper.Instance.loadNewLevel("mapa");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
 
-            player = new WorldMapPlayer(new Vector3(0.0f, 100.0f, 0.0f));
+            nodes = new Network<WorldMapLocation>();
+            initializeNetwork();
+
+            player = new WorldMapPlayer(currentNode.position);
+            player.positionZ += 200.0f;
         }
 
         public override void loadContent()
@@ -38,10 +76,48 @@ namespace MyGame
             DebugManager.Instance.render();
             GUIManager.Instance.render();
         }
-        
+
+        const float WORLDMAP_SPEED = 500.0f;
         public override void update()
         {
             base.update();
+
+            // if arrives to a new node
+            if ((currentNode.position - player.position).LengthSquared() < 20.0f)
+            {
+                if(currentNode.value.level == "")
+                {
+                    NetworkNode<WorldMapLocation> next = currentNode.getNext(lastNode);
+                    if (next != null)
+                    {
+                        lastNode = currentNode;
+                        currentNode = next;
+                    }
+                }
+                else
+                {
+                    ControlPad cp = GamerManager.getMainControls();
+                    NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.LS);
+                    if (next != null)
+                    {
+                        lastNode = currentNode;
+                        currentNode = next;
+                    }
+                    if (cp.A_firstPressed())
+                    {
+                        StateManager.clearStates();
+                        StateManager.gameStates.Add(new StateGame(currentNode.value.level));
+                    }
+                }
+            }
+            else
+            {
+                Vector3 direction = currentNode.position - player.position;
+                direction.Normalize();
+                player.position += direction * WORLDMAP_SPEED * SB.dt;
+                player.positionZ = 200.0f;
+            }
+
 
             LevelManager.Instance.update();
             ProjectileManager.Instance.update();
@@ -50,12 +126,6 @@ namespace MyGame
             CameraManager.Instance.worldMapPosition = player.position;
             CameraManager.Instance.update();
             GUIManager.Instance.update();
-
-            if (GamerManager.getMainControls().A_firstPressed())
-            {
-                StateManager.clearStates();
-                StateManager.gameStates.Add(new StateGame("final_Level01"));
-            }
 
             SB.cam.update();
         }
