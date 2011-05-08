@@ -29,7 +29,15 @@ namespace MyGame
         public int petOrbs;
 
         public Dictionary<string, PlayerSkill> skills = new Dictionary<string, PlayerSkill>();
+        public Dictionary<string, bool> levelsPassed = new Dictionary<string, bool>();
 
+        public void initLevelsPassed()
+        {
+            levelsPassed["final_Level01"] = true;
+            levelsPassed["onionVillage"] = true;
+            levelsPassed["epilepticMacedonia"] = false;
+            levelsPassed["level2"] = false;
+        }
         // initialize the tree with the costs and links between skills
         public void initSkills()
         {
@@ -50,6 +58,7 @@ namespace MyGame
             lifeOrbs = 0;
             wishOrbs = 0;
             petOrbs = 0;
+            initLevelsPassed();
             initSkills();
         }
 

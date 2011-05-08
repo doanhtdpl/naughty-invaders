@@ -34,10 +34,10 @@ namespace MyGame
             WorldMapLocation ml2 = new WorldMapLocation("onionVillage");
             NetworkNode<WorldMapLocation> nn2 = nodes.addNode(ml2, new Vector3(200.0f, 300.0f, 200.0f));
             NetworkNode<WorldMapLocation> nnInter1 = nodes.addNode(new WorldMapLocation(""), new Vector3(200.0f, 295.0f, 200.0f));
-            NetworkNode<WorldMapLocation> nnInter2 = nodes.addNode(new WorldMapLocation(""), new Vector3(150.0f, 250.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nnInter2 = nodes.addNode(new WorldMapLocation(""), new Vector3(90.0f, 200.0f, 200.0f));
             WorldMapLocation ml3 = new WorldMapLocation("epilepticMacedonia");
             NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml2, new Vector3(100.0f, 0.0f, 200.0f));
-            WorldMapLocation ml4 = new WorldMapLocation("final_Level02");
+            WorldMapLocation ml4 = new WorldMapLocation("level2");
             NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml2, new Vector3(600.0f, 100.0f, 200.0f));
             currentNode = nn1;
             nodes.addDoubleLink(nn1, nn2);
@@ -85,6 +85,7 @@ namespace MyGame
             // if arrives to a new node
             if ((currentNode.position - player.position).LengthSquared() < 20.0f)
             {
+                // if its a transition node (without level), get the next node
                 if(currentNode.value.level == "")
                 {
                     NetworkNode<WorldMapLocation> next = currentNode.getNext(lastNode);
@@ -94,11 +95,14 @@ namespace MyGame
                         currentNode = next;
                     }
                 }
-                else
+                else // if current node has a level...
                 {
+                    Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().Player.data.levelsPassed;
                     ControlPad cp = GamerManager.getMainControls();
                     NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.LS);
-                    if (next != null)
+                    if (next != null &&
+                        (levelsPassed[currentNode.value.level]
+                        || levelsPassed.ContainsKey(next.value.level) && (levelsPassed[next.value.level])))
                     {
                         lastNode = currentNode;
                         currentNode = next;

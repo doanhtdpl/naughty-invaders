@@ -32,7 +32,7 @@ namespace MyGame
         bool bigShotCharging;
         float bigShotCooldownTime;
 
-        PlayerData data = new PlayerData();
+        public PlayerData data { get; set; }
 
         static Texture bigShotBall = null;
 
@@ -55,6 +55,7 @@ namespace MyGame
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
 
+            data = new PlayerData();
             data.initNewData();
 
             if (bigShotBall == null)
