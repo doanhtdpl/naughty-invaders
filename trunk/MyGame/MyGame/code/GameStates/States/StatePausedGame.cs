@@ -20,15 +20,16 @@ namespace MyGame
             MenuElement mb1 = new MenuElement("option1", new Vector2(0, 50), scale);
             mb1.setFunction("unpause", MenuElement.tInputType.A);
             MenuElement mb2 = new MenuElement("option2", new Vector2(0, -50), scale);
-            mb2.setFunction("", MenuElement.tInputType.A);
+            mb2.setFunction("goToSkillsMenu", MenuElement.tInputType.A);
             MenuElement mb3 = new MenuElement("option3", new Vector2(0, -150), scale);
             mb3.setFunction("exitGame", MenuElement.tInputType.A);
             mb3.Scale = new Vector2(mb3.Scale.X, mb3.Scale.Y*0.8f);
 
             menu.menuTexts.Add(new MenuText("Paused game", new Vector2(0, 230), 1.2f));
             menu.menuTexts.Add(new MenuText("Continue game", new Vector2(20, 70), 1.0f));
-            menu.menuTexts.Add(new MenuText("Nothing", new Vector2(15, -25), 1.0f));
+            menu.menuTexts.Add(new MenuText("Skills", new Vector2(15, -25), 1.0f));
             menu.menuTexts.Add(new MenuText("Exit game", new Vector2(5, -130), 1.0f));
+            menu.menuTexts.Add(new MenuText("Press ::B to go back", new Vector2(250, -230), 1.0f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;
@@ -48,6 +49,7 @@ namespace MyGame
             transitionColor = new Color(100, 0, 20, 200);
             type = StateManager.tGS.Pause;
             initializeMenu();
+            renderAlways = false;
             //SoundManager.playSound("pause");
         }
 

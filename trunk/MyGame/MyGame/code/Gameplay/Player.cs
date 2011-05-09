@@ -92,6 +92,7 @@ namespace MyGame
             {
                 case Orb.tOrb.XP:
                     ++data.XP;
+                    ++data.totalXP;
                     break;
                 case Orb.tOrb.Life:
                     ++data.lifeOrbs;

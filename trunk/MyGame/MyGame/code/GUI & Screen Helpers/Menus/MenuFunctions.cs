@@ -16,11 +16,32 @@ namespace MyGame
         {
             StateManager.dequeueState(1);
         }
+        public static void goToSkillsMenu()
+        {
+            StateManager.gameStates.Add(new StateSkillsMenu());
+        }
         public static void exitGame()
         {
             StateManager.clearStates();
             StateManager.gameStates.Add(new StateWorldMap());
             //SoundManager.playSound("pause");
+        }
+
+        public static void buySkill(string skillName, MenuElement menuElement)
+        {
+            PlayerSkill ps = GamerManager.getSessionOwner().Player.data.skills[skillName];
+            int XP = GamerManager.getSessionOwner().Player.data.XP;
+            if (!ps.obtained && ps.cost <= XP)
+            {
+                ps.obtained = true;
+                XP -= ps.cost;
+                menuElement.drawLinkedElement = true;
+                // playsound
+            }
+            else
+            {
+                // playsound
+            }
         }
     }
 }

@@ -159,6 +159,7 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\WatermelonProjectile.cs" />
+    <Compile Include="code\GameStates\States\StateSkillsMenu.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuElement.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuFunctions.cs" />
     <Compile Include="code\OLD code\MenuOld.cs" />

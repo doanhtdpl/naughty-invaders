@@ -35,6 +35,10 @@ namespace MyGame
         Rectangle toDraw;
         Texture2D texture;
         Vector2 position;
+
+        public bool drawLinkedElement { get; set; }
+        public MenuElement linkedElement { get; set; }
+
         public Vector2 Position
         {
             get
@@ -61,18 +65,20 @@ namespace MyGame
             }
         }
 
-        public enum tInputType { A = 0, Up, Down, Right, Left }
-        const int INPUTS = 5;
+        public enum tInputType { A = 0, X, Y, B, Up, Down, Right, Left }
+        const int INPUTS = 8;
         MethodInfo[] functions;
+        object[][] functionParameters;
 
         public MenuElement upNode { set; get; }
         public MenuElement downNode { set; get; }
 
-        public MenuElement(string textureName, Vector2 position, Vector2 scale)
+        public MenuElement(string textureName, Vector2 position, Vector2 scale, bool drawLinkedElement = false)
         {
             this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
             this.position = Screen.getXYfromCenter(position);
             this.scale = scale;
+            this.drawLinkedElement = drawLinkedElement;
             updateToDrawRectangle();
 
             upNode = null;
@@ -82,6 +88,12 @@ namespace MyGame
             for (int i = 0; i < INPUTS; ++i)
             {
                 functions[i] = null;
+            }
+
+            functionParameters = new object[INPUTS][];
+            for (int i = 0; i < INPUTS; ++i)
+            {
+                functionParameters[i] = null;
             }
         }
 
@@ -96,10 +108,11 @@ namespace MyGame
                 (int)scaledWidth, (int)scaledHeight);
         }
 
-        public void setFunction(string functionName, tInputType functionType)
+        public void setFunction(string functionName, tInputType functionType, object[] parameters = null)
         {
             Type type = Type.GetType("MyGame.MenuFunctions");
             functions[functionType.toInt()] = type.GetMethod(functionName);
+            this.functionParameters[functionType.toInt()] = parameters;
         }
 
         public bool updateOptions()
@@ -107,36 +120,54 @@ namespace MyGame
             ControlPad cp = GamerManager.getMainControls();
             if (cp.A_firstPressed() && (functions[tInputType.A.toInt()] != null))
             {
-                functions[tInputType.A.toInt()].Invoke(null, null);
+                functions[tInputType.A.toInt()].Invoke(null, functionParameters[tInputType.A.toInt()]);
+                return true;
+            }
+            if (cp.A_firstPressed() && (functions[tInputType.X.toInt()] != null))
+            {
+                functions[tInputType.X.toInt()].Invoke(null, functionParameters[tInputType.X.toInt()]);
+                return true;
+            }
+            if (cp.A_firstPressed() && (functions[tInputType.Y.toInt()] != null))
+            {
+                functions[tInputType.Y.toInt()].Invoke(null, functionParameters[tInputType.Y.toInt()]);
+                return true;
+            }
+            if (cp.A_firstPressed() && (functions[tInputType.B.toInt()] != null))
+            {
+                functions[tInputType.B.toInt()].Invoke(null, functionParameters[tInputType.B.toInt()]);
                 return true;
             }
             if (cp.Left_firstPressed() && (functions[tInputType.Left.toInt()] != null))
             {
-                functions[tInputType.Left.toInt()].Invoke(null, null);
+                functions[tInputType.Left.toInt()].Invoke(null, functionParameters[tInputType.Left.toInt()]);
                 return true;
             }
             if (cp.Right_firstPressed() && (functions[tInputType.Right.toInt()] != null))
             {
-                functions[tInputType.Right.toInt()].Invoke(null, null);
+                functions[tInputType.Right.toInt()].Invoke(null, functionParameters[tInputType.Right.toInt()]);
                 return true;
             }
             if (cp.Up_firstPressed() && (functions[tInputType.Up.toInt()] != null))
             {
-                functions[tInputType.Up.toInt()].Invoke(null, null);
+                functions[tInputType.Up.toInt()].Invoke(null, functionParameters[tInputType.Up.toInt()]);
                 return true;
             }
             if (cp.Down_firstPressed() && (functions[tInputType.Down.toInt()] != null))
             {
-                functions[tInputType.Down.toInt()].Invoke(null, null);
+                functions[tInputType.Down.toInt()].Invoke(null, functionParameters[tInputType.Down.toInt()]);
                 return true;
             }
-
             return false;
         }
 
         public void render()
         {
             GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, Color.White);
+            if (drawLinkedElement)
+            {
+                linkedElement.render();
+            }
         }
     }
 }

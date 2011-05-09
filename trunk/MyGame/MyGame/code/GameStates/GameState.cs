@@ -11,6 +11,7 @@ namespace MyGame
 {
     public abstract class GameState
     {
+        public bool renderAlways = true;
         public bool loaded = false;
         public bool loading = false;
         public bool gameState = false;
