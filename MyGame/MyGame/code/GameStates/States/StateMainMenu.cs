@@ -22,6 +22,7 @@ namespace MyGame
         {
             type = StateManager.tGS.Menu;
         }
+
         public void initializeMenu()
         {
            

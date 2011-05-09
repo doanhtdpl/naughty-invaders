@@ -23,6 +23,7 @@ namespace MyGame
 
     class PlayerData
     {
+        public int totalXP;
         public int XP;
         public int lifeOrbs;
         public int wishOrbs;
@@ -41,15 +42,17 @@ namespace MyGame
         // initialize the tree with the costs and links between skills
         public void initSkills()
         {
-            skills["dash1"] = new PlayerSkill("Dash", 100);
+            skills["dash1"] = new PlayerSkill("Dash", 350);
             skills["dash2"] = new PlayerSkill("Super Dash", 1000);
             skills["dash3"] = new PlayerSkill("Mega Dash", 3000);
-            skills["powerShot"] = new PlayerSkill("Power Shot", 300);
-            skills["doublePowerShot"] = new PlayerSkill("Double Power Shot", 300, "powerShot");
+            skills["plasma"] = new PlayerSkill("Plasma", 1500);
+            skills["powerShot"] = new PlayerSkill("Power Shot", 500);
+            skills["life1"] = new PlayerSkill("Life", 500);
 
+            XP = 10000;
             foreach (PlayerSkill ps in skills.Values)
             {
-                ps.obtained = true;
+                //ps.obtained = true;
             }
         }
         public void initNewData()

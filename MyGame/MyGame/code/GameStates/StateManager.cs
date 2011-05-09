@@ -59,7 +59,10 @@ namespace MyGame
                         GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), color);
                         GraphicsManager.Instance.spriteBatch.End();
                     }
-                    gameStates[i].render();
+                    if (i == gameStates.Count -1 || gameStates[i].renderAlways)
+                    {
+                        gameStates[i].render();
+                    }
                 }
             }
         }
@@ -78,7 +81,7 @@ namespace MyGame
             return gameStates[gameStates.Count - 1];
         }
 
-        public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, WorldMap, Game, EndStage, EndTrial };
+        public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, SkillsMenu, WorldMap, Game, EndStage, EndTrial };
         public static void dequeueState(int num)
         {
             for (int i = 0; i < num; i++)

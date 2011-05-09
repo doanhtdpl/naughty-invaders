@@ -34,6 +34,8 @@ namespace MyGame
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.Nodes;
             GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = CameraManager.Instance.getCameraPosition().toVector2();
         }
+
+
         public void restartLevel()
         {
         }
