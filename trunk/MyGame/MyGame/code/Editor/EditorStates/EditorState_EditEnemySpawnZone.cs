@@ -11,11 +11,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MyGame
 {
-    class EditorState_EditColisions : EditorState
+    class EditorState_EditEnemySpawnZone : EditorState
     {
         Line selectedLine = null;
 
-        public EditorState_EditColisions()
+        public EditorState_EditEnemySpawnZone()
             : base()
         {
         }
