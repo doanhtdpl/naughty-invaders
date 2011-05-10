@@ -274,7 +274,7 @@ namespace MyGame
         // loads the specified file into the editor
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
-            fileName = SB.content.RootDirectory + "/xml/levels/" + fileName + ".xml";
+            //fileName = SB.content.RootDirectory + "/xml/levels/" + fileName + ".xml";
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
@@ -431,6 +431,12 @@ namespace MyGame
             }
 
             return list;
+        }
+
+        public List<Entity2D> loadNewLevelFromGame(string fileName, bool loadIDs = true)
+        {
+            fileName = SB.content.RootDirectory + "/xml/levels/" + fileName + ".xml";
+            return loadNewLevel(fileName);
         }
 
         // loads the specified file into the editor

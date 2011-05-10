@@ -54,7 +54,7 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
-            EditorHelper.Instance.loadNewLevel("mapa");
+            EditorHelper.Instance.loadNewLevelFromGame("mapa");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
 
             nodes = new Network<WorldMapLocation>();
