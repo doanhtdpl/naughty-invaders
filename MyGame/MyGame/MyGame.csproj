@@ -143,6 +143,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
+    <Compile Include="code\Gameplay\Enemies\Macedonia.cs" />
     <Compile Include="code\Gameplay\WorldMapPlayer.cs" />
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
