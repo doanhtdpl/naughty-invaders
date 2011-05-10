@@ -22,6 +22,7 @@ namespace MyGame
         {
             this.level = level; 
         }
+        public StateGame() { }
 
         public override void initialize()
         {
@@ -30,7 +31,7 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
-            EditorHelper.Instance.loadNewLevel(level);
+            EditorHelper.Instance.loadNewLevelFromGame(level);
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.Nodes;
             GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = CameraManager.Instance.getCameraPosition().toVector2();
         }
