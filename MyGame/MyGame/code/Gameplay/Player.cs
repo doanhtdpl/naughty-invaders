@@ -230,6 +230,10 @@ namespace MyGame
                 t.addFunction(false, "addParticles", null);
                 TriggerManager.Instance.addTrigger(t);
             }
+            if (controls.RT_firstPressed())
+            {
+                CinematicManager.Instance.playCinematic("fakeCinematic");
+            }
         }
 
         public override void render()

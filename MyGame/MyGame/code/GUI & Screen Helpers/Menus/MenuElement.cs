@@ -72,7 +72,7 @@ namespace MyGame
 
         public MenuElement upNode { set; get; }
         public MenuElement downNode { set; get; }
-
+            
         public MenuElement(string textureName, Vector2 position, Vector2 scale, bool drawLinkedElement = false)
         {
             this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);

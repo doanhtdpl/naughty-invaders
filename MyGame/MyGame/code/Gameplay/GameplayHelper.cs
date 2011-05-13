@@ -25,6 +25,19 @@ namespace MyGame
             }
         }
 
+        // returns true if arrives to its destiny
+        public bool fromToAtSpeed(ref Vector3 position, Vector3 to, float speed)
+        {
+            Vector3 direction = Vector3.Normalize(to - position);
+            position += direction * speed * SB.dt;
+            // see if the new position passed over the destiny
+            if ((direction + Vector3.Normalize(to - position)).LengthSquared() < 0.5f )
+            {
+                position = to;
+                return true;
+            }
+            return false;
+        }
         // updates the position of an entity within the level lines passed as parameter and in the playable zone
         public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, bool keepInPlayableZone = false)
         {
