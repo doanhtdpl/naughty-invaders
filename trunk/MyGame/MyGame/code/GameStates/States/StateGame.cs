@@ -32,8 +32,9 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevelFromGame(level);
-            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.Nodes;
-            GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = CameraManager.Instance.getCameraPosition().toVector2();
+            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
+            GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = new Vector2(0, 200);
+            CinematicManager.Instance.initFakeCinematic();
         }
 
 
@@ -74,6 +75,7 @@ namespace MyGame
             LevelManager.Instance.render();
             DebugManager.Instance.render();
             GUIManager.Instance.render();
+            CinematicManager.Instance.render();
         }
         
         public override void update()
@@ -104,6 +106,7 @@ namespace MyGame
                 OrbManager.Instance.update();
                 CameraManager.Instance.update();
                 GUIManager.Instance.update();
+                CinematicManager.Instance.update();
                 TriggerManager.Instance.update();
 #if EDITOR
             }

@@ -72,7 +72,8 @@
     <Compile Include="code\ControlPad.cs" />
     <Compile Include="code\CoolizionEngine\Line.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
-    <Compile Include="code\Dialogs\DialogManager.cs" />
+    <Compile Include="code\Dialogs\CinematicEvent.cs" />
+    <Compile Include="code\Dialogs\CinematicManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddCameraNode.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddColisions.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
-    <Compile Include="code\Gameplay\Enemies\Macedonia.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
     <Compile Include="code\Gameplay\Enemies\tomato.cs" />

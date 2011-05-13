@@ -26,6 +26,17 @@ namespace MyGame
             }
             return null;
         }
+        public static Player getMainPlayer()
+        {
+            foreach (GamerEntity ge in gamerEntities)
+            {
+                if (ge.SessionOwner)
+                {
+                    return ge.Player;
+                }
+            }
+            return null;
+        }
         public static GamerEntity getGamerEntity(PlayerIndex playerIndex)
         {
             foreach(GamerEntity ge in gamerEntities)
