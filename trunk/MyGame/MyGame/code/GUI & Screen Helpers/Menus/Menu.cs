@@ -27,7 +27,7 @@ namespace MyGame
         {
             menuElements = new List<MenuElement>();
             menuTexts = new List<MenuText>();
-            selectionCursor = new MenuElement("A", Vector2.Zero, Vector2.One);
+            selectionCursor = new MenuElement("Selector", new Vector2(-650,0), new Vector2(0.5f, 0.5f));
         }
 
         public void update()

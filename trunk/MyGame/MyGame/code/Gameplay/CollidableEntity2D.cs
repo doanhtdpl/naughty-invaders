@@ -35,6 +35,7 @@ namespace MyGame
             : base(entityFolder, entityName, position, orientation, color, register, id)
         {
             this.damage = damage;
+            this.updateState = tUpdateState.Update;
         }
 
         public virtual void setCollisions()

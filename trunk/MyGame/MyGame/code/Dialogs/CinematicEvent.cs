@@ -26,6 +26,8 @@ namespace MyGame
             this.duration = duration;
         }
 
+        public virtual void startEvent() { }
+        public virtual void endEvent() { }
         // updates the event and returns false when event ends
         public virtual bool update()
         {
@@ -40,7 +42,6 @@ namespace MyGame
         public RenderableEntity2D actor { get; set; }
 
         bool firstUpdate;
-
         bool set;
         Vector3 setAtPosition;
 
@@ -85,6 +86,18 @@ namespace MyGame
             moveToSpeed = speed;
         }
 
+        public override void startEvent()
+        {
+            if (set)
+            {
+                actor.position = setAtPosition;
+            }
+        }
+
+        public override void endEvent()
+        {
+        }
+
         public override bool update()
         {
             bool keepUpdating = true;
@@ -92,10 +105,7 @@ namespace MyGame
             if (firstUpdate)
             {
                 firstUpdate = false;
-                if (set)
-                {
-                    actor.position = setAtPosition;
-                }
+                startEvent();
             }
 
             if (move)
@@ -111,15 +121,23 @@ namespace MyGame
         }
     }
 
-    public enum tDialogCharacter { Wish, OnionElder, KingTomato }
+    public enum tDialogCharacter { Wish = 0, OnionElder, KingTomato }
     class DialogEvent : CinematicEvent
     {
+        public const int N_DIALOG_CHARACTERS = 3;
+
         bool textComplete;
         public tDialogCharacter character { get; set; }
         public string text { get; set; }
         // text speed at characters per second
         public float textSpeed { get; set; }
 
+        public static Texture2D[] portraits;
+        public static Texture2D dialogBackground;
+        public static Rectangle backgroundRectangle;
+        public static Rectangle portraitRectangle;
+
+        int charactersToShow;
 
         public DialogEvent(float activationTime, float durationAfterText, tDialogCharacter character, string text, float textSpeed)
             :base(activationTime, (text.Length / textSpeed) + durationAfterText)
@@ -129,6 +147,19 @@ namespace MyGame
             this.textSpeed = textSpeed;
 
             this.textComplete = false;
+            this.charactersToShow = 0;
+        }
+
+        public static void initialize()
+        {
+            Vector2 pos = Screen.getXYfromCenter(-400, -120);
+            backgroundRectangle = new Rectangle((int)pos.X, (int)pos.Y, 1000, 200);
+            pos = Screen.getXYfromCenter(-520, -125);
+            portraitRectangle = new Rectangle((int)pos.X, (int)pos.Y, 150, 150);
+
+            DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
+            DialogEvent.portraits = new Texture2D[DialogEvent.N_DIALOG_CHARACTERS];
+            DialogEvent.portraits[(int)tDialogCharacter.Wish] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
         }
 
         public override bool update()
@@ -137,21 +168,15 @@ namespace MyGame
 
             timer += SB.dt;
 
-            Vector2 position = new Vector2(0.0f, 0.0f);
-            if (textComplete)
-            {
-                text.renderNI(position, 0.1f);
-            }
-            else
+            if (!textComplete)
             {
                 float timeBuildingText = text.Length / textSpeed;
-                int charactersToShow = (int)(duration * textSpeed);
+                charactersToShow = (int)(timer * textSpeed);
                 if (charactersToShow > text.Length)
                 {
                     charactersToShow = text.Length;
                     textComplete = true;
                 }
-                text.Substring(0, charactersToShow).renderNI(position, 1.0f);
             }
 
             if (timer > duration)
@@ -164,7 +189,22 @@ namespace MyGame
 
         public override void render()
         {
+            GraphicsManager.Instance.spriteBatchBegin();
 
+            GraphicsManager.Instance.spriteBatch.Draw(dialogBackground, backgroundRectangle, Color.White);
+            GraphicsManager.Instance.spriteBatch.Draw(portraits[(int)character], portraitRectangle, Color.White);
+
+            Vector2 position = Screen.getXYfromCenter(new Vector2(70.0f, -190.0f));
+            float scale = 0.86f;
+            if (textComplete)
+            {
+                text.renderNI(position, scale);
+            }
+            else
+            {
+                text.Substring(0, charactersToShow).renderNI(position, scale);
+            }
+            GraphicsManager.Instance.spriteBatchEnd();
         }
     }
 }

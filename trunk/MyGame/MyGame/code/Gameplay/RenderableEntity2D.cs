@@ -16,6 +16,8 @@ namespace MyGame
         public bool flipHorizontal = false;
         public bool flipVertical = false;
 
+        public enum tUpdateState { Update, NoUpdate }
+        public tUpdateState updateState { get; set; }
         public enum tRenderState { Render, NoRender }
         public tRenderState renderState { get; set; }
 

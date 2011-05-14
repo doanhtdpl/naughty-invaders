@@ -13,7 +13,7 @@ namespace MyGame
         const float FULL_CHARGE_DAMAGE = 100.0f;
 
         public PlayerBigShot(Vector3 position, float scale, float chargeValue)
-            : base("playerProjectile", position, 0, Vector2.UnitY, 0.0f, 800, 1, 0.2f, tTeam.Players)
+            : base("blastPlayerProjectile", position, 0, Vector2.UnitY, 0.0f, 800, 1, 0.2f, tTeam.Players)
         {
             playAction("start");
             setCollisions(scale);
