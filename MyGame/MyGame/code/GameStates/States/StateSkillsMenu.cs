@@ -16,7 +16,7 @@ namespace MyGame
         {
             MenuElement me = new MenuElement(buttonTexture, position, scale);
             me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me });
-            MenuElement meLinked = new MenuElement("A", position, scale);
+            MenuElement meLinked = new MenuElement("botoncito", position + new Vector2(120, 0), scale);
             me.linkedElement = meLinked;
             me.drawLinkedElement = GamerManager.getSessionOwner().Player.data.skills[skill].obtained;
 
@@ -33,7 +33,7 @@ namespace MyGame
             MenuElement mb3 = getBuySkillOption("option3", "powerShot", new Vector2(-350, -25), new Vector2(scale.X, scale.Y * 0.8f));
             MenuElement mb4 = getBuySkillOption("option1", "life1", new Vector2(-350, -110), scale);
 
-            MenuElement wish = new MenuElement("menu", new Vector2(250, 0), scale * 0.8f);
+            MenuElement wish = new MenuElement("wishmenu", new Vector2(250, 0), scale * 0.8f);
 
             menu.menuTexts.Add(new MenuText("Skills", new Vector2(0, 280), 1.2f));
             menu.menuTexts.Add(new MenuText("Dash", new Vector2(-370, 120), 0.8f));
@@ -61,7 +61,8 @@ namespace MyGame
 
         public override void initialize()
         {
-            transitionColor = new Color(100, 50, 200, 200);
+            transitionColor = new Color(10, 10, 10, 255);
+            transitionColor *= 0.85f;
             type = StateManager.tGS.SkillsMenu;
             initializeMenu();
             renderAlways = false;

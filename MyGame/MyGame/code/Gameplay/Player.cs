@@ -110,6 +110,8 @@ namespace MyGame
         {
             base.update();
 
+            if (updateState == tUpdateState.NoUpdate) return;
+
             // if invulnerable, update rendering
             if (invulnerableTime > 0.0f)
             {

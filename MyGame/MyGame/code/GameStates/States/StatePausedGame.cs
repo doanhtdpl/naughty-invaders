@@ -46,7 +46,8 @@ namespace MyGame
 
         public override void initialize()
         {
-            transitionColor = new Color(100, 0, 20, 200);
+            transitionColor = new Color(104, 0, 4, 255);
+            transitionColor *= 0.85f;
             type = StateManager.tGS.Pause;
             initializeMenu();
             renderAlways = false;

@@ -14,7 +14,8 @@ namespace MyGame
         public List<CinematicEvent> events = new List<CinematicEvent>();
         public List<CinematicEvent> eventsToUpdate = new List<CinematicEvent>();
 
-        public void update()
+        // returns false when the cinematic ends
+        public bool update()
         {
             timer += SB.dt;
 
@@ -34,9 +35,20 @@ namespace MyGame
             {
                 if (!eventsToUpdate[i].update())
                 {
+                    eventsToUpdate[i].endEvent();
                     eventsToUpdate.RemoveAt(i);
                     --i;
                 }
+            }
+
+            return events.Count + eventsToUpdate.Count > 0;
+        }
+
+        public void render()
+        {
+            for (int i = 0; i < eventsToUpdate.Count; ++i)
+            {
+                eventsToUpdate[i].render();
             }
         }
     }
@@ -46,6 +58,7 @@ namespace MyGame
         static CinematicManager instance = null;
         CinematicManager()
         {
+            DialogEvent.initialize();
         }
         public static CinematicManager Instance
         {
@@ -66,14 +79,14 @@ namespace MyGame
         public void initFakeCinematic()
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(1.0f, 50.0f, GamerManager.getMainPlayer());
+            ActorEvent ae1 = new ActorEvent(0.0f, 12.0f, GamerManager.getMainPlayer());
             ae1.setAt(new Vector3(0.0f, -700.0f, 0.0f));
-            ae1.moveTo(new Vector3(0.0f, 0.0f, 0.0f), 50.0f);
+            ae1.moveTo(new Vector3(0.0f, 0.0f, 0.0f), 200.0f);
 
-            //DialogEvent de1 = new DialogEvent(2.0f, 2.0f, tDialogCharacter.Wish, "Vamos a por ellos!!!", 5.0f);
+            DialogEvent de1 = new DialogEvent(2.0f, 4.0f, tDialogCharacter.Wish, "Vamos a por pepinillos que tengo hambre porque he comido arroz con leche de tu rabo!!!", 70.0f);
 
             cinematic.events.Add((CinematicEvent)ae1);
-            //cinematic.events.Add((CinematicEvent)de1);
+            cinematic.events.Add((CinematicEvent)de1);
             cinematics["fakeCinematic"] = cinematic;
         }
 
@@ -90,21 +103,42 @@ namespace MyGame
 
         public void playCinematic(string cinematic)
         {
+            setUpdatableOnPlayersAndEnemies(false);
             cinematicToPlay = cinematics[cinematic];
+        }
+        public void setUpdatableOnPlayersAndEnemies(bool update)
+        {
+            RenderableEntity2D.tUpdateState updateState = update ? RenderableEntity2D.tUpdateState.Update : RenderableEntity2D.tUpdateState.NoUpdate;
+
+            List<GamerEntity> players = GamerManager.getGamerEntities();
+            for (int i = 0; i < players.Count; ++i)
+            {
+                players[i].Player.updateState = updateState;
+            }
+
+            List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
+            for (int i = 0; i < enemies.Count; ++i)
+            {
+                ((RenderableEntity2D)enemies[i]).updateState = updateState;
+            }
         }
 
         public void update()
         {
             if (cinematicToPlay != null)
             {
-                cinematicToPlay.update();
+                if (!cinematicToPlay.update())
+                {
+                    setUpdatableOnPlayersAndEnemies(true);
+                    cinematicToPlay = null;
+                }
             }
         }
         public void render()
         {
             if (cinematicToPlay != null)
             {
-                cinematicToPlay.update();
+                cinematicToPlay.render();
             }
         }
     }
