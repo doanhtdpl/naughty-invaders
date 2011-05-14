@@ -285,6 +285,7 @@ namespace MyGame
             this.colorButton.TabIndex = 31;
             this.colorButton.Text = "Color";
             this.colorButton.UseVisualStyleBackColor = true;
+            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
             // 
             // colorB
             // 
