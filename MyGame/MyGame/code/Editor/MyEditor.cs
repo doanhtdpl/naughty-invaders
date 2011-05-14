@@ -494,7 +494,7 @@ namespace MyGame
 
                     ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
                     ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
-
+                        
                 }
 
                 foreach (RenderableEntity2D rent in selectedEntities)
