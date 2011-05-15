@@ -76,6 +76,11 @@ namespace MyGame
         Dictionary<string, Cinematic> cinematics = new Dictionary<string, Cinematic>();
         Cinematic cinematicToPlay = null;
 
+        public void addCinematic(string name, Cinematic cinematic)
+        {
+            cinematics[name] = cinematic;
+        }
+
         public void initFakeCinematic()
         {
             Cinematic cinematic = new Cinematic();
@@ -83,12 +88,14 @@ namespace MyGame
             ae1.setAt(new Vector3(0.0f, -700.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, 0.0f, 0.0f), 200.0f);
 
-            DialogEvent de1 = new DialogEvent(2.0f, 4.0f, tDialogCharacter.Wish, "Vamos a por pepinillos que tengo hambre porque he comido arroz con leche de tu rabo!!!", 70.0f);
+            DialogEvent de1 = new DialogEvent(2.0f, 4.0f, tDialogCharacter.Wish, "Vamos a por pepinillos que tengo hambre porque he comido arroz con leche!!!", 70.0f);
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);
             cinematics["fakeCinematic"] = cinematic;
         }
+
+
 
         public string getCharacterName(tDialogCharacter character)
         {

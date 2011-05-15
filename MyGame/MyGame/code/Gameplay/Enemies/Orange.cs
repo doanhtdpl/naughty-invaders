@@ -16,7 +16,7 @@ namespace MyGame
         Vector2 velocity;
         
         public Orange(Vector3 position, float orientation)
-            : base("orange", position, orientation)
+            : base("orange", position, orientation, 3)
         {
             life = 10.0f;
             setCollisions();

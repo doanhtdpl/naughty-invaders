@@ -24,6 +24,7 @@ namespace MyGame
         float invulnerableTime;
         
         // actions stuff
+        float garlicGunCooldownTime;
         float fastShotCooldownTime;
         float dashCooldownTime;
         Vector2 dashVelocity;
@@ -31,6 +32,9 @@ namespace MyGame
         float bigShotChargeTimer;
         bool bigShotCharging;
         float bigShotCooldownTime;
+
+        // special skills stuff
+        public bool usingGarlicGun { get; set; }
 
         public PlayerData data { get; set; }
 
@@ -54,6 +58,9 @@ namespace MyGame
             bigShotChargeTimer = 0.0f;
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
+
+            // special skills stuff
+            usingGarlicGun = false;
 
             data = new PlayerData();
             data.initNewData();
@@ -103,6 +110,68 @@ namespace MyGame
                 case Orb.tOrb.Pet:
                     ++data.petOrbs;
                     break;
+            }
+        }
+
+        public void updateArcadeMoves(Vector2 direction, ControlPad controls)
+        {
+            // dash move
+            if (data.skills["dash1"].obtained)
+            {
+                // update dash velocity
+                dashVelocity -= dashVelocity * DASH_FRICTION * SB.dt;
+
+                if (controls.A_firstPressed() && dashCooldownTime <= 0.0f)
+                {
+                    //playAction("attack");
+                    dashVelocity = direction * DASH_VELOCITY;
+                    dashCooldownTime = data.getDashCooldown();
+                }
+            }
+            // fast shot attack
+            if (controls.X_pressed())
+            {
+                //EnemyManager.Instance.renderDebug();
+                if (fastShotCooldownTime <= 0.0f)
+                {
+                    playAction("attack");
+                    Projectile p = new PlayerFastShot(position, Vector2.UnitY);
+                    fastShotCooldownTime = p.cooldown;
+                    ProjectileManager.Instance.addProjectile(p);
+                    ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
+                }
+            }
+            // big shot attack
+            else if (data.skills["powerShot"].obtained)
+            {
+                if (controls.Y_firstPressed() && bigShotCooldownTime <= 0.0f)
+                {
+                    bigShotCharging = true;
+                }
+
+                if (bigShotCharging)
+                {
+                    if (controls.Y_pressed())
+                    {
+                        bigShotChargeTimer += SB.dt;
+                    }
+                    else if (controls.Y_released())
+                    {
+                        playAction("attack");
+                        // value that goes from 1 to 3 (minimum and maximum charge)
+                        float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) + 1.0f;
+                        // from 0 to 1
+                        float chargeValue = (bigShotValue - 1) * 0.5f;
+                        Projectile p = new PlayerBigShot(position, bigShotValue, chargeValue);
+                        ProjectileManager.Instance.addProjectile(p);
+                        ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
+                            bigShotValue * 0.6f, (int)(20 * bigShotValue), bigShotValue);
+
+                        bigShotCooldownTime = p.cooldown;
+                        bigShotChargeTimer = 0.0f;
+                        bigShotCharging = false;
+                    }
+                }
             }
         }
 
@@ -161,64 +230,34 @@ namespace MyGame
             GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
             orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
 
-            // dash move
-            if (data.skills["dash1"].obtained)
+            if (usingGarlicGun)
             {
-                // update dash velocity
-                dashVelocity -= dashVelocity * DASH_FRICTION * SB.dt;
+                garlicGunCooldownTime -= SB.dt;
+                orientation = Calc.directionToAngle(direction) - Calc.PiOver2;
 
-                if (controls.A_firstPressed() && dashCooldownTime <= 0.0f)
+                // controls of garlic gun
+                if (controls.RS.LengthSquared() > 0.01f)
                 {
-                    //playAction("attack");
-                    dashVelocity = direction * DASH_VELOCITY;
-                    dashCooldownTime = data.getDashCooldown();
-                }
-            }
-            // fast shot attack
-            if (controls.X_pressed())
-            {
-                //EnemyManager.Instance.renderDebug();
-                if (fastShotCooldownTime <= 0.0f)
-                {
-                    playAction("attack");
-                    Projectile p = new PlayerFastShot(position);
-                    fastShotCooldownTime = p.cooldown;
-                    ProjectileManager.Instance.addProjectile(p);
-                    ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
-                }
-            }
-            // big shot attack
-            else if (data.skills["powerShot"].obtained)
-            {
-                if (controls.Y_firstPressed() && bigShotCooldownTime <= 0.0f)
-                {
-                    bigShotCharging = true;
-                }
+                    Vector2 shotDirection = controls.RS;
+                    shotDirection.Normalize();
 
-                if (bigShotCharging)
-                {
-                    if (controls.Y_pressed())
-                    {
-                        bigShotChargeTimer += SB.dt;
-                    }
-                    else if (controls.Y_released())
+                    if (garlicGunCooldownTime <= 0.0f)
                     {
                         playAction("attack");
-                        // value that goes from 1 to 3 (minimum and maximum charge)
-                        float bigShotValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) + 1.0f;
-                        // from 0 to 1
-                        float chargeValue = (bigShotValue - 1) * 0.5f;
-                        Projectile p = new PlayerBigShot(position, bigShotValue, chargeValue);
+                        Projectile p = new GarlicGunShot(position, shotDirection);
+                        garlicGunCooldownTime = p.cooldown;
                         ProjectileManager.Instance.addProjectile(p);
-                        ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
-                            bigShotValue * 0.6f, (int)(20 * bigShotValue), bigShotValue);
-
-                        bigShotCooldownTime = p.cooldown;
-                        bigShotChargeTimer = 0.0f;
-                        bigShotCharging = false;
+                        Vector3 particlesDirection = (shotDirection.toVector3() * 200.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
+                        ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
                     }
                 }
             }
+            else
+            {
+                updateArcadeMoves(direction, controls);
+            }
+
+
 
             if (controls.RB_firstPressed())
             {

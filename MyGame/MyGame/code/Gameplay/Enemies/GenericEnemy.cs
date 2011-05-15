@@ -11,7 +11,7 @@ namespace MyGame
         float nextAttackTimer;
 
         public GenericEnemy(Vector3 position, float orientation, string name)
-            : base(name, position, orientation)
+            : base(name, position, orientation, 1)
         {
             life = 10.0f;
             nextAttackTimer = Calc.randomScalar(2.0f, 2.5f);

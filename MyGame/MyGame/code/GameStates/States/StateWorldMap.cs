@@ -12,11 +12,30 @@ namespace MyGame
     struct WorldMapLocation
     {
         // if level is "", then the node is a follow next node
+        public enum tLocationType { Arcade = 0, Skippable, KingTomato, EpilepticMacedonia }
+        tLocationType type;
         public string level;
 
-        public WorldMapLocation(string level)
+        public WorldMapLocation(string level, tLocationType type)
         {
             this.level = level;
+            this.type = type;
+        }
+
+        public void enter()
+        {
+            switch (type)
+            {
+                case tLocationType.Arcade:
+                    StateManager.gameStates.Add(new StateGame(level));
+                    break;
+                case tLocationType.KingTomato:
+                    StateManager.gameStates.Add(new MinigameKingTomato(level));
+                    break;
+                case tLocationType.EpilepticMacedonia:
+                    StateManager.gameStates.Add(new MinigameEpilepticMacedonia(level));
+                    break;
+            }
         }
     }
 
@@ -29,15 +48,15 @@ namespace MyGame
 
         public void initializeNetwork()
         {
-            WorldMapLocation ml1 = new WorldMapLocation("final_Level01");
+            WorldMapLocation ml1 = new WorldMapLocation("final_Level01", WorldMapLocation.tLocationType.Arcade);
             NetworkNode<WorldMapLocation> nn1 = nodes.addNode(ml1, new Vector3(-450.0f, 120.0f, 200.0f));
-            WorldMapLocation ml2 = new WorldMapLocation("onionVillage");
+            WorldMapLocation ml2 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
             NetworkNode<WorldMapLocation> nn2 = nodes.addNode(ml2, new Vector3(200.0f, 300.0f, 200.0f));
-            NetworkNode<WorldMapLocation> nnInter1 = nodes.addNode(new WorldMapLocation(""), new Vector3(200.0f, 295.0f, 200.0f));
-            NetworkNode<WorldMapLocation> nnInter2 = nodes.addNode(new WorldMapLocation(""), new Vector3(90.0f, 200.0f, 200.0f));
-            WorldMapLocation ml3 = new WorldMapLocation("epilepticMacedonia");
+            NetworkNode<WorldMapLocation> nnInter1 = nodes.addNode(new WorldMapLocation("", WorldMapLocation.tLocationType.Skippable), new Vector3(200.0f, 295.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nnInter2 = nodes.addNode(new WorldMapLocation("", WorldMapLocation.tLocationType.Skippable), new Vector3(90.0f, 200.0f, 200.0f));
+            WorldMapLocation ml3 = new WorldMapLocation("epilepticMacedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
             NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml2, new Vector3(100.0f, 0.0f, 200.0f));
-            WorldMapLocation ml4 = new WorldMapLocation("level2");
+            WorldMapLocation ml4 = new WorldMapLocation("level2", WorldMapLocation.tLocationType.Arcade);
             NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml2, new Vector3(600.0f, 100.0f, 200.0f));
             currentNode = nn1;
             nodes.addDoubleLink(nn1, nn2);
@@ -110,7 +129,7 @@ namespace MyGame
                     if (cp.A_firstPressed())
                     {
                         StateManager.clearStates();
-                        StateManager.gameStates.Add(new StateGame(currentNode.value.level));
+                        currentNode.value.enter();
                     }
                 }
             }

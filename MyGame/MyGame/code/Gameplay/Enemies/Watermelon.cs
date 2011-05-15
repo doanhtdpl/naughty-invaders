@@ -21,7 +21,7 @@ namespace MyGame
         float nextAttackTimer;
 
         public Watermelon(Vector3 position, float orientation)
-            : base("watermelon", position, orientation)
+            : base("watermelon", position, orientation, 4)
         {
             life = 100.0f;
 

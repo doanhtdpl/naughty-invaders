@@ -11,7 +11,7 @@ namespace MyGame
         const float SPEED = 600.0f;
 
         public Calsot(Vector3 position, float orientation)
-            : base("calsot", position, orientation)
+            : base("calsot", position, orientation, 2)
         {
             setCollisions();
         }

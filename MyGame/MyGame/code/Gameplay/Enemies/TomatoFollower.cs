@@ -6,15 +6,18 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    public class Tomato : Enemy
+    public class TomatoFollower : Enemy
     {
-        const float SPEED = 400.0f;
-        const float LATERAL_SPEED = 1.0f;
+        const float MIN_SPEED = 300.0f;
+        const float MAX_SPEED = 450.0f;
 
-        public Tomato(Vector3 position, float orientation)
+        float speed;
+
+        public TomatoFollower(Vector3 position, float orientation)
             : base("tomato", position, orientation, 1)
         {
             life = 10.0f;
+            speed = Calc.randomScalar(MIN_SPEED, MAX_SPEED);
             setCollisions();
         }
 
@@ -32,7 +35,7 @@ namespace MyGame
         public override void die()
         {
             base.die();
-            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero, Color.White);
+            ParticleManager.Instance.addParticles("tomatoDies", this.position, Vector3.Zero, Color.White);
         }
 
         public override void update()
@@ -40,9 +43,10 @@ namespace MyGame
             base.update();
 
             // always move down
-            Vector3 posToAdd = new Vector3(0, -SPEED, 0) * SB.dt;
+            Vector3 posToAdd = (GamerManager.getSessionOwner().Player.position - position);
             // go to the player
-            posToAdd.X += (GamerManager.getSessionOwner().Player.position.X - position.X) * LATERAL_SPEED * SB.dt;
+            posToAdd.Normalize();
+            posToAdd += posToAdd * speed * SB.dt;
 
             position += posToAdd;
         }

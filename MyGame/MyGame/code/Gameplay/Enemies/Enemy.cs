@@ -8,9 +8,12 @@ namespace MyGame
 {
     public class Enemy : CollidableEntity2D
     {
-        public Enemy(string entityName, Vector3 position, float orientation, int id = -1)
+        public int enemyLevel { get; set; }
+
+        public Enemy(string entityName, Vector3 position, float orientation, int enemyLevel, int id = -1)
             : base("enemies", entityName, position, orientation, Color.White, id)
         {
+            this.enemyLevel = enemyLevel;
         }
 
         public override void setCollisions()
@@ -25,7 +28,7 @@ namespace MyGame
 
         public override void die()
         {
-            OrbManager.Instance.addRandomOrbs( 3, position2D);
+            OrbManager.Instance.addRandomOrbs( enemyLevel, position2D);
             base.die();
         }
 
