@@ -11,14 +11,41 @@ using System.Reflection;
 
 namespace MyGame
 {
+    class MenuCursor
+    {
+        MenuElement leftCursor;
+        MenuElement rightCursor;
+
+        public MenuCursor(string textureName, Vector2 scale, bool drawLinkedElement = false)
+        {
+            leftCursor = new MenuElement(textureName, Vector2.Zero, scale);
+            rightCursor = new MenuElement(textureName, Vector2.Zero, scale);
+        }
+
+        public void updatePositionAndScale(Vector2 position, Vector2 scale)
+        {
+            leftCursor.Position = position + new Vector2(-240, 0);
+            leftCursor.Scale = scale * 0.7f;
+            rightCursor.Position = position + new Vector2(260, 0);
+            rightCursor.Scale = scale * 0.7f;
+
+        }
+
+        public void render()
+        {
+            leftCursor.render(false);
+            rightCursor.render(false, true);
+        }
+    }
+
     class Menu
     {
-        public MenuElement selectionCursor { get; set; }
+        public MenuCursor selectionCursor { get; set; }
         public MenuElement currentNode { get; set; }
         public void setCurrentNode(MenuElement value)
         {
             currentNode = value;
-            selectionCursor.Position = currentNode.Position;
+            selectionCursor.updatePositionAndScale( currentNode.Position, currentNode.Scale );
         }
         public List<MenuElement> menuElements { get; set; }
         public List<MenuText> menuTexts { get; set; }
@@ -27,7 +54,7 @@ namespace MyGame
         {
             menuElements = new List<MenuElement>();
             menuTexts = new List<MenuText>();
-            selectionCursor = new MenuElement("Selector", new Vector2(-650,0), new Vector2(0.5f, 0.5f));
+            selectionCursor = new MenuCursor("Selector", new Vector2(0.5f, 0.5f));
         }
 
         public void update()
@@ -52,7 +79,7 @@ namespace MyGame
             GraphicsManager.Instance.spriteBatchBegin();
             for (int i = 0; i < menuElements.Count; ++i)
             {
-                menuElements[i].render();
+                menuElements[i].render(menuElements[i] == currentNode);
             }
             for (int i = 0; i < menuTexts.Count; ++i)
             {
