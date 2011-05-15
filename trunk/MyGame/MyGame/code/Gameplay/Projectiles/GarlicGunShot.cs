@@ -6,10 +6,10 @@ using Microsoft.Xna.Framework;
 
 namespace MyGame
 {
-    class PlayerFastShot : Projectile
+    class GarlicGunShot : Projectile
     {
-        public PlayerFastShot(Vector3 position, Vector2 direction)
-            : base("playerProjectile", position, 0, direction, 10, 800, 1, 0.08f, tTeam.Players)
+        public GarlicGunShot(Vector3 position, Vector2 direction)
+            : base("playerProjectile", position, 0, direction, 10, 1000, 1, 0.05f, tTeam.Players)
         {
             playAction("start");
             setCollisions();

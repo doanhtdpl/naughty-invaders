@@ -37,7 +37,6 @@ namespace MyGame
             CinematicManager.Instance.initFakeCinematic();
         }
 
-
         public void restartLevel()
         {
         }
@@ -47,7 +46,6 @@ namespace MyGame
 
         public override void loadContent()
         {
-
         }
 
         bool addCameraNodes = true;

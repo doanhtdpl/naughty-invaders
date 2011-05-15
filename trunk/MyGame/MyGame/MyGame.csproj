@@ -145,6 +145,8 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
+    <Compile Include="code\Gameplay\Enemies\TomatoFollower.cs" />
+    <Compile Include="code\Gameplay\Projectiles\GarlicGunShot.cs" />
     <Compile Include="code\Gameplay\WorldMapPlayer.cs" />
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
@@ -161,6 +163,8 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\WatermelonProjectile.cs" />
+    <Compile Include="code\GameStates\States\MinigameEpilepticMacedonia.cs" />
+    <Compile Include="code\GameStates\States\MinigameKingTomato.cs" />
     <Compile Include="code\GameStates\States\StateSkillsMenu.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuElement.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuFunctions.cs" />

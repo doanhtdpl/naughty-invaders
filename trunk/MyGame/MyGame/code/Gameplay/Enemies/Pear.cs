@@ -23,7 +23,7 @@ namespace MyGame
         tPearState state;
 
         public Pear(Vector3 position, float orientation)
-            : base("pear", position, orientation)
+            : base("pear", position, orientation, 3)
         {
             life = 100.0f;
             nextAttackTimer = Calc.randomScalar(4.0f, 5.5f);

@@ -22,7 +22,7 @@ namespace MyGame
         float nextAttackTimer;
 
         public Grape(Vector3 position, float orientation)
-            : base("grape", position, orientation)
+            : base("grape", position, orientation, 2)
         {
             life = 40.0f;
              
