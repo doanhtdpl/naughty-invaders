@@ -224,7 +224,11 @@ namespace MyGame
 
         public static void renderNI(this String str, Vector2 position, float scale)
         {
-            render(str, position, scale, Color.BlueViolet, tTextAlignment.Centered, SB.font, 770, 40 * scale, Color.Purple, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Border);
+            render(str, position, scale, Color.BlueViolet, tTextAlignment.Centered, SB.font, 770, 60 * scale, Color.Purple, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Border);
+        }
+        public static void renderNIDescription(this String str, Vector2 position, float scale)
+        {
+            render(str, position, scale, Color.BlueViolet, tTextAlignment.Centered, SB.font, 500, 40 * scale, Color.Blue, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Border);
         }
 
         private static void updateAlignment(tTextAlignment alignment, int positionX, int sizeX, int first, int last)

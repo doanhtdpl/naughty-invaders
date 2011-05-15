@@ -12,7 +12,7 @@ namespace MyGame
     {
         Menu menu;
 
-        MenuElement getBuySkillOption(string buttonTexture, string skill, Vector2 position, Vector2 scale)
+        MenuElement getBuySkillOption(string buttonTexture, string skill, string skillDescription, Vector2 position, Vector2 scale)
         {
             MenuElement me = new MenuElement(buttonTexture, position, scale);
             me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me });
@@ -20,26 +20,40 @@ namespace MyGame
             me.linkedElement = meLinked;
             me.drawLinkedElement = GamerManager.getSessionOwner().Player.data.skills[skill].obtained;
 
+            me.description = skillDescription;
+            me.DescriptionPosition = new Vector2(140, 140);
+
             return me;
         }
 
         void initializeMenu()
         {
             menu = new Menu();
-            Vector2 scale = new Vector2(0.8f, 0.8f);
-            MenuElement mbHeader = new MenuElement("smallHeader", new Vector2(0, 250), scale);
-            MenuElement mb1 = getBuySkillOption("option1", "dash1", new Vector2(-350, 100), scale);
-            MenuElement mb2 = getBuySkillOption("option2", "plasma", new Vector2(-350, 30), scale);
-            MenuElement mb3 = getBuySkillOption("option3", "powerShot", new Vector2(-350, -25), new Vector2(scale.X, scale.Y * 0.8f));
-            MenuElement mb4 = getBuySkillOption("option1", "life1", new Vector2(-350, -110), scale);
+            Vector2 scale = new Vector2(0.7f, 0.7f);
 
-            MenuElement wish = new MenuElement("wishmenu", new Vector2(250, 0), scale * 0.8f);
+            MenuElement wish = new MenuElement("wishmenu", new Vector2(320, -50), scale * 0.8f);
+            //wish.color = new Color(0.6f, 0.6f, 0.6f, 0.6f);
+
+            MenuElement mbHeader = new MenuElement("smallHeader", new Vector2(0, 250), scale);
+            MenuElement mb1 = getBuySkillOption("option1", "dash1",
+                "Press ::A to make a quick dash",
+                new Vector2(-350, 140), scale);
+            MenuElement mb2 = getBuySkillOption("option2", "plasma",
+                "Improve your main attack with plasma power",
+                new Vector2(-350, 70), scale);
+            MenuElement mb3 = getBuySkillOption("option3", "powerShot",
+                "Press ::Y to shot a secondary powerful attack. Keep ::Y pressed to charge the attack", 
+                new Vector2(-350, 15), new Vector2(scale.X, scale.Y * 0.8f));
+            MenuElement mb4 = getBuySkillOption("option1", "life1",
+                "Get an additional permanent life portion to your life bar",
+                new Vector2(-350, -70), scale);
+            MenuElement mbDescriptionHeader = new MenuElement("largeHeader", new Vector2(150, 80), new Vector2(1.3f, 0.4f));
 
             menu.menuTexts.Add(new MenuText("Skills", new Vector2(0, 280), 1.2f));
-            menu.menuTexts.Add(new MenuText("Dash", new Vector2(-370, 120), 0.8f));
-            menu.menuTexts.Add(new MenuText("Plasma", new Vector2(-335, 55), 0.8f));
-            menu.menuTexts.Add(new MenuText("Power Shot", new Vector2(-345, -5), 0.8f));
-            menu.menuTexts.Add(new MenuText("Life", new Vector2(-370, -70), 0.8f));
+            menu.menuTexts.Add(new MenuText("Dash", new Vector2(-370, 160), 0.8f));
+            menu.menuTexts.Add(new MenuText("Plasma", new Vector2(-335, 95), 0.8f));
+            menu.menuTexts.Add(new MenuText("Power Shot", new Vector2(-345, 35), 0.8f));
+            menu.menuTexts.Add(new MenuText("Life", new Vector2(-370, -30), 0.8f));
             menu.menuTexts.Add(new MenuText("Press ::B to go back", new Vector2(250, -230), 1.0f));
 
             mb1.upNode = mb4;
@@ -50,12 +64,13 @@ namespace MyGame
             mb3.downNode = mb4;
             mb4.upNode = mb3;
             mb4.downNode = mb1;
+            menu.menuElements.Add(wish);
             menu.menuElements.Add(mbHeader);
+            menu.menuElements.Add(mbDescriptionHeader);
             menu.menuElements.Add(mb1);
             menu.menuElements.Add(mb2);
             menu.menuElements.Add(mb3);
             menu.menuElements.Add(mb4);
-            menu.menuElements.Add(wish);
             menu.setCurrentNode(mb1);
         }
 

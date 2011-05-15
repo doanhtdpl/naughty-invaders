@@ -35,6 +35,20 @@ namespace MyGame
         Rectangle toDraw;
         Texture2D texture;
         Vector2 position;
+        public Color color { get; set; }
+        public string description { get; set; }
+        Vector2 descriptionPosition;
+        public Vector2 DescriptionPosition
+        {
+            get
+            {
+                return descriptionPosition;
+            }
+            set
+            {
+                descriptionPosition = Screen.getXYfromCenter(value);
+            }
+        }
 
         public bool drawLinkedElement { get; set; }
         public MenuElement linkedElement { get; set; }
@@ -75,6 +89,8 @@ namespace MyGame
             
         public MenuElement(string textureName, Vector2 position, Vector2 scale, bool drawLinkedElement = false)
         {
+            this.description = null;
+            this.color = Color.White;
             this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
             this.position = Screen.getXYfromCenter(position);
             this.scale = scale;
@@ -161,12 +177,27 @@ namespace MyGame
             return false;
         }
 
-        public void render()
+        public void render(bool selected, bool flip = false)
         {
-            GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, Color.White);
+            if (flip)
+            {
+                GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, null, color, 0.0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0f);
+            }
+            else
+            {
+                GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, color);
+            }
             if (drawLinkedElement)
             {
-                linkedElement.render();
+                linkedElement.render(true);
+            }
+
+            if (selected)
+            {
+                if (description != null)
+                {
+                    description.renderNIDescription(descriptionPosition, 0.8f);
+                }
             }
         }
     }
