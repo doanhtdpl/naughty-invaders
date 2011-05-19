@@ -36,7 +36,7 @@ namespace MyGame
 
         public void addRandomOrbs(int enemyLevel, Vector2 position)
         {
-            int XP = enemyLevel * 2;
+            int XP = enemyLevel;
             if (Calc.randomScalar() < LIFE_ORB_PROBABILITY)
             {
                 addOrbs(position, XP, enemyLevel, 0, 0);
