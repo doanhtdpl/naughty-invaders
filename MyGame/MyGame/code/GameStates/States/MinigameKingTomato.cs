@@ -38,7 +38,7 @@ namespace MyGame
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
             Camera2D.position = new Vector3(0.0f, 0.0f, 2000.0f);
 
-            GamerManager.getMainPlayer().usingGarlicGun = true;
+            GamerManager.getMainPlayer().mode = Player.tMode.GarlicGun;
 
             EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
         }
@@ -181,7 +181,7 @@ namespace MyGame
         
         public override void dispose()
         {
-            GamerManager.getMainPlayer().usingGarlicGun = false;
+            GamerManager.getMainPlayer().mode = Player.tMode.Arcade;
         }
     }
 }

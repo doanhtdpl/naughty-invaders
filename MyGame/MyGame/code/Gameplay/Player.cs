@@ -10,6 +10,9 @@ namespace MyGame
 {
     class Player : CollidableEntity2D
     {
+        public enum tMode { Arcade, GarlicGun, SavingItems }
+        public tMode mode { get; set; }
+
         public const float SPEED = 500;
         public const float INVULNERABLE_TIME = 3.0f;
 
@@ -33,9 +36,6 @@ namespace MyGame
         bool bigShotCharging;
         float bigShotCooldownTime;
 
-        // special skills stuff
-        public bool usingGarlicGun { get; set; }
-
         public PlayerData data { get; set; }
 
         static Texture bigShotBall = null;
@@ -58,9 +58,6 @@ namespace MyGame
             bigShotChargeTimer = 0.0f;
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
-
-            // special skills stuff
-            usingGarlicGun = false;
 
             data = new PlayerData();
             data.initNewData();
@@ -113,7 +110,7 @@ namespace MyGame
             }
         }
 
-        public void updateArcadeMoves(Vector2 direction, ControlPad controls)
+        public void updateArcadeMode(Vector2 direction, ControlPad controls)
         {
             // dash move
             if (data.skills["dash1"].obtained)
@@ -174,13 +171,29 @@ namespace MyGame
                 }
             }
         }
-
-        public void update(ControlPad controls)
+        public void updateGarlicGunMode(ControlPad controls)
         {
-            base.update();
+            garlicGunCooldownTime -= SB.dt;
 
-            if (updateState == tUpdateState.NoUpdate) return;
+            // controls of garlic gun
+            if (controls.RS.LengthSquared() > 0.01f)
+            {
+                Vector2 shotDirection = controls.RS;
+                shotDirection.Normalize();
 
+                if (garlicGunCooldownTime <= 0.0f)
+                {
+                    playAction("attack");
+                    Projectile p = new GarlicGunShot(position, shotDirection);
+                    garlicGunCooldownTime = p.cooldown;
+                    ProjectileManager.Instance.addProjectile(p);
+                    Vector3 particlesDirection = (shotDirection.toVector3() * 200.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
+                    ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
+                }
+            }
+        }
+        public void updateInvulnerableAfterHit()
+        {
             // if invulnerable, update rendering
             if (invulnerableTime > 0.0f)
             {
@@ -194,73 +207,83 @@ namespace MyGame
                     renderState = tRenderState.Render;
                 }
             }
+        }
+        void updateCameraMove()
+        {
+            if (CameraManager.Instance.cameraMode == CameraManager.tCameraMode.Nodes)
+            {
+                position += CameraManager.Instance.getCameraVelocityXY();
+            }
+        }
+        void updateDash()
+        {
+            dashParticleTimer -= SB.dt;
+            if (dashParticleTimer < 0.0f)
+            {
+                dashParticleTimer = DASH_PARTICLE_SPAWN_TIME;
+                ParticleManager.Instance.addParticles("dash", position, new Vector3(dashVelocity * 0.05f, 0.0f), Color.White);
+            }
+            position2D += dashVelocity * SB.dt;
+
+            if (dashVelocity.Length() < DASH_SPEED_THRESHOLD)
+            {
+                dashVelocity = Vector2.Zero;
+            }
+        }
+        public void update(ControlPad controls)
+        {
+            base.update();
+
+            if (updateState == tUpdateState.NoUpdate) return;
+
+            updateInvulnerableAfterHit();
 
             fastShotCooldownTime -= SB.dt;
             bigShotCooldownTime -= SB.dt;
             dashCooldownTime -= SB.dt;
 
-            Vector2 direction = Vector2.Zero;
-            if (CameraManager.Instance.cameraMode == CameraManager.tCameraMode.Nodes)
-            {
-                position += CameraManager.Instance.getCameraVelocityXY();
-            }
+            updateCameraMove();
 
+            Vector2 direction = Vector2.Zero;
             if (dashVelocity != Vector2.Zero)
             {
-                dashParticleTimer -= SB.dt;
-                if (dashParticleTimer < 0.0f)
-                {
-                    dashParticleTimer = DASH_PARTICLE_SPAWN_TIME;
-                    ParticleManager.Instance.addParticles("dash", position, new Vector3(dashVelocity * 0.05f, 0.0f), Color.White);
-                }
-                position2D += dashVelocity * SB.dt;
-
-                if (dashVelocity.Length() < DASH_SPEED_THRESHOLD)
-                {
-                    dashVelocity = Vector2.Zero;
-                }
+                updateDash();
             }
             else // in the middle of a dash the controls are blocked...
             {
-                direction = controls.LS;
+                if (mode == tMode.SavingItems)
+                {
+                    direction = controls.LS;
+                    direction.Y = 0.0f;
+                    if (direction.X > 0.75f) direction.X = 1.0f;
+                    if (direction.X < -0.75f) direction.X = -1.0f;
+                }
+                else
+                {
+                    direction = controls.LS;
+                }
             }
 
             Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
-
             GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
             if (controls.LS.LengthSquared() > 0.01f)
             {
                 orientation = Calc.directionToAngle(new Vector2(controls.LS.X, controls.LS.Y)) - Calc.PiOver2;
             }
 
-            if (usingGarlicGun)
+            switch (mode)
             {
-                garlicGunCooldownTime -= SB.dt;
-
-                // controls of garlic gun
-                if (controls.RS.LengthSquared() > 0.01f)
-                {
-                    Vector2 shotDirection = controls.RS;
-                    shotDirection.Normalize();
-
-                    if (garlicGunCooldownTime <= 0.0f)
-                    {
-                        playAction("attack");
-                        Projectile p = new GarlicGunShot(position, shotDirection);
-                        garlicGunCooldownTime = p.cooldown;
-                        ProjectileManager.Instance.addProjectile(p);
-                        Vector3 particlesDirection = (shotDirection.toVector3() * 200.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
-                        ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
-                    }
-                }
-            }
-            else
-            {
-                updateArcadeMoves(direction, controls);
+                case tMode.Arcade:
+                    updateArcadeMode(direction, controls);
+                    break;
+                case tMode.GarlicGun:
+                    updateGarlicGunMode(controls);
+                    break;
+                case tMode.SavingItems:
+                    break;
             }
 
-
-
+#if DEBUG
             if (controls.RB_firstPressed())
             {
                 EnemySpawnZone esz = new EnemySpawnZone("grape", new Rectangle(-300, 900, 600, 500), 3);
@@ -277,6 +300,7 @@ namespace MyGame
             {
                 CinematicManager.Instance.playCinematic("fakeCinematic");
             }
+#endif
         }
 
         public override void render()

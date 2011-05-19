@@ -38,6 +38,18 @@ namespace MyGame
         {
             return Vector3.Cross(new Vector3(a, 0), new Vector3(b, 0)).Z;
         }
+        public static int clamp(int value, int min, int max)
+        {
+            if (value < min)
+            {
+                return min;
+            }
+            else if (value > max)
+            {
+                return max;
+            }
+            return value;
+        }
 
         #region Random
         private static Random random = new Random();
@@ -151,18 +163,6 @@ namespace MyGame
                 dif -= Calc.TwoPi;
             return dif;
         }
-        public static int clamp(int value, int min, int max)
-        {
-            if (value < min)
-            {
-                return min;
-            }
-            else if (value > max)
-            {
-                return max;
-            }
-            return value;
-        }
         public static float clampAngle(float value, float min, float max)
         {
             if (getDeltaOfAngles(value, min) > 0)
@@ -174,6 +174,31 @@ namespace MyGame
                 return max;
             }
             return value;
+        }
+        public static Vector2 fromDirectionToDirectionAtSpeed(Vector2 from, Vector2 to, float speed)
+        {
+            return angleToDirection(fromAngleToAngleAtSpeed(directionToAngle(from), directionToAngle(to), speed));
+        }
+        public static float fromAngleToAngleAtSpeed(float from, float to, float speed)
+        {
+            float delta = getDeltaOfAngles(from, to);
+            float increment = speed * SB.dt;
+            if (delta < 0.0f)
+            {
+                if (-increment < delta)
+                {
+                    return to;
+                }
+                return from - increment;
+            }
+            else
+            {
+                if (increment > delta)
+                {
+                    return to;
+                }
+                return from + increment;
+            }
         }
         #endregion
         #region Ray intersections
