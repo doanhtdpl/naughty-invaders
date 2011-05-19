@@ -27,12 +27,15 @@ namespace MyGame
             switch (type)
             {
                 case tLocationType.Arcade:
+                    StateManager.dequeueState(1);
                     StateManager.gameStates.Add(new StateGame(level));
                     break;
                 case tLocationType.KingTomato:
+                    StateManager.dequeueState(1);
                     StateManager.gameStates.Add(new MinigameKingTomato(level));
                     break;
                 case tLocationType.EpilepticMacedonia:
+                    StateManager.dequeueState(1);
                     StateManager.gameStates.Add(new MinigameEpilepticMacedonia(level));
                     break;
             }

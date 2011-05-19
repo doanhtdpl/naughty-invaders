@@ -228,12 +228,14 @@ namespace MyGame
             Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
 
             GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
-            orientation = Calc.directionToAngle(new Vector2(controls.RS.X, controls.RS.Y));
+            if (controls.LS.LengthSquared() > 0.01f)
+            {
+                orientation = Calc.directionToAngle(new Vector2(controls.LS.X, controls.LS.Y)) - Calc.PiOver2;
+            }
 
             if (usingGarlicGun)
             {
                 garlicGunCooldownTime -= SB.dt;
-                orientation = Calc.directionToAngle(direction) - Calc.PiOver2;
 
                 // controls of garlic gun
                 if (controls.RS.LengthSquared() > 0.01f)

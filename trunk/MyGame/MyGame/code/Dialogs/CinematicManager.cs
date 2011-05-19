@@ -59,6 +59,7 @@ namespace MyGame
         CinematicManager()
         {
             DialogEvent.initialize();
+            cinematicToPlay = null;
         }
         public static CinematicManager Instance
         {
@@ -74,7 +75,7 @@ namespace MyGame
 
         // have stored from the beginning all of the cinematics of each level
         Dictionary<string, Cinematic> cinematics = new Dictionary<string, Cinematic>();
-        Cinematic cinematicToPlay = null;
+        public Cinematic cinematicToPlay { get; set; }
 
         public void addCinematic(string name, Cinematic cinematic)
         {
@@ -94,8 +95,6 @@ namespace MyGame
             cinematic.events.Add((CinematicEvent)de1);
             cinematics["fakeCinematic"] = cinematic;
         }
-
-
 
         public string getCharacterName(tDialogCharacter character)
         {
