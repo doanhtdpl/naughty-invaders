@@ -12,8 +12,14 @@ namespace MyGame
     {
         public int executionTimes = 1;
 
+        Vector2 position;
         List<TriggerFunction> conditions = new List<TriggerFunction>();
         List<TriggerFunction> executions = new List<TriggerFunction>();
+
+        public void setPosition(Vector2 position)
+        {
+            this.position = position;
+        }
 
         public void addFunction(bool isCondition, string functionName, params object[] parameters)
         {
@@ -65,6 +71,21 @@ namespace MyGame
             }
             --executionTimes;
             return executionTimes > 0;
+        }
+
+        public void render()
+        {
+            DebugManager.Instance.addCircle(position, 10, 10, Color.Yellow);
+
+            foreach (TriggerFunction func in conditions)
+            {
+                func.render();
+            }
+
+            foreach (TriggerFunction func in executions)
+            {
+                func.render();
+            }
         }
     }
 }

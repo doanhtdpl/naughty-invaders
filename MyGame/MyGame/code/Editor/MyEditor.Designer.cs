@@ -101,7 +101,13 @@ namespace MyGame
             this.enemiesCombo = new System.Windows.Forms.ComboBox();
             this.addEnemyZoneButton = new System.Windows.Forms.Button();
             this.triggers = new System.Windows.Forms.TabPage();
+            this.editTriggerButton = new System.Windows.Forms.Button();
+            this.availableConsecuences = new System.Windows.Forms.ComboBox();
+            this.availableConditions = new System.Windows.Forms.ComboBox();
+            this.addTriggerButton = new System.Windows.Forms.Button();
             this.effects = new System.Windows.Forms.TabPage();
+            this.addEffectButton = new System.Windows.Forms.Button();
+            this.effectsCombo = new System.Windows.Forms.ComboBox();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
@@ -110,6 +116,8 @@ namespace MyGame
             this.cameraNodePanel.SuspendLayout();
             this.colisions.SuspendLayout();
             this.enemyZones.SuspendLayout();
+            this.triggers.SuspendLayout();
+            this.effects.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonImportLevel
@@ -514,6 +522,7 @@ namespace MyGame
             this.texturesCombo.Size = new System.Drawing.Size(183, 21);
             this.texturesCombo.TabIndex = 212;
             this.texturesCombo.TabStop = false;
+            this.texturesCombo.SelectedIndexChanged += new System.EventHandler(this.texturesCombo_SelectedIndexChanged);
             // 
             // selectGroup
             // 
@@ -936,6 +945,10 @@ namespace MyGame
             // 
             // triggers
             // 
+            this.triggers.Controls.Add(this.editTriggerButton);
+            this.triggers.Controls.Add(this.availableConsecuences);
+            this.triggers.Controls.Add(this.availableConditions);
+            this.triggers.Controls.Add(this.addTriggerButton);
             this.triggers.Location = new System.Drawing.Point(4, 22);
             this.triggers.Name = "triggers";
             this.triggers.Size = new System.Drawing.Size(877, 100);
@@ -943,14 +956,87 @@ namespace MyGame
             this.triggers.Text = "Triggers";
             this.triggers.UseVisualStyleBackColor = true;
             // 
+            // editTriggerButton
+            // 
+            this.editTriggerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editTriggerButton.Location = new System.Drawing.Point(7, 50);
+            this.editTriggerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editTriggerButton.Name = "editTriggerButton";
+            this.editTriggerButton.Size = new System.Drawing.Size(60, 28);
+            this.editTriggerButton.TabIndex = 216;
+            this.editTriggerButton.Text = "Edit Trigger";
+            this.editTriggerButton.UseVisualStyleBackColor = true;
+            // 
+            // availableConsecuences
+            // 
+            this.availableConsecuences.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.availableConsecuences.CausesValidation = false;
+            this.availableConsecuences.FormattingEnabled = true;
+            this.availableConsecuences.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.availableConsecuences.Location = new System.Drawing.Point(83, 53);
+            this.availableConsecuences.Name = "availableConsecuences";
+            this.availableConsecuences.Size = new System.Drawing.Size(183, 21);
+            this.availableConsecuences.TabIndex = 215;
+            this.availableConsecuences.TabStop = false;
+            // 
+            // availableConditions
+            // 
+            this.availableConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.availableConditions.CausesValidation = false;
+            this.availableConditions.FormattingEnabled = true;
+            this.availableConditions.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.availableConditions.Location = new System.Drawing.Point(83, 13);
+            this.availableConditions.Name = "availableConditions";
+            this.availableConditions.Size = new System.Drawing.Size(183, 21);
+            this.availableConditions.TabIndex = 214;
+            this.availableConditions.TabStop = false;
+            // 
+            // addTriggerButton
+            // 
+            this.addTriggerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTriggerButton.Location = new System.Drawing.Point(7, 10);
+            this.addTriggerButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addTriggerButton.Name = "addTriggerButton";
+            this.addTriggerButton.Size = new System.Drawing.Size(60, 28);
+            this.addTriggerButton.TabIndex = 211;
+            this.addTriggerButton.Text = "Add Trigger";
+            this.addTriggerButton.UseVisualStyleBackColor = true;
+            this.addTriggerButton.Click += new System.EventHandler(this.button_Click);
+            // 
             // effects
             // 
+            this.effects.Controls.Add(this.effectsCombo);
+            this.effects.Controls.Add(this.addEffectButton);
             this.effects.Location = new System.Drawing.Point(4, 22);
             this.effects.Name = "effects";
             this.effects.Size = new System.Drawing.Size(877, 100);
             this.effects.TabIndex = 5;
             this.effects.Text = "Effects";
             this.effects.UseVisualStyleBackColor = true;
+            // 
+            // addEffectButton
+            // 
+            this.addEffectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEffectButton.Location = new System.Drawing.Point(7, 10);
+            this.addEffectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addEffectButton.Name = "addEffectButton";
+            this.addEffectButton.Size = new System.Drawing.Size(60, 28);
+            this.addEffectButton.TabIndex = 212;
+            this.addEffectButton.Text = "Add Effect";
+            this.addEffectButton.UseVisualStyleBackColor = true;
+            this.addEffectButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // effectsCombo
+            // 
+            this.effectsCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.effectsCombo.CausesValidation = false;
+            this.effectsCombo.FormattingEnabled = true;
+            this.effectsCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.effectsCombo.Location = new System.Drawing.Point(72, 13);
+            this.effectsCombo.Name = "effectsCombo";
+            this.effectsCombo.Size = new System.Drawing.Size(183, 21);
+            this.effectsCombo.TabIndex = 215;
+            this.effectsCombo.TabStop = false;
             // 
             // myEditorControl
             // 
@@ -990,6 +1076,8 @@ namespace MyGame
             this.colisions.ResumeLayout(false);
             this.enemyZones.ResumeLayout(false);
             this.enemyZones.PerformLayout();
+            this.triggers.ResumeLayout(false);
+            this.effects.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1070,6 +1158,12 @@ namespace MyGame
         public System.Windows.Forms.ComboBox enemiesCombo;
         public System.Windows.Forms.TextBox enemyCount;
         private System.Windows.Forms.TabPage effects;
+        private System.Windows.Forms.Button addTriggerButton;
+        public System.Windows.Forms.ComboBox availableConditions;
+        private System.Windows.Forms.Button editTriggerButton;
+        public System.Windows.Forms.ComboBox availableConsecuences;
+        private System.Windows.Forms.Button addEffectButton;
+        public System.Windows.Forms.ComboBox effectsCombo;
     }
 }
 #endif
