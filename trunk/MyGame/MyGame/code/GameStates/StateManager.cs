@@ -19,8 +19,11 @@ namespace MyGame
         {
             // inicializamos el primer estado del juego
 #if ONLY_GAMEPLAY
+#if EDITOR
+            gameStates.Add(new StateGame());
+#else
             gameStates.Add(new StateWorldMap());
-            //gameStates.Add(new StateGame());
+#endif
 #else
             gameStates.Add(new StateIntro());
 #endif
