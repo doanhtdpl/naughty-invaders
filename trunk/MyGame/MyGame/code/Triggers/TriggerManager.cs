@@ -25,6 +25,7 @@ namespace MyGame
                 return instance;
             }
         }
+
         List<Trigger> triggers = new List<Trigger>();
 
         public void addTrigger(Trigger trigger)
@@ -52,10 +53,17 @@ namespace MyGame
         {
             triggers.Clear();
         }
+
         public void dispose()
         {
             clean();
         }
 
+        public void render()
+        {
+            for (int i = 0; i < triggers.Count; ++i)
+            {
+            }
+        }
     }
 }

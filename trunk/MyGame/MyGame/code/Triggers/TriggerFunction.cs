@@ -24,5 +24,10 @@ namespace MyGame
             object result = method.Invoke(null, parameters);
             return (bool)result;
         }
+
+        public void render()
+        {
+
+        }
     }
 }

@@ -130,6 +130,18 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEnemySpawnZone());
             }
+            else if (sender == addTriggerButton)
+            {
+                changeState(new EditorState_AddTrigger());
+            }
+            else if (sender == editTriggerButton)
+            {
+                changeState(new EditorState_EditTrigger());
+            }
+            else if (sender == addEffectButton)
+            {
+                changeState(new EditorState_AddEffect());
+            }
             myEditorControl.Focus();
         }
 
@@ -455,6 +467,8 @@ namespace MyGame
             buttonAddColisions.BackColor = nextState is EditorState_AddColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonEditColisions.BackColor = nextState is EditorState_EditColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
             addEnemyZoneButton.BackColor = nextState is EditorState_AddEnemySpawnZone ? SELECTED_COLOR : UNSELECTED_COLOR;
+            addTriggerButton.BackColor = nextState is EditorState_AddTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
+            editTriggerButton.BackColor = nextState is EditorState_EditTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 
