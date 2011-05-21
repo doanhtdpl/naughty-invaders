@@ -23,7 +23,10 @@ namespace MyGame
         public const float MAX_BIG_SHOT_CHARGE = 2.0f;
 
         // life stuff
+        const int MAX_LIFES = 5;
+        Lifebar[] lifebars = new Lifebar[MAX_LIFES];
         public int lifes { get; set; }
+        public float lifeValue;
         float invulnerableTime;
         
         // actions stuff
@@ -47,7 +50,11 @@ namespace MyGame
             setCollisions();
 
             // life stuff
-            lifes = 3;
+            lifebars[0] = new Lifebar("wish", this, new Vector2(0.2f, 0.2f), new Vector2(0.0f, -70.0f));
+            lifebars[1] = new Lifebar("wish", this, new Vector2(0.3f, 0.3f), new Vector2(0.0f, -80.0f));
+            lifebars[2] = new Lifebar("wish", this, new Vector2(0.4f, 0.4f), new Vector2(0.0f, -94.0f));
+            lifes = 2;
+            lifeValue = lifes;
             invulnerableTime = 0.0f;
 
             // actions stuff
@@ -58,6 +65,8 @@ namespace MyGame
             bigShotChargeTimer = 0.0f;
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
+
+            mode = tMode.Arcade;
 
             data = new PlayerData();
             data.initNewData();
@@ -82,14 +91,19 @@ namespace MyGame
         {
             if (invulnerableTime > 0.0f) return true;
 
-            --lifes;
-            if (lifes > 0)
+            lifeValue -= 1.0f;
+            if (lifeValue > 0)
             {
                 invulnerableTime = INVULNERABLE_TIME;
             }
-            return lifes > 0;
+            return lifeValue > 0;
         }
 
+        public void addLifeToMax()
+        {
+            lifes++;
+            lifeValue += 1.0f;
+        }
         public void addOrb(Orb.tOrb type)
         {
             switch (type)
@@ -100,6 +114,7 @@ namespace MyGame
                     break;
                 case Orb.tOrb.Life:
                     ++data.lifeOrbs;
+                    lifeValue += 0.1f;
                     break;
                 case Orb.tOrb.Wish:
                     ++data.wishOrbs;
@@ -132,10 +147,21 @@ namespace MyGame
                 if (fastShotCooldownTime <= 0.0f)
                 {
                     playAction("attack");
-                    Projectile p = new PlayerFastShot(position, Vector2.UnitY);
+                    Projectile p = null;
+                    // applies to damage and scale of projectile and particles
+                    float projectileFactor = 1.0f;
+                    Color projectileColor = Color.White;
+                    if (data.skills["plasma"].obtained)
+                    {
+                        projectileFactor = 1.2f;
+                        projectileColor = Color.Yellow;
+                    }
+
+                    p = new PlayerFastShot(position, projectileFactor, projectileColor);
+                    ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), projectileColor, projectileFactor);
+
                     fastShotCooldownTime = p.cooldown;
                     ProjectileManager.Instance.addProjectile(p);
-                    ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White);
                 }
             }
             // big shot attack
@@ -174,6 +200,12 @@ namespace MyGame
         public void updateGarlicGunMode(ControlPad controls)
         {
             garlicGunCooldownTime -= SB.dt;
+
+            // orient the player in the direction of move
+            if (controls.LS.LengthSquared() > 0.01f)
+            {
+                orientation = Calc.directionToAngle(new Vector2(controls.LS.X, controls.LS.Y)) - Calc.PiOver2;
+            }
 
             // controls of garlic gun
             if (controls.RS.LengthSquared() > 0.01f)
@@ -266,10 +298,6 @@ namespace MyGame
 
             Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
             GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
-            if (controls.LS.LengthSquared() > 0.01f)
-            {
-                orientation = Calc.directionToAngle(new Vector2(controls.LS.X, controls.LS.Y)) - Calc.PiOver2;
-            }
 
             switch (mode)
             {
@@ -296,11 +324,33 @@ namespace MyGame
                 t.addFunction(false, "addParticles", null);
                 TriggerManager.Instance.addTrigger(t);
             }
-            if (controls.RT_firstPressed())
+            if (controls.RT_pressed())
             {
-                CinematicManager.Instance.playCinematic("fakeCinematic");
+                lifeValue -= 0.01f;
             }
 #endif
+        }
+
+        public void renderGUI()
+        {
+            switch (mode)
+            {
+                case tMode.Arcade:
+                case tMode.GarlicGun:
+                    // render lifebars
+                    for (int i = 0; i < lifes; ++i)
+                    {
+                        if (lifebars[i] != null)
+                        {
+                            lifebars[i].lifePercentage = lifeValue - i;
+                            lifebars[i].render(true);
+                        }
+                    }
+                    break;
+                    break;
+                case tMode.SavingItems:
+                    break;
+            }
         }
 
         public override void render()

@@ -47,6 +47,11 @@ namespace MyGame
         public void render()
         {
             GraphicsManager.Instance.spriteBatch.Begin();
+            List<GamerEntity> gamers = GamerManager.getGamerEntities();
+            for (int i = 0; i < gamers.Count; ++i)
+            {
+                gamers[i].Player.renderGUI();
+            }
             GraphicsManager.Instance.spriteBatch.End();
         }
 

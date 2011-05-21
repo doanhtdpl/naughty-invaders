@@ -43,5 +43,22 @@ namespace MyGame
                 // playsound
             }
         }
+        public static void buySkillAddLife(string skillName, MenuElement menuElement, Player player)
+        {
+            PlayerSkill ps = GamerManager.getSessionOwner().Player.data.skills[skillName];
+            int XP = GamerManager.getSessionOwner().Player.data.XP;
+            if (!ps.obtained && ps.cost <= XP)
+            {
+                ps.obtained = true;
+                XP -= ps.cost;
+                menuElement.drawLinkedElement = true;
+                player.addLifeToMax();
+                // playsound
+            }
+            else
+            {
+                // playsound
+            }
+        }
     }
 }

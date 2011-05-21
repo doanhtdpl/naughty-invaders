@@ -61,7 +61,28 @@ namespace MyGame
                 * Matrix.CreateTranslation(new Vector3(position.X, position.Y, 0))
                 * Camera2D.view * Camera2D.projection;
         }
+        public static void render2D(this Texture2D texture, Vector2 position, Vector2 scale, Color color, float rotation = 0.0f, SpriteEffects spriteEffects = SpriteEffects.None, float drawFromLeft = 1.0f, bool fromCenter = true)
+        {
+            if (fromCenter)
+            {
+                position = Screen.getXYfromCenter(position);
+            }
+            Rectangle rectangle = new Rectangle(
+                (int)(position.X - (scale.X * 0.5f)),
+                (int)(position.Y - (scale.Y * 0.5f)),
+                (int)(scale.X * drawFromLeft),
+                (int)scale.Y);
 
+            if (drawFromLeft != 1.0f)
+            {
+                Rectangle from = new Rectangle(0,0,(int)(texture.Width * drawFromLeft), texture.Height);
+                GraphicsManager.Instance.spriteBatch.Draw(texture, rectangle, from, color, rotation, Vector2.Zero, spriteEffects, 0.0f);
+            }
+            else
+            {
+                GraphicsManager.Instance.spriteBatch.Draw(texture, rectangle, null, color, rotation, Vector2.Zero, spriteEffects, 0.0f);
+            }
+        }
         public static void render(this Texture texture, Matrix worldMatrix, Color color, bool customUVs = false)
         {
             fxWVP.SetValue(worldMatrix * Camera2D.view * Camera2D.projection);

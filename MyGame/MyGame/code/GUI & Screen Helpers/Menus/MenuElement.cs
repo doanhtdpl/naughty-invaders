@@ -32,9 +32,9 @@ namespace MyGame
 
     public class MenuElement
     {
-        Rectangle toDraw;
         Texture2D texture;
-        Vector2 position;
+        public Vector2 position { get; set; }
+        public Vector2 scale { get; set; }
         public Color color { get; set; }
         public string description { get; set; }
         Vector2 descriptionPosition;
@@ -53,32 +53,6 @@ namespace MyGame
         public bool drawLinkedElement { get; set; }
         public MenuElement linkedElement { get; set; }
 
-        public Vector2 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                position = value;
-                updateToDrawRectangle();
-            }
-        }
-        Vector2 scale;
-        public Vector2 Scale
-        {
-            get
-            {
-                return scale;
-            }
-            set
-            {
-                scale = value;
-                updateToDrawRectangle();
-            }
-        }
-
         public enum tInputType { A = 0, X, Y, B, Up, Down, Right, Left }
         const int INPUTS = 8;
         MethodInfo[] functions;
@@ -92,10 +66,12 @@ namespace MyGame
             this.description = null;
             this.color = Color.White;
             this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
-            this.position = Screen.getXYfromCenter(position);
-            this.scale = scale;
+            this.position = position;
+            Vector2 finalScale = scale;
+            finalScale.X *= this.texture.Width;
+            finalScale.Y *= this.texture.Height;
+            this.scale = finalScale;
             this.drawLinkedElement = drawLinkedElement;
-            updateToDrawRectangle();
 
             upNode = null;
             downNode = null;
@@ -111,17 +87,6 @@ namespace MyGame
             {
                 functionParameters[i] = null;
             }
-        }
-
-        void updateToDrawRectangle()
-        {
-            float scaledWidth = texture.Width * scale.X;
-            float scaledHeight = texture.Height * scale.Y;
-
-            toDraw = new Rectangle(
-                (int)(this.position.X - scaledWidth * 0.5f),
-                (int)(this.position.Y - scaledHeight * 0.5f),
-                (int)scaledWidth, (int)scaledHeight);
         }
 
         public void setFunction(string functionName, tInputType functionType, object[] parameters = null)
@@ -181,11 +146,11 @@ namespace MyGame
         {
             if (flip)
             {
-                GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, null, color, 0.0f, Vector2.Zero, SpriteEffects.FlipHorizontally, 0.0f);
+                texture.render2D(position, scale, Color.White, 0.0f, SpriteEffects.FlipHorizontally);
             }
             else
             {
-                GraphicsManager.Instance.spriteBatch.Draw(texture, toDraw, color);
+                texture.render2D(position, scale, Color.White);
             }
             if (drawLinkedElement)
             {
