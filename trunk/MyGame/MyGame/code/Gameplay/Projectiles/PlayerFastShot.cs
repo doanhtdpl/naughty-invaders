@@ -8,12 +8,13 @@ namespace MyGame
 {
     class PlayerFastShot : Projectile
     {
-        public PlayerFastShot(Vector3 position, Vector2 direction)
-            : base("playerProjectile", position, 0, direction, 10, 800, 1, 0.08f, tTeam.Players)
+        public PlayerFastShot(Vector3 position, float factor, Color color)
+            : base("playerProjectile", position, 0, Vector2.UnitY, 10 * factor, 800, 1, 0.08f, tTeam.Players)
         {
             playAction("start");
             setCollisions();
-            scale2D = new Vector2(80, 80);
+            scale2D = new Vector2(80, 80) * factor;
+            this.color = color;
         }
 
         public override void setCollisions()

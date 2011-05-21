@@ -24,10 +24,8 @@ namespace MyGame
 
         public void updatePositionAndScale(Vector2 position, Vector2 scale)
         {
-            leftCursor.Position = position + new Vector2(-240, 0);
-            leftCursor.Scale = scale * 0.7f;
-            rightCursor.Position = position + new Vector2(260, 0);
-            rightCursor.Scale = scale * 0.7f;
+            leftCursor.position = position + new Vector2(-240, 0);
+            rightCursor.position = position + new Vector2(260, 0);
 
         }
 
@@ -45,7 +43,7 @@ namespace MyGame
         public void setCurrentNode(MenuElement value)
         {
             currentNode = value;
-            selectionCursor.updatePositionAndScale( currentNode.Position, currentNode.Scale );
+            selectionCursor.updatePositionAndScale( currentNode.position, currentNode.scale );
         }
         public List<MenuElement> menuElements { get; set; }
         public List<MenuText> menuTexts { get; set; }
@@ -54,7 +52,7 @@ namespace MyGame
         {
             menuElements = new List<MenuElement>();
             menuTexts = new List<MenuText>();
-            selectionCursor = new MenuCursor("Selector", new Vector2(0.5f, 0.5f));
+            selectionCursor = new MenuCursor("Selector", new Vector2(0.4f, 0.4f));
         }
 
         public void update()

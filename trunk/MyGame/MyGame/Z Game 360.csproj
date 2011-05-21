@@ -102,6 +102,7 @@
     <Compile Include="code\Gameplay\Enemies\TomatoFollower.cs" />
     <Compile Include="code\Gameplay\Enemies\Watermelon.cs" />
     <Compile Include="code\Gameplay\GameplayHelper.cs" />
+    <Compile Include="code\Gameplay\Lifebar.cs" />
     <Compile Include="code\Gameplay\Orbs\Orb.cs" />
     <Compile Include="code\Gameplay\Orbs\OrbManager.cs" />
     <Compile Include="code\Gameplay\PlayerData.cs" />

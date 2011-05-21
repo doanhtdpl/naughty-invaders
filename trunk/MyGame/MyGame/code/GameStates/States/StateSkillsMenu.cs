@@ -15,7 +15,7 @@ namespace MyGame
         MenuElement getBuySkillOption(string buttonTexture, string skill, string skillDescription, Vector2 position, Vector2 scale)
         {
             MenuElement me = new MenuElement(buttonTexture, position, scale);
-            me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me });
+            me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me});
             MenuElement meLinked = new MenuElement("botoncito", position + new Vector2(120, 0), scale);
             me.linkedElement = meLinked;
             me.drawLinkedElement = GamerManager.getSessionOwner().Player.data.skills[skill].obtained;
@@ -47,6 +47,7 @@ namespace MyGame
             MenuElement mb4 = getBuySkillOption("option1", "life1",
                 "Get an additional permanent life portion to your life bar",
                 new Vector2(-350, -70), scale);
+            mb4.setFunction("buySkillAddLife", MenuElement.tInputType.X, new object[3] { "life1", mb4, GamerManager.getMainPlayer() });
             MenuElement mbDescriptionHeader = new MenuElement("largeHeader", new Vector2(150, 80), new Vector2(1.3f, 0.4f));
 
             menu.menuTexts.Add(new MenuText("Skills", new Vector2(0, 280), 1.2f));

@@ -23,7 +23,7 @@ namespace MyGame
             mb2.setFunction("goToSkillsMenu", MenuElement.tInputType.A);
             MenuElement mb3 = new MenuElement("option3", new Vector2(0, -150), scale);
             mb3.setFunction("exitGame", MenuElement.tInputType.A);
-            mb3.Scale = new Vector2(mb3.Scale.X, mb3.Scale.Y*0.8f);
+            mb3.scale = new Vector2(mb3.scale.X, mb3.scale.Y*0.8f);
 
             menu.menuTexts.Add(new MenuText("Paused game", new Vector2(0, 230), 1.2f));
             menu.menuTexts.Add(new MenuText("Continue game", new Vector2(20, 70), 1.0f));
