@@ -1111,6 +1111,73 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\enemies\Anim_KingTomato_Afraid.png">
+      <Name>Anim_KingTomato_Afraid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\enemies\Anim_KingTomato_Death.png">
+      <Name>Anim_KingTomato_Death</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\enemies\Anim_KingTomato_Idle.png">
+      <Name>Anim_KingTomato_Idle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\enemies\Anim_KingTomato_Shouting.png">
+      <Name>Anim_KingTomato_Shouting</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\enemies\Anim_KingTomato_Speaking.png">
+      <Name>Anim_KingTomato_Speaking</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\enemies\kingTomato_Afraid.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>kingTomato_Afraid</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\enemies\kingTomato_Shouting.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>kingTomato_Shouting</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\enemies\kingTomato_Idle.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>kingTomato_Idle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\enemies\KingTomato_Speaking.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>KingTomato_Speaking</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\enemies\kingTomato_Death.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>kingTomato_Death</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
