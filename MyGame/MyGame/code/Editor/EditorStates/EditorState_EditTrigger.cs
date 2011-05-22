@@ -26,11 +26,13 @@ namespace MyGame
         {
             base.enter();
 
+            MyEditor.Instance.availableConditions.Items.Clear();
             foreach (string functionName in ReflectionManager.Instance.getClassFunctions("ConditionFunctions"))
             {
                 MyEditor.Instance.availableConditions.Items.Add(functionName);
             }
 
+            MyEditor.Instance.availableConsecuences.Items.Clear();
             foreach (string functionName in ReflectionManager.Instance.getClassFunctions("ConsequenceFunctions"))
             {
                 MyEditor.Instance.availableConsecuences.Items.Add(functionName);
