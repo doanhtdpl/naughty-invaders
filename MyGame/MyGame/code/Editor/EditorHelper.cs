@@ -278,6 +278,35 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            //triggers
+            writer.WriteStartElement("triggers");
+            foreach (Trigger trigger in TriggerManager.Instance.getTriggers())
+            {
+                writer.WriteStartElement("trigger");
+                writer.WriteAttributeString("position", trigger.position.toXML());
+
+                writer.WriteStartElement("conditions");
+                foreach (Function func in trigger.conditions)
+                {
+                    writer.WriteStartElement("condition");
+                    writer.WriteAttributeString("functionName", func.functionName);
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("consecuences");
+                foreach (Function func in trigger.executions)
+                {
+                    writer.WriteStartElement("consecuence");
+                    writer.WriteAttributeString("functionName", func.functionName);
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
             // close the tag <level> and the writer
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -432,6 +461,28 @@ namespace MyGame
                     ParticleManager.Instance.addParticles(name, position, direction, color);
                 }
 
+                //triggers
+                nodes = xml_doc.Descendants("trigger");
+                foreach (XElement node in nodes)
+                {
+                    Vector2 position = node.Attribute("position").Value.toVector2();
+                    Trigger trigger = new Trigger();
+                    trigger.position = position;
+
+                    IEnumerable<XElement> moreNodes = nodes.Descendants("condition");
+                    foreach (XElement func in moreNodes)
+                    {
+                        trigger.addFunction(true, func.Attribute("functionName").Value);
+                    }
+
+                    moreNodes = nodes.Descendants("consecuence");
+                    foreach (XElement func in moreNodes)
+                    {
+                        trigger.addFunction(false, func.Attribute("functionName").Value);
+                    }
+
+                    TriggerManager.Instance.addTrigger(trigger);
+                }
 
                 if (loadIDs)
                 {

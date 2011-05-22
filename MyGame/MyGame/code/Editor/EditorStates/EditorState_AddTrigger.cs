@@ -21,16 +21,19 @@ namespace MyGame
         public override void enter()
         {
             base.enter();
-
-            Trigger trigger = new Trigger();
-            TriggerManager.Instance.addTrigger(trigger);
-
-            MyEditor.Instance.changeState(new EditorState_EditTrigger(trigger));
         }
 
         public override void update()
         {
             base.update();
+            if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
+            {
+                Trigger trigger = new Trigger();
+                trigger.position = new Vector2(getMousePosInZ().X, getMousePosInZ().Y);
+                TriggerManager.Instance.addTrigger(trigger);
+
+                MyEditor.Instance.changeState(new EditorState_EditTrigger(trigger));
+            }
         }
 
         public override void exit()
@@ -41,6 +44,11 @@ namespace MyGame
         public override void render()
         {
             base.render();
+
+            foreach (Trigger trigger in TriggerManager.Instance.getTriggers())
+            {
+                DebugManager.Instance.addRectangle(trigger.position - new Vector2(20, 20), trigger.position + new Vector2(20, 20), Color.Yellow);
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MyGame
 {
     class Function
     {
-        string functionName;
+        public string functionName;
         string className;
         public object[] parameters;
 
