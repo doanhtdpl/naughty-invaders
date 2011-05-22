@@ -22,14 +22,14 @@ namespace MyGame
         public const float DASH_PARTICLE_SPAWN_TIME = 0.03f;
         public const float MAX_BIG_SHOT_CHARGE = 2.0f;
 
+        Vector2 shotDirection;
+
         // life stuff
         const int MAX_LIFES = 5;
         Lifebar[] lifebars = new Lifebar[MAX_LIFES];
         public int lifes { get; set; }
         public float lifeValue;
         float invulnerableTime;
-
-        Texture2D starXP;
         
         // actions stuff
         float garlicGunCooldownTime;
@@ -43,7 +43,11 @@ namespace MyGame
 
         public PlayerData data { get; set; }
 
+        static Texture2D starXP = null;
         static Texture bigShotBall = null;
+        static Texture garlicGunTexture = null;
+        static Texture garlicGunBandTexture = null;
+
 
         public Player(string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)
@@ -73,12 +77,10 @@ namespace MyGame
             data = new PlayerData();
             data.initNewData();
 
-            if (bigShotBall == null)
-            {
-                bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
-            }
-
-            starXP = TextureManager.Instance.getTexture("GUI/menu/starXP");
+            if (bigShotBall == null) bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
+            if (starXP == null) starXP = TextureManager.Instance.getTexture("GUI/menu/starXP");
+            if (garlicGunTexture == null) garlicGunTexture = TextureManager.Instance.getTexture("characters/garlicGun");
+            if (garlicGunBandTexture == null) garlicGunBandTexture = TextureManager.Instance.getTexture("characters/garlicGunBand");
         }
 
         public void initStage(Vector2 position)
@@ -119,6 +121,10 @@ namespace MyGame
                 case Orb.tOrb.Life:
                     ++data.lifeOrbs;
                     lifeValue += 0.1f;
+                    if (lifeValue > lifes)
+                    {
+                        lifeValue = lifes;
+                    }
                     break;
                 case Orb.tOrb.Wish:
                     ++data.wishOrbs;
@@ -132,6 +138,8 @@ namespace MyGame
         public void activateGarlicGun()
         {
             ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), Vector3.Zero, Color.Red, 2.0f, 100);
+            shotDirection = Vector2.UnitY;
+            mode = tMode.GarlicGun;
         }
 
         public void updateArcadeMode(Vector2 direction, ControlPad controls)
@@ -219,7 +227,7 @@ namespace MyGame
             // controls of garlic gun
             if (controls.RS.LengthSquared() > 0.01f)
             {
-                Vector2 shotDirection = controls.RS;
+                shotDirection = controls.RS;
                 shotDirection.Normalize();
 
                 if (garlicGunCooldownTime <= 0.0f)
@@ -228,7 +236,7 @@ namespace MyGame
                     Projectile p = new GarlicGunShot(position, shotDirection);
                     garlicGunCooldownTime = p.cooldown;
                     ProjectileManager.Instance.addProjectile(p);
-                    Vector3 particlesDirection = (shotDirection.toVector3() * 200.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
+                    Vector3 particlesDirection = (shotDirection.toVector3() * 700.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
                     ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
                 }
             }
@@ -369,6 +377,11 @@ namespace MyGame
         {
             renderBigShot();
             base.render();
+            if (mode == tMode.GarlicGun)
+            {
+                garlicGunBandTexture.render(position, orientation, 105.0f, Color.White);
+                garlicGunTexture.render(position, Calc.directionToAngle(shotDirection) - Calc.PiOver2, 140.0f, Color.White);
+            }
         }
         public void renderBigShot()
         {
@@ -381,8 +394,7 @@ namespace MyGame
                 forceValue += (float)Math.Sin((bigShotChargeTimer - MAX_BIG_SHOT_CHARGE) * 8.0f) * 0.05f;
             }
 
-            bigShotBall.render( 
-                SB.getWorldMatrix(position + new Vector3(0.0f, 60.0f, 0.0f), 0.0f, forceValue * 120.0f),
+            bigShotBall.render(position + new Vector3(0.0f, 60.0f, 0.0f), 0.0f, forceValue * 120.0f,
                 new Color(forceValue, forceValue - 0.3f, forceValue - 0.3f, forceValue));
         }
 

@@ -25,7 +25,7 @@ namespace MyGame
 
         int charactersToShow;
 
-        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float durationAfterText = 3.0f, float textSpeed = 90.0f, bool skippable = true)
+        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float durationAfterText = 3.0f, float textSpeed = 60.0f, bool skippable = true)
             :base(activationTime, 999.0f)
         {
             this.character = character;
@@ -52,13 +52,13 @@ namespace MyGame
             DialogEvent.portraits[(int)tDialogCharacter.KingTomato] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
         }
 
-        public override bool update()
+        public override bool update(bool skip, bool forceSkip = false)
         {
             bool keepUpdating = true;
 
-            if (skippable)
+            if (skippable || forceSkip)
             {
-                if (GamerManager.getMainControls().A_firstPressed())
+                if (skip)
                 {
                     if (!textComplete)
                     {

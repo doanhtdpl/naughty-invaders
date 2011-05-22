@@ -26,7 +26,7 @@ namespace MyGame
         public virtual void startEvent() { }
         public virtual void endEvent() { }
         // updates the event and returns false when event ends
-        public virtual bool update()
+        public virtual bool update(bool skip, bool forceSkip = false)
         {
             duration -= SB.dt;
             return duration > 0.0f;

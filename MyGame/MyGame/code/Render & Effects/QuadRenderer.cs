@@ -83,6 +83,11 @@ namespace MyGame
                 GraphicsManager.Instance.spriteBatch.Draw(texture, rectangle, null, color, rotation, Vector2.Zero, spriteEffects, 0.0f);
             }
         }
+        public static void render(this Texture texture, Vector3 position, float orientation, float scale, Color color, bool customUVs = false)
+        {
+            Matrix matrix = SB.getWorldMatrix(position, orientation, scale);
+            texture.render(matrix, color, customUVs);
+        }
         public static void render(this Texture texture, Matrix worldMatrix, Color color, bool customUVs = false)
         {
             fxWVP.SetValue(worldMatrix * Camera2D.view * Camera2D.projection);

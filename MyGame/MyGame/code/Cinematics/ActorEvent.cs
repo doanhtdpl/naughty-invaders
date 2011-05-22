@@ -11,7 +11,6 @@ namespace MyGame
     {
         public RenderableEntity2D actor { get; set; }
 
-        bool firstUpdate;
         bool set;
         Vector3 setAtPosition;
         Function function;
@@ -20,10 +19,9 @@ namespace MyGame
         Vector3 moveToPosition;
         float moveToSpeed;
 
-        public ActorEvent(RenderableEntity2D actor, float duration, float activationTime = 0.3f, bool skippable = true):base(activationTime, duration)
+        public ActorEvent(RenderableEntity2D actor, float duration = 999.0f, float activationTime = 0.3f, bool skippable = true):base(activationTime, duration)
         {
             this.actor = actor;
-            this.firstUpdate = true;
             this.set = false;
             this.move = false;
             this.function = null;
@@ -78,19 +76,18 @@ namespace MyGame
         {
         }
 
-        public override bool update()
+        public override bool update(bool skip, bool forceSkip = false)
         {
-            bool keepUpdating = base.update();
+            bool keepUpdating = base.update(skip);
 
-            if (skippable)
+            if (skippable || forceSkip)
             {
-                if (GamerManager.getMainControls().A_firstPressed())
+                if (skip)
                 {
                     if (move)
                     {
                         actor.position = moveToPosition;
                     }
-
                     return false;
                 }
             }

@@ -68,6 +68,16 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
+    <Compile Include="textures\characters\garlicGun.png">
+      <Name>garlicGun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\characters\garlicGunBand.png">
+      <Name>garlicGunBand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
     <Compile Include="textures\GUI\textImages\A.tga">
       <Name>A</Name>
       <Importer>TextureImporter</Importer>

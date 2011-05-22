@@ -21,11 +21,11 @@ namespace MyGame
         public float life;
         public bool toPlayer;
 
-        public Orb(tOrb orbType, Vector2 position)
+        public Orb(tOrb orbType, Vector2 position, bool toPlayer)
         {
             this.type = orbType;
             this.position = position;
-            this.toPlayer = false;
+            this.toPlayer = toPlayer;
             this.life = LIFE_TIME;
             this.render = true;
 
