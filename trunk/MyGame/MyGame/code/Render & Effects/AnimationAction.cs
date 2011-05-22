@@ -5,6 +5,12 @@ using System.Text;
 
 namespace MyGame
 {
+    class RandomAction
+    {
+        public string name { get; set; }
+        public float probability { get; set; }
+    }
+
     class AnimationAction
     {
         // from XML
@@ -18,9 +24,10 @@ namespace MyGame
         public int textureId { get; set; }
         public string playAtEnd { get; set; }
 
-        public string playRandom { get; set; }  
+        public bool playRandom { get; set; }
         public float playRandomMin { get; set; }
         public float playRandomMax { get; set; }
+        public List<RandomAction> randomActions { get; set; }
 
         // calculated from XML data
         public int totalFrames { get; set; }

@@ -19,6 +19,7 @@ namespace MyGame
         static OrbManager instance = null;
         OrbManager()
         {
+            orbs = new List<Orb>();
         }
         public static OrbManager Instance
         {
@@ -32,7 +33,7 @@ namespace MyGame
                 return instance;
             }
         }
-	    List<Orb> orbs = new List<Orb>();
+        public List<Orb> orbs { get; set; }
 
         public void addRandomOrbs(int enemyLevel, Vector2 position)
         {

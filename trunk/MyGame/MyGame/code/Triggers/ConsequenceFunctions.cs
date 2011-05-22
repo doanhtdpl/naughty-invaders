@@ -16,9 +16,10 @@ namespace MyGame
             return true;
         }
 
-        public static void activateGarlicGun(RenderableEntity2D player)
+        public static bool activateGarlicGun(RenderableEntity2D player)
         {
             ((Player)player).activateGarlicGun();
+            return true;
         }
     }
 }

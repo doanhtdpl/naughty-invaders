@@ -26,7 +26,7 @@ namespace MyGame
         int charactersToShow;
 
         public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float durationAfterText = 3.0f, float textSpeed = 90.0f, bool skippable = true)
-            :base(activationTime, (text.Length / textSpeed) + durationAfterText)
+            :base(activationTime, 999.0f)
         {
             this.character = character;
             this.text = text;

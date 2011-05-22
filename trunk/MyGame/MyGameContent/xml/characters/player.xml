@@ -3,26 +3,35 @@
 animatedEntity
 - idleOffset (optional): if we want to start the idle action at a random frame only the first time, default is false
 
-animatedTexture:
+animatedTexture (inside animatedEntity):
 - name: the name of the texture that will be used
 - frameWidth/frameHeight: width and height of each frame in the texture
 - columns/rows: columns and rows of the frames in the texture
 
-action:
+action (inside animatedTexture):
 - name: name of the action
 - initialFrame/endFrame: initial and end frames of the action starting at 1 and counting left->right top->bottom
 - loops (optional): if loops will be played again after the end frame, default is false
 - FPS (optional): frames per second, default is 30
 - playAtEnd (optional): action that will be played at the end, default is none
-- playRandom (optional): action that is played randomly, default is none
+- playRandom (optional): tells if there will be actions played randomly, default is none
 - playRandomMin/playRandomMax (must if playRandom is not null): determines the random value of the playRandom action, in seconds
 - from / to (optional): to define a transition action tht will be automatically played, put the names of the from and to actions.
+
+playRandom (inside action):
+- name: name of the action
+- probability (optional): probability to play this action, default is 1.
+  The added value of the probabilities of all the playRandom actions must be exactly 1
 -->
 
 <animatedEntity>
   <animatedTexture name="Anim_Player" frameWidth="160" frameHeight="160" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="9" loops="false"/>
+    <action name="attack" initialFrame="1" endFrame="4" loops="false"/>
+    <action name="attack2" initialFrame="5" endFrame="9" loops="false"/>
     <action name="die" initialFrame="10" endFrame="20" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="24" endFrame="36" loops="true" playRandom="attack" playRandomMin="1" playRandomMax="5"/>
+    <action name="idle" initialFrame="24" endFrame="36" loops="true" playRandom="true" playRandomMin="1" playRandomMax="5">
+      <playRandom name="attack" probability="0.5"/>
+      <playRandom name="attack2" probability="0.5"/>
+    </action>
   </animatedTexture>
 </animatedEntity>

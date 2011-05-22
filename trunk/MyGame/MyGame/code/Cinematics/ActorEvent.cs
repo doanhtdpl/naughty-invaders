@@ -80,7 +80,7 @@ namespace MyGame
 
         public override bool update()
         {
-            bool keepUpdating = true;
+            bool keepUpdating = base.update();
 
             if (skippable)
             {
