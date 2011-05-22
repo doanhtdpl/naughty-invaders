@@ -265,6 +265,19 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            //particles
+            writer.WriteStartElement("particles");
+            foreach (ParticleSystem particle in ParticleManager.Instance.getParticles())
+            {
+                writer.WriteStartElement("particle");
+                writer.WriteAttributeString("name", particle.data.name);
+                writer.WriteAttributeString("position", particle.position.toXML());
+                writer.WriteAttributeString("direction", particle.direction.toXML());
+                writer.WriteAttributeString("color", particle.data.color.toXML());
+                writer.WriteEndElement();
+            }
+            writer.WriteEndElement();
+
             // close the tag <level> and the writer
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -407,6 +420,17 @@ namespace MyGame
                     cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
                 }
                 CameraManager.Instance.setupCamera();
+
+                //particles
+                nodes = xml_doc.Descendants("particle");
+                foreach (XElement node in nodes)
+                {
+                    string name = node.Attribute("name").Value;
+                    Vector3 position = node.Attribute("position").Value.toVector3();
+                    Vector3 direction = node.Attribute("direction").Value.toVector3();
+                    Color color = node.Attribute("color").Value.toColor();
+                    ParticleManager.Instance.addParticles(name, position, direction, color);
+                }
 
 
                 if (loadIDs)
