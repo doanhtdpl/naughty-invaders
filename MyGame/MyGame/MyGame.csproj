@@ -125,9 +125,9 @@
     <Compile Include="code\Calc.cs" />
     <Compile Include="code\Camera\Camera2D.cs" />
     <Compile Include="code\Camera\Network.cs" />
+    <Compile Include="code\Cinematics\ActorEvent.cs" />
     <Compile Include="code\Cinematics\CinematicEvent.cs" />
     <Compile Include="code\Cinematics\CinematicManager.cs" />
-    <Compile Include="code\Cinematics\ActorEvent.cs" />
     <Compile Include="code\Cinematics\DialogEvent.cs" />
     <Compile Include="code\ControlPad.cs" />
     <Compile Include="code\CoolizionEngine\Line.cs" />
