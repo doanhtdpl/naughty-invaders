@@ -8,26 +8,22 @@ using System.Reflection;
 
 namespace MyGame
 {
-    class TriggerFunction
+    class Function
     {
-        MethodInfo method;
+        string functionName;
+        string className;
         public object[] parameters;
 
-        public TriggerFunction(MethodInfo methodInfo, object[] parameters)
+        public Function(string functionName, string className, object[] parameters)
         {
-            this.method = methodInfo;
+            this.functionName = functionName;
+            this.className = className;
             this.parameters = parameters;
         }
 
         public bool execute()
         {
-            object result = method.Invoke(null, parameters);
-            return (bool)result;
-        }
-
-        public void render()
-        {
-
+            return (bool)ReflectionManager.Instance.executeFunction(functionName, className, parameters);
         }
     }
 }

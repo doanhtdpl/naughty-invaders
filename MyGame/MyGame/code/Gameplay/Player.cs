@@ -50,9 +50,9 @@ namespace MyGame
             setCollisions();
 
             // life stuff
-            lifebars[0] = new Lifebar("wish", this, new Vector2(0.2f, 0.2f), new Vector2(0.0f, -70.0f));
-            lifebars[1] = new Lifebar("wish", this, new Vector2(0.3f, 0.3f), new Vector2(0.0f, -80.0f));
-            lifebars[2] = new Lifebar("wish", this, new Vector2(0.4f, 0.4f), new Vector2(0.0f, -94.0f));
+            lifebars[0] = new Lifebar("wish", this, new Vector2(0.25f, 0.25f), new Vector2(0.0f, -80.0f));
+            lifebars[1] = new Lifebar("wish", this, new Vector2(0.34f, 0.34f), new Vector2(0.0f, -93.0f));
+            lifebars[2] = new Lifebar("wish", this, new Vector2(0.43f, 0.43f), new Vector2(0.0f, -110.0f));
             lifes = 2;
             lifeValue = lifes;
             invulnerableTime = 0.0f;
@@ -123,6 +123,11 @@ namespace MyGame
                     ++data.petOrbs;
                     break;
             }
+        }
+
+        public void activateGarlicGun()
+        {
+            ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), Vector3.Zero, Color.Red, 2.0f, 100);
         }
 
         public void updateArcadeMode(Vector2 direction, ControlPad controls)
@@ -347,18 +352,15 @@ namespace MyGame
                         }
                     }
                     break;
-                    break;
                 case tMode.SavingItems:
                     break;
             }
         }
-
         public override void render()
         {
             renderBigShot();
             base.render();
         }
-
         public void renderBigShot()
         {
             if (!bigShotCharging) return;

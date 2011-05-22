@@ -13,8 +13,8 @@ namespace MyGame
         public int executionTimes = 1;
 
         Vector2 position;
-        List<TriggerFunction> conditions = new List<TriggerFunction>();
-        List<TriggerFunction> executions = new List<TriggerFunction>();
+        List<Function> conditions = new List<Function>();
+        List<Function> executions = new List<Function>();
 
         public void setPosition(Vector2 position)
         {
@@ -32,10 +32,7 @@ namespace MyGame
             {
                 functionContainer = "ConsequenceFunctions";
             }
-            Type type = Type.GetType("MyGame." + functionContainer);
-            MethodInfo method = type.GetMethod(functionName);
-
-            TriggerFunction tf = new TriggerFunction(method, parameters);
+            Function tf = new Function(functionName, functionContainer, parameters);
 
             if (isCondition)
             {
@@ -54,7 +51,7 @@ namespace MyGame
 
         public bool isTriggered()
         {
-            foreach (TriggerFunction condition in conditions)
+            foreach (Function condition in conditions)
             {
                 if (!condition.execute())
                 {
@@ -65,27 +62,12 @@ namespace MyGame
         }
         public bool execute()
         {
-            foreach (TriggerFunction execution in executions)
+            foreach (Function execution in executions)
             {
                 execution.execute();
             }
             --executionTimes;
             return executionTimes > 0;
-        }
-
-        public void render()
-        {
-            DebugManager.Instance.addCircle(position, 10, 10, Color.Yellow);
-
-            foreach (TriggerFunction func in conditions)
-            {
-                func.render();
-            }
-
-            foreach (TriggerFunction func in executions)
-            {
-                func.render();
-            }
         }
     }
 }
