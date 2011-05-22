@@ -46,27 +46,45 @@ namespace MyGame
         void loadIntroCinematic()
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(0.0f, 12.0f, GamerManager.getMainPlayer());
+            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), 12.0f, 0.0f);
             ae1.setAt(new Vector3(0.0f, -900.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, -220.0f, 0.0f), 200.0f);
-
-            DialogEvent de1 = new DialogEvent(2.0f, 2.0f, tDialogCharacter.Wish, "Esto es Onion Village? resistiremos!", 70.0f);
-
             cinematic.events.Add((CinematicEvent)ae1);
-            cinematic.events.Add((CinematicEvent)de1);
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish,
+                "Hola! Necesito saber como llegar a Ciudad Vegetal");
+            cinematic.events.Add(de1);
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.OnionElder,
+                "Hey chico, es por ahi. Pero el rey tomate y sus tropas vienen por ese camino. Nos quieren invadir!");
+            cinematic.events.Add(de2);
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish,
+               "Yo os ayudare, asi podre llegar a Ciudad Vegetal!");
+            cinematic.events.Add(de3);
+            DialogEvent de4 = new DialogEvent(tDialogCharacter.OnionElder,
+               "Genial! Te podemos ayudar prestandote el arma legendaria del pueblo: la Garlic Gun!");
+            cinematic.events.Add(de4);
+            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), 12.0f);
+            ae2.addActorFunction("activateGarlicGun");
+            DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish,
+               "Wow! parece muy poderosa!");
+            cinematic.events.Add(de5);
+            DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder,
+               "Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!");
+            cinematic.events.Add(de6);
+
+
             CinematicManager.Instance.addCinematic("kingTomatoIntro", cinematic);
         }
 
         void loadSpeechCinematic(Enemy kingTomato)
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(0.0f, 8.0f, kingTomato);
+            ActorEvent ae1 = new ActorEvent(kingTomato, 8.0f, 0.0f);
             ae1.setAt(new Vector3(700.0f, 900.0f, 0.0f));
             ae1.moveTo(new Vector3(700.0f, 600.0f, 0.0f), 50.0f);
 
-            DialogEvent de1 = new DialogEvent(2.0f, 2.0f, tDialogCharacter.Wish, "Acabare contigo sucia perra!", 70.0f);
-            DialogEvent de2 = new DialogEvent(4.5f, 2.0f, tDialogCharacter.Wish, "Tu eres gilipollas", 70.0f);
-            DialogEvent de3 = new DialogEvent(7.0f, 2.0f, tDialogCharacter.Wish, "Adelante tomatinaaaa!!!", 70.0f);
+            DialogEvent de1 = new DialogEvent( tDialogCharacter.KingTomato, "Acabare contigo sucia perra!", 70.0f);
+            DialogEvent de2 = new DialogEvent( tDialogCharacter.Wish, "Tu eres gilipollas", 70.0f);
+            DialogEvent de3 = new DialogEvent( tDialogCharacter.KingTomato, "Adelante tomatinaaaa!!!", 70.0f);
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);

@@ -15,11 +15,11 @@ namespace MyGame
             : base(level)
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(0.0f, 12.0f, GamerManager.getMainPlayer());
+            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), 12.0f, 0.0f);
             ae1.setAt(new Vector3(0.0f, -700.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, 0.0f, 0.0f), 200.0f);
 
-            DialogEvent de1 = new DialogEvent(2.0f, 2.0f, tDialogCharacter.Wish, "Woo macedonia! Yo te ayudaré!", 70.0f);
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, "Woo macedonia! Yo te ayudaré!", 70.0f);
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);
