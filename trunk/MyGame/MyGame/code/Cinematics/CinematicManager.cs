@@ -18,7 +18,7 @@ namespace MyGame
             // see if the next event needs to be started
             if (eventToUpdate != null)
             {
-                if (!eventToUpdate.update())
+                if (!eventToUpdate.update(GamerManager.getMainControls().A_firstPressed()))
                 {
                     eventToUpdate.endEvent();
                     eventToUpdate = null;
@@ -36,6 +36,28 @@ namespace MyGame
             }
 
             return events.Count > 0 || eventToUpdate != null;
+        }
+
+        public void skipWholeCinematic()
+        {
+            while (eventToUpdate != null)
+            {
+                eventToUpdate.startEvent();
+                if (eventToUpdate.update(true, true))
+                {
+                    eventToUpdate.update(true, true);
+                }
+                eventToUpdate.endEvent();
+                events.RemoveAt(0);
+                if (events.Count > 0)
+                {
+                    eventToUpdate = events[0];
+                }
+                else
+                {
+                    eventToUpdate = null;
+                }
+            }
         }
 
         public void render()
@@ -127,11 +149,21 @@ namespace MyGame
         {
             if (cinematicToPlay != null)
             {
+#if DEBUG
+                if (GamerManager.getMainControls().Y_firstPressed())
+                {
+                    cinematicToPlay.skipWholeCinematic();
+                    setUpdatableOnPlayersAndEnemies(true);
+                    cinematicToPlay = null;
+                    return;
+                }
+#endif
                 if (!cinematicToPlay.update())
                 {
                     setUpdatableOnPlayersAndEnemies(true);
                     cinematicToPlay = null;
                 }
+                
             }
         }
         public void render()

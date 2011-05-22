@@ -9,12 +9,13 @@ namespace MyGame
     public class TomatoFollower : Enemy
     {
         const float MIN_SPEED = 300.0f;
-        const float MAX_SPEED = 450.0f;
+        const float MAX_SPEED = 550.0f;
         // turning speed in radians/second
         const float TURNING_SPEED = 2.5f;
 
         float speed;
         Vector2 direction;
+        public bool fleeing { get; set; }
 
         public TomatoFollower(Vector3 position, float orientation)
             : base("tomato", position, orientation, 1)
@@ -24,6 +25,7 @@ namespace MyGame
             setCollisions();
             direction = (GamerManager.getSessionOwner().Player.position - position).toVector2();
             direction.Normalize();
+            fleeing = false;
         }
 
         public override void setCollisions()
@@ -47,10 +49,17 @@ namespace MyGame
         {
             base.update();
 
-            // always move down
-            Vector3 directionToPlayer = (GamerManager.getSessionOwner().Player.position - position);
-            directionToPlayer.Normalize();
-            direction = Calc.fromDirectionToDirectionAtSpeed(direction, directionToPlayer.toVector2(), TURNING_SPEED);
+            Vector3 directionTo;
+            if (fleeing)
+            {
+                directionTo = (position - GamerManager.getSessionOwner().Player.position);
+            }
+            else
+            {
+                directionTo = (GamerManager.getSessionOwner().Player.position - position);
+            }
+            directionTo.Normalize();
+            direction = Calc.fromDirectionToDirectionAtSpeed(direction, directionTo.toVector2(), TURNING_SPEED);
             orientation = Calc.directionToAngle(direction) + Calc.PiOver2;
             position2D += direction * speed * SB.dt;
         }

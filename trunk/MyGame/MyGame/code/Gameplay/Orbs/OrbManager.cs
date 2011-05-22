@@ -37,43 +37,38 @@ namespace MyGame
 
         public void addRandomOrbs(int enemyLevel, Vector2 position)
         {
-            int XP = enemyLevel;
-            if (Calc.randomScalar() < LIFE_ORB_PROBABILITY)
+            int XP = Calc.randomNatural(0, enemyLevel);
+            int life = 0;
+            if (Calc.randomScalar() < 0.05f)
             {
-                addOrbs(position, XP, enemyLevel, 0, 0);
+                life = 1;
             }
-            else if (Calc.randomScalar() < LIFE_ORB_PROBABILITY + WISH_ORB_PROBABILITY)
-            {
-                addOrbs(position, XP, 0, enemyLevel, 0);
-            }
-            else
-            {
-                addOrbs(position, XP, 0, 0, enemyLevel);
-            }
+
+            addOrbs(position, XP, life, 0, 0, false);
         }
 
-        public void addOrbs(Vector2 position, int XP, int life, int wish, int pet)
+        public void addOrbs(Vector2 position, int XP, int life, int wish, int pet, bool toPlayer = false)
         {
             for (int i = 0; i < XP; ++i)
             {
-                addOrb(Orb.tOrb.XP, position);
+                addOrb(Orb.tOrb.XP, position, toPlayer);
             }
             for (int i = 0; i < life; ++i)
             {
-                addOrb(Orb.tOrb.Life, position);
+                addOrb(Orb.tOrb.Life, position, toPlayer);
             }
             for (int i = 0; i < wish; ++i)
             {
-                addOrb(Orb.tOrb.Wish, position);
+                addOrb(Orb.tOrb.Wish, position, toPlayer);
             }
             for (int i = 0; i < pet; ++i)
             {
-                addOrb(Orb.tOrb.Pet, position);
+                addOrb(Orb.tOrb.Pet, position, toPlayer);
             }
         }
-        public void addOrb(Orb.tOrb orbType, Vector2 position)
+        public void addOrb(Orb.tOrb orbType, Vector2 position, bool toPlayer)
         {
-            Orb orb = new Orb(orbType, position);
+            Orb orb = new Orb(orbType, position, toPlayer);
             orbs.Add(orb);
         }
 	    public void update( )
@@ -89,7 +84,6 @@ namespace MyGame
                     orbs[i].life -= SB.dt;
                     if (orbs[i].life < 0.0f)
                     {
-                        GamerManager.getGamerEntities()[0].Player.addOrb(orbs[i].type);
                         orbs.RemoveAt(i);
                         --i;
                         continue;
@@ -112,6 +106,7 @@ namespace MyGame
                     if (Vector2.DistanceSquared(playerPosition, orbs[i].position) < PICK_DISTANCE)
                     {
                         // pick the orb and delete it
+                        GamerManager.getGamerEntities()[0].Player.addOrb(orbs[i].type);
                         orbs.RemoveAt(i);
                         --i;
                         continue;

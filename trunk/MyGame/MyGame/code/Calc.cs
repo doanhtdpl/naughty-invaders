@@ -55,7 +55,7 @@ namespace MyGame
         private static Random random = new Random();
         public static int randomNatural(int min, int max)
         {
-            return random.Next(min, max);
+            return random.Next(min, max + 1);
         }
         public static float randomScalar()
         {

@@ -72,7 +72,7 @@ namespace MyGame
         {
             if (actionState == "die" && !forcePlay) return;
 
-            if (actions[newAction].playRandom != null)
+            if (actions[newAction].playRandom)
             {
                 nextRandomActionTime = Calc.randomScalar(actions[newAction].playRandomMin, actions[newAction].playRandomMax);
             }
