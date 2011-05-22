@@ -8,9 +8,9 @@ namespace MyGame
 {
     class ParticleSystem
     {
-        ParticleSystemData data;
-        Vector3 position;
-        Vector3 direction;
+        public ParticleSystemData data;
+        public Vector3 position;
+        public Vector3 direction;
 
 	    public bool isDead;
 	    List<Particle> particles = new List<Particle>();

@@ -142,6 +142,10 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEffect());
             }
+            else if (sender == editEffectButton)
+            {
+                changeState(new EditorState_EditEffect());
+            }
             myEditorControl.Focus();
         }
 
@@ -469,6 +473,8 @@ namespace MyGame
             addEnemyZoneButton.BackColor = nextState is EditorState_AddEnemySpawnZone ? SELECTED_COLOR : UNSELECTED_COLOR;
             addTriggerButton.BackColor = nextState is EditorState_AddTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
             editTriggerButton.BackColor = nextState is EditorState_EditTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
+            addEffectButton.BackColor = nextState is EditorState_AddEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
+            editEffectButton.BackColor = nextState is EditorState_EditEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 
@@ -678,6 +684,18 @@ namespace MyGame
             }
         }
 
+        private void effectColorButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEffect)
+            {
+                System.Drawing.Color newColor = getDialogColor(System.Drawing.Color.FromArgb(int.Parse(colorA.Text), int.Parse(colorR.Text), int.Parse(colorG.Text), int.Parse(colorB.Text)));
+                this.effectColorR.Text = newColor.R.ToString();
+                this.effectColorG.Text = newColor.G.ToString();
+                this.effectColorB.Text = newColor.B.ToString();
+                ((EditorState_EditEffect) currentState).changeColor(new Color(newColor.R, newColor.G, newColor.B));
+            }
+        }
+
         private void BGColorButton_Click(object sender, EventArgs e)
         {
             System.Drawing.Color newColor = getDialogColor(System.Drawing.Color.FromArgb(SB.BGColor.A, SB.BGColor.R, SB.BGColor.G, SB.BGColor.B));
@@ -753,6 +771,16 @@ namespace MyGame
         private void buttonSetCameraByTheFace_Click(object sender, EventArgs e)
         {
             ((EditorState_MoveCameraNode)currentState).setCameraByTheFace();
+        }
+
+        private void effectsCombo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            myEditorControl.Focus();
+        }
+
+        private void effect_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

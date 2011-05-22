@@ -106,8 +106,35 @@ namespace MyGame
             this.availableConditions = new System.Windows.Forms.ComboBox();
             this.addTriggerButton = new System.Windows.Forms.Button();
             this.effects = new System.Windows.Forms.TabPage();
-            this.addEffectButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.effectLifetime = new System.Windows.Forms.TextBox();
+            this.NumParticles = new System.Windows.Forms.Label();
+            this.effectNumParticles = new System.Windows.Forms.TextBox();
+            this.effectDirectionZ = new System.Windows.Forms.TextBox();
+            this.effectDirectionY = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.effectColorB = new System.Windows.Forms.TextBox();
+            this.effectColorG = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.effectColorR = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.effectScale = new System.Windows.Forms.TextBox();
+            this.effectDirectionX = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.effectPositionZ = new System.Windows.Forms.TextBox();
+            this.effectPositionY = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.effectPositionX = new System.Windows.Forms.TextBox();
+            this.editEffectButton = new System.Windows.Forms.Button();
             this.effectsCombo = new System.Windows.Forms.ComboBox();
+            this.addEffectButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
@@ -118,6 +145,7 @@ namespace MyGame
             this.enemyZones.SuspendLayout();
             this.triggers.SuspendLayout();
             this.effects.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonImportLevel
@@ -1005,6 +1033,8 @@ namespace MyGame
             // 
             // effects
             // 
+            this.effects.Controls.Add(this.panel1);
+            this.effects.Controls.Add(this.editEffectButton);
             this.effects.Controls.Add(this.effectsCombo);
             this.effects.Controls.Add(this.addEffectButton);
             this.effects.Location = new System.Drawing.Point(4, 22);
@@ -1014,17 +1044,289 @@ namespace MyGame
             this.effects.Text = "Effects";
             this.effects.UseVisualStyleBackColor = true;
             // 
-            // addEffectButton
+            // panel1
             // 
-            this.addEffectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEffectButton.Location = new System.Drawing.Point(7, 10);
-            this.addEffectButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addEffectButton.Name = "addEffectButton";
-            this.addEffectButton.Size = new System.Drawing.Size(60, 28);
-            this.addEffectButton.TabIndex = 212;
-            this.addEffectButton.Text = "Add Effect";
-            this.addEffectButton.UseVisualStyleBackColor = true;
-            this.addEffectButton.Click += new System.EventHandler(this.button_Click);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.effectLifetime);
+            this.panel1.Controls.Add(this.NumParticles);
+            this.panel1.Controls.Add(this.effectNumParticles);
+            this.panel1.Controls.Add(this.effectDirectionZ);
+            this.panel1.Controls.Add(this.effectDirectionY);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.effectColorB);
+            this.panel1.Controls.Add(this.effectColorG);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.effectColorR);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.effectScale);
+            this.panel1.Controls.Add(this.effectDirectionX);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.effectPositionZ);
+            this.panel1.Controls.Add(this.effectPositionY);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.effectPositionX);
+            this.panel1.Location = new System.Drawing.Point(383, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(492, 91);
+            this.panel1.TabIndex = 217;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(305, 68);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(43, 13);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "Lifetime";
+            // 
+            // effectLifetime
+            // 
+            this.effectLifetime.Location = new System.Drawing.Point(404, 64);
+            this.effectLifetime.Margin = new System.Windows.Forms.Padding(2);
+            this.effectLifetime.Name = "effectLifetime";
+            this.effectLifetime.Size = new System.Drawing.Size(30, 20);
+            this.effectLifetime.TabIndex = 38;
+            this.effectLifetime.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // NumParticles
+            // 
+            this.NumParticles.AutoSize = true;
+            this.NumParticles.Location = new System.Drawing.Point(305, 46);
+            this.NumParticles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NumParticles.Name = "NumParticles";
+            this.NumParticles.Size = new System.Drawing.Size(69, 13);
+            this.NumParticles.TabIndex = 37;
+            this.NumParticles.Text = "NumParticles";
+            // 
+            // effectNumParticles
+            // 
+            this.effectNumParticles.Location = new System.Drawing.Point(404, 43);
+            this.effectNumParticles.Margin = new System.Windows.Forms.Padding(2);
+            this.effectNumParticles.Name = "effectNumParticles";
+            this.effectNumParticles.Size = new System.Drawing.Size(30, 20);
+            this.effectNumParticles.TabIndex = 36;
+            this.effectNumParticles.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // effectDirectionZ
+            // 
+            this.effectDirectionZ.Location = new System.Drawing.Point(184, 44);
+            this.effectDirectionZ.Margin = new System.Windows.Forms.Padding(2);
+            this.effectDirectionZ.Name = "effectDirectionZ";
+            this.effectDirectionZ.Size = new System.Drawing.Size(62, 20);
+            this.effectDirectionZ.TabIndex = 35;
+            this.effectDirectionZ.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // effectDirectionY
+            // 
+            this.effectDirectionY.Location = new System.Drawing.Point(119, 44);
+            this.effectDirectionY.Margin = new System.Windows.Forms.Padding(2);
+            this.effectDirectionY.Name = "effectDirectionY";
+            this.effectDirectionY.Size = new System.Drawing.Size(62, 20);
+            this.effectDirectionY.TabIndex = 34;
+            this.effectDirectionY.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(438, 22);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 20);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Color";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // effectColorB
+            // 
+            this.effectColorB.Location = new System.Drawing.Point(404, 22);
+            this.effectColorB.Margin = new System.Windows.Forms.Padding(2);
+            this.effectColorB.Name = "effectColorB";
+            this.effectColorB.Size = new System.Drawing.Size(30, 20);
+            this.effectColorB.TabIndex = 30;
+            // 
+            // effectColorG
+            // 
+            this.effectColorG.Location = new System.Drawing.Point(372, 22);
+            this.effectColorG.Margin = new System.Windows.Forms.Padding(2);
+            this.effectColorG.Name = "effectColorG";
+            this.effectColorG.Size = new System.Drawing.Size(30, 20);
+            this.effectColorG.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(305, 26);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Color";
+            // 
+            // effectColorR
+            // 
+            this.effectColorR.Location = new System.Drawing.Point(340, 22);
+            this.effectColorR.Margin = new System.Windows.Forms.Padding(2);
+            this.effectColorR.Name = "effectColorR";
+            this.effectColorR.Size = new System.Drawing.Size(30, 20);
+            this.effectColorR.TabIndex = 25;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(250, 23);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(51, 20);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Reset";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(250, 65);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(51, 20);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(250, 44);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(51, 20);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "Reset";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(207, 8);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(14, 13);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Z";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(145, 8);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(14, 13);
+            this.label17.TabIndex = 20;
+            this.label17.Text = "Y";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(78, 8);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(14, 13);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "X";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 67);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(34, 13);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Scale";
+            // 
+            // effectScale
+            // 
+            this.effectScale.Location = new System.Drawing.Point(55, 65);
+            this.effectScale.Margin = new System.Windows.Forms.Padding(2);
+            this.effectScale.Name = "effectScale";
+            this.effectScale.Size = new System.Drawing.Size(62, 20);
+            this.effectScale.TabIndex = 16;
+            this.effectScale.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // effectDirectionX
+            // 
+            this.effectDirectionX.Location = new System.Drawing.Point(55, 44);
+            this.effectDirectionX.Margin = new System.Windows.Forms.Padding(2);
+            this.effectDirectionX.Name = "effectDirectionX";
+            this.effectDirectionX.Size = new System.Drawing.Size(62, 20);
+            this.effectDirectionX.TabIndex = 7;
+            this.effectDirectionX.Leave += new System.EventHandler(this.effect_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 46);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(49, 13);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Direction";
+            // 
+            // effectPositionZ
+            // 
+            this.effectPositionZ.Enabled = false;
+            this.effectPositionZ.Location = new System.Drawing.Point(184, 23);
+            this.effectPositionZ.Margin = new System.Windows.Forms.Padding(2);
+            this.effectPositionZ.Name = "effectPositionZ";
+            this.effectPositionZ.Size = new System.Drawing.Size(62, 20);
+            this.effectPositionZ.TabIndex = 3;
+            // 
+            // effectPositionY
+            // 
+            this.effectPositionY.Enabled = false;
+            this.effectPositionY.Location = new System.Drawing.Point(119, 23);
+            this.effectPositionY.Margin = new System.Windows.Forms.Padding(2);
+            this.effectPositionY.Name = "effectPositionY";
+            this.effectPositionY.Size = new System.Drawing.Size(62, 20);
+            this.effectPositionY.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(7, 25);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(44, 13);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Position";
+            // 
+            // effectPositionX
+            // 
+            this.effectPositionX.Enabled = false;
+            this.effectPositionX.Location = new System.Drawing.Point(55, 23);
+            this.effectPositionX.Margin = new System.Windows.Forms.Padding(2);
+            this.effectPositionX.Name = "effectPositionX";
+            this.effectPositionX.Size = new System.Drawing.Size(62, 20);
+            this.effectPositionX.TabIndex = 0;
+            // 
+            // editEffectButton
+            // 
+            this.editEffectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEffectButton.Location = new System.Drawing.Point(7, 42);
+            this.editEffectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editEffectButton.Name = "editEffectButton";
+            this.editEffectButton.Size = new System.Drawing.Size(60, 28);
+            this.editEffectButton.TabIndex = 216;
+            this.editEffectButton.Text = "Edit Effect";
+            this.editEffectButton.UseVisualStyleBackColor = true;
+            this.editEffectButton.Click += new System.EventHandler(this.button_Click);
             // 
             // effectsCombo
             // 
@@ -1037,6 +1339,19 @@ namespace MyGame
             this.effectsCombo.Size = new System.Drawing.Size(183, 21);
             this.effectsCombo.TabIndex = 215;
             this.effectsCombo.TabStop = false;
+            this.effectsCombo.SelectedValueChanged += new System.EventHandler(this.effectsCombo_SelectedValueChanged);
+            // 
+            // addEffectButton
+            // 
+            this.addEffectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEffectButton.Location = new System.Drawing.Point(7, 10);
+            this.addEffectButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addEffectButton.Name = "addEffectButton";
+            this.addEffectButton.Size = new System.Drawing.Size(60, 28);
+            this.addEffectButton.TabIndex = 212;
+            this.addEffectButton.Text = "Add Effect";
+            this.addEffectButton.UseVisualStyleBackColor = true;
+            this.addEffectButton.Click += new System.EventHandler(this.button_Click);
             // 
             // myEditorControl
             // 
@@ -1078,6 +1393,8 @@ namespace MyGame
             this.enemyZones.PerformLayout();
             this.triggers.ResumeLayout(false);
             this.effects.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1164,6 +1481,33 @@ namespace MyGame
         public System.Windows.Forms.ComboBox availableConsecuences;
         private System.Windows.Forms.Button addEffectButton;
         public System.Windows.Forms.ComboBox effectsCombo;
+        private System.Windows.Forms.Button editEffectButton;
+        public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.TextBox effectColorB;
+        public System.Windows.Forms.TextBox effectColorG;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox effectColorR;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox effectScale;
+        public System.Windows.Forms.TextBox effectDirectionX;
+        private System.Windows.Forms.Label label20;
+        public System.Windows.Forms.TextBox effectPositionZ;
+        public System.Windows.Forms.TextBox effectPositionY;
+        private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.TextBox effectPositionX;
+        public System.Windows.Forms.TextBox effectDirectionZ;
+        public System.Windows.Forms.TextBox effectDirectionY;
+        private System.Windows.Forms.Label label22;
+        public System.Windows.Forms.TextBox effectLifetime;
+        private System.Windows.Forms.Label NumParticles;
+        public System.Windows.Forms.TextBox effectNumParticles;
     }
 }
 #endif

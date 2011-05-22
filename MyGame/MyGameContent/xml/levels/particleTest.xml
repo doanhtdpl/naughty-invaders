@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<level nextEntityID="2" BGColor="0 0 0 255">
+  <staticProps />
+  <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles>
+    <particle name="lavaSmoke" position="-405.0347 105.8613 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-375.1173 100.108 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-329.0907 92.05334 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-303.776 83.99867 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-303.776 62.136 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-307.2281 54.08133 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-314.132 52.93067 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-335.9947 55.23201 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-362.46 67.88934 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-390.076 75.944 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-405.0347 75.944 0" direction="0 0 0" color="100 100 100 255" />
+  </particles>
+</level>

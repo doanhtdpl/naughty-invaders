@@ -141,6 +141,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddEnemySpawnZone.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddTrigger.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditColisions.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_EditEffect.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditEnemySpawnZone.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditTrigger.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveCameraNode.cs" />

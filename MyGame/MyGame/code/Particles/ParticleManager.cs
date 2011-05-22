@@ -33,6 +33,11 @@ namespace MyGame
         //std::map<std::string, ParticleSystemInfo> baseParticleSystems;
 	    //std::vector<ParticleSystem> particleSystems;
 
+        public List<string> getBaseParticleSystemNames()
+        {
+            return baseParticleSystems.Keys.ToList<string>();
+        }
+
         public ParticleSystemData getBaseParticleSystemData(string name)
         {
             return baseParticleSystems[name];
@@ -133,10 +138,15 @@ namespace MyGame
         public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction, Color color,
             float scaleModifier = 1.0f, int nParticlesModifier = 0, float lifetimeModifier = 0.0f)
         {
-	        ParticleSystem ps = new ParticleSystem();
-	        ps.initialize(name, position, direction, color, scaleModifier, nParticlesModifier, lifetimeModifier);
-	        particleSystems.Add(ps);
-	        return ps;
+            ParticleSystem ps = new ParticleSystem();
+            ps.initialize(name, position, direction, color, scaleModifier, nParticlesModifier, lifetimeModifier);
+            particleSystems.Add(ps);
+            return ps;
+        }
+
+        public List<ParticleSystem> getParticles()
+        {
+            return particleSystems;
         }
 
         public void render()
