@@ -28,7 +28,8 @@ namespace MyGame
         // updates the event and returns false when event ends
         public virtual bool update()
         {
-            return false;
+            duration -= SB.dt;
+            return duration > 0.0f;
         }
         public virtual void render()
         {

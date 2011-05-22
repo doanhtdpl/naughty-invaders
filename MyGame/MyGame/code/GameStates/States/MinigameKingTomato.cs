@@ -62,15 +62,15 @@ namespace MyGame
             DialogEvent de4 = new DialogEvent(tDialogCharacter.OnionElder,
                "Genial! Te podemos ayudar prestandote el arma legendaria del pueblo: la Garlic Gun!");
             cinematic.events.Add(de4);
-            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), 12.0f);
+            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), 4.0f, 0.3f, false);
             ae2.addActorFunction("activateGarlicGun");
+            cinematic.events.Add(ae2);
             DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish,
                "Wow! parece muy poderosa!");
             cinematic.events.Add(de5);
             DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder,
                "Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!");
             cinematic.events.Add(de6);
-
 
             CinematicManager.Instance.addCinematic("kingTomatoIntro", cinematic);
         }
@@ -115,7 +115,7 @@ namespace MyGame
             return tomatoesLeft;
         }
 
-        void startNewWave()
+        bool startNewWave()
         {
             switch (currentWave)
             {
@@ -130,6 +130,7 @@ namespace MyGame
                     tomatoesToSpawn = 30;
                     break;
                 case 3:
+                    if (OrbManager.Instance.orbs.Count > 0) return false;
                     spawnTomatoTimer -= SB.dt;
                     spawnTomatoTime = 0.03f;
                     tomatoesToSpawn = 50;
@@ -149,6 +150,7 @@ namespace MyGame
                     tomatoesToSpawn = 200;
                     break;
             }
+            return true;
         }
 
         bool updateTomatoes()
@@ -182,8 +184,10 @@ namespace MyGame
                     restTime -= SB.dt;
                     if (restTime < 0.0f)
                     {
-                        state = tState.Combat;
-                        startNewWave();
+                        if (startNewWave())
+                        {
+                            state = tState.Combat;
+                        }
                     }
                     break;
                 case tState.Combat:

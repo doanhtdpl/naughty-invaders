@@ -179,17 +179,32 @@ namespace MyGame
                     {
                         action.playAtEnd = null;
                     }
+
+                    // if there is playRandom attribute, read all the random actions
                     if (actionNode.Attribute("playRandom") != null)
                     {
-                        action.playRandom = actionNode.Attribute("playRandom").Value;
-                        action.playRandomMin = actionNode.Attribute("playRandomMin").Value.toFloat();
-                        action.playRandomMax = actionNode.Attribute("playRandomMax").Value.toFloat();
-                    }
-                    else
-                    {
-                        action.playRandom = null;
-                        action.playRandomMin = 0.0f;
-                        action.playRandomMax = 0.0f;
+                        action.playRandom = actionNode.Attribute("playRandom").Value.toBool();
+                        if (action.playRandom)
+                        {
+                            action.playRandomMin = actionNode.Attribute("playRandomMin").Value.toFloat();
+                            action.playRandomMax = actionNode.Attribute("playRandomMax").Value.toFloat();
+                            action.randomActions = new List<RandomAction>();
+                            IEnumerable<XElement> randomActionsList = actionNode.Descendants("playRandom");
+                            foreach (XElement randomActionNode in randomActionsList)
+                            {
+                                RandomAction randomAction = new RandomAction();
+                                randomAction.name = randomActionNode.Attribute("name").Value;
+                                if (randomActionNode.Attribute("probability") != null)
+                                {
+                                    randomAction.probability = randomActionNode.Attribute("probability").Value.toFloat();
+                                }
+                                else
+                                {
+                                    randomAction.probability = 1.0f;
+                                }
+                                action.randomActions.Add(randomAction);
+                            }
+                        }
                     }
 
                     // add each action to the list
@@ -219,12 +234,21 @@ namespace MyGame
             currentTextureId = action.textureId;
 
             // play a the random action if necessary
-            if (action.playRandom != null)
+            if (action.playRandom)
             {
                 nextRandomActionTime -= SB.dt;
                 if (nextRandomActionTime < 0.0f)
                 {
-                    playAction(action.playRandom);
+                    float random = Calc.randomScalar();
+                    float accumulatedProbability = 0.0f;
+                    for (int i = 0; i < action.randomActions.Count; ++i)
+                    {
+                        accumulatedProbability += action.randomActions[i].probability;
+                        if (random < accumulatedProbability)
+                        {
+                            playAction(action.randomActions[i].name);
+                        }
+                    }
                 }
             }
  
