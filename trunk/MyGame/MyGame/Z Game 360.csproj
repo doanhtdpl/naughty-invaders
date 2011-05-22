@@ -70,12 +70,12 @@
     <Compile Include="code\Camera\Camera2D.cs" />
     <Compile Include="code\Camera\Network.cs" />
     <Compile Include="code\Cinematics\ActorEvent.cs" />
+    <Compile Include="code\Cinematics\CinematicEvent.cs" />
+    <Compile Include="code\Cinematics\CinematicManager.cs" />
     <Compile Include="code\Cinematics\DialogEvent.cs" />
     <Compile Include="code\ControlPad.cs" />
     <Compile Include="code\CoolizionEngine\Line.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
-    <Compile Include="code\Cinematics\CinematicEvent.cs" />
-    <Compile Include="code\Cinematics\CinematicManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddCameraNode.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_AddColisions.cs" />
