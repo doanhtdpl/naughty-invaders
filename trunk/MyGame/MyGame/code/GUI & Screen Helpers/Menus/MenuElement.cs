@@ -30,6 +30,23 @@ namespace MyGame
         }
     }
 
+    public class XPCounter : MenuElement
+    {
+        static Texture2D starXP;
+        Player player;
+
+        public XPCounter(Player player, string textureName, Vector2 position, Vector2 scale):base(textureName, position, scale, false)
+        {
+            this.player = player;
+        }
+
+        public override void render(bool selected, bool flip = false)
+        {
+            base.render(selected, flip);
+            StringManager.render(player.data.XP.ToString(), Screen.getXYfromCenter(position + new Vector2(50,15)), 1.0f, Color.Gold, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.Brown, 1.0f, new Vector2(1.5f, 1.5f), StringManager.tStyle.Shadowed);
+        }
+    }
+
     public class MenuElement
     {
         Texture2D texture;
@@ -142,7 +159,7 @@ namespace MyGame
             return false;
         }
 
-        public void render(bool selected, bool flip = false)
+        public virtual void render(bool selected, bool flip = false)
         {
             if (flip)
             {

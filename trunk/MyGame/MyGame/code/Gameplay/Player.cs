@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
-    class Player : CollidableEntity2D
+    public class Player : CollidableEntity2D
     {
         public enum tMode { Arcade, GarlicGun, SavingItems }
         public tMode mode { get; set; }
@@ -28,6 +28,8 @@ namespace MyGame
         public int lifes { get; set; }
         public float lifeValue;
         float invulnerableTime;
+
+        Texture2D starXP;
         
         // actions stuff
         float garlicGunCooldownTime;
@@ -75,6 +77,8 @@ namespace MyGame
             {
                 bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
             }
+
+            starXP = TextureManager.Instance.getTexture("GUI/menu/starXP");
         }
 
         public void initStage(Vector2 position)
@@ -338,6 +342,11 @@ namespace MyGame
 
         public void renderGUI()
         {
+            Viewport viewport = GraphicsManager.Instance.graphicsDevice.Viewport;
+            Vector3 projectedPosition = viewport.Project(position + new Vector3(60, -50.0f, 0), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            starXP.render2D(projectedPosition.toVector2(), new Vector2(20.0f, 20.0f), Color.White, 0.0f, SpriteEffects.None, 1.0f, false);
+            StringManager.render(data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
+
             switch (mode)
             {
                 case tMode.Arcade:

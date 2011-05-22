@@ -73,6 +73,10 @@ namespace MyGame
             menu.menuElements.Add(mb3);
             menu.menuElements.Add(mb4);
             menu.setCurrentNode(mb1);
+
+            // xp counter
+            XPCounter xpCounter = new XPCounter(GamerManager.getMainPlayer(), "starXP", new Vector2(-470, -250), new Vector2(1.0f, 1.0f));
+            menu.menuElements.Add(xpCounter);
         }
 
         public override void initialize()
