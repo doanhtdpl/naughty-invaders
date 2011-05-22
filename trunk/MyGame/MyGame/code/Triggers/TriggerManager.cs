@@ -32,6 +32,11 @@ namespace MyGame
             triggers.Add(trigger);
         }
 
+        public List<Trigger> getTriggers()
+        {
+            return triggers;
+        }
+
         // check all triggers
         public void update()
         {

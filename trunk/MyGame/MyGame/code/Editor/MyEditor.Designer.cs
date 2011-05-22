@@ -135,6 +135,12 @@ namespace MyGame
             this.editEffectButton = new System.Windows.Forms.Button();
             this.effectsCombo = new System.Windows.Forms.ComboBox();
             this.addEffectButton = new System.Windows.Forms.Button();
+            this.triggerConditions = new System.Windows.Forms.ComboBox();
+            this.triggerConsecuences = new System.Windows.Forms.ComboBox();
+            this.addConditionButton = new System.Windows.Forms.Button();
+            this.addConsecuenceButton = new System.Windows.Forms.Button();
+            this.removeConsecuenceButton = new System.Windows.Forms.Button();
+            this.removeConditionButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
@@ -973,6 +979,12 @@ namespace MyGame
             // 
             // triggers
             // 
+            this.triggers.Controls.Add(this.removeConsecuenceButton);
+            this.triggers.Controls.Add(this.removeConditionButton);
+            this.triggers.Controls.Add(this.addConsecuenceButton);
+            this.triggers.Controls.Add(this.addConditionButton);
+            this.triggers.Controls.Add(this.triggerConsecuences);
+            this.triggers.Controls.Add(this.triggerConditions);
             this.triggers.Controls.Add(this.editTriggerButton);
             this.triggers.Controls.Add(this.availableConsecuences);
             this.triggers.Controls.Add(this.availableConditions);
@@ -994,6 +1006,7 @@ namespace MyGame
             this.editTriggerButton.TabIndex = 216;
             this.editTriggerButton.Text = "Edit Trigger";
             this.editTriggerButton.UseVisualStyleBackColor = true;
+            this.editTriggerButton.Click += new System.EventHandler(this.button_Click);
             // 
             // availableConsecuences
             // 
@@ -1353,6 +1366,78 @@ namespace MyGame
             this.addEffectButton.UseVisualStyleBackColor = true;
             this.addEffectButton.Click += new System.EventHandler(this.button_Click);
             // 
+            // triggerConditions
+            // 
+            this.triggerConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.triggerConditions.CausesValidation = false;
+            this.triggerConditions.FormattingEnabled = true;
+            this.triggerConditions.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.triggerConditions.Location = new System.Drawing.Point(321, 13);
+            this.triggerConditions.Name = "triggerConditions";
+            this.triggerConditions.Size = new System.Drawing.Size(183, 21);
+            this.triggerConditions.TabIndex = 217;
+            this.triggerConditions.TabStop = false;
+            // 
+            // triggerConsecuences
+            // 
+            this.triggerConsecuences.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.triggerConsecuences.CausesValidation = false;
+            this.triggerConsecuences.FormattingEnabled = true;
+            this.triggerConsecuences.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.triggerConsecuences.Location = new System.Drawing.Point(321, 53);
+            this.triggerConsecuences.Name = "triggerConsecuences";
+            this.triggerConsecuences.Size = new System.Drawing.Size(183, 21);
+            this.triggerConsecuences.TabIndex = 218;
+            this.triggerConsecuences.TabStop = false;
+            // 
+            // addConditionButton
+            // 
+            this.addConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addConditionButton.Location = new System.Drawing.Point(271, 13);
+            this.addConditionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addConditionButton.Name = "addConditionButton";
+            this.addConditionButton.Size = new System.Drawing.Size(45, 21);
+            this.addConditionButton.TabIndex = 219;
+            this.addConditionButton.Text = "Add";
+            this.addConditionButton.UseVisualStyleBackColor = true;
+            this.addConditionButton.Click += new System.EventHandler(this.addConditionButton_Click);
+            // 
+            // addConsecuenceButton
+            // 
+            this.addConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addConsecuenceButton.Location = new System.Drawing.Point(271, 53);
+            this.addConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addConsecuenceButton.Name = "addConsecuenceButton";
+            this.addConsecuenceButton.Size = new System.Drawing.Size(45, 21);
+            this.addConsecuenceButton.TabIndex = 220;
+            this.addConsecuenceButton.Text = "Add";
+            this.addConsecuenceButton.UseVisualStyleBackColor = true;
+            this.addConsecuenceButton.Click += new System.EventHandler(this.addConsecuenceButton_Click);
+            // 
+            // removeConsecuenceButton
+            // 
+            this.removeConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeConsecuenceButton.Location = new System.Drawing.Point(518, 53);
+            this.removeConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeConsecuenceButton.Name = "removeConsecuenceButton";
+            this.removeConsecuenceButton.Size = new System.Drawing.Size(45, 21);
+            this.removeConsecuenceButton.TabIndex = 222;
+            this.removeConsecuenceButton.Text = "Remove";
+            this.removeConsecuenceButton.UseVisualStyleBackColor = true;
+            this.removeConsecuenceButton.Click += new System.EventHandler(this.removeConsecuenceButton_Click);
+            // 
+            // removeConditionButton
+            // 
+            this.removeConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeConditionButton.Location = new System.Drawing.Point(518, 13);
+            this.removeConditionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeConditionButton.Name = "removeConditionButton";
+            this.removeConditionButton.Size = new System.Drawing.Size(45, 21);
+            this.removeConditionButton.TabIndex = 221;
+            this.removeConditionButton.Text = "Remove";
+            this.removeConditionButton.UseVisualStyleBackColor = true;
+            this.removeConditionButton.Click += new System.EventHandler(this.removeConditionButton_Click);
+            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 129);
@@ -1508,6 +1593,12 @@ namespace MyGame
         public System.Windows.Forms.TextBox effectLifetime;
         private System.Windows.Forms.Label NumParticles;
         public System.Windows.Forms.TextBox effectNumParticles;
+        private System.Windows.Forms.Button addConsecuenceButton;
+        private System.Windows.Forms.Button addConditionButton;
+        public System.Windows.Forms.ComboBox triggerConsecuences;
+        public System.Windows.Forms.ComboBox triggerConditions;
+        private System.Windows.Forms.Button removeConsecuenceButton;
+        private System.Windows.Forms.Button removeConditionButton;
     }
 }
 #endif

@@ -782,6 +782,39 @@ namespace MyGame
         {
 
         }
+
+        private void addConditionButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditTrigger)
+            {
+                ((EditorState_EditTrigger)currentState).addCondition(availableConditions.Text);
+            }
+        }
+
+        private void addConsecuenceButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditTrigger)
+            {
+                ((EditorState_EditTrigger)currentState).addConsecuence(availableConsecuences.Text);
+            }
+        }
+
+        private void removeConditionButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditTrigger)
+            {
+                ((EditorState_EditTrigger)currentState).removeCondition(triggerConditions.SelectedIndex);
+            }
+        }
+
+        private void removeConsecuenceButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditTrigger)
+            {
+                ((EditorState_EditTrigger)currentState).removeConsecuence(triggerConsecuences.SelectedIndex);
+            }
+        }
+
     }
 }
 #endif

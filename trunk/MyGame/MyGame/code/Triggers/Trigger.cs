@@ -12,14 +12,9 @@ namespace MyGame
     {
         public int executionTimes = 1;
 
-        Vector2 position;
-        List<Function> conditions = new List<Function>();
-        List<Function> executions = new List<Function>();
-
-        public void setPosition(Vector2 position)
-        {
-            this.position = position;
-        }
+        public Vector2 position;
+        public List<Function> conditions = new List<Function>();
+        public List<Function> executions = new List<Function>();
 
         public void addFunction(bool isCondition, string functionName, params object[] parameters)
         {
@@ -42,6 +37,14 @@ namespace MyGame
             {
                 executions.Add(tf);
             }
+        }
+
+        public void removeFunction(bool isCondition, int index)
+        {
+            if (isCondition)
+                conditions.RemoveAt(index);
+            else
+                executions.RemoveAt(index);
         }
 
         public void initTrigger()

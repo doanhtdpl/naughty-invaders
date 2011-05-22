@@ -43,6 +43,10 @@ namespace MyGame
 
         public override void render()
         {
+            foreach (ParticleSystem particle in ParticleManager.Instance.getParticles())
+            {
+                DebugManager.Instance.addRectangle(particle.position - new Vector3(20, 20, 0), particle.position + new Vector3(20, 20, 0), Color.Yellow);
+            }
             ParticleManager.Instance.update();
             ParticleManager.Instance.render();
             base.render();

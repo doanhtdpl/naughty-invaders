@@ -35,5 +35,16 @@ namespace MyGame
             object result = method.Invoke(null, parameters);
             return result;
         }
+
+        public List<string> getClassFunctions(string className)
+        {
+            Type type = Type.GetType("MyGame." + className);
+            List<string> names = new List<string>();
+            foreach (MethodInfo info in type.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Static))
+            {
+                names.Add(info.Name);
+            }
+            return names;
+        }
     }
 }
