@@ -34,7 +34,7 @@ namespace MyGame
             if (!ps.obtained && ps.cost <= XP)
             {
                 ps.obtained = true;
-                XP -= ps.cost;
+                GamerManager.getSessionOwner().Player.data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
                 // playsound
             }
@@ -50,7 +50,7 @@ namespace MyGame
             if (!ps.obtained && ps.cost <= XP)
             {
                 ps.obtained = true;
-                XP -= ps.cost;
+                GamerManager.getSessionOwner().Player.data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
                 player.addLifeToMax();
                 // playsound

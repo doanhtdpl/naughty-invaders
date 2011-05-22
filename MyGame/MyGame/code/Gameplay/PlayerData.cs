@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MyGame
 {
-    class PlayerSkill
+    public class PlayerSkill
     {
         public string name;
         public int cost;
@@ -21,7 +21,7 @@ namespace MyGame
         }
     }
 
-    class PlayerData
+    public class PlayerData
     {
         public int totalXP;
         public int XP;

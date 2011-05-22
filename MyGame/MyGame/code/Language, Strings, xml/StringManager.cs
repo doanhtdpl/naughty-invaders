@@ -49,7 +49,7 @@ namespace MyGame
                     switch (textStyle)
                     {
                         case tStyle.Normal:
-                            GraphicsManager.Instance.spriteBatch.DrawString(textFont, str, position + offset, new Color(textColor.R, textColor.G, textColor.B, textAlpha), 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
+                            GraphicsManager.Instance.spriteBatch.DrawString(textFont, str, position + offset, textColor * textAlpha, 0, Vector2.Zero, textScale, SpriteEffects.None, 0);
                             break;
                         case tStyle.Border:
                             drawSurroundedString(str, position + offset, textColor, textShadowColor, textScale, textAlpha);
@@ -256,16 +256,16 @@ namespace MyGame
 
         public static void drawSurroundedString(String text, Vector2 position, Color primal, Color shadow, float scale, float alpha)
         {
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position - textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(-textBorder.X, textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(textBorder.X, -textBorder.Y), new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position - textBorder, shadow * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, shadow * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(-textBorder.X, textBorder.Y), shadow * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + new Vector2(textBorder.X, -textBorder.Y), shadow * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, primal * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
         }
         public static void drawShadowedString(String text, Vector2 position, Color primal, Color shadow, float scale, float alpha)
         {
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, new Color(shadow.R, shadow.G, shadow.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
-            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, new Color(primal.R, primal.G, primal.B, alpha), 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position + textBorder, shadow * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
+            GraphicsManager.Instance.spriteBatch.DrawString(SB.font, text, position, primal * alpha, 0, Vector2.Zero, scale, SpriteEffects.None, 1f);
         }
     }
 
