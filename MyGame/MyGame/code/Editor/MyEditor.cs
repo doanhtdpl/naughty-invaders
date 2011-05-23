@@ -146,6 +146,10 @@ namespace MyGame
             {
                 changeState(new EditorState_EditEffect());
             }
+            else if (sender == editEffectsButton)
+            {
+                changeState(new EditorState_EditEffects());
+            }
             myEditorControl.Focus();
         }
 
@@ -475,6 +479,7 @@ namespace MyGame
             editTriggerButton.BackColor = nextState is EditorState_EditTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
             addEffectButton.BackColor = nextState is EditorState_AddEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
             editEffectButton.BackColor = nextState is EditorState_EditEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
+            editEffectsButton.BackColor = nextState is EditorState_EditEffects ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 
@@ -815,6 +820,31 @@ namespace MyGame
             }
         }
 
+        private void editEffectsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEffects)
+            {
+                ((EditorState_EditEffects)currentState).setSelected(editEffectsList.Text);
+            }
+        }
+
+        private void saveEffectsButton_Click(object sender, EventArgs e)
+        {
+            ParticleManager.Instance.saveXML();
+        }
+
+        private void reloadEffectsButton_Click(object sender, EventArgs e)
+        {
+            ParticleManager.Instance.getParticles().Clear();
+        }
+
+        private void editEffects_Leave(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEffects)
+            {
+                ((EditorState_EditEffects)currentState).updateSelected();
+            }
+        }
     }
 }
 #endif

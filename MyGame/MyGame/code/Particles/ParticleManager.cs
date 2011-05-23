@@ -43,6 +43,11 @@ namespace MyGame
             return baseParticleSystems[name];
         }
 
+        public void setBaseParticleSystemData(string name, ParticleSystemData data)
+        {
+            baseParticleSystems[name] = data;
+        }
+
         public void loadXML()
         {
             baseParticleSystems.Clear();
@@ -56,15 +61,8 @@ namespace MyGame
                 ParticleSystemData data = new ParticleSystemData();
                 data.name = bps.Attribute("name").Value;
                 string type = bps.Attribute("type").Value;
-                switch(type)
-                {
-                    case "burst":
-                        data.type = ParticleSystemData.tParticleSystem.Burst;
-                    break;
-                    case "fountain":
-                        data.type = ParticleSystemData.tParticleSystem.Fountain;
-                    break;
-                }
+                data.type = type == "burst" ? data.type = ParticleSystemData.tParticleSystem.Burst : data.type = ParticleSystemData.tParticleSystem.Fountain;
+
                 string render = bps.Attribute("render").Value;
                 bool additive = render == "additive";
 
@@ -117,8 +115,6 @@ namespace MyGame
 
                 baseParticleSystems.Add(data.name, data);
             }
-
-            saveXML();
         }
 
         public void saveXML()

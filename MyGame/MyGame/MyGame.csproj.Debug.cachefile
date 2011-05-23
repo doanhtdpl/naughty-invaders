@@ -26,6 +26,7 @@ Content\textures\staticProps\Background_Level01.xnb
 Content\textures\particles\Particle_Test.xnb
 Content\textures\animatedProps\leaf_4_4.xnb
 Content\textures\particles\Gusyluz.xnb
+Content\textures\GUI\menu\A.xnb
 Content\textures\staticProps\esmeral.xnb
 Content\textures\staticProps\pincho.xnb
 Content\textures\staticProps\struc-01.xnb
@@ -131,7 +132,6 @@ Content\textures\GUI\menu\option1.xnb
 Content\textures\GUI\menu\option2.xnb
 Content\textures\GUI\menu\option3.xnb
 Content\textures\GUI\menu\smallHeader.xnb
-Content\textures\GUI\menu\A.xnb
 Content\textures\enemies\Anim_Macedonia.xnb
 Content\textures\staticProps\onion-44.xnb
 Content\textures\staticProps\onion-45.xnb
@@ -146,11 +146,6 @@ Content\textures\staticProps\onion-54.xnb
 Content\textures\staticProps\onion-55.xnb
 Content\textures\staticProps\onion-56.xnb
 Content\textures\staticProps\onion-57.xnb
-Content\textures\GUI\menu\botoncito.xnb
-Content\textures\GUI\menu\Selector.xnb
-Content\textures\GUI\menu\wishmenu.xnb
-Content\textures\GUI\portraits\portraitWish.xnb
-Content\textures\GUI\menu\dialogBackground.xnb
 Content\xml\characters\bob.xml
 Content\xml\enemies\grape.xml
 Content\xml\enemies\orange.xml
