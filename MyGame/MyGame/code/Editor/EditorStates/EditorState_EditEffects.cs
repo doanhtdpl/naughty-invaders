@@ -192,6 +192,13 @@ namespace MyGame
             ParticleManager.Instance.setBaseParticleSystemData(selected, data);
         }
 
+        public void duplicate(string newName)
+        {
+            ParticleSystemData data = ParticleManager.Instance.getBaseParticleSystemData(selected);
+            data.name = newName;
+            ParticleManager.Instance.setBaseParticleSystemData(newName, data);
+        }
+
         public override void render()
         {
             ParticleManager.Instance.update();

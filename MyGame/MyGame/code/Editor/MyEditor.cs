@@ -845,6 +845,17 @@ namespace MyGame
                 ((EditorState_EditEffects)currentState).updateSelected();
             }
         }
+
+        private void effectDuplicateButton_Click(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEffects)
+            {
+                noUpdate++;
+                string name = Microsoft.VisualBasic.Interaction.InputBox("Enter a name for the new effect", "New Effect", "");
+                ((EditorState_EditEffects)currentState).duplicate(name);
+                noUpdate--;
+            }
+        }
     }
 }
 #endif
