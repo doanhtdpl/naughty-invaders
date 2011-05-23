@@ -47,7 +47,7 @@ namespace MyGame
         {
             baseParticleSystems.Clear();
 
-            XDocument xml = XDocument.Load(SB.content.RootDirectory + "/xml/particles/particleSystems.xml");
+            XDocument xml = XDocument.Load(SB.content.RootDirectory + "/xml/particles/particleSystems2.xml");
 
             IEnumerable<XElement> baseParticleSystemList = xml.Descendants("particleSystem");
 
@@ -69,6 +69,7 @@ namespace MyGame
                 bool additive = render == "additive";
 
                 string path = bps.Attribute("texturePath").Value;
+                data.textureName = path;
                 data.texture = TextureManager.Instance.getTexture("particles/" + path);
                 data.nParticles = bps.Attribute("nParticles").Value.toInt();
                 data.systemLife = bps.Attribute("systemLife").Value.toFloat();
@@ -116,6 +117,56 @@ namespace MyGame
 
                 baseParticleSystems.Add(data.name, data);
             }
+
+            saveXML();
+        }
+
+        public void saveXML()
+        {
+            XmlTextWriter writer = new XmlTextWriter("../../../../MyGameContent/xml/particles/particleSystems2.xml", null);
+            writer.Formatting = Formatting.Indented;
+            writer.WriteStartDocument();
+            writer.WriteStartElement("particleSystems");
+
+            foreach (ParticleSystemData data in baseParticleSystems.Values)
+            {
+                writer.WriteStartElement("particleSystem");
+
+                writer.WriteAttributeString("name", data.name);
+                writer.WriteAttributeString("type", data.type == ParticleSystemData.tParticleSystem.Burst ? "burst" : "fountain");
+                writer.WriteAttributeString("render", data.color.A == 0 ? "additive" : "normal");
+                writer.WriteAttributeString("texturePath", data.textureName);
+                writer.WriteAttributeString("nParticles", data.nParticles.ToString());
+                writer.WriteAttributeString("systemLife", data.systemLife.ToString());
+                writer.WriteAttributeString("position", data.position.toXML());
+                writer.WriteAttributeString("positionVarianceMin", data.positionVarianceMin.toXML());
+                writer.WriteAttributeString("positionVarianceMax", data.positionVarianceMax.toXML());
+                writer.WriteAttributeString("direction", data.direction.toXML());
+                writer.WriteAttributeString("directionVarianceMin", data.directionVarianceMin.toXML());
+                writer.WriteAttributeString("directionVarianceMax", data.directionVarianceMax.toXML());
+                writer.WriteAttributeString("acceleration", data.acceleration.toXML());
+                writer.WriteAttributeString("accelerationVarianceMin", data.accelerationVarianceMin.toXML());
+                writer.WriteAttributeString("accelerationVarianceMax", data.accelerationVarianceMax.toXML());
+                writer.WriteAttributeString("color", data.color.toXML());
+                writer.WriteAttributeString("colorVarianceMin", data.colorVarianceMin.toXML());
+                writer.WriteAttributeString("colorVarianceMax", data.colorVarianceMax.toXML());
+                writer.WriteAttributeString("particlesRotation", data.particlesRotation.ToString());
+                writer.WriteAttributeString("particlesRotationVariance", data.particlesRotationVariance.ToString());
+                writer.WriteAttributeString("particlesRotationSpeed", data.particlesRotationSpeed.ToString());
+                writer.WriteAttributeString("particlesRotationSpeedVariance", data.particlesRotationSpeedVariance.ToString());
+                writer.WriteAttributeString("size", data.size.ToString());
+                writer.WriteAttributeString("sizeIni", data.sizeIni.ToString());
+                writer.WriteAttributeString("sizeEnd", data.sizeEnd.ToString());
+                writer.WriteAttributeString("fadeIn", data.fadeIn.ToString());
+                writer.WriteAttributeString("fadeOut", data.fadeOut.ToString());
+                writer.WriteAttributeString("particlesLife", data.particlesLife.ToString());
+
+                writer.WriteEndElement();
+            }
+
+            writer.WriteEndElement();
+            writer.WriteEndDocument();
+            writer.Close();
         }
 
         public void update()
