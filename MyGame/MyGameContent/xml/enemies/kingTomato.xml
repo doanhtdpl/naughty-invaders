@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
   <animatedTexture name="Anim_KingTomato_Death" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="28" FPS="15" loops="false"/>
-    <action name="die" initialFrame="1" endFrame="28" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="28" FPS="15" loops="true"/>
+    <action name="death" initialFrame="1" endFrame="28" FPS="15" loops="false"/>
   </animatedTexture>
-</animatedEntity>
-<animatedEntity>
   <animatedTexture name="Anim_KingTomato_Idle" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="31" FPS="15" loops="false"/>
-    <action name="die" initialFrame="1" endFrame="31" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="true"/>
+    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="false"/>
   </animatedTexture>
-</animatedEntity>
-<animatedEntity>
   <animatedTexture name="Anim_KingTomato_Shouting" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="die" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="36" FPS="15" loops="true"/>
+    <action name="shouting" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
   </animatedTexture>
-</animatedEntity>
-<animatedEntity>
   <animatedTexture name="Anim_KingTomato_Speaking" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="die" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="36" FPS="15" loops="true"/>
+    <action name="speaking" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
   </animatedTexture>
-</animatedEntity>
-<animatedEntity>
   <animatedTexture name="Anim_KingTomato_Afraid" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="die" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="36" FPS="15" loops="true"/>
+    <action name="afraid" initialFrame="1" endFrame="36" FPS="15" loops="false"/>
   </animatedTexture>
 </animatedEntity>
