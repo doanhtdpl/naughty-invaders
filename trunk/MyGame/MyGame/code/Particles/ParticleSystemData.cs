@@ -13,8 +13,9 @@ namespace MyGame
 
 	    public string			    name;
         public tParticleSystem      type;
-	    public Texture         	    texture;
-	    public int					nParticles;
+        public string               textureName;
+        public Texture              texture;
+        public int                  nParticles;
 	    public float				systemLife;
 	    public Vector3			    position;
 	    public Vector3			    direction;
