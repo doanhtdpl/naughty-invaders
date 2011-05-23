@@ -70,6 +70,7 @@ namespace MyGame
             if (selected != null)
             {
                 selected.addFunction(true, name, null);
+                
                 updateFunctions();
             }
         }
@@ -78,6 +79,7 @@ namespace MyGame
         {
             if (selected != null)
             {
+                ReflectionManager.Instance.getParameters("ConditionFunctions", name);
                 selected.addFunction(false, name, null);
                 updateFunctions();
             }
