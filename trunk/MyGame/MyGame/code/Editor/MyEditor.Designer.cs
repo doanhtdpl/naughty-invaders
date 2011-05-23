@@ -228,6 +228,7 @@ namespace MyGame
             this.editEffectsList = new System.Windows.Forms.ComboBox();
             this.saveEffectsButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.effectDuplicateButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -1528,6 +1529,7 @@ namespace MyGame
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.effectDuplicateButton);
             this.tabPage1.Controls.Add(this.label47);
             this.tabPage1.Controls.Add(this.ee_FadeOut);
             this.tabPage1.Controls.Add(this.label48);
@@ -2450,6 +2452,18 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
+            // effectDuplicateButton
+            // 
+            this.effectDuplicateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.effectDuplicateButton.Location = new System.Drawing.Point(136, 42);
+            this.effectDuplicateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.effectDuplicateButton.Name = "effectDuplicateButton";
+            this.effectDuplicateButton.Size = new System.Drawing.Size(60, 28);
+            this.effectDuplicateButton.TabIndex = 300;
+            this.effectDuplicateButton.Text = "Duplicate";
+            this.effectDuplicateButton.UseVisualStyleBackColor = true;
+            this.effectDuplicateButton.Click += new System.EventHandler(this.effectDuplicateButton_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2690,6 +2704,7 @@ namespace MyGame
         public System.Windows.Forms.TextBox ee_Rot;
         private System.Windows.Forms.Label label38;
         public System.Windows.Forms.TextBox ee_SystemLife;
+        private System.Windows.Forms.Button effectDuplicateButton;
     }
 }
 #endif
