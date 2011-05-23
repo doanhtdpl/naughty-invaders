@@ -101,6 +101,12 @@ namespace MyGame
             this.enemiesCombo = new System.Windows.Forms.ComboBox();
             this.addEnemyZoneButton = new System.Windows.Forms.Button();
             this.triggers = new System.Windows.Forms.TabPage();
+            this.removeConsecuenceButton = new System.Windows.Forms.Button();
+            this.removeConditionButton = new System.Windows.Forms.Button();
+            this.addConsecuenceButton = new System.Windows.Forms.Button();
+            this.addConditionButton = new System.Windows.Forms.Button();
+            this.triggerConsecuences = new System.Windows.Forms.ComboBox();
+            this.triggerConditions = new System.Windows.Forms.ComboBox();
             this.editTriggerButton = new System.Windows.Forms.Button();
             this.availableConsecuences = new System.Windows.Forms.ComboBox();
             this.availableConditions = new System.Windows.Forms.ComboBox();
@@ -135,12 +141,92 @@ namespace MyGame
             this.editEffectButton = new System.Windows.Forms.Button();
             this.effectsCombo = new System.Windows.Forms.ComboBox();
             this.addEffectButton = new System.Windows.Forms.Button();
-            this.triggerConditions = new System.Windows.Forms.ComboBox();
-            this.triggerConsecuences = new System.Windows.Forms.ComboBox();
-            this.addConditionButton = new System.Windows.Forms.Button();
-            this.addConsecuenceButton = new System.Windows.Forms.Button();
-            this.removeConsecuenceButton = new System.Windows.Forms.Button();
-            this.removeConditionButton = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label47 = new System.Windows.Forms.Label();
+            this.ee_FadeOut = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.ee_FadeIn = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.ee_Life = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.ee_SizeEnd = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.ee_SizeIni = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.ee_size = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.ee_RotSpeedVar = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.ee_RotSpeed = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.ee_RotVar = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.ee_Rot = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.ee_SystemLife = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.ee_NumPart = new System.Windows.Forms.TextBox();
+            this.ee_ColorMaxA = new System.Windows.Forms.TextBox();
+            this.ee_ColorMinA = new System.Windows.Forms.TextBox();
+            this.ee_ColorA = new System.Windows.Forms.TextBox();
+            this.ee_ColorMaxB = new System.Windows.Forms.TextBox();
+            this.ee_ColorMaxG = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.ee_ColorMaxR = new System.Windows.Forms.TextBox();
+            this.ee_ColorMinB = new System.Windows.Forms.TextBox();
+            this.ee_ColorMinG = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ee_ColorMinR = new System.Windows.Forms.TextBox();
+            this.ee_ColorB = new System.Windows.Forms.TextBox();
+            this.ee_ColorG = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.ee_ColorR = new System.Windows.Forms.TextBox();
+            this.ee_AccMaxZ = new System.Windows.Forms.TextBox();
+            this.ee_AccMaxY = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.ee_AccMaxX = new System.Windows.Forms.TextBox();
+            this.ee_AccMinZ = new System.Windows.Forms.TextBox();
+            this.ee_AccMinY = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.ee_AccMinX = new System.Windows.Forms.TextBox();
+            this.ee_AccZ = new System.Windows.Forms.TextBox();
+            this.ee_AccY = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.ee_AccX = new System.Windows.Forms.TextBox();
+            this.ee_DirMaxZ = new System.Windows.Forms.TextBox();
+            this.ee_DirMaxY = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.ee_DirMaxX = new System.Windows.Forms.TextBox();
+            this.ee_DirMinZ = new System.Windows.Forms.TextBox();
+            this.ee_DirMinY = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.ee_DirMinX = new System.Windows.Forms.TextBox();
+            this.ee_DirZ = new System.Windows.Forms.TextBox();
+            this.ee_DirY = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.ee_DirX = new System.Windows.Forms.TextBox();
+            this.ee_PosMaxZ = new System.Windows.Forms.TextBox();
+            this.ee_PosMaxY = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.ee_PosMaxX = new System.Windows.Forms.TextBox();
+            this.ee_PosMinZ = new System.Windows.Forms.TextBox();
+            this.ee_PosMinY = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.ee_PosMinX = new System.Windows.Forms.TextBox();
+            this.ee_PosZ = new System.Windows.Forms.TextBox();
+            this.ee_PosY = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.ee_posX = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.ee_render = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.ee_type = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ee_texture = new System.Windows.Forms.ComboBox();
+            this.reloadEffectsButton = new System.Windows.Forms.Button();
+            this.editEffectsButton = new System.Windows.Forms.Button();
+            this.editEffectsList = new System.Windows.Forms.ComboBox();
+            this.saveEffectsButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
@@ -152,12 +238,13 @@ namespace MyGame
             this.triggers.SuspendLayout();
             this.effects.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonImportLevel
             // 
             this.buttonImportLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImportLevel.Location = new System.Drawing.Point(985, 2);
+            this.buttonImportLevel.Location = new System.Drawing.Point(1167, 2);
             this.buttonImportLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonImportLevel.Name = "buttonImportLevel";
             this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
@@ -169,7 +256,7 @@ namespace MyGame
             // buttonSaveLevel
             // 
             this.buttonSaveLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveLevel.Location = new System.Drawing.Point(930, 34);
+            this.buttonSaveLevel.Location = new System.Drawing.Point(1112, 34);
             this.buttonSaveLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSaveLevel.Name = "buttonSaveLevel";
             this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
@@ -181,7 +268,7 @@ namespace MyGame
             // buttonLoadLevel
             // 
             this.buttonLoadLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoadLevel.Location = new System.Drawing.Point(930, 2);
+            this.buttonLoadLevel.Location = new System.Drawing.Point(1112, 2);
             this.buttonLoadLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLoadLevel.Name = "buttonLoadLevel";
             this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
@@ -193,7 +280,7 @@ namespace MyGame
             // BGColorButton
             // 
             this.BGColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGColorButton.Location = new System.Drawing.Point(1040, 2);
+            this.BGColorButton.Location = new System.Drawing.Point(1222, 34);
             this.BGColorButton.Margin = new System.Windows.Forms.Padding(2);
             this.BGColorButton.Name = "BGColorButton";
             this.BGColorButton.Size = new System.Drawing.Size(51, 28);
@@ -217,7 +304,7 @@ namespace MyGame
             // buttonNewLevel
             // 
             this.buttonNewLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonNewLevel.Location = new System.Drawing.Point(985, 34);
+            this.buttonNewLevel.Location = new System.Drawing.Point(1167, 34);
             this.buttonNewLevel.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNewLevel.Name = "buttonNewLevel";
             this.buttonNewLevel.Size = new System.Drawing.Size(51, 28);
@@ -234,10 +321,11 @@ namespace MyGame
             this.tabControl1.Controls.Add(this.enemyZones);
             this.tabControl1.Controls.Add(this.triggers);
             this.tabControl1.Controls.Add(this.effects);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(885, 126);
+            this.tabControl1.Size = new System.Drawing.Size(1100, 126);
             this.tabControl1.TabIndex = 209;
             // 
             // entities
@@ -258,7 +346,7 @@ namespace MyGame
             this.entities.Location = new System.Drawing.Point(4, 22);
             this.entities.Name = "entities";
             this.entities.Padding = new System.Windows.Forms.Padding(3);
-            this.entities.Size = new System.Drawing.Size(877, 100);
+            this.entities.Size = new System.Drawing.Size(1092, 100);
             this.entities.TabIndex = 0;
             this.entities.Text = "Entities";
             this.entities.UseVisualStyleBackColor = true;
@@ -700,7 +788,7 @@ namespace MyGame
             this.cameras.Location = new System.Drawing.Point(4, 22);
             this.cameras.Name = "cameras";
             this.cameras.Padding = new System.Windows.Forms.Padding(3);
-            this.cameras.Size = new System.Drawing.Size(877, 100);
+            this.cameras.Size = new System.Drawing.Size(1092, 100);
             this.cameras.TabIndex = 1;
             this.cameras.Text = "Cameras";
             this.cameras.UseVisualStyleBackColor = true;
@@ -905,7 +993,7 @@ namespace MyGame
             this.colisions.Controls.Add(this.buttonAddColisions);
             this.colisions.Location = new System.Drawing.Point(4, 22);
             this.colisions.Name = "colisions";
-            this.colisions.Size = new System.Drawing.Size(877, 100);
+            this.colisions.Size = new System.Drawing.Size(1092, 100);
             this.colisions.TabIndex = 2;
             this.colisions.Text = "Colisions";
             this.colisions.UseVisualStyleBackColor = true;
@@ -941,7 +1029,7 @@ namespace MyGame
             this.enemyZones.Controls.Add(this.addEnemyZoneButton);
             this.enemyZones.Location = new System.Drawing.Point(4, 22);
             this.enemyZones.Name = "enemyZones";
-            this.enemyZones.Size = new System.Drawing.Size(877, 100);
+            this.enemyZones.Size = new System.Drawing.Size(1092, 100);
             this.enemyZones.TabIndex = 3;
             this.enemyZones.Text = "EnemyZones";
             this.enemyZones.UseVisualStyleBackColor = true;
@@ -991,10 +1079,82 @@ namespace MyGame
             this.triggers.Controls.Add(this.addTriggerButton);
             this.triggers.Location = new System.Drawing.Point(4, 22);
             this.triggers.Name = "triggers";
-            this.triggers.Size = new System.Drawing.Size(877, 100);
+            this.triggers.Size = new System.Drawing.Size(1092, 100);
             this.triggers.TabIndex = 4;
             this.triggers.Text = "Triggers";
             this.triggers.UseVisualStyleBackColor = true;
+            // 
+            // removeConsecuenceButton
+            // 
+            this.removeConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeConsecuenceButton.Location = new System.Drawing.Point(518, 53);
+            this.removeConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeConsecuenceButton.Name = "removeConsecuenceButton";
+            this.removeConsecuenceButton.Size = new System.Drawing.Size(45, 21);
+            this.removeConsecuenceButton.TabIndex = 222;
+            this.removeConsecuenceButton.Text = "Remove";
+            this.removeConsecuenceButton.UseVisualStyleBackColor = true;
+            this.removeConsecuenceButton.Click += new System.EventHandler(this.removeConsecuenceButton_Click);
+            // 
+            // removeConditionButton
+            // 
+            this.removeConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeConditionButton.Location = new System.Drawing.Point(518, 13);
+            this.removeConditionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeConditionButton.Name = "removeConditionButton";
+            this.removeConditionButton.Size = new System.Drawing.Size(45, 21);
+            this.removeConditionButton.TabIndex = 221;
+            this.removeConditionButton.Text = "Remove";
+            this.removeConditionButton.UseVisualStyleBackColor = true;
+            this.removeConditionButton.Click += new System.EventHandler(this.removeConditionButton_Click);
+            // 
+            // addConsecuenceButton
+            // 
+            this.addConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addConsecuenceButton.Location = new System.Drawing.Point(271, 53);
+            this.addConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addConsecuenceButton.Name = "addConsecuenceButton";
+            this.addConsecuenceButton.Size = new System.Drawing.Size(45, 21);
+            this.addConsecuenceButton.TabIndex = 220;
+            this.addConsecuenceButton.Text = "Add";
+            this.addConsecuenceButton.UseVisualStyleBackColor = true;
+            this.addConsecuenceButton.Click += new System.EventHandler(this.addConsecuenceButton_Click);
+            // 
+            // addConditionButton
+            // 
+            this.addConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addConditionButton.Location = new System.Drawing.Point(271, 13);
+            this.addConditionButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addConditionButton.Name = "addConditionButton";
+            this.addConditionButton.Size = new System.Drawing.Size(45, 21);
+            this.addConditionButton.TabIndex = 219;
+            this.addConditionButton.Text = "Add";
+            this.addConditionButton.UseVisualStyleBackColor = true;
+            this.addConditionButton.Click += new System.EventHandler(this.addConditionButton_Click);
+            // 
+            // triggerConsecuences
+            // 
+            this.triggerConsecuences.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.triggerConsecuences.CausesValidation = false;
+            this.triggerConsecuences.FormattingEnabled = true;
+            this.triggerConsecuences.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.triggerConsecuences.Location = new System.Drawing.Point(321, 53);
+            this.triggerConsecuences.Name = "triggerConsecuences";
+            this.triggerConsecuences.Size = new System.Drawing.Size(183, 21);
+            this.triggerConsecuences.TabIndex = 218;
+            this.triggerConsecuences.TabStop = false;
+            // 
+            // triggerConditions
+            // 
+            this.triggerConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.triggerConditions.CausesValidation = false;
+            this.triggerConditions.FormattingEnabled = true;
+            this.triggerConditions.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.triggerConditions.Location = new System.Drawing.Point(321, 13);
+            this.triggerConditions.Name = "triggerConditions";
+            this.triggerConditions.Size = new System.Drawing.Size(183, 21);
+            this.triggerConditions.TabIndex = 217;
+            this.triggerConditions.TabStop = false;
             // 
             // editTriggerButton
             // 
@@ -1052,7 +1212,7 @@ namespace MyGame
             this.effects.Controls.Add(this.addEffectButton);
             this.effects.Location = new System.Drawing.Point(4, 22);
             this.effects.Name = "effects";
-            this.effects.Size = new System.Drawing.Size(877, 100);
+            this.effects.Size = new System.Drawing.Size(1092, 100);
             this.effects.TabIndex = 5;
             this.effects.Text = "Effects";
             this.effects.UseVisualStyleBackColor = true;
@@ -1366,77 +1526,920 @@ namespace MyGame
             this.addEffectButton.UseVisualStyleBackColor = true;
             this.addEffectButton.Click += new System.EventHandler(this.button_Click);
             // 
-            // triggerConditions
+            // tabPage1
             // 
-            this.triggerConditions.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.triggerConditions.CausesValidation = false;
-            this.triggerConditions.FormattingEnabled = true;
-            this.triggerConditions.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.triggerConditions.Location = new System.Drawing.Point(321, 13);
-            this.triggerConditions.Name = "triggerConditions";
-            this.triggerConditions.Size = new System.Drawing.Size(183, 21);
-            this.triggerConditions.TabIndex = 217;
-            this.triggerConditions.TabStop = false;
+            this.tabPage1.Controls.Add(this.label47);
+            this.tabPage1.Controls.Add(this.ee_FadeOut);
+            this.tabPage1.Controls.Add(this.label48);
+            this.tabPage1.Controls.Add(this.ee_FadeIn);
+            this.tabPage1.Controls.Add(this.label45);
+            this.tabPage1.Controls.Add(this.ee_Life);
+            this.tabPage1.Controls.Add(this.label46);
+            this.tabPage1.Controls.Add(this.ee_SizeEnd);
+            this.tabPage1.Controls.Add(this.label43);
+            this.tabPage1.Controls.Add(this.ee_SizeIni);
+            this.tabPage1.Controls.Add(this.label44);
+            this.tabPage1.Controls.Add(this.ee_size);
+            this.tabPage1.Controls.Add(this.label41);
+            this.tabPage1.Controls.Add(this.ee_RotSpeedVar);
+            this.tabPage1.Controls.Add(this.label42);
+            this.tabPage1.Controls.Add(this.ee_RotSpeed);
+            this.tabPage1.Controls.Add(this.label39);
+            this.tabPage1.Controls.Add(this.ee_RotVar);
+            this.tabPage1.Controls.Add(this.label40);
+            this.tabPage1.Controls.Add(this.ee_Rot);
+            this.tabPage1.Controls.Add(this.label38);
+            this.tabPage1.Controls.Add(this.ee_SystemLife);
+            this.tabPage1.Controls.Add(this.label37);
+            this.tabPage1.Controls.Add(this.ee_NumPart);
+            this.tabPage1.Controls.Add(this.ee_ColorMaxA);
+            this.tabPage1.Controls.Add(this.ee_ColorMinA);
+            this.tabPage1.Controls.Add(this.ee_ColorA);
+            this.tabPage1.Controls.Add(this.ee_ColorMaxB);
+            this.tabPage1.Controls.Add(this.ee_ColorMaxG);
+            this.tabPage1.Controls.Add(this.label34);
+            this.tabPage1.Controls.Add(this.ee_ColorMaxR);
+            this.tabPage1.Controls.Add(this.ee_ColorMinB);
+            this.tabPage1.Controls.Add(this.ee_ColorMinG);
+            this.tabPage1.Controls.Add(this.label35);
+            this.tabPage1.Controls.Add(this.ee_ColorMinR);
+            this.tabPage1.Controls.Add(this.ee_ColorB);
+            this.tabPage1.Controls.Add(this.ee_ColorG);
+            this.tabPage1.Controls.Add(this.label36);
+            this.tabPage1.Controls.Add(this.ee_ColorR);
+            this.tabPage1.Controls.Add(this.ee_AccMaxZ);
+            this.tabPage1.Controls.Add(this.ee_AccMaxY);
+            this.tabPage1.Controls.Add(this.label31);
+            this.tabPage1.Controls.Add(this.ee_AccMaxX);
+            this.tabPage1.Controls.Add(this.ee_AccMinZ);
+            this.tabPage1.Controls.Add(this.ee_AccMinY);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.ee_AccMinX);
+            this.tabPage1.Controls.Add(this.ee_AccZ);
+            this.tabPage1.Controls.Add(this.ee_AccY);
+            this.tabPage1.Controls.Add(this.label33);
+            this.tabPage1.Controls.Add(this.ee_AccX);
+            this.tabPage1.Controls.Add(this.ee_DirMaxZ);
+            this.tabPage1.Controls.Add(this.ee_DirMaxY);
+            this.tabPage1.Controls.Add(this.label28);
+            this.tabPage1.Controls.Add(this.ee_DirMaxX);
+            this.tabPage1.Controls.Add(this.ee_DirMinZ);
+            this.tabPage1.Controls.Add(this.ee_DirMinY);
+            this.tabPage1.Controls.Add(this.label29);
+            this.tabPage1.Controls.Add(this.ee_DirMinX);
+            this.tabPage1.Controls.Add(this.ee_DirZ);
+            this.tabPage1.Controls.Add(this.ee_DirY);
+            this.tabPage1.Controls.Add(this.label30);
+            this.tabPage1.Controls.Add(this.ee_DirX);
+            this.tabPage1.Controls.Add(this.ee_PosMaxZ);
+            this.tabPage1.Controls.Add(this.ee_PosMaxY);
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.ee_PosMaxX);
+            this.tabPage1.Controls.Add(this.ee_PosMinZ);
+            this.tabPage1.Controls.Add(this.ee_PosMinY);
+            this.tabPage1.Controls.Add(this.label26);
+            this.tabPage1.Controls.Add(this.ee_PosMinX);
+            this.tabPage1.Controls.Add(this.ee_PosZ);
+            this.tabPage1.Controls.Add(this.ee_PosY);
+            this.tabPage1.Controls.Add(this.label25);
+            this.tabPage1.Controls.Add(this.ee_posX);
+            this.tabPage1.Controls.Add(this.label24);
+            this.tabPage1.Controls.Add(this.ee_render);
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.ee_type);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.ee_texture);
+            this.tabPage1.Controls.Add(this.reloadEffectsButton);
+            this.tabPage1.Controls.Add(this.editEffectsButton);
+            this.tabPage1.Controls.Add(this.editEffectsList);
+            this.tabPage1.Controls.Add(this.saveEffectsButton);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1092, 100);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "EditEffects";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // triggerConsecuences
+            // label47
             // 
-            this.triggerConsecuences.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.triggerConsecuences.CausesValidation = false;
-            this.triggerConsecuences.FormattingEnabled = true;
-            this.triggerConsecuences.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.triggerConsecuences.Location = new System.Drawing.Point(321, 53);
-            this.triggerConsecuences.Name = "triggerConsecuences";
-            this.triggerConsecuences.Size = new System.Drawing.Size(183, 21);
-            this.triggerConsecuences.TabIndex = 218;
-            this.triggerConsecuences.TabStop = false;
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(905, 83);
+            this.label47.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(48, 13);
+            this.label47.TabIndex = 299;
+            this.label47.Text = "FadeOut";
             // 
-            // addConditionButton
+            // ee_FadeOut
             // 
-            this.addConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addConditionButton.Location = new System.Drawing.Point(271, 13);
-            this.addConditionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addConditionButton.Name = "addConditionButton";
-            this.addConditionButton.Size = new System.Drawing.Size(45, 21);
-            this.addConditionButton.TabIndex = 219;
-            this.addConditionButton.Text = "Add";
-            this.addConditionButton.UseVisualStyleBackColor = true;
-            this.addConditionButton.Click += new System.EventHandler(this.addConditionButton_Click);
+            this.ee_FadeOut.Location = new System.Drawing.Point(959, 80);
+            this.ee_FadeOut.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_FadeOut.Name = "ee_FadeOut";
+            this.ee_FadeOut.Size = new System.Drawing.Size(30, 20);
+            this.ee_FadeOut.TabIndex = 298;
+            this.ee_FadeOut.Leave += new System.EventHandler(this.editEffects_Leave);
             // 
-            // addConsecuenceButton
+            // label48
             // 
-            this.addConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addConsecuenceButton.Location = new System.Drawing.Point(271, 53);
-            this.addConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
-            this.addConsecuenceButton.Name = "addConsecuenceButton";
-            this.addConsecuenceButton.Size = new System.Drawing.Size(45, 21);
-            this.addConsecuenceButton.TabIndex = 220;
-            this.addConsecuenceButton.Text = "Add";
-            this.addConsecuenceButton.UseVisualStyleBackColor = true;
-            this.addConsecuenceButton.Click += new System.EventHandler(this.addConsecuenceButton_Click);
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(905, 64);
+            this.label48.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(40, 13);
+            this.label48.TabIndex = 297;
+            this.label48.Text = "FadeIn";
             // 
-            // removeConsecuenceButton
+            // ee_FadeIn
             // 
-            this.removeConsecuenceButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeConsecuenceButton.Location = new System.Drawing.Point(518, 53);
-            this.removeConsecuenceButton.Margin = new System.Windows.Forms.Padding(2);
-            this.removeConsecuenceButton.Name = "removeConsecuenceButton";
-            this.removeConsecuenceButton.Size = new System.Drawing.Size(45, 21);
-            this.removeConsecuenceButton.TabIndex = 222;
-            this.removeConsecuenceButton.Text = "Remove";
-            this.removeConsecuenceButton.UseVisualStyleBackColor = true;
-            this.removeConsecuenceButton.Click += new System.EventHandler(this.removeConsecuenceButton_Click);
+            this.ee_FadeIn.Location = new System.Drawing.Point(959, 61);
+            this.ee_FadeIn.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_FadeIn.Name = "ee_FadeIn";
+            this.ee_FadeIn.Size = new System.Drawing.Size(30, 20);
+            this.ee_FadeIn.TabIndex = 296;
+            this.ee_FadeIn.Leave += new System.EventHandler(this.editEffects_Leave);
             // 
-            // removeConditionButton
+            // label45
             // 
-            this.removeConditionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeConditionButton.Location = new System.Drawing.Point(518, 13);
-            this.removeConditionButton.Margin = new System.Windows.Forms.Padding(2);
-            this.removeConditionButton.Name = "removeConditionButton";
-            this.removeConditionButton.Size = new System.Drawing.Size(45, 21);
-            this.removeConditionButton.TabIndex = 221;
-            this.removeConditionButton.Text = "Remove";
-            this.removeConditionButton.UseVisualStyleBackColor = true;
-            this.removeConditionButton.Click += new System.EventHandler(this.removeConditionButton_Click);
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(823, 83);
+            this.label45.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(24, 13);
+            this.label45.TabIndex = 295;
+            this.label45.Text = "Life";
+            // 
+            // ee_Life
+            // 
+            this.ee_Life.Location = new System.Drawing.Point(869, 80);
+            this.ee_Life.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_Life.Name = "ee_Life";
+            this.ee_Life.Size = new System.Drawing.Size(30, 20);
+            this.ee_Life.TabIndex = 294;
+            this.ee_Life.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(823, 64);
+            this.label46.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(46, 13);
+            this.label46.TabIndex = 293;
+            this.label46.Text = "SizeEnd";
+            // 
+            // ee_SizeEnd
+            // 
+            this.ee_SizeEnd.Location = new System.Drawing.Point(869, 61);
+            this.ee_SizeEnd.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_SizeEnd.Name = "ee_SizeEnd";
+            this.ee_SizeEnd.Size = new System.Drawing.Size(30, 20);
+            this.ee_SizeEnd.TabIndex = 292;
+            this.ee_SizeEnd.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(738, 83);
+            this.label43.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(38, 13);
+            this.label43.TabIndex = 291;
+            this.label43.Text = "SizeIni";
+            // 
+            // ee_SizeIni
+            // 
+            this.ee_SizeIni.Location = new System.Drawing.Point(784, 80);
+            this.ee_SizeIni.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_SizeIni.Name = "ee_SizeIni";
+            this.ee_SizeIni.Size = new System.Drawing.Size(30, 20);
+            this.ee_SizeIni.TabIndex = 290;
+            this.ee_SizeIni.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(738, 64);
+            this.label44.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(25, 13);
+            this.label44.TabIndex = 289;
+            this.label44.Text = "size";
+            // 
+            // ee_size
+            // 
+            this.ee_size.Location = new System.Drawing.Point(784, 61);
+            this.ee_size.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_size.Name = "ee_size";
+            this.ee_size.Size = new System.Drawing.Size(30, 20);
+            this.ee_size.TabIndex = 288;
+            this.ee_size.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(627, 83);
+            this.label41.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(59, 13);
+            this.label41.TabIndex = 287;
+            this.label41.Text = "RotSpeVar";
+            // 
+            // ee_RotSpeedVar
+            // 
+            this.ee_RotSpeedVar.Location = new System.Drawing.Point(697, 80);
+            this.ee_RotSpeedVar.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_RotSpeedVar.Name = "ee_RotSpeedVar";
+            this.ee_RotSpeedVar.Size = new System.Drawing.Size(30, 20);
+            this.ee_RotSpeedVar.TabIndex = 286;
+            this.ee_RotSpeedVar.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(627, 64);
+            this.label42.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 13);
+            this.label42.TabIndex = 285;
+            this.label42.Text = "RotSpe";
+            // 
+            // ee_RotSpeed
+            // 
+            this.ee_RotSpeed.Location = new System.Drawing.Point(697, 61);
+            this.ee_RotSpeed.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_RotSpeed.Name = "ee_RotSpeed";
+            this.ee_RotSpeed.Size = new System.Drawing.Size(30, 20);
+            this.ee_RotSpeed.TabIndex = 284;
+            this.ee_RotSpeed.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(547, 83);
+            this.label39.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(40, 13);
+            this.label39.TabIndex = 283;
+            this.label39.Text = "RotVar";
+            // 
+            // ee_RotVar
+            // 
+            this.ee_RotVar.Location = new System.Drawing.Point(593, 80);
+            this.ee_RotVar.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_RotVar.Name = "ee_RotVar";
+            this.ee_RotVar.Size = new System.Drawing.Size(30, 20);
+            this.ee_RotVar.TabIndex = 282;
+            this.ee_RotVar.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(547, 64);
+            this.label40.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(24, 13);
+            this.label40.TabIndex = 281;
+            this.label40.Text = "Rot";
+            // 
+            // ee_Rot
+            // 
+            this.ee_Rot.Location = new System.Drawing.Point(593, 61);
+            this.ee_Rot.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_Rot.Name = "ee_Rot";
+            this.ee_Rot.Size = new System.Drawing.Size(30, 20);
+            this.ee_Rot.TabIndex = 280;
+            this.ee_Rot.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(467, 83);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(41, 13);
+            this.label38.TabIndex = 279;
+            this.label38.Text = "SysLife";
+            // 
+            // ee_SystemLife
+            // 
+            this.ee_SystemLife.Location = new System.Drawing.Point(513, 80);
+            this.ee_SystemLife.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_SystemLife.Name = "ee_SystemLife";
+            this.ee_SystemLife.Size = new System.Drawing.Size(30, 20);
+            this.ee_SystemLife.TabIndex = 278;
+            this.ee_SystemLife.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(467, 64);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 13);
+            this.label37.TabIndex = 277;
+            this.label37.Text = "NoPart";
+            // 
+            // ee_NumPart
+            // 
+            this.ee_NumPart.Location = new System.Drawing.Point(513, 61);
+            this.ee_NumPart.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_NumPart.Name = "ee_NumPart";
+            this.ee_NumPart.Size = new System.Drawing.Size(30, 20);
+            this.ee_NumPart.TabIndex = 276;
+            this.ee_NumPart.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMaxA
+            // 
+            this.ee_ColorMaxA.Location = new System.Drawing.Point(1059, 42);
+            this.ee_ColorMaxA.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMaxA.Name = "ee_ColorMaxA";
+            this.ee_ColorMaxA.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMaxA.TabIndex = 275;
+            this.ee_ColorMaxA.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMinA
+            // 
+            this.ee_ColorMinA.Location = new System.Drawing.Point(1059, 22);
+            this.ee_ColorMinA.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMinA.Name = "ee_ColorMinA";
+            this.ee_ColorMinA.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMinA.TabIndex = 274;
+            this.ee_ColorMinA.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorA
+            // 
+            this.ee_ColorA.Location = new System.Drawing.Point(1059, 2);
+            this.ee_ColorA.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorA.Name = "ee_ColorA";
+            this.ee_ColorA.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorA.TabIndex = 273;
+            this.ee_ColorA.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMaxB
+            // 
+            this.ee_ColorMaxB.Location = new System.Drawing.Point(1027, 42);
+            this.ee_ColorMaxB.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMaxB.Name = "ee_ColorMaxB";
+            this.ee_ColorMaxB.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMaxB.TabIndex = 272;
+            this.ee_ColorMaxB.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMaxG
+            // 
+            this.ee_ColorMaxG.Location = new System.Drawing.Point(993, 42);
+            this.ee_ColorMaxG.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMaxG.Name = "ee_ColorMaxG";
+            this.ee_ColorMaxG.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMaxG.TabIndex = 271;
+            this.ee_ColorMaxG.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(905, 44);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(51, 13);
+            this.label34.TabIndex = 270;
+            this.label34.Text = "ColorMax";
+            // 
+            // ee_ColorMaxR
+            // 
+            this.ee_ColorMaxR.Location = new System.Drawing.Point(959, 42);
+            this.ee_ColorMaxR.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMaxR.Name = "ee_ColorMaxR";
+            this.ee_ColorMaxR.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMaxR.TabIndex = 269;
+            this.ee_ColorMaxR.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMinB
+            // 
+            this.ee_ColorMinB.Location = new System.Drawing.Point(1027, 22);
+            this.ee_ColorMinB.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMinB.Name = "ee_ColorMinB";
+            this.ee_ColorMinB.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMinB.TabIndex = 268;
+            this.ee_ColorMinB.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorMinG
+            // 
+            this.ee_ColorMinG.Location = new System.Drawing.Point(993, 22);
+            this.ee_ColorMinG.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMinG.Name = "ee_ColorMinG";
+            this.ee_ColorMinG.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMinG.TabIndex = 267;
+            this.ee_ColorMinG.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(905, 24);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(48, 13);
+            this.label35.TabIndex = 266;
+            this.label35.Text = "ColorMin";
+            // 
+            // ee_ColorMinR
+            // 
+            this.ee_ColorMinR.Location = new System.Drawing.Point(959, 22);
+            this.ee_ColorMinR.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorMinR.Name = "ee_ColorMinR";
+            this.ee_ColorMinR.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorMinR.TabIndex = 265;
+            // 
+            // ee_ColorB
+            // 
+            this.ee_ColorB.Location = new System.Drawing.Point(1027, 2);
+            this.ee_ColorB.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorB.Name = "ee_ColorB";
+            this.ee_ColorB.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorB.TabIndex = 264;
+            this.ee_ColorB.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_ColorG
+            // 
+            this.ee_ColorG.Location = new System.Drawing.Point(993, 2);
+            this.ee_ColorG.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorG.Name = "ee_ColorG";
+            this.ee_ColorG.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorG.TabIndex = 263;
+            this.ee_ColorG.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(905, 4);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(31, 13);
+            this.label36.TabIndex = 262;
+            this.label36.Text = "Color";
+            // 
+            // ee_ColorR
+            // 
+            this.ee_ColorR.Location = new System.Drawing.Point(959, 2);
+            this.ee_ColorR.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_ColorR.Name = "ee_ColorR";
+            this.ee_ColorR.Size = new System.Drawing.Size(30, 20);
+            this.ee_ColorR.TabIndex = 261;
+            // 
+            // ee_AccMaxZ
+            // 
+            this.ee_AccMaxZ.Location = new System.Drawing.Point(869, 42);
+            this.ee_AccMaxZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMaxZ.Name = "ee_AccMaxZ";
+            this.ee_AccMaxZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMaxZ.TabIndex = 260;
+            this.ee_AccMaxZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_AccMaxY
+            // 
+            this.ee_AccMaxY.Location = new System.Drawing.Point(835, 42);
+            this.ee_AccMaxY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMaxY.Name = "ee_AccMaxY";
+            this.ee_AccMaxY.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMaxY.TabIndex = 259;
+            this.ee_AccMaxY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(755, 44);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(46, 13);
+            this.label31.TabIndex = 258;
+            this.label31.Text = "AccMax";
+            // 
+            // ee_AccMaxX
+            // 
+            this.ee_AccMaxX.Location = new System.Drawing.Point(801, 42);
+            this.ee_AccMaxX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMaxX.Name = "ee_AccMaxX";
+            this.ee_AccMaxX.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMaxX.TabIndex = 257;
+            this.ee_AccMaxX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_AccMinZ
+            // 
+            this.ee_AccMinZ.Location = new System.Drawing.Point(869, 22);
+            this.ee_AccMinZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMinZ.Name = "ee_AccMinZ";
+            this.ee_AccMinZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMinZ.TabIndex = 256;
+            this.ee_AccMinZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_AccMinY
+            // 
+            this.ee_AccMinY.Location = new System.Drawing.Point(835, 22);
+            this.ee_AccMinY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMinY.Name = "ee_AccMinY";
+            this.ee_AccMinY.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMinY.TabIndex = 255;
+            this.ee_AccMinY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(755, 24);
+            this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(43, 13);
+            this.label32.TabIndex = 254;
+            this.label32.Text = "AccMin";
+            // 
+            // ee_AccMinX
+            // 
+            this.ee_AccMinX.Location = new System.Drawing.Point(801, 22);
+            this.ee_AccMinX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccMinX.Name = "ee_AccMinX";
+            this.ee_AccMinX.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccMinX.TabIndex = 253;
+            this.ee_AccMinX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_AccZ
+            // 
+            this.ee_AccZ.Location = new System.Drawing.Point(869, 2);
+            this.ee_AccZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccZ.Name = "ee_AccZ";
+            this.ee_AccZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccZ.TabIndex = 252;
+            this.ee_AccZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_AccY
+            // 
+            this.ee_AccY.Location = new System.Drawing.Point(835, 2);
+            this.ee_AccY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccY.Name = "ee_AccY";
+            this.ee_AccY.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccY.TabIndex = 251;
+            this.ee_AccY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(755, 4);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(26, 13);
+            this.label33.TabIndex = 250;
+            this.label33.Text = "Acc";
+            // 
+            // ee_AccX
+            // 
+            this.ee_AccX.Location = new System.Drawing.Point(801, 2);
+            this.ee_AccX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_AccX.Name = "ee_AccX";
+            this.ee_AccX.Size = new System.Drawing.Size(30, 20);
+            this.ee_AccX.TabIndex = 249;
+            this.ee_AccX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirMaxZ
+            // 
+            this.ee_DirMaxZ.Location = new System.Drawing.Point(721, 42);
+            this.ee_DirMaxZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMaxZ.Name = "ee_DirMaxZ";
+            this.ee_DirMaxZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMaxZ.TabIndex = 248;
+            this.ee_DirMaxZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirMaxY
+            // 
+            this.ee_DirMaxY.Location = new System.Drawing.Point(687, 42);
+            this.ee_DirMaxY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMaxY.Name = "ee_DirMaxY";
+            this.ee_DirMaxY.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMaxY.TabIndex = 247;
+            this.ee_DirMaxY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(613, 44);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(40, 13);
+            this.label28.TabIndex = 246;
+            this.label28.Text = "DirMax";
+            // 
+            // ee_DirMaxX
+            // 
+            this.ee_DirMaxX.Location = new System.Drawing.Point(653, 42);
+            this.ee_DirMaxX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMaxX.Name = "ee_DirMaxX";
+            this.ee_DirMaxX.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMaxX.TabIndex = 245;
+            this.ee_DirMaxX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirMinZ
+            // 
+            this.ee_DirMinZ.Location = new System.Drawing.Point(721, 22);
+            this.ee_DirMinZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMinZ.Name = "ee_DirMinZ";
+            this.ee_DirMinZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMinZ.TabIndex = 244;
+            this.ee_DirMinZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirMinY
+            // 
+            this.ee_DirMinY.Location = new System.Drawing.Point(687, 22);
+            this.ee_DirMinY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMinY.Name = "ee_DirMinY";
+            this.ee_DirMinY.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMinY.TabIndex = 243;
+            this.ee_DirMinY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(613, 25);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(37, 13);
+            this.label29.TabIndex = 242;
+            this.label29.Text = "DirMin";
+            // 
+            // ee_DirMinX
+            // 
+            this.ee_DirMinX.Location = new System.Drawing.Point(653, 22);
+            this.ee_DirMinX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirMinX.Name = "ee_DirMinX";
+            this.ee_DirMinX.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirMinX.TabIndex = 241;
+            this.ee_DirMinX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirZ
+            // 
+            this.ee_DirZ.Location = new System.Drawing.Point(721, 2);
+            this.ee_DirZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirZ.Name = "ee_DirZ";
+            this.ee_DirZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirZ.TabIndex = 240;
+            this.ee_DirZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_DirY
+            // 
+            this.ee_DirY.Location = new System.Drawing.Point(687, 2);
+            this.ee_DirY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirY.Name = "ee_DirY";
+            this.ee_DirY.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirY.TabIndex = 239;
+            this.ee_DirY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(613, 5);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(20, 13);
+            this.label30.TabIndex = 238;
+            this.label30.Text = "Dir";
+            // 
+            // ee_DirX
+            // 
+            this.ee_DirX.Location = new System.Drawing.Point(653, 2);
+            this.ee_DirX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_DirX.Name = "ee_DirX";
+            this.ee_DirX.Size = new System.Drawing.Size(30, 20);
+            this.ee_DirX.TabIndex = 237;
+            this.ee_DirX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosMaxZ
+            // 
+            this.ee_PosMaxZ.Location = new System.Drawing.Point(581, 42);
+            this.ee_PosMaxZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMaxZ.Name = "ee_PosMaxZ";
+            this.ee_PosMaxZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMaxZ.TabIndex = 236;
+            this.ee_PosMaxZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosMaxY
+            // 
+            this.ee_PosMaxY.Location = new System.Drawing.Point(547, 42);
+            this.ee_PosMaxY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMaxY.Name = "ee_PosMaxY";
+            this.ee_PosMaxY.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMaxY.TabIndex = 235;
+            this.ee_PosMaxY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(467, 44);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(45, 13);
+            this.label27.TabIndex = 234;
+            this.label27.Text = "PosMax";
+            // 
+            // ee_PosMaxX
+            // 
+            this.ee_PosMaxX.Location = new System.Drawing.Point(513, 42);
+            this.ee_PosMaxX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMaxX.Name = "ee_PosMaxX";
+            this.ee_PosMaxX.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMaxX.TabIndex = 233;
+            this.ee_PosMaxX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosMinZ
+            // 
+            this.ee_PosMinZ.Location = new System.Drawing.Point(581, 22);
+            this.ee_PosMinZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMinZ.Name = "ee_PosMinZ";
+            this.ee_PosMinZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMinZ.TabIndex = 232;
+            this.ee_PosMinZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosMinY
+            // 
+            this.ee_PosMinY.Location = new System.Drawing.Point(547, 22);
+            this.ee_PosMinY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMinY.Name = "ee_PosMinY";
+            this.ee_PosMinY.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMinY.TabIndex = 231;
+            this.ee_PosMinY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(467, 24);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(42, 13);
+            this.label26.TabIndex = 230;
+            this.label26.Text = "PosMin";
+            // 
+            // ee_PosMinX
+            // 
+            this.ee_PosMinX.Location = new System.Drawing.Point(513, 22);
+            this.ee_PosMinX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosMinX.Name = "ee_PosMinX";
+            this.ee_PosMinX.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosMinX.TabIndex = 229;
+            this.ee_PosMinX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosZ
+            // 
+            this.ee_PosZ.Location = new System.Drawing.Point(581, 2);
+            this.ee_PosZ.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosZ.Name = "ee_PosZ";
+            this.ee_PosZ.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosZ.TabIndex = 228;
+            this.ee_PosZ.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // ee_PosY
+            // 
+            this.ee_PosY.Location = new System.Drawing.Point(547, 2);
+            this.ee_PosY.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_PosY.Name = "ee_PosY";
+            this.ee_PosY.Size = new System.Drawing.Size(30, 20);
+            this.ee_PosY.TabIndex = 227;
+            this.ee_PosY.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(467, 4);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 13);
+            this.label25.TabIndex = 226;
+            this.label25.Text = "Position";
+            // 
+            // ee_posX
+            // 
+            this.ee_posX.Location = new System.Drawing.Point(513, 2);
+            this.ee_posX.Margin = new System.Windows.Forms.Padding(2);
+            this.ee_posX.Name = "ee_posX";
+            this.ee_posX.Size = new System.Drawing.Size(30, 20);
+            this.ee_posX.TabIndex = 225;
+            this.ee_posX.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(261, 52);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(42, 13);
+            this.label24.TabIndex = 224;
+            this.label24.Text = "Render";
+            // 
+            // ee_render
+            // 
+            this.ee_render.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.ee_render.CausesValidation = false;
+            this.ee_render.FormattingEnabled = true;
+            this.ee_render.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ee_render.Items.AddRange(new object[] {
+            "normal",
+            "additive"});
+            this.ee_render.Location = new System.Drawing.Point(310, 49);
+            this.ee_render.Name = "ee_render";
+            this.ee_render.Size = new System.Drawing.Size(149, 21);
+            this.ee_render.TabIndex = 223;
+            this.ee_render.TabStop = false;
+            this.ee_render.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(261, 30);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(31, 13);
+            this.label23.TabIndex = 222;
+            this.label23.Text = "Type";
+            // 
+            // ee_type
+            // 
+            this.ee_type.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.ee_type.CausesValidation = false;
+            this.ee_type.FormattingEnabled = true;
+            this.ee_type.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ee_type.Items.AddRange(new object[] {
+            "burst",
+            "fountain"});
+            this.ee_type.Location = new System.Drawing.Point(310, 27);
+            this.ee_type.Name = "ee_type";
+            this.ee_type.Size = new System.Drawing.Size(149, 21);
+            this.ee_type.TabIndex = 221;
+            this.ee_type.TabStop = false;
+            this.ee_type.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(261, 8);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 220;
+            this.label9.Text = "Texture";
+            // 
+            // ee_texture
+            // 
+            this.ee_texture.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.ee_texture.CausesValidation = false;
+            this.ee_texture.FormattingEnabled = true;
+            this.ee_texture.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.ee_texture.Location = new System.Drawing.Point(310, 5);
+            this.ee_texture.Name = "ee_texture";
+            this.ee_texture.Size = new System.Drawing.Size(149, 21);
+            this.ee_texture.TabIndex = 219;
+            this.ee_texture.TabStop = false;
+            this.ee_texture.Leave += new System.EventHandler(this.editEffects_Leave);
+            // 
+            // reloadEffectsButton
+            // 
+            this.reloadEffectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadEffectsButton.Location = new System.Drawing.Point(72, 42);
+            this.reloadEffectsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.reloadEffectsButton.Name = "reloadEffectsButton";
+            this.reloadEffectsButton.Size = new System.Drawing.Size(60, 28);
+            this.reloadEffectsButton.TabIndex = 218;
+            this.reloadEffectsButton.Text = "Reload";
+            this.reloadEffectsButton.UseVisualStyleBackColor = true;
+            this.reloadEffectsButton.Click += new System.EventHandler(this.reloadEffectsButton_Click);
+            // 
+            // editEffectsButton
+            // 
+            this.editEffectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEffectsButton.Location = new System.Drawing.Point(7, 10);
+            this.editEffectsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editEffectsButton.Name = "editEffectsButton";
+            this.editEffectsButton.Size = new System.Drawing.Size(60, 28);
+            this.editEffectsButton.TabIndex = 217;
+            this.editEffectsButton.Text = "Edit Effects";
+            this.editEffectsButton.UseVisualStyleBackColor = true;
+            this.editEffectsButton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // editEffectsList
+            // 
+            this.editEffectsList.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.editEffectsList.CausesValidation = false;
+            this.editEffectsList.FormattingEnabled = true;
+            this.editEffectsList.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.editEffectsList.Location = new System.Drawing.Point(72, 13);
+            this.editEffectsList.Name = "editEffectsList";
+            this.editEffectsList.Size = new System.Drawing.Size(183, 21);
+            this.editEffectsList.TabIndex = 216;
+            this.editEffectsList.TabStop = false;
+            this.editEffectsList.SelectedIndexChanged += new System.EventHandler(this.editEffectsList_SelectedIndexChanged);
+            // 
+            // saveEffectsButton
+            // 
+            this.saveEffectsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveEffectsButton.Location = new System.Drawing.Point(7, 42);
+            this.saveEffectsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.saveEffectsButton.Name = "saveEffectsButton";
+            this.saveEffectsButton.Size = new System.Drawing.Size(60, 28);
+            this.saveEffectsButton.TabIndex = 213;
+            this.saveEffectsButton.Text = "Save Effects";
+            this.saveEffectsButton.UseVisualStyleBackColor = true;
+            this.saveEffectsButton.Click += new System.EventHandler(this.saveEffectsButton_Click);
             // 
             // myEditorControl
             // 
@@ -1480,6 +2483,8 @@ namespace MyGame
             this.effects.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1599,6 +2604,92 @@ namespace MyGame
         public System.Windows.Forms.ComboBox triggerConditions;
         private System.Windows.Forms.Button removeConsecuenceButton;
         private System.Windows.Forms.Button removeConditionButton;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button saveEffectsButton;
+        private System.Windows.Forms.Button reloadEffectsButton;
+        private System.Windows.Forms.Button editEffectsButton;
+        public System.Windows.Forms.ComboBox editEffectsList;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.ComboBox ee_type;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.ComboBox ee_texture;
+        private System.Windows.Forms.Label label24;
+        public System.Windows.Forms.ComboBox ee_render;
+        public System.Windows.Forms.TextBox ee_PosMaxZ;
+        public System.Windows.Forms.TextBox ee_PosMaxY;
+        private System.Windows.Forms.Label label27;
+        public System.Windows.Forms.TextBox ee_PosMaxX;
+        public System.Windows.Forms.TextBox ee_PosMinZ;
+        public System.Windows.Forms.TextBox ee_PosMinY;
+        private System.Windows.Forms.Label label26;
+        public System.Windows.Forms.TextBox ee_PosMinX;
+        public System.Windows.Forms.TextBox ee_PosZ;
+        public System.Windows.Forms.TextBox ee_PosY;
+        private System.Windows.Forms.Label label25;
+        public System.Windows.Forms.TextBox ee_posX;
+        public System.Windows.Forms.TextBox ee_AccMaxZ;
+        public System.Windows.Forms.TextBox ee_AccMaxY;
+        private System.Windows.Forms.Label label31;
+        public System.Windows.Forms.TextBox ee_AccMaxX;
+        public System.Windows.Forms.TextBox ee_AccMinZ;
+        public System.Windows.Forms.TextBox ee_AccMinY;
+        private System.Windows.Forms.Label label32;
+        public System.Windows.Forms.TextBox ee_AccMinX;
+        public System.Windows.Forms.TextBox ee_AccZ;
+        public System.Windows.Forms.TextBox ee_AccY;
+        private System.Windows.Forms.Label label33;
+        public System.Windows.Forms.TextBox ee_AccX;
+        public System.Windows.Forms.TextBox ee_DirMaxZ;
+        public System.Windows.Forms.TextBox ee_DirMaxY;
+        private System.Windows.Forms.Label label28;
+        public System.Windows.Forms.TextBox ee_DirMaxX;
+        public System.Windows.Forms.TextBox ee_DirMinZ;
+        public System.Windows.Forms.TextBox ee_DirMinY;
+        private System.Windows.Forms.Label label29;
+        public System.Windows.Forms.TextBox ee_DirMinX;
+        public System.Windows.Forms.TextBox ee_DirZ;
+        public System.Windows.Forms.TextBox ee_DirY;
+        private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.TextBox ee_DirX;
+        public System.Windows.Forms.TextBox ee_ColorMaxA;
+        public System.Windows.Forms.TextBox ee_ColorMinA;
+        public System.Windows.Forms.TextBox ee_ColorA;
+        public System.Windows.Forms.TextBox ee_ColorMaxB;
+        public System.Windows.Forms.TextBox ee_ColorMaxG;
+        private System.Windows.Forms.Label label34;
+        public System.Windows.Forms.TextBox ee_ColorMaxR;
+        public System.Windows.Forms.TextBox ee_ColorMinB;
+        public System.Windows.Forms.TextBox ee_ColorMinG;
+        private System.Windows.Forms.Label label35;
+        public System.Windows.Forms.TextBox ee_ColorMinR;
+        public System.Windows.Forms.TextBox ee_ColorB;
+        public System.Windows.Forms.TextBox ee_ColorG;
+        private System.Windows.Forms.Label label36;
+        public System.Windows.Forms.TextBox ee_ColorR;
+        private System.Windows.Forms.Label label37;
+        public System.Windows.Forms.TextBox ee_NumPart;
+        private System.Windows.Forms.Label label47;
+        public System.Windows.Forms.TextBox ee_FadeOut;
+        private System.Windows.Forms.Label label48;
+        public System.Windows.Forms.TextBox ee_FadeIn;
+        private System.Windows.Forms.Label label45;
+        public System.Windows.Forms.TextBox ee_Life;
+        private System.Windows.Forms.Label label46;
+        public System.Windows.Forms.TextBox ee_SizeEnd;
+        private System.Windows.Forms.Label label43;
+        public System.Windows.Forms.TextBox ee_SizeIni;
+        private System.Windows.Forms.Label label44;
+        public System.Windows.Forms.TextBox ee_size;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.TextBox ee_RotSpeedVar;
+        private System.Windows.Forms.Label label42;
+        public System.Windows.Forms.TextBox ee_RotSpeed;
+        private System.Windows.Forms.Label label39;
+        public System.Windows.Forms.TextBox ee_RotVar;
+        private System.Windows.Forms.Label label40;
+        public System.Windows.Forms.TextBox ee_Rot;
+        private System.Windows.Forms.Label label38;
+        public System.Windows.Forms.TextBox ee_SystemLife;
     }
 }
 #endif
