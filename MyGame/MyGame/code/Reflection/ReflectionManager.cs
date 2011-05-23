@@ -46,5 +46,12 @@ namespace MyGame
             }
             return names;
         }
+
+        public void getParameters(string className, string functionName)
+        {
+            Type type = Type.GetType("MyGame." + className);
+            MethodInfo method = type.GetMethod(functionName);
+            ParameterInfo[] parameters = method.GetParameters();
+        }
     }
 }
