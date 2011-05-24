@@ -28,7 +28,8 @@ namespace MyGame
                 if (instance == null)
                 {
                     instance = new OrbManager();
-                    Orb.texture = TextureManager.Instance.getTexture("particles/Orb");
+                    Orb.textures[(int)Orb.tOrb.XP] = TextureManager.Instance.getTexture("particles/OrbXP");
+                    Orb.textures[(int)Orb.tOrb.Life] = TextureManager.Instance.getTexture("particles/OrbLife");
                 }
                 return instance;
             }
@@ -56,14 +57,6 @@ namespace MyGame
             for (int i = 0; i < life; ++i)
             {
                 addOrb(Orb.tOrb.Life, position, toPlayer);
-            }
-            for (int i = 0; i < wish; ++i)
-            {
-                addOrb(Orb.tOrb.Wish, position, toPlayer);
-            }
-            for (int i = 0; i < pet; ++i)
-            {
-                addOrb(Orb.tOrb.Pet, position, toPlayer);
             }
         }
         public void addOrb(Orb.tOrb orbType, Vector2 position, bool toPlayer)
@@ -111,7 +104,6 @@ namespace MyGame
                         --i;
                         continue;
                     }
-                    orbs[i].color.A = 255;
                 }
                 else if (Vector2.DistanceSquared(playerPosition, orbs[i].position) < PLAYER_DISTANCE)
                 {
@@ -137,7 +129,7 @@ namespace MyGame
             {
                 if (orbs[i].render)
                 {
-                    Orb.texture.render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE), orbs[i].color);
+                    Orb.textures[(int)orbs[i].type].render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE), Color.White);
                 }
             }
         }

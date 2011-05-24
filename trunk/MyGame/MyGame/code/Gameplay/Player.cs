@@ -126,12 +126,6 @@ namespace MyGame
                         lifeValue = lifes;
                     }
                     break;
-                case Orb.tOrb.Wish:
-                    ++data.wishOrbs;
-                    break;
-                case Orb.tOrb.Pet:
-                    ++data.petOrbs;
-                    break;
             }
         }
 
