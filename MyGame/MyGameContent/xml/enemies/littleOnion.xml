@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity idleOffset="true">
   <animatedTexture name="Anim_LittleOnion" frameWidth="160" frameHeight="160" columns="12" rows="4">
-    <action name="die" initialFrame="1" endFrame="4"/>
-    <action name="sit" initialFrame="20" endFrame="44"/>
-    <action name="blink" initialFrame="1" endFrame="4"/>
+    <action name="die" initialFrame="1" endFrame="4" FPS="15"/>
+    <action name="sit" initialFrame="20" endFrame="44" FPS="15"/>
+    <action name="blink" initialFrame="1" endFrame="4" FPS="15"/>
+    <action name="attack" initialFrame="20" endFrame="44" FPS="15"/>
     <action name="idle" initialFrame="5" endFrame="19" FPS="15" loops="true" playRandom="true" playRandomMin="1" playRandomMax="5">
     <playRandom name="sit" probability="0.5"/>
     <playRandom name="blink" probability="0.5"/>
