@@ -5,9 +5,9 @@
     <action name="sit" initialFrame="20" endFrame="44" FPS="15"/>
     <action name="blink" initialFrame="1" endFrame="4" FPS="15"/>
     <action name="attack" initialFrame="20" endFrame="44" FPS="15"/>
-    <action name="idle" initialFrame="5" endFrame="19" FPS="15" loops="true" playRandom="true" playRandomMin="1" playRandomMax="5">
-    <playRandom name="sit" probability="0.5"/>
-    <playRandom name="blink" probability="0.5"/>
+    <action name="idle" initialFrame="5" endFrame="19" FPS="15" loops="true" playRandom="true" playRandomMin="1" playRandomMax="2">
+      <playRandom name="blink" probability="0.8"/>
+      <playRandom name="sit" probability="0.2"/>
     </action>
   </animatedTexture>
 </animatedEntity>

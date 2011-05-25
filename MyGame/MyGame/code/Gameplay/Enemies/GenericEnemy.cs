@@ -34,14 +34,14 @@ namespace MyGame
             base.update();
 
             // always move down
-            position += new Vector3(0, -30.0f, 0) * SB.dt;
+            position += new Vector3(0, -10.0f, 0) * SB.dt;
 
             nextAttackTimer -= SB.dt;
 
             if (nextAttackTimer < 0)
             {
-                playAction("attack");
-                nextAttackTimer = 3.0f;
+                //playAction("attack");
+                //nextAttackTimer = 3.0f;
             }
         }
 

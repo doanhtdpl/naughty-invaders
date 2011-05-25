@@ -81,15 +81,15 @@ namespace MyGame
                 {
                     keyboardRS.X -= 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.L))
+                if (kbCurrentState.IsKeyDown(Keys.L))
                 {
                     keyboardRS.X += 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.I))
+                if (kbCurrentState.IsKeyDown(Keys.I))
                 {
                     keyboardRS.Y += 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.K))
+                if (kbCurrentState.IsKeyDown(Keys.K))
                 {
                     keyboardRS.Y -= 1.0f;
                 }
@@ -113,15 +113,15 @@ namespace MyGame
                 {
                     keyboardLS.X -= 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.Right))
+                if (kbCurrentState.IsKeyDown(Keys.Right))
                 {
                     keyboardLS.X += 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.Up))
+                if (kbCurrentState.IsKeyDown(Keys.Up))
                 {
                     keyboardLS.Y += 1.0f;
                 }
-                else if (kbCurrentState.IsKeyDown(Keys.Down))
+                if (kbCurrentState.IsKeyDown(Keys.Down))
                 {
                     keyboardLS.Y -= 1.0f;
                 }
