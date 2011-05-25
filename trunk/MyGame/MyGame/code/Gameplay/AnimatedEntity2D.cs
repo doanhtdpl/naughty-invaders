@@ -234,7 +234,7 @@ namespace MyGame
             currentTextureId = action.textureId;
 
             // play a the random action if necessary
-            if (action.playRandom)
+            if (action.playRandom && entityName != "player")
             {
                 nextRandomActionTime -= SB.dt;
                 if (nextRandomActionTime < 0.0f)

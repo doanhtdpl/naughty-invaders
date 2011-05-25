@@ -121,7 +121,7 @@ namespace MyGame
                 {
                     Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().Player.data.levelsPassed;
                     ControlPad cp = GamerManager.getMainControls();
-                    NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.LS);
+                    NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.getLS());
                     if (next != null &&
                         (levelsPassed[currentNode.value.level]
                         || levelsPassed.ContainsKey(next.value.level) && (levelsPassed[next.value.level])))

@@ -14,7 +14,7 @@ namespace MyGame
         public const float SPAWN_TOMATO_KINGTOMATO_STATE_MIN_TIME = 1.0f;
         public const float SPAWN_TOMATO_KINGTOMATO_STATE_MAX_TIME = 2.0f;
         const float REST_TIME = 2.0f;
-        const float FLEE_TIME = 3.0f;
+        const float FLEE_TIME = 1.0f;
         const int SHITTING_TOMATOES = 40;
 
         public enum tState { Combat, Rest, KingTomato }
@@ -27,6 +27,7 @@ namespace MyGame
         float restTime;
         float spawnTomatoKingTomatoState;
 
+        bool kingTomatoStartedWave = false;
         bool shitSpawnDone = false;
         bool fleeDone = false;
         float fleeTimer = FLEE_TIME;
@@ -92,7 +93,7 @@ namespace MyGame
             Cinematic cinematic = new Cinematic();
             ActorEvent ae1 = new ActorEvent(kingTomato, 999.0f, 0.0f, false);
             ae1.setAt(new Vector3(1000.0f, 900.0f, 0.0f));
-            ae1.moveTo(new Vector3(500.0f, 260.0f, 0.0f), 70.0f);
+            ae1.moveTo(new Vector3(600.0f, 360.0f, 0.0f), 70.0f);
 
             DialogEvent de1 = new DialogEvent( tDialogCharacter.KingTomato, "Acabare contigo sucia perra!");
             DialogEvent de2 = new DialogEvent( tDialogCharacter.Wish, "Tu eres gilipollas");
@@ -221,6 +222,7 @@ namespace MyGame
                         {
                             restTime = Calc.randomScalar(REST_TIME * 2, REST_TIME * 3);
                             state = tState.KingTomato;
+                            kingTomato.playAction("shouting");
                         }
                         else
                         {
@@ -229,49 +231,55 @@ namespace MyGame
                     }
                 break;
                 case tState.KingTomato:
-                if (kingTomato.state == KingTomato.tState.Commanding)
-                {
-                    restTime -= SB.dt;
-                    updateTomatoes();
-                    if (restTime < 0.0f)
+                    if (kingTomato.state == KingTomato.tState.Commanding)
                     {
-                        ++currentWave;
-                        spawnTomatoTimer -= SB.dt;
-                        spawnTomatoTime = 0.02f;
-                        tomatoesToSpawn = Calc.randomNatural(30, 60) + 10 * currentWave;
-                        restTime = tomatoesToSpawn * 0.25f;
-                    }
-                    spawnTomatoKingTomatoState -= SB.dt;
-                    if (spawnTomatoKingTomatoState < 0.0f)
-                    {
-                        spawnTomatoKingTomatoState = Calc.randomScalar(SPAWN_TOMATO_KINGTOMATO_STATE_MIN_TIME, SPAWN_TOMATO_KINGTOMATO_STATE_MAX_TIME);
-                        spawnTomato();
-                    }
-                }
-                else if (kingTomato.state == KingTomato.tState.Shitting)
-                {
-                    if (!shitSpawnDone)
-                    {
-                        shitSpawnDone = true;
-                        for (int i = 0; i < SHITTING_TOMATOES; ++i)
+                        restTime -= SB.dt;
+                        updateTomatoes();
+                        if (restTime < 2.0f && !kingTomatoStartedWave)
                         {
+                            kingTomatoStartedWave = true;
+                            kingTomato.playAction("shouting");
+                        }
+                        if (restTime < 0.0f)
+                        {
+                            ++currentWave;
+                            spawnTomatoTimer -= SB.dt;
+                            spawnTomatoTime = 0.02f;
+                            tomatoesToSpawn = Calc.randomNatural(30, 60) + 10 * currentWave;
+                            restTime = tomatoesToSpawn * 0.25f;
+                            kingTomatoStartedWave = false;
+                        }
+                        spawnTomatoKingTomatoState -= SB.dt;
+                        if (spawnTomatoKingTomatoState < 0.0f)
+                        {
+                            spawnTomatoKingTomatoState = Calc.randomScalar(SPAWN_TOMATO_KINGTOMATO_STATE_MIN_TIME, SPAWN_TOMATO_KINGTOMATO_STATE_MAX_TIME);
                             spawnTomato();
                         }
                     }
-                    fleeTimer -= SB.dt;
-                    if (!fleeDone && fleeTimer < 0.0f)
+                    else if (kingTomato.state == KingTomato.tState.Shitting)
                     {
-                        fleeDone = true;
-                        List<Entity2D> enemies = EnemyManager.Instance.getEnemies();
-                        for (int i = 0; i < enemies.Count; ++i)
+                        if (!shitSpawnDone)
                         {
-                            if (enemies[i] is TomatoFollower)
+                            shitSpawnDone = true;
+                            for (int i = 0; i < SHITTING_TOMATOES; ++i)
                             {
-                                ((TomatoFollower)enemies[i]).fleeing = true;
+                                spawnTomato();
+                            }
+                        }
+                        fleeTimer -= SB.dt;
+                        if (!fleeDone && fleeTimer < 0.0f)
+                        {
+                            fleeDone = true;
+                            List<Entity2D> enemies = EnemyManager.Instance.getActiveEnemies();
+                            for (int i = 0; i < enemies.Count; ++i)
+                            {
+                                if (enemies[i] is TomatoFollower)
+                                {
+                                    ((TomatoFollower)enemies[i]).fleeing = true;
+                                }
                             }
                         }
                     }
-                }
                 break;
             }
         }

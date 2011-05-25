@@ -4,7 +4,9 @@
     <action name="death" initialFrame="1" endFrame="28" FPS="15" loops="false"/>
   </animatedTexture>
   <animatedTexture name="Anim_KingTomato_Idle" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="false"/>
+    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="false" playRandom="true" playRandomMin="2" playRandomMax="3">
+      <playRandom name="speaking" probability="1"/>
+    </action>
   </animatedTexture>
   <animatedTexture name="Anim_KingTomato_Shouting" frameWidth="320" frameHeight="320" columns="6" rows="6">
     <action name="shouting" initialFrame="1" endFrame="36" FPS="15" loops="false"/>

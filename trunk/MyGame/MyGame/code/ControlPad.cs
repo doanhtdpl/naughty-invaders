@@ -15,7 +15,7 @@ namespace MyGame
         public PlayerIndex index;
         GamePadState currentState;
         GamePadState lastState;
-        public Vector2 RS, LS;
+        Vector2 RS, LS;
         public float menuDelay = 0;
 
         public float timeToRumble;
@@ -71,6 +71,69 @@ namespace MyGame
         }
 
         #region Sticks
+        public Vector2 getRS()
+        {
+#if DEBUG
+            Vector2 keyboardRS = Vector2.Zero;
+            if (RS.LengthSquared() == 0.0f)
+            {
+                if (kbCurrentState.IsKeyDown(Keys.J))
+                {
+                    keyboardRS.X -= 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.L))
+                {
+                    keyboardRS.X += 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.I))
+                {
+                    keyboardRS.Y += 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.K))
+                {
+                    keyboardRS.Y -= 1.0f;
+                }
+                if (keyboardRS.LengthSquared() > 0)
+                {
+                    keyboardRS.Normalize();
+                }
+                keyboardRS.Normalize();
+                return keyboardRS;
+            }
+#endif
+            return RS;
+        }
+        public Vector2 getLS()
+        {
+#if DEBUG
+            Vector2 keyboardLS = Vector2.Zero;
+            if (RS.LengthSquared() == 0.0f)
+            {
+                if (kbCurrentState.IsKeyDown(Keys.Left))
+                {
+                    keyboardLS.X -= 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.Right))
+                {
+                    keyboardLS.X += 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.Up))
+                {
+                    keyboardLS.Y += 1.0f;
+                }
+                else if (kbCurrentState.IsKeyDown(Keys.Down))
+                {
+                    keyboardLS.Y -= 1.0f;
+                }
+                if (keyboardLS.LengthSquared() > 0)
+                {
+                    keyboardLS.Normalize();
+                }
+                return keyboardLS;
+            }
+#endif
+            return LS;
+        }
         public bool LSfirstLeft()
         {
             return (currentState.ThumbSticks.Left.X < -THRESHOLD && lastState.ThumbSticks.Left.X > -THRESHOLD);
