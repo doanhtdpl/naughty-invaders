@@ -14,13 +14,15 @@ namespace MyGame
         const float LIFE = 500.0f;
         const float SHIT_TIME = 3.0f;
         const float SPAWN_ORB_TIME = 0.1f;
+        const int ORBS_TO_SPAWN = 250;
+        public const float SPEED = 100.0f;
 
         Lifebar lifebar;
         float shitTimer = SHIT_TIME;
 
         
         float lastOrb = 0.0f;
-        int orbsToSpawn = 250;
+        int orbsToSpawn = ORBS_TO_SPAWN;
 
         public KingTomato(Vector3 position, float orientation)
             : base("kingTomato", position, orientation, 1)
@@ -38,13 +40,16 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            if (state == tState.Shitting || state == tState.Recovering) return true;
+
             life -= ce.damage;
             return life > 0;
         }
 
         public override void die()
         {
-            state = tState.Recovering;
+            playAction("die");
+            entityState = tEntityState.Dying;
         }
 
         public override void update()
@@ -66,12 +71,13 @@ namespace MyGame
                     if (shitTimer < 0.0f)
                     {
                         CinematicManager.Instance.playCinematic("kingTomatoReturns");
+                        state = tState.Recovering;
                     }
                     break;
                 case tState.Recovering:
                     if (life < 300.0f)
                     {
-                        life += SB.dt * 100.0f;
+                        life += SB.dt * 50.0f;
                     }
                     else
                     {
@@ -79,9 +85,12 @@ namespace MyGame
                     }
                     break;
                 case tState.Commanding2:
+                    Vector3 directionTo = (GamerManager.getSessionOwner().Player.position - position);
+                    directionTo.Normalize();
+                    position += directionTo * SPEED * SB.dt;
                     if (life < 0.0f)
                     {
-                        playAction("dying");
+                        die();
                         state = tState.Dying;
                     }
                     break;

@@ -107,7 +107,7 @@ namespace MyGame
         {
 #if DEBUG
             Vector2 keyboardLS = Vector2.Zero;
-            if (RS.LengthSquared() == 0.0f)
+            if (LS.LengthSquared() == 0.0f)
             {
                 if (kbCurrentState.IsKeyDown(Keys.Left))
                 {
