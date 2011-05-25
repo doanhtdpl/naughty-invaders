@@ -29,9 +29,6 @@ playRandom (inside action):
     <action name="attack" initialFrame="1" endFrame="4" loops="false"/>
     <action name="attack2" initialFrame="5" endFrame="9" loops="false"/>
     <action name="die" initialFrame="10" endFrame="20" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="24" endFrame="36" loops="true" playRandom="true" playRandomMin="1" playRandomMax="5">
-      <playRandom name="attack" probability="0.5"/>
-      <playRandom name="attack2" probability="0.5"/>
-    </action>
+    <action name="idle" initialFrame="24" endFrame="36" loops="true"/>
   </animatedTexture>
 </animatedEntity>
