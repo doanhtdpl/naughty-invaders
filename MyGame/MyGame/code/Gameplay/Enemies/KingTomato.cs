@@ -57,7 +57,7 @@ namespace MyGame
 
                     if (life < 50.0f)
                     {
-                        playAction("shitting");
+                        playAction("afraid");
                         state = tState.Shitting;
                     }
                     break;
@@ -79,7 +79,11 @@ namespace MyGame
                     }
                     break;
                 case tState.Commanding2:
-
+                    if (life < 0.0f)
+                    {
+                        playAction("dying");
+                        state = tState.Dying;
+                    }
                     break;
                 case tState.Dying:
                     lastOrb -= SB.dt;

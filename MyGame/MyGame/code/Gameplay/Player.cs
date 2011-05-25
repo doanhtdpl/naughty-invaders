@@ -213,15 +213,15 @@ namespace MyGame
             garlicGunCooldownTime -= SB.dt;
 
             // orient the player in the direction of move
-            if (controls.LS.LengthSquared() > 0.01f)
+            if (controls.getLS().LengthSquared() > 0.01f)
             {
-                orientation = Calc.directionToAngle(new Vector2(controls.LS.X, controls.LS.Y)) - Calc.PiOver2;
+                orientation = Calc.directionToAngle(new Vector2(controls.getLS().X, controls.getLS().Y)) - Calc.PiOver2;
             }
 
             // controls of garlic gun
-            if (controls.RS.LengthSquared() > 0.01f)
+            if (controls.getRS().LengthSquared() > 0.01f)
             {
-                shotDirection = controls.RS;
+                shotDirection = controls.getRS();
                 shotDirection.Normalize();
 
                 if (garlicGunCooldownTime <= 0.0f)
@@ -296,14 +296,14 @@ namespace MyGame
             {
                 if (mode == tMode.SavingItems)
                 {
-                    direction = controls.LS;
+                    direction = controls.getLS();
                     direction.Y = 0.0f;
                     if (direction.X > 0.75f) direction.X = 1.0f;
                     if (direction.X < -0.75f) direction.X = -1.0f;
                 }
                 else
                 {
-                    direction = controls.LS;
+                    direction = controls.getLS();
                 }
             }
 
