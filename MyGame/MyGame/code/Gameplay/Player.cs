@@ -131,7 +131,7 @@ namespace MyGame
 
         public void activateGarlicGun()
         {
-            ParticleManager.Instance.addParticles("playerFastShot", position + new Vector3(0, 50, 0), Vector3.Zero, Color.Red, 2.0f, 100);
+            ParticleManager.Instance.addParticles("newItem", position + new Vector3(0, 0, 0), Vector3.Zero, Color.Red, 2.0f, 100);
             shotDirection = Vector2.UnitY;
             mode = tMode.GarlicGun;
         }

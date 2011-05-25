@@ -10,4 +10,33 @@
   <particleSystem name="grape2" type="burst" render="normal" texturePath="Particle_Test" nParticles="200" systemLife="2" position="0 0 0" positionVarianceMin="-100 -10 0" positionVarianceMax="10 10 5" direction="0 0 0" directionVarianceMin="-100 -100 0" directionVarianceMax="100 100 10" acceleration="0 0 0" accelerationVarianceMin="0 0 0" accelerationVarianceMax="0 0 0" color="255 0 255 255" colorVarianceMin="255 0 255 0" colorVarianceMax="255 255 255 0" particlesRotation="0" particlesRotationVariance="1" particlesRotationSpeed="1" particlesRotationSpeedVariance="1" size="70" sizeIni="60" sizeEnd="0" fadeIn="0.2" fadeOut="0.2" particlesLife="1" />
   <particleSystem name="nuevo" type="fountain" render="normal" texturePath="orb" nParticles="200" systemLife="10" position="0 0 0" positionVarianceMin="0 0 0" positionVarianceMax="0 0 0" direction="0 200 0" directionVarianceMin="-150 -150 0" directionVarianceMax="150 150 10" acceleration="0 0 0" accelerationVarianceMin="0 -500 0" accelerationVarianceMax="0 -400 0" color="0 255 255 255" colorVarianceMin="255 255 255 255" colorVarianceMax="255 255 255 255" particlesRotation="1" particlesRotationVariance="1" particlesRotationSpeed="1" particlesRotationSpeedVariance="1" size="5" sizeIni="1" sizeEnd="5" fadeIn="0.2" fadeOut="0.4" particlesLife="2" />
   <particleSystem name="new1" type="burst" render="normal" texturePath="Particle_Test" nParticles="200" systemLife="2" position="0 0 0" positionVarianceMin="-100 -10 0" positionVarianceMax="10 10 5" direction="0 0 0" directionVarianceMin="-100 -100 0" directionVarianceMax="100 100 10" acceleration="0 0 0" accelerationVarianceMin="0 0 0" accelerationVarianceMax="0 0 0" color="255 0 255 255" colorVarianceMin="255 0 255 0" colorVarianceMax="255 255 255 0" particlesRotation="0" particlesRotationVariance="1" particlesRotationSpeed="1" particlesRotationSpeedVariance="1" size="70" sizeIni="60" sizeEnd="0" fadeIn="0.2" fadeOut="0.2" particlesLife="1" />
+  <particleSystem name = "newItem"
+  texturePath = "Particle_Test"
+  type = "burst"
+  render = "normal"
+  nParticles = "100"
+  systemLife = "3"
+  position = "0 0 0"
+  positionVarianceMin = "-30 -30 -30"
+  positionVarianceMax = "30 30 -5"
+  direction = "0 0 0"
+  directionVarianceMin = "-100 -100 0"
+  directionVarianceMax = "100 100 10"
+  acceleration = "0 0 0"
+  accelerationVarianceMin = "0 0 0"
+  accelerationVarianceMax = "0 0 0"
+  color = "50 50 50 50"
+  colorVarianceMin = "0 0 0 0"
+  colorVarianceMax = "50 50 50 100"
+  particlesRotation = "1"
+  particlesRotationVariance = "1"
+  particlesRotationSpeed = "1"
+  particlesRotationSpeedVariance = "1"
+  size = "120"
+  sizeIni = "80"
+  sizeEnd = "80"
+  fadeIn = "0.2"
+  fadeOut = "0.4"
+  particlesLife = "2.5"
+  />
 </particleSystems>

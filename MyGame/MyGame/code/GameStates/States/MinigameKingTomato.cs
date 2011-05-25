@@ -11,11 +11,11 @@ namespace MyGame
 {
     class MinigameKingTomato : StateGame
     {
-        public const float SPAWN_TOMATO_KINGTOMATO_STATE_MIN_TIME = 1.0f;
-        public const float SPAWN_TOMATO_KINGTOMATO_STATE_MAX_TIME = 2.0f;
+        public const float SPAWN_TOMATO_KINGTOMATO_STATE_MIN_TIME = 0.2f;
+        public const float SPAWN_TOMATO_KINGTOMATO_STATE_MAX_TIME = 1.0f;
         const float REST_TIME = 2.0f;
         const float FLEE_TIME = 1.0f;
-        const int SHITTING_TOMATOES = 40;
+        const int SHITTING_TOMATOES = 100;
 
         public enum tState { Combat, Rest, KingTomato }
         tState state;
@@ -31,7 +31,9 @@ namespace MyGame
         bool shitSpawnDone = false;
         bool fleeDone = false;
         float fleeTimer = FLEE_TIME;
+
         KingTomato kingTomato;
+        AnimatedEntity2D onionElder;
 
         public MinigameKingTomato(string level):base(level)
         {
@@ -41,9 +43,6 @@ namespace MyGame
 
             restTime = 3.0f;
             state = tState.Rest;
-            loadIntroCinematic();
-            loadReturnsCinematic();
-            CinematicManager.Instance.playCinematic("kingTomatoIntro");
         }
 
         public override void initialize()
@@ -54,6 +53,11 @@ namespace MyGame
             Camera2D.position = new Vector3(0.0f, 0.0f, 2000.0f);
 
             EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
+            onionElder = new AnimatedEntity2D("animatedProps", "onionElder", new Vector3(0.0f, 150.0f, 0.0f), 0.0f, Color.White);
+
+            loadIntroCinematic();
+            loadReturnsCinematic();
+            CinematicManager.Instance.playCinematic("kingTomatoIntro");
         }
 
         void loadIntroCinematic()
@@ -84,16 +88,18 @@ namespace MyGame
             DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder,
                "Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!");
             cinematic.events.Add(de6);
+            ActorEvent ae3 = new ActorEvent(onionElder, 999.0f, 0.0f, false);
+            ae3.moveTo(new Vector3(-1070.0f, -490.0f, 0.0f), 300.0f);
+            cinematic.events.Add((CinematicEvent)ae3);
 
             CinematicManager.Instance.addCinematic("kingTomatoIntro", cinematic);
         }
-
         void loadSpeechCinematic(Enemy kingTomato)
         {
             Cinematic cinematic = new Cinematic();
             ActorEvent ae1 = new ActorEvent(kingTomato, 999.0f, 0.0f, false);
-            ae1.setAt(new Vector3(1000.0f, 900.0f, 0.0f));
-            ae1.moveTo(new Vector3(600.0f, 360.0f, 0.0f), 70.0f);
+            ae1.setAt(new Vector3(1200.0f, 1000.0f, 0.0f));
+            ae1.moveTo(new Vector3(600.0f, 360.0f, 0.0f), KingTomato.SPEED);
 
             DialogEvent de1 = new DialogEvent( tDialogCharacter.KingTomato, "Acabare contigo sucia perra!");
             DialogEvent de2 = new DialogEvent( tDialogCharacter.Wish, "Tu eres gilipollas");
@@ -110,7 +116,6 @@ namespace MyGame
             Cinematic cinematic = new Cinematic();
 
             DialogEvent de1 = new DialogEvent(tDialogCharacter.KingTomato, "Cobardes... no os necesito! Ahora veras! Hahaha");
-
             cinematic.events.Add((CinematicEvent)de1);
             CinematicManager.Instance.addCinematic("kingTomatoReturns", cinematic);
         }
@@ -155,9 +160,9 @@ namespace MyGame
                     if (OrbManager.Instance.orbs.Count > 0) return false;
                     spawnTomatoTimer -= SB.dt;
                     spawnTomatoTime = 0.03f;
-                    tomatoesToSpawn = 70;
+                    tomatoesToSpawn = 60;
 
-                    kingTomato = (KingTomato)EnemyManager.Instance.addEnemy("kingTomato", new Vector3(700, 900, 0));
+                    kingTomato = (KingTomato)EnemyManager.Instance.addEnemy("kingTomato", new Vector3(1200.0f, 1000.0f, 0));
                     loadSpeechCinematic(kingTomato);
                     CinematicManager.Instance.playCinematic("kingTomatoSpeech");
                     break;
@@ -171,7 +176,7 @@ namespace MyGame
             if (Calc.randomScalar() > 0.5f)
             {
                 position.X = Calc.randomScalar(Camera2D.screen.Left + 400, Camera2D.screen.Right);
-                position.Y = Camera2D.screen.Bottom;
+                position.Y = Camera2D.screen.Bottom + 50.0f;
             }
             else
             {
