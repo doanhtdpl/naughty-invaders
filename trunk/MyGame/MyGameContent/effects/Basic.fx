@@ -4,11 +4,12 @@ float4 fxColor;
 
 sampler texture_sampler = sampler_state {
 	Texture = <fxTexture>;
-	minfilter = POINT;
-	magfilter = POINT;
+	minfilter = LINEAR;
+	magfilter = LINEAR;
+	mipfilter = LINEAR;
 };
 
-struct VS_INPUT {
+struct VS_INPUT 
 	float3 pos : POSITION;
 	float2 texcoord : TEXCOORD0;
 };
