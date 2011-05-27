@@ -11,50 +11,71 @@ namespace MyGame
     {
         public RenderableEntity2D actor { get; set; }
 
-        bool set;
-        Vector3 setAtPosition;
+        bool updateChanged;
+        RenderableEntity2D.tUpdateState updateValue;
+
+        bool renderChanged;
+        RenderableEntity2D.tRenderState renderValue;
+
+        bool positionChanged;
+        bool orientWhileMoving;
+        Vector3 positionValue;
         Function function;
 
+        bool orientationChanged;
+        float orientationValue;
+
         bool move;
+
         Vector3 moveToPosition;
         float moveToSpeed;
 
-        public ActorEvent(RenderableEntity2D actor, float duration = 999.0f, float activationTime = 0.3f, bool skippable = true):base(activationTime, duration)
+        public ActorEvent(RenderableEntity2D actor, bool skippable = true, float activationTime = 0.3f, bool hasDuration = false, float duration = 999.0f)
+            : base(activationTime, hasDuration, duration)
         {
             this.actor = actor;
-            this.set = false;
+            this.positionChanged = false;
+            this.orientWhileMoving = false;
             this.move = false;
             this.function = null;
             this.skippable = skippable;
+            this.updateChanged = false;
+            this.renderChanged = false;
+            this.orientationChanged = false;
         }
 
         // one instant events
+        public void setUpdate(bool value)
+        {
+            updateChanged = true;
+            updateValue = value ? RenderableEntity2D.tUpdateState.Update : RenderableEntity2D.tUpdateState.NoUpdate;
+        }
         public void setRender(bool value)
         {
-            if (value)
-            {
-                actor.renderState = RenderableEntity2D.tRenderState.Render;
-            }
-            else
-            {
-                actor.renderState = RenderableEntity2D.tRenderState.NoRender;
-            }
+            renderChanged = true;
+            renderValue = value ? RenderableEntity2D.tRenderState.Render : RenderableEntity2D.tRenderState.NoRender;
         }
         public void setAt(Vector3 position)
         {
-            set = true;
-            setAtPosition = position;
+            positionChanged = true;
+            positionValue = position;
+        }
+        public void setOrientation(float value)
+        {
+            orientationChanged = true;
+            orientationValue = value;
         }
         public void playAction(string action)
         {
             ((AnimatedEntity2D)actor).playAction(action);
         }
         // time based events
-        public void moveTo(Vector3 position, float speed)
+        public void moveTo(Vector3 position, float speed, bool orientWhileMoving = false)
         {
-            move = true;
-            moveToPosition = position;
-            moveToSpeed = speed;
+            this.move = true;
+            this.moveToPosition = position;
+            this.moveToSpeed = speed;
+            this.orientWhileMoving = orientWhileMoving;
         }
         public void addActorFunction(string name)
         {
@@ -62,9 +83,21 @@ namespace MyGame
         }
         public override void startEvent()
         {
-            if (set)
+            if (updateChanged)
             {
-                actor.position = setAtPosition;
+                actor.updateState = updateValue;
+            }
+            if (renderChanged)
+            {
+                actor.renderState = renderValue;
+            }
+            if (positionChanged)
+            {
+                actor.position = positionValue;
+            }
+            if (orientationChanged)
+            {
+                actor.orientation = orientationValue;
             }
             if (function != null)
             {
@@ -74,35 +107,42 @@ namespace MyGame
 
         public override void endEvent()
         {
+            if (move)
+            {
+                actor.position = moveToPosition;
+            }
         }
 
         public override bool update(bool skip, bool forceSkip = false)
         {
-            bool keepUpdating = base.update(skip);
+            bool keepUpdating = false;
 
             if (skippable || forceSkip)
             {
                 if (skip)
                 {
-                    if (move)
-                    {
-                        actor.position = moveToPosition;
-                    }
+                    endEvent();
                     return false;
                 }
             }
 
             if (move)
             {
+                keepUpdating = true;
                 Vector3 newPosition = actor.position;
                 if (GameplayHelper.Instance.fromToAtSpeed(ref newPosition, moveToPosition, moveToSpeed))
                 {
                     keepUpdating = false;
                 }
                 actor.position = newPosition;
+                if (orientWhileMoving)
+                {
+                    actor.orientation = Calc.directionToAngle((moveToPosition - actor.position).toVector2()) - Calc.PiOver2;
+                    orientWhileMoving = false;
+                }
             }
 
-            return keepUpdating;
+            return keepUpdating || base.update(skip);
         }
     }
 }

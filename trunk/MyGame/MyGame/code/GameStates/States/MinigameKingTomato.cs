@@ -55,7 +55,10 @@ namespace MyGame
             EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
             onionElder = new AnimatedEntity2D("animatedProps", "onionElder", new Vector3(0.0f, 150.0f, 0.0f), 0.0f, Color.White);
 
+            kingTomato = (KingTomato)EnemyManager.Instance.addEnemy("kingTomato", new Vector3(1200.0f, 1000.0f, 0));
+            kingTomato.updateState = RenderableEntity2D.tUpdateState.NoUpdate;
             loadIntroCinematic();
+            loadSpeechCinematic(kingTomato);
             loadReturnsCinematic();
             CinematicManager.Instance.playCinematic("kingTomatoIntro");
         }
@@ -63,7 +66,7 @@ namespace MyGame
         void loadIntroCinematic()
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), 999.0f, 0.0f, false);
+            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), false);
             ae1.setAt(new Vector3(0.0f, -900.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, -220.0f, 0.0f), 200.0f);
             cinematic.events.Add((CinematicEvent)ae1);
@@ -79,7 +82,7 @@ namespace MyGame
             DialogEvent de4 = new DialogEvent(tDialogCharacter.OnionElder,
                "Genial! Te podemos ayudar prestandote el arma legendaria del pueblo: la Garlic Gun!");
             cinematic.events.Add(de4);
-            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), 2.5f, 0.3f, false);
+            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), false, 0.3f, true, 2.5f);
             ae2.addActorFunction("activateGarlicGun");
             cinematic.events.Add(ae2);
             DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish,
@@ -88,7 +91,7 @@ namespace MyGame
             DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder,
                "Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!");
             cinematic.events.Add(de6);
-            ActorEvent ae3 = new ActorEvent(onionElder, 999.0f, 0.0f, false);
+            ActorEvent ae3 = new ActorEvent(onionElder, false);
             ae3.moveTo(new Vector3(-1070.0f, -490.0f, 0.0f), 300.0f);
             cinematic.events.Add((CinematicEvent)ae3);
 
@@ -97,15 +100,24 @@ namespace MyGame
         void loadSpeechCinematic(Enemy kingTomato)
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(kingTomato, 999.0f, 0.0f, false);
-            ae1.setAt(new Vector3(1200.0f, 1000.0f, 0.0f));
-            ae1.moveTo(new Vector3(600.0f, 360.0f, 0.0f), KingTomato.SPEED);
+
+            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), false);
+            ae1.moveTo(new Vector3(0.0f, 0, 0.0f), Player.SPEED, true);
+
+            ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), false);
+            ae2.setOrientation(-Calc.PiOver4);
+
+            ActorEvent ae3 = new ActorEvent(kingTomato, false);
+            ae3.setAt(new Vector3(1200.0f, 1000.0f, 0.0f));
+            ae3.moveTo(new Vector3(600.0f, 360.0f, 0.0f), KingTomato.SPEED);
 
             DialogEvent de1 = new DialogEvent( tDialogCharacter.KingTomato, "Acabare contigo sucia perra!");
             DialogEvent de2 = new DialogEvent( tDialogCharacter.Wish, "Tu eres gilipollas");
             DialogEvent de3 = new DialogEvent( tDialogCharacter.KingTomato, "Adelante tomatinaaaa!!!");
 
             cinematic.events.Add((CinematicEvent)ae1);
+            cinematic.events.Add((CinematicEvent)ae2);
+            cinematic.events.Add((CinematicEvent)ae3);
             cinematic.events.Add((CinematicEvent)de1);
             cinematic.events.Add((CinematicEvent)de2);
             cinematic.events.Add((CinematicEvent)de3);
@@ -162,8 +174,6 @@ namespace MyGame
                     spawnTomatoTime = 0.03f;
                     tomatoesToSpawn = 60;
 
-                    kingTomato = (KingTomato)EnemyManager.Instance.addEnemy("kingTomato", new Vector3(1200.0f, 1000.0f, 0));
-                    loadSpeechCinematic(kingTomato);
                     CinematicManager.Instance.playCinematic("kingTomatoSpeech");
                     break;
             }

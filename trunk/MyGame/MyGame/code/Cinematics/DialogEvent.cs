@@ -25,8 +25,7 @@ namespace MyGame
 
         int charactersToShow;
 
-        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float durationAfterText = 3.0f, float textSpeed = 60.0f, bool skippable = true)
-            :base(activationTime, 999.0f)
+        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float textSpeed = 60.0f, bool skippable = true):base(activationTime)
         {
             this.character = character;
             this.text = text;
@@ -84,11 +83,6 @@ namespace MyGame
                 }
             }
 
-            if (timer > duration)
-            {
-                keepUpdating = false;
-            }
-
             return keepUpdating;
         }
 
@@ -99,15 +93,15 @@ namespace MyGame
             GraphicsManager.Instance.spriteBatch.Draw(dialogBackground, backgroundRectangle, Color.White);
             GraphicsManager.Instance.spriteBatch.Draw(portraits[(int)character], portraitRectangle, Color.White);
 
-            Vector2 position = Screen.getXYfromCenter(new Vector2(70.0f, -190.0f));
+            Vector2 position = Screen.getXYfromCenter(new Vector2(-300.0f, -190.0f));
             float scale = 0.86f;
             if (textComplete)
             {
-                text.renderNI(position, scale);
+                text.renderNIDialog(position, scale, Color.Green);
             }
             else
             {
-                text.Substring(0, charactersToShow).renderNI(position, scale);
+                text.Substring(0, charactersToShow).renderNIDialog(position, scale, Color.Green);
             }
             GraphicsManager.Instance.spriteBatchEnd();
         }

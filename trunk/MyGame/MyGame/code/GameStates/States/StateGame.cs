@@ -34,7 +34,6 @@ namespace MyGame
             EditorHelper.Instance.loadNewLevelFromGame(level);
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
             GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = new Vector2(0, 200);
-            CinematicManager.Instance.initFakeCinematic();
         }
 
         public void restartLevel()

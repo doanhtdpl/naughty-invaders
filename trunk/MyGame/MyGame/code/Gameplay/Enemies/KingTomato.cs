@@ -11,7 +11,9 @@ namespace MyGame
         public enum tState { Commanding, Shitting, Recovering, Commanding2, Dying }
         public tState state { get; set; }
 
-        const float LIFE = 500.0f;
+        const float LIFE = 4000.0f;
+        const float LIFE_RETURNS = 1500.0f;
+        const float RECOVERING_LIFE_SPEED = 500.0f;
         const float SHIT_TIME = 3.0f;
         const float SPAWN_ORB_TIME = 0.1f;
         const int ORBS_TO_SPAWN = 250;
@@ -75,9 +77,9 @@ namespace MyGame
                     }
                     break;
                 case tState.Recovering:
-                    if (life < 300.0f)
+                    if (life < LIFE_RETURNS)
                     {
-                        life += SB.dt * 50.0f;
+                        life += SB.dt * RECOVERING_LIFE_SPEED;
                     }
                     else
                     {

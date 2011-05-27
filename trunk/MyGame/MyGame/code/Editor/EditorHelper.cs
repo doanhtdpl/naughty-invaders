@@ -426,8 +426,23 @@ namespace MyGame
                     LevelManager.Instance.addLevelCollision(l);
                 }
 
+                if (SB.firstLevelLoad)
+                {
+                    GamerManager.createGamerEntity(PlayerIndex.One, true);
+                    SB.firstLevelLoad = false;
+                }
+
                 //Re-add the player in the entity manager
-                EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
+                if (fileName == "Content/xml/levels/mapa.xml")
+                {
+                    GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
+                }
+                else
+                {
+                    EntityManager.Instance.registerEntity(GamerManager.getMainPlayer());
+                    GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.Render;
+                }
+                GamerManager.getMainPlayer().initLevel();
 
                 //Camera
                 nodes = xml_doc.Descendants("cameraNode");
