@@ -134,6 +134,7 @@ namespace MyGame
             EnemyManager.Instance.clean();
             ProjectileManager.Instance.clean();
             CameraManager.Instance.clean();
+            OrbManager.Instance.clean();
         }
 
         public void update()

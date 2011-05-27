@@ -137,6 +137,7 @@
     <Compile Include="code\Gameplay\Projectiles\Projectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\ProjectileManager.cs" />
     <Compile Include="code\OLD code\MenuOld.cs" />
+    <Compile Include="code\OLD code\SaveData.cs" />
     <Compile Include="code\Particles\Particle.cs" />
     <Compile Include="code\Particles\ParticleSystem.cs" />
     <Compile Include="code\Particles\ParticleSystemData.cs" />
@@ -144,7 +145,6 @@
     <Compile Include="code\Player Management\GamerEntity.cs" />
     <Compile Include="code\Player Management\GamerManager.cs" />
     <Compile Include="code\Gameplay\Player.cs" />
-    <Compile Include="code\Player Management\SaveData.cs" />
     <Compile Include="code\Player Management\SaveGameManager.cs" />
     <Compile Include="code\GameStates\GameState.cs" />
     <Compile Include="code\GameStates\StateManager.cs" />

@@ -82,7 +82,7 @@ namespace MyGame
             {
                 ge.Gamer = Gamer.SignedInGamers[playerIndex];
             }
-            ge.Player = new Player("player", Vector3.Zero, 0);
+            ge.Player = new Player(ge, "player", Vector3.Zero, 0);
             ge.PlayerIndex = playerIndex;
             gamerEntities.Add(ge);
             playerEntities.Add(ge.Player);

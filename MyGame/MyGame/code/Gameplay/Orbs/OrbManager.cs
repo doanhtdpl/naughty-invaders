@@ -66,7 +66,7 @@ namespace MyGame
         }
 	    public void update( )
         {
-            Vector2 playerPosition = GamerManager.getGamerEntities()[0].Player.position2D;
+            Vector2 playerPosition = GamerManager.getMainPlayer().position2D;
 
 	        // update each orb
 	        for(int i=0; i<orbs.Count; ++i)
@@ -134,7 +134,7 @@ namespace MyGame
             }
         }
 
-        public void clear()
+        public void clean()
         {
             orbs.Clear();
         }

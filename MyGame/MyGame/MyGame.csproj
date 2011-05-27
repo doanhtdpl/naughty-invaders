@@ -200,7 +200,7 @@
     <Compile Include="code\Player Management\GamerEntity.cs" />
     <Compile Include="code\Player Management\GamerManager.cs" />
     <Compile Include="code\Gameplay\Player.cs" />
-    <Compile Include="code\Player Management\SaveData.cs" />
+    <Compile Include="code\OLD code\SaveData.cs" />
     <Compile Include="code\Player Management\SaveGameManager.cs" />
     <Compile Include="code\GameStates\GameState.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Option.cs" />

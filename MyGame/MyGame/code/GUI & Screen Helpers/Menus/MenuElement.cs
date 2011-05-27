@@ -32,9 +32,10 @@ namespace MyGame
 
     public class XPCounter : MenuElement
     {
-        Player player;
+        GamerEntity player;
 
-        public XPCounter(Player player, string textureName, Vector2 position, Vector2 scale):base(textureName, position, scale, false)
+        public XPCounter(GamerEntity player, string textureName, Vector2 position, Vector2 scale)
+            : base(textureName, position, scale, false)
         {
             this.player = player;
         }

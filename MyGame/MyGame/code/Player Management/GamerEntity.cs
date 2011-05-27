@@ -7,24 +7,19 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace MyGame
 {
-    class GamerEntity
+    public class GamerEntity
     {
         SignedInGamer gamer;
         Player player;
         PlayerIndex playerIndex;
         ControlPad controls = new ControlPad();
-        SaveData saveData;
+        public PlayerData data { get; set; }
         bool sessionOwner;
 
         public SignedInGamer Gamer
         {
             get { return gamer; }
             set { gamer = value; }
-        }
-        public SaveData SaveData
-        {
-            get { return saveData; }
-            set { saveData = value; }
         }
         public Player Player
         {
@@ -50,11 +45,14 @@ namespace MyGame
         public GamerEntity(bool sessionOwner)
         {
             this.sessionOwner = sessionOwner;
+
+            data = new PlayerData();
+            data.initNewData();
         }
 
         public void createPlayer()
         {
-            player = new Player("player", Vector3.Zero, 0);
+            player = new Player(this, "player", Vector3.Zero, 0);
         }
 
         public void updateInput()

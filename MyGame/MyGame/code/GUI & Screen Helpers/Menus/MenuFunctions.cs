@@ -29,12 +29,12 @@ namespace MyGame
 
         public static void buySkill(string skillName, MenuElement menuElement)
         {
-            PlayerSkill ps = GamerManager.getSessionOwner().Player.data.skills[skillName];
-            int XP = GamerManager.getSessionOwner().Player.data.XP;
+            PlayerSkill ps = GamerManager.getSessionOwner().data.skills[skillName];
+            int XP = GamerManager.getSessionOwner().data.XP;
             if (!ps.obtained && ps.cost <= XP)
             {
                 ps.obtained = true;
-                GamerManager.getSessionOwner().Player.data.XP -= ps.cost;
+                GamerManager.getSessionOwner().data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
                 // playsound
             }
@@ -45,12 +45,12 @@ namespace MyGame
         }
         public static void buySkillAddLife(string skillName, MenuElement menuElement, Player player)
         {
-            PlayerSkill ps = GamerManager.getSessionOwner().Player.data.skills[skillName];
-            int XP = GamerManager.getSessionOwner().Player.data.XP;
+            PlayerSkill ps = GamerManager.getSessionOwner().data.skills[skillName];
+            int XP = GamerManager.getSessionOwner().data.XP;
             if (!ps.obtained && ps.cost <= XP)
             {
                 ps.obtained = true;
-                GamerManager.getSessionOwner().Player.data.XP -= ps.cost;
+                GamerManager.getSessionOwner().data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
                 player.addLifeToMax();
                 // playsound

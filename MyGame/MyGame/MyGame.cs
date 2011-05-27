@@ -51,12 +51,6 @@ namespace MyGame
             Camera2D.projection = Matrix.CreatePerspectiveFieldOfView(Microsoft.Xna.Framework.MathHelper.ToRadians(45), Screen.aspect, 1, 10000000);
             SB.cam.init(800);
 
-
-            // if we want to test gameplay, we will manually add a gamer
-#if ONLY_GAMEPLAY
-            GamerManager.createGamerEntity(PlayerIndex.One, true);
-#endif
-
             base.Initialize();
         }
 
@@ -68,7 +62,7 @@ namespace MyGame
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
-            EditorHelper.Instance.loadNewLevel("final_Level01");
+            //EditorHelper.Instance.loadNewLevel("final_Level01");
         }
 
         protected override void UnloadContent()

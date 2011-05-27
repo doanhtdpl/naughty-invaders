@@ -18,7 +18,7 @@ namespace MyGame
             me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me});
             MenuElement meLinked = new MenuElement("botoncito", position + new Vector2(120, 0), scale);
             me.linkedElement = meLinked;
-            me.drawLinkedElement = GamerManager.getSessionOwner().Player.data.skills[skill].obtained;
+            me.drawLinkedElement = GamerManager.getSessionOwner().data.skills[skill].obtained;
 
             me.description = skillDescription;
             me.DescriptionPosition = new Vector2(140, 140);
@@ -75,7 +75,7 @@ namespace MyGame
             menu.setCurrentNode(mb1);
 
             // xp counter
-            XPCounter xpCounter = new XPCounter(GamerManager.getMainPlayer(), "starXP", new Vector2(-470, -250), new Vector2(1.0f, 1.0f));
+            XPCounter xpCounter = new XPCounter(GamerManager.getSessionOwner(), "starXP", new Vector2(-470, -250), new Vector2(1.0f, 1.0f));
             menu.menuElements.Add(xpCounter);
         }
 

@@ -119,7 +119,7 @@ namespace MyGame
                 }
                 else // if current node has a level...
                 {
-                    Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().Player.data.levelsPassed;
+                    Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().data.levelsPassed;
                     ControlPad cp = GamerManager.getMainControls();
                     NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.getLS());
                     if (next != null &&
@@ -148,7 +148,6 @@ namespace MyGame
             LevelManager.Instance.update();
             ProjectileManager.Instance.update();
             ParticleManager.Instance.update();
-            OrbManager.Instance.update();
             CameraManager.Instance.worldMapPosition = player.position;
             CameraManager.Instance.update();
             GUIManager.Instance.update();

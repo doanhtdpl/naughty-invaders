@@ -10,6 +10,8 @@ namespace MyGame
 {
     public class Player : CollidableEntity2D
     {
+        public GamerEntity owner { get; set; }
+
         public enum tMode { Arcade, GarlicGun, SavingItems }
         public tMode mode { get; set; }
 
@@ -41,17 +43,17 @@ namespace MyGame
         bool bigShotCharging;
         float bigShotCooldownTime;
 
-        public PlayerData data { get; set; }
-
         static Texture2D starXP = null;
         static Texture bigShotBall = null;
         static Texture garlicGunTexture = null;
         static Texture garlicGunBandTexture = null;
 
 
-        public Player(string entityName, Vector3 position, float orientation)
+        public Player( GamerEntity owner, string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)
         {
+            this.owner = owner;
+
             entityState = tEntityState.Active;
             setCollisions();
 
@@ -74,18 +76,16 @@ namespace MyGame
 
             mode = tMode.Arcade;
 
-            data = new PlayerData();
-            data.initNewData();
-
             if (bigShotBall == null) bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
             if (starXP == null) starXP = TextureManager.Instance.getTexture("GUI/menu/starXP");
             if (garlicGunTexture == null) garlicGunTexture = TextureManager.Instance.getTexture("characters/garlicGun");
             if (garlicGunBandTexture == null) garlicGunBandTexture = TextureManager.Instance.getTexture("characters/garlicGunBand");
         }
 
-        public void initStage(Vector2 position)
+        public void initLevel()
         {
-            position2D = position;
+            orientation = 0.0f;
+            lifeValue = lifes;
         }
 
         public override void setCollisions()
@@ -115,11 +115,11 @@ namespace MyGame
             switch (type)
             {
                 case Orb.tOrb.XP:
-                    ++data.XP;
-                    ++data.totalXP;
+                    ++owner.data.XP;
+                    ++owner.data.totalXP;
                     break;
                 case Orb.tOrb.Life:
-                    ++data.lifeOrbs;
+                    ++owner.data.lifeOrbs;
                     lifeValue += 0.1f;
                     if (lifeValue > lifes)
                     {
@@ -139,7 +139,7 @@ namespace MyGame
         public void updateArcadeMode(Vector2 direction, ControlPad controls)
         {
             // dash move
-            if (data.skills["dash1"].obtained)
+            if (owner.data.skills["dash1"].obtained)
             {
                 // update dash velocity
                 dashVelocity -= dashVelocity * DASH_FRICTION * SB.dt;
@@ -148,7 +148,7 @@ namespace MyGame
                 {
                     //playAction("attack");
                     dashVelocity = direction * DASH_VELOCITY;
-                    dashCooldownTime = data.getDashCooldown();
+                    dashCooldownTime = owner.data.getDashCooldown();
                 }
             }
             // fast shot attack
@@ -162,7 +162,7 @@ namespace MyGame
                     // applies to damage and scale of projectile and particles
                     float projectileFactor = 1.0f;
                     Color projectileColor = Color.White;
-                    if (data.skills["plasma"].obtained)
+                    if (owner.data.skills["plasma"].obtained)
                     {
                         projectileFactor = 1.2f;
                         projectileColor = Color.Yellow;
@@ -176,7 +176,7 @@ namespace MyGame
                 }
             }
             // big shot attack
-            else if (data.skills["powerShot"].obtained)
+            else if (owner.data.skills["powerShot"].obtained)
             {
                 if (controls.Y_firstPressed() && bigShotCooldownTime <= 0.0f)
                 {
@@ -344,10 +344,12 @@ namespace MyGame
 
         public void renderGUI()
         {
+            if (renderState == tRenderState.NoRender) return;
+
             Viewport viewport = GraphicsManager.Instance.graphicsDevice.Viewport;
             Vector3 projectedPosition = viewport.Project(position + new Vector3(60, -50.0f, 0), Camera2D.projection, Camera2D.view, Matrix.Identity);
             starXP.render2D(projectedPosition.toVector2(), new Vector2(20.0f, 20.0f), Color.White, 0.0f, SpriteEffects.None, 1.0f, false);
-            StringManager.render(data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
+            StringManager.render(owner.data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
 
             switch (mode)
             {
@@ -369,6 +371,8 @@ namespace MyGame
         }
         public override void render()
         {
+            if (renderState == tRenderState.NoRender) return;
+
             renderBigShot();
             base.render();
             if (mode == tMode.GarlicGun)

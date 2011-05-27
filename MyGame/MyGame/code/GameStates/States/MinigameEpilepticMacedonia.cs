@@ -15,7 +15,7 @@ namespace MyGame
             : base(level)
         {
             Cinematic cinematic = new Cinematic();
-            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), 12.0f, 0.0f);
+            ActorEvent ae1 = new ActorEvent(GamerManager.getMainPlayer(), false);
             ae1.setAt(new Vector3(0.0f, -700.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, 0.0f, 0.0f), 200.0f);
 
