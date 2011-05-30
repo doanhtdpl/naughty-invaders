@@ -223,7 +223,7 @@ namespace MyGame
 
         private void buttonImportLevel_Click(object sender, EventArgs e)
         {
-            string fileName = "";
+            string fileName = ""; 
             if (openDialog("Import level", ref fileName))
             {
                 selectedEntities = EditorHelper.Instance.importLevel(fileName);
