@@ -320,7 +320,7 @@ namespace MyGame
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))
             {
-                hXDocument xml_doc = XDocument.Load(fileName);
+                XDocument xml_doc = XDocument.Load(fileName);
 
                 int id;
                 IEnumerable<XElement> nodes;
