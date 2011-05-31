@@ -235,7 +235,7 @@ namespace MyGame
 
             //enemy zones
             writer.WriteStartElement("enemySpawnZones");
-            for (int i = 0; i < EnemyManager.Instance.getEnemies().Count; i++)
+            for (int i = 0; i < EnemyManager.Instance.getEnemySpawnZones().Count; i++)
             {
                 EnemySpawnZone esz = EnemyManager.Instance.getEnemySpawnZones()[i];
                 writeEnemyZone(writer, esz);
