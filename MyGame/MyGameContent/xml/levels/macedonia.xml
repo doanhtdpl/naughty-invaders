@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<level nextEntityID="321" BGColor="0 0 0 255">
+  <staticProps>
+    <staticProp entityName="mac-30" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN" id="156" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-31" worldMatrix="466 0 0 0 0 375 0 0 0 0 1 0 1540.872 414.2128 0.01323719 1" id="160" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-32" worldMatrix="516 0 0 0 0 372 0 0 0 0 1 0 1537.558 -106.0385 0.01535236 1" id="164" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-33" worldMatrix="-21.37502 214.7589 0 0 -192.1305 -19.12283 0 0 0 0 1 0 -985.9178 -369.0657 -0.01348298 1" id="168" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-34" worldMatrix="222 0 0 0 0 159 0 0 0 0 1 0 1769.38 -479.8223 118.999 1" id="172" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-35" worldMatrix="178 0 0 0 0 214 0 0 0 0 1 0 1872.242 178.94 -0.01687609 1" id="176" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-36" worldMatrix="329 0 0 0 0 308 0 0 0 0 1 0 1858.987 516.9376 -0.0005623877 1" id="180" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-37" worldMatrix="212 0 0 0 0 308 0 0 0 0 1 0 1878.87 831.7394 -0.001348284 1" id="184" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-38" worldMatrix="384 0 0 0 0 214 0 0 0 0 1 0 1408.324 1037.189 -0.01147837 1" id="188" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-39" worldMatrix="277 0 0 0 0 296 0 0 0 0 1 0 -1666.792 967.6012 -0.01948416 1" id="192" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-40" worldMatrix="524 0 0 0 0 343 0 0 0 0 1 0 798.2864 425.4167 0.008093099 1" id="196" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-41" worldMatrix="297 0 0 0 0 291 0 0 0 0 1 0 -1676.734 -19.88222 0.001013856 1" id="200" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-42" worldMatrix="1966.213 0 0 0 0 503.6646 0 0 0 0 1 0 -190.5373 553.72 61.98069 1" id="204" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-43" worldMatrix="341 0 0 0 0 306 0 0 0 0 1 0 1361.932 -904.6408 0.002418365 1" id="208" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-44" worldMatrix="394 0 0 0 0 404 0 0 0 0 1 0 -1587.264 -748.8967 -0.01035493 1" id="212" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-45" worldMatrix="425 0 0 0 0 199 0 0 0 0 1 0 -1793.004 -405.2338 -0.01109707 1" id="216" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-46" worldMatrix="3181.04 0 0 0 0 2267.842 0 0 0 0 1 0 -45.97235 12.45291 -370.0102 1" id="220" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-47" worldMatrix="1033 0 0 0 0 92 0 0 0 0 1 0 -656.1132 828.4256 -0.00411773 1" id="224" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-48" worldMatrix="517 0 0 0 0 706 0 0 0 0 1 0 -2216.547 329.7525 0.01073106 1" id="228" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-50" worldMatrix="340 0 0 0 0 377 0 0 0 0 1 0 -919.5176 -129.4088 56.99596 1" id="234" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="mac-51" worldMatrix="408.7879 0 0 0 0 748.9789 0 0 0 0 1 0 1443.573 550.588 -8.984639 1" id="238" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-52" worldMatrix="591.8026 0 0 0 0 789.0706 0 0 0 0 1 0 860.6719 -356.5201 0.005694718 1" id="242" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-53" worldMatrix="NaN NaN NaN 0 NaN NaN NaN 0 NaN NaN NaN 0 NaN NaN NaN 1" id="246" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-54" worldMatrix="249 0 0 0 0 173 0 0 0 0 1 0 1182.936 852.9243 -0.01792102 1" id="250" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-55" worldMatrix="528.4318 0 0 0 0 1019.222 0 0 0 0 1 0 949.3085 97.68658 0.00485877 1" id="254" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-56" worldMatrix="308 0 0 0 0 204 0 0 0 0 1 0 -1975.023 869.4927 -0.01428232 1" id="258" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-57" worldMatrix="530.5386 0 0 0 0 1008.971 0 0 0 0 1 0 928.446 204.8249 0.01023919 1" id="262" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-58" worldMatrix="191 0 0 0 0 257 0 0 0 0 1 0 -316.1615 304.3695 52.99468 1" id="266" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-59" worldMatrix="128.9724 -138.2214 0 0 144.7589 135.0724 0 0 0 0 1 0 666.0634 428.4431 242.0056 1" id="270" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-60" worldMatrix="167 0 0 0 0 152 0 0 0 0 1 0 2064.802 -92.99921 77.00737 1" id="274" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-61" worldMatrix="1205.272 0 0 0 0 934.9899 0 0 0 0 1 0 -615.9005 226.8418 14.01293 1" id="278" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-62" worldMatrix="694.4412 0 0 0 0 435.3214 0 0 0 0 1 0 251.3861 455.0853 0.0008650351 1" id="282" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="638 0 0 0 0 885 0 0 0 0 1 0 -969.5128 1575.537 0.00864315 1" id="286" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 2524.241 2382.991 0.0004353666 1" id="306" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-52" worldMatrix="443.4967 0 0 0 0 591.3289 0 0 0 0 1 0 -888.9376 -408.6273 -3.994305 1" id="318" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="mac-59" worldMatrix="148.1855 -84.84529 0 0 84.99529 148.4474 0 0 0 0 1 0 726.0302 -229.8587 242.0056 1" id="320" color="255 255 255 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps />
+  <groups>
+    <group>
+      <entity id="242" />
+    </group>
+    <group>
+      <entity id="242" />
+    </group>
+    <group>
+      <entity id="242" />
+    </group>
+    <group>
+      <entity id="172" />
+    </group>
+    <group>
+      <entity id="270" />
+    </group>
+  </groups>
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+  <particles />
+  <triggers />
+</level>
