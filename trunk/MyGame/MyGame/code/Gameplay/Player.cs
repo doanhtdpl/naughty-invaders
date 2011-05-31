@@ -378,7 +378,7 @@ namespace MyGame
             if (mode == tMode.GarlicGun)
             {
                 garlicGunBandTexture.render(position, orientation, 105.0f, Color.White);
-                garlicGunTexture.render(position, Calc.directionToAngle(shotDirection) - Calc.PiOver2, 220.0f, Color.White);
+                garlicGunTexture.render(position, Calc.directionToAngle(shotDirection) - Calc.PiOver2, 200.0f, Color.White);
             }
         }
         public void renderBigShot()

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<level nextEntityID="142" BGColor="0 0 0 255">
+  <staticProps>
+    <staticProp entityName="onn-21" worldMatrix="2501.469 0 0 0 0 1407.464 0 0 0 0 1 0 -3.569765 1.784847 -6.007225 1" id="125" color="255 255 255 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies>
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -582.8687 361.4437 0.004643294 1" id="128" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -446.1063 359.8156 -0.02975214 1" id="129" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -301.2031 363.0719 -0.000563398 1" id="130" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -166.0687 369.5844 -0.01670516 1" id="131" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -17.90937 366.3281 0.005818119 1" id="132" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 118.8531 366.3281 -0.01569779 1" id="133" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 257.2437 366.3281 -0.01173427 1" id="134" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 402.1469 366.3281 0.01667881 1" id="135" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 560.075 367.9562 -0.02248012 1" id="136" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -706.8135 367.6859 0.007523573 1" id="137" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 699.674 369.4707 -0.007067751 1" id="138" color="255 255 255 255" flipH="False" flipV="False" />
+  </enemies>
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles />
+  <triggers />
+</level>
