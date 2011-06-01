@@ -72,7 +72,9 @@ namespace MyGame
                     rect.Width = -rect.Width;
                 }
 
-                EnemyManager.Instance.addEnemySpawnZone(new EnemySpawnZone(MyEditor.Instance.enemiesCombo.Text, rect, MyEditor.Instance.enemyCount.Text.toInt()));
+                int count = 10;
+                int.TryParse(MyEditor.Instance.enemyCount.Text, out count);
+                EnemyManager.Instance.addEnemySpawnZone(new EnemySpawnZone(MyEditor.Instance.enemiesCombo.Text, rect, count));
 
                 rectStarted = false;
             }
@@ -100,6 +102,10 @@ namespace MyGame
             foreach (EnemySpawnZone e in EnemyManager.Instance.getEnemySpawnZones())
             {
                 DebugManager.Instance.addRectangle(e.getZone(), Color.Blue, 1.0f);
+                
+                Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.getZone().Center.toVector3(), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                DebugManager.Instance.addText(pos.toVector2(), e.getEnemyName());
+                DebugManager.Instance.addText(pos.toVector2() + new Vector2(0, 15), e.getTotalSpawns().ToString());
             }
         }
     }

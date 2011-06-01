@@ -13,7 +13,7 @@ namespace MyGame
 {
     class EditorState_EditEnemySpawnZone : EditorState
     {
-        Line selectedLine = null;
+        EnemySpawnZone zone = null;
 
         public EditorState_EditEnemySpawnZone()
             : base()
@@ -30,23 +30,24 @@ namespace MyGame
         {
             base.update();
 
-            if (justPressedLeftButton())
+            if (justPressedLeftButton() && isPosInScreen(gameScreenPos))
             {
-                float dist = float.MaxValue;
-                foreach (Line line in LevelManager.Instance.getLevelCollisions())
+                zone = null;
+                Point p = mouseInSetaZero.toVector2().toPoint();
+                foreach (EnemySpawnZone e in EnemyManager.Instance.getEnemySpawnZones())
                 {
-                    if (line.distanceSquaredToPoint(mouseInSetaZero.toVector2()) < dist && line.distanceSquaredToPoint(mouseInSetaZero.toVector2()) < 30)
+                    if (e.getZone().Contains(p))
                     {
-                        dist = line.distanceSquaredToPoint(mouseInSetaZero.toVector2());
-                        selectedLine = line;
+                        zone = e;
+                        break;
                     }
                 }
             }
 
-            if (justPressedKey(Keys.Delete) && selectedLine != null)
+            if (justPressedKey(Keys.Delete) && zone != null)
             {
-                LevelManager.Instance.getLevelCollisions().Remove(selectedLine);
-                selectedLine = null;
+                EnemyManager.Instance.getEnemySpawnZones().Remove(zone);
+                zone = null;
             }
         }
 
@@ -57,17 +58,11 @@ namespace MyGame
 
         public override void render()
         {
-            if (selectedLine != null)
+            foreach (EnemySpawnZone e in EnemyManager.Instance.getEnemySpawnZones())
             {
-                DebugManager.Instance.addLine(selectedLine.p1, selectedLine.p2, Color.Red);
-            }
-
-            foreach (Line line in LevelManager.Instance.getLevelCollisions())
-            {
-                if (line != selectedLine)
-                {
-                    DebugManager.Instance.addLine(line.p1, line.p2, Color.Blue);
-                }
+                DebugManager.Instance.addRectangle(e.getZone(), e == zone ? Color.Yellow : Color.Blue, 1.0f);
+                DebugManager.Instance.addText(e.getZone().Center.toVector2(), e.getEnemyName());
+                DebugManager.Instance.addText(e.getZone().Center.toVector2() + new Vector2(0, 10), e.getTotalSpawns().ToString());
             }
         }
     }

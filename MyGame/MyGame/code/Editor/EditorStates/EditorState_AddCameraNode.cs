@@ -13,9 +13,6 @@ namespace MyGame
 {
     class EditorState_AddCameraNode : EditorState
     {
-        int currentIndex = 0;
-        private Entity2D staticEntity;
-
         public EditorState_AddCameraNode()
             : base()
         {
@@ -50,6 +47,11 @@ namespace MyGame
         {
             Vector2 position = new Vector2(mouseInSetaZero.X, mouseInSetaZero.Y);
             DebugManager.Instance.addRectangle(position - new Vector2(50, 50), position + new Vector2(50, 50), Color.Yellow, 1.0f);
+
+            foreach (NetworkNode<CameraData> node in CameraManager.Instance.getNodes().getNodes())
+            {
+                DebugManager.Instance.addRectangle(node.value.target - new Vector3(50, 50, 0), node.value.target + new Vector3(50, 50, 0), Color.Blue, 1.0f);
+            }
         }
     }
 }

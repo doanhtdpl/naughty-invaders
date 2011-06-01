@@ -130,6 +130,10 @@ namespace MyGame
             {
                 changeState(new EditorState_AddEnemySpawnZone());
             }
+            else if (sender == editEnemyZoneButton)
+            {
+                changeState(new EditorState_EditEnemySpawnZone());
+            }
             else if (sender == addTriggerButton)
             {
                 changeState(new EditorState_AddTrigger());
@@ -475,6 +479,7 @@ namespace MyGame
             buttonAddColisions.BackColor = nextState is EditorState_AddColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
             buttonEditColisions.BackColor = nextState is EditorState_EditColisions ? SELECTED_COLOR : UNSELECTED_COLOR;
             addEnemyZoneButton.BackColor = nextState is EditorState_AddEnemySpawnZone ? SELECTED_COLOR : UNSELECTED_COLOR;
+            editEnemyZoneButton.BackColor = nextState is EditorState_EditEnemySpawnZone ? SELECTED_COLOR : UNSELECTED_COLOR;
             addTriggerButton.BackColor = nextState is EditorState_AddTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
             editTriggerButton.BackColor = nextState is EditorState_EditTrigger ? SELECTED_COLOR : UNSELECTED_COLOR;
             addEffectButton.BackColor = nextState is EditorState_AddEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
@@ -512,33 +517,17 @@ namespace MyGame
         {
             if (anyEntitySelected())
             {
-                RenderableEntity2D ent = (RenderableEntity2D)selectedEntities[0];
-                if (ent != null)
+                if (selectedEntities.Count == 1)
                 {
-                    ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
-
-                    ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
-                    ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
-                        
-                }
-
-                foreach (RenderableEntity2D rent in selectedEntities)
-                {
-                    rent.color.A = Byte.Parse(this.colorA.Text);
-
-                    float alpha = rent.color.A / 255.0f;
-
-                    if (alpha == 0)
+                    RenderableEntity2D ent = (RenderableEntity2D)selectedEntities[0];
+                    if (ent != null)
                     {
-                        alpha = 1.0f;
+                        ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
+
+                        ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
+                        ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
+
                     }
-
-                    rent.color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
-                    rent.color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
-                    rent.color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
-
-                    rent.flipHorizontal = flipHorizontalCheck.Checked;
-                    rent.flipVertical = flipVerticalCheck.Checked;
                 }
             }
         }
@@ -582,7 +571,14 @@ namespace MyGame
 
         private void flip_CheckedChanged(object sender, EventArgs e)
         {
-            propertiesChanged();
+            if (anyEntitySelected())
+            {
+                foreach (RenderableEntity2D rent in selectedEntities)
+                {
+                    rent.flipHorizontal = flipHorizontalCheck.Checked;
+                    rent.flipVertical = flipVerticalCheck.Checked;
+                }
+            }
 
             myEditorControl.Focus();
         }
@@ -685,7 +681,22 @@ namespace MyGame
                 this.colorG.Text = newColor.G.ToString();
                 this.colorB.Text = newColor.B.ToString();
                 this.colorA.Text = newColor.A.ToString();
-                propertiesChanged();
+
+                foreach (RenderableEntity2D rent in selectedEntities)
+                {
+                    rent.color.A = Byte.Parse(this.colorA.Text);
+
+                    float alpha = rent.color.A / 255.0f;
+
+                    if (alpha == 0)
+                    {
+                        alpha = 1.0f;
+                    }
+
+                    rent.color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
+                    rent.color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
+                    rent.color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
+                }
             }
         }
 
