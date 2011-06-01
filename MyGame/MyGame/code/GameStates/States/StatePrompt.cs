@@ -25,11 +25,11 @@ namespace MyGame
 
             // si alguien cierra la sesión podemos llegar aquí desde cualquier estado...
             promptState = tPromptState.PressA;
-            SoundManager.stopMusic();
+            //SoundManager.stopMusic();
         }
         public void initializeAfterLoading()
         {
-            SoundManager.playMusic("menuSong");
+            //SoundManager.playMusic("menuSong");
         }
 
         public override void loadContent()
@@ -84,7 +84,7 @@ namespace MyGame
                     }
                     break;
                 case tPromptState.Ready:
-                    SoundManager.initVolumes();
+                    //SoundManager.initVolumes();
                     initializeAfterLoading();
                     StateManager.clearStates();
                     StateManager.gameStates.Add(new StateMainMenu());

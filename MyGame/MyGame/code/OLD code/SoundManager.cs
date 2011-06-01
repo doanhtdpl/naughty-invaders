@@ -5,9 +5,9 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace MyGame
 {
-    class SoundManager
+    class SoundManagerOLD
     {
-        static AudioEngine engine;
+/*        static AudioEngine engine;
         static SoundBank soundBank;
         static WaveBank waveBank;
 
@@ -40,7 +40,7 @@ namespace MyGame
             waveBank.Dispose();
         }
 
-        public static void playMusic(string songName)
+        public static void play(string songName)
         {
 #if EDITOR
             return;
@@ -94,6 +94,6 @@ namespace MyGame
         {
             //musicCat.SetVolume(GamerManager.getMainControls().saveData.musicLevel / 100f);
             //soundCat.SetVolume(GamerManager.getMainControls().saveData.soundLevel / 100f);
-        }
+        }*/
     }
 }

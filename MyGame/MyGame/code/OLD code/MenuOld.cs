@@ -69,7 +69,7 @@ namespace MyGame
             if (GamerManager.getMainControls().A_firstPressed())
             {
                 options[selectedOption].executeOption();
-                SoundManager.playSound("menuSelect");
+                //SoundManager.playSound("menuSelect");
             }
         }
 
@@ -142,7 +142,7 @@ namespace MyGame
                 selectedOption = 0;
             else
                 selectedOption++;
-            SoundManager.playSound("menuChange");
+            //SoundManager.playSound("menuChange");
         }
         public void lastOption()
         {
@@ -150,7 +150,7 @@ namespace MyGame
                 selectedOption = (int)(options.Count - 1);
             else
                 selectedOption--;
-            SoundManager.playSound("menuChange");
+            //SoundManager.playSound("menuChange");
         }
     }
 }
