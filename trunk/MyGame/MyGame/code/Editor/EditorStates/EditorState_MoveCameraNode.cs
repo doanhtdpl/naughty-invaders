@@ -90,7 +90,7 @@ namespace MyGame
                 MyEditor.Instance.cameraPosY.Text = "";
                 MyEditor.Instance.cameraPosZ.Text = "";
                 MyEditor.Instance.cameraNodeSpeed.Text = "";
-                MyEditor.Instance.isFirstCheck.Checked = false;
+                //MyEditor.Instance.isFirstCheck.Checked = false;
             }
         }
 
@@ -168,11 +168,13 @@ namespace MyGame
 
         public override void render()
         {
-            if (cameraNode != null)
+            foreach (NetworkNode<CameraData> node in CameraManager.Instance.getNodes().getNodes())
             {
-                Vector3 position = cameraNode.value.target;
-                DebugManager.Instance.addLine(position - new Vector3(50, 50, 0), position + new Vector3(50, 50, 0), Color.Green);
-                DebugManager.Instance.addRectangle(position - new Vector3(50, 50, 0), position + new Vector3(50, 50, 0), Color.Green);
+                DebugManager.Instance.addRectangle(node.value.target - new Vector3(50, 50, 0), node.value.target + new Vector3(50, 50, 0), node == cameraNode ? Color.Yellow : Color.Blue, 1.0f);
+                if (node.getNext() != null)
+                {
+                    DebugManager.Instance.addLine(node.value.target, node.getNext().value.target, Color.Blue);
+                }
             }
         }
     }

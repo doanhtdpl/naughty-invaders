@@ -45,6 +45,18 @@ namespace MyGame
         {
             return v.X.toString() + " " + v.Y.toString() + " " + v.Z.toString();
         }
+        public static Point toPoint(this Vector2 v)
+        {
+            return new Point((int)v.X, (int)v.Y);
+        }
+        public static Vector2 toVector2(this Point v)
+        {
+            return new Vector2(v.X, v.Y);
+        }
+        public static Vector3 toVector3(this Point v)
+        {
+            return new Vector3(v.X, v.Y, 0.0f);
+        }
         public static Vector2 toVector2(this Vector3 v)
         {
             return new Vector2(v.X, v.Y);

@@ -19,7 +19,14 @@ namespace MyGame
         public CameraData(Vector3 target, int id = -1, bool isFirst = false, float speed = 50.0f)
         {
             this.target = target;
-            this.id = id;
+            if (id == -1)
+            {
+                this.id = NEXT_ID;
+                NEXT_ID++;
+            }
+            else
+                this.id = id;
+
             NEXT_ID = Math.Max(NEXT_ID, id + 1);
             next = -1;
             this.isFirst = isFirst;
