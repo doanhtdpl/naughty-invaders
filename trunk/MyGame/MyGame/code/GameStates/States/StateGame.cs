@@ -31,6 +31,7 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
+            SoundManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevelFromGame(level);
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
             GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = new Vector2(0, 200);

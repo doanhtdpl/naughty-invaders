@@ -103,7 +103,7 @@ namespace MyGame
                 selectedOption = 0;
             else
                 selectedOption++;
-            SoundManager.playSound("menuChange");
+            //SoundManager.playSound("menuChange");
             executeFunction();
         }
         public void lastOption()
@@ -112,7 +112,7 @@ namespace MyGame
                 selectedOption = (int)(options.Count - 1);
             else
                 selectedOption--;
-            SoundManager.playSound("menuChange");
+            //SoundManager.playSound("menuChange");
             executeFunction();
         }
         public void incrementValue()
@@ -137,10 +137,10 @@ namespace MyGame
                 case tFunction.None:
                     break;
                 case tFunction.ChangeMusic:
-                    SoundManager.updateMusicVolume(value);
+                    //SoundManager.updateMusicVolume(value);
                     break;
                 case tFunction.ChangeSound:
-                    SoundManager.updateSoundVolume(value);
+                    //SoundManager.updateSoundVolume(value);
                     break;
             }
         }

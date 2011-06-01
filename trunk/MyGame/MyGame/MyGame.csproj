@@ -231,11 +231,10 @@
     <Compile Include="code\OLD code\TEX2.cs" />
     <Compile Include="code\Render &amp; Effects\TextureManager.cs" />
     <Compile Include="code\SB.cs" />
-    <Compile Include="code\SoundManager.cs" />
+    <Compile Include="code\OLD code\SoundManager.cs" />
+    <Compile Include="code\Sound\SoundManager.cs" />
     <Compile Include="code\TextKey.Designer.cs" />
-    <Compile Include="code\Editor\GraphicsDeviceControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="code\Editor\GraphicsDeviceControl.cs" />
     <Compile Include="code\Editor\GraphicsDeviceService.cs" />
     <Compile Include="code\Editor\MyEditor.cs">
       <SubType>Form</SubType>
@@ -243,9 +242,7 @@
     <Compile Include="code\Editor\MyEditor.Designer.cs">
       <DependentUpon>MyEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="code\Editor\MyEditorControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="code\Editor\MyEditorControl.cs" />
     <Compile Include="code\Triggers\ConditionFunctions.cs" />
     <Compile Include="code\Triggers\ConsequenceFunctions.cs" />
     <Compile Include="code\Reflection\ReflectionManager.cs" />

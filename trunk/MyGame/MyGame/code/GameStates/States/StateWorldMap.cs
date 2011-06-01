@@ -72,6 +72,7 @@ namespace MyGame
             longLoad = true;
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
+            SoundManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevelFromGame("mapa");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
 
@@ -80,6 +81,8 @@ namespace MyGame
 
             player = new WorldMapPlayer(currentNode.position);
             player.positionZ += 200.0f;
+
+            SoundManager.Instance.playSong("song");
         }
 
         public override void loadContent()

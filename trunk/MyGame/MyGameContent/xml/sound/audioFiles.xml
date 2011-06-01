@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ 
+-->
+
+<audioFiles>
+  <audioFile type="song" name="song" />
+  <audioFile type="effect" name="menuSelect" />
+  <audioFile type="effect" name="menuChange" />
+</audioFiles>
+
