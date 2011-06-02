@@ -189,6 +189,7 @@ namespace MyGame
             // here is the general information for the level
             writer.WriteAttributeString("nextEntityID", Entity2D.NEXT_ENTITY_ID.ToString());
             writer.WriteAttributeString("BGColor", SB.BGColor.toXML());
+            writer.WriteAttributeString("CameraMode", CameraManager.Instance.cameraMode.ToString());
 
             // static props
             writer.WriteStartElement("staticProps");
@@ -337,6 +338,11 @@ namespace MyGame
                     if (levelNode.Attributes("BGColor").Count() > 0)
                     {
                         SB.BGColor = levelNode.Attribute("BGColor").Value.toColor();
+                    }
+
+                    if (levelNode.Attributes("CameraMode").Count() > 0)
+                    {
+                        CameraManager.Instance.cameraMode = (CameraManager.tCameraMode)Enum.Parse(typeof(CameraManager.tCameraMode), levelNode.Attribute("CameraMode").Value);
                     }
                 }
 

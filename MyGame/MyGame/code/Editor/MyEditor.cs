@@ -867,6 +867,14 @@ namespace MyGame
                 noUpdate--;
             }
         }
+
+        private void cameraModeCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_MoveCameraNode)
+            {
+                ((EditorState_MoveCameraNode)currentState).changeCameraMode(cameraModeCombo.SelectedIndex);
+            }
+        }
     }
 }
 #endif

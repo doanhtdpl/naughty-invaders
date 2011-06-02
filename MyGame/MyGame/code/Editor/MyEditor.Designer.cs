@@ -97,6 +97,7 @@ namespace MyGame
             this.buttonEditColisions = new System.Windows.Forms.Button();
             this.buttonAddColisions = new System.Windows.Forms.Button();
             this.enemyZones = new System.Windows.Forms.TabPage();
+            this.editEnemyZoneButton = new System.Windows.Forms.Button();
             this.enemyCount = new System.Windows.Forms.TextBox();
             this.enemiesCombo = new System.Windows.Forms.ComboBox();
             this.addEnemyZoneButton = new System.Windows.Forms.Button();
@@ -229,7 +230,7 @@ namespace MyGame
             this.editEffectsList = new System.Windows.Forms.ComboBox();
             this.saveEffectsButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.editEnemyZoneButton = new System.Windows.Forms.Button();
+            this.cameraModeCombo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -783,6 +784,7 @@ namespace MyGame
             // 
             // cameras
             // 
+            this.cameras.Controls.Add(this.cameraModeCombo);
             this.cameras.Controls.Add(this.buttonMoveCameraNode);
             this.cameras.Controls.Add(this.addCameraNodeButton);
             this.cameras.Controls.Add(this.addDefaultCamerasButton);
@@ -849,7 +851,7 @@ namespace MyGame
             this.cameraNodePanel.Location = new System.Drawing.Point(161, 8);
             this.cameraNodePanel.Margin = new System.Windows.Forms.Padding(2);
             this.cameraNodePanel.Name = "cameraNodePanel";
-            this.cameraNodePanel.Size = new System.Drawing.Size(336, 91);
+            this.cameraNodePanel.Size = new System.Drawing.Size(331, 91);
             this.cameraNodePanel.TabIndex = 207;
             // 
             // button1
@@ -1036,6 +1038,18 @@ namespace MyGame
             this.enemyZones.TabIndex = 3;
             this.enemyZones.Text = "EnemyZones";
             this.enemyZones.UseVisualStyleBackColor = true;
+            // 
+            // editEnemyZoneButton
+            // 
+            this.editEnemyZoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEnemyZoneButton.Location = new System.Drawing.Point(7, 42);
+            this.editEnemyZoneButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editEnemyZoneButton.Name = "editEnemyZoneButton";
+            this.editEnemyZoneButton.Size = new System.Drawing.Size(60, 28);
+            this.editEnemyZoneButton.TabIndex = 215;
+            this.editEnemyZoneButton.Text = "Edit Enemy Zone";
+            this.editEnemyZoneButton.UseVisualStyleBackColor = true;
+            this.editEnemyZoneButton.Click += new System.EventHandler(this.button_Click);
             // 
             // enemyCount
             // 
@@ -2466,17 +2480,18 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             // 
-            // editEnemyZoneButton
+            // cameraModeCombo
             // 
-            this.editEnemyZoneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editEnemyZoneButton.Location = new System.Drawing.Point(7, 42);
-            this.editEnemyZoneButton.Margin = new System.Windows.Forms.Padding(2);
-            this.editEnemyZoneButton.Name = "editEnemyZoneButton";
-            this.editEnemyZoneButton.Size = new System.Drawing.Size(60, 28);
-            this.editEnemyZoneButton.TabIndex = 215;
-            this.editEnemyZoneButton.Text = "Edit Enemy Zone";
-            this.editEnemyZoneButton.UseVisualStyleBackColor = true;
-            this.editEnemyZoneButton.Click += new System.EventHandler(this.button_Click);
+            this.cameraModeCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cameraModeCombo.CausesValidation = false;
+            this.cameraModeCombo.FormattingEnabled = true;
+            this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.cameraModeCombo.Location = new System.Drawing.Point(524, 10);
+            this.cameraModeCombo.Name = "cameraModeCombo";
+            this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
+            this.cameraModeCombo.TabIndex = 213;
+            this.cameraModeCombo.TabStop = false;
+            this.cameraModeCombo.SelectedIndexChanged += new System.EventHandler(this.cameraModeCombo_SelectedIndexChanged);
             // 
             // MyEditor
             // 
@@ -2720,6 +2735,7 @@ namespace MyGame
         public System.Windows.Forms.TextBox ee_SystemLife;
         private System.Windows.Forms.Button effectDuplicateButton;
         private System.Windows.Forms.Button editEnemyZoneButton;
+        public System.Windows.Forms.ComboBox cameraModeCombo;
     }
 }
 #endif
