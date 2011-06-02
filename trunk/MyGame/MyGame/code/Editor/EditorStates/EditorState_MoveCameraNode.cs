@@ -23,6 +23,13 @@ namespace MyGame
             MyEditor.Instance.staticPropertiesPanel.Hide();
             MyEditor.Instance.cameraNodePanel.Show();
             MyEditor.Instance.cameraNodePanel.Bounds = MyEditor.Instance.staticPropertiesPanel.Bounds;
+
+            MyEditor.Instance.cameraModeCombo.Items.Clear();
+            foreach(string name in Enum.GetNames(typeof(CameraManager.tCameraMode)))
+            {
+                MyEditor.Instance.cameraModeCombo.Items.Add(name);
+            }
+            MyEditor.Instance.cameraModeCombo.Text = CameraManager.Instance.cameraMode.ToString();
         }
 
         public override void exit()
@@ -164,6 +171,11 @@ namespace MyGame
                 cameraNode.value.target = Camera2D.position;
                 cameraNode.value.target.Z = 0;
             }
+        }
+
+        public void changeCameraMode(int newMode)
+        {
+            CameraManager.Instance.cameraMode = (CameraManager.tCameraMode)Enum.GetValues(typeof(CameraManager.tCameraMode)).GetValue(newMode);
         }
 
         public override void render()
