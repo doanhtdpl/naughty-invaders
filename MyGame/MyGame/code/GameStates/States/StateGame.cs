@@ -32,7 +32,10 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             SoundManager.Instance.loadXML();
-            EditorHelper.Instance.loadNewLevelFromGame(level);
+            if (level != null)
+            {
+                EditorHelper.Instance.loadNewLevelFromGame(level);
+            }
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
         }
 
