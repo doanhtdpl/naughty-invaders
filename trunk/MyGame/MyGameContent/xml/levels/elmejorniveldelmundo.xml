@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<level nextEntityID="217" BGColor="0 0 0 255" CameraMode="Nodes">
+  <staticProps>
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 NaN NaN 0.001918862 1" id="179" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 NaN NaN 0.003688457 1" id="181" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 376.6611 1218.554 680.9947 1" id="183" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 407.336 34.52 -0.01452442 1" id="185" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 -399.9458 160.9474 -0.008580697 1" id="187" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 NaN NaN 0.009778804 1" id="189" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 133.1853 712.8214 -468.0086 1" id="194" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 -513.8354 1036.327 -685.0085 1" id="195" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 NaN NaN 0.009778804 1" id="196" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 -402.468 1327.904 554.9947 1" id="215" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="HOU" worldMatrix="509 0 0 0 0 651 0 0 0 0 1 0 631.0761 515.3148 -31.00531 1" id="216" color="255 255 255 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps />
+  <groups>
+    <group>
+      <entity id="187" />
+    </group>
+    <group>
+      <entity id="194" />
+    </group>
+    <group>
+      <entity id="189" />
+    </group>
+    <group>
+      <entity id="183" />
+    </group>
+    <group>
+      <entity id="183" />
+    </group>
+  </groups>
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+  </camera>
+  <particles />
+  <triggers />
+</level>
