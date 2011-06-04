@@ -431,11 +431,11 @@ namespace MyGame
                             newEntities.Add(newEntity);
                         }
                     }
-
-                    createGroup();
-
                     selectedEntities.Clear();
                     selectedEntities = newEntities;
+
+                    if(selectedEntities.Count > 1)
+                        createGroup();
                 }
             }
 

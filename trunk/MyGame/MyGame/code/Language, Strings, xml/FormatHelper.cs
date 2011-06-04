@@ -136,11 +136,18 @@ namespace MyGame
         {
             string[] values = str.Split(' ');
             Matrix m = Matrix.Identity;
-            m.M11 = values[0].toFloat();  m.M12 = values[1].toFloat();  m.M13 = values[2].toFloat();  m.M14 = values[3].toFloat();
-            m.M21 = values[4].toFloat();  m.M22 = values[5].toFloat();  m.M23 = values[6].toFloat();  m.M24 = values[7].toFloat();
-            m.M31 = values[8].toFloat();  m.M32 = values[9].toFloat();  m.M33 = values[10].toFloat(); m.M34 = values[11].toFloat();
+            m.M11 = values[0].toFloat(); m.M12 = values[1].toFloat(); m.M13 = values[2].toFloat(); m.M14 = values[3].toFloat();
+            m.M21 = values[4].toFloat(); m.M22 = values[5].toFloat(); m.M23 = values[6].toFloat(); m.M24 = values[7].toFloat();
+            m.M31 = values[8].toFloat(); m.M32 = values[9].toFloat(); m.M33 = values[10].toFloat(); m.M34 = values[11].toFloat();
             m.M41 = values[12].toFloat(); m.M42 = values[13].toFloat(); m.M43 = values[14].toFloat(); m.M44 = values[15].toFloat();
             return m;
+        }
+        public static bool AnyNanCoord(this Matrix mat)
+        {
+            return float.IsNaN(mat.M11) || float.IsNaN(mat.M12) || float.IsNaN(mat.M13) || float.IsNaN(mat.M14) || 
+                float.IsNaN(mat.M21) || float.IsNaN(mat.M22) || float.IsNaN(mat.M23) || float.IsNaN(mat.M24) || 
+                float.IsNaN(mat.M31) || float.IsNaN(mat.M32) || float.IsNaN(mat.M33) || float.IsNaN(mat.M34) || 
+                float.IsNaN(mat.M41) || float.IsNaN(mat.M42) || float.IsNaN(mat.M43) || float.IsNaN(mat.M44);
         }
     }
 }
