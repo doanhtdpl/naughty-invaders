@@ -119,7 +119,7 @@ namespace MyGame
                 {
                     if (e is Orange)
                     {
-                        e.positionY = Camera2D.screen.Top - e.getRadius();
+                        ((Orange)e).initialize();
                     }
                     // activate
                     activeEnemies.Add(e);

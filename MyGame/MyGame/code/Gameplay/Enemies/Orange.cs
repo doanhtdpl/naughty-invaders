@@ -21,6 +21,11 @@ namespace MyGame
             life = 10.0f;
             setCollisions();
             state = tOrangeState.Parabola;
+        }
+
+        public void initialize()
+        {
+            positionY = Camera2D.screen.Top - getRadius();
 
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
             float randomY = Calc.randomScalar(16.0f, 19.0f);
