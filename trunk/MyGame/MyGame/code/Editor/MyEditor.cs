@@ -397,7 +397,7 @@ namespace MyGame
             }
 
             //DELETE
-            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && myEditorControl.Focused && anyEntitySelected())
+            else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && anyEntitySelected())
             {
                 foreach (Entity2D ent in selectedEntities)
                 {
