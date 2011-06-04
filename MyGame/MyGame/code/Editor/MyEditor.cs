@@ -170,6 +170,10 @@ namespace MyGame
             {
                 changeState(new EditorState_EditEffects());
             }
+            else if (sender == editPlayerPosButton)
+            {
+                changeState(new EditorState_EditPlayerPos());
+            }
             myEditorControl.Focus();
         }
 
@@ -512,6 +516,7 @@ namespace MyGame
             addEffectButton.BackColor = nextState is EditorState_AddEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
             editEffectButton.BackColor = nextState is EditorState_EditEffect ? SELECTED_COLOR : UNSELECTED_COLOR;
             editEffectsButton.BackColor = nextState is EditorState_EditEffects ? SELECTED_COLOR : UNSELECTED_COLOR;
+            editPlayerPosButton.BackColor = nextState is EditorState_EditPlayerPos ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
         #endregion
 

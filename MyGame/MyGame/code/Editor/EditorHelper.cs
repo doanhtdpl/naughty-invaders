@@ -448,6 +448,11 @@ namespace MyGame
                 }
 
                 // player
+                if (GamerManager.getMainPlayer() == null)
+                {
+                    GamerManager.createGamerEntity(PlayerIndex.One, true);
+                }
+
                 nodes = xml_doc.Descendants("player");
                 foreach (XElement node in nodes)
                 {
@@ -456,10 +461,6 @@ namespace MyGame
                     GamerManager.getMainPlayer().initPos = pos;
                 }
 
-                if (GamerManager.getMainPlayer() == null)
-                {
-                    GamerManager.createGamerEntity(PlayerIndex.One, true);
-                }
                 if (fileName == "Content/xml/levels/mapa.xml")
                 {
                     GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
