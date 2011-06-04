@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="3040" BGColor="115 25 53 255" CameraMode="Nodes">
+<level nextEntityID="3334" BGColor="115 25 53 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1234.158 29.67191 -0.002074921 1" id="283" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 -1267.9 1535.802 -0.004013973 1" id="285" color="255 255 255 255" flipH="False" flipV="False" />
@@ -11,8 +11,8 @@
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1367.415 4287.382 -0.01909037 1" id="301" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1458.195 7114.57 -30.00646 1" id="880" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 -1162.567 7178.458 -24.99231 1" id="881" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="verdu-70" worldMatrix="1451.634 0 0 0 0 2022.757 0 0 0 0 1 0 52.94896 186.7618 -361.9911 1" id="1033" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="verdu-70" worldMatrix="1575.748 0 0 0 0 2195.702 0 0 0 0 1 0 121.3828 2206.976 -384.9911 1" id="1036" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-70" worldMatrix="1451.634 0 0 0 0 2022.757 0 0 0 0 1 0 56.05711 189.87 -361.9911 1" id="1033" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-70" worldMatrix="1575.748 0 0 0 0 2195.702 0 0 0 0 1 0 121.3828 2200.263 -384.9911 1" id="1036" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-70" worldMatrix="1520.991 0 0 0 0 2119.401 0 0 0 0 1 0 141.9386 4253.643 -384.9911 1" id="1037" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 -1140.687 291.9872 -52.00702 1" id="1155" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdd-72" worldMatrix="93.75851 178.7405 -8.07513 0 -239.111 124.9386 -10.78593 0 -0.01684977 0.05394433 0.9984016 0 -1085.271 393.642 -0.004634419 1" id="1170" color="255 255 255 255" flipH="False" flipV="False" />
@@ -26,8 +26,8 @@
     <staticProp entityName="verdd-74" worldMatrix="118.0209 0 0 0 0 112.1492 0 0 0 0 1 0 -1241.008 843.4356 8.997746 1" id="1803" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-20" worldMatrix="658.886 52.82367 0 0 -87.82631 1095.485 0 0 0 0 1 0 -980.5562 3534.618 457.996 1" id="1835" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-34" worldMatrix="407 0 0 0 0 222 0 0 0 0 1 0 -1039.247 1500.22 0.01468201 1" id="1919" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onion-51" worldMatrix="899 0 0 0 0 451 0 0 0 0 1 0 956.5046 2197.122 -32.01691 1" id="2179" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onion-51" worldMatrix="572.9781 -692.6879 8.985806 0 346.9393 287.2738 22.53881 0 -0.04487307 -0.02416263 0.9987005 0 1007.991 2490.849 -20.98777 1" id="2181" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-51" worldMatrix="899 0 0 0 0 451 0 0 0 0 1 0 956.5046 2197.122 74.98309 1" id="2179" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-51" worldMatrix="572.9781 -692.6879 8.985806 0 346.9393 287.2738 22.53881 0 -0.04487307 -0.02416263 0.9987005 0 1007.991 2488.159 50.01223 1" id="2181" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-48" worldMatrix="544 0 0 0 0 522 0 0 0 0 1 0 -1064.843 4930.32 52.99455 1" id="2290" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-11" worldMatrix="471 0 0 0 0 1609 0 0 0 0 1 0 -2946.24 2340.42 -0.01173849 1" id="2309" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-13" worldMatrix="241 0 0 0 0 1368 0 0 0 0 1 0 -3533.205 2253.103 0.001964352 1" id="2315" color="255 255 255 255" flipH="False" flipV="False" />
@@ -42,7 +42,7 @@
     <staticProp entityName="verdu-27" worldMatrix="744 0 0 0 0 1275 0 0 0 0 1 0 3150.104 1008.527 0.01066417 1" id="2397" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-29" worldMatrix="373 0 0 0 0 560 0 0 0 0 1 0 3588.656 2104.908 -0.01962627 1" id="2403" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-30" worldMatrix="179 0 0 0 0 149 0 0 0 0 1 0 2991.738 2628.734 0.009991331 1" id="2407" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="verdu-31" worldMatrix="-430.905 -42.54162 0 0 89.89738 -910.5732 0 0 0 0 1 0 1112.082 978.8602 0.008075378 1" id="2411" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="-430.905 -42.54162 0 0 89.89738 -910.5732 0 0 0 0 1 0 1100.589 947.6656 0.008075378 1" id="2411" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-32" worldMatrix="3294.222 0 0 0 0 1265.359 0 0 0 0 1 0 -1233.21 -2284.119 0.002918661 1" id="2415" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-33" worldMatrix="362 0 0 0 0 458 0 0 0 0 1 0 4301.253 2541.27 -0.01962473 1" id="2419" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-35" worldMatrix="115.5855 0 0 0 0 104.5435 0 0 0 0 1 0 908.67 -297.0966 -249.019 1" id="2425" color="255 255 255 255" flipH="False" flipV="False" />
@@ -91,2748 +91,31 @@
     <staticProp entityName="verdu-35" worldMatrix="101.2534 -50.16587 0 0 56.09284 113.2162 0 0 0 0 1 0 861.5173 -168.7363 -249.019 1" id="3036" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-20" worldMatrix="658.886 52.82367 0 0 -87.82631 1095.485 0 0 0 0 1 0 1236.085 6186.331 217.996 1" id="3038" color="255 255 255 255" flipH="True" flipV="True" />
     <staticProp entityName="verdu-20" worldMatrix="935.7555 535.7779 0 0 -936.591 1635.79 0 0 0 0 1 0 1087.036 6194.732 457.996 1" id="3039" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1108.434 713.3312 -1.985504 1" id="3080" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="128.1554 0 0 0 0 121.7795 0 0 0 0 1 0 1045.487 753.681 -71.99185 1" id="3082" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="133.8995 0 0 0 0 127.2378 0 0 0 0 1 0 1096.987 819.1628 -72.99098 1" id="3084" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1693.541 884.7261 -1.985504 1" id="3087" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1924.038 893.5914 -1.985504 1" id="3088" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1906.307 669.0049 -1.985504 1" id="3089" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1643.305 666.0498 -1.985504 1" id="3090" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1752.643 1183.19 -1.985504 1" id="3091" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1962.454 1197.965 -1.985504 1" id="3092" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1977.23 1398.911 -1.985504 1" id="3093" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2207.46 1208.034 -1.985504 1" id="3094" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2422.26 1228.171 -1.985504 1" id="3095" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2418.903 1013.371 -1.985504 1" id="3096" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2187.322 969.7401 -1.985504 1" id="3097" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2183.966 740.6816 -1.985504 1" id="3098" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2422.26 751.5839 -1.985504 1" id="3099" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2428.972 563.6342 -1.985504 1" id="3100" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 2200.748 520.0029 -1.985504 1" id="3101" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1938.127 470.4927 -1.985504 1" id="3102" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-14" worldMatrix="404 0 0 0 0 1473 0 0 0 0 1 0 -1057.479 648.8116 -0.01641167 1" id="3152" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-54" worldMatrix="-444.1306 40.79332 0 0 -29.26871 -318.6588 0 0 0 0 1 0 -971.0487 937.9786 183.0089 1" id="3330" color="245 245 245 245" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-54" worldMatrix="-254.3439 23.36141 0 0 -16.76155 -182.4889 0 0 0 0 1 0 -1161.007 988.9755 316.0089 1" id="3333" color="255 255 255 255" flipH="True" flipV="False" />
   </staticProps>
   <animatedProps />
-  <groups>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="1835" />
-    </group>
-    <group>
-      <entity id="2489" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="1835" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="1835" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="297" />
-    </group>
-    <group>
-      <entity id="299" />
-    </group>
-    <group>
-      <entity id="1033" />
-    </group>
-    <group>
-      <entity id="1036" />
-    </group>
-    <group />
-    <group>
-      <entity id="1037" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group />
-    <group>
-      <entity id="285" />
-    </group>
-    <group>
-      <entity id="1319" />
-    </group>
-    <group>
-      <entity id="1216" />
-    </group>
-    <group>
-      <entity id="2678" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1849" />
-    </group>
-    <group>
-      <entity id="1803" />
-    </group>
-    <group>
-      <entity id="2682" />
-    </group>
-    <group>
-      <entity id="2782" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group>
-      <entity id="2774" />
-      <entity id="2776" />
-      <entity id="2778" />
-      <entity id="2780" />
-      <entity id="2782" />
-      <entity id="2787" />
-    </group>
-    <group />
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2880" />
-    </group>
-    <group>
-      <entity id="2411" />
-    </group>
-    <group />
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2883" />
-    </group>
-    <group>
-      <entity id="2309" />
-    </group>
-    <group>
-      <entity id="2469" />
-    </group>
-    <group>
-      <entity id="281" />
-    </group>
-    <group>
-      <entity id="2425" />
-    </group>
-    <group>
-      <entity id="1835" />
-    </group>
-    <group>
-      <entity id="1835" />
-    </group>
-  </groups>
+  <groups />
   <enemies />
   <enemySpawnZones />
   <levelCollisions />
@@ -2841,5 +124,3606 @@
     <cameraNode id="1" position="0 20000 1800" target="0 20000 0" isFirst="False" />
   </camera>
   <particles />
-  <triggers />
+  <triggers>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+    <trigger position="0 0">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+  </triggers>
 </level>
