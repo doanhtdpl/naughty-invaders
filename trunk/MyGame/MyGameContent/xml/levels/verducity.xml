@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="3037" BGColor="115 25 53 255" CameraMode="Nodes">
+<level nextEntityID="3038" BGColor="115 25 53 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="verdu-61" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 1" id="281" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1234.158 29.67191 -0.002074921 1" id="283" color="255 255 255 255" flipH="False" flipV="False" />
@@ -287,9 +287,8 @@
   <enemySpawnZones />
   <levelCollisions />
   <camera>
-    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
-    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
-    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+    <cameraNode id="0" position="5.441103 143.2823 1800" target="5.441103 143.2823 0" isFirst="True" link="1" />
+    <cameraNode id="1" position="0 20000 1800" target="0 20000 0" isFirst="False" link="2" />
   </camera>
   <particles />
   <triggers>
@@ -299,8 +298,32 @@
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
       </conditions>
       <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
@@ -313,8 +336,32 @@
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
       </conditions>
       <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
@@ -327,8 +374,32 @@
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
       </conditions>
       <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
@@ -341,8 +412,32 @@
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
         <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
+        <condition functionName="isPlayersLastLife" />
       </conditions>
       <consecuences>
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
+        <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
         <consecuence functionName="addParticles" />
