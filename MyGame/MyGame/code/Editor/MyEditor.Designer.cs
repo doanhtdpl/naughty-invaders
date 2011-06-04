@@ -231,9 +231,10 @@ namespace MyGame
             this.editEffectsList = new System.Windows.Forms.ComboBox();
             this.saveEffectsButton = new System.Windows.Forms.Button();
             this.dummyButton = new System.Windows.Forms.Button();
-            this.myEditorControl = new MyGame.MyEditorControl();
             this.restartLevelButton = new System.Windows.Forms.Button();
             this.editPlayerPosButton = new System.Windows.Forms.Button();
+            this.myEditorControl = new MyGame.MyEditorControl();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -269,9 +270,9 @@ namespace MyGame
             this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
             this.buttonSaveLevel.TabIndex = 28;
             this.buttonSaveLevel.TabStop = false;
-            this.buttonSaveLevel.Text = "Save Level";
+            this.buttonSaveLevel.Text = "Save Level As...";
             this.buttonSaveLevel.UseVisualStyleBackColor = true;
-            this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevel_Click);
+            this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevelAs_Click);
             // 
             // buttonLoadLevel
             // 
@@ -2524,16 +2525,6 @@ namespace MyGame
             this.dummyButton.Text = "Move";
             this.dummyButton.UseVisualStyleBackColor = true;
             // 
-            // myEditorControl
-            // 
-            this.myEditorControl.Location = new System.Drawing.Point(0, 129);
-            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
-            this.myEditorControl.Name = "myEditorControl";
-            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
-            this.myEditorControl.TabIndex = 2;
-            this.myEditorControl.Text = "myEditorControl";
-            this.myEditorControl.Click += new System.EventHandler(this.myEditorControl_Click);
-            // 
             // restartLevelButton
             // 
             this.restartLevelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2550,7 +2541,7 @@ namespace MyGame
             // editPlayerPosButton
             // 
             this.editPlayerPosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editPlayerPosButton.Location = new System.Drawing.Point(1167, 66);
+            this.editPlayerPosButton.Location = new System.Drawing.Point(1220, 66);
             this.editPlayerPosButton.Margin = new System.Windows.Forms.Padding(2);
             this.editPlayerPosButton.Name = "editPlayerPosButton";
             this.editPlayerPosButton.Size = new System.Drawing.Size(51, 28);
@@ -2560,12 +2551,36 @@ namespace MyGame
             this.editPlayerPosButton.UseVisualStyleBackColor = true;
             this.editPlayerPosButton.Click += new System.EventHandler(this.button_Click);
             // 
+            // myEditorControl
+            // 
+            this.myEditorControl.Location = new System.Drawing.Point(0, 129);
+            this.myEditorControl.Margin = new System.Windows.Forms.Padding(2);
+            this.myEditorControl.Name = "myEditorControl";
+            this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
+            this.myEditorControl.TabIndex = 2;
+            this.myEditorControl.Text = "myEditorControl";
+            this.myEditorControl.Click += new System.EventHandler(this.myEditorControl_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(1165, 65);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(51, 28);
+            this.button6.TabIndex = 214;
+            this.button6.TabStop = false;
+            this.button6.Text = "Save Level";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.buttonSaveLevel_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.editPlayerPosButton);
             this.Controls.Add(this.restartLevelButton);
             this.Controls.Add(this.dummyButton);
@@ -2809,6 +2824,7 @@ namespace MyGame
         private System.Windows.Forms.Button dummyButton;
         private System.Windows.Forms.Button restartLevelButton;
         private System.Windows.Forms.Button editPlayerPosButton;
+        private System.Windows.Forms.Button button6;
     }
 }
 #endif

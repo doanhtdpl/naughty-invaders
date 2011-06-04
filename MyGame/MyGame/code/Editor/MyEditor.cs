@@ -257,7 +257,7 @@ namespace MyGame
             }
         }
 
-        private void buttonSaveLevel_Click(object sender, EventArgs e)
+        private void buttonSaveLevelAs_Click(object sender, EventArgs e)
         {
             string fileName = "";
             if (openDialog("Save level", ref fileName))
@@ -265,6 +265,12 @@ namespace MyGame
                 EditorHelper.Instance.saveLevelToXML(fileName);
                 currentState = null;
             }
+        }
+
+        private void buttonSaveLevel_Click(object sender, EventArgs e)
+        {
+            EditorHelper.Instance.saveLevelToXML(lastLoadedLevel);
+            currentState = null;
         }
 
         private void buttonNewLevel_Click(object sender, EventArgs e)
