@@ -40,6 +40,8 @@ namespace MyGame
         public int noUpdate = 0;
         public int exitBlockers = 0;
 
+        string lastLoadedLevel = null;
+
         public MyEditor()
         {
             InitializeComponent();
@@ -91,7 +93,11 @@ namespace MyGame
 
         private void keyPressedColor(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == '\r') // PRESS ENTER
+            {
+                validateColorInputs(sender);
+                myEditorControl.Focus();
+            }
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -229,6 +235,7 @@ namespace MyGame
             string fileName = "";
             if (openDialog("Load Level", ref fileName))
             {
+                lastLoadedLevel = fileName;
                 EditorHelper.Instance.loadNewLevel(fileName);
                 currentState = null;
             }
@@ -918,6 +925,21 @@ namespace MyGame
             if (currentState is EditorState_MoveCameraNode)
             {
                 ((EditorState_MoveCameraNode)currentState).changeCameraMode(cameraModeCombo.SelectedIndex);
+            }
+        }
+
+        private void myEditorControl_Click(object sender, EventArgs e)
+        {
+            dummyButton.Focus();
+        }
+
+        private void restartLevelButton_Click(object sender, EventArgs e)
+        {
+            //Reload level
+            if (lastLoadedLevel != null)
+            {
+                EditorHelper.Instance.loadNewLevel(lastLoadedLevel);
+                currentState = null;
             }
         }
     }

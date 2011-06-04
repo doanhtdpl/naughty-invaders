@@ -49,6 +49,19 @@ namespace MyGame
                 EnemyManager.Instance.getEnemySpawnZones().Remove(zone);
                 zone = null;
             }
+            else if (zone != null && mouseState.LeftButton == ButtonState.Pressed)
+            {
+                Vector2 current = new Vector2(mouseState.X, mouseState.Y);
+                Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
+
+                Rectangle rect = zone.getZone();
+                Point location = rect.Location;
+                location.X += (int)(current.X - last.X);
+                location.Y -= (int)(current.Y - last.Y);
+                rect.Location = location;
+                zone. setZone(rect);
+            }
+
         }
 
         public override void exit()
@@ -61,8 +74,10 @@ namespace MyGame
             foreach (EnemySpawnZone e in EnemyManager.Instance.getEnemySpawnZones())
             {
                 DebugManager.Instance.addRectangle(e.getZone(), e == zone ? Color.Yellow : Color.Blue, 1.0f);
-                DebugManager.Instance.addText(e.getZone().Center.toVector2(), e.getEnemyName());
-                DebugManager.Instance.addText(e.getZone().Center.toVector2() + new Vector2(0, 10), e.getTotalSpawns().ToString());
+
+                Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.getZone().Center.toVector3(), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                DebugManager.Instance.addText(pos.toVector2(), e.getEnemyName());
+                DebugManager.Instance.addText(pos.toVector2() + new Vector2(0, 15), e.getTotalSpawns().ToString());
             }
         }
     }
