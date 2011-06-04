@@ -12,7 +12,7 @@ namespace MyGame
     class StateGame : GameState
     {
         #if EDITOR
-        bool gameRunning = false;
+        public bool gameRunning = false;
         bool keyPPressed = false;
         #endif
 

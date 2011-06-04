@@ -264,6 +264,15 @@ namespace MyGame
         #region Update/Render
         public bool update()
         {
+            if (((StateGame)StateManager.getCurrentState()).gameRunning)
+            {
+                tabControl1.Enabled = false;
+                return true;
+            }
+
+            if (!tabControl1.Enabled)
+                tabControl1.Enabled = true;
+
             mouseState = Mouse.GetState();
             keyState = Keyboard.GetState();
 
