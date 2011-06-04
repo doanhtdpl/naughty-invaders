@@ -233,6 +233,7 @@ namespace MyGame
             this.dummyButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.restartLevelButton = new System.Windows.Forms.Button();
+            this.editPlayerPosButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -2546,12 +2547,26 @@ namespace MyGame
             this.restartLevelButton.UseVisualStyleBackColor = true;
             this.restartLevelButton.Click += new System.EventHandler(this.restartLevelButton_Click);
             // 
+            // editPlayerPosButton
+            // 
+            this.editPlayerPosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editPlayerPosButton.Location = new System.Drawing.Point(1167, 66);
+            this.editPlayerPosButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editPlayerPosButton.Name = "editPlayerPosButton";
+            this.editPlayerPosButton.Size = new System.Drawing.Size(51, 28);
+            this.editPlayerPosButton.TabIndex = 213;
+            this.editPlayerPosButton.TabStop = false;
+            this.editPlayerPosButton.Text = "Edit Player Pos";
+            this.editPlayerPosButton.UseVisualStyleBackColor = true;
+            this.editPlayerPosButton.Click += new System.EventHandler(this.button_Click);
+            // 
             // MyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.editPlayerPosButton);
             this.Controls.Add(this.restartLevelButton);
             this.Controls.Add(this.dummyButton);
             this.Controls.Add(this.tabControl1);
@@ -2793,6 +2808,7 @@ namespace MyGame
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button dummyButton;
         private System.Windows.Forms.Button restartLevelButton;
+        private System.Windows.Forms.Button editPlayerPosButton;
     }
 }
 #endif
