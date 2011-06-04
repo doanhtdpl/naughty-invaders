@@ -177,11 +177,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="textures\projectiles\Anim_GrapeWeapon.tga">
-      <Name>Anim_GrapeWeapon</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="textures\projectiles\Anim_PearWeapon.tga">
       <Name>Anim_PearWeapon</Name>
       <Importer>TextureImporter</Importer>
@@ -283,6 +278,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="xml\characters\player.xml">
       <Name>player</Name>
@@ -1891,6 +1887,13 @@
   <ItemGroup>
     <Compile Include="textures\staticProps\HOU.png">
       <Name>HOU</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\projectiles\Anim_GrapeWeapon.png">
+      <Name>Anim_GrapeWeapon</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
