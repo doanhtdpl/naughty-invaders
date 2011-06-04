@@ -53,7 +53,15 @@ namespace MyGame
         void setNewSpawnPosition(float cameraTopY, Enemy enemy)
         {
             Vector2 spawnPosition = Vector2.Zero;
-            spawnPosition.Y = cameraTopY + enemy.getRadius();
+
+            if (enemy.entityName == "orange")
+            {
+                spawnPosition.Y = enemy.positionY;
+            }
+            else
+            {
+                spawnPosition.Y = cameraTopY + enemy.getRadius();
+            }
             bool found = false;
             float allowedDistance = enemy.getRadius();
             float allowedDistanceSquared;

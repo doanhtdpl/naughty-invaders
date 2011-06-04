@@ -21,13 +21,10 @@ namespace MyGame
             life = 10.0f;
             setCollisions();
             state = tOrangeState.Parabola;
+
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
-            float randomY = Calc.randomScalar(14.0f, 17.0f);
+            float randomY = Calc.randomScalar(16.0f, 19.0f);
             velocity = new Vector2(randomX, randomY);
-
-            //positionX = (-randomX + Calc.randomScalar(-2.0f, 2.0f)) * 50.0f;
-
-            //renderState = RenderableEntity2D.tRenderState.NoRender;
         }
 
         public override void setCollisions()
@@ -37,6 +34,7 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            OrbManager.Instance.addRandomOrbs(1, position2D);
             return true;
         }
 

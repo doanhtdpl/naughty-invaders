@@ -95,9 +95,11 @@ namespace MyGame
 
             screen = new Rectangle((int)screenPos.X, (int)screenPos.Y, width, height);
             screenWithMargins = screen;
-            int margin = (int)(width * 0.2f);
-            screenWithMargins.Width += margin;
-            screenWithMargins.Height += margin;
+            int margin = (int)(width * 0.1f);
+            screenWithMargins.X -= margin;
+            screenWithMargins.Y -= margin;
+            screenWithMargins.Width += margin * 2;
+            screenWithMargins.Height += margin * 2;
         }
         // playable zone = la zona comprendida por la screen y unos márgenes de fuera de la screen
         // donde el juego calcula todo lo que ocurre
