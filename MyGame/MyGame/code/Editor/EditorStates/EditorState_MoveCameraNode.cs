@@ -22,7 +22,7 @@ namespace MyGame
             base.enter();
             MyEditor.Instance.staticPropertiesPanel.Hide();
             MyEditor.Instance.cameraNodePanel.Show();
-            MyEditor.Instance.cameraNodePanel.Bounds = MyEditor.Instance.staticPropertiesPanel.Bounds;
+            //MyEditor.Instance.cameraNodePanel.Bounds = MyEditor.Instance.staticPropertiesPanel.Bounds;
 
             MyEditor.Instance.cameraModeCombo.Items.Clear();
             foreach(string name in Enum.GetNames(typeof(CameraManager.tCameraMode)))

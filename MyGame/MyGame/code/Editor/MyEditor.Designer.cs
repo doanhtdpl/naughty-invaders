@@ -784,7 +784,6 @@ namespace MyGame
             // 
             // cameras
             // 
-            this.cameras.Controls.Add(this.cameraModeCombo);
             this.cameras.Controls.Add(this.buttonMoveCameraNode);
             this.cameras.Controls.Add(this.addCameraNodeButton);
             this.cameras.Controls.Add(this.addDefaultCamerasButton);
@@ -803,7 +802,7 @@ namespace MyGame
             this.cameraModeCombo.CausesValidation = false;
             this.cameraModeCombo.FormattingEnabled = true;
             this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.cameraModeCombo.Location = new System.Drawing.Point(524, 10);
+            this.cameraModeCombo.Location = new System.Drawing.Point(327, 17);
             this.cameraModeCombo.Name = "cameraModeCombo";
             this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
             this.cameraModeCombo.TabIndex = 213;
@@ -848,6 +847,7 @@ namespace MyGame
             // 
             // cameraNodePanel
             // 
+            this.cameraNodePanel.Controls.Add(this.cameraModeCombo);
             this.cameraNodePanel.Controls.Add(this.button1);
             this.cameraNodePanel.Controls.Add(this.buttonSetupCamera);
             this.cameraNodePanel.Controls.Add(this.linkNodeButton);
@@ -864,7 +864,7 @@ namespace MyGame
             this.cameraNodePanel.Location = new System.Drawing.Point(161, 8);
             this.cameraNodePanel.Margin = new System.Windows.Forms.Padding(2);
             this.cameraNodePanel.Name = "cameraNodePanel";
-            this.cameraNodePanel.Size = new System.Drawing.Size(331, 91);
+            this.cameraNodePanel.Size = new System.Drawing.Size(602, 91);
             this.cameraNodePanel.TabIndex = 207;
             // 
             // button1
