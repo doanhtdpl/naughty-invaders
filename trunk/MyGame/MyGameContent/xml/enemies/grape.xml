@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity idleOffset="true">
-  <animatedTexture name="Anim_Grape" frameWidth="160" frameHeight="160" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="8"/>
-    <action name="die" initialFrame="9" endFrame="18"/>
-    <action name="idle" initialFrame="20" endFrame="28" FPS="15" loops="true"/>
-    <action name="dashLeftStart" initialFrame="29" endFrame="29" FPS="15" playAtEnd="dashLeftIdle"/>
-    <action name="dashLeftIdle" initialFrame="30" endFrame="31" FPS="15" loops="true"/>
-    <action from="dashLeftIdle" to="idle" name="dashLeftEnd" initialFrame="32" endFrame="32" FPS="15"/>
-    <action name="dashRightStart" initialFrame="33" endFrame="33" FPS="15" playAtEnd="dashRightIdle"/>
-    <action name="dashRightIdle" initialFrame="34" endFrame="35" FPS="15" loops="true"/>
-    <action from="dashRightIdle" to="idle" name="dashRightEnd" initialFrame="36" endFrame="36" FPS="15"/>
+  <animatedTexture name="Anim_Grape" frameWidth="160" frameHeight="160" columns="12" rows="5">
+    <action name="attack" initialFrame="20" endFrame="30"/>
+    <action name="die" initialFrame="49" endFrame="58"/>
+    <action name="idle" initialFrame="1" endFrame="19" loops="true"/>
+    <action name="dashLeftStart" initialFrame="40" endFrame="41"  playAtEnd="dashLeftIdle"/>
+    <action name="dashLeftIdle" initialFrame="42" endFrame="46"  loops="true"/>
+    <action from="dashLeftIdle" to="idle" name="dashLeftEnd" initialFrame="47" endFrame="48" />
+    <action name="dashRightStart" initialFrame="31" endFrame="32"  playAtEnd="dashRightIdle"/>
+    <action name="dashRightIdle" initialFrame="33" endFrame="37"  loops="true"/>
+    <action from="dashRightIdle" to="idle" name="dashRightEnd" initialFrame="38" endFrame="39" />
   </animatedTexture>
 </animatedEntity>
