@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<level nextEntityID="2" BGColor="0 0 0 255">
+  <staticProps />
+  <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera>
+    <cameraNode id="1" position="-215.1747 -132.3267 800" target="-215.1747 -132.3267 0" isFirst="True" link="2" />
+    <cameraNode id="2" position="-245.092 293.42 800" target="-245.092 293.42 0" isFirst="False" />
+  </camera>
+  <particles />
+  <triggers />
+</level>

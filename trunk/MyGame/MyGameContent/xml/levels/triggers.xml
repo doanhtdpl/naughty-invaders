@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<level nextEntityID="2" BGColor="0 0 0 255">
+  <staticProps />
+  <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles />
+  <triggers>
+    <trigger position="-448.76 184.1067">
+      <conditions>
+        <condition functionName="isPlayersLastLife" />
+      </conditions>
+      <consecuences>
+        <consecuence functionName="activateGarlicGun" />
+        <consecuence functionName="addParticles" />
+      </consecuences>
+    </trigger>
+  </triggers>
+</level>
