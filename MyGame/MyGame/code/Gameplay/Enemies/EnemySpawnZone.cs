@@ -45,6 +45,11 @@ namespace MyGame
             return zone;
         }
 
+        public void setZone(Rectangle rect)
+        {
+            this.zone = rect;
+        }
+
         void setNewSpawnPosition(float cameraTopY, Enemy enemy)
         {
             Vector2 spawnPosition = Vector2.Zero;

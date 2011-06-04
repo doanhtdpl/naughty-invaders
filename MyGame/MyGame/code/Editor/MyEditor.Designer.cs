@@ -76,11 +76,11 @@ namespace MyGame
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
             this.cameras = new System.Windows.Forms.TabPage();
-            this.cameraModeCombo = new System.Windows.Forms.ComboBox();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
             this.cameraNodePanel = new System.Windows.Forms.Panel();
+            this.cameraModeCombo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonSetupCamera = new System.Windows.Forms.Button();
             this.linkNodeButton = new System.Windows.Forms.Button();
@@ -230,7 +230,9 @@ namespace MyGame
             this.editEffectsButton = new System.Windows.Forms.Button();
             this.editEffectsList = new System.Windows.Forms.ComboBox();
             this.saveEffectsButton = new System.Windows.Forms.Button();
+            this.dummyButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.restartLevelButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -252,6 +254,7 @@ namespace MyGame
             this.buttonImportLevel.Name = "buttonImportLevel";
             this.buttonImportLevel.Size = new System.Drawing.Size(51, 28);
             this.buttonImportLevel.TabIndex = 29;
+            this.buttonImportLevel.TabStop = false;
             this.buttonImportLevel.Text = "Import Level";
             this.buttonImportLevel.UseVisualStyleBackColor = true;
             this.buttonImportLevel.Click += new System.EventHandler(this.buttonImportLevel_Click);
@@ -264,6 +267,7 @@ namespace MyGame
             this.buttonSaveLevel.Name = "buttonSaveLevel";
             this.buttonSaveLevel.Size = new System.Drawing.Size(51, 28);
             this.buttonSaveLevel.TabIndex = 28;
+            this.buttonSaveLevel.TabStop = false;
             this.buttonSaveLevel.Text = "Save Level";
             this.buttonSaveLevel.UseVisualStyleBackColor = true;
             this.buttonSaveLevel.Click += new System.EventHandler(this.buttonSaveLevel_Click);
@@ -276,6 +280,7 @@ namespace MyGame
             this.buttonLoadLevel.Name = "buttonLoadLevel";
             this.buttonLoadLevel.Size = new System.Drawing.Size(51, 28);
             this.buttonLoadLevel.TabIndex = 27;
+            this.buttonLoadLevel.TabStop = false;
             this.buttonLoadLevel.Text = "Load Level";
             this.buttonLoadLevel.UseVisualStyleBackColor = true;
             this.buttonLoadLevel.Click += new System.EventHandler(this.buttonLoadLevel_Click);
@@ -288,6 +293,7 @@ namespace MyGame
             this.BGColorButton.Name = "BGColorButton";
             this.BGColorButton.Size = new System.Drawing.Size(51, 28);
             this.BGColorButton.TabIndex = 30;
+            this.BGColorButton.TabStop = false;
             this.BGColorButton.Text = "BG Color";
             this.BGColorButton.UseVisualStyleBackColor = true;
             this.BGColorButton.Click += new System.EventHandler(this.BGColorButton_Click);
@@ -300,6 +306,7 @@ namespace MyGame
             this.superPizzaButton.Name = "superPizzaButton";
             this.superPizzaButton.Size = new System.Drawing.Size(60, 28);
             this.superPizzaButton.TabIndex = 201;
+            this.superPizzaButton.TabStop = false;
             this.superPizzaButton.Text = "SuperPizza";
             this.superPizzaButton.UseVisualStyleBackColor = true;
             this.superPizzaButton.Click += new System.EventHandler(this.superPizzaButton_Click);
@@ -312,6 +319,7 @@ namespace MyGame
             this.buttonNewLevel.Name = "buttonNewLevel";
             this.buttonNewLevel.Size = new System.Drawing.Size(51, 28);
             this.buttonNewLevel.TabIndex = 202;
+            this.buttonNewLevel.TabStop = false;
             this.buttonNewLevel.Text = "New Level";
             this.buttonNewLevel.UseVisualStyleBackColor = true;
             this.buttonNewLevel.Click += new System.EventHandler(this.buttonNewLevel_Click);
@@ -330,6 +338,7 @@ namespace MyGame
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1100, 126);
             this.tabControl1.TabIndex = 209;
+            this.tabControl1.TabStop = false;
             // 
             // entities
             // 
@@ -393,6 +402,7 @@ namespace MyGame
             this.flipVerticalCheck.Name = "flipVerticalCheck";
             this.flipVerticalCheck.Size = new System.Drawing.Size(46, 17);
             this.flipVerticalCheck.TabIndex = 33;
+            this.flipVerticalCheck.TabStop = false;
             this.flipVerticalCheck.Text = "flipV";
             this.flipVerticalCheck.UseVisualStyleBackColor = true;
             this.flipVerticalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
@@ -404,6 +414,7 @@ namespace MyGame
             this.flipHorizontalCheck.Name = "flipHorizontalCheck";
             this.flipHorizontalCheck.Size = new System.Drawing.Size(47, 17);
             this.flipHorizontalCheck.TabIndex = 32;
+            this.flipHorizontalCheck.TabStop = false;
             this.flipHorizontalCheck.Text = "flipH";
             this.flipHorizontalCheck.UseVisualStyleBackColor = true;
             this.flipHorizontalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
@@ -416,6 +427,7 @@ namespace MyGame
             this.colorButton.Name = "colorButton";
             this.colorButton.Size = new System.Drawing.Size(40, 20);
             this.colorButton.TabIndex = 31;
+            this.colorButton.TabStop = false;
             this.colorButton.Text = "Color";
             this.colorButton.UseVisualStyleBackColor = true;
             this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
@@ -488,6 +500,7 @@ namespace MyGame
             this.buttonResetPosition.Name = "buttonResetPosition";
             this.buttonResetPosition.Size = new System.Drawing.Size(51, 20);
             this.buttonResetPosition.TabIndex = 24;
+            this.buttonResetPosition.TabStop = false;
             this.buttonResetPosition.Text = "Reset";
             this.buttonResetPosition.UseVisualStyleBackColor = true;
             this.buttonResetPosition.Click += new System.EventHandler(this.buttonResetPosition_Click);
@@ -500,6 +513,7 @@ namespace MyGame
             this.buttonResetScale.Name = "buttonResetScale";
             this.buttonResetScale.Size = new System.Drawing.Size(51, 20);
             this.buttonResetScale.TabIndex = 23;
+            this.buttonResetScale.TabStop = false;
             this.buttonResetScale.Text = "Reset";
             this.buttonResetScale.UseVisualStyleBackColor = true;
             this.buttonResetScale.Click += new System.EventHandler(this.buttonResetScale_Click);
@@ -512,6 +526,7 @@ namespace MyGame
             this.buttonResetRotation.Name = "buttonResetRotation";
             this.buttonResetRotation.Size = new System.Drawing.Size(51, 20);
             this.buttonResetRotation.TabIndex = 22;
+            this.buttonResetRotation.TabStop = false;
             this.buttonResetRotation.Text = "Reset";
             this.buttonResetRotation.UseVisualStyleBackColor = true;
             this.buttonResetRotation.Click += new System.EventHandler(this.buttonResetRotation_Click);
@@ -656,6 +671,7 @@ namespace MyGame
             this.selectGroup.Name = "selectGroup";
             this.selectGroup.Size = new System.Drawing.Size(53, 17);
             this.selectGroup.TabIndex = 204;
+            this.selectGroup.TabStop = false;
             this.selectGroup.Text = "group";
             this.selectGroup.UseVisualStyleBackColor = true;
             // 
@@ -668,6 +684,7 @@ namespace MyGame
             this.canSelectEnemy.Name = "canSelectEnemy";
             this.canSelectEnemy.Size = new System.Drawing.Size(58, 17);
             this.canSelectEnemy.TabIndex = 203;
+            this.canSelectEnemy.TabStop = false;
             this.canSelectEnemy.Text = "Enemy";
             this.canSelectEnemy.UseVisualStyleBackColor = true;
             // 
@@ -680,6 +697,7 @@ namespace MyGame
             this.canSelectAnimated.Name = "canSelectAnimated";
             this.canSelectAnimated.Size = new System.Drawing.Size(70, 17);
             this.canSelectAnimated.TabIndex = 202;
+            this.canSelectAnimated.TabStop = false;
             this.canSelectAnimated.Text = "Animated";
             this.canSelectAnimated.UseVisualStyleBackColor = true;
             // 
@@ -691,6 +709,7 @@ namespace MyGame
             this.buttonAddAnimated.Name = "buttonAddAnimated";
             this.buttonAddAnimated.Size = new System.Drawing.Size(51, 28);
             this.buttonAddAnimated.TabIndex = 211;
+            this.buttonAddAnimated.TabStop = false;
             this.buttonAddAnimated.Text = "Add Animated Prop";
             this.buttonAddAnimated.UseVisualStyleBackColor = true;
             this.buttonAddAnimated.Click += new System.EventHandler(this.button_Click);
@@ -704,6 +723,7 @@ namespace MyGame
             this.canSelectStatic.Name = "canSelectStatic";
             this.canSelectStatic.Size = new System.Drawing.Size(53, 17);
             this.canSelectStatic.TabIndex = 201;
+            this.canSelectStatic.TabStop = false;
             this.canSelectStatic.Text = "Static";
             this.canSelectStatic.UseVisualStyleBackColor = true;
             // 
@@ -715,6 +735,7 @@ namespace MyGame
             this.buttonAddStatic.Name = "buttonAddStatic";
             this.buttonAddStatic.Size = new System.Drawing.Size(51, 28);
             this.buttonAddStatic.TabIndex = 210;
+            this.buttonAddStatic.TabStop = false;
             this.buttonAddStatic.Text = "Add Static Prop";
             this.buttonAddStatic.UseVisualStyleBackColor = true;
             this.buttonAddStatic.Click += new System.EventHandler(this.button_Click);
@@ -727,6 +748,7 @@ namespace MyGame
             this.buttonCreateGroup.Name = "buttonCreateGroup";
             this.buttonCreateGroup.Size = new System.Drawing.Size(51, 28);
             this.buttonCreateGroup.TabIndex = 209;
+            this.buttonCreateGroup.TabStop = false;
             this.buttonCreateGroup.Text = "Create Group";
             this.buttonCreateGroup.UseVisualStyleBackColor = true;
             this.buttonCreateGroup.Click += new System.EventHandler(this.buttonCreateGroup_Click);
@@ -739,6 +761,7 @@ namespace MyGame
             this.buttonAddEnemy.Name = "buttonAddEnemy";
             this.buttonAddEnemy.Size = new System.Drawing.Size(51, 28);
             this.buttonAddEnemy.TabIndex = 208;
+            this.buttonAddEnemy.TabStop = false;
             this.buttonAddEnemy.Text = "Add Enemy";
             this.buttonAddEnemy.UseVisualStyleBackColor = true;
             this.buttonAddEnemy.Click += new System.EventHandler(this.button_Click);
@@ -751,6 +774,7 @@ namespace MyGame
             this.buttonScale.Name = "buttonScale";
             this.buttonScale.Size = new System.Drawing.Size(51, 28);
             this.buttonScale.TabIndex = 207;
+            this.buttonScale.TabStop = false;
             this.buttonScale.Tag = "";
             this.buttonScale.Text = "Scale";
             this.buttonScale.UseVisualStyleBackColor = true;
@@ -764,6 +788,7 @@ namespace MyGame
             this.buttonRotate.Name = "buttonRotate";
             this.buttonRotate.Size = new System.Drawing.Size(51, 28);
             this.buttonRotate.TabIndex = 206;
+            this.buttonRotate.TabStop = false;
             this.buttonRotate.Tag = "";
             this.buttonRotate.Text = "Rotate";
             this.buttonRotate.UseVisualStyleBackColor = true;
@@ -777,6 +802,7 @@ namespace MyGame
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(51, 28);
             this.buttonMove.TabIndex = 205;
+            this.buttonMove.TabStop = false;
             this.buttonMove.Tag = "";
             this.buttonMove.Text = "Move";
             this.buttonMove.UseVisualStyleBackColor = true;
@@ -795,19 +821,6 @@ namespace MyGame
             this.cameras.TabIndex = 1;
             this.cameras.Text = "Cameras";
             this.cameras.UseVisualStyleBackColor = true;
-            // 
-            // cameraModeCombo
-            // 
-            this.cameraModeCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.cameraModeCombo.CausesValidation = false;
-            this.cameraModeCombo.FormattingEnabled = true;
-            this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.cameraModeCombo.Location = new System.Drawing.Point(327, 17);
-            this.cameraModeCombo.Name = "cameraModeCombo";
-            this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
-            this.cameraModeCombo.TabIndex = 213;
-            this.cameraModeCombo.TabStop = false;
-            this.cameraModeCombo.SelectedIndexChanged += new System.EventHandler(this.cameraModeCombo_SelectedIndexChanged);
             // 
             // buttonMoveCameraNode
             // 
@@ -866,6 +879,19 @@ namespace MyGame
             this.cameraNodePanel.Name = "cameraNodePanel";
             this.cameraNodePanel.Size = new System.Drawing.Size(602, 91);
             this.cameraNodePanel.TabIndex = 207;
+            // 
+            // cameraModeCombo
+            // 
+            this.cameraModeCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cameraModeCombo.CausesValidation = false;
+            this.cameraModeCombo.FormattingEnabled = true;
+            this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.cameraModeCombo.Location = new System.Drawing.Point(327, 17);
+            this.cameraModeCombo.Name = "cameraModeCombo";
+            this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
+            this.cameraModeCombo.TabIndex = 213;
+            this.cameraModeCombo.TabStop = false;
+            this.cameraModeCombo.SelectedIndexChanged += new System.EventHandler(this.cameraModeCombo_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -2484,6 +2510,19 @@ namespace MyGame
             this.saveEffectsButton.UseVisualStyleBackColor = true;
             this.saveEffectsButton.Click += new System.EventHandler(this.saveEffectsButton_Click);
             // 
+            // dummyButton
+            // 
+            this.dummyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dummyButton.Location = new System.Drawing.Point(4, 863);
+            this.dummyButton.Margin = new System.Windows.Forms.Padding(2);
+            this.dummyButton.Name = "dummyButton";
+            this.dummyButton.Size = new System.Drawing.Size(10, 10);
+            this.dummyButton.TabIndex = 211;
+            this.dummyButton.TabStop = false;
+            this.dummyButton.Tag = "";
+            this.dummyButton.Text = "Move";
+            this.dummyButton.UseVisualStyleBackColor = true;
+            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 129);
@@ -2492,6 +2531,20 @@ namespace MyGame
             this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
+            this.myEditorControl.Click += new System.EventHandler(this.myEditorControl_Click);
+            // 
+            // restartLevelButton
+            // 
+            this.restartLevelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartLevelButton.Location = new System.Drawing.Point(1112, 66);
+            this.restartLevelButton.Margin = new System.Windows.Forms.Padding(2);
+            this.restartLevelButton.Name = "restartLevelButton";
+            this.restartLevelButton.Size = new System.Drawing.Size(51, 28);
+            this.restartLevelButton.TabIndex = 212;
+            this.restartLevelButton.TabStop = false;
+            this.restartLevelButton.Text = "Restart Level";
+            this.restartLevelButton.UseVisualStyleBackColor = true;
+            this.restartLevelButton.Click += new System.EventHandler(this.restartLevelButton_Click);
             // 
             // MyEditor
             // 
@@ -2499,6 +2552,8 @@ namespace MyGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1284, 873);
+            this.Controls.Add(this.restartLevelButton);
+            this.Controls.Add(this.dummyButton);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.buttonNewLevel);
             this.Controls.Add(this.superPizzaButton);
@@ -2567,7 +2622,6 @@ namespace MyGame
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox textPosZ;
         public System.Windows.Forms.TextBox textPosY;
-        private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox textPosX;
         public System.Windows.Forms.ComboBox texturesCombo;
         public System.Windows.Forms.CheckBox selectGroup;
@@ -2736,6 +2790,9 @@ namespace MyGame
         private System.Windows.Forms.Button effectDuplicateButton;
         private System.Windows.Forms.Button editEnemyZoneButton;
         public System.Windows.Forms.ComboBox cameraModeCombo;
+        public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button dummyButton;
+        private System.Windows.Forms.Button restartLevelButton;
     }
 }
 #endif
