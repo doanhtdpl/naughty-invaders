@@ -66,6 +66,9 @@ namespace MyGame
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
+            // add a player to play with it for quick tests
+            GamerManager.createGamerEntity(PlayerIndex.One, true);
+
             // Hook the idle event to constantly redraw our animation.
             //Application.Idle += delegate { Invalidate(); };
         }

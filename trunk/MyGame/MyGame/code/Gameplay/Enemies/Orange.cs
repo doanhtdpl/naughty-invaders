@@ -22,12 +22,12 @@ namespace MyGame
             setCollisions();
             state = tOrangeState.Parabola;
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
-            float randomY = Calc.randomScalar(Camera2D.screen.Height * 0.7f, Camera2D.screen.Height * 1.3f) * 0.019f;
+            float randomY = Calc.randomScalar(14.0f, 17.0f);
             velocity = new Vector2(randomX, randomY);
 
             //positionX = (-randomX + Calc.randomScalar(-2.0f, 2.0f)) * 50.0f;
 
-            renderState = RenderableEntity2D.tRenderState.NoRender;
+            //renderState = RenderableEntity2D.tRenderState.NoRender;
         }
 
         public override void setCollisions()
@@ -37,7 +37,7 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
-            return false;
+            return true;
         }
 
         public override void update()

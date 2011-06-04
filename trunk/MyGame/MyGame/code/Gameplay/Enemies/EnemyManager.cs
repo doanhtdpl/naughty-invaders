@@ -119,11 +119,11 @@ namespace MyGame
                 {
                     if (e is Orange)
                     {
-                        if (e.positionY < CameraManager.Instance.getCameraPositionXY().Y)
+                        //if (e.positionY < CameraManager.Instance.getCameraPositionXY().Y)
                         {
-                            if (Math.Abs(e.positionX - CameraManager.Instance.getCameraPositionXY().X) < 800.0f)
+                            //if (Math.Abs(e.positionX - CameraManager.Instance.getCameraPositionXY().X) < 800.0f)
                             {
-                                e.positionY = Camera2D.playableZone.Bottom - e.getRadius();
+                                e.positionY = Camera2D.playableZone.Bottom + e.getRadius();
                                 e.renderState = RenderableEntity2D.tRenderState.Render;
                                 // activate
                                 activeEnemies.Add(e);

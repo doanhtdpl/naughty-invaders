@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
-<level nextEntityID="1657" BGColor="0 0 0 255" CameraMode="Nodes">
+<level nextEntityID="1659" BGColor="0 0 0 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1031.147 -65.25867 6.575348 1" id="154" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1061.822 1030.614 6.574966 1" id="155" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1053.022 2014.013 6.569885 1" id="156" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="645.9174 92.06257 29.4917 0 -196.4774 1403.172 -77.01896 0 -0.05230463 0.0474283 0.9975043 0 1181.596 834.7012 6.574966 1" id="157" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="553.7008 33.0975 27.08599 0 -69.72076 1180.383 -17.10394 0 -0.04954485 0.01154497 0.9987052 0 1146.712 1855.057 -2.623489 1" id="158" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 NaN NaN NaN NaN" id="159" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -262.6378 902.9807 -303.0959 1" id="160" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -983.2794 2885.515 -1.856567 1" id="161" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1111.13 3975.884 -1.856949 1" id="162" color="255 255 255 255" flipH="False" flipV="False" />
@@ -49,7 +48,50 @@
       <entity id="156" />
       <entity id="157" />
       <entity id="158" />
-      <entity id="159" />
+      <entity id="160" />
+      <entity id="161" />
+      <entity id="162" />
+      <entity id="163" />
+      <entity id="164" />
+      <entity id="165" />
+      <entity id="166" />
+      <entity id="167" />
+      <entity id="168" />
+      <entity id="169" />
+      <entity id="170" />
+      <entity id="171" />
+      <entity id="172" />
+      <entity id="173" />
+      <entity id="174" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="157" />
+    </group>
+    <group>
+      <entity id="1557" />
+    </group>
+    <group>
+      <entity id="1560" />
+    </group>
+    <group />
+    <group>
+      <entity id="154" />
+      <entity id="155" />
+      <entity id="156" />
+      <entity id="157" />
+      <entity id="158" />
       <entity id="160" />
       <entity id="161" />
       <entity id="162" />
@@ -88,15 +130,55 @@
       <entity id="1560" />
     </group>
     <group>
-      <entity id="159" />
+      <entity id="154" />
+      <entity id="155" />
+      <entity id="156" />
+      <entity id="157" />
+      <entity id="158" />
+      <entity id="160" />
+      <entity id="161" />
+      <entity id="162" />
+      <entity id="163" />
+      <entity id="164" />
+      <entity id="165" />
+      <entity id="166" />
+      <entity id="167" />
+      <entity id="168" />
+      <entity id="169" />
+      <entity id="170" />
+      <entity id="171" />
+      <entity id="172" />
+      <entity id="173" />
+      <entity id="174" />
     </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="157" />
+    </group>
+    <group>
+      <entity id="1557" />
+    </group>
+    <group>
+      <entity id="1560" />
+    </group>
+    <group />
     <group>
       <entity id="154" />
       <entity id="155" />
       <entity id="156" />
       <entity id="157" />
       <entity id="158" />
-      <entity id="159" />
       <entity id="160" />
       <entity id="161" />
       <entity id="162" />
@@ -140,7 +222,50 @@
       <entity id="156" />
       <entity id="157" />
       <entity id="158" />
-      <entity id="159" />
+      <entity id="160" />
+      <entity id="161" />
+      <entity id="162" />
+      <entity id="163" />
+      <entity id="164" />
+      <entity id="165" />
+      <entity id="166" />
+      <entity id="167" />
+      <entity id="168" />
+      <entity id="169" />
+      <entity id="170" />
+      <entity id="171" />
+      <entity id="172" />
+      <entity id="173" />
+      <entity id="174" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="157" />
+    </group>
+    <group>
+      <entity id="1557" />
+    </group>
+    <group>
+      <entity id="1560" />
+    </group>
+    <group />
+    <group>
+      <entity id="154" />
+      <entity id="155" />
+      <entity id="156" />
+      <entity id="157" />
+      <entity id="158" />
       <entity id="160" />
       <entity id="161" />
       <entity id="162" />
@@ -179,15 +304,55 @@
       <entity id="1560" />
     </group>
     <group>
-      <entity id="159" />
+      <entity id="154" />
+      <entity id="155" />
+      <entity id="156" />
+      <entity id="157" />
+      <entity id="158" />
+      <entity id="160" />
+      <entity id="161" />
+      <entity id="162" />
+      <entity id="163" />
+      <entity id="164" />
+      <entity id="165" />
+      <entity id="166" />
+      <entity id="167" />
+      <entity id="168" />
+      <entity id="169" />
+      <entity id="170" />
+      <entity id="171" />
+      <entity id="172" />
+      <entity id="173" />
+      <entity id="174" />
     </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="747" />
+    </group>
+    <group>
+      <entity id="461" />
+    </group>
+    <group>
+      <entity id="157" />
+    </group>
+    <group>
+      <entity id="1557" />
+    </group>
+    <group>
+      <entity id="1560" />
+    </group>
+    <group />
     <group>
       <entity id="154" />
       <entity id="155" />
       <entity id="156" />
       <entity id="157" />
       <entity id="158" />
-      <entity id="159" />
       <entity id="160" />
       <entity id="161" />
       <entity id="162" />
@@ -227,7 +392,17 @@
     </group>
   </groups>
   <enemies />
-  <enemySpawnZones />
+  <enemySpawnZones>
+    <enemySpawnZone zone="-675 720 1419 635" enemy="grape" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-675 720 1419 635" enemy="grape" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-772 637 1649 135" enemy="calsot" count="10" />
+  </enemySpawnZones>
   <levelCollisions />
   <camera>
     <cameraNode id="0" position="0 0 1600" target="0 0 0" isFirst="True" link="1" />
@@ -235,42 +410,4 @@
     <cameraNode id="2" position="10000 20000 1600" target="10000 20000 0" isFirst="False" />
   </camera>
   <particles />
-  <triggers>
-    <trigger position="0 0">
-      <conditions>
-        <condition functionName="isPlayersLastLife" />
-      </conditions>
-      <consecuences>
-        <consecuence functionName="addParticles" />
-      </consecuences>
-    </trigger>
-    <trigger position="0 0">
-      <conditions>
-        <condition functionName="isPlayersLastLife" />
-      </conditions>
-      <consecuences>
-        <consecuence functionName="addParticles" />
-      </consecuences>
-    </trigger>
-    <trigger position="0 0">
-      <conditions>
-        <condition functionName="isPlayersLastLife" />
-        <condition functionName="isPlayersLastLife" />
-      </conditions>
-      <consecuences>
-        <consecuence functionName="addParticles" />
-        <consecuence functionName="addParticles" />
-      </consecuences>
-    </trigger>
-    <trigger position="0 0">
-      <conditions>
-        <condition functionName="isPlayersLastLife" />
-        <condition functionName="isPlayersLastLife" />
-      </conditions>
-      <consecuences>
-        <consecuence functionName="addParticles" />
-        <consecuence functionName="addParticles" />
-      </consecuences>
-    </trigger>
-  </triggers>
 </level>
