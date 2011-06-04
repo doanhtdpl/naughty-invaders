@@ -70,18 +70,28 @@ namespace MyGame
         #endregion
 
         #region Events
-        protected void textChange(object sender, EventArgs e)
+        protected void textChangeMatrix(object sender, EventArgs e)
         {
-            validateInputs(sender);
+            validateMatrixInputs(sender);
         }
 
-        private void keyPressed(object sender, KeyPressEventArgs e)
+        protected void textChangeColor(object sender, EventArgs e)
+        {
+            validateColorInputs(sender);
+        }
+
+        private void keyPressedMatrix(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '\r') // PRESS ENTER
             {
-                validateInputs(sender);
+                validateMatrixInputs(sender);
                 myEditorControl.Focus();
             }
+        }
+
+        private void keyPressedColor(object sender, KeyPressEventArgs e)
+        {
+
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -499,12 +509,26 @@ namespace MyGame
         }
 
         #region Properties fields
-        private void validateInputs(object sender)
+        private void validateMatrixInputs(object sender)
         {
             float value;
             if (float.TryParse(((TextBox)sender).Text, out value))
             {
-                propertiesChanged();
+                if (anyEntitySelected())
+                {
+                    if (selectedEntities.Count == 1)
+                    {
+                        RenderableEntity2D ent = (RenderableEntity2D)selectedEntities[0];
+                        if (ent != null)
+                        {
+                            ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
+
+                            ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
+                            ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
+
+                        }
+                    }
+                }
             }
             else
             {
@@ -513,22 +537,34 @@ namespace MyGame
             }
         }
 
-        public virtual void propertiesChanged()
+        private void validateColorInputs(object sender)
         {
-            if (anyEntitySelected())
+            int value;
+            if (int.TryParse(((TextBox)sender).Text, out value))
             {
-                if (selectedEntities.Count == 1)
+                if (anyEntitySelected())
                 {
-                    RenderableEntity2D ent = (RenderableEntity2D)selectedEntities[0];
-                    if (ent != null)
+                    foreach (RenderableEntity2D rent in selectedEntities)
                     {
-                        ent.position = new Vector3(textPosX.Text.toFloat(), textPosY.Text.toFloat(), textPosZ.Text.toFloat());
+                        rent.color.A = Byte.Parse(this.colorA.Text);
 
-                        ent.orientation = MyEditor.Instance.textRotZ.Text.toFloat() / (float)(360 / (Math.PI * 2));
-                        ent.scale2D = new Vector2(textScaleX.Text.toFloat(), textScaleY.Text.toFloat());
+                        float alpha = rent.color.A / 255.0f;
 
+                        if (alpha == 0)
+                        {
+                            alpha = 1.0f;
+                        }
+
+                        rent.color.R = (byte)(Byte.Parse(this.colorR.Text) * alpha);
+                        rent.color.G = (byte)(Byte.Parse(this.colorG.Text) * alpha);
+                        rent.color.B = (byte)(Byte.Parse(this.colorB.Text) * alpha);
                     }
                 }
+            }
+            else
+            {
+                //If it's not valid, we reset the textbox
+                updateEntityProperties();
             }
         }
 

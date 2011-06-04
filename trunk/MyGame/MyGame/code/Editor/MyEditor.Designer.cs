@@ -76,6 +76,7 @@ namespace MyGame
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
             this.cameras = new System.Windows.Forms.TabPage();
+            this.cameraModeCombo = new System.Windows.Forms.ComboBox();
             this.buttonMoveCameraNode = new System.Windows.Forms.Button();
             this.addCameraNodeButton = new System.Windows.Forms.Button();
             this.addDefaultCamerasButton = new System.Windows.Forms.Button();
@@ -230,7 +231,6 @@ namespace MyGame
             this.editEffectsList = new System.Windows.Forms.ComboBox();
             this.saveEffectsButton = new System.Windows.Forms.Button();
             this.myEditorControl = new MyGame.MyEditorControl();
-            this.cameraModeCombo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -427,8 +427,8 @@ namespace MyGame
             this.colorB.Name = "colorB";
             this.colorB.Size = new System.Drawing.Size(30, 20);
             this.colorB.TabIndex = 30;
-            this.colorB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.colorB.Leave += new System.EventHandler(this.textChange);
+            this.colorB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedColor);
+            this.colorB.Leave += new System.EventHandler(this.textChangeColor);
             // 
             // colorG
             // 
@@ -437,8 +437,8 @@ namespace MyGame
             this.colorG.Name = "colorG";
             this.colorG.Size = new System.Drawing.Size(30, 20);
             this.colorG.TabIndex = 29;
-            this.colorG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.colorG.Leave += new System.EventHandler(this.textChange);
+            this.colorG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedColor);
+            this.colorG.Leave += new System.EventHandler(this.textChangeColor);
             // 
             // label8
             // 
@@ -457,8 +457,8 @@ namespace MyGame
             this.colorA.Name = "colorA";
             this.colorA.Size = new System.Drawing.Size(30, 20);
             this.colorA.TabIndex = 27;
-            this.colorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.colorA.Leave += new System.EventHandler(this.textChange);
+            this.colorA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedColor);
+            this.colorA.Leave += new System.EventHandler(this.textChangeColor);
             // 
             // label7
             // 
@@ -477,8 +477,8 @@ namespace MyGame
             this.colorR.Name = "colorR";
             this.colorR.Size = new System.Drawing.Size(30, 20);
             this.colorR.TabIndex = 25;
-            this.colorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.colorR.Leave += new System.EventHandler(this.textChange);
+            this.colorR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedColor);
+            this.colorR.Leave += new System.EventHandler(this.textChangeColor);
             // 
             // buttonResetPosition
             // 
@@ -553,8 +553,8 @@ namespace MyGame
             this.textScaleY.Name = "textScaleY";
             this.textScaleY.Size = new System.Drawing.Size(62, 20);
             this.textScaleY.TabIndex = 18;
-            this.textScaleY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textScaleY.Leave += new System.EventHandler(this.textChange);
+            this.textScaleY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textScaleY.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // label5
             // 
@@ -573,8 +573,8 @@ namespace MyGame
             this.textScaleX.Name = "textScaleX";
             this.textScaleX.Size = new System.Drawing.Size(62, 20);
             this.textScaleX.TabIndex = 16;
-            this.textScaleX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textScaleX.Leave += new System.EventHandler(this.textChange);
+            this.textScaleX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textScaleX.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // textRotZ
             // 
@@ -583,8 +583,8 @@ namespace MyGame
             this.textRotZ.Name = "textRotZ";
             this.textRotZ.Size = new System.Drawing.Size(62, 20);
             this.textRotZ.TabIndex = 7;
-            this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textRotZ.Leave += new System.EventHandler(this.textChange);
+            this.textRotZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textRotZ.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // label2
             // 
@@ -603,8 +603,8 @@ namespace MyGame
             this.textPosZ.Name = "textPosZ";
             this.textPosZ.Size = new System.Drawing.Size(62, 20);
             this.textPosZ.TabIndex = 3;
-            this.textPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textPosZ.Leave += new System.EventHandler(this.textChange);
+            this.textPosZ.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textPosZ.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // textPosY
             // 
@@ -613,8 +613,8 @@ namespace MyGame
             this.textPosY.Name = "textPosY";
             this.textPosY.Size = new System.Drawing.Size(62, 20);
             this.textPosY.TabIndex = 2;
-            this.textPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textPosY.Leave += new System.EventHandler(this.textChange);
+            this.textPosY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textPosY.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // label1
             // 
@@ -633,8 +633,8 @@ namespace MyGame
             this.textPosX.Name = "textPosX";
             this.textPosX.Size = new System.Drawing.Size(62, 20);
             this.textPosX.TabIndex = 0;
-            this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressed);
-            this.textPosX.Leave += new System.EventHandler(this.textChange);
+            this.textPosX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.keyPressedMatrix);
+            this.textPosX.Leave += new System.EventHandler(this.textChangeMatrix);
             // 
             // texturesCombo
             // 
@@ -796,6 +796,19 @@ namespace MyGame
             this.cameras.TabIndex = 1;
             this.cameras.Text = "Cameras";
             this.cameras.UseVisualStyleBackColor = true;
+            // 
+            // cameraModeCombo
+            // 
+            this.cameraModeCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.cameraModeCombo.CausesValidation = false;
+            this.cameraModeCombo.FormattingEnabled = true;
+            this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.cameraModeCombo.Location = new System.Drawing.Point(524, 10);
+            this.cameraModeCombo.Name = "cameraModeCombo";
+            this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
+            this.cameraModeCombo.TabIndex = 213;
+            this.cameraModeCombo.TabStop = false;
+            this.cameraModeCombo.SelectedIndexChanged += new System.EventHandler(this.cameraModeCombo_SelectedIndexChanged);
             // 
             // buttonMoveCameraNode
             // 
@@ -2479,19 +2492,6 @@ namespace MyGame
             this.myEditorControl.Size = new System.Drawing.Size(1280, 720);
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
-            // 
-            // cameraModeCombo
-            // 
-            this.cameraModeCombo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.cameraModeCombo.CausesValidation = false;
-            this.cameraModeCombo.FormattingEnabled = true;
-            this.cameraModeCombo.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.cameraModeCombo.Location = new System.Drawing.Point(524, 10);
-            this.cameraModeCombo.Name = "cameraModeCombo";
-            this.cameraModeCombo.Size = new System.Drawing.Size(183, 21);
-            this.cameraModeCombo.TabIndex = 213;
-            this.cameraModeCombo.TabStop = false;
-            this.cameraModeCombo.SelectedIndexChanged += new System.EventHandler(this.cameraModeCombo_SelectedIndexChanged);
             // 
             // MyEditor
             // 
