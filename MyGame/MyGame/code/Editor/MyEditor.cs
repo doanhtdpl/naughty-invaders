@@ -36,7 +36,7 @@ namespace MyGame
         public bool drawGrid = false;
         public int gridSpacing = 128;
 
-        public bool skipNextFrame = false;
+        public int skipFrames= 0;
         public int noUpdate = 0;
         public int exitBlockers = 0;
 
@@ -214,7 +214,7 @@ namespace MyGame
             fileDialog.CheckFileExists = false;
             fileDialog.RestoreDirectory = true;
 
-            skipNextFrame = true;
+            skipFrames = 3;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -227,6 +227,7 @@ namespace MyGame
             exitBlockers--;
             noUpdate--;
             myEditorControl.Focus();
+
             return false;
         }
 
@@ -300,9 +301,9 @@ namespace MyGame
             }
 
             //skip frame f.e. when coming back from load/save dialog
-            if (skipNextFrame)
+            if (skipFrames > 0)
             {
-                skipNextFrame = false;
+                skipFrames--;
                 return true;
             }
 
@@ -715,7 +716,7 @@ namespace MyGame
             colorDialog.Color = currentColor;
             colorDialog.ShowDialog();
 
-            skipNextFrame = true;
+            skipFrames = 2;
             exitBlockers--;
             noUpdate--;
 

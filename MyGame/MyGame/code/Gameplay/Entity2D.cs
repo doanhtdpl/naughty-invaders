@@ -27,12 +27,20 @@ namespace MyGame
         public Vector3 position
         {
             get { return world.Translation; }
-            set { world.Translation = value; }
+            set {
+                if (float.IsNaN(value.X) || float.IsNaN(value.Y) || float.IsNaN(value.Z))
+                    return;
+                world.Translation = value;
+            }
         }
         public Vector2 position2D
         {
             get { return new Vector2(world.Translation.X, world.Translation.Y); }
-            set { world.Translation = new Vector3(value.X, value.Y, world.Translation.Z); }
+            set {
+                if (float.IsNaN(value.X) || float.IsNaN(value.Y))
+                    return;
+                world.Translation = new Vector3(value.X, value.Y, world.Translation.Z);
+            }
         }
         public float positionX
         {

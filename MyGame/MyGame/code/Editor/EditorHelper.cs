@@ -308,6 +308,14 @@ namespace MyGame
             }
             writer.WriteEndElement();
 
+            //triggers
+            writer.WriteStartElement("players");
+            writer.WriteStartElement("player");
+            writer.WriteAttributeString("playerId", "0");
+            writer.WriteAttributeString("pos", GamerManager.getMainPlayer().initPos.toXML());
+            writer.WriteEndElement();
+            writer.WriteEndElement();
+
             // close the tag <level> and the writer
             writer.WriteEndElement();
             writer.WriteEndDocument();
@@ -440,6 +448,14 @@ namespace MyGame
                 }
 
                 // player
+                nodes = xml_doc.Descendants("player");
+                foreach (XElement node in nodes)
+                {
+                    int playerId = node.Attribute("playerId").Value.toInt();
+                    Vector3 pos = node.Attribute("pos").Value.toVector3();
+                    GamerManager.getMainPlayer().initPos = pos;
+                }
+
                 if (GamerManager.getMainPlayer() == null)
                 {
                     GamerManager.createGamerEntity(PlayerIndex.One, true);
@@ -452,6 +468,7 @@ namespace MyGame
                 {
                     EntityManager.Instance.registerEntity(GamerManager.getMainPlayer());
                     GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.Render;
+                    GamerManager.getMainPlayer().position = GamerManager.getMainPlayer().initPos;
                 }
                 GamerManager.getMainPlayer().initLevel();
 

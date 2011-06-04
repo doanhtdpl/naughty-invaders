@@ -145,6 +145,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_EditEffect.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditEffects.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditEnemySpawnZone.cs" />
+    <Compile Include="code\Editor\EditorStates\EditorState_EditPlayerPos.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_EditTrigger.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveCameraNode.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_ScaleState.cs" />
