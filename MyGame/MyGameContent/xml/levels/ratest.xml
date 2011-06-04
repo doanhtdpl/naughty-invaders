@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<level nextEntityID="610" BGColor="0 0 0 255" CameraMode="Nodes">
+  <staticProps>
+    <staticProp entityName="Background_Level01" worldMatrix="1024 0 0 0 0 2048 0 0 0 0 1 0 -1619.13 146.2508 -174.9988 1" id="59" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="artmapa-10" worldMatrix="801 0 0 0 0 225 0 0 0 0 1 0 -1495.495 -387.7956 886.0084 1" id="154" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="artmapa-10" worldMatrix="801 0 0 0 0 225 0 0 0 0 1 0 -1872.477 43.59512 827.987 1" id="156" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="artmapa-11" worldMatrix="824 0 0 0 0 152 0 0 0 0 1 0 -1923 -236.2259 -0.003963212 1" id="160" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-23" worldMatrix="339 0 0 0 0 579 0 0 0 0 1 0 -1934.214 335.5203 141.003 1" id="198" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="931.8484 903.584 0 0 -144.7962 149.3255 0 0 0 0 1 0 -1447.444 552.9157 258.001 1" id="270" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="1200.532 493.4847 0 0 -79.07925 192.3812 0 0 0 0 1 0 -1563.144 728.6141 232.9803 1" id="272" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="502.4894 1195.927 -45.46608 0 -169.5932 67.46517 -99.75304 0 -0.4305069 0.2142186 0.8767978 0 -1268.377 438.0689 204.9928 1" id="274" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02transparent" worldMatrix="1077 0 0 0 0 612 0 0 0 0 1 0 -2039.592 0.844696 548.9966 1" id="434" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02transparent" worldMatrix="1077 0 0 0 0 612 0 0 0 0 1 0 -1124.478 -439.9933 1164.019 1" id="436" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02transparent" worldMatrix="1077 0 0 0 0 612 0 0 0 0 1 0 -1950.205 813.103 917.9905 1" id="474" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02transparent" worldMatrix="-1009.7 365.2684 -83.7572 0 -200.0565 -572.2565 -83.93307 0 -0.1192321 -0.1031537 0.9874935 0 -1468.752 1104.309 982.0067 1" id="476" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="-301.947 1238.527 244.3025 0 -188.6306 -58.80751 64.99441 0 0.3513693 -0.09799841 0.9310941 0 -1880.792 453.0192 281.3973 1" id="479" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="-717.028 1014.056 377.3169 0 -157.2271 -128.2289 45.83699 0 0.3513693 -0.09799841 0.9310941 0 -1690.395 551.3688 248.0379 1" id="480" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-75" worldMatrix="-1059.726 623.0428 416.6563 0 -119.5891 -151.2929 -77.92934 0 0.05364669 -0.4904414 0.8698216 0 -1571.39 715.2109 166.5388 1" id="481" color="255 255 255 255" flipH="False" flipV="False" />
+  </staticProps>
+  <animatedProps>
+    <animatedProp entityName="AAleaf" worldMatrix="369 0 0 0 0 340 0 0 0 0 1 0 -1130.174 544.9411 107.019 1" id="64" color="255 255 255 255" flipH="False" flipV="False" />
+    <animatedProp entityName="AAleaf" worldMatrix="369 0 0 0 0 340 0 0 0 0 1 0 -2024.046 552.7139 37.01688 1" id="66" color="255 255 255 255" flipH="True" flipV="False" />
+    <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 -1215.656 -306.1627 16.00438 1" id="100" color="255 255 255 255" flipH="False" flipV="False" />
+    <animatedProp entityName="AAtentacle" worldMatrix="150 0 0 0 0 175 0 0 0 0 1 0 -1281.71 -360.5574 29.01059 1" id="116" color="255 255 255 255" flipH="False" flipV="False" />
+    <animatedProp entityName="ventose" worldMatrix="180 0 0 0 0 180 0 0 0 0 1 0 -1999.825 -521.9203 172.0099 1" id="122" color="255 255 255 255" flipH="True" flipV="False" />
+    <animatedProp entityName="AAtentacle" worldMatrix="150 0 0 0 0 175 0 0 0 0 1 0 -1932.012 -576.459 178.0112 1" id="132" color="255 255 255 255" flipH="True" flipV="False" />
+  </animatedProps>
+  <groups>
+    <group>
+      <entity id="132" />
+      <entity id="122" />
+    </group>
+    <group>
+      <entity id="116" />
+      <entity id="100" />
+    </group>
+    <group>
+      <entity id="272" />
+      <entity id="270" />
+      <entity id="274" />
+    </group>
+    <group>
+      <entity id="272" />
+      <entity id="270" />
+      <entity id="274" />
+    </group>
+  </groups>
+  <enemies>
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1903.629 -139.5701 -0.01443844 1" id="576" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1672.713 -142.5305 -0.01161398 1" id="577" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1438.837 -145.491 -0.008196499 1" id="578" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1868.103 -506.6667 0.0001137964 1" id="579" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1604.623 -500.7457 0.003883188 1" id="580" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1341.142 -506.6667 0.004865378 1" id="581" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1900.668 206.8033 0.004189036 1" id="582" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1681.594 209.7638 0.01319851 1" id="583" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1385.549 189.0406 -0.009200139 1" id="584" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1839.898 452.0948 0.02372294 1" id="585" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1836.937 600.1177 -0.01215481 1" id="586" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1730.361 623.8013 -0.02782515 1" id="587" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1662.27 529.0668 0.001283793 1" id="588" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1656.349 416.5694 0.01094927 1" id="589" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1810.293 526.1063 -0.006350797 1" id="590" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1529.05 656.3663 0.01064642 1" id="591" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1466.88 626.7618 -0.005265983 1" id="592" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1632.666 629.7222 0.01690257 1" id="593" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1623.784 469.8576 0.0008136183 1" id="594" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1549.773 422.4903 -0.0166094 1" id="595" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1508.327 546.8295 -0.005921001 1" id="596" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1478.722 582.355 0.02137799 1" id="597" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1389.908 641.5641 0.002220426 1" id="598" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1327.739 623.8013 0.002942434 1" id="599" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1312.937 472.8181 0.02198846 1" id="600" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1484.643 392.8857 0.01339532 1" id="601" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1401.75 517.2249 0.01230081 1" id="602" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1339.581 588.2759 0.01464498 1" id="603" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1392.869 440.253 0.03560549 1" id="604" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1653.389 386.9648 0.002435409 1" id="605" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1783.649 425.4507 -0.01769764 1" id="606" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1765.886 540.9086 -0.02785577 1" id="607" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="tomato" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -1588.845 553.915 -0.03074379 1" id="608" color="255 255 255 255" flipH="False" flipV="False" />
+  </enemies>
+  <enemySpawnZones>
+    <enemySpawnZone zone="-1935 -199 598 354" enemy="calsot" count="20" />
+  </enemySpawnZones>
+  <levelCollisions>
+    <levelCollision p1="-1995.822 -871.5132" p2="-1930.586 -741.0415" />
+    <levelCollision p1="-1930.586 -741.0415" p2="-1945.083 -608.1537" />
+    <levelCollision p1="-1945.083 -608.1537" p2="-1949.916 -453.5206" />
+    <levelCollision p1="-1949.916 -453.5206" p2="-1995.822 -289.2229" />
+    <levelCollision p1="-1995.822 -289.2229" p2="-2053.81 -134.5898" />
+    <levelCollision p1="-2053.81 -134.5898" p2="-1988.574 36.95634" />
+    <levelCollision p1="-1988.574 36.95634" p2="-1981.325 256.8253" />
+    <levelCollision p1="-1981.325 256.8253" p2="-1995.822 457.3651" />
+    <levelCollision p1="-1995.822 457.3651" p2="-1995.822 592.6691" />
+    <levelCollision p1="-1995.822 592.6691" p2="-1978.909 660.3211" />
+    <levelCollision p1="-1978.909 660.3211" p2="-1991.58 898.7275" />
+    <levelCollision p1="-1991.58 898.7275" p2="-2045.626 1035.264" />
+    <levelCollision p1="-2045.626 1035.264" p2="-1994.424 1168.957" />
+    <levelCollision p1="-1388.219 -872.9734" p2="-1223.237 -685.2352" />
+    <levelCollision p1="-1223.237 -685.2352" p2="-1254.526 -594.2106" />
+    <levelCollision p1="-1254.526 -594.2106" p2="-1348.396 -531.6311" />
+    <levelCollision p1="-1348.396 -531.6311" p2="-1396.752 -338.2039" />
+    <levelCollision p1="-1396.752 -338.2039" p2="-1265.904 68.56239" />
+    <levelCollision p1="-1265.904 68.56239" p2="-1169.191 335.9472" />
+    <levelCollision p1="-1169.191 335.9472" p2="-1203.325 702.8901" />
+    <levelCollision p1="-1203.325 702.8901" p2="-1274.438 839.4271" />
+    <levelCollision p1="-1274.438 839.4271" p2="-1386.676 1162.879" />
+  </levelCollisions>
+  <camera>
+    <cameraNode id="1" position="-1654.212 -805.1056 800" target="-1654.212 -805.1056 0" isFirst="True" link="2" />
+    <cameraNode id="2" position="-1670.667 1091.283 800" target="-1670.667 1091.283 0" isFirst="False" />
+  </camera>
+  <particles>
+    <particle name="lavaSmoke" position="-1959.047 602.4403 0" direction="0 0 0" color="100 100 100 255" />
+    <particle name="lavaSmoke" position="-1214.981 597.2731 0" direction="0 0 0" color="100 100 100 255" />
+  </particles>
+  <triggers />
+</level>
