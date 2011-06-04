@@ -114,6 +114,20 @@ namespace MyGame
         }
         public void addGroup(List<int> group)
         {
+            foreach(List<int> list in groupList)
+            {
+                List<int> aux = new List<int>();
+                aux.AddRange(list);
+                if (list.Count == group.Count)
+                {
+                    foreach (int i in group)
+                    {
+                        aux.Remove(i);
+                    }
+                    if (aux.Count == 0)
+                        return;
+                }
+            }
             groupList.Add(group);
         }
         #endregion

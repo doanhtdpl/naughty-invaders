@@ -354,6 +354,9 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     RenderableEntity2D re = new RenderableEntity2D("staticProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, true, id);
                     re.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
+                    if (re.worldMatrix.AnyNanCoord())
+                        continue;
+
                     if (node.Attributes("color").Count() > 0)
                     {
                         re.color = node.Attribute("color").Value.toColor();
@@ -376,6 +379,8 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     AnimatedEntity2D ae = new AnimatedEntity2D("animatedProps", node.Attribute("entityName").Value, Vector3.Zero, 0, Color.White, true, id);
                     ae.worldMatrix = node.Attribute("worldMatrix").Value.toMatrix();
+                    if (ae.worldMatrix.AnyNanCoord())
+                        continue;
                     if (node.Attributes("color").Count() > 0)
                     {
                         ae.color = node.Attribute("color").Value.toColor();
@@ -398,6 +403,8 @@ namespace MyGame
                     if (loadIDs && node.Attributes("id").Count() > 0) id = node.Attribute("id").Value.toInt();
                     string name = node.Attribute("entityName").Value;
                     Matrix world = node.Attribute("worldMatrix").Value.toMatrix();
+                    if (world.AnyNanCoord())
+                        continue;
                     RenderableEntity2D e = (RenderableEntity2D)EnemyManager.Instance.addEnemy(name, world.Translation, id);
                     if (node.Attributes("color").Count() > 0)
                     {
@@ -488,13 +495,13 @@ namespace MyGame
                     Trigger trigger = new Trigger();
                     trigger.position = position;
 
-                    IEnumerable<XElement> moreNodes = nodes.Descendants("condition");
+                    IEnumerable<XElement> moreNodes = node.Descendants("condition");
                     foreach (XElement func in moreNodes)
                     {
                         trigger.addFunction(true, func.Attribute("functionName").Value);
                     }
 
-                    moreNodes = nodes.Descendants("consecuence");
+                    moreNodes = node.Descendants("consecuence");
                     foreach (XElement func in moreNodes)
                     {
                         trigger.addFunction(false, func.Attribute("functionName").Value);
@@ -519,7 +526,8 @@ namespace MyGame
                                 idList.Add(entityID);
                             }
                         }
-                        LevelManager.Instance.addGroup(idList);
+                        if(idList.Count > 1)
+                            LevelManager.Instance.addGroup(idList);
                     }
                 }
             }

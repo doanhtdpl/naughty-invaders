@@ -74,7 +74,8 @@ namespace MyGame
 
                 int count = 10;
                 int.TryParse(MyEditor.Instance.enemyCount.Text, out count);
-                EnemyManager.Instance.addEnemySpawnZone(new EnemySpawnZone(MyEditor.Instance.enemiesCombo.Text, rect, count));
+                if(rect.Width > 20 && rect.Height > 20)
+                    EnemyManager.Instance.addEnemySpawnZone(new EnemySpawnZone(MyEditor.Instance.enemiesCombo.Text, rect, count));
 
                 rectStarted = false;
             }
