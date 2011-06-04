@@ -23,7 +23,7 @@ namespace MyGame
         tPearState state;
 
         public Pear(Vector3 position, float orientation)
-            : base("pear", position, orientation, 3)
+            : base("pear", position, orientation, 4)
         {
             life = 100.0f;
             nextAttackTimer = Calc.randomScalar(4.0f, 5.5f);
@@ -43,6 +43,12 @@ namespace MyGame
         {
             life -= ce.damage;
             return life > 0;
+        }
+
+        public override void die()
+        {
+            base.die();
+            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero, Color.Green, 1.2f);
         }
 
         public override void update()

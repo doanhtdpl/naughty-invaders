@@ -22,7 +22,9 @@ namespace MyGame
             setCollisions();
             state = tOrangeState.Parabola;
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
-            velocity = new Vector2(randomX, Calc.randomScalar(12.0f, 17.0f));
+            float randomY = Calc.randomScalar(Camera2D.screen.Height * 0.7f, Camera2D.screen.Height * 1.3f) * 0.019f;
+            velocity = new Vector2(randomX, randomY);
+
             //positionX = (-randomX + Calc.randomScalar(-2.0f, 2.0f)) * 50.0f;
 
             renderState = RenderableEntity2D.tRenderState.NoRender;
