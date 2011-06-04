@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="1659" BGColor="0 0 0 255" CameraMode="Nodes">
+<level nextEntityID="2504" BGColor="0 0 0 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1031.147 -65.25867 6.575348 1" id="154" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1061.822 1030.614 6.574966 1" id="155" color="255 255 255 255" flipH="False" flipV="False" />
@@ -16,18 +16,17 @@
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -313.3706 3937.535 -311.5278 1" id="167" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1008.135 5893.993 -7.222351 1" id="168" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1135.984 6984.364 -7.222725 1" id="169" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1127.185 7967.772 -7.227798 1" id="170" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1103.264 7951.825 -7.227798 1" id="170" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="651.8471 59.86142 29.58864 0 -126.5173 1415.876 -77.27206 0 -0.04986883 0.04998316 0.9975043 0 1074.132 7025.501 -7.222725 1" id="171" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 1032.609 8045.915 -16.4212 1" id="172" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 1094.931 5867.797 -14.12158 1" id="173" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -338.9376 7035.12 -316.8935 1" id="174" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-71" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 1" id="420" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutines-75" worldMatrix="746 0 0 0 0 691 0 0 0 0 1 0 -2193.06 420.3519 -0.008752543 1" id="425" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutines-75" worldMatrix="746 0 0 0 0 691 0 0 0 0 1 0 1515.459 598.9733 0.01627429 1" id="427" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="562 0 0 0 0 536 0 0 0 0 1 0 2652.219 -40.81431 -0.004109292 1" id="459" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="148.7404 115.4382 0 0 -110.0976 141.8592 0 0 0 0 1 0 -912.5796 195.8853 56.98201 1" id="461" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 2002.048 1544.809 0.004586508 1" id="465" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 3468.252 868.0994 -0.002509364 1" id="467" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -963.5995 3361.738 0.004586508 1" id="465" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="970.7103 0 0 0 0 762.2525 0 0 0 0 1 0 862.9846 2482.314 -0.002509364 1" id="467" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-75" worldMatrix="1298 0 0 0 0 208 0 0 0 0 1 0 3309.026 164.8523 0.0008753467 1" id="475" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 2094.93 125.0459 -0.0006360888 1" id="487" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-63" worldMatrix="1349.563 0 0 0 0 1762.654 0 0 0 0 1 0 1505.536 399.2173 -243.9929 1" id="744" color="255 255 255 255" flipH="False" flipV="False" />
@@ -39,6 +38,104 @@
     <staticProp entityName="mac-45" worldMatrix="425 0 0 0 0 199 0 0 0 0 1 0 -695.0576 -478.9533 0.01239773 1" id="1557" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-45" worldMatrix="-355.1253 233.4761 0 0 -109.3217 -166.2822 0 0 0 0 1 0 665.3687 -425.3281 0.01239773 1" id="1560" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-45" worldMatrix="-149.7157 -141.8444 0 0 74.09656 -78.20838 0 0 0 0 1 0 850.9968 -225.5134 -75.9876 1" id="1561" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 -735.5345 2173.611 85.9995 1" id="1660" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 -1492.139 2149.589 85.9993 1" id="1661" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="359.7757 -191.7167 -0.01706634 0 182.6193 342.7019 19.43659 0 -0.02347222 -0.04413693 0.9987499 0 -1144.604 2052.771 86.00045 1" id="1662" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="257.5417 140.6957 0 0 -134.1263 245.5166 8.395445 0 0.0143806 -0.02632352 0.9995501 0 -802.9027 2554.108 86.01816 1" id="1663" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-125.0354 259.3703 0 0 -274.809 -132.4781 0 0 0 0 1 0 -1360.801 2686.743 105.0044 1" id="1664" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 -552.0394 2140.456 123.0118 1" id="1665" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-68.07821 538.8681 3.170803 0 -502.7057 -63.79916 49.20863 0 0.09662164 0.00635021 0.9953007 0 -1194.734 2566.875 85.9995 1" id="1667" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 -1617.399 2136.934 105.0044 1" id="1668" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 -1368.792 2159.535 105.0044 1" id="1669" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 -951.4746 2395.41 105.0044 1" id="1670" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 1464.999 3278.196 85.9995 1" id="1671" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 708.3948 3254.175 85.9993 1" id="1672" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="359.7757 -191.7167 -0.01706634 0 182.6193 342.7019 19.43659 0 -0.02347222 -0.04413693 0.9987499 0 1055.929 3157.356 86.00045 1" id="1673" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="257.5417 140.6957 0 0 -134.1263 245.5166 8.395445 0 0.0143806 -0.02632352 0.9995501 0 1397.623 3658.688 86.01816 1" id="1674" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-125.0354 259.3703 0 0 -274.809 -132.4781 0 0 0 0 1 0 832.1871 3787.544 105.0044 1" id="1675" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 1633.8 3237.672 123.0118 1" id="1676" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-68.07821 538.8681 3.170803 0 -502.7057 -63.79916 49.20863 0 0.09662164 0.00635021 0.9953007 0 1005.799 3671.46 85.9995 1" id="1677" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 575.5892 3237.735 105.0044 1" id="1678" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 824.1959 3260.336 105.0044 1" id="1679" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 1241.513 3496.211 105.0044 1" id="1680" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 -777.0268 5143.463 85.9995 1" id="1681" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 -1533.631 5119.442 85.9993 1" id="1682" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="359.7757 -191.7167 -0.01706634 0 182.6193 342.7019 19.43659 0 -0.02347222 -0.04413693 0.9987499 0 -1186.096 5022.622 86.00045 1" id="1683" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="257.5417 140.6957 0 0 -134.1263 245.5166 8.395445 0 0.0143806 -0.02632352 0.9995501 0 -844.3946 5523.949 86.01816 1" id="1684" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-125.0354 259.3703 0 0 -274.809 -132.4781 0 0 0 0 1 0 -1401.896 5646.204 105.0044 1" id="1685" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 -592.757 5090.07 123.0118 1" id="1686" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-68.07821 538.8681 3.170803 0 -502.7057 -63.79916 49.20863 0 0.09662164 0.00635021 0.9953007 0 -1236.227 5536.727 85.9995 1" id="1687" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 -1658.493 5096.395 105.0044 1" id="1688" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 -1409.887 5118.995 105.0044 1" id="1689" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 -992.5693 5354.871 105.0044 1" id="1690" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 974.631 2047.358 -210.0169 1" id="1761" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 -952.5143 3584.354 -170.0098 1" id="1763" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1200.181 8978.063 6.575348 1" id="1766" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1230.856 10073.94 6.574966 1" id="1767" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1222.057 11057.35 6.569885 1" id="1768" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="645.9174 92.06257 29.4917 0 -196.4774 1403.172 -77.01896 0 -0.05230463 0.0474283 0.9975043 0 1012.562 9878.023 6.574966 1" id="1769" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="553.7008 33.0975 27.08599 0 -69.72076 1180.383 -17.10394 0 -0.04954485 0.01154497 0.9987052 0 977.6134 10901.79 -2.623489 1" id="1770" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -433.8136 10060.8 -303.0959 1" id="1771" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1152.372 11931.96 -1.856567 1" id="1772" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1280.223 13022.32 -1.856949 1" id="1773" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1271.424 14005.72 -1.86203 1" id="1774" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="597.361 54.85766 27.1154 0 -109.84 1229.239 -67.0863 0 -0.04986883 0.04998316 0.9975043 0 988.1183 12898.75 -1.856949 1" id="1775" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 888.0618 13906.82 -11.05542 1" id="1776" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 963.6594 11837.58 -8.755798 1" id="1777" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -484.604 13098.47 -311.5278 1" id="1778" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1177.265 14942.42 -7.222351 1" id="1779" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1305.114 16032.79 -7.222725 1" id="1780" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1296.315 17016.21 -7.227798 1" id="1781" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="651.8471 59.86142 29.58864 0 -126.5173 1415.876 -77.27206 0 -0.04986883 0.04998316 0.9975043 0 905.0021 16073.93 -7.222725 1" id="1782" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 863.4156 17097.75 -16.4212 1" id="1783" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 925.7533 14918.78 -14.12158 1" id="1784" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -510.2081 16198.04 -316.8935 1" id="1785" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="645.9174 92.06257 29.4917 0 -196.4774 1403.172 -77.01896 0 -0.05230463 0.0474283 0.9975043 0 996.5654 8859.379 -7.425034 1" id="1786" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 1443.313 6453.602 85.9995 1" id="1787" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 686.7089 6429.582 85.9993 1" id="1788" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="359.7757 -191.7167 -0.01706634 0 182.6193 342.7019 19.43659 0 -0.02347222 -0.04413693 0.9987499 0 1034.243 6332.76 86.00045 1" id="1789" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="257.5417 140.6957 0 0 -134.1263 245.5166 8.395445 0 0.0143806 -0.02632352 0.9995501 0 1375.942 6834.084 86.01816 1" id="1790" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-125.0354 259.3703 0 0 -274.809 -132.4781 0 0 0 0 1 0 814.9224 6954.264 105.0044 1" id="1791" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 1620.725 6396.161 123.0118 1" id="1792" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-68.07821 538.8681 3.170803 0 -502.7057 -63.79916 49.20863 0 0.09662164 0.00635021 0.9953007 0 984.1128 6846.867 85.9995 1" id="1793" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 558.3253 6404.455 105.0044 1" id="1794" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 806.9314 6427.055 105.0044 1" id="1795" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 1224.249 6662.931 105.0044 1" id="1796" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="1725.427 0 0 0 0 2964.577 0 0 0 0 1 0 -1445.897 1447.832 -243.9929 1" id="1797" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="1683.84 376.5392 0 0 -646.9586 2893.124 0 0 0 0 1 0 1300.304 4944.327 -290.9929 1" id="1798" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="506 0 0 0 0 514 0 0 0 0 1 0 -950.556 6855.024 -66.99287 1" id="1799" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="273.059 414.8211 -96.94463 0 -426.4265 286.0599 22.94139 0 0.1432174 0.1348618 0.9804598 0 901.4456 6588.954 0.01918657 1" id="1800" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-382.1993 6.324228 -36.35688 0 -9.517069 -336.2302 41.56081 0 -0.09191319 0.1247174 0.9879261 0 -1100.739 7168.936 20.01919 1" id="1801" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="355.247 -141.1239 -36.35689 0 129.1394 314.2636 41.98062 0 0.04184903 -0.1491681 0.9879261 0 804.8014 7112.695 20.01919 1" id="1802" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="382.0129 714.8288 0 0 -675.0538 360.7565 0 0 0 0 1 0 950.3599 9055.046 -73.99287 1" id="1804" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-627.1649 114.681 11.13928 0 -102.1326 -559.2343 7.143449 0 0.01944311 0.009219787 0.9997685 0 934.1279 7597.709 -87.9808 1" id="1805" color="164 164 164 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="77.09348 1923.35 33.63106 0 -2169.535 86.48423 27.28354 0 0.01185703 -0.01795689 0.9997685 0 1150.189 7402.152 -333.9808 1" id="1806" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-1189.277 504.0199 22.56764 0 -532.0312 -1256.14 17.14177 0 0.02098651 0.004754501 0.9997685 0 -1056.769 7496.635 -242.9808 1" id="1807" color="183 183 183 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-322.4819 743.5857 0 0 -702.2101 -304.538 0 0 0 0 1 0 72.7641 8828.766 9.007123 1" id="1808" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-740.9038 -875.3798 0 0 753.4696 -637.7215 0 0 0 0 1 0 -910.0116 8128.354 124.0071 1" id="1809" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="669.2773 913.327 182.0157 0 -794.6019 585.4565 -15.95638 0 -0.1070044 -0.1183245 0.9871927 0 1213.969 8163.18 -244.9929 1" id="1810" color="250 245 190 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 3.573578 8878.857 10.0079 1" id="1811" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 526.223 8563.937 -238.9921 1" id="1812" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="260.5978 0 0 0 0 185.3548 0 0 0 0 1 0 1053.758 7584.999 -320.9921 1" id="1813" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -648.8901 8250.142 130.0079 1" id="1814" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="84.08539 0 0 0 0 59.80722 0 0 0 0 1 0 1281.6 8055.862 -8.992096 1" id="1815" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-1008.661 505.9868 204.4723 0 -448.9595 -878.1239 -41.71141 0 0.1399627 -0.1182553 0.9830698 0 1014.177 8341.412 -278.9929 1" id="1816" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="20.19629 -1146.656 0 0 986.9665 17.3836 0 0 0 0 1 0 -1333.197 7861.074 74.0071 1" id="1817" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-1000 561.4513 0 0 -483.2604 -860.7349 0 0 0 0 1 0 -1070.877 8575.265 1.007103 1" id="1818" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-1116.611 -163.0981 204.4723 0 135.0598 -976.9468 -41.71141 0 0.1824648 -0.01674761 0.9830698 0 1314.59 8905.373 -338.9929 1" id="1819" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-128.6198 -1139.599 0 0 980.8922 -110.7075 0 0 0 0 1 0 -1308.299 9266.906 -68.9929 1" id="1820" color="215 215 215 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-1308.042 -191.0604 239.527 0 162.4846 -1175.316 -50.18083 0 0.1824648 -0.01674744 0.9830698 0 1462.677 9464.498 -383.9929 1" id="1821" color="206 206 206 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="-490.7806 -689.7759 177.3794 0 754.7095 -567.9893 -120.5809 0 0.2233112 0.09068656 0.9705195 0 1180.698 10324.26 -554.9929 1" id="1822" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-25" worldMatrix="172.9223 -672.747 145.5434 0 579.4878 132.5336 -75.88634 0 0.0746827 0.2291604 0.9705195 0 -23.01404 9208.579 -37.99292 1" id="1823" color="225 225 225 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 -128.7814 9153.676 0.008435202 1" id="1824" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="241.2626 -125.6039 0 0 100.6679 193.3649 0 0 0 0 1 0 -109.8061 9153.678 0.008435202 1" id="1825" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 196.7174 9160.975 0.008435202 1" id="1826" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="144.6661 230.3382 0 0 -184.6094 115.9457 0 0 0 0 1 0 -266.2626 9167.772 -74.99819 1" id="1827" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutines-75" worldMatrix="746 0 0 0 0 691 0 0 0 0 1 0 -6175.868 10844.68 -0.01926512 1" id="2475" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="esmeral" worldMatrix="360 0 0 0 0 175 0 0 0 0 1 0 -5850.846 9314.186 0.01471117 1" id="2479" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -3741.199 7577.019 -0.01124981 1" id="2497" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -2960.083 7568.175 -0.01901403 1" id="2499" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -3160.214 7097.119 -0.01974753 1" id="2501" color="255 255 255 255" flipH="False" flipV="False" />
   </staticProps>
   <animatedProps />
   <groups>
@@ -65,343 +162,163 @@
       <entity id="174" />
     </group>
     <group>
-      <entity id="461" />
+      <entity id="1660" />
+      <entity id="1661" />
+      <entity id="1662" />
+      <entity id="1663" />
+      <entity id="1664" />
+      <entity id="1665" />
+      <entity id="1667" />
+      <entity id="1668" />
+      <entity id="1669" />
+      <entity id="1670" />
     </group>
     <group>
-      <entity id="747" />
+      <entity id="1671" />
+      <entity id="1672" />
+      <entity id="1673" />
+      <entity id="1674" />
+      <entity id="1675" />
+      <entity id="1676" />
+      <entity id="1677" />
+      <entity id="1678" />
+      <entity id="1679" />
+      <entity id="1680" />
     </group>
     <group>
-      <entity id="747" />
+      <entity id="1681" />
+      <entity id="1682" />
+      <entity id="1683" />
+      <entity id="1684" />
+      <entity id="1685" />
+      <entity id="1686" />
+      <entity id="1687" />
+      <entity id="1688" />
+      <entity id="1689" />
+      <entity id="1690" />
     </group>
     <group>
-      <entity id="461" />
+      <entity id="1766" />
+      <entity id="1767" />
+      <entity id="1768" />
+      <entity id="1769" />
+      <entity id="1770" />
+      <entity id="1771" />
+      <entity id="1772" />
+      <entity id="1773" />
+      <entity id="1774" />
+      <entity id="1775" />
+      <entity id="1776" />
+      <entity id="1777" />
+      <entity id="1778" />
+      <entity id="1779" />
+      <entity id="1780" />
+      <entity id="1781" />
+      <entity id="1782" />
+      <entity id="1783" />
+      <entity id="1784" />
+      <entity id="1785" />
     </group>
     <group>
-      <entity id="157" />
+      <entity id="1787" />
+      <entity id="1788" />
+      <entity id="1789" />
+      <entity id="1790" />
+      <entity id="1791" />
+      <entity id="1792" />
+      <entity id="1793" />
+      <entity id="1794" />
+      <entity id="1795" />
+      <entity id="1796" />
     </group>
     <group>
-      <entity id="1557" />
+      <entity id="1799" />
+      <entity id="1800" />
+      <entity id="1801" />
+      <entity id="1802" />
+      <entity id="1803" />
+      <entity id="1804" />
+      <entity id="1805" />
+      <entity id="1806" />
+      <entity id="1807" />
+      <entity id="1808" />
+      <entity id="1809" />
+      <entity id="1810" />
+      <entity id="1811" />
+      <entity id="1812" />
+      <entity id="1813" />
+      <entity id="1814" />
+      <entity id="1815" />
+      <entity id="1816" />
+      <entity id="1817" />
+      <entity id="1818" />
+      <entity id="1819" />
+      <entity id="1820" />
+      <entity id="1821" />
+      <entity id="1822" />
+      <entity id="1823" />
+      <entity id="1824" />
+      <entity id="1825" />
+      <entity id="1826" />
+      <entity id="1827" />
     </group>
     <group>
-      <entity id="1560" />
-    </group>
-    <group />
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group />
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group />
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
-    </group>
-    <group />
-    <group>
-      <entity id="154" />
-      <entity id="155" />
-      <entity id="156" />
-      <entity id="157" />
-      <entity id="158" />
-      <entity id="160" />
-      <entity id="161" />
-      <entity id="162" />
-      <entity id="163" />
-      <entity id="164" />
-      <entity id="165" />
-      <entity id="166" />
-      <entity id="167" />
-      <entity id="168" />
-      <entity id="169" />
-      <entity id="170" />
-      <entity id="171" />
-      <entity id="172" />
-      <entity id="173" />
-      <entity id="174" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="747" />
-    </group>
-    <group>
-      <entity id="461" />
-    </group>
-    <group>
-      <entity id="157" />
-    </group>
-    <group>
-      <entity id="1557" />
-    </group>
-    <group>
-      <entity id="1560" />
+      <entity id="1799" />
+      <entity id="1800" />
+      <entity id="1801" />
+      <entity id="1802" />
+      <entity id="1804" />
+      <entity id="1805" />
+      <entity id="1806" />
+      <entity id="1807" />
+      <entity id="1808" />
+      <entity id="1809" />
+      <entity id="1810" />
+      <entity id="1811" />
+      <entity id="1812" />
+      <entity id="1813" />
+      <entity id="1814" />
+      <entity id="1815" />
+      <entity id="1816" />
+      <entity id="1817" />
+      <entity id="1818" />
+      <entity id="1819" />
+      <entity id="1820" />
+      <entity id="1821" />
+      <entity id="1822" />
+      <entity id="1823" />
+      <entity id="1824" />
+      <entity id="1825" />
+      <entity id="1826" />
+      <entity id="1827" />
     </group>
   </groups>
   <enemies />
   <enemySpawnZones>
-    <enemySpawnZone zone="-675 720 1419 635" enemy="grape" count="10" />
     <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
     <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
     <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
-    <enemySpawnZone zone="-675 720 1419 635" enemy="grape" count="10" />
     <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
     <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
     <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
-    <enemySpawnZone zone="-772 637 1649 135" enemy="calsot" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
+    <enemySpawnZone zone="-649 1550 1396 683" enemy="grape" count="20" />
+    <enemySpawnZone zone="-205 1741 387 672" enemy="pear" count="3" />
+    <enemySpawnZone zone="-676 2488 1195 820" enemy="orange" count="10" />
   </enemySpawnZones>
   <levelCollisions />
   <camera>
@@ -409,5 +326,11 @@
     <cameraNode id="1" position="0 20000 1600" target="0 20000 0" isFirst="False" link="2" />
     <cameraNode id="2" position="10000 20000 1600" target="10000 20000 0" isFirst="False" />
   </camera>
-  <particles />
+  <particles>
+    <particle name="playerFastShot" position="388.7414 847.8962 0" direction="0.7071068 0.7071068 0" color="0 100 100 50" />
+  </particles>
+  <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
 </level>
