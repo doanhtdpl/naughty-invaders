@@ -70,6 +70,10 @@ namespace MyGame
             {
                 selected.position += new Vector3(0, 0, -(mouseState.Y - lastMouseState.Y));
             }
+            else if(selected != null && justPressedKey(Keys.Delete))
+            {
+                ParticleManager.Instance.getParticles().Remove(selected);
+            }
         }
 
         public void changeColor(Color color)
