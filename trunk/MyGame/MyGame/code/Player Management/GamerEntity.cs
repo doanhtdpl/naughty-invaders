@@ -50,11 +50,6 @@ namespace MyGame
             data.initNewData();
         }
 
-        public void createPlayer()
-        {
-            player = new Player(this, "player", Vector3.Zero, 0);
-        }
-
         public void updateInput()
         {
             controls.update(playerIndex);

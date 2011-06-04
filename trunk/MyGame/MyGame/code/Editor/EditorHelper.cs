@@ -432,13 +432,11 @@ namespace MyGame
                     LevelManager.Instance.addLevelCollision(l);
                 }
 
-                if (SB.firstLevelLoad)
+                // player
+                if (GamerManager.getMainPlayer() == null)
                 {
                     GamerManager.createGamerEntity(PlayerIndex.One, true);
-                    SB.firstLevelLoad = false;
                 }
-
-                //Re-add the player in the entity manager
                 if (fileName == "Content/xml/levels/mapa.xml")
                 {
                     GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;

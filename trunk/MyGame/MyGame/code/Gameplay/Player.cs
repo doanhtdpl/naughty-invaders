@@ -48,7 +48,6 @@ namespace MyGame
         static Texture garlicGunTexture = null;
         static Texture garlicGunBandTexture = null;
 
-
         public Player( GamerEntity owner, string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)
         {

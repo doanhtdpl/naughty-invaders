@@ -18,7 +18,6 @@ namespace MyGame
         public const float SafeAreaPortion = 0.05f;
         public static SpriteFont font;
         public static Color BGColor = Color.Black;
-        public static bool firstLevelLoad = true;
         #endregion
 
         public static void loadContent()
