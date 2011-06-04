@@ -34,7 +34,6 @@ namespace MyGame
             SoundManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevelFromGame(level);
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
-            GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D = new Vector2(0, 200);
         }
 
         public void restartLevel()
@@ -51,23 +50,7 @@ namespace MyGame
         bool addCameraNodes = true;
         public override void render()
         {
-            // START PROVISIONAL CODE
             GraphicsManager.Instance.graphicsDevice.Clear(SB.BGColor);
-
-            if (GamerManager.getGamerEntity(PlayerIndex.One).Controls.LB_firstPressed())
-            {
-                if (addCameraNodes)
-                {
-                    addCameraNodes = false;
-                    CameraManager.Instance.loadXMLfake();
-                }
-                else
-                {
-                    addCameraNodes = true;
-                    CameraManager.Instance.clean();
-                }
-            }
-            // END OF PROVISIONAL
 
             EntityManager.Instance.render();
             LevelManager.Instance.render();

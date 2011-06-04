@@ -66,11 +66,6 @@ namespace MyGame
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
 
-            // if we want to test gameplay, we will manually add a gamer
-#if ONLY_GAMEPLAY
-            GamerManager.createGamerEntity(PlayerIndex.One, true);
-#endif
-
             // Hook the idle event to constantly redraw our animation.
             //Application.Idle += delegate { Invalidate(); };
         }
