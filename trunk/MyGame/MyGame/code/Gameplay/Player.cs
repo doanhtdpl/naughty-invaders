@@ -322,22 +322,22 @@ namespace MyGame
             }
 
 #if DEBUG
-            if (controls.RB_firstPressed())
-            {
-                EnemySpawnZone esz = new EnemySpawnZone("grape", new Rectangle(-300, 900, 600, 500), 3);
-                EnemyManager.Instance.addEnemySpawnZone(esz);
-            }
-            if (controls.LT_firstPressed())
-            {
-                Trigger t = new Trigger();
-                t.addFunction(true, "isPlayersLastLife", null);
-                t.addFunction(false, "addParticles", null);
-                TriggerManager.Instance.addTrigger(t);
-            }
-            if (controls.RT_pressed())
-            {
-                lifeValue -= 0.01f;
-            }
+            //if (controls.RB_firstPressed())
+            //{
+            //    EnemySpawnZone esz = new EnemySpawnZone("grape", new Rectangle(-300, 900, 600, 500), 3);
+            //    EnemyManager.Instance.addEnemySpawnZone(esz);
+            //}
+            //if (controls.LT_firstPressed())
+            //{
+            //    Trigger t = new Trigger();
+            //    t.addFunction(true, "isPlayersLastLife", null);
+            //    t.addFunction(false, "addParticles", null);
+            //    TriggerManager.Instance.addTrigger(t);
+            //}
+            //if (controls.RT_pressed())
+            //{
+            //    lifeValue -= 0.01f;
+            //}
 #endif
         }
 
