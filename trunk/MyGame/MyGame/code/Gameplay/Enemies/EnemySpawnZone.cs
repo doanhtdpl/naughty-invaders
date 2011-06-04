@@ -54,8 +54,9 @@ namespace MyGame
         {
             Vector2 spawnPosition = Vector2.Zero;
 
-            if (enemy.entityName == "orange")
+            if (enemy is Orange)
             {
+                ((Orange)enemy).initialize();
                 spawnPosition.Y = enemy.positionY;
             }
             else

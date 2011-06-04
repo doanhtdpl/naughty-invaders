@@ -508,15 +508,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\elderOnion.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>elderOnion</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="xml\enemies\kingTomato.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>kingTomato</Name>
@@ -1187,7 +1178,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="xml\enemies\littleOnion.xml">
+    <None Include="xml\animatedProps\littleOnion.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>littleOnion</Name>
