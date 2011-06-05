@@ -23,7 +23,18 @@ namespace MyGame
         public override void enter()
         {
             base.enter();
+
+            MyEditor.Instance.enemiesCombo.Items.Clear();
+            var textures = SB.content.LoadContent("xml/enemies");
+            for (int i = 0; i < textures.Count(); i++)
+            {
+                MyEditor.Instance.enemiesCombo.Items.Add(textures[i]);
+            }
+
+            MyEditor.Instance.enemiesCombo.SelectedIndex = 0;
             MyEditor.Instance.myEditorControl.Focus();
+
+            MyEditor.Instance.enemyCount.Show();
         }
 
         public override void update()
@@ -42,6 +53,11 @@ namespace MyGame
                         break;
                     }
                 }
+                if (zone != null)
+                {
+                    MyEditor.Instance.enemiesCombo.Text = zone.getEnemyName();
+                    MyEditor.Instance.enemyCount.Text = zone.getTotalSpawns().ToString();
+                }
             }
 
             if (justPressedKey(Keys.Delete) && zone != null)
@@ -49,7 +65,7 @@ namespace MyGame
                 EnemyManager.Instance.getEnemySpawnZones().Remove(zone);
                 zone = null;
             }
-            else if (zone != null && mouseState.LeftButton == ButtonState.Pressed)
+            else if (zone != null && mouseState.LeftButton == ButtonState.Pressed && isPosInScreen(gameScreenPos))
             {
                 Vector2 current = new Vector2(mouseState.X, mouseState.Y);
                 Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
@@ -61,7 +77,18 @@ namespace MyGame
                 rect.Location = location;
                 zone. setZone(rect);
             }
+        }
 
+        public void setEnemy(string name)
+        {
+            if(zone != null)
+                zone.setEnemyName(name);
+        }
+
+        public void setCount(int count)
+        {
+            if (zone != null)
+                zone.setTotalSpawns(count);
         }
 
         public override void exit()
