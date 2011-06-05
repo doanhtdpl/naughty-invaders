@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="3252" BGColor="0 0 0 255" CameraMode="Nodes">
+<level nextEntityID="3777" BGColor="0 0 0 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1031.147 -65.25867 6.575348 1" id="154" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1070.281 1022.155 -56.42503 1" id="155" color="255 255 255 255" flipH="False" flipV="False" />
@@ -13,7 +13,7 @@
     <staticProp entityName="frutins-70" worldMatrix="597.361 54.85766 27.1154 0 -109.84 1229.239 -67.0863 0 -0.04986883 0.04998316 0.9975043 0 1157.211 3852.312 -1.856949 1" id="164" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 1057.219 4856.983 -11.05542 1" id="165" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 1132.8 2788.584 -8.755798 1" id="166" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -313.3706 3937.535 -311.5278 1" id="167" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-69" worldMatrix="3260.782 0 0 0 0 4079.027 0 0 0 0 1 0 -313.3706 3937.535 -311.5278 1" id="167" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1008.135 5893.993 -7.222351 1" id="168" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1135.984 6984.364 -7.222725 1" id="169" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1103.264 7951.825 -7.227798 1" id="170" color="255 255 255 255" flipH="True" flipV="False" />
@@ -23,12 +23,9 @@
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -338.9376 7035.12 -316.8935 1" id="174" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutines-75" worldMatrix="746 0 0 0 0 691 0 0 0 0 1 0 -2193.06 420.3519 -0.008752543 1" id="425" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutines-75" worldMatrix="746 0 0 0 0 691 0 0 0 0 1 0 1515.459 598.9733 0.01627429 1" id="427" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-73" worldMatrix="562 0 0 0 0 536 0 0 0 0 1 0 2652.219 -40.81431 -0.004109292 1" id="459" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="148.7404 115.4382 0 0 -110.0976 141.8592 0 0 0 0 1 0 -912.5796 195.8853 56.98201 1" id="461" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -963.5995 3361.738 0.004586508 1" id="465" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="970.7103 0 0 0 0 762.2525 0 0 0 0 1 0 862.9846 2482.314 -0.002509364 1" id="467" color="255 255 255 255" flipH="True" flipV="False" />
-    <staticProp entityName="frutins-75" worldMatrix="1298 0 0 0 0 208 0 0 0 0 1 0 3309.026 164.8523 0.0008753467 1" id="475" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 2094.93 125.0459 -0.0006360888 1" id="487" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-63" worldMatrix="1349.563 0 0 0 0 1762.654 0 0 0 0 1 0 1505.536 399.2173 -243.9929 1" id="744" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="148.7404 115.4382 0 0 -110.0976 141.8592 0 0 0 0 1 0 919.4268 181.3831 -46.01799 1" id="747" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="22.25548 134.4093 7.126084 0 -114.786 18.00707 18.84637 0 0.1497535 -0.07705667 0.9857161 0 971.9188 338.3201 5.98201 1" id="749" color="255 255 255 255" flipH="False" flipV="False" />
@@ -58,18 +55,18 @@
     <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 813.4252 3354.795 105.0044 1" id="1678" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 896.6617 3247.329 105.0044 1" id="1679" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="93.42547 -58.36847 -7.520246 0 62.31219 97.5618 16.88922 0 -0.01951692 -0.158428 0.9871776 0 1182.145 3491.813 105.0044 1" id="1680" color="255 255 255 255" flipH="True" flipV="False" />
-    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 -777.0268 5143.463 85.9995 1" id="1681" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 -979.6221 5061.797 85.9995 1" id="1681" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 -1533.631 5119.442 85.9993 1" id="1682" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="359.7757 -191.7167 -0.01706634 0 182.6193 342.7019 19.43659 0 -0.02347222 -0.04413693 0.9987499 0 -1186.096 5022.622 86.00045 1" id="1683" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="257.5417 140.6957 0 0 -134.1263 245.5166 8.395445 0 0.0143806 -0.02632352 0.9995501 0 -844.3946 5523.949 86.01816 1" id="1684" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="-125.0354 259.3703 0 0 -274.809 -132.4781 0 0 0 0 1 0 -1401.896 5646.204 105.0044 1" id="1685" color="255 255 255 255" flipH="True" flipV="False" />
-    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 -592.757 5090.07 123.0118 1" id="1686" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onion-50" worldMatrix="260.3223 0 0 0 0 275.8176 0 0 0 0 1 0 -789.8598 5010.618 123.0118 1" id="1686" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="-68.07821 538.8681 3.170803 0 -502.7057 -63.79916 49.20863 0 0.09662164 0.00635021 0.9953007 0 -1236.227 5536.727 85.9995 1" id="1687" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="-152.2752 34.30644 0 0 -36.34848 -161.3392 0 0 0 0 1 0 -1658.493 5096.395 105.0044 1" id="1688" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 -1409.887 5118.995 105.0044 1" id="1689" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 -992.5693 5354.871 105.0044 1" id="1690" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 974.631 2047.358 -210.0169 1" id="1761" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 -952.5143 3584.354 -170.0098 1" id="1763" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="496 0 0 0 0 1557 0 0 0 0 1 0 -1089.545 3589.909 -170.0098 1" id="1763" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1200.181 8978.063 6.575348 1" id="1766" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1151.328 10073.94 6.574966 1" id="1767" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1222.057 11057.35 6.569885 1" id="1768" color="255 255 255 255" flipH="True" flipV="False" />
@@ -77,19 +74,12 @@
     <staticProp entityName="frutins-70" worldMatrix="553.7008 33.0975 27.08599 0 -69.72076 1180.383 -17.10394 0 -0.04954485 0.01154497 0.9987052 0 977.6134 10901.79 -2.623489 1" id="1770" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -433.8136 10060.8 -303.0959 1" id="1771" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1152.372 11931.96 -1.856567 1" id="1772" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1280.223 13022.32 -1.856949 1" id="1773" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1271.424 14005.72 -1.86203 1" id="1774" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1007.325 13013.79 -1.856949 1" id="1773" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1024.11 13997.19 -1.86203 1" id="1774" color="255 255 255 255" flipH="True" flipV="True" />
     <staticProp entityName="frutins-70" worldMatrix="597.361 54.85766 27.1154 0 -109.84 1229.239 -67.0863 0 -0.04986883 0.04998316 0.9975043 0 988.1183 12898.75 -1.856949 1" id="1775" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 888.0618 13906.82 -11.05542 1" id="1776" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 963.6594 11837.58 -8.755798 1" id="1777" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -484.604 13098.47 -311.5278 1" id="1778" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1177.265 14942.42 -7.222351 1" id="1779" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1305.114 16032.79 -7.222725 1" id="1780" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="498.049 0 0 0 0 1186.963 0 0 0 0 1 0 -1296.315 17016.21 -7.227798 1" id="1781" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="651.8471 59.86142 29.58864 0 -126.5173 1415.876 -77.27206 0 -0.04986883 0.04998316 0.9975043 0 905.0021 16073.93 -7.222725 1" id="1782" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="553.7012 33.09748 27.086 0 -69.72083 1180.385 -17.10397 0 -0.04954485 0.01154497 0.9987052 0 863.4156 17097.75 -16.4212 1" id="1783" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-70" worldMatrix="653.8229 -31.68463 29.58863 0 72.29517 1419.675 -77.27197 0 -0.04240613 0.05645299 0.9975043 0 925.7533 14918.78 -14.12158 1" id="1784" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-69" worldMatrix="3372.039 0 0 0 0 4218.202 0 0 0 0 1 0 -510.2081 16198.04 -316.8935 1" id="1785" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="645.9174 92.06257 29.4917 0 -196.4774 1403.172 -77.01896 0 -0.05230463 0.0474283 0.9975043 0 977.3525 8917.02 -7.425034 1" id="1786" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="412.6783 198.7865 22.89848 0 -190.8169 390.1074 52.3144 0 0.007310262 -0.1293958 0.9915659 0 1443.313 6453.602 85.9995 1" id="1787" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="frutins-73" worldMatrix="204.694 -181.7774 -57.04264 0 177.5337 199.0025 2.909003 0 0.1451193 -0.1437733 0.9789125 0 686.7089 6429.582 85.9993 1" id="1788" color="255 255 255 255" flipH="True" flipV="False" />
@@ -102,7 +92,7 @@
     <staticProp entityName="onion-50" worldMatrix="105.9175 -30.27668 -7.520246 0 32.9237 110.9826 16.88922 0 0.02502561 -0.1576517 0.9871776 0 806.9314 6427.055 105.0044 1" id="1795" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-50" worldMatrix="64.21904 -89.50481 -7.520246 0 94.72495 66.54542 16.88922 0 -0.07828386 -0.1391114 0.9871776 0 1224.249 6662.931 105.0044 1" id="1796" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="mac-63" worldMatrix="1725.427 0 0 0 0 2964.577 0 0 0 0 1 0 -1698.902 1482.883 -294.9929 1" id="1797" color="255 255 255 255" flipH="True" flipV="False" />
-    <staticProp entityName="mac-63" worldMatrix="1683.84 376.5392 0 0 -646.9586 2893.124 0 0 0 0 1 0 1323.082 4951.92 -290.9929 1" id="1798" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="1683.84 376.5392 0 0 -646.9586 2893.124 0 0 0 0 1 0 1447.342 4955.928 -290.9929 1" id="1798" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="506 0 0 0 0 514 0 0 0 0 1 0 -950.556 6855.024 -66.99287 1" id="1799" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="273.059 414.8211 -96.94463 0 -426.4265 286.0599 22.94139 0 0.1432174 0.1348618 0.9804598 0 901.4456 6588.954 0.01918657 1" id="1800" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="-382.1993 6.324228 -36.35688 0 -9.517069 -336.2302 41.56081 0 -0.09191319 0.1247174 0.9879261 0 -1100.739 7168.936 20.01919 1" id="1801" color="255 255 255 255" flipH="False" flipV="False" />
@@ -110,14 +100,9 @@
     <staticProp entityName="bg01str2-25" worldMatrix="382.0129 714.8288 0 0 -675.0538 360.7565 0 0 0 0 1 0 950.3599 9055.046 -73.99287 1" id="1804" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="-627.1649 114.681 11.13928 0 -102.1326 -559.2343 7.143449 0 0.01944311 0.009219787 0.9997685 0 934.1279 7597.709 -87.9808 1" id="1805" color="164 164 164 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="77.09348 1923.35 33.63106 0 -2169.535 86.48423 27.28354 0 0.01185703 -0.01795689 0.9997685 0 1150.189 7402.152 -333.9808 1" id="1806" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-25" worldMatrix="-1189.277 504.0199 22.56764 0 -532.0312 -1256.14 17.14177 0 0.02098651 0.004754501 0.9997685 0 -3387.341 7415.713 -242.9808 1" id="1807" color="183 183 183 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-25" worldMatrix="-322.4819 743.5857 0 0 -702.2101 -304.538 0 0 0 0 1 0 72.7641 8828.766 9.007123 1" id="1808" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-25" worldMatrix="-740.9038 -875.3798 0 0 753.4696 -637.7215 0 0 0 0 1 0 -910.0116 8128.354 124.0071 1" id="1809" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="669.2773 913.327 182.0157 0 -794.6019 585.4565 -15.95638 0 -0.1070044 -0.1183245 0.9871927 0 1213.969 8163.18 -244.9929 1" id="1810" color="250 245 190 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 3.573578 8878.857 10.0079 1" id="1811" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 526.223 8563.937 -238.9921 1" id="1812" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 665.1775 8177.707 -238.9921 1" id="1812" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-32" worldMatrix="260.5978 0 0 0 0 185.3548 0 0 0 0 1 0 1053.758 7584.999 -320.9921 1" id="1813" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01_struct-32" worldMatrix="142 0 0 0 0 101 0 0 0 0 1 0 -648.8901 8250.142 130.0079 1" id="1814" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-32" worldMatrix="84.08539 0 0 0 0 59.80722 0 0 0 0 1 0 1281.6 8055.862 -8.992096 1" id="1815" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="-1008.661 505.9868 204.4723 0 -448.9595 -878.1239 -41.71141 0 0.1399627 -0.1182553 0.9830698 0 1014.177 8341.412 -278.9929 1" id="1816" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="20.19629 -1146.656 0 0 986.9665 17.3836 0 0 0 0 1 0 -1333.197 7861.074 74.0071 1" id="1817" color="255 255 255 255" flipH="False" flipV="False" />
@@ -126,62 +111,48 @@
     <staticProp entityName="bg01str2-25" worldMatrix="-128.6198 -1139.599 0 0 980.8922 -110.7075 0 0 0 0 1 0 -1308.299 9266.906 -68.9929 1" id="1820" color="215 215 215 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="-1308.042 -191.0604 239.527 0 162.4846 -1175.316 -50.18083 0 0.1824648 -0.01674744 0.9830698 0 1462.677 9464.498 -383.9929 1" id="1821" color="206 206 206 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-25" worldMatrix="-490.7806 -689.7759 177.3794 0 754.7095 -567.9893 -120.5809 0 0.2233112 0.09068656 0.9705195 0 1180.698 10324.26 -554.9929 1" id="1822" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-25" worldMatrix="172.9223 -672.747 145.5434 0 579.4878 132.5336 -75.88634 0 0.0746827 0.2291604 0.9705195 0 -23.01404 9208.579 -37.99292 1" id="1823" color="225 225 225 255" flipH="False" flipV="False" />
-    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 -128.7814 9153.676 0.008435202 1" id="1824" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="struc-07" worldMatrix="241.2626 -125.6039 0 0 100.6679 193.3649 0 0 0 0 1 0 -109.8061 9153.678 0.008435202 1" id="1825" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 196.7174 9160.975 0.008435202 1" id="1826" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="struc-07" worldMatrix="144.6661 230.3382 0 0 -184.6094 115.9457 0 0 0 0 1 0 -266.2626 9167.772 -74.99819 1" id="1827" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutines-75" worldMatrix="236.4902 0 0 0 0 219.0546 0 0 0 0 1 0 688.3186 15468.76 49.98074 1" id="2475" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="esmeral" worldMatrix="360 0 0 0 0 175 0 0 0 0 1 0 -5850.846 9314.186 0.01471117 1" id="2479" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -3741.199 7577.019 -0.01124981 1" id="2497" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -2960.083 7568.175 -0.01901403 1" id="2499" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-36" worldMatrix="595 0 0 0 0 578 0 0 0 0 1 0 -3160.214 7097.119 -0.01974753 1" id="2501" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="-183.2463 201.0095 0 0 -161.1032 -146.8665 0 0 0 0 1 0 915.0856 9288.094 0.008435202 1" id="1824" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="241.2626 -125.6039 0 0 100.6679 193.3649 0 0 0 0 1 0 -1088.592 9436.515 11.00844 1" id="1825" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="272 0 0 0 0 218 0 0 0 0 1 0 791.6269 9016.701 0.008435202 1" id="1826" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="144.6661 230.3382 0 0 -184.6094 115.9457 0 0 0 0 1 0 839.1719 7592.773 -14.99819 1" id="1827" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutines-75" worldMatrix="216.8901 -94.26721 0 0 87.31719 200.8995 0 0 0 0 1 0 700.8722 12412.1 54.98074 1" id="2475" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-63" worldMatrix="1298.535 0 0 0 0 2429.729 0 0 0 0 1 0 1441.295 1308.012 -283.9929 1" id="2567" color="100 100 100 100" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="-403.5227 195.7168 0 0 -186.2794 -384.065 0 0 0 0 1 0 -1091.813 11140.12 638.8846 1" id="2568" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 -1219.105 10724.08 627.9294 1" id="2569" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 -833.5305 10779.46 638.8898 1" id="2570" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="-1331.363 645.7374 0 0 -676.2498 -1394.272 0 0 0 0 1 0 -1290.721 11686.67 32.24152 1" id="2571" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 795.2861 10656.13 638.8898 1" id="2572" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="-457.1877 152.3158 0 0 -143.7928 -431.6053 0 0 0 0 1 0 881.9736 11689.28 638.8898 1" id="2573" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="237.0766 -196.9409 0 0 225.7836 271.7973 0 0 0 0 1 0 781.3254 11049.37 638.8898 1" id="2574" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="struc-20" worldMatrix="804.1555 425.6429 0 0 -440.2518 831.7556 0 0 0 0 1 0 996.3904 11174.15 442.7367 1" id="2575" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="bg01_struct-32" worldMatrix="287.1444 0 0 0 0 204.2365 0 0 0 0 1 0 -880.0669 11074.97 638.8822 1" id="2576" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="bg01_struct-32" worldMatrix="208.4749 0 0 0 0 150.9503 0 0 0 0 1 0 -1031.314 10490.88 638.9215 1" id="2577" color="200 200 200 200" flipH="False" flipV="True" />
-    <staticProp entityName="struc-20" worldMatrix="-217.2449 865.1567 0 0 -912.7482 -229.1954 0 0 0 0 1 0 1228.163 10499.62 442.7367 1" id="2578" color="200 200 200 200" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -851.9065 13636.51 493.9846 1" id="2579" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-182.1984 747.1042 0 0 -655.7808 -159.9271 0 0 0 0 1 0 -1205.864 13962.3 362.9879 1" id="2580" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -823.8994 14011.45 338.9846 1" id="2581" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-620.651 454.0415 0 0 -398.541 -544.7846 0 0 0 0 1 0 -1350.936 13712.61 258.9846 1" id="2582" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-127.0103 426.8595 0 0 -420.6667 -125.1677 0 0 0 0 1 0 -407.8716 14099.65 360.9846 1" id="2583" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-664.117 -387.6979 0 0 340.3071 -582.9377 0 0 0 0 1 0 -648.2009 13634.17 229.9879 1" id="2584" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 -793.1616 14002.63 205.9846 1" id="2585" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-258.183 -724.364 0 0 635.8201 -226.6235 0 0 0 0 1 0 -319.478 13637.28 125.9846 1" id="2586" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 335.4941 13564.74 493.9846 1" id="2587" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-182.1984 747.1042 0 0 -655.7808 -159.9271 0 0 0 0 1 0 36.39063 13887.22 362.9879 1" id="2588" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 428.4065 13935.76 338.9846 1" id="2589" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-620.651 454.0415 0 0 -398.541 -544.7846 0 0 0 0 1 0 -65.13062 13640.65 258.9846 1" id="2590" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 745.7148 13901.86 360.9846 1" id="2591" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-664.117 -387.6979 0 0 340.3071 -582.9377 0 0 0 0 1 0 649.7466 13555.73 229.9879 1" id="2592" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 514.8376 13923.58 205.9846 1" id="2593" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-258.183 -724.364 0 0 635.8201 -226.6235 0 0 0 0 1 0 1022.021 13556.2 125.9846 1" id="2594" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -725.6995 4271.983 493.9846 1" id="2595" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="-403.5227 195.7168 0 0 -186.2794 -384.065 0 0 0 0 1 0 -1091.813 11140.12 623.8846 1" id="2568" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 -1219.105 10724.08 612.9294 1" id="2569" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 -1280.837 10217.93 155.8898 1" id="2570" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="-612.0493 296.8562 0 0 -310.8833 -640.9699 0 0 0 0 1 0 -1372.166 11542.94 27.24152 1" id="2571" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="554.0674 0 0 0 0 554.0674 0 0 0 0 1 0 1067.435 9915.279 623.8898 1" id="2572" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="-457.1877 152.3158 0 0 -143.7928 -431.6053 0 0 0 0 1 0 927.1223 11787.79 623.8898 1" id="2573" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="237.0766 -196.9409 0 0 225.7836 271.7973 0 0 0 0 1 0 781.3254 11049.37 623.8898 1" id="2574" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="struc-20" worldMatrix="804.1555 425.6429 0 0 -440.2518 831.7556 0 0 0 0 1 0 1113.303 11282.4 427.7367 1" id="2575" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="287.1444 0 0 0 0 204.2365 0 0 0 0 1 0 -880.0669 11074.97 623.8822 1" id="2576" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="208.4749 0 0 0 0 150.9503 0 0 0 0 1 0 -1031.314 10490.88 623.9215 1" id="2577" color="200 200 200 200" flipH="False" flipV="True" />
+    <staticProp entityName="struc-20" worldMatrix="-217.2449 865.1567 0 0 -912.7482 -229.1954 0 0 0 0 1 0 1228.163 10499.62 427.7367 1" id="2578" color="200 200 200 200" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="573.0392 512.8229 0 0 -450.1371 502.9927 0 0 0 0 1 0 -510.441 10189.88 493.9846 1" id="2579" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-633.9908 435.2204 0 0 -382.0206 -556.494 0 0 0 0 1 0 -981.4534 10178.57 362.9879 1" id="2580" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="573.0392 512.8229 0 0 -450.1371 502.9927 0 0 0 0 1 0 -727.7673 10466.61 338.9846 1" id="2581" color="196 196 196 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-765.2798 -75.55322 0 0 66.31775 -671.7345 0 0 0 0 1 0 -915.1034 9881.451 258.9846 1" id="2582" color="216 216 216 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-379.3045 233.3854 0 0 -229.9995 -373.8016 0 0 0 0 1 0 -478.2516 10812.8 360.9846 1" id="2583" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-236.339 -731.7821 0 0 642.3316 -207.4498 0 0 0 0 1 0 -336.9153 10287.64 229.9879 1" id="2584" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-654.9504 402.9902 0 0 -353.7299 -574.8914 0 0 0 0 1 0 -688.8182 10462.24 205.9846 1" id="2585" color="196 196 196 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="290.6651 -711.9521 0 0 624.9253 255.1351 0 0 0 0 1 0 -86.09082 10494.86 125.9846 1" id="2586" color="216 216 216 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="573.0392 512.8229 0 0 -450.1371 502.9927 0 0 0 0 1 0 422.2406 10928.24 493.9846 1" id="2587" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-633.9908 435.2204 0 0 -382.0206 -556.494 0 0 0 0 1 0 -5.687637 10951.05 362.9879 1" id="2588" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="573.0392 512.8229 0 0 -450.1371 502.9927 0 0 0 0 1 0 255.8954 11245.33 338.9846 1" id="2589" color="196 196 196 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-765.2798 -75.55322 0 0 66.31775 -671.7345 0 0 0 0 1 0 91.03459 10685.29 258.9846 1" id="2590" color="216 216 216 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-654.9504 402.9902 0 0 -353.7299 -574.8914 0 0 0 0 1 0 513.2716 11434.71 360.9846 1" id="2591" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-236.339 -731.7821 0 0 642.3316 -207.4498 0 0 0 0 1 0 682.5894 11094.75 229.9879 1" id="2592" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="-654.9504 402.9902 0 0 -353.7299 -574.8914 0 0 0 0 1 0 338.5846 11275.6 205.9846 1" id="2593" color="196 196 196 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-72" worldMatrix="290.6651 -711.9521 0 0 624.9253 255.1351 0 0 0 0 1 0 967.6307 11329.04 125.9846 1" id="2594" color="216 216 216 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-182.1984 747.1042 0 0 -655.7808 -159.9271 0 0 0 0 1 0 -1078.903 4541.786 362.9879 1" id="2596" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 -696.7998 4580.678 338.9846 1" id="2597" color="196 196 196 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-620.651 454.0415 0 0 -398.541 -544.7846 0 0 0 0 1 0 -1223.376 4247.645 258.9846 1" id="2598" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-127.0103 426.8595 0 0 -420.6667 -125.1677 0 0 0 0 1 0 -280.8989 4678.279 360.9846 1" id="2599" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-664.117 -387.6979 0 0 340.3071 -582.9377 0 0 0 0 1 0 -520.4739 4156.817 229.9879 1" id="2600" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 -665.2954 4515.017 205.9846 1" id="2601" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-258.183 -724.364 0 0 635.8201 -226.6235 0 0 0 0 1 0 -191.1514 4115.471 125.9846 1" id="2602" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 461.7012 4200.216 493.9846 1" id="2603" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-182.1984 747.1042 0 0 -655.7808 -159.9271 0 0 0 0 1 0 163.3521 4466.704 362.9879 1" id="2604" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="769 0 0 0 0 675 0 0 0 0 1 0 555.5061 4504.99 338.9846 1" id="2605" color="196 196 196 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-72" worldMatrix="-620.651 454.0415 0 0 -398.541 -544.7846 0 0 0 0 1 0 62.42993 4175.686 258.9846 1" id="2606" color="216 216 216 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 872.6875 4480.49 360.9846 1" id="2607" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-664.117 -387.6979 0 0 340.3071 -582.9377 0 0 0 0 1 0 777.4736 4078.372 229.9879 1" id="2608" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-219.3104 737.0646 0 0 -646.9681 -192.5027 0 0 0 0 1 0 642.7039 4435.962 205.9846 1" id="2609" color="196 196 196 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-72" worldMatrix="-258.183 -724.364 0 0 635.8201 -226.6235 0 0 0 0 1 0 1150.347 4034.391 125.9846 1" id="2610" color="216 216 216 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutines-75" worldMatrix="118.8958 212.1606 0 0 -199.2084 111.6373 0 0 0 0 1 0 863.2188 15557.3 204.9807 1" id="2620" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutines-75" worldMatrix="507.3985 7.768832 39.85677 0 -3.475107 469.1113 -47.19858 0 -0.07943325 0.09920847 0.9918911 0 829.0361 15349 78.98074 1" id="2621" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutines-75" worldMatrix="193.6111 147.1839 0 0 -138.1985 181.7912 0 0 0 0 1 0 875.2003 12476.08 209.9807 1" id="2620" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutines-75" worldMatrix="468.4425 -195.1289 39.85677 0 183.8051 431.6169 -47.19858 0 -0.03330446 0.122649 0.9918911 0 778.1901 12255.99 83.98074 1" id="2621" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-75" worldMatrix="-1832.028 3521.55 -39.64776 0 -560.6363 -290.8043 76.15198 0 0.1016266 0.06404661 0.9927588 0 -183.3192 1997.842 -17.00635 1" id="2622" color="100 100 100 100" flipH="False" flipV="False" />
     <staticProp entityName="frutins-75" worldMatrix="-1418.289 1523.338 -20.78862 0 -265.562 -246.6526 43.70113 0 0.0808615 0.08883325 0.9927588 0 -225.5176 2694.113 -17.00635 1" id="2623" color="100 100 100 100" flipH="False" flipV="False" />
     <staticProp entityName="frutins-71" worldMatrix="17.00304 736.046 79.62586 0 -426.7555 14.98373 -47.37914 0 -0.113358 -0.1042711 0.9880675 0 -1006.027 1164.107 218.0161 1" id="2650" color="255 255 255 255" flipH="False" flipV="False" />
@@ -195,18 +166,35 @@
     <staticProp entityName="bg01_struct-29" worldMatrix="819.4213 0 0 0 0 407.4302 0 0 0 0 1 0 -638.0513 -492.2867 1.981789 1" id="2818" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-29" worldMatrix="819.4213 0 0 0 0 407.4302 0 0 0 0 1 0 569.0313 -469.5791 -42.01821 1" id="2821" color="255 255 255 255" flipH="True" flipV="True" />
     <staticProp entityName="bg01_struct-28" worldMatrix="242.4828 -445.8832 -121.9604 0 394.959 200.0251 53.97582 0 0.001409831 -0.2631204 0.9647622 0 -964.0569 515.1793 12.991 1" id="2905" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="462.4344 -179.3613 0 0 563.0353 1451.634 0 0 0 0 1 0 1001.789 18184.02 -0.01464692 1" id="2944" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="487.0742 93.674 0 0 -294.0533 1528.981 0 0 0 0 1 0 985.8844 19510.51 -29.01465 1" id="2947" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="35.08568 494.7576 0 0 -1553.1 110.1379 0 0 0 0 1 0 74.26868 20068.25 -109.0146 1" id="2948" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="-155.6501 470.945 0 0 -1478.35 -488.6032 0 0 0 0 1 0 -1214.454 19821.86 -149.0146 1" id="2949" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="-486.5893 95.55025 -10.82516 0 -300.5444 -1527.483 26.81367 0 -0.01809365 0.02110737 0.9996135 0 -1558.076 19096.46 -241.0146 1" id="2950" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="frutins-76" worldMatrix="-488.8267 -80.2538 24.97802 0 245.5506 -1532.861 -119.5562 0 0.0620023 -0.06773381 0.995775 0 -1518.565 17801.7 -313.0146 1" id="2951" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 -1725.645 18953.97 0.0006904292 1" id="3001" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 1266.483 18295.42 -0.01146676 1" id="3003" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="bg01str2-22" worldMatrix="506 0 0 0 0 339 0 0 0 0 1 0 1287.957 19247.46 0.01081387 1" id="3007" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="struc-02" worldMatrix="2090.406 -0.8061738 62.95422 0 9.011336 898.6371 -287.7154 0 -0.02854975 0.3050567 0.9519061 0 547.1567 12658.39 191.013 1" id="3247" color="190 190 190 190" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="462.4344 -179.3613 0 0 563.0353 1451.634 0 0 0 0 1 0 983.8213 15083.13 236.9854 1" id="2944" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="487.0742 93.674 0 0 -294.0533 1528.981 0 0 0 0 1 0 967.8834 16403.47 207.9854 1" id="2947" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="35.08568 494.7576 0 0 -1553.1 110.1379 0 0 0 0 1 0 56.17542 16944.27 127.9854 1" id="2948" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="-155.6501 470.945 0 0 -1478.35 -488.6032 0 0 0 0 1 0 -778.0109 16807.43 59.9854 1" id="2949" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="-486.5893 95.55025 -10.82516 0 -300.5444 -1527.483 26.81367 0 -0.01809365 0.02110737 0.9996135 0 -1089.48 15997.16 -4.014603 1" id="2950" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="-488.8267 -80.2538 24.97802 0 245.5506 -1532.861 -119.5562 0 0.0620023 -0.06773381 0.995775 0 -1028.696 14746.59 -76.01459 1" id="2951" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 -1743.612 15853.08 237.0007 1" id="3001" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-21" worldMatrix="618 0 0 0 0 507 0 0 0 0 1 0 1248.515 15194.52 236.9885 1" id="3003" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-22" worldMatrix="506 0 0 0 0 339 0 0 0 0 1 0 1269.99 16146.57 237.0108 1" id="3007" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02" worldMatrix="1991.01 636.9286 62.95422 0 -265.5551 858.5511 -287.7154 0 -0.1202491 0.2818063 0.9519061 0 362.1428 12941.05 191.013 1" id="3247" color="190 190 190 190" flipH="True" flipV="False" />
     <staticProp entityName="struc-02" worldMatrix="0.6180558 -0.0002383555 0.01861323 0 0.005904986 0.5888628 -0.1885353 0 -0.02854975 0.3050567 0.9519062 0 391.6597 11928.53 -169.9871 1" id="3250" color="100 100 100 100" flipH="True" flipV="False" />
-    <staticProp entityName="struc-02" worldMatrix="2523.24 -0.9730915 75.98933 0 13.69888 1366.093 -437.3802 0 -0.02854975 0.3050567 0.9519061 0 -802.7393 16912.19 253.013 1" id="3251" color="190 190 190 190" flipH="False" flipV="False" />
+    <staticProp entityName="struc-02" worldMatrix="2523.24 -0.9730915 75.98933 0 13.69888 1366.093 -437.3802 0 -0.02854975 0.3050567 0.9519061 0 -488.2206 13268.72 253.013 1" id="3251" color="190 190 190 190" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-24" worldMatrix="235.844 0 0 0 0 194.3517 0 0 0 0 1 0 774.505 5471.401 -0.008715958 1" id="3347" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-24" worldMatrix="211.5587 -166.4494 -9.149181 0 116.4 147.1697 14.11422 0 -0.01978657 -0.07992905 0.9966041 0 757.9818 5576.954 -48.00872 1" id="3350" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 778.916 5310.227 -67.9894 1" id="3468" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="459.5107 281.7284 0 0 -140.0802 228.4766 0 0 0 0 1 0 846.1979 5163.268 -84.9894 1" id="3471" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="459.5107 281.7284 0 0 -140.0802 228.4766 0 0 0 0 1 0 871.3692 4979.171 -121.9894 1" id="3472" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 719.3813 5763.741 -67.9894 1" id="3473" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="frutins-76" worldMatrix="53.26004 751.042 0 0 -2357.606 167.1893 0 0 0 0 1 0 186.785 17093.59 295.9854 1" id="3474" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="709.8769 219.5906 0 0 -716.7449 2317.041 0 0 0 0 1 0 1123.196 16295.19 501.9854 1" id="3475" color="197 197 197 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="695.0726 -248.7778 84.43377 0 821.353 2281.731 -38.56602 0 -0.101576 0.05335474 0.993396 0 -1069.48 16431.23 501.9854 1" id="3476" color="197 197 197 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="53.26004 751.042 0 0 -2357.606 167.1893 0 0 0 0 1 0 -12.63361 17149.02 731.9854 1" id="3477" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="-465.1513 171.8523 -10.82516 0 -540.0615 -1460.091 26.81367 0 -0.01449975 0.02372042 0.9996135 0 -1201.913 15993.4 104.9854 1" id="3478" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="695.0726 -248.7778 84.43377 0 821.353 2281.731 -38.56602 0 -0.101576 0.05335474 0.993396 0 -942.7185 16379.08 407.9854 1" id="3479" color="197 197 197 255" flipH="True" flipV="False" />
+    <staticProp entityName="frutins-76" worldMatrix="709.8769 219.5906 0 0 -716.7449 2317.041 0 0 0 0 1 0 1041.783 16288.41 315.9854 1" id="3480" color="197 197 197 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-26" worldMatrix="4847.067 0 0 0 0 6921.692 0 0 0 0 1 0 -403.7908 15839.86 -1326.992 1" id="3580" color="144 144 144 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="2206.758 -132.5648 0 0 179.265 2984.159 0 0 0 0 1 0 -939.6115 15756.9 -959.999 1" id="3772" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="mac-63" worldMatrix="2175.019 395.7871 0 0 -535.2159 2941.239 0 0 0 0 1 0 873.4755 15821.3 -959.999 1" id="3775" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="struc-07" worldMatrix="-177.7911 -205.8502 0 0 135.8279 -117.3134 0 0 0 0 1 0 -1007.553 7339.798 -14.99819 1" id="3776" color="255 255 255 255" flipH="False" flipV="False" />
   </staticProps>
   <animatedProps />
   <groups>
@@ -312,12 +300,10 @@
       <entity id="1806" />
       <entity id="1807" />
       <entity id="1808" />
-      <entity id="1809" />
       <entity id="1810" />
       <entity id="1811" />
       <entity id="1812" />
       <entity id="1813" />
-      <entity id="1814" />
       <entity id="1815" />
       <entity id="1816" />
       <entity id="1817" />
@@ -364,22 +350,41 @@
       <entity id="2594" />
     </group>
     <group>
-      <entity id="2595" />
       <entity id="2596" />
-      <entity id="2597" />
       <entity id="2598" />
-      <entity id="2599" />
-      <entity id="2600" />
       <entity id="2601" />
-      <entity id="2602" />
-      <entity id="2603" />
-      <entity id="2604" />
-      <entity id="2605" />
-      <entity id="2606" />
       <entity id="2607" />
       <entity id="2608" />
       <entity id="2609" />
       <entity id="2610" />
+    </group>
+    <group>
+      <entity id="2475" />
+      <entity id="2621" />
+      <entity id="2620" />
+    </group>
+    <group>
+      <entity id="1766" />
+      <entity id="1767" />
+      <entity id="1768" />
+      <entity id="1769" />
+      <entity id="1770" />
+      <entity id="1771" />
+      <entity id="1772" />
+      <entity id="1773" />
+      <entity id="1774" />
+      <entity id="1775" />
+      <entity id="1776" />
+      <entity id="1777" />
+      <entity id="1778" />
+    </group>
+    <group>
+      <entity id="3794" />
+      <entity id="3797" />
+    </group>
+    <group>
+      <entity id="3772" />
+      <entity id="3770" />
     </group>
   </groups>
   <enemies />
@@ -393,106 +398,9 @@
     <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
     <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
   </camera>
-  <particles>
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="755.8134 -8.065399 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="808.5058 189.8211 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="696.5786 191.9308 222" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="731.08 -75.29498 372" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="803.9946 112.9701 0" direction="0 0 0" color="255 255 255 255" />
-    <particle name="Greendust" position="797.638 249.2887 222" direction="0 0 0" color="255 255 255 255" />
-  </particles>
+  <particles />
   <triggers />
   <players>
-    <player playerId="0" pos="0 0 0" />
+    <player playerId="0" pos="22.21875 40.20654 0" />
   </players>
 </level>
