@@ -1,26 +1,22 @@
 <?xml version="1.0"?>
-<level nextEntityID="782" BGColor="0 0 0 255">
+<level nextEntityID="1169" BGColor="0 0 0 255" CameraMode="None">
   <staticProps>
-    <staticProp entityName="Main4-49" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="39" color="255 255 255 255" flipH="False" flipV="True" />
-    <staticProp entityName="Main4-41" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="170" color="244 240 91 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="418.8141 0 0 0 0 415.0067 0 0 0 0 1 0 -724.8635 -259.3741 90.98721 1" id="171" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="585.9324 0 0 0 0 580.6058 0 0 0 0 1 0 -533.1293 294.2473 219.0196 1" id="172" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-38" worldMatrix="432.3259 0 0 0 0 85.17468 0 0 0 0 1 0 -61.35468 78.10939 23.98373 1" id="224" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-37" worldMatrix="700 0 0 0 0 156 0 0 0 0 1 0 -70.97742 172.5093 0.006635962 1" id="369" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-39" worldMatrix="598 0 0 0 0 119 0 0 0 0 1 0 -65.42694 -6.79649 0.01260281 1" id="456" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-40" worldMatrix="478 0 0 0 0 129 0 0 0 0 1 0 -43.43396 -107.2869 -0.01777444 1" id="458" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-38" worldMatrix="290.7788 0 0 0 0 57.28778 0 0 0 0 1 0 -71.65747 -60.12863 18.0945 1" id="224" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-37" worldMatrix="470.8141 0 0 0 0 104.9243 0 0 0 0 1 0 -78.29659 1.41571 1.967699 1" id="369" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-39" worldMatrix="402.2098 0 0 0 0 80.0384 0 0 0 0 1 0 -74.56331 -118.3736 1.971713 1" id="456" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-40" worldMatrix="321.4987 0 0 0 0 86.76434 0 0 0 0 1 0 -59.77126 -184.3454 1.95128 1" id="458" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="770 0 0 0 0 763 0 0 0 0 1 0 675.1023 -238.2428 288.9817 1" id="464" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-42" worldMatrix="75 0 0 0 0 80 0 0 0 0 1 0 1046.634 -315.7474 0.01228449 1" id="466" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-43" worldMatrix="56 0 0 0 0 52 0 0 0 0 1 0 1155.814 -299.0672 0.005292627 1" id="468" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -117.6929 419.0362 -0.005140699 1" id="470" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-45" worldMatrix="52 0 0 0 0 47 0 0 0 0 1 0 1063.314 -405.2143 -0.0009916007 1" id="472" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-46" worldMatrix="50 0 0 0 0 63 0 0 0 0 1 0 1131.552 -403.6979 0.00760437 1" id="474" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-47" worldMatrix="76 0 0 0 0 73 0 0 0 0 1 0 NaN NaN 0.01368451 1" id="476" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-48" worldMatrix="34 0 0 0 0 36 0 0 0 0 1 0 567.3798 183.3202 -0.01692966 1" id="478" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-48" worldMatrix="34 0 0 0 0 36 0 0 0 0 1 0 -236.039 375.4714 -89.00345 1" id="483" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-48" worldMatrix="0.005236192 0 0 0 0 0.2433918 0 0 0 0 1 0 945.036 683.5517 0.005261917 1" id="484" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="-89.17792 175.9057 0 0 -174.3065 -88.36719 0 0 0 0 1 0 503.5161 200.3855 288.9817 1" id="485" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-44" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="486" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="28.32005 0 0 0 0 23.81458 0 0 0 0 1 0 -198.4639 460.0627 -0.005140699 1" id="487" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="47.15516 0 0 0 0 45.85411 0 0 0 0 1 0 -117.6929 419.0362 -0.005140699 1" id="488" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-48" worldMatrix="36.43805 0 0 0 0 44.61478 0 0 0 0 1 0 -236.039 375.4714 -89.00345 1" id="489" color="255 255 255 255" flipH="False" flipV="False" />
@@ -30,7 +26,6 @@
     <staticProp entityName="Main4-48" worldMatrix="7.267562 -35.70594 0 0 43.71838 8.898407 0 0 0 0 1 0 -185.1235 518.1215 73.99655 1" id="493" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="9.405089 -46.20773 0 0 44.93281 9.14559 0 0 0 0 1 0 -145.8268 593.1649 -0.005140699 1" id="494" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="6.053462 -29.74102 0 0 28.92043 5.886445 0 0 0 0 1 0 -163.916 514.9065 -0.005140699 1" id="495" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-47" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="496" color="103 141 241 255" flipH="False" flipV="True" />
     <staticProp entityName="Main4-44" worldMatrix="24.4986 15.02022 0 0 -13.59694 22.17717 0 0 0 0 1 0 -279.1967 -168.2583 2.704562 1" id="553" color="255 255 255 255" flipH="True" flipV="True" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -616.1245 -23.89232 -0.005248321 1" id="554" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 131.4924 -274.7161 -0.01845988 1" id="555" color="255 255 255 255" flipH="False" flipV="False" />
@@ -42,7 +37,6 @@
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -300.5719 401.699 -0.0018748 1" id="561" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -620.9791 150.8752 0.01842008 1" id="562" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -863.7118 1.999168 -0.01592683 1" id="563" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-44" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="564" color="247 240 128 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -499.6127 -397.7008 -0.01638222 1" id="565" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -556.2504 -417.1194 0.002085228 1" id="566" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -531.9771 -400.9372 0.01156989 1" id="567" color="255 255 255 255" flipH="False" flipV="False" />
@@ -69,32 +63,35 @@
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -323.227 -420.3558 0.01118778 1" id="602" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -99.91283 -392.8461 66.00594 1" id="603" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-48" worldMatrix="14.68806 0 0 0 0 15.18095 0 0 0 0 1 0 -524.4421 -129.5271 48.9654 1" id="605" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-41" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="606" color="100 185 217 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-42" worldMatrix="36.86918 0 0 0 0 39.32713 0 0 0 0 1 0 -398.6755 -340.8944 48.98184 1" id="607" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="135.6519 0 0 0 0 134.4187 0 0 0 0 1 0 -487.1772 -166.4643 90.98721 1" id="608" color="247 240 128 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="-227.5565 83.70125 -168.0413 0 -65.07272 -280.2933 -51.49446 0 -0.5961776 -0.009079862 0.8028029 0 626.0977 345.7482 250.2794 1" id="609" color="247 240 128 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-45" worldMatrix="-22.76285 37.13271 -6.258617 0 -25.77075 -19.67923 -23.02857 0 -0.5590212 -0.2073777 0.8028029 0 256.5352 447.3003 -17.30739 1" id="610" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-44" worldMatrix="41.48122 14.67343 0 0 -12.33902 34.88193 0 0 0 0 1 0 317.2196 512.4043 0.003715515 1" id="611" color="244 240 91 255" flipH="False" flipV="False" />
-    <staticProp entityName="Main4-41" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0 NaN NaN NaN 1" id="612" color="240 147 213 255" flipH="False" flipV="False" />
     <staticProp entityName="Main4-41" worldMatrix="-188.8545 -274.6376 0 0 272.3567 -187.286 0 0 0 0 1 0 32.5025 500.2427 288.9817 1" id="613" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-30" worldMatrix="100.7914 42.61393 0 0 -75.84642 179.3937 0 0 0 0 1 0 340.7438 264.4946 173.0006 1" id="673" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-30" worldMatrix="34.7219 -33.00146 0 0 63.23134 66.52774 0 0 0 0 1 0 -266.2877 263.2078 8.112812 1" id="674" color="103 141 241 255" flipH="False" flipV="True" />
+    <staticProp entityName="frutins-69" worldMatrix="41.71782 2005.726 0 0 -2418.677 50.30693 0 0 0 0 1 0 48.86209 -3.522026 -93.98398 1" id="885" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="94.32713 0 0 0 0 68.34904 0 0 0 0 1 0 331.8629 399.3131 0.01138977 1" id="975" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="124.1312 0 0 0 0 88.29054 0 0 0 0 1 0 -276.012 442.1418 -68.98405 1" id="977" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="60.15862 0 0 0 0 42.78888 0 0 0 0 1 0 270.1069 -96.86092 -0.01715414 1" id="981" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01_struct-32" worldMatrix="72.63396 0 0 0 0 55.46887 0 0 0 0 1 0 -292.0812 -211.854 0.01263469 1" id="985" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="562 0 0 0 0 536 0 0 0 0 1 0 -458.1823 697.4429 0.006855521 1" id="1007" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-195.0963 -20.66105 -73.43027 0 25.95396 -197.6449 -13.34557 0 -0.340189 -0.1077498 0.9341636 0 431.9854 294.6187 330.0061 1" id="1011" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="logo-50" worldMatrix="529.3057 0 0 0 0 453.9256 0 0 0 0 1 0 -66.40112 255.9292 -30.98439 1" id="1049" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 201.963 365.2408 -0.002235025 1" id="1155" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 253.071 303.4853 0.001025331 1" id="1157" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 261.589 539.8599 0.01254291 1" id="1159" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -145.1457 -290.6455 0.01257788 1" id="1161" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -247.3618 -390.7321 -0.006690737 1" id="1163" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -211.1602 -245.926 0.003016407 1" id="1165" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="frutins-73" worldMatrix="-31.4011 -201.1897 49.17483 0 197.5305 -29.13735 6.925025 0 0.000945804 0.2372919 0.9714382 0 -572.5997 -15.94832 341.0061 1" id="1168" color="255 255 255 255" flipH="False" flipV="False" />
   </staticProps>
   <animatedProps />
   <groups>
     <group>
-      <entity id="464" />
-    </group>
-    <group>
-      <entity id="470" />
-    </group>
-    <group>
-      <entity id="486" />
-    </group>
-    <group>
       <entity id="470" />
       <entity id="483" />
-      <entity id="486" />
       <entity id="487" />
     </group>
     <group>
@@ -106,7 +103,6 @@
     <group>
       <entity id="470" />
       <entity id="483" />
-      <entity id="486" />
       <entity id="487" />
       <entity id="488" />
       <entity id="489" />
@@ -116,198 +112,6 @@
       <entity id="493" />
       <entity id="494" />
       <entity id="495" />
-    </group>
-    <group>
-      <entity id="476" />
-    </group>
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group />
-    <group>
-      <entity id="464" />
-    </group>
-    <group>
-      <entity id="470" />
-    </group>
-    <group>
-      <entity id="486" />
-    </group>
-    <group>
-      <entity id="470" />
-      <entity id="483" />
-      <entity id="486" />
-      <entity id="487" />
-    </group>
-    <group>
-      <entity id="488" />
-      <entity id="489" />
-      <entity id="490" />
-      <entity id="491" />
-    </group>
-    <group>
-      <entity id="470" />
-      <entity id="483" />
-      <entity id="486" />
-      <entity id="487" />
-      <entity id="488" />
-      <entity id="489" />
-      <entity id="490" />
-      <entity id="491" />
-      <entity id="492" />
-      <entity id="493" />
-      <entity id="494" />
-      <entity id="495" />
-    </group>
-    <group>
-      <entity id="476" />
     </group>
     <group>
       <entity id="478" />
@@ -315,22 +119,18 @@
       <entity id="591" />
     </group>
     <group>
-      <entity id="171" />
-    </group>
-    <group>
-      <entity id="608" />
-    </group>
-    <group>
       <entity id="585" />
       <entity id="594" />
       <entity id="609" />
-    </group>
-    <group>
-      <entity id="485" />
     </group>
   </groups>
   <enemies />
   <enemySpawnZones />
   <levelCollisions />
   <camera />
+  <particles />
+  <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
 </level>
