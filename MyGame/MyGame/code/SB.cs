@@ -37,11 +37,26 @@ namespace MyGame
             {
                 if (GamerManager.getMainControls().RB_firstPressed())
                 {
-                    dtMultiplier += 0.5f;
+                    if (dtMultiplier >= 0.5f)
+                    {
+                        dtMultiplier += 0.5f;
+                    }
+                    else
+                    {
+                        dtMultiplier += 0.1f;
+                    }
                 }
                 if (GamerManager.getMainControls().LB_firstPressed())
                 {
-                    dtMultiplier -= 0.5f;
+                    if (dtMultiplier <= 0.5f)
+                    {
+                        dtMultiplier -= 0.1f;
+                    }
+                    else
+                    {
+                        dtMultiplier -= 0.5f;
+                    }
+                    dtMultiplier -= 0.005f;
                 }
                 if (GamerManager.getMainControls().LB_pressed() && GamerManager.getMainControls().RB_pressed())
                 {
