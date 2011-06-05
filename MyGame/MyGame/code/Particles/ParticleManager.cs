@@ -185,6 +185,8 @@ namespace MyGame
         public ParticleSystem addParticles(string name, Vector3 position, Vector3 direction, Color color,
             float scaleModifier = 1.0f, int nParticlesModifier = 0, float lifetimeModifier = 0.0f)
         {
+            if (!baseParticleSystems.ContainsKey(name)) return null;
+
             ParticleSystem ps = new ParticleSystem();
             ps.initialize(name, position, direction, color, scaleModifier, nParticlesModifier, lifetimeModifier);
             particleSystems.Add(ps);

@@ -39,6 +39,7 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            base.gotHitAtPart(ce, partIndex);
             OrbManager.Instance.addRandomOrbs(1, position2D);
             return true;
         }

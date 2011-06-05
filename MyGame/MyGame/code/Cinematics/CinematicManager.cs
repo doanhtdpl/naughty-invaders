@@ -109,6 +109,7 @@ namespace MyGame
                 case tDialogCharacter.Wish: return "Wish";
                 case tDialogCharacter.OnionElder: return "Onion Elder";
                 case tDialogCharacter.KingTomato: return "King Tomato";
+                case tDialogCharacter.Macedonia: return "Macedonia";
             }
             return "";
         }
