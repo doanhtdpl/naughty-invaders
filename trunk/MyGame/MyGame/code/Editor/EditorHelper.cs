@@ -502,7 +502,8 @@ namespace MyGame
                     Vector3 position = node.Attribute("position").Value.toVector3();
                     Vector3 direction = node.Attribute("direction").Value.toVector3();
                     Color color = node.Attribute("color").Value.toColor();
-                    ParticleManager.Instance.addParticles(name, position, direction, color);
+                    if(!position.AnyNanCoord() && !direction.AnyNanCoord())
+                        ParticleManager.Instance.addParticles(name, position, direction, color);
                 }
 
                 //triggers

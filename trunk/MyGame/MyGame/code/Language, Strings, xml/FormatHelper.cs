@@ -144,10 +144,14 @@ namespace MyGame
         }
         public static bool AnyNanCoord(this Matrix mat)
         {
-            return float.IsNaN(mat.M11) || float.IsNaN(mat.M12) || float.IsNaN(mat.M13) || float.IsNaN(mat.M14) || 
-                float.IsNaN(mat.M21) || float.IsNaN(mat.M22) || float.IsNaN(mat.M23) || float.IsNaN(mat.M24) || 
-                float.IsNaN(mat.M31) || float.IsNaN(mat.M32) || float.IsNaN(mat.M33) || float.IsNaN(mat.M34) || 
+            return float.IsNaN(mat.M11) || float.IsNaN(mat.M12) || float.IsNaN(mat.M13) || float.IsNaN(mat.M14) ||
+                float.IsNaN(mat.M21) || float.IsNaN(mat.M22) || float.IsNaN(mat.M23) || float.IsNaN(mat.M24) ||
+                float.IsNaN(mat.M31) || float.IsNaN(mat.M32) || float.IsNaN(mat.M33) || float.IsNaN(mat.M34) ||
                 float.IsNaN(mat.M41) || float.IsNaN(mat.M42) || float.IsNaN(mat.M43) || float.IsNaN(mat.M44);
+        }
+        public static bool AnyNanCoord(this Vector3 vec)
+        {
+            return float.IsNaN(vec.X) || float.IsNaN(vec.Y) || float.IsNaN(vec.Z);
         }
     }
 }
