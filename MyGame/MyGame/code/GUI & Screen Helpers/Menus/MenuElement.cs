@@ -84,12 +84,20 @@ namespace MyGame
         {
             this.description = null;
             this.color = Color.White;
-            this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
+            if (textureName == null || textureName == "")
+            {
+                this.texture = null;
+                this.scale = scale;
+            }
+            else
+            {
+                this.texture = TextureManager.Instance.getTexture("GUI/menu", textureName);
+                Vector2 finalScale = scale;
+                finalScale.X *= this.texture.Width;
+                finalScale.Y *= this.texture.Height;
+                this.scale = finalScale;
+            }
             this.position = position;
-            Vector2 finalScale = scale;
-            finalScale.X *= this.texture.Width;
-            finalScale.Y *= this.texture.Height;
-            this.scale = finalScale;
             this.drawLinkedElement = drawLinkedElement;
 
             upNode = null;
@@ -161,15 +169,22 @@ namespace MyGame
             return false;
         }
 
+        public virtual bool update()
+        {
+            return updateOptions();
+        }
         public virtual void render(bool selected, bool flip = false)
         {
-            if (flip)
+            if (texture != null)
             {
-                texture.render2D(position, scale, Color.White, 0.0f, SpriteEffects.FlipHorizontally);
-            }
-            else
-            {
-                texture.render2D(position, scale, Color.White);
+                if (flip)
+                {
+                    texture.render2D(position, scale, Color.White, 0.0f, SpriteEffects.FlipHorizontally);
+                }
+                else
+                {
+                    texture.render2D(position, scale, Color.White);
+                }
             }
             if (drawLinkedElement)
             {
