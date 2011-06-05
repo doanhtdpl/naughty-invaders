@@ -150,7 +150,8 @@ namespace MyGame
             CameraManager.Instance.clean();
             OrbManager.Instance.clean();
             ParticleManager.Instance.getParticles().Clear();
-        }
+            groupList.Clear();
+       }
 
         public void update()
         {
