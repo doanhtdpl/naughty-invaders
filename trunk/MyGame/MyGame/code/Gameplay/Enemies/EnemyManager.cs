@@ -89,6 +89,8 @@ namespace MyGame
             }
             enemies.Clear();
             activeEnemies.Clear();
+
+            enemySpawnZones.Clear();
         }
 
         public void dispose()
