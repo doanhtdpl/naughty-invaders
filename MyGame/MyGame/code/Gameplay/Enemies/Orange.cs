@@ -13,7 +13,7 @@ namespace MyGame
         const float ORANGE_GRAVITY = -10.0f;
         tOrangeState state;
 
-        Vector2 velocity;
+        Vector3 velocity;
         
         public Orange(Vector3 position, float orientation)
             : base("orange", position, orientation, 3)
@@ -29,7 +29,9 @@ namespace MyGame
 
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
             float randomY = Calc.randomScalar(16.0f, 19.0f);
-            velocity = new Vector2(randomX, randomY);
+            velocity = new Vector3(randomX, randomY, 8.0f);
+
+            positionZ = -200.0f;
         }
 
         public override void setCollisions()
@@ -62,9 +64,9 @@ namespace MyGame
                     }
                 break;
                 case tOrangeState.Parabola:
-                    Vector2 acceleration = new Vector2(0.0f, 0.0f + ORANGE_GRAVITY);
+                    Vector3 acceleration = new Vector3(0.0f, ORANGE_GRAVITY, ORANGE_GRAVITY * 0.4f);
                     velocity += acceleration * SB.dt;
-                    position2D += velocity;
+                    position += velocity;
                 break;
             }
         }

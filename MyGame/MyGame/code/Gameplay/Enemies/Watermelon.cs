@@ -21,7 +21,7 @@ namespace MyGame
         float nextAttackTimer;
 
         public Watermelon(Vector3 position, float orientation)
-            : base("watermelon", position, orientation, 4)
+            : base("watermelon", position, orientation, 10)
         {
             life = 800.0f;
 
@@ -34,7 +34,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(0, 20), 40);
+            addCollision(new Vector2(0, 20), 75);
         }
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
