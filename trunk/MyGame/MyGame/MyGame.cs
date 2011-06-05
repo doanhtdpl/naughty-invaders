@@ -74,8 +74,7 @@ namespace MyGame
 
         protected override void Update(GameTime gameTime)
         {
-            SB.gameTime = gameTime;
-            SB.dt = gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            SB.updateGameTime(gameTime);
 
             GamerManager.updateInputs();
 

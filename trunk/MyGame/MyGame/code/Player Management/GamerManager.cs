@@ -50,6 +50,8 @@ namespace MyGame
         }
         public static ControlPad getMainControls()
         {
+            if (getSessionOwner() == null) return null;
+
             return getSessionOwner().Controls;
         }
 
