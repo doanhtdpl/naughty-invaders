@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 
 namespace MyGame
 {
@@ -18,6 +19,10 @@ namespace MyGame
         // text speed at characters per second
         public float textSpeed { get; set; }
 
+        public const float AUDIO_TIME = 0.8f;
+        float nextAudio = 0.0f;
+
+        public static string[,] characterAudios; 
         public static Texture2D[] portraits;
         public static Texture2D dialogBackground;
         public static Rectangle backgroundRectangle;
@@ -45,11 +50,14 @@ namespace MyGame
             portraitRectangle = new Rectangle((int)pos.X, (int)pos.Y, 150, 150);
 
             DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
-            DialogEvent.portraits = new Texture2D[DialogEvent.N_DIALOG_CHARACTERS];
+            DialogEvent.portraits = new Texture2D[N_DIALOG_CHARACTERS];
             DialogEvent.portraits[(int)tDialogCharacter.Wish] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
             DialogEvent.portraits[(int)tDialogCharacter.OnionElder] = TextureManager.Instance.getTexture("GUI/portraits/portraitOnionElder");
             DialogEvent.portraits[(int)tDialogCharacter.KingTomato] = TextureManager.Instance.getTexture("GUI/portraits/portraitKingTomato");
             DialogEvent.portraits[(int)tDialogCharacter.Macedonia] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
+
+            DialogEvent.characterAudios = new string[N_DIALOG_CHARACTERS,3];
+            //DialogEvent.characterAudios[(int)tDialogCharacter.Wish, 0] = "wish1";
         }
 
         public override bool update(bool skip, bool forceSkip = false)
@@ -71,6 +79,12 @@ namespace MyGame
                 }
             }
 
+            nextAudio -= SB.dt;
+            if (nextAudio < 0.0f)
+            {
+                //SoundManager.Instance.playEffect(characterAudios[(int)character, Calc.randomNatural(0,2)]);
+                nextAudio = AUDIO_TIME;
+            }
             timer += SB.dt;
 
             if (!textComplete)

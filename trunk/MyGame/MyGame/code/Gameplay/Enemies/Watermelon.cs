@@ -12,7 +12,7 @@ namespace MyGame
 
         tWatermelonState state;
 
-        const float SPEED = 0.0f;
+        const float SPEED = -15.0f;
         const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 0.6f;
         const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 0.6f;
         const int NUMBER_OF_PROJECTILES = 5;
@@ -23,7 +23,7 @@ namespace MyGame
         public Watermelon(Vector3 position, float orientation)
             : base("watermelon", position, orientation, 4)
         {
-            life = 100.0f;
+            life = 800.0f;
 
             vulnerableTime = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);
@@ -59,7 +59,6 @@ namespace MyGame
         {
             base.update();
 
-            // always move down
             position += new Vector3(0, -SPEED, 0) * SB.dt;
 
             nextAttackTimer -= SB.dt;
