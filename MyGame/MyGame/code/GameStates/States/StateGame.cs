@@ -36,7 +36,6 @@ namespace MyGame
             {
                 EditorHelper.Instance.loadNewLevelFromGame(level);
             }
-            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
         }
 
         public void restartLevel()

@@ -136,6 +136,20 @@ namespace MyGame
                     Camera2D.position = cameraNodes.getNodes()[i].position;
                 }
             }
+
+            switch (cameraMode)
+            {
+                case tCameraMode.None:
+                    break;
+                case tCameraMode.FollowPlayer:
+                    break;
+                case tCameraMode.WorldMap:
+                    break;
+                case tCameraMode.Nodes:
+                    lastPosition = cameraNodes.getNodes()[0].position;
+                    currentPosition = lastPosition;
+                    break;
+            }
         }
 
         public void setCurrentNode(NetworkNode<CameraData> node)
