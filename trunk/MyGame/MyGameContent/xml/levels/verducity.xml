@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="5258" BGColor="115 25 53 255" CameraMode="Nodes">
+<level nextEntityID="5299" BGColor="115 25 53 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1234.158 29.67191 -0.002074921 1" id="283" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 -1267.9 1535.802 -0.004013973 1" id="285" color="255 255 255 255" flipH="False" flipV="False" />
@@ -168,7 +168,7 @@
     <staticProp entityName="bg01str2-31" worldMatrix="26.63997 -27.60493 0 0 45.79996 44.19898 0 0 0 0 1 0 -399.782 5084.37 687.0054 1" id="4991" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-31" worldMatrix="31.7556 -32.90585 0 0 43.46373 41.94442 0 0 0 0 1 0 324.0137 5409.823 687.0054 1" id="4992" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01str2-31" worldMatrix="-18.32845 -41.89607 0 0 55.33849 -24.20916 0 0 0 0 1 0 405.3771 5458.98 625.0054 1" id="4993" color="185 185 185 255" flipH="False" flipV="False" />
-    <staticProp entityName="verd-16" worldMatrix="401.95 1392.942 38.14625 0 -2611.147 754.2394 -27.81756 0 -0.01712865 -0.0224318 0.9996017 0 1112.651 12083.61 -1456.998 1" id="4998" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verd-16" worldMatrix="401.95 1392.942 38.14625 0 -2611.147 754.2394 -27.81756 0 -0.01712865 -0.0224318 0.9996017 0 1105.558 12083.61 -1456.998 1" id="4998" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verd-16" worldMatrix="-887.8164 1146.139 38.14625 0 -2149.116 -1663.812 -27.81756 0 0.008012708 -0.02706238 0.9996017 0 -1264.402 11872.92 -1425.998 1" id="5001" color="255 255 255 255" flipH="True" flipV="True" />
     <staticProp entityName="verdu-28" worldMatrix="401 0 0 0 0 1413 0 0 0 0 1 0 1190.675 12338.64 -0.003478354 1" id="5158" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-28" worldMatrix="659.8729 0 0 0 0 2325.188 0 0 0 0 1 0 -1489.229 11826.52 -336.0125 1" id="5160" color="255 255 255 255" flipH="False" flipV="False" />
@@ -223,6 +223,7 @@
     <staticProp entityName="verdu-52" worldMatrix="-17.32356 -441.6604 0 0 138.8932 -5.447909 0 0 0 0 1 0 -1172.172 12071.12 -333.9948 1" id="5255" color="255 255 255 255" flipH="False" flipV="True" />
     <staticProp entityName="verdu-52" worldMatrix="75.07774 -281.3221 0 0 88.47009 23.61042 0 0 0 0 1 0 1107.989 11838.59 -481 1" id="5256" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-52" worldMatrix="-129.0556 -261.0047 0 0 82.08067 -40.58537 0 0 0 0 1 0 -1219.893 11761.27 -481 1" id="5257" color="255 255 255 255" flipH="False" flipV="True" />
+    <staticProp entityName="painp-75" worldMatrix="399 0 0 0 0 621 0 0 0 0 1 0 -74.49423 12504.3 -733.0058 1" id="5276" color="255 255 255 255" flipH="False" flipV="False" />
   </staticProps>
   <animatedProps />
   <groups>
@@ -278,7 +279,10 @@
     <cameraNode id="0" position="5.441103 143.2823 1800" target="5.441103 143.2823 0" isFirst="True" link="1" />
     <cameraNode id="1" position="0 20000 1800" target="0 20000 0" isFirst="False" />
   </camera>
-  <particles />
+  <particles>
+    <particle name="Greendust" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
+    <particle name="Greendust" position="52.61749 12237.04 77" direction="0 0 0" color="255 255 255 255" />
+  </particles>
   <triggers />
   <players>
     <player playerId="0" pos="0 0 0" />
