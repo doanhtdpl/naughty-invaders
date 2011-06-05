@@ -134,62 +134,86 @@ namespace MyGame
             data.texture = TextureManager.Instance.getTexture("particles/" + data.textureName);
 
             data.type = MyEditor.Instance.ee_type.Text == "burst" ? ParticleSystemData.tParticleSystem.Burst : ParticleSystemData.tParticleSystem.Fountain;
-
-            data.position.X = MyEditor.Instance.ee_posX.Text.toFloat();
-            data.position.Y = MyEditor.Instance.ee_PosY.Text.toFloat();
-            data.position.Z = MyEditor.Instance.ee_PosZ.Text.toFloat();
-            data.positionVarianceMin.X = MyEditor.Instance.ee_PosMinX.Text.toFloat();
-            data.positionVarianceMin.Y = MyEditor.Instance.ee_PosMinY.Text.toFloat();
-            data.positionVarianceMin.Z = MyEditor.Instance.ee_PosMinZ.Text.toFloat();
-            data.positionVarianceMax.X = MyEditor.Instance.ee_PosMaxX.Text.toFloat();
-            data.positionVarianceMax.Y = MyEditor.Instance.ee_PosMaxY.Text.toFloat();
-            data.positionVarianceMax.Z = MyEditor.Instance.ee_PosMaxZ.Text.toFloat();
-
-            data.direction.X = MyEditor.Instance.ee_DirX.Text.toFloat();
-            data.direction.Y = MyEditor.Instance.ee_DirY.Text.toFloat();
-            data.direction.Z = MyEditor.Instance.ee_DirZ.Text.toFloat();
-            data.directionVarianceMin.X = MyEditor.Instance.ee_DirMinX.Text.toFloat();
-            data.directionVarianceMin.Y = MyEditor.Instance.ee_DirMinY.Text.toFloat();
-            data.directionVarianceMin.Z = MyEditor.Instance.ee_DirMinZ.Text.toFloat();
-            data.directionVarianceMax.X = MyEditor.Instance.ee_DirMaxX.Text.toFloat();
-            data.directionVarianceMax.Y = MyEditor.Instance.ee_DirMaxY.Text.toFloat();
-            data.directionVarianceMax.Z = MyEditor.Instance.ee_DirMaxZ.Text.toFloat();
-
-            data.acceleration.X = MyEditor.Instance.ee_AccX.Text.toFloat();
-            data.acceleration.Y = MyEditor.Instance.ee_AccY.Text.toFloat();
-            data.acceleration.Z = MyEditor.Instance.ee_AccZ.Text.toFloat();
-            data.accelerationVarianceMin.X = MyEditor.Instance.ee_AccMinX.Text.toFloat();
-            data.accelerationVarianceMin.Y = MyEditor.Instance.ee_AccMinY.Text.toFloat();
-            data.accelerationVarianceMin.Z = MyEditor.Instance.ee_AccMinZ.Text.toFloat();
-            data.accelerationVarianceMax.X = MyEditor.Instance.ee_AccMaxX.Text.toFloat();
-            data.accelerationVarianceMax.Y = MyEditor.Instance.ee_AccMaxY.Text.toFloat();
-            data.accelerationVarianceMax.Z = MyEditor.Instance.ee_AccMaxZ.Text.toFloat();
-
-            data.color = new Color(MyEditor.Instance.ee_ColorR.Text.toFloat(), MyEditor.Instance.ee_ColorG.Text.toFloat(), MyEditor.Instance.ee_ColorB.Text.toFloat(), MyEditor.Instance.ee_ColorA.Text.toFloat());
-            data.colorVarianceMin = new Color(MyEditor.Instance.ee_ColorMinR.Text.toFloat(), MyEditor.Instance.ee_ColorMinG.Text.toFloat(), MyEditor.Instance.ee_ColorMinB.Text.toFloat(), MyEditor.Instance.ee_ColorMinA.Text.toFloat());
-            data.colorVarianceMax = new Color(MyEditor.Instance.ee_ColorMaxR.Text.toFloat(), MyEditor.Instance.ee_ColorMaxG.Text.toFloat(), MyEditor.Instance.ee_ColorMaxB.Text.toFloat(), MyEditor.Instance.ee_ColorMaxA.Text.toFloat());
-
-            data.nParticles = MyEditor.Instance.ee_NumPart.Text.toInt();
-            data.systemLife = MyEditor.Instance.ee_SystemLife.Text.toFloat();
-            data.particlesRotation = MyEditor.Instance.ee_Rot.Text.toFloat();
-            data.particlesRotationVariance = MyEditor.Instance.ee_RotVar.Text.toFloat();
-            data.particlesRotationSpeed = MyEditor.Instance.ee_RotSpeed.Text.toFloat();
-            data.particlesRotationSpeedVariance = MyEditor.Instance.ee_RotSpeedVar.Text.toFloat();
-            data.size = MyEditor.Instance.ee_size.Text.toFloat();
-            data.sizeIni = MyEditor.Instance.ee_SizeIni.Text.toFloat();
-            data.sizeEnd = MyEditor.Instance.ee_SizeEnd.Text.toFloat();
-            data.fadeIn = MyEditor.Instance.ee_FadeIn.Text.toFloat();
-            data.fadeOut = MyEditor.Instance.ee_FadeOut.Text.toFloat();
-            data.particlesLife = MyEditor.Instance.ee_Life.Text.toFloat();
-
-            if (MyEditor.Instance.ee_render.Text == "additive")
+            
+            try
             {
-                data.color.A = 0;
-                data.colorVarianceMin.A = 0;
-                data.colorVarianceMax.A = 0;
+                data.position.X = MyEditor.Instance.ee_posX.Text.toFloat();
+                data.position.Y = MyEditor.Instance.ee_PosY.Text.toFloat();
+                data.position.Z = MyEditor.Instance.ee_PosZ.Text.toFloat();
+                data.positionVarianceMin.X = MyEditor.Instance.ee_PosMinX.Text.toFloat();
+                data.positionVarianceMin.Y = MyEditor.Instance.ee_PosMinY.Text.toFloat();
+                data.positionVarianceMin.Z = MyEditor.Instance.ee_PosMinZ.Text.toFloat();
+                data.positionVarianceMax.X = MyEditor.Instance.ee_PosMaxX.Text.toFloat();
+                data.positionVarianceMax.Y = MyEditor.Instance.ee_PosMaxY.Text.toFloat();
+                data.positionVarianceMax.Z = MyEditor.Instance.ee_PosMaxZ.Text.toFloat();
+
+                data.positionVarianceMax.X = Math.Max(data.positionVarianceMax.X, data.positionVarianceMin.X);
+                data.positionVarianceMax.Y = Math.Max(data.positionVarianceMax.Y, data.positionVarianceMin.Y);
+                data.positionVarianceMax.Z = Math.Max(data.positionVarianceMax.Y, data.positionVarianceMin.Y);
+
+                data.direction.X = MyEditor.Instance.ee_DirX.Text.toFloat();
+                data.direction.Y = MyEditor.Instance.ee_DirY.Text.toFloat();
+                data.direction.Z = MyEditor.Instance.ee_DirZ.Text.toFloat();
+                data.directionVarianceMin.X = MyEditor.Instance.ee_DirMinX.Text.toFloat();
+                data.directionVarianceMin.Y = MyEditor.Instance.ee_DirMinY.Text.toFloat();
+                data.directionVarianceMin.Z = MyEditor.Instance.ee_DirMinZ.Text.toFloat();
+                data.directionVarianceMax.X = MyEditor.Instance.ee_DirMaxX.Text.toFloat();
+                data.directionVarianceMax.Y = MyEditor.Instance.ee_DirMaxY.Text.toFloat();
+                data.directionVarianceMax.Z = MyEditor.Instance.ee_DirMaxZ.Text.toFloat();
+
+                data.directionVarianceMax.X = Math.Max(data.directionVarianceMax.X, data.directionVarianceMin.X);
+                data.directionVarianceMax.Y = Math.Max(data.directionVarianceMax.Y, data.directionVarianceMin.Y);
+                data.directionVarianceMax.Z = Math.Max(data.directionVarianceMax.Y, data.directionVarianceMin.Y);
+
+                data.acceleration.X = MyEditor.Instance.ee_AccX.Text.toFloat();
+                data.acceleration.Y = MyEditor.Instance.ee_AccY.Text.toFloat();
+                data.acceleration.Z = MyEditor.Instance.ee_AccZ.Text.toFloat();
+                data.accelerationVarianceMin.X = MyEditor.Instance.ee_AccMinX.Text.toFloat();
+                data.accelerationVarianceMin.Y = MyEditor.Instance.ee_AccMinY.Text.toFloat();
+                data.accelerationVarianceMin.Z = MyEditor.Instance.ee_AccMinZ.Text.toFloat();
+                data.accelerationVarianceMax.X = MyEditor.Instance.ee_AccMaxX.Text.toFloat();
+                data.accelerationVarianceMax.Y = MyEditor.Instance.ee_AccMaxY.Text.toFloat();
+                data.accelerationVarianceMax.Z = MyEditor.Instance.ee_AccMaxZ.Text.toFloat();
+
+                data.accelerationVarianceMax.X = Math.Max(data.accelerationVarianceMax.X, data.accelerationVarianceMin.X);
+                data.accelerationVarianceMax.Y = Math.Max(data.accelerationVarianceMax.Y, data.accelerationVarianceMin.Y);
+                data.accelerationVarianceMax.Z = Math.Max(data.accelerationVarianceMax.Y, data.accelerationVarianceMin.Y);
+
+                data.color = new Color(MyEditor.Instance.ee_ColorR.Text.toFloat(), MyEditor.Instance.ee_ColorG.Text.toFloat(), MyEditor.Instance.ee_ColorB.Text.toFloat(), MyEditor.Instance.ee_ColorA.Text.toFloat());
+                data.colorVarianceMin = new Color(MyEditor.Instance.ee_ColorMinR.Text.toFloat(), MyEditor.Instance.ee_ColorMinG.Text.toFloat(), MyEditor.Instance.ee_ColorMinB.Text.toFloat(), MyEditor.Instance.ee_ColorMinA.Text.toFloat());
+                data.colorVarianceMax = new Color(MyEditor.Instance.ee_ColorMaxR.Text.toFloat(), MyEditor.Instance.ee_ColorMaxG.Text.toFloat(), MyEditor.Instance.ee_ColorMaxB.Text.toFloat(), MyEditor.Instance.ee_ColorMaxA.Text.toFloat());
+
+                data.colorVarianceMax.R = Math.Max(data.colorVarianceMax.R, data.colorVarianceMin.R);
+                data.colorVarianceMax.G = Math.Max(data.colorVarianceMax.G, data.colorVarianceMin.G);
+                data.colorVarianceMax.B = Math.Max(data.colorVarianceMax.B, data.colorVarianceMin.B);
+                data.colorVarianceMax.A = Math.Max(data.colorVarianceMax.A, data.colorVarianceMin.A);
+
+                data.nParticles = MyEditor.Instance.ee_NumPart.Text.toInt();
+                data.systemLife = MyEditor.Instance.ee_SystemLife.Text.toFloat();
+                data.particlesRotation = MyEditor.Instance.ee_Rot.Text.toFloat();
+                data.particlesRotationVariance = MyEditor.Instance.ee_RotVar.Text.toFloat();
+                data.particlesRotationSpeed = MyEditor.Instance.ee_RotSpeed.Text.toFloat();
+                data.particlesRotationSpeedVariance = MyEditor.Instance.ee_RotSpeedVar.Text.toFloat();
+                data.size = MyEditor.Instance.ee_size.Text.toFloat();
+                data.sizeIni = MyEditor.Instance.ee_SizeIni.Text.toFloat();
+                data.sizeEnd = MyEditor.Instance.ee_SizeEnd.Text.toFloat();
+                data.fadeIn = MyEditor.Instance.ee_FadeIn.Text.toFloat();
+                data.fadeOut = MyEditor.Instance.ee_FadeOut.Text.toFloat();
+                data.particlesLife = MyEditor.Instance.ee_Life.Text.toFloat();
+
+                if (MyEditor.Instance.ee_render.Text == "additive")
+                {
+                    data.color.A = 0;
+                    data.colorVarianceMin.A = 0;
+                    data.colorVarianceMax.A = 0;
+                }
+
+                ParticleManager.Instance.setBaseParticleSystemData(selected, data);
+            }
+            catch (Exception e)
+            {
             }
 
-            ParticleManager.Instance.setBaseParticleSystemData(selected, data);
         }
 
         public void duplicate(string newName)
