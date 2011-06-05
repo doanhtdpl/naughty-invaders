@@ -24,10 +24,13 @@ namespace MyGame
             {
                 if (MyEditor.Instance.anyEntitySelected()  && isPosInScreen(gameScreenPos))
                 {
-                    if (mouseState.LeftButton == ButtonState.Pressed)  
-                            Vector2 current = new Vector2(mouseState.X, mouseState.Y);  
+                    if (mouseState.LeftButton == ButtonState.Pressed) 
+                    {
+                        foreach (Entity2D ent in MyEditor.Instance.getSelectedEntities())
+                        {
+                            Vector2 current = new Vector2(mouseState.X, mouseState.Y);
                             Vector2 last = new Vector2(lastMouseState.X, lastMouseState.Y);
-                             Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, ent.position.Z);
+                            Vector3 currentZ = EditorHelper.Instance.getMousePosInZ(current, ent.position.Z);
                             Vector3 lastZ = EditorHelper.Instance.getMousePosInZ(last, ent.position.Z);
 
                             ent.position += (currentZ - lastZ);
@@ -48,7 +51,6 @@ namespace MyGame
                 }
             }
         }
-
     }
 }
 #endif
