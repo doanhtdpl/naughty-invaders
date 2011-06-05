@@ -201,6 +201,29 @@ namespace MyGame
                 Entity2D ent = selectPoint(lastScreenPos);
                 ignoreEntities.Add(ent);
 
+                if (MyEditor.Instance.selectGroup.Checked && ent != null)
+                {
+                    foreach (List<int> group in LevelManager.Instance.getGroups())
+                    {
+                        foreach (int id in group)
+                        {
+                            if (id == ent.id)
+                            {
+                                //Select the group
+                                MyEditor.Instance.getSelectedEntities().Clear();
+
+                                foreach (int entityId in group)
+                                {
+                                    MyEditor.Instance.addEntity(EntityManager.Instance.getEntityByID(entityId));
+                                }
+
+                                return MyEditor.Instance.anyEntitySelected();
+                            }
+                        }
+                    }
+
+                }
+
                 MyEditor.Instance.selectEntity(ent);
                 MyEditor.Instance.updateEntityProperties();
             }
@@ -238,7 +261,8 @@ namespace MyGame
                                     if (id == ent.id)
                                     { 
                                         //Select the group
-                                        MyEditor.Instance.getSelectedEntities().Clear();
+                                        if (!isPressedKey(Keys.LeftControl) && !isPressedKey(Keys.RightControl) && !isPressedKey(Keys.LeftShift) && !isPressedKey(Keys.RightShift))
+                                            MyEditor.Instance.getSelectedEntities().Clear();
 
                                         foreach(int entityId in group)
                                         {
@@ -252,7 +276,9 @@ namespace MyGame
                             
                         //CONTROL MULTISELECT
                         if (isPressedKey(Keys.LeftControl) || isPressedKey(Keys.RightControl) || isPressedKey(Keys.LeftShift) || isPressedKey(Keys.RightShift))
+                        {
                             MyEditor.Instance.addEntity(ent);
+                        }
                         else
                             MyEditor.Instance.selectEntity(ent);
 
