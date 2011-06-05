@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="488" BGColor="69 47 14 255">
+<level nextEntityID="498" BGColor="69 47 14 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="onion-47" worldMatrix="373.8441 270.1097 26.93074 0 -389.684 545.3655 -60.43199 0 -0.09973551 0.03890849 0.994253 0 1114.369 -461.6596 208.0168 1" id="188" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-47" worldMatrix="403.208 -225.538 0 0 328.5433 587.3571 0 0 0 0 1 0 -1286.232 -207.0811 209.0154 1" id="189" color="225 225 225 255" flipH="False" flipV="False" />
@@ -10,139 +10,40 @@
     <staticProp entityName="onion-56" worldMatrix="-107.3278 440.0962 0 0 -805.325 -196.3974 0 0 0 0 1 0 -970.8416 619.6927 -49.98684 1" id="210" color="255 255 200 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-52" worldMatrix="657.2808 -60.73943 31.70216 0 46.89204 496.8543 -20.27054 0 -0.04399066 0.04486887 0.9980239 0 1056.075 396.5887 -31.00106 1" id="213" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-52" worldMatrix="-29.42836 659.9424 17.95718 0 -498.8647 -22.51918 10.0568 0 0.02133249 -0.02624339 0.999428 0 -1335.743 451.9678 -0.001060164 1" id="214" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="artmapa-03" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 1" id="242" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-57" worldMatrix="478.774 508.3753 19.85056 0 -337.9433 319.4382 -30.02608 0 -0.06636651 0.02355205 0.9975173 0 766.5377 732.5908 -250.017 1" id="327" color="39 39 39 200" flipH="False" flipV="False" />
-    <staticProp entityName="onion-57" worldMatrix="-702.8141 36.29211 0 0 -30.93813 -599.1317 0 0 0 0 1 0 -1909.197 1129.594 164.9962 1" id="328" color="160 160 160 160" flipH="False" flipV="False" />
+    <staticProp entityName="onion-57" worldMatrix="56.79843 701.4548 0 0 -597.9728 48.41927 0 0 0 0 1 0 -1290.021 212.0574 43.9962 1" id="328" color="160 160 160 160" flipH="False" flipV="False" />
     <staticProp entityName="onion-56" worldMatrix="-423.9913 343.9836 0 0 -629.4507 -775.8555 0 0 0 0 1 0 491.8865 776.3696 -49.98684 1" id="330" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onn-21" worldMatrix="3956.029 0 0 0 0 2402.185 0 0 0 0 1 0 -65.98969 85.26755 -635.0172 1" id="391" color="133 133 133 255" flipH="False" flipV="False" />
-    <staticProp entityName="onn-23" worldMatrix="596 0 0 0 0 636 0 0 0 0 1 0 1428.827 1176.993 0.00996737 1" id="404" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onn-23" worldMatrix="596 0 0 0 0 636 0 0 0 0 1 0 -144.4351 817.8757 253.01 1" id="404" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onn-24" worldMatrix="796 0 0 0 0 345 0 0 0 0 1 0 -1135.99 -706.3218 282.9955 1" id="408" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onn-24" worldMatrix="1224.101 0 0 0 0 530.5466 0 0 0 0 1 0 1112.305 -773.5244 411.989 1" id="410" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onn-20" worldMatrix="1919.314 0 0 0 0 2103.409 0 0 0 0 1 0 733.3254 179.1114 158.9984 1" id="432" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onn-20" worldMatrix="1919.314 0 0 0 0 2103.409 0 0 0 0 1 0 735.6188 183.6981 190.9984 1" id="432" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-55" worldMatrix="307 0 0 0 0 500 0 0 0 0 1 0 -2181.359 607.3612 0.01939995 1" id="444" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onion-54" worldMatrix="433 0 0 0 0 605 0 0 0 0 1 0 -2173.814 94.31506 -0.01338625 1" id="448" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="-135.4973 24.87939 0 0 -34.76222 -189.3207 0 0 0 0 1 0 632.8171 517.8823 -0.01338625 1" id="448" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-48" worldMatrix="616 0 0 0 0 388 0 0 0 0 1 0 -2219.083 -441.3656 -0.001807411 1" id="478" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onn-20" worldMatrix="1782.983 160.9033 0 0 -176.3369 1954.005 0 0 0 0 1 0 -862.4721 167.6824 142.9984 1" id="481" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="onn-20" worldMatrix="1782.983 160.9033 0 0 -176.3369 1954.005 0 0 0 0 1 0 -862.4721 167.6824 154.9984 1" id="481" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="onion-56" worldMatrix="-73.52157 301.4753 0 0 -641.4529 -156.4328 0 0 0 0 1 0 -1215.026 1296.75 -49.98684 1" id="482" color="255 255 200 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-47" worldMatrix="165.1852 -92.3978 0 0 134.5967 240.6268 0 0 0 0 1 0 -1162.058 -435.1552 242.0154 1" id="483" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="onion-47" worldMatrix="NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 1" id="484" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-51" worldMatrix="321.8483 -157.3463 44.5251 0 79.79023 162.5682 -2.264705 0 -0.1052597 0.06548595 0.9922863 0 1303.228 -390.3035 314.0013 1" id="486" color="192 192 192 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-47" worldMatrix="82.60323 -90.32101 0 0 119.9834 109.731 0 0 0 0 1 0 -1174.727 -565.0705 209.0154 1" id="487" color="225 225 225 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-57" worldMatrix="56.79843 701.4548 0 0 -597.9728 48.41927 0 0 0 0 1 0 1578.217 213.6376 -552.0038 1" id="488" color="160 160 160 160" flipH="False" flipV="True" />
+    <staticProp entityName="onion-57" worldMatrix="56.79843 701.4548 0 0 -597.9728 48.41927 0 0 0 0 1 0 -1382.909 -382.9247 43.9962 1" id="489" color="160 160 160 160" flipH="False" flipV="True" />
+    <staticProp entityName="onion-57" worldMatrix="-682.1489 -173.0247 0 0 147.4992 -581.5152 0 0 0 0 1 0 -47.33801 493.2308 43.9962 1" id="490" color="70 70 70 70" flipH="True" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="-61.73216 -56.18692 0 0 78.506 -86.25399 0 0 0 0 1 0 658.032 589.831 -0.01338625 1" id="491" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="-58.65791 59.38921 0 0 -82.98035 -81.95859 0 0 0 0 1 0 611.4814 558.7973 -0.01338625 1" id="492" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="-116.1006 -74.15625 0 0 103.6132 -162.2192 0 0 0 0 1 0 700.7034 578.1934 -0.01338625 1" id="493" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="97.27473 97.55064 0 0 -136.3006 135.9151 0 0 0 0 1 0 1281.397 -251.544 -195.0134 1" id="494" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onion-54" worldMatrix="75.95536 114.9316 0 0 -160.5858 106.1271 0 0 0 0 1 0 1186.363 -280.1539 -81.01338 1" id="495" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onn-24" worldMatrix="631.1221 -136.3873 -31.91475 0 83.41029 367.1979 80.24306 0 0.003113284 -0.2141639 0.9767928 0 768.868 -737.0913 300.989 1" id="496" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="onn-24" worldMatrix="631.1221 -136.3873 -31.91475 0 83.41029 367.1979 80.24306 0 0.003113284 -0.2141639 0.9767928 0 -961.3507 -833.4058 236.989 1" id="497" color="255 255 255 255" flipH="True" flipV="False" />
   </staticProps>
   <animatedProps />
   <groups>
-    <group />
     <group>
-      <entity id="205" />
-    </group>
-    <group>
-      <entity id="205" />
-    </group>
-    <group />
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="432" />
-    </group>
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="189" />
-    </group>
-    <group>
-      <entity id="483" />
-    </group>
-    <group>
-      <entity id="408" />
-    </group>
-    <group>
-      <entity id="408" />
-    </group>
-    <group />
-    <group>
-      <entity id="205" />
-    </group>
-    <group>
-      <entity id="205" />
-    </group>
-    <group />
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="432" />
-    </group>
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="189" />
-    </group>
-    <group>
-      <entity id="483" />
-    </group>
-    <group>
-      <entity id="203" />
-    </group>
-    <group />
-    <group>
-      <entity id="205" />
-    </group>
-    <group>
-      <entity id="205" />
-    </group>
-    <group />
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="432" />
-    </group>
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="189" />
-    </group>
-    <group>
-      <entity id="483" />
-    </group>
-    <group>
-      <entity id="408" />
-    </group>
-    <group>
-      <entity id="408" />
-    </group>
-    <group />
-    <group>
-      <entity id="205" />
-    </group>
-    <group>
-      <entity id="205" />
-    </group>
-    <group />
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="432" />
-    </group>
-    <group>
-      <entity id="210" />
-    </group>
-    <group>
-      <entity id="189" />
-    </group>
-    <group>
-      <entity id="483" />
-    </group>
-    <group>
-      <entity id="203" />
-    </group>
-    <group>
-      <entity id="189" />
+      <entity id="448" />
+      <entity id="491" />
+      <entity id="492" />
+      <entity id="493" />
     </group>
   </groups>
   <enemies />
@@ -155,4 +56,7 @@
   </camera>
   <particles />
   <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
 </level>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="5299" BGColor="115 25 53 255" CameraMode="Nodes">
+<level nextEntityID="5404" BGColor="115 25 53 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1234.158 29.67191 -0.002074921 1" id="283" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 -1267.9 1535.802 -0.004013973 1" id="285" color="255 255 255 255" flipH="False" flipV="False" />
@@ -271,6 +271,18 @@
       <entity id="5252" />
       <entity id="5253" />
     </group>
+    <group>
+      <entity id="5299" />
+      <entity id="3101" />
+    </group>
+    <group>
+      <entity id="5300" />
+      <entity id="2397" />
+    </group>
+    <group>
+      <entity id="5301" />
+      <entity id="2473" />
+    </group>
   </groups>
   <enemies />
   <enemySpawnZones />
@@ -280,8 +292,13 @@
     <cameraNode id="1" position="0 20000 1800" target="0 20000 0" isFirst="False" />
   </camera>
   <particles>
-    <particle name="Greendust" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
     <particle name="Greendust" position="52.61749 12237.04 77" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="NaN NaN 0" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="1143.671 5173.02 -202" direction="0 0 0" color="255 255 255 255" />
+    <particle name="dust2" position="-1013.72 6794.022 -116" direction="0 0 0" color="255 255 255 255" />
   </particles>
   <triggers />
   <players>
