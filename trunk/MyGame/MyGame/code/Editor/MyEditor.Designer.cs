@@ -444,7 +444,7 @@ namespace MyGame
             this.flipVerticalCheck.TabStop = false;
             this.flipVerticalCheck.Text = "flipV";
             this.flipVerticalCheck.UseVisualStyleBackColor = true;
-            this.flipVerticalCheck.CheckedChanged += new System.EventHandler(this.flipVer_CheckedChanged);
+            this.flipVerticalCheck.Click += new System.EventHandler(this.flipVer_CheckedChanged);
             // 
             // flipHorizontalCheck
             // 
@@ -456,7 +456,7 @@ namespace MyGame
             this.flipHorizontalCheck.TabStop = false;
             this.flipHorizontalCheck.Text = "flipH";
             this.flipHorizontalCheck.UseVisualStyleBackColor = true;
-            this.flipHorizontalCheck.CheckedChanged += new System.EventHandler(this.flipHor_CheckedChanged);
+            this.flipHorizontalCheck.Click += new System.EventHandler(this.flipHor_CheckedChanged);
             // 
             // colorButton
             // 
