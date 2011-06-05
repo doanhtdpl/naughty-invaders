@@ -395,6 +395,9 @@ namespace MyGame
                 //Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y);
                 Camera2D.position.Z -= (mouseState.Y - lastMouseState.Y) * (Camera2D.position.Z / 400);
             }
+            else if (keyState.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.Space))
+            {
+            }
 
             //DELETE
             else if (justPressedKey(Microsoft.Xna.Framework.Input.Keys.Delete) && anyEntitySelected())
@@ -445,7 +448,7 @@ namespace MyGame
                     selectedEntities.Clear();
                     selectedEntities = newEntities;
 
-                    if(selectedEntities.Count > 1)
+                    if (selectedEntities.Count > 1)
                         createGroup();
                 }
             }
@@ -454,6 +457,11 @@ namespace MyGame
             else if (currentState != null)
             {
                 currentState.update();
+            }
+
+            if (anyEntitySelected())
+            {
+                currentEntityName.Text = selectedEntities[0].entityName;
             }
 
             lastMouseState = mouseState;
@@ -633,13 +641,25 @@ namespace MyGame
         }
 
 
-        private void flip_CheckedChanged(object sender, EventArgs e)
+        private void flipHor_CheckedChanged(object sender, EventArgs e)
         {
             if (anyEntitySelected())
             {
                 foreach (RenderableEntity2D rent in selectedEntities)
                 {
                     rent.flipHorizontal = flipHorizontalCheck.Checked;
+                }
+            }
+
+            myEditorControl.Focus();
+        }
+
+        private void flipVer_CheckedChanged(object sender, EventArgs e)
+        {
+            if (anyEntitySelected())
+            {
+                foreach (RenderableEntity2D rent in selectedEntities)
+                {
                     rent.flipVertical = flipVerticalCheck.Checked;
                 }
             }
@@ -952,6 +972,40 @@ namespace MyGame
             {
                 EditorHelper.Instance.loadNewLevel(lastLoadedLevel);
                 currentState = null;
+            }
+        }
+
+        private void editEntityButton_Click(object sender, EventArgs e)
+        {
+            if (anyEntitySelected())
+            {
+                if (selectedEntities[0] is Enemy)
+                {
+                }
+                else if (selectedEntities[0] is AnimatedEntity2D)
+                {
+                    string filename = System.IO.Path.GetFullPath("../../../../MyGameContent/textures/animatedProps/" + selectedEntities[0].entityName + ".png");
+                    if (System.IO.File.Exists(filename))
+                        System.Diagnostics.Process.Start(@filename);
+                    else
+                    {
+                        filename = System.IO.Path.GetFullPath("../../../../MyGameContent/textures/animatedProps/" + selectedEntities[0].entityName + ".tga");
+                        if (System.IO.File.Exists(filename))
+                            System.Diagnostics.Process.Start(@filename);
+                    }
+                }
+                else
+                {
+                    string filename = System.IO.Path.GetFullPath("../../../../MyGameContent/textures/staticProps/" + selectedEntities[0].entityName + ".png");
+                    if (System.IO.File.Exists(filename))
+                        System.Diagnostics.Process.Start(@filename);
+                    else
+                    {
+                        filename = System.IO.Path.GetFullPath("../../../../MyGameContent/textures/staticProps/" + selectedEntities[0].entityName + ".tga");
+                        if (System.IO.File.Exists(filename))
+                            System.Diagnostics.Process.Start(@filename);
+                    }
+                }
             }
         }
     }
