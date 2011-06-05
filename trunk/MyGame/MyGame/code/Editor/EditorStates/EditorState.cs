@@ -251,7 +251,7 @@ namespace MyGame
                         }
                             
                         //CONTROL MULTISELECT
-                        if (isPressedKey(Keys.LeftControl))
+                        if (isPressedKey(Keys.LeftControl) || isPressedKey(Keys.RightControl) || isPressedKey(Keys.LeftShift) || isPressedKey(Keys.RightShift))
                             MyEditor.Instance.addEntity(ent);
                         else
                             MyEditor.Instance.selectEntity(ent);
@@ -260,7 +260,7 @@ namespace MyGame
                     }
                     else
                     {
-                        if (!isPressedKey(Keys.LeftControl))
+                        if (!isPressedKey(Keys.LeftControl) && !isPressedKey(Keys.RightControl) && !isPressedKey(Keys.LeftShift) && !isPressedKey(Keys.RightShift))
                             MyEditor.Instance.getSelectedEntities().Clear();
                     }
 

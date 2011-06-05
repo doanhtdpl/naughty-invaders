@@ -38,6 +38,9 @@ namespace MyGame
             this.buttonNewLevel = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.entities = new System.Windows.Forms.TabPage();
+            this.editEntityButton = new System.Windows.Forms.Button();
+            this.label49 = new System.Windows.Forms.Label();
+            this.currentEntityName = new System.Windows.Forms.TextBox();
             this.staticPropertiesPanel = new System.Windows.Forms.Panel();
             this.flipVerticalCheck = new System.Windows.Forms.CheckBox();
             this.flipHorizontalCheck = new System.Windows.Forms.CheckBox();
@@ -344,6 +347,9 @@ namespace MyGame
             // 
             // entities
             // 
+            this.entities.Controls.Add(this.editEntityButton);
+            this.entities.Controls.Add(this.label49);
+            this.entities.Controls.Add(this.currentEntityName);
             this.entities.Controls.Add(this.staticPropertiesPanel);
             this.entities.Controls.Add(this.texturesCombo);
             this.entities.Controls.Add(this.selectGroup);
@@ -364,6 +370,37 @@ namespace MyGame
             this.entities.TabIndex = 0;
             this.entities.Text = "Entities";
             this.entities.UseVisualStyleBackColor = true;
+            // 
+            // editEntityButton
+            // 
+            this.editEntityButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editEntityButton.Location = new System.Drawing.Point(1050, 5);
+            this.editEntityButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editEntityButton.Name = "editEntityButton";
+            this.editEntityButton.Size = new System.Drawing.Size(38, 28);
+            this.editEntityButton.TabIndex = 216;
+            this.editEntityButton.TabStop = false;
+            this.editEntityButton.Text = "Edit";
+            this.editEntityButton.UseVisualStyleBackColor = true;
+            this.editEntityButton.Click += new System.EventHandler(this.editEntityButton_Click);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(876, 13);
+            this.label49.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(41, 13);
+            this.label49.TabIndex = 215;
+            this.label49.Text = "Current";
+            // 
+            // currentEntityName
+            // 
+            this.currentEntityName.Location = new System.Drawing.Point(921, 10);
+            this.currentEntityName.Margin = new System.Windows.Forms.Padding(2);
+            this.currentEntityName.Name = "currentEntityName";
+            this.currentEntityName.Size = new System.Drawing.Size(125, 20);
+            this.currentEntityName.TabIndex = 214;
             // 
             // staticPropertiesPanel
             // 
@@ -407,7 +444,7 @@ namespace MyGame
             this.flipVerticalCheck.TabStop = false;
             this.flipVerticalCheck.Text = "flipV";
             this.flipVerticalCheck.UseVisualStyleBackColor = true;
-            this.flipVerticalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
+            this.flipVerticalCheck.CheckedChanged += new System.EventHandler(this.flipVer_CheckedChanged);
             // 
             // flipHorizontalCheck
             // 
@@ -419,7 +456,7 @@ namespace MyGame
             this.flipHorizontalCheck.TabStop = false;
             this.flipHorizontalCheck.Text = "flipH";
             this.flipHorizontalCheck.UseVisualStyleBackColor = true;
-            this.flipHorizontalCheck.CheckStateChanged += new System.EventHandler(this.flip_CheckedChanged);
+            this.flipHorizontalCheck.CheckedChanged += new System.EventHandler(this.flipHor_CheckedChanged);
             // 
             // colorButton
             // 
@@ -2825,6 +2862,9 @@ namespace MyGame
         private System.Windows.Forms.Button restartLevelButton;
         private System.Windows.Forms.Button editPlayerPosButton;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button editEntityButton;
+        private System.Windows.Forms.Label label49;
+        public System.Windows.Forms.TextBox currentEntityName;
     }
 }
 #endif
