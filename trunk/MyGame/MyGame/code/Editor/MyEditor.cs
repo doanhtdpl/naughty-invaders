@@ -1008,6 +1008,37 @@ namespace MyGame
                 }
             }
         }
+
+        private void enemyCount_Leave(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEnemySpawnZone)
+            {
+                int aux;
+                if(int.TryParse(enemyCount.Text, out aux))
+                    ((EditorState_EditEnemySpawnZone)currentState).setCount(aux);
+            }
+        }
+
+        private void enemyCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r') // PRESS ENTER
+            {
+                if (currentState is EditorState_EditEnemySpawnZone)
+                {
+                    int aux;
+                    if (int.TryParse(enemyCount.Text, out aux))
+                        ((EditorState_EditEnemySpawnZone)currentState).setCount(aux);
+                }
+            }
+        }
+
+        private void enemiesCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currentState is EditorState_EditEnemySpawnZone)
+            {
+                ((EditorState_EditEnemySpawnZone)currentState).setEnemy(enemiesCombo.Text);
+            }
+        }
     }
 }
 #endif
