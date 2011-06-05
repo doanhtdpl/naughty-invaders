@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="522" BGColor="0 0 0 255" CameraMode="Nodes">
+<level nextEntityID="522" BGColor="0 0 0 255" CameraMode="WorldMap">
   <staticProps>
     <staticProp entityName="artmapa-04" worldMatrix="325 0 0 0 0 238 0 0 0 0 1 0 -439.4823 33.16757 36.00544 1" id="5" color="202 239 133 255" flipH="False" flipV="False" />
     <staticProp entityName="artmapa-08" worldMatrix="3750.041 0 0 0 0 2640.656 0 0 0 0 1 0 -84.80828 383.4593 -127.98 1" id="20" color="255 255 255 255" flipH="False" flipV="False" />

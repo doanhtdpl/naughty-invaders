@@ -286,7 +286,9 @@ namespace MyGame
             bigShotCooldownTime -= SB.dt;
             dashCooldownTime -= SB.dt;
 
+            Vector3 lol = position;
             updateCameraMove();
+            Vector3 lol2 = position;
 
             Vector2 direction = Vector2.Zero;
             if (dashVelocity != Vector2.Zero)
