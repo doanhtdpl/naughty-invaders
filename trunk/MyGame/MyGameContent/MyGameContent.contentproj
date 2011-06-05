@@ -245,6 +245,11 @@
     <None Include="fonts\SharkSoftBites.ttf">
       <Name>SharkSoftBites</Name>
     </None>
+    <Compile Include="textures\particles\Effect1.fx">
+      <Name>Effect1</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
     <None Include="xml\characters\bob.xml">
       <Name>bob</Name>
       <Importer>XmlImporter</Importer>
@@ -2034,6 +2039,13 @@
   <ItemGroup>
     <Compile Include="textures\particles\struc-05.png">
       <Name>struc-05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\particles\gotatomate.png">
+      <Name>gotatomate</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
