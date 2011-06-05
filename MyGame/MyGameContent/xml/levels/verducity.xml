@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="4546" BGColor="115 25 53 255" CameraMode="Nodes">
+<level nextEntityID="5258" BGColor="115 25 53 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 1234.158 29.67191 -0.002074921 1" id="283" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-61" worldMatrix="372 0 0 0 0 1734 0 0 0 0 1 0 -1267.9 1535.802 -0.004013973 1" id="285" color="255 255 255 255" flipH="False" flipV="False" />
@@ -63,7 +63,7 @@
     <staticProp entityName="verdu-49" worldMatrix="263 0 0 0 0 294 0 0 0 0 1 0 2330.592 3582.42 0.003512034 1" id="2507" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-50" worldMatrix="84 0 0 0 0 62 0 0 0 0 1 0 2109.748 3119.359 -0.01554545 1" id="2511" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-51" worldMatrix="410.9412 0 0 0 0 1214.891 0 0 0 0 1 0 -1179.737 -42.62636 -163.9998 1" id="2515" color="177 177 177 255" flipH="False" flipV="False" />
-    <staticProp entityName="verdu-52" worldMatrix="442 0 0 0 0 139 0 0 0 0 1 0 1833.226 4681.178 0.005171029 1" id="2519" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-52" worldMatrix="-17.32352 -441.6605 0 0 138.8932 -5.447893 0 0 0 0 1 0 1135.603 12189.29 -481 1" id="2519" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-53" worldMatrix="303 0 0 0 0 308 0 0 0 0 1 0 3249.642 5028.698 -0.01592865 1" id="2523" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-53" worldMatrix="463.145 608.2313 0 0 -697.2493 530.9288 0 0 0 0 1 0 -1165.802 8407.043 -383.9958 1" id="2525" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-53" worldMatrix="303 0 0 0 0 308 0 0 0 0 1 0 -1920.388 6276.821 0.01524666 1" id="2527" color="255 255 255 255" flipH="False" flipV="False" />
@@ -90,7 +90,7 @@
     <staticProp entityName="verdu-44" worldMatrix="552.7466 0 0 0 0 2690.36 0 0 0 0 1 0 -1106.491 6059.3 -200.9907 1" id="3033" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="verdu-35" worldMatrix="101.2534 -50.16587 0 0 56.09284 113.2162 0 0 0 0 1 0 819.081 -173.7287 -249.019 1" id="3036" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-20" worldMatrix="658.886 52.82367 0 0 -87.82631 1095.485 0 0 0 0 1 0 1098.558 6181.911 217.996 1" id="3038" color="250 250 250 250" flipH="True" flipV="False" />
-    <staticProp entityName="verdu-20" worldMatrix="843.0634 654.3056 0 0 -1250.078 1610.708 0 0 0 0 1 0 -437.5473 6665.609 748.996 1" id="3039" color="245 245 245 245" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-20" worldMatrix="843.0634 654.3056 0 0 -1250.078 1610.708 0 0 0 0 1 0 -578.9168 6663.107 748.996 1" id="3039" color="245 245 245 245" flipH="False" flipV="False" />
     <staticProp entityName="verdd-74" worldMatrix="201 0 0 0 0 191 0 0 0 0 1 0 1108.434 713.3312 -1.985504 1" id="3080" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdd-74" worldMatrix="128.1554 0 0 0 0 121.7795 0 0 0 0 1 0 1045.487 753.681 -71.99185 1" id="3082" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdd-74" worldMatrix="133.8995 0 0 0 0 127.2378 0 0 0 0 1 0 1096.987 819.1628 -72.99098 1" id="3084" color="255 255 255 255" flipH="False" flipV="False" />
@@ -145,9 +145,132 @@
     <staticProp entityName="verdu-55" worldMatrix="280.2254 71.27962 169.0322 0 -34.15783 97.18054 15.64733 0 -0.4387616 -0.2911041 0.8501454 0 1472.502 3424.661 -536.9955 1" id="4543" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-44" worldMatrix="552.7466 0 0 0 0 2690.36 0 0 0 0 1 0 3008.394 3893.792 -200.9907 1" id="4544" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="verdu-55" worldMatrix="131.9178 152.9461 118.073 0 -58.4448 41.97144 10.93003 0 -0.192866 -0.4899551 0.8501451 0 1515.909 3359.552 -536.9955 1" id="4545" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 1099.247 11025.23 -0.01174859 1" id="4690" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 1339.228 10840.43 -5.985474 1" id="4692" color="251 190 172 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 1106.801 10599.73 0.005342858 1" id="4698" color="240 240 240 255" flipH="True" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 -1420.937 11031.53 -0.01174859 1" id="4701" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 -1183.704 10846.74 -5.985474 1" id="4702" color="251 190 172 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-19" worldMatrix="461 0 0 0 0 1543 0 0 0 0 1 0 -1413.374 10606.03 0.005342858 1" id="4703" color="240 240 240 255" flipH="True" flipV="False" />
+    <staticProp entityName="verdd-71" worldMatrix="186 0 0 0 0 422 0 0 0 0 1 0 915.8945 10715.95 -0.01510118 1" id="4720" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdd-73" worldMatrix="238 0 0 0 0 260 0 0 0 0 1 0 -2037.725 11957.42 -0.008583224 1" id="4734" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-12" worldMatrix="351.8698 -434.4182 0 0 3373.212 2732.232 0 0 0 0 1 0 9.919827 10117.17 0.006277466 1" id="4760" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-12" worldMatrix="349.4514 -263.7765 347.6167 0 3348.772 2147.992 -1736.521 0 -0.1189334 0.7297417 0.6732995 0 563.5984 10656.61 0.006277466 1" id="4763" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-12" worldMatrix="638.938 -874.8561 0 0 3252.918 2375.72 0 0 0 0 1 0 -3.948792 10319.09 328.0194 1" id="4784" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-12" worldMatrix="320.9714 -1034.694 0 0 3847.234 1193.446 0 0 0 0 1 0 205.9059 5121.862 1043.019 1" id="4787" color="20 20 20 20" flipH="True" flipV="False" />
+    <staticProp entityName="verdu-12" worldMatrix="186.854 -526.8939 0 0 4091.276 1450.902 0 0 0 0 1 0 53.90045 5185.372 707.0063 1" id="4788" color="140 140 140 140" flipH="True" flipV="False" />
+    <staticProp entityName="bg01_struct-29" worldMatrix="539 0 0 0 0 268 0 0 0 0 1 0 -958.6838 5293.692 0.01316313 1" id="4882" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-30" worldMatrix="116.5768 -193.852 -5.020165 0 335.8203 204.2239 -87.71311 0 0.1978605 0.09371877 0.9757397 0 -166.9166 5254.855 703.0114 1" id="4978" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="88.82852 70.37476 0 0 -127.1194 160.4529 0 0 0 0 1 0 -6.525299 5311.51 687.0054 1" id="4982" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="-68.00294 68.85071 0 0 -139.481 -137.7636 0 0 0 0 1 0 188.8637 5371.219 808.0054 1" id="4987" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="-28.64561 57.93343 0 0 -104.6464 -51.74318 0 0 0 0 1 0 79.92337 5350.496 687.0054 1" id="4988" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="-23.60068 -48.56059 0 0 80.56796 -39.15641 0 0 0 0 1 0 -396.3917 5160.648 642.0054 1" id="4989" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="39.01658 -37.32063 0 0 61.91949 64.73328 0 0 0 0 1 0 -477.7552 5089.455 768.0054 1" id="4990" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="26.63997 -27.60493 0 0 45.79996 44.19898 0 0 0 0 1 0 -399.782 5084.37 687.0054 1" id="4991" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="31.7556 -32.90585 0 0 43.46373 41.94442 0 0 0 0 1 0 324.0137 5409.823 687.0054 1" id="4992" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="bg01str2-31" worldMatrix="-18.32845 -41.89607 0 0 55.33849 -24.20916 0 0 0 0 1 0 405.3771 5458.98 625.0054 1" id="4993" color="185 185 185 255" flipH="False" flipV="False" />
+    <staticProp entityName="verd-16" worldMatrix="401.95 1392.942 38.14625 0 -2611.147 754.2394 -27.81756 0 -0.01712865 -0.0224318 0.9996017 0 1112.651 12083.61 -1456.998 1" id="4998" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verd-16" worldMatrix="-887.8164 1146.139 38.14625 0 -2149.116 -1663.812 -27.81756 0 0.008012708 -0.02706238 0.9996017 0 -1264.402 11872.92 -1425.998 1" id="5001" color="255 255 255 255" flipH="True" flipV="True" />
+    <staticProp entityName="verdu-28" worldMatrix="401 0 0 0 0 1413 0 0 0 0 1 0 1190.675 12338.64 -0.003478354 1" id="5158" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-28" worldMatrix="659.8729 0 0 0 0 2325.188 0 0 0 0 1 0 -1489.229 11826.52 -336.0125 1" id="5160" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="433.0001 -3.071958E-07 0 0 3.864911E-05 914.9999 0 0 0 0 1 0 -1098.795 14462.06 0.005323374 1" id="5168" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="433.0001 -3.071958E-07 0 0 3.864911E-05 914.9999 0 0 0 0 1 0 -703.2207 14584.22 0.01724565 1" id="5170" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="433.0001 -3.071958E-07 0 0 3.864911E-05 914.9999 0 0 0 0 1 0 -371.6343 14543.5 -0.01303297 1" id="5172" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="433.0001 -3.071958E-07 0 0 3.864911E-05 914.9999 0 0 0 0 1 0 -63.31827 14566.77 -0.006227782 1" id="5174" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="433.0001 -3.071958E-07 0 0 3.864911E-05 914.9999 0 0 0 0 1 0 221.7287 14566.77 -0.005772903 1" id="5176" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="432.9784 -4.32991 0 0 9.1498 914.9543 0 0 0 0 1 0 820.9529 14542.9 -0.01020425 1" id="5178" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-31" worldMatrix="432.9784 -4.32991 0 0 9.1498 914.9543 0 0 0 0 1 0 1199.29 14562.38 -0.006569712 1" id="5180" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-32" worldMatrix="1181 0 0 0 0 519 0 0 0 0 1 0 2372.985 13174.33 -0.003396296 1" id="5184" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-32" worldMatrix="1181 0 0 0 0 519 0 0 0 0 1 0 2338.081 12668.23 0.01222213 1" id="5186" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-32" worldMatrix="1181 0 0 0 0 519 0 0 0 0 1 0 2390.437 12412.27 -0.01203769 1" id="5188" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-32" worldMatrix="1181 0 0 0 0 519 0 0 0 0 1 0 2396.254 12028.32 -0.0007003653 1" id="5190" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-33" worldMatrix="362 0 0 0 0 458 0 0 0 0 1 0 -2193.584 13191.78 -0.01270498 1" id="5194" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-34" worldMatrix="407 0 0 0 0 222 0 0 0 0 1 0 -1885.268 12732.22 -0.0151784 1" id="5198" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-35" worldMatrix="182 0 0 0 0 180 0 0 0 0 1 0 -2373.92 12429.72 -0.01434475 1" id="5202" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-35" worldMatrix="182 0 0 0 0 180 0 0 0 0 1 0 -1943.441 12295.92 0.001705122 1" id="5204" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-35" worldMatrix="182 0 0 0 0 180 0 0 0 0 1 0 -2211.036 12662.41 0.004312386 1" id="5206" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-35" worldMatrix="182 0 0 0 0 180 0 0 0 0 1 0 -2280.844 12191.21 -0.01846031 1" id="5208" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-36" worldMatrix="269 0 0 0 0 407 0 0 0 0 1 0 -2717.139 12802.02 -0.0187728 1" id="5212" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-37" worldMatrix="151 0 0 0 0 718 0 0 0 0 1 0 -1658.394 13139.43 0.003456697 1" id="5216" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="279 0 0 0 0 221 0 0 0 0 1 0 -1891.085 13081.25 -0.005430989 1" id="5220" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="279 0 0 0 0 221 0 0 0 0 1 0 1523.661 12993.99 -0.01495499 1" id="5222" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-39" worldMatrix="199 0 0 0 0 418 0 0 0 0 1 0 1570.199 12668.23 0.003764078 1" id="5226" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-827.7448 51.04771 0 0 -44.92624 -728.4844 0 0 0 0 1 0 -8.606323 13434.85 17.98505 1" id="5229" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0358 -605.8298 0 0 0 0 1 0 424.646 13331.73 -28.01495 1" id="5230" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0359 -605.8298 0 0 0 0 1 0 854.9231 13097.25 -115.015 1" id="5231" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-743.6975 -366.9898 0 0 322.9816 -654.5157 0 0 0 0 1 0 -492.0402 13340.79 -74.01495 1" id="5232" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-911.599 -449.8438 0 0 395.9001 -802.2831 0 0 0 0 1 0 -997.0842 13061.37 -156.015 1" id="5233" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-743.6975 -366.9898 0 0 322.9816 -654.5157 0 0 0 0 1 0 -492.0402 13340.79 -585.015 1" id="5234" color="191 191 191 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-911.599 -449.8438 0 0 395.9001 -802.2831 0 0 0 0 1 0 -997.0842 13061.37 -667.0149 1" id="5235" color="191 191 191 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-827.7448 51.04771 0 0 -44.92624 -728.4844 0 0 0 0 1 0 -8.606323 13434.85 -493.015 1" id="5236" color="191 191 191 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0358 -605.8298 0 0 0 0 1 0 424.646 13331.73 -539.015 1" id="5237" color="191 191 191 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0359 -605.8298 0 0 0 0 1 0 854.9231 13097.25 -626.0149 1" id="5238" color="191 191 191 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-743.6975 -366.9898 0 0 322.9816 -654.5157 0 0 0 0 1 0 -492.0402 13340.79 -1288.015 1" id="5239" color="167 167 167 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-911.599 -449.8438 0 0 395.9001 -802.2831 0 0 0 0 1 0 -997.0842 13061.37 -1370.015 1" id="5240" color="167 167 167 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-827.7448 51.04771 0 0 -44.92624 -728.4844 0 0 0 0 1 0 -8.606323 13434.85 -1196.015 1" id="5241" color="167 167 167 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0358 -605.8298 0 0 0 0 1 0 424.646 13331.73 -1242.015 1" id="5242" color="167 167 167 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-688.3779 462.4969 0 0 -407.0359 -605.8298 0 0 0 0 1 0 854.9231 13097.25 -1329.015 1" id="5243" color="167 167 167 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-453.9333 694.0549 0 0 -610.826 -399.4991 0 0 0 0 1 0 1181.89 12783.44 39.98505 1" id="5244" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-556.4161 850.7487 0 0 -748.7297 -489.6926 0 0 0 0 1 0 844.8921 13250.45 -42.01495 1" id="5245" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-49.06986 827.8645 0 0 -728.5897 -43.1856 0 0 0 0 1 0 1332.126 12315.64 131.985 1" id="5246" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="376.1752 739.0939 0 0 -650.4642 331.0655 0 0 0 0 1 0 1282.656 11872.73 85.98505 1" id="5247" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="376.1752 739.0938 0 0 -650.4642 331.0656 0 0 0 0 1 0 1103.06 11416.61 -1.014954 1" id="5248" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="227.2818 -797.5655 0 0 701.9241 200.0269 0 0 0 0 1 0 -1335.017 11831.27 63.98505 1" id="5249" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="278.5945 -977.6284 0 0 860.3944 245.1864 0 0 0 0 1 0 -1080.651 11271.03 -18.01495 1" id="5250" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-199.055 -805.0742 0 0 708.5326 -175.1849 0 0 0 0 1 0 -1419.511 12338.53 155.985 1" id="5251" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-578.7379 -593.995 0 0 522.7652 -509.3374 0 0 0 0 1 0 -1200.714 12738.78 109.985 1" id="5252" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-38" worldMatrix="-578.7379 -593.9949 0 0 522.765 -509.3376 0 0 0 0 1 0 -818.0872 13105.89 22.98505 1" id="5253" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-28" worldMatrix="659.8729 0 0 0 0 2325.188 0 0 0 0 1 0 1447.208 11965.49 -491.0125 1" id="5254" color="255 255 255 255" flipH="True" flipV="False" />
+    <staticProp entityName="verdu-52" worldMatrix="-17.32356 -441.6604 0 0 138.8932 -5.447909 0 0 0 0 1 0 -1172.172 12071.12 -333.9948 1" id="5255" color="255 255 255 255" flipH="False" flipV="True" />
+    <staticProp entityName="verdu-52" worldMatrix="75.07774 -281.3221 0 0 88.47009 23.61042 0 0 0 0 1 0 1107.989 11838.59 -481 1" id="5256" color="255 255 255 255" flipH="False" flipV="False" />
+    <staticProp entityName="verdu-52" worldMatrix="-129.0556 -261.0047 0 0 82.08067 -40.58537 0 0 0 0 1 0 -1219.893 11761.27 -481 1" id="5257" color="255 255 255 255" flipH="False" flipV="True" />
   </staticProps>
   <animatedProps />
-  <groups />
+  <groups>
+    <group>
+      <entity id="4701" />
+      <entity id="4702" />
+      <entity id="4703" />
+    </group>
+    <group>
+      <entity id="4787" />
+      <entity id="4788" />
+    </group>
+    <group>
+      <entity id="5232" />
+      <entity id="5233" />
+      <entity id="5229" />
+      <entity id="5230" />
+      <entity id="5231" />
+    </group>
+    <group>
+      <entity id="5234" />
+      <entity id="5235" />
+      <entity id="5236" />
+      <entity id="5237" />
+      <entity id="5238" />
+    </group>
+    <group>
+      <entity id="5239" />
+      <entity id="5240" />
+      <entity id="5241" />
+      <entity id="5242" />
+      <entity id="5243" />
+    </group>
+    <group>
+      <entity id="5244" />
+      <entity id="5245" />
+      <entity id="5246" />
+      <entity id="5247" />
+      <entity id="5248" />
+    </group>
+    <group>
+      <entity id="5249" />
+      <entity id="5250" />
+      <entity id="5251" />
+      <entity id="5252" />
+      <entity id="5253" />
+    </group>
+  </groups>
   <enemies />
   <enemySpawnZones />
   <levelCollisions />
