@@ -242,9 +242,9 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="fonts\SharkSoftBites.ttf">
+    <None Include="fonts\SharkSoftBites.ttf">
       <Name>SharkSoftBites</Name>
-    </Compile>
+    </None>
     <None Include="xml\characters\bob.xml">
       <Name>bob</Name>
       <Importer>XmlImporter</Importer>
