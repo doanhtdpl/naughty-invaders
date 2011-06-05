@@ -102,6 +102,7 @@
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\KingTomato.cs" />
+    <Compile Include="code\Gameplay\Enemies\Macedonia.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
     <Compile Include="code\Gameplay\Enemies\tomato.cs" />
