@@ -23,6 +23,7 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            base.gotHitAtPart(ce, partIndex);
             return true;
         }
 

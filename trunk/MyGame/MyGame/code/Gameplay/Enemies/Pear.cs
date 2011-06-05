@@ -41,6 +41,7 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            base.gotHitAtPart(ce, partIndex);
             life -= ce.damage;
             return life > 0;
         }
@@ -48,7 +49,6 @@ namespace MyGame
         public override void die()
         {
             base.die();
-            ParticleManager.Instance.addParticles("grapeDies", this.position, Vector3.Zero, Color.Green, 1.2f);
         }
 
         public override void update()

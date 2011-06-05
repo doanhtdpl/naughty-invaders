@@ -23,11 +23,13 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
             return true;
         }
 
         public override void die()
         {
+            ParticleManager.Instance.addParticles(entityName + "Dies", this.position, Vector3.Zero, Color.White);
             OrbManager.Instance.addRandomOrbs( enemyLevel, position2D);
             base.die();
         }
