@@ -81,8 +81,7 @@ namespace MyGame
             UpdateGameTime();
 
             //Update
-            SB.gameTime = gameTime;
-            SB.dt = gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            SB.updateGameTime(gameTime);
 
             GamerManager.updateInputs();
             if (!MyEditor.Instance.update())

@@ -14,6 +14,9 @@ namespace MyGame
         static public Camera2D cam;
         public static GameTime gameTime;   
         public static float dt;
+#if DEBUG
+        static float dtMultiplier = 1.0f;
+#endif
         static public Random random;
         public const float SafeAreaPortion = 0.05f;
         public static SpriteFont font;
@@ -23,6 +26,30 @@ namespace MyGame
         public static void loadContent()
         {
             font = content.Load<SpriteFont>("fonts/font");
+        }
+        public static void updateGameTime(GameTime gameTime)
+        {
+            SB.gameTime = gameTime;
+            SB.dt = gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+
+#if DEBUG
+            if (GamerManager.getMainControls() != null)
+            {
+                if (GamerManager.getMainControls().RB_firstPressed())
+                {
+                    dtMultiplier += 0.5f;
+                }
+                if (GamerManager.getMainControls().LB_firstPressed())
+                {
+                    dtMultiplier -= 0.5f;
+                }
+                if (GamerManager.getMainControls().LB_pressed() && GamerManager.getMainControls().RB_pressed())
+                {
+                    dtMultiplier = 1.0f;
+                }
+            }
+            SB.dt *= dtMultiplier;
+#endif
         }
 
         public static Matrix getWVP(Vector2 v)
