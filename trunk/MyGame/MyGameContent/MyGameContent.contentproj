@@ -242,6 +242,9 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="fonts\SharkSoftBites.ttf">
+      <Name>SharkSoftBites</Name>
+    </Compile>
     <None Include="xml\characters\bob.xml">
       <Name>bob</Name>
       <Importer>XmlImporter</Importer>
@@ -318,6 +321,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -1894,6 +1898,13 @@
   <ItemGroup>
     <Compile Include="textures\projectiles\Anim_GrapeWeapon.png">
       <Name>Anim_GrapeWeapon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\particles\GrapeDeath.png">
+      <Name>GrapeDeath</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
