@@ -15,17 +15,19 @@ namespace MyGame
     {
         MenuElement leftCursor;
         MenuElement rightCursor;
+        float selectorDistance;
 
-        public MenuCursor(string textureName, Vector2 scale, bool drawLinkedElement = false)
+        public MenuCursor(string textureName, Vector2 scale, float selectorDistance, bool drawLinkedElement = false)
         {
             leftCursor = new MenuElement(textureName, Vector2.Zero, scale);
             rightCursor = new MenuElement(textureName, Vector2.Zero, scale);
+            this.selectorDistance = selectorDistance;
         }
 
         public void updatePositionAndScale(Vector2 position, Vector2 scale)
         {
-            leftCursor.position = position + new Vector2(-240, 0);
-            rightCursor.position = position + new Vector2(260, 0);
+            leftCursor.position = position + new Vector2(-selectorDistance, 0);
+            rightCursor.position = position + new Vector2(selectorDistance, 0);
 
         }
 
@@ -48,11 +50,11 @@ namespace MyGame
         public List<MenuElement> menuElements { get; set; }
         public List<MenuText> menuTexts { get; set; }
 
-        public Menu()
+        public Menu(float selectorDistance)
         {
             menuElements = new List<MenuElement>();
             menuTexts = new List<MenuText>();
-            selectionCursor = new MenuCursor("Selector", new Vector2(0.4f, 0.4f));
+            selectionCursor = new MenuCursor("Selector", new Vector2(0.4f, 0.4f), selectorDistance);
         }
 
         public void update()
@@ -60,7 +62,7 @@ namespace MyGame
             ControlPad cp = GamerManager.getMainControls();
 
             // if the button does something in his own update, return to skip other menu updates
-            if (currentNode.updateOptions()) return;
+            if (currentNode.update()) return;
 
             if (cp.Up_firstPressed() && currentNode.upNode != null)
             {

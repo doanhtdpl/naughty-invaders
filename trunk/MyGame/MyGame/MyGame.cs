@@ -15,6 +15,7 @@ namespace MyGame
 {
     public class Game : Microsoft.Xna.Framework.Game
     {
+        public static bool forceExit = false;
         StateManager stateManager = new StateManager();
 
 #if !EDITOR
@@ -78,13 +79,13 @@ namespace MyGame
 
             GamerManager.updateInputs();
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            stateManager.update();
+            base.Update(gameTime);
+
+            if (forceExit)
             {
                 this.Exit();
             }
-
-            stateManager.update();
-            base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)

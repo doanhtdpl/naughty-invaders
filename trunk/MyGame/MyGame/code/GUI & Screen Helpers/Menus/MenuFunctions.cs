@@ -12,6 +12,15 @@ namespace MyGame
 {
     class MenuFunctions
     {
+        public static void startGame()
+        {
+            StateManager.dequeueState(1);
+            StateManager.gameStates.Add(new StateWorldMap());
+        }
+        public static void goToOptions()
+        {
+            StateManager.gameStates.Add(new StateOptions());
+        }
         public static void unpause()
         {
             StateManager.dequeueState(1);
@@ -25,6 +34,11 @@ namespace MyGame
             StateManager.clearStates();
             StateManager.gameStates.Add(new StateWorldMap());
             //SoundManager.playSound("pause");
+        }
+        public static void exitToArcade()
+        {
+            StateManager.clearStates();
+            Game.forceExit = true;
         }
 
         public static void buySkill(string skillName, MenuElement menuElement)

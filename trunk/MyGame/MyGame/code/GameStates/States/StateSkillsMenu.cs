@@ -28,7 +28,7 @@ namespace MyGame
 
         void initializeMenu()
         {
-            menu = new Menu();
+            menu = new Menu(250.0f);
             Vector2 scale = new Vector2(0.7f, 0.7f);
 
             MenuElement wish = new MenuElement("wishmenu", new Vector2(320, -50), scale * 0.8f);

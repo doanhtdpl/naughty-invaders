@@ -14,7 +14,7 @@ namespace MyGame
 
         void initializeMenu()
         {
-            menu = new Menu();
+            menu = new Menu(250.0f);
             Vector2 scale = new Vector2(0.8f, 0.8f);
             MenuElement mbHeader = new MenuElement("smallHeader", new Vector2(0, 200), scale);
             MenuElement mb1 = new MenuElement("option1", new Vector2(0, 50), scale);

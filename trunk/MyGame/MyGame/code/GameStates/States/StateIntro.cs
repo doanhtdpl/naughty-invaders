@@ -43,7 +43,6 @@ namespace MyGame
 
         public override void render()
         {
-            GraphicsManager.Instance.graphicsDevice.Clear(Color.White);
             //GraphicsManager.Instance.beginAlphaRender();
             logo.render(SB.getWorldMatrix(new Vector3(0.0f, 0.0f, 0.0f), 0.0f, 0.0f));
         }

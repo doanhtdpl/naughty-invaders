@@ -22,7 +22,7 @@ namespace MyGame
 #if EDITOR
             gameStates.Add(new StateGame());
 #else
-            gameStates.Add(new StateWorldMap());
+            gameStates.Add(new StateMainMenu());
 #endif
 #else
             gameStates.Add(new StateIntro());
@@ -45,6 +45,7 @@ namespace MyGame
 
         public void render()
         {
+            GraphicsManager.Instance.graphicsDevice.Clear(Color.Black);
             for (int i = 0; i < gameStates.Count; i++)
             {
                 if (gameStates[i].loaded)
