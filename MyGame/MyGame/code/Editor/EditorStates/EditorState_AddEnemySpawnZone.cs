@@ -25,14 +25,17 @@ namespace MyGame
         {
             base.enter();
 
-            MyEditor.Instance.enemiesCombo.Items.Clear();
-            var textures = SB.content.LoadContent("xml/enemies");
-            for (int i = 0; i < textures.Count(); i++)
+            if (MyEditor.Instance.enemiesCombo.Items.Count == 0)
             {
-                MyEditor.Instance.enemiesCombo.Items.Add(textures[i]);
-            }
+                MyEditor.Instance.enemiesCombo.Items.Clear();
+                var textures = SB.content.LoadContent("xml/enemies");
+                for (int i = 0; i < textures.Count(); i++)
+                {
+                    MyEditor.Instance.enemiesCombo.Items.Add(textures[i]);
+                }
 
-            MyEditor.Instance.enemiesCombo.SelectedIndex = 0;
+                MyEditor.Instance.enemiesCombo.SelectedIndex = 0;
+            }
             MyEditor.Instance.myEditorControl.Focus();
 
             MyEditor.Instance.enemyCount.Show();

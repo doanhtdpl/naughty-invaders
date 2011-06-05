@@ -475,6 +475,19 @@ namespace MyGame
             if (currentState != null)
                 currentState.render();
 
+            if (!(currentState is EditorState_AddEnemySpawnZone) && !(currentState is EditorState_EditEnemySpawnZone))
+            {
+                foreach (EnemySpawnZone e in EnemyManager.Instance.getEnemySpawnZones())
+                {
+                    DebugManager.Instance.addRectangle(e.getZone(), Color.Blue, 1.0f);
+
+                    Vector3 pos = GraphicsManager.Instance.graphicsDevice.Viewport.Project(e.getZone().Center.toVector3(), Camera2D.projection, Camera2D.view, Matrix.Identity);
+                    DebugManager.Instance.addText(pos.toVector2(), e.getEnemyName());
+                    DebugManager.Instance.addText(pos.toVector2() + new Vector2(0, 15), e.getTotalSpawns().ToString());
+                }
+
+            }
+
             foreach (Entity2D ent in selectedEntities)
             {
                 if (ent != null)
