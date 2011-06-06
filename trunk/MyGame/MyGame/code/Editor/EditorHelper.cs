@@ -325,6 +325,9 @@ namespace MyGame
         // loads the specified file into the editor
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
+            // TODO ugly! this must have to be set with the editor and loaded from xml
+            GamerManager.getMainPlayer().mode = Player.tMode.Arcade;
+
             //fileName = SB.content.RootDirectory + "/xml/levels/" + fileName + ".xml";
             List<Entity2D> list = new List<Entity2D>();
             if (File.Exists(fileName))

@@ -52,7 +52,7 @@ namespace MyGame
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.None;
             Camera2D.position = new Vector3(0.0f, 0.0f, 2000.0f);
 
-            EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
+            //EntityManager.Instance.registerEntity(GamerManager.getGamerEntity(0).Player);
             onionElder = new AnimatedEntity2D("animatedProps", "onionElder", new Vector3(0.0f, 150.0f, 0.0f), 0.0f, Color.White);
 
             kingTomato = (KingTomato)EnemyManager.Instance.addEnemy("kingTomato", new Vector3(1200.0f, 1000.0f, 0));
@@ -301,7 +301,6 @@ namespace MyGame
         
         public override void dispose()
         {
-            GamerManager.getMainPlayer().mode = Player.tMode.Arcade;
         }
     }
 }
