@@ -30,7 +30,7 @@ namespace MyGame
         {
             base.update();
 
-            Vector3 position;
+            Vector3 position = Vector3.Zero;
             position.X = Calc.randomScalar(Camera2D.screenWithMargins.Left, Camera2D.screenWithMargins.Right);
             position.Y = Camera2D.screenWithMargins.Bottom;
             position.Z = 0.0f;

@@ -350,7 +350,7 @@ namespace MyGame
 
                     if (levelNode.Attributes("CameraMode").Count() > 0)
                     {
-                        CameraManager.Instance.cameraMode = (CameraManager.tCameraMode)Enum.Parse(typeof(CameraManager.tCameraMode), levelNode.Attribute("CameraMode").Value);
+                        CameraManager.Instance.cameraMode = (CameraManager.tCameraMode)Enum.Parse(typeof(CameraManager.tCameraMode), levelNode.Attribute("CameraMode").Value, true);
                     }
                 }
 

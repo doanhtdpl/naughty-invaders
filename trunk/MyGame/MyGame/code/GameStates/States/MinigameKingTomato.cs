@@ -182,7 +182,7 @@ namespace MyGame
 
         void spawnTomato()
         {
-            Vector3 position;
+            Vector3 position = Vector3.Zero;
             if (Calc.randomScalar() > 0.5f)
             {
                 position.X = Calc.randomScalar(Camera2D.screen.Left + 400, Camera2D.screen.Right);

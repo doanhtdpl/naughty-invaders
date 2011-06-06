@@ -45,6 +45,7 @@
     <Optimize>false</Optimize>
     <DefineConstants>DEBUG;TRACE;XBOX;XBOX360</DefineConstants>
     <XnaCompressContent>true</XnaCompressContent>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Xbox 360' ">
     <OutputPath>bin\Xbox 360\Release</OutputPath>
@@ -114,6 +115,7 @@
     <Compile Include="code\Gameplay\Orbs\OrbManager.cs" />
     <Compile Include="code\Gameplay\PlayerData.cs" />
     <Compile Include="code\Gameplay\Projectiles\GarlicGunShot.cs" />
+    <Compile Include="code\Gameplay\Projectiles\MacedoniaFruit.cs" />
     <Compile Include="code\Gameplay\Projectiles\WatermelonProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\PlayerBigShot.cs" />
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />

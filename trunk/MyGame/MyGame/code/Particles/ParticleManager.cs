@@ -119,6 +119,7 @@ namespace MyGame
 
         public void saveXML()
         {
+#if EDITOR
             XmlTextWriter writer = new XmlTextWriter("../../../../MyGameContent/xml/particles/particleSystems2.xml", null);
             writer.Formatting = Formatting.Indented;
             writer.WriteStartDocument();
@@ -163,6 +164,7 @@ namespace MyGame
             writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Close();
+#endif
         }
 
         public void update()
