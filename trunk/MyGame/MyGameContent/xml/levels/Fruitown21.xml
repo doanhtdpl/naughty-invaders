@@ -383,11 +383,8 @@
   <levelCollisions />
   <camera>
     <cameraNode id="0" position="0 0 1600" target="0 0 0" isFirst="True" link="1" />
-    <cameraNode id="1" position="0 20000 1600" target="0 20000 0" isFirst="False" link="2" />
-    <cameraNode id="2" position="10000 20000 1600" target="10000 20000 0" isFirst="False" />
-    <cameraNode id="0" position="0 0 1400" target="0 0 0" isFirst="True" link="1" />
-    <cameraNode id="1" position="0 20000 1400" target="0 20000 0" isFirst="False" link="2" />
-    <cameraNode id="2" position="10000 20000 1400" target="10000 20000 0" isFirst="False" />
+    <cameraNode id="1" position="31.46989 15269.48 1600" target="31.46989 15269.48 0" isFirst="False" link="2" />
+    <cameraNode id="2" position="6.877405 16081.13 2177.232" target="6.877405 16081.13 0" isFirst="False" />
   </camera>
   <particles />
   <triggers />

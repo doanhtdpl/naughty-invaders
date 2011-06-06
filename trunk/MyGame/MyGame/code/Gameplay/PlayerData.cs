@@ -36,7 +36,7 @@ namespace MyGame
         {
             levelsPassed["final_Level01"] = true;
             levelsPassed["onionVillage"] = true;
-            levelsPassed["epilepticMacedonia"] = false;
+            levelsPassed["macedonia"] = false;
             levelsPassed["level2"] = false;
         }
         // initialize the tree with the costs and links between skills
