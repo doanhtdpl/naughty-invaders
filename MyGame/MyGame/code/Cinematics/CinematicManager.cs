@@ -164,5 +164,12 @@ namespace MyGame
                 cinematicToPlay.render();
             }
         }
+
+        public void clean()
+        {
+            setUpdatableOnPlayersAndEnemies(true);
+            cinematics.Clear();
+            cinematicToPlay = null;
+        }
     }
 }

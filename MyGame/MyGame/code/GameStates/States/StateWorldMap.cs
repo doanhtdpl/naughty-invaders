@@ -55,10 +55,10 @@ namespace MyGame
             NetworkNode<WorldMapLocation> nn1 = nodes.addNode(ml1, new Vector3(-835.0f, 110.0f, 200.0f));
             WorldMapLocation ml2 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
             NetworkNode<WorldMapLocation> nn2 = nodes.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
-            WorldMapLocation ml3 = new WorldMapLocation("epilepticMacedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
-            NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml2, new Vector3(-600.0f, -160.0f, 200.0f));
+            WorldMapLocation ml3 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
+            NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
             WorldMapLocation ml4 = new WorldMapLocation("level2", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml2, new Vector3(0.0f, -100.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml4, new Vector3(0.0f, -100.0f, 200.0f));
             currentNode = nn1;
             nodes.addDoubleLink(nn1, nn2);
             nodes.addDoubleLink(nn2, nn3);

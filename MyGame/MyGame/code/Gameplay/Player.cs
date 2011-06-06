@@ -137,9 +137,8 @@ namespace MyGame
             mode = tMode.GarlicGun;
         }
 
-        public void updateArcadeMode(Vector2 direction, ControlPad controls)
+        void checkDash(Vector2 direction, ControlPad controls)
         {
-            // dash move
             if (owner.data.skills["dash1"].obtained)
             {
                 // update dash velocity
@@ -147,11 +146,23 @@ namespace MyGame
 
                 if (controls.A_firstPressed() && dashCooldownTime <= 0.0f)
                 {
-                    //playAction("attack");
                     dashVelocity = direction * DASH_VELOCITY;
                     dashCooldownTime = owner.data.getDashCooldown();
                 }
             }
+        }
+        void updatePositionNormally(Vector2 direction)
+        {
+            Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
+            GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
+        }
+        void updateArcadeMode(Vector2 direction, ControlPad controls)
+        {
+            updatePositionNormally(direction);
+
+            // dash move
+            checkDash(direction, controls);
+            
             // fast shot attack
             if (controls.X_pressed())
             {
@@ -209,8 +220,10 @@ namespace MyGame
                 }
             }
         }
-        public void updateGarlicGunMode(ControlPad controls)
+        void updateGarlicGunMode(Vector2 direction, ControlPad controls)
         {
+            updatePositionNormally(direction);
+
             garlicGunCooldownTime -= SB.dt;
 
             // orient the player in the direction of move
@@ -235,6 +248,16 @@ namespace MyGame
                     ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
                 }
             }
+        }
+        void updateSavingiItemsMode(Vector2 direction, ControlPad controls)
+        {
+            direction.Y = 0.0f;
+            if (direction.X > 0.75f) direction.X = 1.0f;
+            if (direction.X < -0.75f) direction.X = -1.0f;
+
+            updatePositionNormally(direction);
+
+            checkDash(direction, controls);
         }
         public void updateInvulnerableAfterHit()
         {
@@ -297,21 +320,8 @@ namespace MyGame
             }
             else // in the middle of a dash the controls are blocked...
             {
-                if (mode == tMode.SavingItems)
-                {
-                    direction = controls.getLS();
-                    direction.Y = 0.0f;
-                    if (direction.X > 0.75f) direction.X = 1.0f;
-                    if (direction.X < -0.75f) direction.X = -1.0f;
-                }
-                else
-                {
-                    direction = controls.getLS();
-                }
+                direction = controls.getLS();
             }
-
-            Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
-            GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
 
             switch (mode)
             {
@@ -319,9 +329,10 @@ namespace MyGame
                     updateArcadeMode(direction, controls);
                     break;
                 case tMode.GarlicGun:
-                    updateGarlicGunMode(controls);
+                    updateGarlicGunMode(direction, controls);
                     break;
                 case tMode.SavingItems:
+                    updateSavingiItemsMode(direction, controls);
                     break;
             }
 

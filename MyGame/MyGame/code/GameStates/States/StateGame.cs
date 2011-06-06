@@ -20,7 +20,11 @@ namespace MyGame
 
         public StateGame(string level)
         {
-            this.level = level; 
+            this.level = level;
+            if (level != null)
+            {
+                EditorHelper.Instance.loadNewLevelFromGame(level);
+            }
         }
         public StateGame() { }
 
@@ -32,10 +36,6 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             SoundManager.Instance.loadXML();
-            if (level != null)
-            {
-                EditorHelper.Instance.loadNewLevelFromGame(level);
-            }
         }
 
         public void restartLevel()

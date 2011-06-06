@@ -34,6 +34,32 @@ namespace MyGame
             base.die();
         }
 
+        protected bool updateInOutStage(float speed = 50.0f, bool updateIn = true, bool updateOut = true)
+        {
+            // entering screen...
+            if (updateIn)
+            {
+                float distanceToLimit = position.Y - (Camera2D.screen.Bottom - (Camera2D.screen.Height * 0.18f));
+                if (distanceToLimit > 0.0f)
+                {
+                    positionY -= (speed + distanceToLimit) * SB.dt;
+                    return true;
+                }
+            }
+            // exiting screen...
+            if (updateOut)
+            {
+                float distanceToLimit = (Camera2D.screen.Top + (Camera2D.screen.Height * 0.35f)) - position.Y;
+                if (distanceToLimit > 0.0f)
+                {
+                    positionY -= (speed + distanceToLimit) * SB.dt;
+                    playAction("idle");
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public override void update()
         {
             base.update();

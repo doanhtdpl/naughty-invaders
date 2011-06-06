@@ -54,6 +54,7 @@ namespace MyGame
         public override void update()
         {
             base.update();
+            if (updateInOutStage()) return;
 
             // always move down
             position += new Vector3(0, -SPEED, 0) * SB.dt;
