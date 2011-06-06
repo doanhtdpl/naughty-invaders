@@ -2,7 +2,6 @@
 <level nextEntityID="522" BGColor="0 0 0 255" CameraMode="WorldMap">
   <staticProps>
     <staticProp entityName="artmapa-04" worldMatrix="325 0 0 0 0 238 0 0 0 0 1 0 -439.4823 33.16757 36.00544 1" id="5" color="202 239 133 255" flipH="False" flipV="False" />
-    <staticProp entityName="artmapa-08" worldMatrix="3750.041 0 0 0 0 2640.656 0 0 0 0 1 0 -84.80828 383.4593 -127.98 1" id="20" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="artmapa-05" worldMatrix="405 0 0 0 0 297 0 0 0 0 1 0 60.85678 -86.87659 73.98105 1" id="27" color="245 188 236 255" flipH="False" flipV="False" />
     <staticProp entityName="artmapa-10" worldMatrix="1116.444 0 0 0 0 313.6079 0 0 0 0 1 0 -1198.447 550.5281 592.9806 1" id="40" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="artmapa-11" worldMatrix="371.8735 14.88288 0 0 -2.745386 68.59805 0 0 0 0 1 0 -145.6858 444.7891 555.9878 1" id="43" color="255 255 255 255" flipH="False" flipV="False" />
@@ -21,7 +20,6 @@
     <staticProp entityName="newmap-67" worldMatrix="3358.19 0 0 0 0 1944.46 0 0 0 0 1 0 -416.2605 46.42152 111.9884 1" id="120" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-29" worldMatrix="317.8958 435.2738 0 0 -216.4256 158.0632 0 0 0 0 1 0 -1405.75 -570.9025 472.9828 1" id="225" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="onion-51" worldMatrix="291.9921 850.2602 0 0 -426.5486 146.4831 0 0 0 0 1 0 -1667.266 -160.9883 735.9914 1" id="501" color="255 255 255 255" flipH="True" flipV="False" />
-    <staticProp entityName="onion-51" worldMatrix="899 0 0 0 0 451 0 0 0 0 1 0 -1982.829 -1649.51 0.003443692 1" id="503" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-29" worldMatrix="112.7798 527.0692 0 0 -262.0678 56.07597 0 0 0 0 1 0 -1507.25 -520.1522 515.9828 1" id="506" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-29" worldMatrix="112.7798 527.0692 0 0 -262.0678 56.07597 0 0 0 0 1 0 -1546.649 -403.5364 580.9828 1" id="507" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="bg01_struct-29" worldMatrix="317.8958 435.2738 0 0 -216.4256 158.0632 0 0 0 0 1 0 -1445.694 -452.5547 583.9828 1" id="508" color="255 255 255 255" flipH="False" flipV="False" />
