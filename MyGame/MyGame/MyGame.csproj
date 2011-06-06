@@ -160,6 +160,7 @@
     <Compile Include="code\Gameplay\Lifebar.cs" />
     <Compile Include="code\Gameplay\Enemies\TomatoFollower.cs" />
     <Compile Include="code\Gameplay\Projectiles\GarlicGunShot.cs" />
+    <Compile Include="code\Gameplay\Projectiles\MacedoniaFruit.cs" />
     <Compile Include="code\Gameplay\WorldMapPlayer.cs" />
     <Compile Include="code\Gameplay\Enemies\Calsot.cs" />
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />

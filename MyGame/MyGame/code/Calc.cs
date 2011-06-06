@@ -61,6 +61,10 @@ namespace MyGame
         {
             return (float)random.NextDouble();
         }
+        public static bool randomBool()
+        {
+            return random.NextDouble() < 0.5f;
+        }
         public static float randomScalar(float min, float max)
         {
             return min + ((float)random.NextDouble() * (max - min));
