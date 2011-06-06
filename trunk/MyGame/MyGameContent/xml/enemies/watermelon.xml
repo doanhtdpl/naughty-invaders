@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
-  <animatedTexture name="Anim_Watermelon_01" frameWidth="280" frameHeight="310" columns="7" rows="6">
+  <animatedTexture name="Anim_Watermelon_01" frameWidth="290" frameHeight="290" columns="7" rows="6">
     <action name="idleProt" initialFrame="1" endFrame="29"  loops="true"/>
     <action name="die" initialFrame="30" endFrame="39"/>
   </animatedTexture>
-  <animatedTexture name="Anim_Watermelon_02" frameWidth="280" frameHeight="310" columns="7" rows="6">
+  <animatedTexture name="Anim_Watermelon_02" frameWidth="290" frameHeight="290" columns="7" rows="6">
     <action name="idle" initialFrame="1" endFrame="29" loops="true"/>
     <action name="FromIdleProtToIdle" initialFrame="30" endFrame="39"  playAtEnd="idle"/>
   </animatedTexture>
-  <animatedTexture name="Anim_Watermelon_03" frameWidth="280" frameHeight="310" columns="7" rows="5">
+  <animatedTexture name="Anim_Watermelon_03" frameWidth="290" frameHeight="290" columns="7" rows="5">
     <action name="attack" initialFrame="1" endFrame="25" />
     <action name="FromIdleToIdleProt" initialFrame="26" endFrame="35" playAtEnd="idleProt"/>
   </animatedTexture>
