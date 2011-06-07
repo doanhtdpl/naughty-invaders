@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="Anim_MacedoniaWeaponBody" frameWidth="168" frameHeight="107" columns="6" rows="4">
+    <action name="attack" initialFrame="1" endFrame="20" loops="false"/>
+    <action name="die" initialFrame="1" endFrame="20" loops="false"/>
+    <action name="idle" initialFrame="1" endFrame="20"  loops="true"/>
+  </animatedTexture>
+</animatedEntity>
