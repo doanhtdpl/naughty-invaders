@@ -1,7 +1,15 @@
 <?xml version="1.0"?>
-<level>
-  <staticProps>
-    <staticProp entityName="A" worldMatrix="100 0 0 0 0 100 0 0 0 0 1 0 113 -107 -0.007597933 1" />
-  </staticProps>
+<level nextEntityID="2" BGColor="0 0 0 255" CameraMode="None">
+  <staticProps />
   <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles />
+  <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
 </level>
