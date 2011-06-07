@@ -2248,13 +2248,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="xml\animatedProps\macedoniaWeaponBody.xml">
+    <None Include="xml\animatedProps\macedoniaWeaponBody.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>macedoniaWeaponBody</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
-    </Compile>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="xml\animatedProps\macedoniaWeaponEnd.xml">
