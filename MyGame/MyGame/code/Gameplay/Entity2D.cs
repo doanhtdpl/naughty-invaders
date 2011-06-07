@@ -17,6 +17,12 @@ namespace MyGame
 
         Matrix initWorld;
 
+        public bool living = false;
+        public float livingIntensity = 0.05f;
+        public Vector2 initScale2D;
+        public bool initScaleRead = false;
+        public float livingOffset;
+
         Matrix world;
         public Matrix worldMatrix
         {
@@ -197,7 +203,21 @@ namespace MyGame
             return scale.X * 0.4f;
         }
 
-        public virtual void update() { }
+        public virtual void update() 
+        {
+            if (living)
+            {
+                if (!initScaleRead)
+                {
+                    initScaleRead = true;
+                    initScale2D = scale2D;
+                    livingOffset = Calc.randomScalar(0, 10);
+                }
+                float factor = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / 5000)  + livingOffset);
+                //Console.WriteLine("entityName" + factor);
+                scale2D = initScale2D + new Vector2(initScale2D.X * factor * livingIntensity, initScale2D.Y * factor * livingIntensity);
+            }
+        }
 
         public virtual void delete()
         {

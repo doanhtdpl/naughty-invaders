@@ -228,6 +228,8 @@ namespace MyGame
         const float FRAME_TIME = 0.2f;
         public override void update()
         {
+            base.update();
+
             actionTimer += SB.dt;
 
             AnimationAction action = actions[actionState];
