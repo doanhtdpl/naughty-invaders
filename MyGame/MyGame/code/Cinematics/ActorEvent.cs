@@ -25,6 +25,9 @@ namespace MyGame
         bool orientationChanged;
         float orientationValue;
 
+        bool playAction;
+        string actionToPlay;
+
         bool move;
 
         Vector3 moveToPosition;
@@ -65,9 +68,10 @@ namespace MyGame
             orientationChanged = true;
             orientationValue = value;
         }
-        public void playAction(string action)
+        public void setActionToPlay(string action)
         {
-            ((AnimatedEntity2D)actor).playAction(action);
+            playAction = true;
+            actionToPlay = action;
         }
         // time based events
         public void moveTo(Vector3 position, float speed, bool orientWhileMoving = false)
@@ -98,6 +102,10 @@ namespace MyGame
             if (orientationChanged)
             {
                 actor.orientation = orientationValue;
+            }
+            if (playAction)
+            {
+                ((AnimatedEntity2D)actor).playAction(actionToPlay);
             }
             if (function != null)
             {

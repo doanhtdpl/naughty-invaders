@@ -19,7 +19,7 @@ namespace MyGame
         public MacedoniaFruit(string name, Vector3 position)
             : base("projectiles", name, position, 0, Color.White)
         {
-            direction = new Vector3(Calc.randomScalar(-500, 500), 300, 0);
+            direction = new Vector3(Calc.randomScalar(-450, 450), 300, 0);
             scale /= 2;
 
             deadRequest = false;

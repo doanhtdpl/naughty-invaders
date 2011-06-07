@@ -48,7 +48,6 @@ namespace MyGame
             {
                 life -= ce.damage;
                 ParticleManager.Instance.addParticles("watermelonGotHitOk", this.position, Vector3.Zero, Color.White);
-                
             }
             return life > 0;
         }
