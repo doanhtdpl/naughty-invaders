@@ -12,6 +12,7 @@ namespace MyGame
         const float PICK_DISTANCE = 900.0f;
         const float ORB_SPEED = 800.0f;
         const float ORB_IDLE_SPEED = 1.0f;
+        const float PICKABLE_TIME = Orb.LIFE_TIME - 0.4f;
 
         const float LIFE_ORB_PROBABILITY = 0.1f;
         const float WISH_ORB_PROBABILITY = 0.45f;
@@ -105,7 +106,7 @@ namespace MyGame
                         continue;
                     }
                 }
-                else if (Vector2.DistanceSquared(playerPosition, orbs[i].position) < PLAYER_DISTANCE)
+                else if (orbs[i].life < PICKABLE_TIME && Vector2.DistanceSquared(playerPosition, orbs[i].position) < PLAYER_DISTANCE)
                 {
                     orbs[i].toPlayer = true;
                 }

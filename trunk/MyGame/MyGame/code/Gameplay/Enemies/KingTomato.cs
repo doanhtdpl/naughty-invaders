@@ -100,9 +100,9 @@ namespace MyGame
                     lastOrb -= SB.dt;
                     if (lastOrb < 0.0f && orbsToSpawn > 0)
                     {
-                        OrbManager.Instance.addOrbs(position2D, 10, 0, 0, 0, true);
+                        OrbManager.Instance.addOrbs(position2D, 5, 0, 0, 0, true);
                         lastOrb = SPAWN_ORB_TIME;
-                        orbsToSpawn -= 10;
+                        orbsToSpawn -= 5;
                     }
                     break;
             }
