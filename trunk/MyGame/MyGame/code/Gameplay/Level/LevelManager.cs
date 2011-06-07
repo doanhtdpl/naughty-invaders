@@ -154,8 +154,13 @@ namespace MyGame
             groupList.Clear();
        }
 
-        public void update()
-        {
+       public void update()
+       {
+            foreach (Entity2D ent in staticProps)
+            {
+                ent.update();
+            }
+
             foreach (AnimatedEntity2D ent in animatedProps)
             {
                 ent.update();

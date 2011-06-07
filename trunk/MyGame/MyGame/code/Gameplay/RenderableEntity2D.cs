@@ -40,6 +40,7 @@ namespace MyGame
 
         public override void update()
         {
+            base.update();
         }
 
         public override void render()
