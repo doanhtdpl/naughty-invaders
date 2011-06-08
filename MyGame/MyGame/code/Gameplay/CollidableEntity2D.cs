@@ -49,7 +49,7 @@ namespace MyGame
         }
 
         // returns true if collides with the projectile. This method calls gotHitAtPart child method to see if the entity dies
-        public bool collidesWith(CollidableEntity2D ce, ref bool entityAlive)
+        public virtual bool collidesWith(CollidableEntity2D ce, ref bool entityAlive)
         {
             for (int i = 0; i < parts.Count; ++i)
             {

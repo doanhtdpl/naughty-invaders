@@ -14,10 +14,13 @@ namespace MyGame
         tMacedoniaBossState state;
 
         //rayo
-        float RAYO_DURATION = 1.5f;
+        float RAYO_DURATION = 100.5f;
         int RAYO_LIMIT_X = 400;
 
         int TELEPORT_LIMIT_X = 450;
+        const int MAX_RAYOS = 3;
+
+        int RAYO_ATTACK_WIDTH = 100;
 
         //Appear/disappear
         float HIDDEN_TIME = 1.0f;
@@ -46,6 +49,9 @@ namespace MyGame
         Vector3 initPos, positionRayoTo, positionRayoFrom, invokeFrom, invokeStep;
         bool invokeRight;
 
+        AnimatedEntity2D[] rayo = new AnimatedEntity2D[MAX_RAYOS];
+        AnimatedEntity2D rayoEnd;
+
         List<RenderableEntity2D> fruits = new List<RenderableEntity2D>();
 
         float timeToAttack;
@@ -58,6 +64,14 @@ namespace MyGame
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
             setCollisions();
+
+            for(int i=0; i<MAX_RAYOS; i++)
+            {
+                rayo[i] = new AnimatedEntity2D("animatedProps", "macedoniaWeaponBody", Vector3.Zero, 0, Color.White);
+            }
+            rayoEnd = new AnimatedEntity2D("animatedProps", "macedoniaWeaponEnd", Vector3.Zero, 0, Color.White);
+
+            showRayo(false);
         }
 
         public override void setCollisions()
@@ -79,8 +93,8 @@ namespace MyGame
         {
             base.die();
             ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.White);
-            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.White);
-            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.White);
+            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.Red);
+            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.Blue);
         }
 
 
@@ -134,31 +148,53 @@ namespace MyGame
                     idleTime += SB.dt;
                     timeToAttack -= SB.dt;
 
+                    if (Keyboard.GetState().IsKeyDown(Keys.A))
+                    {
+                        nextAttack = tMacedoniaBossState.RayoPrepare;
+                        timeToAttack = 0;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.S))
+                    {
+                        nextAttack = tMacedoniaBossState.Shake;
+                        timeToAttack = 0;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.D))
+                    {
+                        nextAttack = tMacedoniaBossState.Talk;
+                        timeToAttack = 0;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.F))
+                    {
+                        nextAttack = tMacedoniaBossState.Laugh;
+                        timeToAttack = 0;
+                    }
+                    else if (Keyboard.GetState().IsKeyDown(Keys.G))
+                    {
+                        nextAttack = tMacedoniaBossState.Disappear;
+                        timeToAttack = 0;
+                    }
+
                     if (timeToAttack < 0)
                     {
-                        if (Keyboard.GetState().IsKeyDown(Keys.A) || nextAttack == tMacedoniaBossState.RayoPrepare)
+                        if (nextAttack == tMacedoniaBossState.RayoPrepare)
                         {
-                            nextAttack = tMacedoniaBossState.RayoPrepare;
                             appearX = Calc.randomBool() ? -RAYO_LIMIT_X : RAYO_LIMIT_X;
                             changeState(tMacedoniaBossState.Disappear);
                         }
-                        else if (Keyboard.GetState().IsKeyDown(Keys.S) || nextAttack == tMacedoniaBossState.Shake)
+                        else if (nextAttack == tMacedoniaBossState.Shake)
                         {
                             shakeCount = 0;
-                            nextAttack = tMacedoniaBossState.Shake;
                             changeState(nextAttack);
                         }
-                        else if (Keyboard.GetState().IsKeyDown(Keys.D) || nextAttack == tMacedoniaBossState.Talk)
+                        else if (nextAttack == tMacedoniaBossState.Talk)
                         {
-                            nextAttack = tMacedoniaBossState.Talk;
                             changeState(nextAttack);
                         }
-                        else if (Keyboard.GetState().IsKeyDown(Keys.F) || nextAttack == tMacedoniaBossState.Laugh)
+                        else if (nextAttack == tMacedoniaBossState.Laugh)
                         {
-                            nextAttack = tMacedoniaBossState.Laugh;
                             changeState(nextAttack);
                         }
-                        else if (Keyboard.GetState().IsKeyDown(Keys.G) || nextAttack == tMacedoniaBossState.Disappear)
+                        else if (nextAttack == tMacedoniaBossState.Disappear)
                         {
                             appearX = Calc.randomNatural(-TELEPORT_LIMIT_X, TELEPORT_LIMIT_X);
                             nextAttack = tMacedoniaBossState.Idle;
@@ -180,6 +216,8 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.RayoAttack:
+                    updateRayo();
+
                     float perc = stateTime / RAYO_DURATION;
                     position = positionRayoFrom + (positionRayoTo - positionRayoFrom) * perc;
                     if (stateTime > RAYO_DURATION)
@@ -191,6 +229,8 @@ namespace MyGame
 
                         appearX = Calc.randomNatural(-TELEPORT_LIMIT_X, TELEPORT_LIMIT_X);
                         changeState(tMacedoniaBossState.Disappear);
+
+                        showRayo(false);
                     }
                     break;
 
@@ -269,6 +309,7 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.Disappear:
+                    playAction("idle");
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
                     break;
 
@@ -303,6 +344,8 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.RayoAttack:
+                    updateRayo();
+                    showRayo(true);
                     positionRayoFrom = position;
                     if (position.X > 0)
                         positionRayoTo = new Vector3(-500, position.Y, position.Z);
@@ -334,6 +377,77 @@ namespace MyGame
 
             stateTime = 0.0f;
             state = newState;
+        }
+
+        public override bool collidesWith(CollidableEntity2D ce, ref bool entityAlive)
+        {
+            if (state == tMacedoniaBossState.Hidden || state == tMacedoniaBossState.Disappear || state == tMacedoniaBossState.Appear)
+            {
+                return false;
+            }
+
+            if (state == tMacedoniaBossState.RayoAttack && Math.Abs(position.X - GamerManager.getMainPlayer().position.X) < RAYO_ATTACK_WIDTH && position.Y > GamerManager.getMainPlayer().position.Y)
+            {
+                return true;
+            }
+
+            return base.collidesWith(ce, ref entityAlive);
+        }
+
+        public void showRayo(bool value)
+        {
+            for (int i = 0; i < MAX_RAYOS; i++)
+            {
+                rayo[i].renderState = value ? tRenderState.Render : tRenderState.NoRender;
+            }
+
+            if(!value)
+                rayoEnd.renderState = tRenderState.NoRender;
+        }
+
+        public void updateRayo()
+        {
+            Vector3 playerPos = GamerManager.getMainPlayer().position;
+
+            bool isPlayerHit = Math.Abs(position.X - GamerManager.getMainPlayer().position.X) < RAYO_ATTACK_WIDTH;
+
+            float length = Math.Abs(position.Y - playerPos.Y - 100) - 15;
+            if (!isPlayerHit)
+                length = 5000;
+
+            for (int i = 0; i < MAX_RAYOS; i++)
+            {
+                rayo[i].renderState = tRenderState.NoRender;
+            }
+
+            for (int i = 0; i < MAX_RAYOS; i++)
+            {
+                if (length < 0)
+                    break; 
+
+                rayo[i].renderState = tRenderState.Render;
+                    
+                rayo[i].update();
+                float factor = 1.0f;
+                if (length < rayo[i].getFrameSize().Y)
+                    factor = length / rayo[i].getFrameSize().Y;
+
+                rayo[i].paintMask = new Vector2(1.0f, factor);
+
+                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y - rayo[i].getFrameSize().Y * 0.5f * factor - 52 , position.Z + 0.1f);
+                length -= rayo[i].getFrameSize().Y;
+            }
+
+            if (isPlayerHit)
+            {
+                rayoEnd.renderState = tRenderState.Render;
+                rayoEnd.update();
+                rayoEnd.position = new Vector3(position.X, GamerManager.getMainPlayer().position.Y + 100, position.Z + 0.2f);
+            }
+            else
+            {
+                rayoEnd.renderState = tRenderState.NoRender;
+            }
         }
 
         public override void render()
