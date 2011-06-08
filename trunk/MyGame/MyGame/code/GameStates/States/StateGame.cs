@@ -59,6 +59,19 @@ namespace MyGame
             DebugManager.Instance.render();
             GUIManager.Instance.render();
             CinematicManager.Instance.render();
+
+#if !EDITOR
+            if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained
+                && GamerManager.getSessionOwner().data.XP >= GamerManager.getSessionOwner().data.skills["dash1"].cost)
+            {
+                if (SB.gameTime.TotalGameTime.Milliseconds < 500)
+                {
+                    GraphicsManager.Instance.spriteBatchBegin();
+                    "buy new skills! press ::BACK".renderNI(Screen.getXYfromCenter(330, -230), 0.8f);
+                    GraphicsManager.Instance.spriteBatchEnd();
+                }
+            }
+#endif
         }
         
         public override void update()
@@ -101,6 +114,10 @@ namespace MyGame
             if (GamerManager.getMainControls().Start_firstPressed())
             {
                 StateManager.gameStates.Add(new StatePausedGame());
+            }
+            if (GamerManager.getMainControls().Back_firstPressed())
+            {
+                StateManager.gameStates.Add(new StateSkillsMenu());
             }
 #endif
         }
