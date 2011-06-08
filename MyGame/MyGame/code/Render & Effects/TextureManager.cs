@@ -31,6 +31,7 @@ namespace MyGame
         public Texture2D getTexture(string path)
         {
             if (textures.ContainsKey(path))
+                if (textures.ContainsKey(path))
             {
                 return textures[path];
             }
