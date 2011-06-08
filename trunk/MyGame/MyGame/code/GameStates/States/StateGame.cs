@@ -28,6 +28,77 @@ namespace MyGame
         }
         public StateGame() { }
 
+        void loadAndPlayIntroCinematic()
+        {
+
+            Player player = GamerManager.getMainPlayer();
+            Cinematic cinematic = new Cinematic();
+
+            if (GamerManager.getSessionOwner().data.levelsPassed["final_Level01"])
+            {
+                ActorEvent ae1 = new ActorEvent(player, false);
+                ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 200.0f);
+                ActorEvent ae12 = new ActorEvent(player, false);
+                ae12.setOrientation(0.0f);
+
+                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Recuerda: muevete con ::LS y dispara con ::X. Es todo lo que necesitas");
+                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Ten cuidado, ahi llegan esas malditas frutas!");
+
+                cinematic.events.Add((CinematicEvent)ae1);
+                cinematic.events.Add((CinematicEvent)ae12);
+                cinematic.events.Add((CinematicEvent)de7);
+                cinematic.events.Add((CinematicEvent)de8);
+            }
+            else
+            {
+                ConsequenceFunctions.wishEntersGame();
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Este debe ser...");
+                ActorEvent ae2 = new ActorEvent(player, false);
+                ae2.setOrientation(2.3f);
+                ActorEvent ae3 = new ActorEvent(player, false);
+                ae3.setOrientation(4.8f);
+                ActorEvent ae4 = new ActorEvent(player, false);
+                ae4.setOrientation(1.1f);
+                ActorEvent ae5 = new ActorEvent(player, false);
+                ae5.setOrientation(0.0f);
+                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish,
+                    "Donde estoy? que es esto? que soy yo?");
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Hey! cuidado, es peligroso.");
+                DialogEvent de4 = new DialogEvent(tDialogCharacter.Wish,
+                    "Y tu... quien eres?");
+                DialogEvent de5 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "No hay tiempo. Debe llegar a Cucumber Valley como sea.");
+                DialogEvent de6 = new DialogEvent(tDialogCharacter.Wish,
+                    "Eh?");
+                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Muevete con ::LS y dispara con ::X. Es todo lo que necesitas");
+                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,
+                    "Ten cuidado, ahi llegan esas malditas frutas!");
+
+                cinematic.events.Add((CinematicEvent)de1);
+                cinematic.events.Add((CinematicEvent)ae2);
+                cinematic.events.Add((CinematicEvent)ae3);
+                cinematic.events.Add((CinematicEvent)ae4);
+                cinematic.events.Add((CinematicEvent)ae5);
+                cinematic.events.Add((CinematicEvent)de2);
+                cinematic.events.Add((CinematicEvent)de3);
+                cinematic.events.Add((CinematicEvent)de2);
+                cinematic.events.Add((CinematicEvent)de3);
+                cinematic.events.Add((CinematicEvent)de4);
+                cinematic.events.Add((CinematicEvent)de5);
+                cinematic.events.Add((CinematicEvent)de6);
+                cinematic.events.Add((CinematicEvent)de7);
+                cinematic.events.Add((CinematicEvent)de8);
+            }
+
+            CinematicManager.Instance.addCinematic("fruitownIntro", cinematic);
+            CinematicManager.Instance.playCinematic("fruitownIntro");
+        }
+
         public override void initialize()
         {
             type = StateManager.tGS.Game;
@@ -36,6 +107,11 @@ namespace MyGame
             DebugManager.Instance.initialize();
             ParticleManager.Instance.loadXML();
             SoundManager.Instance.loadXML();
+
+            if (level == "final_Level01")
+            {
+                loadAndPlayIntroCinematic();
+            }
         }
 
         public void restartLevel()

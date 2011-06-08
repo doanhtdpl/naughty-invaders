@@ -107,6 +107,7 @@ namespace MyGame
             switch (character)
             {
                 case tDialogCharacter.Wish: return "Wish";
+                case tDialogCharacter.DarkWish: return "Dark wish";
                 case tDialogCharacter.OnionElder: return "Onion Elder";
                 case tDialogCharacter.KingTomato: return "King Tomato";
                 case tDialogCharacter.Macedonia: return "Macedonia";
@@ -114,9 +115,10 @@ namespace MyGame
             return "";
         }
 
-        public void playCinematic(string cinematic)
+        public void playCinematic(string cinematic, bool updateCameras = false)
         {
             setUpdatableOnPlayersAndEnemies(false);
+            CameraManager.Instance.updating = updateCameras;
             cinematicToPlay = cinematics[cinematic];
         }
         public void setUpdatableOnPlayersAndEnemies(bool update)
@@ -136,6 +138,13 @@ namespace MyGame
             }
         }
 
+        void endCinematic()
+        {
+            setUpdatableOnPlayersAndEnemies(true);
+            CameraManager.Instance.updating = true;
+            cinematicToPlay = null;
+        }
+
         public void update()
         {
             if (cinematicToPlay != null)
@@ -144,15 +153,13 @@ namespace MyGame
                 if (GamerManager.getMainControls().Y_firstPressed())
                 {
                     cinematicToPlay.skipWholeCinematic();
-                    setUpdatableOnPlayersAndEnemies(true);
-                    cinematicToPlay = null;
+                    endCinematic();
                     return;
                 }
 #endif
                 if (!cinematicToPlay.update())
                 {
-                    setUpdatableOnPlayersAndEnemies(true);
-                    cinematicToPlay = null;
+                    endCinematic();
                 }
                 
             }
@@ -167,9 +174,8 @@ namespace MyGame
 
         public void clean()
         {
-            setUpdatableOnPlayersAndEnemies(true);
+            endCinematic();
             cinematics.Clear();
-            cinematicToPlay = null;
         }
     }
 }

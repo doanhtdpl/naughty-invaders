@@ -8,10 +8,10 @@ using Microsoft.Xna.Framework.Audio;
 
 namespace MyGame
 {
-    public enum tDialogCharacter { Wish = 0, OnionElder, KingTomato, Macedonia }
+    public enum tDialogCharacter { Wish = 0, DarkWish, OnionElder, KingTomato, Macedonia }
     class DialogEvent : CinematicEvent
     {
-        public const int N_DIALOG_CHARACTERS = 4;
+        public const int N_DIALOG_CHARACTERS = 5;
 
         bool textComplete;
         public tDialogCharacter character { get; set; }
@@ -52,6 +52,7 @@ namespace MyGame
             DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
             DialogEvent.portraits = new Texture2D[N_DIALOG_CHARACTERS];
             DialogEvent.portraits[(int)tDialogCharacter.Wish] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
+            DialogEvent.portraits[(int)tDialogCharacter.DarkWish] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
             DialogEvent.portraits[(int)tDialogCharacter.OnionElder] = TextureManager.Instance.getTexture("GUI/portraits/portraitOnionElder");
             DialogEvent.portraits[(int)tDialogCharacter.KingTomato] = TextureManager.Instance.getTexture("GUI/portraits/portraitKingTomato");
             DialogEvent.portraits[(int)tDialogCharacter.Macedonia] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
