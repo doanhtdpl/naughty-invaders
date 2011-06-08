@@ -24,6 +24,8 @@ namespace MyGame
         int currentTextureId = 0;
         int currentFrame = 0;
 
+        public Vector2 paintMask = Vector2.One;
+
         // random action
         float nextRandomActionTime;
 
@@ -303,7 +305,7 @@ namespace MyGame
             float frameHeightUV = animatedTextures[currentTextureId].frameHeightUV;
 
             Vector2 initialUVs = new Vector2( frameWidthUV * x, frameHeightUV * y);
-            Vector2 endingUVs = new Vector2( (frameWidthUV) * (x + 1), (frameHeightUV) * (y + 1));
+            Vector2 endingUVs = new Vector2((frameWidthUV) * (x + paintMask.X), (frameHeightUV) * (y + paintMask.Y));
 
             if (flipHorizontal)
             {
@@ -319,7 +321,8 @@ namespace MyGame
                 initialUVs.Y = temp;
             }
 
-            animatedTextures[currentTextureId].texture.renderWithUVs(worldMatrix, initialUVs, endingUVs, color);
+            Matrix mat = Matrix.Multiply(Matrix.CreateScale(paintMask.X, paintMask.Y, 1.0f), worldMatrix);
+            animatedTextures[currentTextureId].texture.renderWithUVs(mat, initialUVs, endingUVs, color);
         }
 
         public override void delete()

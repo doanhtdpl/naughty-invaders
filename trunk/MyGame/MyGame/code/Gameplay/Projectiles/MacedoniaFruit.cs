@@ -53,7 +53,7 @@ namespace MyGame
 
         public override void render()
         {
-            if(!dead)
+            if(!dead && !deadRequest)
                 base.render();
         }
 
