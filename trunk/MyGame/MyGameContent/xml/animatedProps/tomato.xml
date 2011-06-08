@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="tomato" frameWidth="705" frameHeight="210" columns="5" rows="4">
+    <action name="idle" initialFrame="1" endFrame="20" FPS="15" loops="true"/>
+
+  </animatedTexture>
+</animatedEntity>
