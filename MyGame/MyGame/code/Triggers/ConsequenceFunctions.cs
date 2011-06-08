@@ -21,5 +21,13 @@ namespace MyGame
             ((Player)player).activateGarlicGun();
             return true;
         }
+
+        public static bool wishEntersGame()
+        {
+            ParticleManager.Instance.addParticles("playerFastShot", new Vector3(0, -50, 0), Vector3.One, Color.White, 5.0f);
+            GamerManager.getMainPlayer().position = new Vector3(0, 0, 0);
+
+            return true;
+        }
     }
 }

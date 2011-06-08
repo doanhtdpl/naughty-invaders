@@ -40,6 +40,7 @@ namespace MyGame
         CameraManager()
         {
             CameraData cd = new CameraData(Vector3.Zero);
+            updating = true;
         }
         public static CameraManager Instance
         {
@@ -55,6 +56,8 @@ namespace MyGame
 
         public enum tCameraMode { None, FollowPlayer, WorldMap, Nodes }
         public tCameraMode cameraMode { set; get; }
+
+        public bool updating { get; set; }
 
         // world map mode data
         public Vector3 worldMapPosition { get; set; }
@@ -207,6 +210,8 @@ namespace MyGame
         {
             // update last frame position
             lastPosition = currentPosition;
+
+            if (!updating) return;
 
             // update the current used camera mode
             switch(cameraMode)

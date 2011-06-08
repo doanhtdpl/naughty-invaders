@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="4320" BGColor="0 0 0 255" CameraMode="Nodes">
+<level nextEntityID="4364" BGColor="0 0 0 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="frutins-70" worldMatrix="543.0128 0 0 0 0 1401.766 0 0 0 0 1 0 -1031.147 -65.25867 6.575348 1" id="154" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="frutins-70" worldMatrix="670.4248 0 0 0 0 1534.333 0 0 0 0 1 0 -1070.281 1022.155 -56.42503 1" id="155" color="255 255 255 255" flipH="False" flipV="False" />
@@ -347,50 +347,50 @@
     </group>
   </groups>
   <enemies>
-    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -489.6168 866.6763 -0.0389747 1" id="4276" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -293.0638 726.5115 0.08196589 1" id="4277" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -62.67805 1014.896 -0.02322392 1" id="4278" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 315.928 923.0644 -0.04995435 1" id="4279" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 506.0365 731.3448 0.06499698 1" id="4280" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -30.99485 1288.824 -0.04789944 1" id="4281" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -362.4332 3988.855 0.005546154 1" id="4282" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 213.6987 4142.701 0.05388774 1" id="4283" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -604.1614 4429.992 0.03767642 1" id="4284" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -489.7755 4450.936 0.01605788 1" id="4285" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -368.9438 4473.492 -0.02917697 1" id="4286" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -243.2778 4496.038 -0.03610363 1" id="4287" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -111.1675 4521.818 0.05713085 1" id="4288" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 17.71791 4547.6 0.00241407 1" id="4289" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 144.9935 4573.381 -0.04242542 1" id="4290" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 278.7134 4605.6 0.002667489 1" id="4291" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 400.1354 4637.231 -0.02142488 1" id="4292" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 1514.2 6572.484 -0.01138724 1" id="4293" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 0.161087 6596.517 0.02728253 1" id="4294" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -475.752 3310.251 -0.008307226 1" id="4295" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -319.7226 3195.523 0.0121334 1" id="4296" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -163.6931 3397.444 -0.0120359 1" id="4297" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 79.52928 3200.112 0.01195867 1" id="4298" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 308.9844 3374.498 -0.001895634 1" id="4299" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 501.7267 3259.771 0.03981868 1" id="4300" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 301.1662 4745.226 -0.03673256 1" id="4301" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 170.8045 4782.067 0.001869593 1" id="4302" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 43.2767 4833.078 0.007744566 1" id="4303" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -104.0887 4878.421 0.04120418 1" id="4304" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -248.6202 4926.599 0.01814401 1" id="4305" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -496.0201 10942.83 0.001797988 1" id="4306" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -53.10248 10962.09 0.02727922 1" id="4307" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 460.4254 10942.83 0.004030863 1" id="4308" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 218.6695 11858.68 -0.01347494 1" id="4309" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 334.2132 11781.66 0.02078492 1" id="4310" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 436.9188 11877.94 0.01676022 1" id="4311" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 558.8817 11788.07 -0.0354366 1" id="4312" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 38.93481 11910.04 0.01022635 1" id="4313" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -545.203 12019.16 0.001216998 1" id="4314" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -127.9617 12057.68 0.0262835 1" id="4315" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 -52.75684 8831.376 0.009400337 1" id="4316" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 -372.2435 12431.3 -0.002739169 1" id="4317" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 423.7245 12546.85 -0.002030591 1" id="4318" color="255 255 255 255" flipH="False" flipV="False" />
-    <enemy entityName="watermelon" worldMatrix="280 0 0 0 0 310 0 0 0 0 1 0 12.90234 12675.23 0.004845325 1" id="4319" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -489.6168 866.6763 -0.05598138 1" id="4320" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -204.6987 916.1284 0.09357363 1" id="4321" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 45.94478 1003.85 -0.0156284 1" id="4322" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 312.2458 858.6258 -0.04846748 1" id="4323" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="grape" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 526.2874 1036.949 0.05157036 1" id="4324" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -30.99485 1288.824 -0.06639822 1" id="4325" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -362.4332 3988.855 0.0003867117 1" id="4326" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 213.6987 4142.701 0.05547198 1" id="4327" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -604.1614 4429.992 0.0480847 1" id="4328" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -489.7755 4450.936 0.03499522 1" id="4329" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -368.9438 4473.492 -0.01009971 1" id="4330" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -243.2778 4496.038 -0.03737294 1" id="4331" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -111.1675 4521.818 0.04283459 1" id="4332" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 17.71791 4547.6 0.01327511 1" id="4333" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 144.9935 4573.381 -0.03369545 1" id="4334" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 278.7134 4605.6 -0.005233251 1" id="4335" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 400.1354 4637.231 -0.01099746 1" id="4336" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 1514.2 6572.484 -0.01401028 1" id="4337" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 0.161087 6596.517 0.03552173 1" id="4338" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -475.752 3310.251 -0.02596339 1" id="4339" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -319.7226 3195.523 -0.001068222 1" id="4340" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -163.6931 3397.444 -0.001548899 1" id="4341" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 79.52928 3200.112 0.03090866 1" id="4342" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 308.9844 3374.498 -0.002855409 1" id="4343" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 501.7267 3259.771 0.05257558 1" id="4344" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 301.1662 4745.226 -0.02755684 1" id="4345" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 170.8045 4782.067 0.01919781 1" id="4346" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 43.2767 4833.078 -0.01005501 1" id="4347" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -104.0887 4878.421 0.04500118 1" id="4348" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -248.6202 4926.599 0.03602551 1" id="4349" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -496.0201 10942.83 0.01074576 1" id="4350" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -53.10248 10962.09 0.04085665 1" id="4351" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="pear" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 460.4254 10942.83 0.0221422 1" id="4352" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 218.6695 11858.68 -0.0139013 1" id="4353" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 334.2132 11781.66 0.02321371 1" id="4354" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 436.9188 11877.94 0.007850257 1" id="4355" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 558.8817 11788.07 -0.05424586 1" id="4356" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 38.93481 11910.04 0.02889035 1" id="4357" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -545.203 12019.16 -0.004957424 1" id="4358" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="orange" worldMatrix="160 0 0 0 0 160 0 0 0 0 1 0 -127.9617 12057.68 0.01291814 1" id="4359" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 -52.75684 8831.376 0.003135268 1" id="4360" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 -372.2435 12431.3 0.0153251 1" id="4361" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 423.7245 12546.85 0.00058076 1" id="4362" color="255 255 255 255" flipH="False" flipV="False" />
+    <enemy entityName="watermelon" worldMatrix="290 0 0 0 0 290 0 0 0 0 1 0 12.90234 12675.23 0.0153946 1" id="4363" color="255 255 255 255" flipH="False" flipV="False" />
   </enemies>
   <enemySpawnZones>
     <enemySpawnZone zone="-615 1553 1159 133" enemy="grape" count="6" />
@@ -406,6 +406,12 @@
     <enemySpawnZone zone="-684 10375 411 520" enemy="tomato" count="30" />
     <enemySpawnZone zone="120 10350 456 539" enemy="tomato" count="30" />
     <enemySpawnZone zone="-681 8991 1276 828" enemy="grape" count="15" />
+    <enemySpawnZone zone="-692 13264 210 331" enemy="tomato" count="10" />
+    <enemySpawnZone zone="-364 13521 228 336" enemy="tomato" count="10" />
+    <enemySpawnZone zone="347 13688 236 345" enemy="tomato" count="10" />
+    <enemySpawnZone zone="-631 14016 247 314" enemy="tomato" count="10" />
+    <enemySpawnZone zone="-61 13786 246 334" enemy="tomato" count="10" />
+    <enemySpawnZone zone="223 14177 273 346" enemy="tomato" count="10" />
   </enemySpawnZones>
   <levelCollisions />
   <camera>
