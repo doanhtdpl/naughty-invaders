@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="felpi" frameWidth="120" frameHeight="139" columns="5" rows="3">
+    <action name="idle" initialFrame="1" endFrame="11" FPS="15" loops="true"/>
+
+  </animatedTexture>
+</animatedEntity>
