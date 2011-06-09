@@ -22,12 +22,6 @@ namespace MyGame
 
     class LevelManager
     {
-        List<Entity2D> staticProps = new List<Entity2D>();
-        List<Entity2D> animatedProps = new List<Entity2D>();
-        List<List<int>> groupList = new List<List<int>>();
-
-        List<Line> levelCollisions = new List<Line>();
-
         static LevelManager instance = null;
 
         LevelManager()
@@ -45,6 +39,14 @@ namespace MyGame
                 return instance;
             }
         }
+
+        List<Entity2D> staticProps = new List<Entity2D>();
+        List<Entity2D> animatedProps = new List<Entity2D>();
+        List<List<int>> groupList = new List<List<int>>();
+
+        List<Line> levelCollisions = new List<Line>();
+
+        public string lastPlayedLevel { get; set; }
 
         #region ENTITY MANAGEMENT
         public void addStaticProp(Entity2D re)
