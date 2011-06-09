@@ -24,6 +24,7 @@ namespace MyGame
 
         public void enter()
         {
+            GamerManager.getSessionOwner().data.lastLevelPlayed = level;
             switch (type)
             {
                 case tLocationType.Arcade:
@@ -45,24 +46,36 @@ namespace MyGame
     class StateWorldMap : GameState
     {
         WorldMapPlayer player;
-        public NetworkNode<WorldMapLocation> lastNode { get; set; }
-        public NetworkNode<WorldMapLocation> currentNode { get; set; }
-        public Network<WorldMapLocation> nodes { get; set; }
+        public NetworkNode<WorldMapLocation> lastLocation { get; set; }
+        public NetworkNode<WorldMapLocation> currentLocation { get; set; }
+        public Network<WorldMapLocation> locations { get; set; }
 
         public void initializeNetwork()
         {
             WorldMapLocation ml1 = new WorldMapLocation("final_Level01", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn1 = nodes.addNode(ml1, new Vector3(-835.0f, 110.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn1 = locations.addNode(ml1, new Vector3(-835.0f, 110.0f, 200.0f));
             WorldMapLocation ml2 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
-            NetworkNode<WorldMapLocation> nn2 = nodes.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn2 = locations.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
             WorldMapLocation ml3 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
-            NetworkNode<WorldMapLocation> nn3 = nodes.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn3 = locations.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
             WorldMapLocation ml4 = new WorldMapLocation("level2", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn4 = nodes.addNode(ml4, new Vector3(0.0f, -100.0f, 200.0f));
-            currentNode = nn1;
-            nodes.addDoubleLink(nn1, nn2);
-            nodes.addDoubleLink(nn2, nn3);
-            nodes.addDoubleLink(nn2, nn4);
+            NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(0.0f, -100.0f, 200.0f));
+            locations.addDoubleLink(nn1, nn2);
+            locations.addDoubleLink(nn2, nn3);
+            locations.addDoubleLink(nn2, nn4);
+
+            currentLocation = nn1;
+            string lastLevel = GamerManager.getSessionOwner().data.lastLevelPlayed;
+            if (lastLevel != null)
+            {
+                for(int i=0; i<locations.getNodes().Count; ++i)
+                {
+                    if (lastLevel == locations.getNodeAt(i).value.level)
+                    {
+                        currentLocation = locations.getNodeAt(i);
+                    }
+                }
+            }
         }
 
         public override void initialize()
@@ -76,13 +89,13 @@ namespace MyGame
             EditorHelper.Instance.loadNewLevelFromGame("mapa");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
 
-            nodes = new Network<WorldMapLocation>();
+            locations = new Network<WorldMapLocation>();
             initializeNetwork();
 
-            player = new WorldMapPlayer(currentNode.position);
+            player = new WorldMapPlayer(currentLocation.position);
             player.positionZ += 200.0f;
 
-            SoundManager.Instance.playSong("song");
+            //SoundManager.Instance.playSong("song");
         }
 
         public override void loadContent()
@@ -104,40 +117,40 @@ namespace MyGame
             base.update();
 
             // if arrives to a new node
-            if ((currentNode.position - player.position).LengthSquared() < 20.0f)
+            if ((currentLocation.position - player.position).LengthSquared() < 20.0f)
             {
                 // if its a transition node (without level), get the next node
-                if(currentNode.value.level == "")
+                if(currentLocation.value.level == "")
                 {
-                    NetworkNode<WorldMapLocation> next = currentNode.getNext(lastNode);
+                    NetworkNode<WorldMapLocation> next = currentLocation.getNext(lastLocation);
                     if (next != null)
                     {
-                        lastNode = currentNode;
-                        currentNode = next;
+                        lastLocation = currentLocation;
+                        currentLocation = next;
                     }
                 }
                 else // if current node has a level...
                 {
                     Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().data.levelsPassed;
                     ControlPad cp = GamerManager.getMainControls();
-                    NetworkNode<WorldMapLocation> next = currentNode.getNext(cp.getLS());
+                    NetworkNode<WorldMapLocation> next = currentLocation.getNext(cp.getLS());
                     if (next != null &&
-                        (levelsPassed[currentNode.value.level]
+                        (levelsPassed[currentLocation.value.level]
                         || levelsPassed.ContainsKey(next.value.level) && (levelsPassed[next.value.level])))
                     {
-                        lastNode = currentNode;
-                        currentNode = next;
+                        lastLocation = currentLocation;
+                        currentLocation = next;
                     }
                     if (cp.A_firstPressed())
                     {
                         StateManager.clearStates();
-                        currentNode.value.enter();
+                        currentLocation.value.enter();
                     }
                 }
             }
             else
             {
-                Vector3 direction = currentNode.position - player.position;
+                Vector3 direction = currentLocation.position - player.position;
                 direction.Normalize();
                 player.position += direction * WORLDMAP_SPEED * SB.dt;
                 player.positionZ = 200.0f;

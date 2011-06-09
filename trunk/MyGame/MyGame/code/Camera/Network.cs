@@ -92,6 +92,10 @@ namespace MyGame
         {
             return nodes;
         }
+        public NetworkNode<T> getNodeAt(int i)
+        {
+            return nodes[i];
+        }
         public NetworkNode<T> addNode(T newValue, Vector3 position)
         {
             NetworkNode<T> newNode = new NetworkNode<T>(newValue, position);

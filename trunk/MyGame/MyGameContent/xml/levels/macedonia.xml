@@ -48,6 +48,6 @@
   <particles />
   <triggers />
   <players>
-    <player playerId="0" pos="0 0 0" />
+    <player playerId="0" pos="0 -1000 0" />
   </players>
 </level>

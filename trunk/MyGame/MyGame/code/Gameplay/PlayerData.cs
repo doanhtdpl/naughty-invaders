@@ -31,6 +31,7 @@ namespace MyGame
 
         public Dictionary<string, PlayerSkill> skills = new Dictionary<string, PlayerSkill>();
         public Dictionary<string, bool> levelsPassed = new Dictionary<string, bool>();
+        public string lastLevelPlayed { get; set; }
 
         public void initLevelsPassed()
         {
@@ -61,15 +62,18 @@ namespace MyGame
             lifeOrbs = 0;
             wishOrbs = 0;
             petOrbs = 0;
+
             initLevelsPassed();
             initSkills();
+
+            lastLevelPlayed = null;
         }
 
-        public void loadXMLAndPublishData()
+        public void loadXML()
         {
-            initSkills();
+            
         }
-        public void saveDataToXML()
+        public void saveXML()
         {
 
         }

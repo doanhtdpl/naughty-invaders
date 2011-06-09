@@ -422,6 +422,6 @@
   <particles />
   <triggers />
   <players>
-    <player playerId="0" pos="-0.3365097 -0.07062149 0" />
+    <player playerId="0" pos="0 -750 0" />
   </players>
 </level>
