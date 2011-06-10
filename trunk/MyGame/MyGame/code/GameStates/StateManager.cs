@@ -34,7 +34,10 @@ namespace MyGame
         {
             GameState currentState = gameStates[gameStates.Count - 1];
             if (currentState.loaded)
+            {
                 currentState.update();
+                TransitionManager.Instance.update();
+            }
             else if (!currentState.loading)
             {
                 currentState.initialize();
@@ -69,6 +72,7 @@ namespace MyGame
                     }
                 }
             }
+            TransitionManager.Instance.render();
         }
 
         public static void clearStates()

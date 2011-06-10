@@ -125,6 +125,7 @@
     <Compile Include="code\GameStates\States\MinigameEpilepticMacedonia.cs" />
     <Compile Include="code\GameStates\States\MinigameKingTomato.cs" />
     <Compile Include="code\GameStates\States\StateSkillsMenu.cs" />
+    <Compile Include="code\GameStates\States\StateStageCleared.cs" />
     <Compile Include="code\GameStates\States\StateWorldMap.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\MenuElement.cs" />
     <Compile Include="code\GUI &amp; Screen Helpers\Menus\Menu.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="code\OLD code\TEX.cs" />
     <Compile Include="code\OLD code\TEX2.cs" />
     <Compile Include="code\Render &amp; Effects\TextureManager.cs" />
+    <Compile Include="code\Render &amp; Effects\TransitionManager.cs" />
     <Compile Include="code\SB.cs" />
     <Compile Include="code\Sound\SoundManager.cs" />
     <Compile Include="code\TextKey.Designer.cs" />
