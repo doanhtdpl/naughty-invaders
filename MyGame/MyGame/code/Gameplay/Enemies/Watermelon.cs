@@ -23,7 +23,7 @@ namespace MyGame
         public Watermelon(Vector3 position, float orientation)
             : base("watermelon", position, orientation, 10)
         {
-            life = 800.0f;
+            life = 1000.0f;
 
             vulnerableTime = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);

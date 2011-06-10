@@ -53,16 +53,16 @@ namespace MyGame
         {
             for (int i = 0; i < XP; ++i)
             {
-                addOrb(Orb.tOrb.XP, position, toPlayer);
+                addOrb(Orb.tOrb.XP, position, toPlayer, XP * 5.0f);
             }
             for (int i = 0; i < life; ++i)
             {
-                addOrb(Orb.tOrb.Life, position, toPlayer);
+                addOrb(Orb.tOrb.Life, position, toPlayer, XP * 5.0f);
             }
         }
-        public void addOrb(Orb.tOrb orbType, Vector2 position, bool toPlayer)
+        public void addOrb(Orb.tOrb orbType, Vector2 position, bool toPlayer, float speed)
         {
-            Orb orb = new Orb(orbType, position, toPlayer);
+            Orb orb = new Orb(orbType, position, toPlayer, speed);
             orbs.Add(orb);
         }
 	    public void update( )
