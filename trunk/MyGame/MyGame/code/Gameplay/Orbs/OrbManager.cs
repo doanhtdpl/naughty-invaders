@@ -51,9 +51,18 @@ namespace MyGame
 
         public void addOrbs(Vector2 position, int XP, int life, int wish, int pet, bool toPlayer = false)
         {
+            float orbSpeed = 5.0f;
+            if (XP > 10)
+            {
+                orbSpeed = (10 * orbSpeed) + ((XP - 10) * 1.0f);
+            }
+            else
+            {
+                orbSpeed *= 10;
+            }
             for (int i = 0; i < XP; ++i)
             {
-                addOrb(Orb.tOrb.XP, position, toPlayer, XP * 5.0f);
+                addOrb(Orb.tOrb.XP, position, toPlayer,  orbSpeed);
             }
             for (int i = 0; i < life; ++i)
             {

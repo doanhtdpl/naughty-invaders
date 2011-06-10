@@ -25,6 +25,22 @@ namespace MyGame
         }
         public StateGame() { }
 
+        public override void initialize()
+        {
+            type = StateManager.tGS.Game;
+            gameState = true;
+            longLoad = true;
+#if DEBUG
+            DebugManager.Instance.initialize();
+#endif
+            ParticleManager.Instance.loadXML();
+            SoundManager.Instance.loadXML();
+
+            if (level == "final_Level01")
+            {
+                loadAndPlayIntroCinematic();
+            }
+        }
         public override void loadContent()
         {
             if (level != null)
@@ -47,7 +63,7 @@ namespace MyGame
                 ae12.setOrientation(0.0f);
 
                 DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Recuerda: muevete con ::LS y dispara con ::X. Es todo lo que necesitas");
+                    "Recuerda: muevete con ::LS y dispara con ::X . Es todo lo que necesitas");
                 DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,
                     "Ten cuidado, ahi llegan esas malditas frutas!");
 
@@ -102,21 +118,6 @@ namespace MyGame
 
             CinematicManager.Instance.addCinematic("fruitownIntro", cinematic);
             CinematicManager.Instance.playCinematic("fruitownIntro");
-        }
-
-        public override void initialize()
-        {
-            type = StateManager.tGS.Game;
-            gameState = true;
-            longLoad = true;
-            DebugManager.Instance.initialize();
-            ParticleManager.Instance.loadXML();
-            SoundManager.Instance.loadXML();
-
-            if (level == "final_Level01")
-            {
-                loadAndPlayIntroCinematic();
-            }
         }
 
         public void restartLevel()
