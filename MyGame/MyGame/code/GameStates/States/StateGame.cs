@@ -21,12 +21,17 @@ namespace MyGame
         public StateGame(string level)
         {
             this.level = level;
+            TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 0.7f, Color.Black);
+        }
+        public StateGame() { }
+
+        public override void loadContent()
+        {
             if (level != null)
             {
                 EditorHelper.Instance.loadNewLevelFromGame(level);
             }
         }
-        public StateGame() { }
 
         void loadAndPlayIntroCinematic()
         {
@@ -118,10 +123,6 @@ namespace MyGame
         {
         }
         public void resetLevelData()
-        {
-        }
-
-        public override void loadContent()
         {
         }
 

@@ -25,21 +25,7 @@ namespace MyGame
         public void enter()
         {
             GamerManager.getSessionOwner().data.lastLevelPlayed = level;
-            switch (type)
-            {
-                case tLocationType.Arcade:
-                    StateManager.dequeueState(1);
-                    StateManager.gameStates.Add(new StateGame(level));
-                    break;
-                case tLocationType.KingTomato:
-                    StateManager.dequeueState(1);
-                    StateManager.gameStates.Add(new MinigameKingTomato(level));
-                    break;
-                case tLocationType.EpilepticMacedonia:
-                    StateManager.dequeueState(1);
-                    StateManager.gameStates.Add(new MinigameEpilepticMacedonia(level));
-                    break;
-            }
+            TransitionManager.Instance.loadLevelWithFade(level, type, 1.0f, Color.Black);
         }
     }
 
@@ -143,7 +129,6 @@ namespace MyGame
                     }
                     if (cp.A_firstPressed())
                     {
-                        StateManager.clearStates();
                         currentLocation.value.enter();
                     }
                 }
