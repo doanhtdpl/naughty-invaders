@@ -22,7 +22,7 @@ namespace MyGame
 
     public class CollidableEntity2D : AnimatedEntity2D
     {
-        public enum tSpecial { BreaksGuard };
+        public enum tSpecial { None, BreaksGuard };
         protected float life;
         List<CollidablePart> parts = new List<CollidablePart>();
 

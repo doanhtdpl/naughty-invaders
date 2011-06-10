@@ -22,7 +22,7 @@ namespace MyGame
         public float life;
         public bool toPlayer;
 
-        public Orb(tOrb orbType, Vector2 position, bool toPlayer)
+        public Orb(tOrb orbType, Vector2 position, bool toPlayer, float speed)
         {
             this.type = orbType;
             this.position = position;
@@ -30,7 +30,7 @@ namespace MyGame
             this.life = LIFE_TIME;
             this.render = true;
 
-            this.velocity = Calc.randomDirection() * Calc.randomScalar() * 20.0f;
+            this.velocity = Calc.randomDirection() * Calc.randomScalar() * speed;
 
             texture = textures[(int)orbType];
         }
