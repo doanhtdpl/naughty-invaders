@@ -40,8 +40,8 @@ namespace MyGame
             }
             else if (!currentState.loading)
             {
-                currentState.initialize();
                 currentState.loadContent();
+                currentState.initialize();
                 currentState.loaded = true;
             }
         }

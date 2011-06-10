@@ -8,14 +8,19 @@ namespace MyGame
 {
     public class Watermelon : Enemy
     {
-        enum tWatermelonState { IdleProt, ReadyToAttack, ReadyToIdle }
+        enum tWatermelonState { IdleProt, ReadyToAttack, Attacking, ReadyToIdle }
 
         tWatermelonState state;
 
         const float SPEED = -15.0f;
-        const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 0.6f;
-        const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 0.6f;
-        const int NUMBER_OF_PROJECTILES = 5;
+        const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 1.0f;
+        const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 1.0f;
+        const int NUMBER_OF_PROJECTILES = 8;
+        const float ATTACKING_TIME = 1.0f;
+
+        bool attackRight = true;
+        float attackTimer = 0.0f;
+        int projectilesThrown = 0;
 
         float vulnerableTime;
         float nextAttackTimer;
@@ -23,10 +28,11 @@ namespace MyGame
         public Watermelon(Vector3 position, float orientation)
             : base("watermelon", position, orientation, 10)
         {
-            life = 1000.0f;
+            life = 350.0f;
 
             vulnerableTime = Calc.randomScalar(1.0f, 2.0f);
             nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);
+            attackRight = Calc.randomScalar() < 0.5f;
 
             playAction("idleProt");
             setCollisions();
@@ -82,8 +88,33 @@ namespace MyGame
                     {
                         // prepare move
                         playAction("attack");
+                        state = tWatermelonState.Attacking;
+                    }
+                    break;
+                case tWatermelonState.Attacking:
+                    attackTimer += SB.dt;
+
+                    float percentageOfAttack = attackTimer / ATTACKING_TIME;
+                    int mustHaveBeenThrown = (int)(percentageOfAttack * (float)NUMBER_OF_PROJECTILES);
+                    if (projectilesThrown < mustHaveBeenThrown)
+                    {
+                        float attackOrientation;
+                        if (attackRight)
+                        {
+                            attackOrientation = Calc.interpolateAngles(MIN_SHOT_ANGLE, MAX_SHOT_ANGLE, percentageOfAttack, false);
+                        }
+                        else
+                        {
+                            attackOrientation = Calc.interpolateAngles(MAX_SHOT_ANGLE, MIN_SHOT_ANGLE, percentageOfAttack, true);
+                        }
+                        Projectile p = new WatermelonProjectile(position, attackOrientation, Calc.angleToDirection(attackOrientation), Calc.randomScalar(345.0f, 350.0f));
+                        ProjectileManager.Instance.addProjectile(p);
+                        ++projectilesThrown;
+                    }
+
+                    if (attackTimer > ATTACKING_TIME)
+                    {
                         state = tWatermelonState.ReadyToIdle;
-                        throwProjectiles();
                     }
                     break;
                 case tWatermelonState.ReadyToIdle:
@@ -94,6 +125,9 @@ namespace MyGame
                         state = tWatermelonState.IdleProt;
                         vulnerableTime = Calc.randomScalar(2.0f, 3.0f);
                         nextAttackTimer = Calc.randomScalar(4.0f, 5.0f);
+                        attackTimer = 0.0f;
+                        projectilesThrown = 0;
+                        attackRight = Calc.randomScalar() < 0.5f;
                     }
                     break;
             }

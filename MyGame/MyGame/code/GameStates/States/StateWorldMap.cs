@@ -39,13 +39,13 @@ namespace MyGame
         public void initializeNetwork()
         {
             WorldMapLocation ml1 = new WorldMapLocation("final_Level01", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn1 = locations.addNode(ml1, new Vector3(-835.0f, 110.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn1 = locations.addNode(ml1, new Vector3(-975.0f, 110.0f, 200.0f));
             WorldMapLocation ml2 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
             NetworkNode<WorldMapLocation> nn2 = locations.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
             WorldMapLocation ml3 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
             NetworkNode<WorldMapLocation> nn3 = locations.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
             WorldMapLocation ml4 = new WorldMapLocation("level2", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(0.0f, -100.0f, 200.0f));
+            NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(175.0f, -100.0f, 200.0f));
             locations.addDoubleLink(nn1, nn2);
             locations.addDoubleLink(nn2, nn3);
             locations.addDoubleLink(nn2, nn4);
