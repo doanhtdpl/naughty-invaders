@@ -107,12 +107,18 @@ namespace MyGame
             LevelManager.Instance.render();
             DebugManager.Instance.render();
             GUIManager.Instance.render();
+
+            GraphicsManager.Instance.spriteBatchBegin();
+            "::BACK to skills menu".renderNI(Screen.getXYfromCenter(90, -230), 0.8f);
+            "::B back to menu".renderNI(Screen.getXYfromCenter(360, -230), 0.8f);
+            GraphicsManager.Instance.spriteBatchEnd();
         }
 
         const float WORLDMAP_SPEED = 500.0f;
         public override void update()
         {
             base.update();
+            ControlPad cp = GamerManager.getMainControls();
 
             // if arrives to a new node
             if ((currentLocation.position - player.position).LengthSquared() < 20.0f)
@@ -130,7 +136,6 @@ namespace MyGame
                 else // if current node has a level...
                 {
                     Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().data.levelsPassed;
-                    ControlPad cp = GamerManager.getMainControls();
                     NetworkNode<WorldMapLocation> next = currentLocation.getNext(cp.getLS());
                     if (next != null &&
                         (levelsPassed[currentLocation.value.level]
@@ -151,6 +156,15 @@ namespace MyGame
                 direction.Normalize();
                 player.position += direction * WORLDMAP_SPEED * SB.dt;
                 player.positionZ = 200.0f;
+            }
+
+            if (cp.B_firstPressed())
+            {
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 99, null, 0.5f, Color.Black);
+            }
+            if (cp.Back_firstPressed())
+            {
+                StateManager.addState(StateManager.tGameState.SkillsMenu);
             }
 
 
