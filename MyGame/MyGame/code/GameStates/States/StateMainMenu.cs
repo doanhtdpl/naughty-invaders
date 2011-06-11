@@ -26,12 +26,12 @@ namespace MyGame
             MenuElement mb1 = new MenuElement("", new Vector2(-20.0f, -100), scale);
             mb1.setFunction("startGame", MenuElement.tInputType.A);
             MenuElement mb2 = new MenuElement("", new Vector2(-20.0f, -170), scale);
-            mb2.setFunction("goToOptions", MenuElement.tInputType.A);
+            mb2.setFunction("goToCredits", MenuElement.tInputType.A);
             MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -230), scale);
             mb3.setFunction("exitToArcade", MenuElement.tInputType.A);
             
             menu.menuTexts.Add(new MenuText("start game", new Vector2(0, -70), 1.4f));
-            menu.menuTexts.Add(new MenuText("options", new Vector2(0, -140), 1.4f));
+            menu.menuTexts.Add(new MenuText("credits", new Vector2(0, -140), 1.4f));
             menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -210), 1.4f));
 
             mb1.upNode = mb3;

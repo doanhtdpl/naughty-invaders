@@ -21,6 +21,10 @@ namespace MyGame
         {
             StateManager.gameStates.Add(new StateOptions());
         }
+        public static void goToCredits()
+        {
+            StateManager.gameStates.Add(new StateCredits());
+        }
         public static void unpause()
         {
             StateManager.dequeueState(1);
