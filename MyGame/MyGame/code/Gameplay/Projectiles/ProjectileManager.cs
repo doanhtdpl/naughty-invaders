@@ -131,7 +131,7 @@ namespace MyGame
                         {
                             if (!alive)
                             {
-                                player.die();
+                                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 1.0f, Color.Black);
                             }
                             // projectile dies?
                             if (p.impact())

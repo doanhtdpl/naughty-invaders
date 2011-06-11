@@ -51,6 +51,17 @@ namespace MyGame
                     StateManager.addState(StateManager.tGameState.Menu);
                 }
             }
+
+#if DEBUG
+            if (ControlPadManager.Instance.controlPads[0].A_firstPressed()
+                || ControlPadManager.Instance.controlPads[0].X_firstPressed()
+                || ControlPadManager.Instance.controlPads[0].B_firstPressed()
+                || ControlPadManager.Instance.controlPads[0].Y_firstPressed())
+            {
+                StateManager.clearStates();
+                StateManager.addState(StateManager.tGameState.WorldMap);
+            }
+#endif
         }
 
         public override void render()
