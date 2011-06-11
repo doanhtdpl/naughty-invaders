@@ -28,10 +28,10 @@ namespace MyGame
             positionY = Camera2D.screen.Top - getRadius();
 
             float randomX = Calc.randomScalar(-4.0f, 4.0f);
-            float randomY = Calc.randomScalar(16.0f, 19.0f);
-            velocity = new Vector3(randomX, randomY, 8.0f);
+            float randomY = Calc.randomScalar(18.0f, 21.0f);
+            velocity = new Vector3(randomX, randomY, 0.0f);
 
-            positionZ = -200.0f;
+            positionZ = -0;
         }
 
         public override void setCollisions()
@@ -43,7 +43,10 @@ namespace MyGame
         {
             ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
             SoundManager.Instance.playEffect(entityName + "GotHit");
-            OrbManager.Instance.addOrbs(position2D,1,0,0,0);
+            if (Calc.randomScalar() < 0.5f)
+            {
+                OrbManager.Instance.addOrbs(position2D, 1, 0, 0, 0);
+            }
             return true;
         }
 
@@ -65,7 +68,7 @@ namespace MyGame
                     }
                 break;
                 case tOrangeState.Parabola:
-                    Vector3 acceleration = new Vector3(0.0f, ORANGE_GRAVITY, ORANGE_GRAVITY * 0.4f);
+                    Vector3 acceleration = new Vector3(0.0f, ORANGE_GRAVITY, 0.0f/*ORANGE_GRAVITY * 0.4f*/);
                     velocity += acceleration * SB.dt;
                     position += velocity;
                 break;
