@@ -2579,13 +2579,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sounds\effects\wishFastShot.wav">
-      <Name>wishFastShot</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="sounds\effects\buySkill.wav">
       <Name>buySkill</Name>
       <Importer>WavImporter</Importer>
@@ -2607,12 +2600,12 @@
       <Processor>SoundEffectProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="sounds\effects\grapeGotHit.wav">
+    <Compile Include="sounds\effects\grapeGotHit.wav">
       <Name>grapeGotHit</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Compile>
     <Compile Include="sounds\effects\menuActivated.wav">
       <Name>menuActivated</Name>
       <Importer>WavImporter</Importer>

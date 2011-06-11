@@ -37,9 +37,20 @@ namespace MyGame
         }
         public List<Orb> orbs { get; set; }
 
-        public void addRandomOrbs(int enemyLevel, Vector2 position)
+        public void addRandomOrbs(float enemyLevel, Vector2 position)
         {
-            int XP = enemyLevel + Calc.randomNatural(1, enemyLevel);
+            int XP = 0;
+            if (enemyLevel >= 1.0f)
+            {
+                XP = (int)(enemyLevel + Calc.randomScalar(1, enemyLevel));
+            }
+            else
+            {
+                if (Calc.randomScalar() < enemyLevel)
+                {
+                    XP = 1;
+                }
+            }
             int life = 0;
             if (Calc.randomScalar() < 0.05f)
             {

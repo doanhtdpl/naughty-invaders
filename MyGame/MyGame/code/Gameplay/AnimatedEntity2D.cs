@@ -36,6 +36,8 @@ namespace MyGame
         public Dictionary<string, AnimationAction> actions { get; set; }
         List<AnimatedTexture> animatedTextures;
 
+        float animationSpeed = 1.0f;
+
         public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)
             : base("animated", entityName, position, orientation, color, register, id)
         {
@@ -72,9 +74,11 @@ namespace MyGame
             return actionState;
         }
 
-        public void playAction(string newAction, bool forcePlay = false)
+        public void playAction(string newAction, bool forcePlay = false, float animationSpeed = 1.0f)
         {
             if (actionState == "die" && !forcePlay) return;
+
+            this.animationSpeed = animationSpeed;
 
             if (actions[newAction].playRandom)
             {
@@ -234,7 +238,7 @@ namespace MyGame
         {
             base.update();
 
-            actionTimer += SB.dt;
+            actionTimer += SB.dt * animationSpeed;
 
             AnimationAction action = actions[actionState];
             currentTextureId = action.textureId;
