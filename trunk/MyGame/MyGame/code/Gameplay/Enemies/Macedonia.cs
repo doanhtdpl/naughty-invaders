@@ -345,6 +345,7 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     if (CinematicManager.Instance.cinematicToPlay == null)
                     {
+                        GamerManager.getGamerEntity(0).data.levelsPassed["final_Level01"] = true;
                         StateManager.addState(StateManager.tGameState.EndStage);
                     }
                     break;

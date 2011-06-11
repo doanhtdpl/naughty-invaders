@@ -42,6 +42,7 @@ namespace MyGame
             this.label49 = new System.Windows.Forms.Label();
             this.currentEntityName = new System.Windows.Forms.TextBox();
             this.staticPropertiesPanel = new System.Windows.Forms.Panel();
+            this.livingCheck = new System.Windows.Forms.CheckBox();
             this.flipVerticalCheck = new System.Windows.Forms.CheckBox();
             this.flipHorizontalCheck = new System.Windows.Forms.CheckBox();
             this.colorButton = new System.Windows.Forms.Button();
@@ -237,8 +238,13 @@ namespace MyGame
             this.restartLevelButton = new System.Windows.Forms.Button();
             this.editPlayerPosButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.livingCheck = new System.Windows.Forms.CheckBox();
             this.myEditorControl = new MyGame.MyEditorControl();
+            this.livingIntensityMax = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.livingIntensityMin = new System.Windows.Forms.TextBox();
+            this.livingSpeedMax = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.livingSpeedMin = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
             this.staticPropertiesPanel.SuspendLayout();
@@ -405,6 +411,12 @@ namespace MyGame
             // 
             // staticPropertiesPanel
             // 
+            this.staticPropertiesPanel.Controls.Add(this.livingSpeedMax);
+            this.staticPropertiesPanel.Controls.Add(this.label51);
+            this.staticPropertiesPanel.Controls.Add(this.livingSpeedMin);
+            this.staticPropertiesPanel.Controls.Add(this.livingIntensityMax);
+            this.staticPropertiesPanel.Controls.Add(this.label50);
+            this.staticPropertiesPanel.Controls.Add(this.livingIntensityMin);
             this.staticPropertiesPanel.Controls.Add(this.livingCheck);
             this.staticPropertiesPanel.Controls.Add(this.flipVerticalCheck);
             this.staticPropertiesPanel.Controls.Add(this.flipHorizontalCheck);
@@ -430,11 +442,23 @@ namespace MyGame
             this.staticPropertiesPanel.Controls.Add(this.textPosY);
             this.staticPropertiesPanel.Controls.Add(this.label1);
             this.staticPropertiesPanel.Controls.Add(this.textPosX);
-            this.staticPropertiesPanel.Location = new System.Drawing.Point(380, 5);
+            this.staticPropertiesPanel.Location = new System.Drawing.Point(380, 0);
             this.staticPropertiesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.staticPropertiesPanel.Name = "staticPropertiesPanel";
-            this.staticPropertiesPanel.Size = new System.Drawing.Size(492, 91);
+            this.staticPropertiesPanel.Size = new System.Drawing.Size(710, 100);
             this.staticPropertiesPanel.TabIndex = 213;
+            // 
+            // livingCheck
+            // 
+            this.livingCheck.AutoSize = true;
+            this.livingCheck.Location = new System.Drawing.Point(404, 49);
+            this.livingCheck.Name = "livingCheck";
+            this.livingCheck.Size = new System.Drawing.Size(50, 17);
+            this.livingCheck.TabIndex = 34;
+            this.livingCheck.TabStop = false;
+            this.livingCheck.Text = "living";
+            this.livingCheck.UseVisualStyleBackColor = true;
+            this.livingCheck.CheckedChanged += new System.EventHandler(this.living_CheckedChanged);
             // 
             // flipVerticalCheck
             // 
@@ -2606,18 +2630,6 @@ namespace MyGame
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.buttonSaveLevel_Click);
             // 
-            // livingCheck
-            // 
-            this.livingCheck.AutoSize = true;
-            this.livingCheck.Location = new System.Drawing.Point(404, 49);
-            this.livingCheck.Name = "livingCheck";
-            this.livingCheck.Size = new System.Drawing.Size(50, 17);
-            this.livingCheck.TabIndex = 34;
-            this.livingCheck.TabStop = false;
-            this.livingCheck.Text = "living";
-            this.livingCheck.UseVisualStyleBackColor = true;
-            this.livingCheck.CheckedChanged += new System.EventHandler(this.living_CheckedChanged);
-            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 129);
@@ -2627,6 +2639,58 @@ namespace MyGame
             this.myEditorControl.TabIndex = 2;
             this.myEditorControl.Text = "myEditorControl";
             this.myEditorControl.Click += new System.EventHandler(this.myEditorControl_Click);
+            // 
+            // livingIntensityMax
+            // 
+            this.livingIntensityMax.Location = new System.Drawing.Point(572, 34);
+            this.livingIntensityMax.Margin = new System.Windows.Forms.Padding(2);
+            this.livingIntensityMax.Name = "livingIntensityMax";
+            this.livingIntensityMax.Size = new System.Drawing.Size(30, 20);
+            this.livingIntensityMax.TabIndex = 37;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(491, 37);
+            this.label50.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(45, 13);
+            this.label50.TabIndex = 36;
+            this.label50.Text = "intensity";
+            // 
+            // livingIntensityMin
+            // 
+            this.livingIntensityMin.Location = new System.Drawing.Point(540, 34);
+            this.livingIntensityMin.Margin = new System.Windows.Forms.Padding(2);
+            this.livingIntensityMin.Name = "livingIntensityMin";
+            this.livingIntensityMin.Size = new System.Drawing.Size(30, 20);
+            this.livingIntensityMin.TabIndex = 35;
+            // 
+            // livingSpeedMax
+            // 
+            this.livingSpeedMax.Location = new System.Drawing.Point(572, 58);
+            this.livingSpeedMax.Margin = new System.Windows.Forms.Padding(2);
+            this.livingSpeedMax.Name = "livingSpeedMax";
+            this.livingSpeedMax.Size = new System.Drawing.Size(30, 20);
+            this.livingSpeedMax.TabIndex = 40;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(500, 61);
+            this.label51.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(36, 13);
+            this.label51.TabIndex = 39;
+            this.label51.Text = "speed";
+            // 
+            // livingSpeedMin
+            // 
+            this.livingSpeedMin.Location = new System.Drawing.Point(540, 58);
+            this.livingSpeedMin.Margin = new System.Windows.Forms.Padding(2);
+            this.livingSpeedMin.Name = "livingSpeedMin";
+            this.livingSpeedMin.Size = new System.Drawing.Size(30, 20);
+            this.livingSpeedMin.TabIndex = 38;
             // 
             // MyEditor
             // 
@@ -2883,6 +2947,22 @@ namespace MyGame
         private System.Windows.Forms.Label label49;
         public System.Windows.Forms.TextBox currentEntityName;
         public System.Windows.Forms.CheckBox livingCheck;
+        public System.Windows.Forms.TextBox livingSpeedMax;
+        private System.Windows.Forms.Label label51;
+        public System.Windows.Forms.TextBox livingSpeedMin;
+        public System.Windows.Forms.TextBox livingIntensityMax;
+        private System.Windows.Forms.Label label50;
+        public System.Windows.Forms.TextBox livingIntensityMin;
+
+        private void keyPressedColor(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+
+        }
+
+        private void textChangeColor(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
 #endif
