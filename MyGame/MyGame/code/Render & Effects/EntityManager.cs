@@ -69,7 +69,7 @@ namespace MyGame
         }
         #endregion
 
-        void renderZ0Stuff()
+        void renderZ10Stuff()
         {
             ParticleManager.Instance.render();
             OrbManager.Instance.render();
@@ -77,26 +77,26 @@ namespace MyGame
 
         public void render()
         {
-            bool Z0rendered = false;
+            bool Z10rendered = false;
             sortEntities();
 
             foreach (Entity2D e in entities)
             {
                 // render all things that must be rendered at Z = 0
-                if (!Z0rendered)
+                if (!Z10rendered)
                 {
-                    if (e.position.Z > 0.0f)
+                    if (e.position.Z > 10.0f)
                     {
-                        renderZ0Stuff();
-                        Z0rendered = true;
+                        renderZ10Stuff();
+                        Z10rendered = true;
                     }
                 }
                 e.render();
             }
 
-            if (!Z0rendered)
+            if (!Z10rendered)
             {
-                renderZ0Stuff();
+                renderZ10Stuff();
             }
         }
 
