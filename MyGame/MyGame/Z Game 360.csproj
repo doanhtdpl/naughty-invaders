@@ -196,7 +196,6 @@
       <DependentUpon>MyEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="code\Editor\MyEditorControl.cs" />
-    <Compile Include="code\TextKey.Designer.cs" />
     <Compile Include="code\Triggers\ConditionFunctions.cs" />
     <Compile Include="code\Triggers\ConsequenceFunctions.cs" />
     <Compile Include="code\Triggers\Trigger.cs" />
@@ -206,6 +205,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="code\Editor\ServiceContainer.cs" />
+    <Compile Include="TextKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextKey.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -247,7 +251,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Language.en.resx" />
     <EmbeddedResource Include="Language.es.resx" />
-    <EmbeddedResource Include="TextKey.resx" />
+    <EmbeddedResource Include="TextKey.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextKey.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework">

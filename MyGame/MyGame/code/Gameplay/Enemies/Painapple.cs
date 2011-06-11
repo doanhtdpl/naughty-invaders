@@ -67,6 +67,7 @@ namespace MyGame
                     playAction("Idle");
                     break;
             }
+            state = newState;
         }
 
         public override void render()

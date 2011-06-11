@@ -440,6 +440,12 @@ namespace MyGame
 
                         newEntity.worldMatrix = ent.worldMatrix;
 
+                        newEntity.living = ent.living;
+                        newEntity.livingIntensityMin = ent.livingIntensityMin;
+                        newEntity.livingIntensityMax = ent.livingIntensityMax;
+                        newEntity.livingSpeedMin = ent.livingSpeedMin;
+                        newEntity.livingSpeedMax = ent.livingSpeedMax;
+
                         if (newEntity != null)
                         {
                             newEntities.Add(newEntity);
@@ -505,7 +511,7 @@ namespace MyGame
         }
         #endregion
 
-        #region State
+#region State
         public void changeState(EditorState newState)
         {
             nextState = newState;
@@ -545,7 +551,7 @@ namespace MyGame
             editEffectsButton.BackColor = nextState is EditorState_EditEffects ? SELECTED_COLOR : UNSELECTED_COLOR;
             editPlayerPosButton.BackColor = nextState is EditorState_EditPlayerPos ? SELECTED_COLOR : UNSELECTED_COLOR;
         }
-        #endregion
+#endregion
 
         private void createGroup()
         {
@@ -557,7 +563,7 @@ namespace MyGame
             LevelManager.Instance.addGroup(group);
         }
 
-        #region Properties fields
+#region Properties fields
         private void validateMatrixInputs(object sender)
         {
             float value;
@@ -730,9 +736,9 @@ namespace MyGame
 
             myEditorControl.Focus();
         }
-        #endregion
+#endregion
 
-        #region Reset
+#region Reset
         public void resetRotation()
         {
             foreach (Entity2D ent in selectedEntities)
@@ -776,9 +782,9 @@ namespace MyGame
                 }
             }
         }
-        #endregion
+#endregion
 
-        #region Input
+#region Input
         public MouseState getMouseState() { return mouseState; }
         public MouseState getLastMouseState() { return lastMouseState; }
         public KeyboardState getKeyState() { return lastKeyState; }
@@ -793,7 +799,7 @@ namespace MyGame
         {
             return keyState.IsKeyDown(key);
         }
-        #endregion
+#endregion
 
         private void texturesCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
