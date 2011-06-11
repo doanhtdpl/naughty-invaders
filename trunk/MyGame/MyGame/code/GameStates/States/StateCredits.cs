@@ -8,42 +8,40 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MyGame
 {
-    class StateCredits : GameState
+    class StateCredits : StateGame
     {
-        //public static TEX mainMenu = new TEX();
-        public override void initialize()
-        {
-            type = StateManager.tGS.Credits;
-        }
+        bool fade;
+        float time = 3;
 
-        public override void loadContent()
+        public StateCredits()
+            : base("credits")
         {
-            loaded = true;
+            fade = false;
         }
 
         public override void update()
         {
             base.update();
 
-            if (GamerManager.getMainControls().A_firstPressed())
+            if (CameraManager.Instance.isIdle())
+            {
+                time -= SB.dt;
+            }
+
+            if (GamerManager.getMainControls().B_firstPressed() || time < 0)
+            {
+                if(!fade)
+                {
+                    fade = true;
+                    TransitionManager.Instance.fadeIn();
+                }
+            }
+
+            if (fade && !TransitionManager.Instance.isFading())
             {
                 StateManager.dequeueState(1);
+                TransitionManager.Instance.fadeOut();
             }
-            if (GamerManager.getMainControls().B_firstPressed())
-            {
-                StateManager.dequeueState(1);
-            }
-        }
-
-        public override void render()
-        {
-            GraphicsManager.Instance.spriteBatch.Begin();
-            GraphicsManager.Instance.spriteBatch.End();
-        }
-
-        public override void dispose()
-        {
-
         }
     }
 }
