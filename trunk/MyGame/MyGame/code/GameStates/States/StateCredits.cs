@@ -26,7 +26,7 @@ namespace MyGame
                 time -= SB.dt;
             }
 
-            if (GamerManager.getMainControls().B_firstPressed() || time < 0)
+            if ((GamerManager.getMainControls().B_firstPressed() || time < 0) && !TransitionManager.Instance.isFading())
             {
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
             }
