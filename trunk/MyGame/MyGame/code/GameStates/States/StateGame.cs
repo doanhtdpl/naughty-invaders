@@ -61,10 +61,8 @@ namespace MyGame
                 ActorEvent ae12 = new ActorEvent(player, false);
                 ae12.setOrientation(0.0f);
 
-                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Recuerda: muevete con ::LS y dispara con ::X . Es todo lo que necesitas");
-                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Ten cuidado, ahi llegan esas malditas frutas!");
+                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWishRemind1.Translate());
+                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,TextKey.DialogDarkWishRemind2.Translate());
 
                 cinematic.events.Add((CinematicEvent)ae1);
                 cinematic.events.Add((CinematicEvent)ae12);
@@ -74,8 +72,7 @@ namespace MyGame
             else
             {
                 ConsequenceFunctions.wishEntersGame();
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Este debe ser...");
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWish1.Translate());
                 ActorEvent ae2 = new ActorEvent(player, false);
                 ae2.setOrientation(2.3f);
                 ActorEvent ae3 = new ActorEvent(player, false);
@@ -84,20 +81,13 @@ namespace MyGame
                 ae4.setOrientation(1.1f);
                 ActorEvent ae5 = new ActorEvent(player, false);
                 ae5.setOrientation(0.0f);
-                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish,
-                    "Donde estoy? que es esto? que soy yo?");
-                DialogEvent de3 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Hey! cuidado, es peligroso.");
-                DialogEvent de4 = new DialogEvent(tDialogCharacter.Wish,
-                    "Y tu... quien eres?");
-                DialogEvent de5 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "No hay tiempo. Debe llegar a Cucumber Valley como sea.");
-                DialogEvent de6 = new DialogEvent(tDialogCharacter.Wish,
-                    "Eh?");
-                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Muevete con ::LS y dispara con ::X. Es todo lo que necesitas");
-                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish,
-                    "Ten cuidado, ahi llegan esas malditas frutas!");
+                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogDarkWish2.Translate());
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWish3.Translate());
+                DialogEvent de4 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogDarkWish4.Translate());
+                DialogEvent de5 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWish5.Translate());
+                DialogEvent de6 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogDarkWish6.Translate());
+                DialogEvent de7 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWish7.Translate());
+                DialogEvent de8 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogDarkWish8.Translate());
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)ae2);
@@ -143,7 +133,7 @@ namespace MyGame
                     if (SB.gameTime.TotalGameTime.Milliseconds < 500)
                     {
                         GraphicsManager.Instance.spriteBatchBegin();
-                        "buy new skills! press ::BACK".renderNI(Screen.getXYfromCenter(330, -230), 0.8f);
+                        TextKey.MessageNewSkills.Translate().renderNI(Screen.getXYfromCenter(330, -230), 0.8f);
                         GraphicsManager.Instance.spriteBatchEnd();
                     }
                 }

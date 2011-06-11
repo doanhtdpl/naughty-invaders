@@ -245,7 +245,6 @@
     <Compile Include="code\SB.cs" />
     <Compile Include="code\OLD code\SoundManager.cs" />
     <Compile Include="code\Sound\SoundManager.cs" />
-    <Compile Include="code\TextKey.Designer.cs" />
     <Compile Include="code\Editor\GraphicsDeviceControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -258,6 +257,11 @@
     </Compile>
     <Compile Include="code\Editor\MyEditorControl.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextKey.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextKey.resx</DependentUpon>
     </Compile>
     <Compile Include="code\Triggers\ConditionFunctions.cs" />
     <Compile Include="code\Triggers\ConsequenceFunctions.cs" />
@@ -308,13 +312,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="code\Language.en.resx">
+    <EmbeddedResource Include="Language.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="code\Language.es.resx">
+    <EmbeddedResource Include="Language.es.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="code\TextKey.resx" />
+    <EmbeddedResource Include="TextKey.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextKey.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="code\Editor\MyEditor.resx">
       <DependentUpon>MyEditor.cs</DependentUpon>
       <SubType>Designer</SubType>

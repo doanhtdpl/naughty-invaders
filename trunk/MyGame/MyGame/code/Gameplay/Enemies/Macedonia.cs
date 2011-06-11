@@ -95,8 +95,8 @@ namespace MyGame
         {
             Cinematic cinematic = new Cinematic();
 
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, "Te voy a machacar mierda seca!");
-            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, "A que te meto...");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaIntro2.Translate());
 
             cinematic.events.Add((CinematicEvent)de1);
             cinematic.events.Add((CinematicEvent)de2);
@@ -108,9 +108,9 @@ namespace MyGame
         {
             Cinematic cinematic = new Cinematic();
 
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, "Vaya paliza que me has metido, cabronazo!");
-            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, "Ja je ji jo ju. Pakete!");
-            DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, "Por que? Por que?");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaOutro2.Translate());
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
 
             cinematic.events.Add((CinematicEvent)de1);
             cinematic.events.Add((CinematicEvent)de2);
