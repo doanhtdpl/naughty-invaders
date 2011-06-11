@@ -70,11 +70,7 @@ namespace MyGame
                 else if (af.Attribute("type").Value == "effect")
                 {
                     string name = af.Attribute("name").Value;
-                    try
-                    {
-                        effects.Add(name, SB.content.Load<SoundEffect>("sounds\\effects\\" + name));
-                    }
-                    catch (Exception e) { }
+                    effects.Add(name, SB.content.Load<SoundEffect>("sounds\\effects\\" + name));
                 }
             }
         }
