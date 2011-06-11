@@ -52,7 +52,7 @@ namespace MyGame
             DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
             DialogEvent.portraits = new Texture2D[N_DIALOG_CHARACTERS];
             DialogEvent.portraits[(int)tDialogCharacter.Wish] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
-            DialogEvent.portraits[(int)tDialogCharacter.DarkWish] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
+            DialogEvent.portraits[(int)tDialogCharacter.DarkWish] = TextureManager.Instance.getTexture("GUI/portraits/mrblack-89");
             DialogEvent.portraits[(int)tDialogCharacter.OnionElder] = TextureManager.Instance.getTexture("GUI/portraits/portraitOnionElder");
             DialogEvent.portraits[(int)tDialogCharacter.KingTomato] = TextureManager.Instance.getTexture("GUI/portraits/portraitKingTomato");
             DialogEvent.portraits[(int)tDialogCharacter.Macedonia] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
