@@ -649,6 +649,10 @@ namespace MyGame
                         flipVerticalCheck.Checked = ((RenderableEntity2D)ent).flipVertical;
 
                         livingCheck.Checked = ent.living;
+                        livingIntensityMin.Text = ent.livingIntensityMin.toString();
+                        livingIntensityMax.Text = ent.livingIntensityMax.toString();
+                        livingSpeedMin.Text = ent.livingSpeedMin.toString();
+                        livingSpeedMax.Text = ent.livingSpeedMax.toString();
                     }
                 }
             }
@@ -688,6 +692,39 @@ namespace MyGame
                 foreach (Entity2D rent in selectedEntities)
                 {
                     rent.living = livingCheck.Checked;
+                }
+            }
+
+            myEditorControl.Focus();
+        }
+
+        private void keyPressedLiving(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r') // PRESS ENTER
+            {
+                livingParams_Change(null, null);
+                myEditorControl.Focus();
+            }
+        }
+
+        private void livingParams_Change(object sender, EventArgs e)
+        {
+            if (anyEntitySelected())
+            {
+                foreach (Entity2D rent in selectedEntities)
+                {
+                    try
+                    {
+                        rent.livingIntensityMin = float.Parse(livingIntensityMin.Text);
+                        rent.livingIntensityMax = float.Parse(livingIntensityMax.Text);
+                        rent.livingSpeedMin = float.Parse(livingSpeedMin.Text);
+                        rent.livingSpeedMax = float.Parse(livingSpeedMax.Text);
+                        rent.livingInit = false;
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
             }
 
