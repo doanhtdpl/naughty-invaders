@@ -65,6 +65,7 @@ namespace MyGame
             GraphicsManager.Instance.loadContent();
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
+            ControlPadManager.Instance.initialize();
 
             // add a player to play with it for quick tests
             GamerManager.createGamerEntity(PlayerIndex.One, true);
@@ -83,7 +84,7 @@ namespace MyGame
             //Update
             SB.updateGameTime(gameTime);
 
-            GamerManager.updateInputs();
+            ControlPadManager.Instance.update();
             if (!MyEditor.Instance.update())
             {
                 Application.Exit();
