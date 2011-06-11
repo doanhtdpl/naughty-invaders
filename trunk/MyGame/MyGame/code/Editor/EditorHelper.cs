@@ -160,6 +160,10 @@ namespace MyGame
             writer.WriteAttributeString("flipH", ent.flipHorizontal.ToString());
             writer.WriteAttributeString("flipV", ent.flipVertical.ToString());
             writer.WriteAttributeString("living", ent.living.ToString());
+            writer.WriteAttributeString("livingIntensityMin", ent.livingIntensityMin.ToString());
+            writer.WriteAttributeString("livingIntensityMax", ent.livingIntensityMax.ToString());
+            writer.WriteAttributeString("livingSpeedMin", ent.livingSpeedMin.ToString());
+            writer.WriteAttributeString("livingSpeedMax", ent.livingSpeedMax.ToString());
             writer.WriteEndElement();
         }
 
@@ -386,6 +390,13 @@ namespace MyGame
                     {
                         re.living = node.Attribute("living").Value.toBool();
                     }
+                    if (node.Attributes("livingIntensityMin").Count() > 0)
+                    {
+                        re.livingIntensityMin = node.Attribute("livingIntensityMin").Value.toFloat();
+                        re.livingIntensityMax = node.Attribute("livingIntensityMax").Value.toFloat();
+                        re.livingSpeedMin = node.Attribute("livingSpeedMin").Value.toFloat();
+                        re.livingSpeedMax = node.Attribute("livingSpeedMax").Value.toFloat();
+                    }
 
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
@@ -414,6 +425,13 @@ namespace MyGame
                     if (node.Attributes("living").Count() > 0)
                     {
                         ae.living = node.Attribute("living").Value.toBool();
+                    }
+                    if (node.Attributes("livingIntensityMin").Count() > 0)
+                    {
+                        ae.livingIntensityMin = node.Attribute("livingIntensityMin").Value.toFloat();
+                        ae.livingIntensityMax = node.Attribute("livingIntensityMax").Value.toFloat();
+                        ae.livingSpeedMin = node.Attribute("livingSpeedMin").Value.toFloat();
+                        ae.livingSpeedMax = node.Attribute("livingSpeedMax").Value.toFloat();
                     }
 
                     LevelManager.Instance.addAnimatedProp(ae);
@@ -445,6 +463,13 @@ namespace MyGame
                     if (node.Attributes("living").Count() > 0)
                     {
                         e.living = node.Attribute("living").Value.toBool();
+                    }
+                    if (node.Attributes("livingIntensityMin").Count() > 0)
+                    {
+                        e.livingIntensityMin = node.Attribute("livingIntensityMin").Value.toFloat();
+                        e.livingIntensityMax = node.Attribute("livingIntensityMax").Value.toFloat();
+                        e.livingSpeedMin = node.Attribute("livingSpeedMin").Value.toFloat();
+                        e.livingSpeedMax = node.Attribute("livingSpeedMax").Value.toFloat();
                     }
 
                     e.setInit();
