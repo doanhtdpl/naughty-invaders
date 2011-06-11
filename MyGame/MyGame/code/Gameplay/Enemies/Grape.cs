@@ -102,7 +102,7 @@ namespace MyGame
                     }
                     GameplayHelper.Instance.updateEntityPosition(this,
                         position2D + (new Vector2(-LATERAL_SPEED, 0.0f) * SB.dt),
-                        LevelManager.Instance.getLevelCollisions(), false);
+                        LevelManager.Instance.getLevelCollisions(), true);
                 }
             }
             else if (!moveEnded)
