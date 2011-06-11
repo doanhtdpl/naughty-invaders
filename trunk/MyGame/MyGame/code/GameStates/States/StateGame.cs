@@ -124,7 +124,6 @@ namespace MyGame
         {
         }
 
-        bool addCameraNodes = true;
         public override void render()
         {
             GraphicsManager.Instance.graphicsDevice.Clear(SB.BGColor);
