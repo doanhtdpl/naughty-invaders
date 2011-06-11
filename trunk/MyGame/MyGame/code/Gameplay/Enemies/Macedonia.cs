@@ -13,7 +13,7 @@ namespace MyGame
 
         tMacedoniaBossState state;
 
-        float LIFE = 1500;
+        float LIFE = 2000;
 
         //rayo
         float RAYO_DURATION = 1.5f;
@@ -466,6 +466,11 @@ namespace MyGame
                     //invoke watermelon
                     ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -350, 5), Vector3.Zero, Color.White);
                     EnemyManager.Instance.addEnemy("watermelon", position + new Vector3(0, -350, 0));
+
+                    ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(-300, -350, 5), Vector3.Zero, Color.White);
+                    EnemyManager.Instance.addEnemy("grape", position + new Vector3(-300, -350, 0));
+                    ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(300, -350, 5), Vector3.Zero, Color.White);
+                    EnemyManager.Instance.addEnemy("grape", position + new Vector3(300, -350, 0));
 
                     playAction("attackIdle");
                     break;
