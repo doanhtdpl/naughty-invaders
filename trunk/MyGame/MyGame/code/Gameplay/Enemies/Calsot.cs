@@ -23,7 +23,8 @@ namespace MyGame
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
-            base.gotHitAtPart(ce, partIndex);
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
+            SoundManager.Instance.playEffect(entityName + "GotHit");
             return true;
         }
 

@@ -123,8 +123,10 @@ namespace MyGame
 
             --lifePortions;
             invulnerableTime = INVULNERABLE_TIME;
+            bool miniDie = false;
             if (lifePortions <= 0)
             {
+                miniDie = true;
                 invulnerableTime += actions["miniDie"].getDuration();
                 --lifes;
                 playAction("miniDie");
@@ -134,11 +136,22 @@ namespace MyGame
                 }
             }
 
-            if (lifePortions == 0 && life == 0)
+            bool finalDie = lifePortions <= 0 && lifes <= 0;
+
+            if (finalDie)
             {
-                int lal = 1;
+                SoundManager.Instance.playEffect("wishFinalDie");
             }
-            return lifePortions > 0 || lifes > 0;
+            else if (miniDie)
+            {
+                SoundManager.Instance.playEffect("wishMiniDie");
+            }
+            else
+            {
+                SoundManager.Instance.playEffect("wishGotHit");
+            }
+
+            return !finalDie;
         }
 
         public void addLifePortionsToMax()
@@ -150,10 +163,12 @@ namespace MyGame
             switch (type)
             {
                 case Orb.tOrb.XP:
+                    SoundManager.Instance.playEffect("pickXPOrb");
                     ++owner.data.XP;
                     ++owner.data.totalXP;
                     break;
                 case Orb.tOrb.Life:
+                    SoundManager.Instance.playEffect("pickLifeOrb");
                     ++owner.data.lifeOrbs;
                     ++lifePortions;
                     if (lifePortions > getMaxLifePortions())
@@ -182,6 +197,7 @@ namespace MyGame
                 {
                     dashVelocity = direction * DASH_VELOCITY;
                     dashCooldownTime = owner.data.getDashCooldown();
+                    SoundManager.Instance.playEffect("dash");
                 }
             }
         }
@@ -219,6 +235,8 @@ namespace MyGame
 
                     fastShotCooldownTime = p.cooldown;
                     ProjectileManager.Instance.addProjectile(p);
+
+                    SoundManager.Instance.playEffect("wishFastShot");
                 }
             }
             // big shot attack
@@ -281,6 +299,8 @@ namespace MyGame
                     Vector3 particlesDirection = (shotDirection.toVector3() * 700.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
                     ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
                 }
+
+                SoundManager.Instance.playEffect("garlicGunShot");
             }
         }
         void updateSavingiItemsMode(Vector2 direction, ControlPad controls)

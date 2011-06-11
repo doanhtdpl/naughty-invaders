@@ -69,6 +69,7 @@ namespace MyGame
             if (cp.Up_firstPressed() && currentNode.upNode != null)
             {
                 setCurrentNode(currentNode.upNode);
+                SoundManager.Instance.playEffect("menuUpDown");
             }
             else if (cp.Down_firstPressed() && currentNode.downNode != null)
             {

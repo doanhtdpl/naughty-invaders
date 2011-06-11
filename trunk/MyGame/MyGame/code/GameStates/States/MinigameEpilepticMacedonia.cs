@@ -217,6 +217,7 @@ namespace MyGame
                     fruits.RemoveAt(i);
                     --i;
                     ++savedFruits;
+                    SoundManager.Instance.playEffect("pickMacedoniaFruit");
                 }
                 else
                 {

@@ -44,9 +44,7 @@ namespace MyGame
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
             if (state == tState.Shitting || state == tState.Recovering) return true;
-
-            life -= ce.damage;
-            return life > 0;
+            return base.gotHitAtPart(ce, partIndex);
         }
 
         public override void die()

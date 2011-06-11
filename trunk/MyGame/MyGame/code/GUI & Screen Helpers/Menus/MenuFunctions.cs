@@ -53,11 +53,11 @@ namespace MyGame
                 ps.obtained = true;
                 GamerManager.getSessionOwner().data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
-                // playsound
+                SoundManager.Instance.playEffect("buySkill");
             }
             else
             {
-                // playsound
+                SoundManager.Instance.playEffect("noBuySkill");
             }
         }
         public static void buySkillAddLife(string skillName, MenuElement menuElement, Player player)

@@ -34,11 +34,17 @@ namespace MyGame
 
         public void playEffect(string name)
         {
-            effects[name].Play();
+            if (effects.ContainsKey(name))
+            {
+                effects[name].Play();
+            }
         }
         public void playSong(string name)
         {
-            MediaPlayer.Play(songs[name]);
+            if (songs.ContainsKey(name))
+            {
+                MediaPlayer.Play(songs[name]);
+            }
         }
 
         public void loadXML()
