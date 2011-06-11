@@ -81,7 +81,6 @@ namespace MyGame
         public override void render()
         {
             base.render();
-            renderCollisionParts();
         }
 
 #if DEBUG
