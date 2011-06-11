@@ -25,10 +25,14 @@ playRandom (inside action):
 -->
 
 <animatedEntity>
-  <animatedTexture name="Anim_Player" frameWidth="160" frameHeight="160" columns="6" rows="6">
-    <action name="attack" initialFrame="1" endFrame="4" loops="false"/>
-    <action name="attack2" initialFrame="5" endFrame="9" loops="false"/>
-    <action name="die" initialFrame="10" endFrame="20" FPS="15" loops="false"/>
-    <action name="idle" initialFrame="24" endFrame="36" loops="true"/>
+  <animatedTexture name="Anim_Wish" frameWidth="160" frameHeight="160" columns="12" rows="5">
+    <action name="attack" initialFrame="5" endFrame="14" loops="false"/>
+    <action name="attack2" initialFrame="15" endFrame="22" loops="false"/>
+    <action name="die" initialFrame="52" endFrame="61"  loops="false"/>
+    <action name="idle" initialFrame="23" endFrame="51" loops="true"/>
+    <action name="moveFront" initialFrame="1" endFrame="1" loops="true"/>
+    <action name="moveBack" initialFrame="2" endFrame="2" loops="true"/>
+    <action name="moveLeft" initialFrame="3" endFrame="3"  loops="true"/>
+    <action name="moveRight" initialFrame="4" endFrame="4" loops="true"/>
   </animatedTexture>
 </animatedEntity>
