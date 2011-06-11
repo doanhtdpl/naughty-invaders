@@ -18,11 +18,11 @@ namespace MyGame
         }
         public static void goToOptions()
         {
-            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Credits, 0, null, 0.5f, Color.Black);
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Credits, 1, null, 0.5f, Color.Black);
         }
         public static void goToCredits()
         {
-            StateManager.addState(StateManager.tGameState.Credits);
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Credits, 1, null, 0.5f, Color.Black);
         }
         public static void unpause()
         {

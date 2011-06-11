@@ -35,10 +35,18 @@ namespace MyGame
 
         public void initLevelsPassed()
         {
+#if DEBUG
+            levelsPassed["final_Level01"] = true;
+            levelsPassed["onionVillage"] = true;
+            levelsPassed["macedonia"] = true;
+            levelsPassed["level2"] = true;
+#else
             levelsPassed["final_Level01"] = false;
             levelsPassed["onionVillage"] = false;
             levelsPassed["macedonia"] = false;
             levelsPassed["level2"] = false;
+#endif
+
         }
         // initialize the tree with the costs and links between skills
         public void initSkills()

@@ -10,13 +10,11 @@ namespace MyGame
 {
     class StateCredits : StateGame
     {
-        bool fade;
         float time = 3;
 
         public StateCredits()
             : base("credits")
         {
-            fade = false;
         }
 
         public override void update()
@@ -30,18 +28,18 @@ namespace MyGame
 
             if (GamerManager.getMainControls().B_firstPressed() || time < 0)
             {
-                if(!fade)
-                {
-                    fade = true;
-                    TransitionManager.Instance.fadeIn();
-                }
-            }
-
-            if (fade && !TransitionManager.Instance.isFading())
-            {
-                StateManager.dequeueStates(1);
-                TransitionManager.Instance.fadeOut();
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
             }
         }
+
+        public override void render()
+        {
+            GraphicsManager.Instance.graphicsDevice.Clear(SB.BGColor);
+
+            EntityManager.Instance.render();
+            LevelManager.Instance.render();
+            CinematicManager.Instance.render();
+        }
+
     }
 }
