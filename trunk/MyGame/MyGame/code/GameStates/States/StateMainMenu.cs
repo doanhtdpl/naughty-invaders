@@ -15,7 +15,6 @@ namespace MyGame
     class StateMainMenu : GameState
     {
         Menu menu;
-        Texture2D logo;
 
         void initializeMenu()
         {
@@ -58,8 +57,6 @@ namespace MyGame
 
         public override void loadContent()
         {
-            logo = TextureManager.Instance.getTexture("GUI/menu/logo_NI");
-
             EditorHelper.Instance.loadNewLevelFromGame("menu");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
