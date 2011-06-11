@@ -9,12 +9,14 @@ namespace MyGame
 {
     public class Macedonia : Enemy
     {
-        enum tMacedoniaBossState { Init, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh }
+        enum tMacedoniaBossState { Init, Cinematic, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh }
 
         tMacedoniaBossState state;
 
+        float LIFE = 1500;
+
         //rayo
-        float RAYO_DURATION = 100.5f;
+        float RAYO_DURATION = 1.5f;
         int RAYO_LIMIT_X = 400;
 
         int TELEPORT_LIMIT_X = 450;
@@ -40,12 +42,15 @@ namespace MyGame
         float SHAKE_MIN_TIME_FRUIT = 0.2f;
         float SHAKE_MAX_TIME_FRUIT = 0.3f;
 
-        float SHAKE_TIME = 3.0f;
-        float SHAKE_TIMES = 3;
+        float SHAKE_TIME_MIN = 3.0f;
+        float SHAKE_TIME_MAX = 3.0f;
+        int SHAKE_TIMES_MIN = 1;
+        int SHAKE_TIMES_MAX = 3;
+
 
         bool visible = true;
-        float stateTime, idleTime, appearX, shakeNextFruitTime, shakeCount;
-        int numHits, rayoInitLives, invokeCount;
+        float stateTime, idleTime, appearX, shakeNextFruitTime, shakeCount, shakeTime;
+        int numHits, rayoInitLives, invokeCount, shakeTimes;
         Vector3 initPos, positionRayoTo, positionRayoFrom, invokeFrom, invokeStep;
         bool invokeRight;
 
@@ -57,13 +62,17 @@ namespace MyGame
         float timeToAttack;
         tMacedoniaBossState nextAttack;
 
+        Lifebar lifebar;
+
         public Macedonia(Vector3 position, float orientation)
             : base("macedonia", position, orientation, 4)
         {
-            life = 1000.0f;
+            life = LIFE;
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
             setCollisions();
+
+            lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 140.0f), Color.Green);
 
             for(int i=0; i<MAX_RAYOS; i++)
             {
@@ -72,6 +81,21 @@ namespace MyGame
             rayoEnd = new AnimatedEntity2D("animatedProps", "macedoniaWeaponEnd", Vector3.Zero, 0, Color.White);
 
             showRayo(false);
+
+            loadIntroCinematic();
+        }
+
+        void loadIntroCinematic()
+        {
+            Cinematic cinematic = new Cinematic();
+
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, "Te voy a machacar mierda seca!");
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, "A que te meto...");
+
+            cinematic.events.Add((CinematicEvent)de1);
+            cinematic.events.Add((CinematicEvent)de2);
+
+            CinematicManager.Instance.addCinematic("macedoniaIntro", cinematic);
         }
 
         public override void setCollisions()
@@ -92,9 +116,7 @@ namespace MyGame
         public override void die()
         {
             base.die();
-            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.White);
-            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.Red);
-            ParticleManager.Instance.addParticles("macedonia2", position, Vector3.Zero, Color.Blue);
+            entityState = tEntityState.Dying;
         }
 
 
@@ -108,11 +130,23 @@ namespace MyGame
             switch (state)
             {
                 case tMacedoniaBossState.Init:
-                    initPos = position;
-                    nextAttack = tMacedoniaBossState.Idle;
-                    changeState(tMacedoniaBossState.Hidden);
+                    //stay until the camera stops
+                    if (CameraManager.Instance.isIdle())
+                    {
+                        initPos = position;
+                        nextAttack = tMacedoniaBossState.Cinematic;
+                        changeState(tMacedoniaBossState.Hidden);
 
-                    appearX = 0;
+                        appearX = 0;
+                    }
+                    break;
+
+                case tMacedoniaBossState.Cinematic:
+                    if (CinematicManager.Instance.cinematicToPlay == null)
+                    {
+                        nextAttack = tMacedoniaBossState.Idle;
+                        changeState(tMacedoniaBossState.Disappear);
+                    }
                     break;
 
                 case tMacedoniaBossState.Hidden:
@@ -243,10 +277,10 @@ namespace MyGame
                         shakeNextFruitTime = Calc.randomScalar(SHAKE_MIN_TIME_FRUIT, SHAKE_MAX_TIME_FRUIT);
                     }
 
-                    if (stateTime > SHAKE_TIME)
+                    if (stateTime > shakeTime)
                     {
                         shakeCount++;
-                        if (shakeCount < SHAKE_TIMES)
+                        if (shakeCount < shakeTimes)
                         {
                             nextAttack = tMacedoniaBossState.Shake;
                             appearX = Calc.randomNatural(-TELEPORT_LIMIT_X, TELEPORT_LIMIT_X);
@@ -308,6 +342,10 @@ namespace MyGame
                     visible = false;
                     break;
 
+                case tMacedoniaBossState.Cinematic:
+                    CinematicManager.Instance.playCinematic("macedoniaIntro");
+                    break;
+
                 case tMacedoniaBossState.Disappear:
                     playAction("idle");
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
@@ -334,7 +372,7 @@ namespace MyGame
                     else
                         nextAttack = tMacedoniaBossState.Laugh;
 
-                    timeToAttack = Calc.randomScalar(1.0f, 2.0f);
+                    timeToAttack = Calc.randomScalar(0.5f, 1.0f);
 
                     break;
 
@@ -355,6 +393,9 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.Shake:
+                    shakeTime = Calc.randomScalar(SHAKE_TIME_MIN, SHAKE_TIME_MAX);
+                    shakeTimes = Calc.randomNatural(SHAKE_TIMES_MIN, SHAKE_TIMES_MAX);
+
                     playAction("attackShake");
                     break;
 
@@ -452,8 +493,15 @@ namespace MyGame
 
         public override void render()
         {
-            if(visible)
+            if (visible)
+            {
                 base.render();
+
+                lifebar.lifePercentage = life / LIFE;
+                GraphicsManager.Instance.spriteBatchBegin();
+                lifebar.render();
+                GraphicsManager.Instance.spriteBatchEnd();
+            }
 
             foreach (RenderableEntity2D fruit in fruits)
             {

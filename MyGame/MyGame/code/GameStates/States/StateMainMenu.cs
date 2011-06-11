@@ -15,22 +15,23 @@ namespace MyGame
     class StateMainMenu : GameState
     {
         Menu menu;
+        Texture2D logo;
 
         void initializeMenu()
         {
             menu = new Menu(300.0f);
             Vector2 scale = new Vector2(1.5f, 0.9f);
 
-            MenuElement mb1 = new MenuElement("", new Vector2(-20.0f, 30.0f), scale);
+            MenuElement mb1 = new MenuElement("", new Vector2(-20.0f, -100), scale);
             mb1.setFunction("startGame", MenuElement.tInputType.A);
-            MenuElement mb2 = new MenuElement("", new Vector2(-20.0f, -70.0f), scale);
+            MenuElement mb2 = new MenuElement("", new Vector2(-20.0f, -170), scale);
             mb2.setFunction("goToOptions", MenuElement.tInputType.A);
-            MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -170.0f), scale);
+            MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -230), scale);
             mb3.setFunction("exitToArcade", MenuElement.tInputType.A);
             
-            menu.menuTexts.Add(new MenuText("start game", new Vector2(0, 60), 1.4f));
-            menu.menuTexts.Add(new MenuText("options", new Vector2(0, -40), 1.4f));
-            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -140), 1.4f));
+            menu.menuTexts.Add(new MenuText("start game", new Vector2(0, -70), 1.4f));
+            menu.menuTexts.Add(new MenuText("options", new Vector2(0, -140), 1.4f));
+            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -210), 1.4f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;
@@ -59,6 +60,8 @@ namespace MyGame
 
         public override void loadContent()
         {
+            logo = TextureManager.Instance.getTexture("GUI/menu/logo_NI");
+
             loaded = true;
         }
 
@@ -72,6 +75,10 @@ namespace MyGame
 
         public override void render()
         {
+            GraphicsManager.Instance.spriteBatchBegin();
+            logo.render2D(new Vector2(0, 120), new Vector2(logo.Width/2, logo.Height/2), Color.White);
+            GraphicsManager.Instance.spriteBatchEnd();
+
             menu.render();
             //GamerManager.renderTrialMessage(new Vector2(0, -190), 1.3f);
         }

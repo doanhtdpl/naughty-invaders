@@ -161,6 +161,11 @@ namespace MyGame
             nextNode = node.getNext();
         }
 
+        public bool isIdle()
+        {
+            return nextNode == null;
+        }
+
         void updateFollowPlayerMode()
         {
             //Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;

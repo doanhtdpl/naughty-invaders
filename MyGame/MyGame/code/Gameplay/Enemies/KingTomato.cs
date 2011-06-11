@@ -31,7 +31,7 @@ namespace MyGame
         {
             life = LIFE;
             setCollisions();
-            lifebar = new Lifebar("kingTomato", this, new Vector2(0.8f, 0.8f), new Vector2(0.0f, 170.0f));
+            lifebar = new Lifebar("kingTomato", this, new Vector2(0.8f, 0.8f), new Vector2(0.0f, 170.0f), Color.White);
             state = tState.Commanding;
         }
 

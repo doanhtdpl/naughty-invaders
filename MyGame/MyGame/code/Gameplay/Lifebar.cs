@@ -14,10 +14,11 @@ namespace MyGame
         Vector2 frontScale;
         Entity2D reference;
         Vector2 offset;
+        Color color;
 
         public float lifePercentage { get; set; }
 
-        public Lifebar(string name, Entity2D reference, Vector2 scale, Vector2 offset)
+        public Lifebar(string name, Entity2D reference, Vector2 scale, Vector2 offset, Color color)
         {
             back = TextureManager.Instance.getTexture("GUI/ingame/" + name + "Back");
             backScale.X = back.Width * scale.X;
@@ -25,6 +26,8 @@ namespace MyGame
             front = TextureManager.Instance.getTexture("GUI/ingame/" + name + "Front");
             frontScale.X = front.Width * scale.X;
             frontScale.Y = front.Height * scale.Y;
+
+            this.color = color;
 
             this.reference = reference;
             this.offset = offset;
@@ -41,8 +44,8 @@ namespace MyGame
             {
                 se = SpriteEffects.FlipVertically;
             }
-            back.render2D(projectedPosition.toVector2(), backScale, Color.White, 0.0f, se, 1.0f, false);
-            front.render2D(projectedPosition.toVector2(), frontScale, Color.White, 0.0f, se, lifePercentage, false);
+            back.render2D(projectedPosition.toVector2(), backScale, color, 0.0f, se, 1.0f, false);
+            front.render2D(projectedPosition.toVector2(), frontScale, color, 0.0f, se, lifePercentage, false);
         }
     }
 }
