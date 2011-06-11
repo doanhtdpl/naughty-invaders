@@ -125,46 +125,51 @@ namespace MyGame
 
         public bool updateOptions()
         {
+            bool activatedSomething = false;
             ControlPad cp = GamerManager.getMainControls();
             if (cp.A_firstPressed() && (functions[tInputType.A.toInt()] != null))
             {
                 functions[tInputType.A.toInt()].Invoke(null, functionParameters[tInputType.A.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.A_firstPressed() && (functions[tInputType.X.toInt()] != null))
             {
                 functions[tInputType.X.toInt()].Invoke(null, functionParameters[tInputType.X.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.A_firstPressed() && (functions[tInputType.Y.toInt()] != null))
             {
                 functions[tInputType.Y.toInt()].Invoke(null, functionParameters[tInputType.Y.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.A_firstPressed() && (functions[tInputType.B.toInt()] != null))
             {
                 functions[tInputType.B.toInt()].Invoke(null, functionParameters[tInputType.B.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.Left_firstPressed() && (functions[tInputType.Left.toInt()] != null))
             {
                 functions[tInputType.Left.toInt()].Invoke(null, functionParameters[tInputType.Left.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.Right_firstPressed() && (functions[tInputType.Right.toInt()] != null))
             {
                 functions[tInputType.Right.toInt()].Invoke(null, functionParameters[tInputType.Right.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.Up_firstPressed() && (functions[tInputType.Up.toInt()] != null))
             {
                 functions[tInputType.Up.toInt()].Invoke(null, functionParameters[tInputType.Up.toInt()]);
-                return true;
+                activatedSomething = true;
             }
             if (cp.Down_firstPressed() && (functions[tInputType.Down.toInt()] != null))
             {
                 functions[tInputType.Down.toInt()].Invoke(null, functionParameters[tInputType.Down.toInt()]);
-                return true;
+                activatedSomething = true;
+            }
+            if (activatedSomething)
+            {
+                SoundManager.Instance.playEffect("menuActivated");
             }
             return false;
         }

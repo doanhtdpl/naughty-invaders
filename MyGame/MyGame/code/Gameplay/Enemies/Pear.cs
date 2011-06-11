@@ -39,13 +39,6 @@ namespace MyGame
             addCollision(new Vector2(0, 20), 40);
         }
 
-        public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
-        {
-            base.gotHitAtPart(ce, partIndex);
-            life -= ce.damage;
-            return life > 0;
-        }
-
         public override void die()
         {
             base.die();

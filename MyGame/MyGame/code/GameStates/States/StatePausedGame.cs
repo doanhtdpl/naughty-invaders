@@ -50,7 +50,7 @@ namespace MyGame
             transitionColor *= 0.85f;
             initializeMenu();
             renderAlways = false;
-            //SoundManager.playSound("pause");
+            SoundManager.Instance.playEffect("pause");
         }
 
         public override void loadContent()
@@ -68,7 +68,7 @@ namespace MyGame
             if (GamerManager.getMainControls().Start_firstPressed() || GamerManager.getMainControls().B_firstPressed())
             {
                 StateManager.dequeueStates(1);
-                //SoundManager.playSound("pause");
+                SoundManager.Instance.playEffect("pause");
             }
         }
 

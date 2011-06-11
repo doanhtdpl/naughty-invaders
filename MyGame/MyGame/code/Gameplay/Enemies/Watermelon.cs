@@ -55,6 +55,17 @@ namespace MyGame
                 life -= ce.damage;
                 ParticleManager.Instance.addParticles("watermelonGotHitOk", this.position, Vector3.Zero, Color.White);
             }
+
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
+            if (life > 0)
+            {
+                SoundManager.Instance.playEffect(entityName + "GotHit");
+            }
+            else
+            {
+                SoundManager.Instance.playEffect(entityName + "Dies");
+            }
+
             return life > 0;
         }
 
