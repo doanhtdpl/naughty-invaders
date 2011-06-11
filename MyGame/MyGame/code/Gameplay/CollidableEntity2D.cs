@@ -18,15 +18,19 @@ namespace MyGame
             this.centerOfMass = centerOfMass;
             this.radius = radius;
         }
+
+        public void setRadius(float radius)
+        {
+            this.radius = radius;
+        }
     }
 
     public class CollidableEntity2D : AnimatedEntity2D
     {
         public enum tSpecial { None, BreaksGuard };
         protected float life;
-        List<CollidablePart> parts = new List<CollidablePart>();
 
-        public List<CollidablePart> getParts() { return parts; }
+        public List<CollidablePart> parts { get; set; }
         public tSpecial special { get; set; }
 
         public float damage { set; get; }
@@ -36,6 +40,7 @@ namespace MyGame
         {
             this.damage = damage;
             this.updateState = tUpdateState.Update;
+            parts = new List<CollidablePart>();
         }
 
         public virtual void setCollisions()
@@ -53,7 +58,7 @@ namespace MyGame
         {
             for (int i = 0; i < parts.Count; ++i)
             {
-                List<CollidablePart> ceParts = ce.getParts();
+                List<CollidablePart> ceParts = ce.parts;
                 for (int j = 0; j < ceParts.Count; ++j)
                 {
                     Vector2 v = (position2D + parts[i].centerOfMass) - (ce.position2D + ceParts[j].centerOfMass);
