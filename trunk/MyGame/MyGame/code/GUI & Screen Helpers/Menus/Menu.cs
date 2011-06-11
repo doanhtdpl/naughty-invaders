@@ -59,9 +59,7 @@ namespace MyGame
 
         public void update()
         {
-
             ControlPad cp = GamerManager.getMainControls();
-            
 
             // if the button does something in his own update, return to skip other menu updates
             if (currentNode.update()) return;
@@ -74,6 +72,7 @@ namespace MyGame
             else if (cp.Down_firstPressed() && currentNode.downNode != null)
             {
                 setCurrentNode(currentNode.downNode);
+                SoundManager.Instance.playEffect("menuUpDown");
             }
         }
 
