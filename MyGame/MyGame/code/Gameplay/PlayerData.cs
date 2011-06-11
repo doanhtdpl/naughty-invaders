@@ -35,8 +35,8 @@ namespace MyGame
 
         public void initLevelsPassed()
         {
-            levelsPassed["final_Level01"] = true;
-            levelsPassed["onionVillage"] = true;
+            levelsPassed["final_Level01"] = false;
+            levelsPassed["onionVillage"] = false;
             levelsPassed["macedonia"] = false;
             levelsPassed["level2"] = false;
         }
@@ -63,7 +63,9 @@ namespace MyGame
             wishOrbs = 0;
             petOrbs = 0;
 
+#if DEBUG
             initLevelsPassed();
+#endif
             initSkills();
 
             lastLevelPlayed = null;

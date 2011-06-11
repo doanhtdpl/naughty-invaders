@@ -43,7 +43,7 @@ namespace MyGame
                     TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeIn, 1.0f, Color.Black);
                     fade = true;
                 }
-                else if(!TransitionManager.Instance.isFading())
+                else if (!TransitionManager.Instance.isFading())
                 {
                     StateManager.clearStates();
 
