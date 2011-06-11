@@ -8,7 +8,7 @@ namespace MyGame
 {
     class MacedoniaFruit : RenderableEntity2D
     {
-        Vector3 gravity = new Vector3(0, -1000, 0);
+        Vector3 gravity = new Vector3(0, -1500, 0);
         Vector3 direction;
 
         bool deadRequest;
@@ -49,6 +49,8 @@ namespace MyGame
 
             direction += gravity * SB.dt;
             position += direction * SB.dt;
+
+            orientation += SB.dt * 5;
         }
 
         public override void render()
