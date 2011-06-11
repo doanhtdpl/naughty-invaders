@@ -14,7 +14,6 @@ namespace MyGame
 {
     class StateGameIntro : GameState
     {
-        Texture2D logo;
         public float timer = 0;
 
         public const int introTime = 3;
