@@ -156,6 +156,7 @@
     <Compile Include="code\Editor\EditorStates\EditorState_AddStatic.cs" />
     <Compile Include="code\Editor\EditorStates\EditorState_MoveState.cs" />
     <Compile Include="code\Gameplay\CollidableEntity2D.cs" />
+    <Compile Include="code\Gameplay\Enemies\Painapple.cs" />
     <Compile Include="code\Gameplay\Enemies\Lemon.cs" />
     <Compile Include="code\Gameplay\Enemies\Nispero.cs" />
     <Compile Include="code\Gameplay\Enemies\MacedoniaMinigame.cs" />

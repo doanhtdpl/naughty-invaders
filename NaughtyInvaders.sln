@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010 Express for Windows Phone
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame", "MyGame\MyGame\MyGame.csproj", "{2DDC0FDC-6D58-4700-999F-84F8DCB3078D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGameContent", "MyGame\MyGameContent\MyGameContent.contentproj", "{897F27A2-6526-430D-A317-D428BC81EA4A}"
@@ -60,8 +60,6 @@ Global
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Editor|Xbox 360.Build.0 = Release|Xbox 360
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Editor|Xbox 360.Deploy.0 = Release|Xbox 360
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|Mixed Platforms.ActiveCfg = Release|Xbox 360
-		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|Mixed Platforms.Build.0 = Release|Xbox 360
-		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|Mixed Platforms.Deploy.0 = Release|Xbox 360
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|x86.ActiveCfg = Release|Xbox 360
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|x86.Build.0 = Release|Xbox 360
 		{9692A9C1-582B-4809-BF17-1D981AD4DF38}.Release|x86.Deploy.0 = Release|Xbox 360

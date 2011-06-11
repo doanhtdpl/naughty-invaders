@@ -109,6 +109,7 @@
     <Compile Include="code\Gameplay\Enemies\MacedoniaMinigame.cs" />
     <Compile Include="code\Gameplay\Enemies\Nispero.cs" />
     <Compile Include="code\Gameplay\Enemies\Orange.cs" />
+    <Compile Include="code\Gameplay\Enemies\Painapple.cs" />
     <Compile Include="code\Gameplay\Enemies\Pear.cs" />
     <Compile Include="code\Gameplay\Enemies\tomato.cs" />
     <Compile Include="code\Gameplay\Enemies\TomatoFollower.cs" />
