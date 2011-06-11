@@ -9,7 +9,7 @@ namespace MyGame
 {
     public class Macedonia : Enemy
     {
-        enum tMacedoniaBossState { Init, Cinematic, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh, Fade }
+        enum tMacedoniaBossState { Init, Cinematic, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh }
 
         tMacedoniaBossState state;
 
@@ -153,6 +153,11 @@ namespace MyGame
         public override void update()
         {
             base.update();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.E))
+            {
+                changeState(tMacedoniaBossState.Die);
+            }
 
             stateTime += SB.dt;
             switch (state)
@@ -340,17 +345,8 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     if (CinematicManager.Instance.cinematicToPlay == null)
                     {
-                        changeState(tMacedoniaBossState.Fade);
+                        StateManager.gameStates.Add(new StateEndLevel());
                     }
-                    break;
-
-                case tMacedoniaBossState.Fade:
-                    if (!TransitionManager.Instance.isFading())
-                    {
-                        StateManager.clearStates();
-                        StateManager.gameStates.Add(new StateWorldMap());
-                    }
-
                     break;
             }
 
@@ -459,11 +455,6 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     CinematicManager.Instance.playCinematic("macedoniaEnd");
                     playAction("attackShake");
-                    break;
-
-                case tMacedoniaBossState.Fade:
-                    TransitionManager.Instance.fadeIn();
-
                     break;
             }
 

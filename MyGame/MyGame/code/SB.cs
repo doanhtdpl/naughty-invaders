@@ -39,7 +39,7 @@ namespace MyGame
                 {
                     if (dtMultiplier >= 0.5f)
                     {
-                        dtMultiplier += 0.5f;
+                        dtMultiplier += 5f;
                     }
                     else
                     {

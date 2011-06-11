@@ -179,6 +179,7 @@
     <Compile Include="code\Gameplay\Projectiles\PearProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\GrapeProjectile.cs" />
     <Compile Include="code\Gameplay\Projectiles\WatermelonProjectile.cs" />
+    <Compile Include="code\GameStates\States\StateEndLevel.cs" />
     <Compile Include="code\GameStates\States\StateStageCleared.cs" />
     <Compile Include="code\GameStates\States\MinigameEpilepticMacedonia.cs" />
     <Compile Include="code\GameStates\States\MinigameKingTomato.cs" />
