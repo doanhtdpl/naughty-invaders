@@ -158,11 +158,15 @@ namespace MyGame
             macedonia = new MacedoniaMinigame(new Vector3(0.0f, 200.0f, 0), 0.0f);
             loadIntroCinematic();
             CinematicManager.Instance.playCinematic("epilepticMacedoniaIntro");
+
+            
         }
         
         public override void update()
         {
             base.update();
+
+            GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
             if (orbsToSpawn > 0)
             {
