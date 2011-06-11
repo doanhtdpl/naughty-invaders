@@ -17,10 +17,16 @@ namespace MyGame
 
         Matrix initWorld;
 
+        //living
+        public float livingIntensityMin = 0.02f;
+        public float livingIntensityMax = 0.03f;
+        public float livingSpeedMin = 1.25f;
+        public float livingSpeedMax = 1.6f;
         public bool living;
-        public Vector2 livingIntensity = new Vector2(Calc.randomScalar(0.02f, 0.03f), Calc.randomScalar(0.02f, 0.03f));
+        public Vector2 livingIntensity;
         public Vector2 initScale2D, livingOffset, livingSpeed;
         public bool initScaleRead = false;
+        public bool livingInit = false;
 
         Matrix world;
         public Matrix worldMatrix
@@ -202,6 +208,13 @@ namespace MyGame
             return scale.X * 0.4f;
         }
 
+        public void initLiving()
+        {
+            livingOffset = new Vector2(Calc.randomScalar(0, 10), Calc.randomScalar(0, 10));
+            livingSpeed = new Vector2(Calc.randomScalar(livingSpeedMin / 1000, livingSpeedMax / 1000), Calc.randomScalar(livingSpeedMin / 1000, livingSpeedMax / 1000));
+            livingIntensity = new Vector2(Calc.randomScalar(livingIntensityMin, livingIntensityMax), Calc.randomScalar(livingIntensityMin, livingIntensityMax));
+        }
+
         public virtual void update() 
         {
             if (living)
@@ -210,11 +223,14 @@ namespace MyGame
                 {
                     initScaleRead = true;
                     initScale2D = scale2D;
-                    livingOffset = new Vector2(Calc.randomScalar(0, 10), Calc.randomScalar(0, 10));
-                    livingSpeed = new Vector2(Calc.randomScalar(600, 800), Calc.randomScalar(600, 800));
                 }
-                float factorX = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / livingSpeed.X) + livingOffset.X);
-                float factorY = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / livingSpeed.Y) + livingOffset.Y);
+                if (!livingInit)
+                {
+                    livingInit = true;
+                    initLiving();
+                }
+                float factorX = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds * livingSpeed.X) + livingOffset.X);
+                float factorY = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds * livingSpeed.Y) + livingOffset.Y);
                 scale2D = initScale2D + new Vector2(initScale2D.X * factorX * livingIntensity.X, initScale2D.Y * factorY * livingIntensity.Y);
             }
         }
