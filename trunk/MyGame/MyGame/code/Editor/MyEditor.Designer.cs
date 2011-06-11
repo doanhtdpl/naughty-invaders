@@ -237,6 +237,7 @@ namespace MyGame
             this.restartLevelButton = new System.Windows.Forms.Button();
             this.editPlayerPosButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.livingCheck = new System.Windows.Forms.CheckBox();
             this.myEditorControl = new MyGame.MyEditorControl();
             this.tabControl1.SuspendLayout();
             this.entities.SuspendLayout();
@@ -404,6 +405,7 @@ namespace MyGame
             // 
             // staticPropertiesPanel
             // 
+            this.staticPropertiesPanel.Controls.Add(this.livingCheck);
             this.staticPropertiesPanel.Controls.Add(this.flipVerticalCheck);
             this.staticPropertiesPanel.Controls.Add(this.flipHorizontalCheck);
             this.staticPropertiesPanel.Controls.Add(this.colorButton);
@@ -2604,6 +2606,18 @@ namespace MyGame
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.buttonSaveLevel_Click);
             // 
+            // livingCheck
+            // 
+            this.livingCheck.AutoSize = true;
+            this.livingCheck.Location = new System.Drawing.Point(404, 49);
+            this.livingCheck.Name = "livingCheck";
+            this.livingCheck.Size = new System.Drawing.Size(50, 17);
+            this.livingCheck.TabIndex = 34;
+            this.livingCheck.TabStop = false;
+            this.livingCheck.Text = "living";
+            this.livingCheck.UseVisualStyleBackColor = true;
+            this.livingCheck.CheckedChanged += new System.EventHandler(this.living_CheckedChanged);
+            // 
             // myEditorControl
             // 
             this.myEditorControl.Location = new System.Drawing.Point(0, 129);
@@ -2868,6 +2882,7 @@ namespace MyGame
         private System.Windows.Forms.Button editEntityButton;
         private System.Windows.Forms.Label label49;
         public System.Windows.Forms.TextBox currentEntityName;
+        public System.Windows.Forms.CheckBox livingCheck;
     }
 }
 #endif

@@ -17,11 +17,10 @@ namespace MyGame
 
         Matrix initWorld;
 
-        public bool living = false;
-        public float livingIntensity = 0.05f;
-        public Vector2 initScale2D;
+        public bool living;
+        public Vector2 livingIntensity = new Vector2(Calc.randomScalar(0.02f, 0.03f), Calc.randomScalar(0.02f, 0.03f));
+        public Vector2 initScale2D, livingOffset, livingSpeed;
         public bool initScaleRead = false;
-        public float livingOffset;
 
         Matrix world;
         public Matrix worldMatrix
@@ -211,11 +210,12 @@ namespace MyGame
                 {
                     initScaleRead = true;
                     initScale2D = scale2D;
-                    livingOffset = Calc.randomScalar(0, 10);
+                    livingOffset = new Vector2(Calc.randomScalar(0, 10), Calc.randomScalar(0, 10));
+                    livingSpeed = new Vector2(Calc.randomScalar(600, 800), Calc.randomScalar(600, 800));
                 }
-                float factor = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / 5000)  + livingOffset);
-                //Console.WriteLine("entityName" + factor);
-                scale2D = initScale2D + new Vector2(initScale2D.X * factor * livingIntensity, initScale2D.Y * factor * livingIntensity);
+                float factorX = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / livingSpeed.X) + livingOffset.X);
+                float factorY = (float)Math.Sin((SB.gameTime.TotalGameTime.TotalMilliseconds / livingSpeed.Y) + livingOffset.Y);
+                scale2D = initScale2D + new Vector2(initScale2D.X * factorX * livingIntensity.X, initScale2D.Y * factorY * livingIntensity.Y);
             }
         }
 

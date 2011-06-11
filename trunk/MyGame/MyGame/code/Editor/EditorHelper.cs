@@ -159,6 +159,7 @@ namespace MyGame
             writer.WriteAttributeString("color", ent.color.toXML());
             writer.WriteAttributeString("flipH", ent.flipHorizontal.ToString());
             writer.WriteAttributeString("flipV", ent.flipVertical.ToString());
+            writer.WriteAttributeString("living", ent.living.ToString());
             writer.WriteEndElement();
         }
 
@@ -381,6 +382,11 @@ namespace MyGame
                         re.flipHorizontal = node.Attribute("flipH").Value.toBool();
                         re.flipVertical = node.Attribute("flipV").Value.toBool();
                     }
+                    if (node.Attributes("living").Count() > 0)
+                    {
+                        re.living = node.Attribute("living").Value.toBool();
+                    }
+
                     LevelManager.Instance.addStaticProp(re);
                     re.setInit();
                     list.Add(re);
@@ -405,6 +411,11 @@ namespace MyGame
                         ae.flipHorizontal = node.Attribute("flipH").Value.toBool();
                         ae.flipVertical = node.Attribute("flipV").Value.toBool();
                     }
+                    if (node.Attributes("living").Count() > 0)
+                    {
+                        ae.living = node.Attribute("living").Value.toBool();
+                    }
+
                     LevelManager.Instance.addAnimatedProp(ae);
                     ae.setInit();
                     list.Add(ae);
@@ -429,6 +440,11 @@ namespace MyGame
                     {
                         e.flipHorizontal = node.Attribute("flipH").Value.toBool();
                         e.flipVertical = node.Attribute("flipV").Value.toBool();
+                    }
+
+                    if (node.Attributes("living").Count() > 0)
+                    {
+                        e.living = node.Attribute("living").Value.toBool();
                     }
 
                     e.setInit();
