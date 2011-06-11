@@ -16,7 +16,6 @@ namespace MyGame
     {
         Texture2D logo;
         public float timer = 0;
-        bool fade = false;
 
         public const int introTime = 3;
 
@@ -27,29 +26,16 @@ namespace MyGame
 
         public override void loadContent()
         {
-            logo = TextureManager.Instance.getTexture("GUI/menu/logo_UG");
+            EditorHelper.Instance.loadNewLevelFromGame("logo");
+            GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
         }
 
         public override void update()
         {
             timer += SB.dt;
-            if (timer < introTime)
+            if (timer > introTime && !TransitionManager.Instance.isFading())
             {
-            }
-            else
-            {
-                if (!fade)
-                {
-                    TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeIn, 1.0f, Color.Black);
-                    fade = true;
-                }
-                else if (!TransitionManager.Instance.isFading())
-                {
-                    StateManager.clearStates();
-
-                    //StateManager.gameStates.Add(new StatePrompt());
-                    StateManager.addState(StateManager.tGameState.Menu);
-                }
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
             }
 
 #if DEBUG
@@ -62,13 +48,17 @@ namespace MyGame
                 StateManager.addState(StateManager.tGameState.WorldMap);
             }
 #endif
+            LevelManager.Instance.update();
+            ParticleManager.Instance.update();
+            CameraManager.Instance.update();
         }
 
         public override void render()
         {
-            GraphicsManager.Instance.spriteBatchBegin();
-            logo.render2D(new Vector2(0,0), new Vector2(583, 557), Color.White);
-            GraphicsManager.Instance.spriteBatchEnd();
+            GraphicsManager.Instance.graphicsDevice.Clear(SB.BGColor);
+
+            EntityManager.Instance.render();
+            LevelManager.Instance.render();
         }
 
         public override void dispose()
