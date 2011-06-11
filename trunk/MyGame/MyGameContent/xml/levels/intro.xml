@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<level nextEntityID="11" BGColor="255 255 255 255" CameraMode="None">
+  <staticProps>
+    <staticProp entityName="wish-16" worldMatrix="347.818 0 0 0 0 435.3982 0 0 0 0 1 0 -148.1802 -51.65918 -0.006095205 1" id="4" color="255 255 255 255" flipH="False" flipV="False" living="False" />
+    <staticProp entityName="wish-17" worldMatrix="844 0 0 0 0 1427 0 0 0 0 1 0 317.9739 391.1061 0.01843602 1" id="8" color="255 255 255 255" flipH="False" flipV="False" living="False" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles />
+  <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
+</level>
