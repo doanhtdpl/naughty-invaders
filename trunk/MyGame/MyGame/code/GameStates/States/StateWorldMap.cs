@@ -81,6 +81,8 @@ namespace MyGame
             player = new WorldMapPlayer(currentLocation.position);
             player.positionZ += 200.0f;
 
+            TransitionManager.Instance.fadeOut();
+
             //SoundManager.Instance.playSong("song");
         }
 

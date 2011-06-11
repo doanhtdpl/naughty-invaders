@@ -38,6 +38,16 @@ namespace MyGame
         WorldMapLocation.tLocationType locationType;
         bool loadLevel = false;
 
+        public void fadeIn()
+        {
+            addTransition(tTransition.FadeIn, 1.0f, Color.Black);
+        }
+
+        public void fadeOut()
+        {
+            addTransition(tTransition.FadeOut, 1.0f, Color.Black);
+        }
+
         public void addTransition(tTransition type, float transitionTime, Color transitionColor)
         {
             this.type = type;
@@ -79,6 +89,11 @@ namespace MyGame
             }
         }
 
+        public bool isFading()
+        {
+            return time > 0;
+        }
+
         public void update()
         {
             time -= SB.dt;
@@ -107,7 +122,7 @@ namespace MyGame
 
         public void render()
         {
-            if (time > 0.0f)
+            //if (time > 0.0f)
             {
                 GraphicsManager.Instance.spriteBatch.Begin();
                 switch(type)

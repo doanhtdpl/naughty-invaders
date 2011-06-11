@@ -46,6 +46,8 @@ namespace MyGame
             menu.setCurrentNode(mb1);
 
             GamerManager.createGamerEntity(PlayerIndex.One, true);
+
+            TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
         }
 
         public override void initialize()

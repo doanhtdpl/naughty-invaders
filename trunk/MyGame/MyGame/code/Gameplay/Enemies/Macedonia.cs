@@ -9,7 +9,7 @@ namespace MyGame
 {
     public class Macedonia : Enemy
     {
-        enum tMacedoniaBossState { Init, Cinematic, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh }
+        enum tMacedoniaBossState { Init, Cinematic, Hidden, Appear, Disappear, Idle, RayoPrepare, RayoAttack, Shake, Talk, Die, Laugh, Fade }
 
         tMacedoniaBossState state;
 
@@ -17,9 +17,9 @@ namespace MyGame
 
         //rayo
         float RAYO_DURATION = 1.5f;
-        int RAYO_LIMIT_X = 400;
+        int RAYO_LIMIT_X = 700;
 
-        int TELEPORT_LIMIT_X = 450;
+        int TELEPORT_LIMIT_X = 600;
         const int MAX_RAYOS = 3;
 
         int RAYO_ATTACK_WIDTH = 100;
@@ -39,11 +39,11 @@ namespace MyGame
         float INVOKE_TIME = 4.0f;
 
         //Shake
-        float SHAKE_MIN_TIME_FRUIT = 0.2f;
-        float SHAKE_MAX_TIME_FRUIT = 0.3f;
+        float SHAKE_MIN_TIME_FRUIT = 0.1f;
+        float SHAKE_MAX_TIME_FRUIT = 0.15f;
 
-        float SHAKE_TIME_MIN = 3.0f;
-        float SHAKE_TIME_MAX = 3.0f;
+        float SHAKE_TIME_MIN = 1.0f;
+        float SHAKE_TIME_MAX = 1.5f;
         int SHAKE_TIMES_MIN = 1;
         int SHAKE_TIMES_MAX = 3;
 
@@ -70,7 +70,6 @@ namespace MyGame
             life = LIFE;
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
-            setCollisions();
 
             lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 140.0f), Color.Green);
 
@@ -82,7 +81,10 @@ namespace MyGame
 
             showRayo(false);
 
+            visible = false;
+
             loadIntroCinematic();
+            loadEndCinematic();
         }
 
         void loadIntroCinematic()
@@ -98,25 +100,51 @@ namespace MyGame
             CinematicManager.Instance.addCinematic("macedoniaIntro", cinematic);
         }
 
+        void loadEndCinematic()
+        {
+            Cinematic cinematic = new Cinematic();
+
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, "Vaya paliza que me has metido, cabronazo!");
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, "Ja je ji jo ju. Pakete!");
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, "Por que? Por que?");
+
+            cinematic.events.Add((CinematicEvent)de1);
+            cinematic.events.Add((CinematicEvent)de2);
+            cinematic.events.Add((CinematicEvent)de3);
+
+            CinematicManager.Instance.addCinematic("macedoniaEnd", cinematic);
+        }
+
         public override void setCollisions()
         {
             addCollision(new Vector2(-5, 0), 65);
         }
 
+        public void removeCollisions()
+        {
+            getParts().Clear();
+        }
+
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
-            if (state == tMacedoniaBossState.Idle)
+            if (visible && state != tMacedoniaBossState.Die)
             {
                 numHits++;
                 life -= ce.damage;
+
+                if (life < 0)
+                    changeState(tMacedoniaBossState.Die);
+
+                life = Math.Max(life, 1);
             }
             return life > 0;
         }
 
         public override void die()
         {
-            base.die();
-            entityState = tEntityState.Dying;
+            //base.die();
+            //entityState = tEntityState.Dying;
+            changeState(tMacedoniaBossState.Die);
         }
 
 
@@ -308,7 +336,21 @@ namespace MyGame
                     if (stateTime > LAUGH_TIME)
                         changeState(tMacedoniaBossState.Idle);
                     break;
+
                 case tMacedoniaBossState.Die:
+                    if (CinematicManager.Instance.cinematicToPlay == null)
+                    {
+                        changeState(tMacedoniaBossState.Fade);
+                    }
+                    break;
+
+                case tMacedoniaBossState.Fade:
+                    if (!TransitionManager.Instance.isFading())
+                    {
+                        StateManager.clearStates();
+                        StateManager.gameStates.Add(new StateWorldMap());
+                    }
+
                     break;
             }
 
@@ -349,10 +391,12 @@ namespace MyGame
                 case tMacedoniaBossState.Disappear:
                     playAction("idle");
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    removeCollisions();
                     break;
 
                 case tMacedoniaBossState.Appear:
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    setCollisions();
                     break;
 
                 case tMacedoniaBossState.Idle:
@@ -361,13 +405,13 @@ namespace MyGame
                     numHits = 0;
 
                     float rand = Calc.randomScalar();
-                    if (rand <= 0.2)
+                    if (rand <= 0.3)
                         nextAttack = tMacedoniaBossState.RayoPrepare;
-                    else if (rand <= 0.4)
+                    else if (rand <= 0.5)
                         nextAttack = tMacedoniaBossState.Shake;
-                    else if (rand <= 0.6)
+                    else if (rand <= 0.7)
                         nextAttack = tMacedoniaBossState.Talk;
-                    else if (rand <= 0.8)
+                    else if (rand <= 0.9)
                         nextAttack = tMacedoniaBossState.Disappear;
                     else
                         nextAttack = tMacedoniaBossState.Laugh;
@@ -386,9 +430,9 @@ namespace MyGame
                     showRayo(true);
                     positionRayoFrom = position;
                     if (position.X > 0)
-                        positionRayoTo = new Vector3(-500, position.Y, position.Z);
+                        positionRayoTo = new Vector3(-RAYO_LIMIT_X, position.Y, position.Z);
                     else
-                        positionRayoTo = new Vector3(500, position.Y, position.Z);
+                        positionRayoTo = new Vector3(RAYO_LIMIT_X, position.Y, position.Z);
 
                     break;
 
@@ -413,6 +457,13 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.Die:
+                    CinematicManager.Instance.playCinematic("macedoniaEnd");
+                    playAction("attackShake");
+                    break;
+
+                case tMacedoniaBossState.Fade:
+                    TransitionManager.Instance.fadeIn();
+
                     break;
             }
 

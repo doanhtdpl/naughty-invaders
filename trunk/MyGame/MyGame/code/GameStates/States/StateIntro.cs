@@ -16,11 +16,13 @@ namespace MyGame
     {
         Texture2D logo;
         public float timer = 0;
+        bool fade = false;
 
         public const int introTime = 3;
 
         public override void initialize()
         {
+            TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
         }
 
         public override void loadContent()
@@ -36,9 +38,18 @@ namespace MyGame
             }
             else
             {
-                StateManager.clearStates();
-                //StateManager.gameStates.Add(new StatePrompt());
-                StateManager.gameStates.Add(new StateMainMenu());
+                if (!fade)
+                {
+                    TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeIn, 1.0f, Color.Black);
+                    fade = true;
+                }
+                else if(!TransitionManager.Instance.isFading())
+                {
+                    StateManager.clearStates();
+
+                    //StateManager.gameStates.Add(new StatePrompt());
+                    StateManager.gameStates.Add(new StateMainMenu());
+                }
             }
         }
 
