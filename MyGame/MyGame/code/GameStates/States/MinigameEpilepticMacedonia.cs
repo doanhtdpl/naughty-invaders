@@ -12,9 +12,9 @@ namespace MyGame
     class MinigameEpilepticMacedonia : StateGame
     {
         const int FRUITS_TO_SPAWN = 30;
-        const float FRUIT_SPAWN_TIME_MIN = 1.5f;
-        const float FRUIT_SPAWN_TIME_MAX = 3.0f;
-        float nextFruitSpawn = 3.0f;
+        const float FRUIT_SPAWN_TIME_MIN = 1.0f;
+        const float FRUIT_SPAWN_TIME_MAX = 2.0f;
+        float nextFruitSpawn = 2.0f;
         int spawnedFruits = 0;
         int savedFruits = 0;
         float timeAfterLast = 3.0f;
@@ -191,8 +191,8 @@ namespace MyGame
                 if (nextFruitSpawn < 0.0f)
                 {
                     // spawn a fruit
-                    fruits.Add(new MacedoniaFruit("minifruits-1" + Calc.randomNatural(1, 9), macedonia.position + new Vector3(0, 50, 0)));
-                    float timeModifier = spawnedFruits * 0.1f;
+                    fruits.Add(new MacedoniaFruit("minifruits-1" + Calc.randomNatural(1, 9), macedonia.position + new Vector3(0, 50, 10)));
+                    float timeModifier = spawnedFruits * 0.05f;
                     nextFruitSpawn = Calc.randomScalar(FRUIT_SPAWN_TIME_MIN - timeModifier, FRUIT_SPAWN_TIME_MAX - timeModifier);
                     nextFruitSpawn = Calc.clamp(nextFruitSpawn, 0.5f, 1000.0f);
                     ++spawnedFruits;
