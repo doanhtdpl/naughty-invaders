@@ -106,8 +106,6 @@ namespace MyGame
                 cinematic.events.Add((CinematicEvent)ae5);
                 cinematic.events.Add((CinematicEvent)de2);
                 cinematic.events.Add((CinematicEvent)de3);
-                cinematic.events.Add((CinematicEvent)de2);
-                cinematic.events.Add((CinematicEvent)de3);
                 cinematic.events.Add((CinematicEvent)de4);
                 cinematic.events.Add((CinematicEvent)de5);
                 cinematic.events.Add((CinematicEvent)de6);
