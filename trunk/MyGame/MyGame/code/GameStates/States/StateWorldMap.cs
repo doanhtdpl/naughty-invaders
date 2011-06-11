@@ -50,6 +50,17 @@ namespace MyGame
             locations.addDoubleLink(nn2, nn3);
             locations.addDoubleLink(nn2, nn4);
 
+            if (!GamerManager.getSessionOwner().data.levelsPassed["final_Level01"])
+            {
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn1.position + (nn2.position - nn1.position) / 2, 0, Color.White));
+            }
+
+            if (!GamerManager.getSessionOwner().data.levelsPassed["onionVillage"])
+            {
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn2.position + (nn3.position - nn2.position) / 2, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn2.position + (nn4.position - nn2.position) / 2, 0, Color.White));
+            }
+
             currentLocation = nn1;
             string lastLevel = GamerManager.getSessionOwner().data.lastLevelPlayed;
             if (lastLevel != null)
