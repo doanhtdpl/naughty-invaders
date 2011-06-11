@@ -14,7 +14,7 @@ namespace MyGame
         float speed;
 
         public Tomato(Vector3 position, float orientation)
-            : base("tomato", position, orientation, 1)
+            : base("tomato", position, orientation, 0.5f)
         {
             life = 10.0f;
             setCollisions();

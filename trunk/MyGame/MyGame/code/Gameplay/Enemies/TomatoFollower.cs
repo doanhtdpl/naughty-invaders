@@ -18,7 +18,7 @@ namespace MyGame
         public bool fleeing { get; set; }
 
         public TomatoFollower(Vector3 position, float orientation)
-            : base("tomato", position, orientation, 1)
+            : base("tomato", position, orientation, 0.25f)
         {
             life = 10.0f;
             speed = Calc.randomScalar(MIN_SPEED, MAX_SPEED);

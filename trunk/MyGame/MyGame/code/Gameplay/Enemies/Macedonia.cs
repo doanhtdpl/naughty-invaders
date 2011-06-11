@@ -126,7 +126,7 @@ namespace MyGame
 
         public void removeCollisions()
         {
-            getParts().Clear();
+            parts.Clear();
         }
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)

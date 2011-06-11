@@ -34,17 +34,21 @@ namespace MyGame
 
         public void playEffect(string name)
         {
+#if !EDITOR
             if (effects.ContainsKey(name))
             {
                 effects[name].Play();
             }
+#endif
         }
         public void playSong(string name)
         {
+#if !EDITOR
             if (songs.ContainsKey(name))
             {
                 MediaPlayer.Play(songs[name]);
             }
+#endif
         }
 
         public void loadXML()

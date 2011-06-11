@@ -104,6 +104,7 @@
     <Compile Include="code\Gameplay\Enemies\EnemySpawnZone.cs" />
     <Compile Include="code\Gameplay\Enemies\GenericEnemy.cs" />
     <Compile Include="code\Gameplay\Enemies\KingTomato.cs" />
+    <Compile Include="code\Gameplay\Enemies\Lemon.cs" />
     <Compile Include="code\Gameplay\Enemies\Macedonia.cs" />
     <Compile Include="code\Gameplay\Enemies\MacedoniaMinigame.cs" />
     <Compile Include="code\Gameplay\Enemies\Nispero.cs" />
