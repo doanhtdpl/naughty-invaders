@@ -7,5 +7,20 @@
   <audioFile type="song" name="song" />
   <audioFile type="effect" name="menuSelect" />
   <audioFile type="effect" name="menuChange" />
+  <audioFile type="effect" name="wishFastShot" />
+  <audioFile type="effect" name="buySkill" />
+  <audioFile type="effect" name="dash" />
+  <audioFile type="effect" name="GarlickGunShot" />
+  <audioFile type="effect" name="grapeDies" />
+  <audioFile type="effect" name="grapeGotHit" />
+  <audioFile type="effect" name="menuActivated" />
+  <audioFile type="effect" name="menuChange" />
+  <audioFile type="effect" name="menuSelect" />
+  <audioFile type="effect" name="menuUpDown" />
+  <audioFile type="effect" name="nobuySkill" />
+  <audioFile type="effect" name="pickLifeOrb" />
+  <audioFile type="effect" name="pickXPOrb" />
+  <audioFile type="effect" name="wishFinalDie" />
+  <audioFile type="effect" name="wishMiniDie" />
 </audioFiles>
 
