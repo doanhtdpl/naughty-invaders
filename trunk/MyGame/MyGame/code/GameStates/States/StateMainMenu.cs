@@ -16,6 +16,7 @@ namespace MyGame
     {
         Menu menu;
         Texture2D logo;
+        bool fade;
 
         void initializeMenu()
         {
@@ -48,6 +49,8 @@ namespace MyGame
             GamerManager.createGamerEntity(PlayerIndex.One, true);
 
             TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
+
+            fade = false;
         }
 
         public override void initialize()
@@ -72,7 +75,18 @@ namespace MyGame
             base.update();
             //GamerManager.updateTrialMessage();
 
-            menu.update();
+            ControlPad cp = GamerManager.getMainControls();
+
+            if (cp.A_firstPressed() && !fade)
+            {
+                TransitionManager.Instance.fadeIn();
+                fade = true;
+            }
+
+            //if (!TransitionManager.Instance.isFading())
+            {
+                menu.update();
+            }
         }
 
         public override void render()

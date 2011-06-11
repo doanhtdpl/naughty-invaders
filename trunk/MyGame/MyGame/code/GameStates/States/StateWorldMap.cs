@@ -129,7 +129,7 @@ namespace MyGame
                         lastLocation = currentLocation;
                         currentLocation = next;
                     }
-                    if (cp.A_firstPressed())
+                    if (cp.A_firstPressed() && !TransitionManager.Instance.isFading())
                     {
                         currentLocation.value.enter();
                     }
