@@ -17,7 +17,6 @@
     <staticProp entityName="mac-44" worldMatrix="394 0 0 0 0 404 0 0 0 0 1 0 -1587.264 -748.8967 -0.01035493 1" id="212" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-45" worldMatrix="425 0 0 0 0 199 0 0 0 0 1 0 -1793.004 -405.2338 -0.01109707 1" id="216" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-46" worldMatrix="3181.04 0 0 0 0 2267.842 0 0 0 0 1 0 -45.97235 12.45291 -370.0102 1" id="220" color="255 255 255 255" flipH="False" flipV="False" />
-    <staticProp entityName="mac-47" worldMatrix="1033 0 0 0 0 92 0 0 0 0 1 0 -656.1132 828.4256 -0.00411773 1" id="224" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-48" worldMatrix="517 0 0 0 0 706 0 0 0 0 1 0 -2216.547 329.7525 0.01073106 1" id="228" color="255 255 255 255" flipH="False" flipV="False" />
     <staticProp entityName="mac-50" worldMatrix="340 0 0 0 0 377 0 0 0 0 1 0 -919.5176 -129.4088 56.99596 1" id="234" color="255 255 255 255" flipH="True" flipV="False" />
     <staticProp entityName="mac-51" worldMatrix="408.7879 0 0 0 0 748.9789 0 0 0 0 1 0 1443.573 550.588 -8.984639 1" id="238" color="255 255 255 255" flipH="False" flipV="False" />
