@@ -57,10 +57,13 @@ namespace MyGame
             ProjectileManager.Instance.removeProjectile(this);
             base.delete();
         }
-        public override void requestDelete()
+        public override void requestDelete(bool force = false)
         {
-            base.requestDelete();
-            ProjectileManager.Instance.requestDeleteOf(this);
+            if (avoidDelete && !force)
+            {
+                base.requestDelete();
+                ProjectileManager.Instance.requestDeleteOf(this);
+            }
         }
     }
 }

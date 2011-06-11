@@ -223,6 +223,12 @@ namespace MyGame
                     fruits[i].update();
                 }
             }
+
+            if (playedEnd && CinematicManager.Instance.cinematicToPlay == null)
+            {
+                GamerManager.getSessionOwner().data.levelsPassed["macedonia"] = true;
+                StateManager.addState(StateManager.tGameState.EndStage);
+            }
         }
         
         public override void  render()

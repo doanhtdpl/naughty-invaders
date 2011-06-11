@@ -70,7 +70,8 @@ namespace MyGame
         public override void update()
         {
             base.update();
-            //GamerManager.updateTrialMessage();
+
+            if (TransitionManager.Instance.isFading()) return;
 
             menu.update();
 

@@ -17,7 +17,7 @@ namespace MyGame
         const float FLEE_TIME = 1.0f;
         const int SHITTING_TOMATOES = 100;
 
-        public enum tState { Combat, Rest, KingTomato }
+        public enum tState { Combat, Rest, KingTomato, End }
         tState state;
 
         int currentWave;
@@ -31,6 +31,8 @@ namespace MyGame
         bool shitSpawnDone = false;
         bool fleeDone = false;
         float fleeTimer = FLEE_TIME;
+
+        float afterDieTime = 0.0f;
 
         KingTomato kingTomato;
         AnimatedEntity2D onionElder;
@@ -172,7 +174,7 @@ namespace MyGame
                     if (OrbManager.Instance.orbs.Count > 0) return false;
                     spawnTomatoTimer -= SB.dt;
                     spawnTomatoTime = 0.03f;
-                    tomatoesToSpawn = 60;
+                    tomatoesToSpawn = 50;
 
                     CinematicManager.Instance.playCinematic("kingTomatoSpeech");
                     break;
@@ -260,7 +262,7 @@ namespace MyGame
                             ++currentWave;
                             spawnTomatoTimer -= SB.dt;
                             spawnTomatoTime = 0.02f;
-                            tomatoesToSpawn = Calc.randomNatural(30, 60) + 10 * currentWave;
+                            tomatoesToSpawn = Calc.randomNatural(25, 35) + 10 * currentWave;
                             restTime = tomatoesToSpawn * 0.25f;
                             kingTomatoStartedWave = false;
                         }
@@ -293,6 +295,18 @@ namespace MyGame
                                     ((TomatoFollower)enemies[i]).fleeing = true;
                                 }
                             }
+                            CinematicManager.Instance.playCinematic("kingTomatoReturns");
+                            kingTomato.state = KingTomato.tState.Recovering;
+                        }
+                    }
+                    else if (kingTomato.state == KingTomato.tState.Delete)
+                    {
+                        afterDieTime += SB.dt;
+                        if (afterDieTime > 2.0f)
+                        {
+                            kingTomato.requestDelete(true);
+                            GamerManager.getSessionOwner().data.levelsPassed["onionVillage"] = true;
+                            StateManager.addState(StateManager.tGameState.EndStage);
                         }
                     }
                 break;

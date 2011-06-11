@@ -75,6 +75,8 @@ namespace MyGame
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
 
+            avoidDelete = true;
+
             mode = tMode.Arcade;
 
             if (bigShotBall == null) bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
@@ -390,7 +392,7 @@ namespace MyGame
 
         public void renderGUI()
         {
-            if (renderState == tRenderState.NoRender) return;
+            if (renderState == tRenderState.NoRender || CinematicManager.Instance.cinematicToPlay != null) return;
 
             //Viewport viewport = GraphicsManager.Instance.graphicsDevice.Viewport;
             //Vector3 projectedPosition = viewport.Project(position + new Vector3(60, -50.0f, 0), Camera2D.projection, Camera2D.view, Matrix.Identity);
@@ -456,9 +458,12 @@ namespace MyGame
                 new Color(forceValue, forceValue - 0.3f, forceValue - 0.3f, forceValue));
         }
 
-        public override void requestDelete()
+        public override void requestDelete(bool force = false)
         {
-            base.requestDelete();
+            if (avoidDelete && !force)
+            {
+                base.requestDelete();
+            }
         }
     }
 }
