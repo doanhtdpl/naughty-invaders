@@ -75,6 +75,7 @@
     <Compile Include="code\Cinematics\CinematicManager.cs" />
     <Compile Include="code\Cinematics\DialogEvent.cs" />
     <Compile Include="code\ControlPad.cs" />
+    <Compile Include="code\ControlPadManager.cs" />
     <Compile Include="code\CoolizionEngine\Line.cs" />
     <Compile Include="code\CoolizionEngine\CoolizionManager.cs" />
     <Compile Include="code\Editor\EditorHelper.cs" />

@@ -66,7 +66,6 @@ namespace MyGame
 
         public override void initialize()
         {
-            type = StateManager.tGS.WorldMap;
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();

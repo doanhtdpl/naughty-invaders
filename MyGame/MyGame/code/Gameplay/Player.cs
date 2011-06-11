@@ -29,10 +29,8 @@ namespace MyGame
         Vector2 shotDirection;
 
         // life stuff
-        const int MAX_LIFES = 5;
-        Lifebar[] lifebars = new Lifebar[MAX_LIFES];
         public int lifes { get; set; }
-        public float lifeValue;
+        public int lifePortions { get; set; }
         float invulnerableTime;
         
         // actions stuff
@@ -45,6 +43,8 @@ namespace MyGame
         bool bigShotCharging;
         float bigShotCooldownTime;
 
+        static Texture2D wishLife = null;
+        static Texture2D wishLifePortion = null;
         static Texture2D starXP = null;
         static Texture bigShotBall = null;
         static Texture garlicGunTexture = null;
@@ -59,12 +59,7 @@ namespace MyGame
             setCollisions();
 
             // life stuff
-            lifebars[0] = new Lifebar("wish", this, new Vector2(0.25f, 0.25f), new Vector2(0.0f, -80.0f), Color.White);
-            lifebars[1] = new Lifebar("wish", this, new Vector2(0.34f, 0.34f), new Vector2(0.0f, -93.0f), Color.White);
-            lifebars[2] = new Lifebar("wish", this, new Vector2(0.43f, 0.43f), new Vector2(0.0f, -110.0f), Color.White);
-            lifes = 2;
-            lifeValue = lifes;
-            invulnerableTime = 0.0f;
+            initializeLifeStuff();
 
             // actions stuff
             fastShotCooldownTime = 0.0f;
@@ -81,12 +76,27 @@ namespace MyGame
             if (starXP == null) starXP = TextureManager.Instance.getTexture("GUI/menu/starXP");
             if (garlicGunTexture == null) garlicGunTexture = TextureManager.Instance.getTexture("characters/garlicGun");
             if (garlicGunBandTexture == null) garlicGunBandTexture = TextureManager.Instance.getTexture("characters/garlicGunBand");
+            if (wishLife == null) wishLife = TextureManager.Instance.getTexture("GUI/ingame/wishLife");
+            if (wishLifePortion == null) wishLifePortion = TextureManager.Instance.getTexture("GUI/ingame/wishLifePortion");
+            
+        }
+
+        public int getMaxLifePortions()
+        {
+            return GamerManager.getSessionOwner().data.skills["life1"].obtained ? 3 : 2;
+        }
+
+        void initializeLifeStuff()
+        {
+            lifes = 3;
+            lifePortions = getMaxLifePortions();
+            invulnerableTime = 0.0f;
         }
 
         public void initLevel()
         {
             orientation = 0.0f;
-            lifeValue = lifes;
+            initializeLifeStuff();
         }
 
         public override void setCollisions()
@@ -98,18 +108,21 @@ namespace MyGame
         {
             if (invulnerableTime > 0.0f) return true;
 
-            lifeValue -= 1.0f;
-            if (lifeValue > 0)
+            --lifePortions;
+            invulnerableTime = INVULNERABLE_TIME;
+            if (lifePortions <= invulnerableTime)
             {
-                invulnerableTime = INVULNERABLE_TIME;
+                invulnerableTime += actions["die"].getDuration();
+                --life;
+                lifePortions = getMaxLifePortions();
             }
-            return lifeValue > 0;
+
+            return lifePortions > 0 || life > 0;
         }
 
-        public void addLifeToMax()
+        public void addLifePortionsToMax()
         {
-            lifes++;
-            lifeValue += 1.0f;
+            lifePortions = getMaxLifePortions();
         }
         public void addOrb(Orb.tOrb type)
         {
@@ -121,10 +134,10 @@ namespace MyGame
                     break;
                 case Orb.tOrb.Life:
                     ++owner.data.lifeOrbs;
-                    lifeValue += 0.1f;
-                    if (lifeValue > lifes)
+                    ++lifePortions;
+                    if (lifePortions > getMaxLifePortions())
                     {
-                        lifeValue = lifes;
+                        lifePortions = getMaxLifePortions();
                     }
                     break;
             }
@@ -356,26 +369,35 @@ namespace MyGame
 #endif
         }
 
+        Vector2 LIFE_PORTION_2_POS = Screen.getXYfromCenter(-300, -300);
+        Vector2 LIFE_PORTION_1_POS = Screen.getXYfromCenter(-400, -350);
+        Vector2 LIFE_WISH_POS = Screen.getXYfromCenter(-350, -350);
+        //Vector2 LIFE_PORTION_3 = new Vector3();
         public void renderGUI()
         {
             if (renderState == tRenderState.NoRender) return;
 
-            Viewport viewport = GraphicsManager.Instance.graphicsDevice.Viewport;
-            Vector3 projectedPosition = viewport.Project(position + new Vector3(60, -50.0f, 0), Camera2D.projection, Camera2D.view, Matrix.Identity);
-            starXP.render2D(projectedPosition.toVector2(), new Vector2(20.0f, 20.0f), Color.White, 0.0f, SpriteEffects.None, 1.0f, false);
-            StringManager.render(owner.data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
+            //Viewport viewport = GraphicsManager.Instance.graphicsDevice.Viewport;
+            //Vector3 projectedPosition = viewport.Project(position + new Vector3(60, -50.0f, 0), Camera2D.projection, Camera2D.view, Matrix.Identity);
+            //starXP.render2D(projectedPosition.toVector2(), new Vector2(20.0f, 20.0f), Color.White, 0.0f, SpriteEffects.None, 1.0f, false);
+            //StringManager.render(owner.data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
 
             switch (mode)
             {
                 case tMode.Arcade:
                 case tMode.GarlicGun:
                     // render lifebars
+                    LIFE_WISH_POS = Screen.getXYfromCenter(-350, -350);
+                    GraphicsManager.Instance.spriteBatch.Draw(wishLife, LIFE_WISH_POS, Color.White);
                     for (int i = 0; i < lifes; ++i)
                     {
-                        if (lifebars[i] != null)
+                        // if is last life...
+                        if (i == lifes - 1)
                         {
-                            lifebars[i].lifePercentage = lifeValue - i;
-                            lifebars[i].render(true);
+                        }
+                        else
+                        {
+
                         }
                     }
                     break;

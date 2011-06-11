@@ -5,13 +5,13 @@ using System.Text;
 
 namespace MyGame
 {
-    class RandomAction
+    public class RandomAction
     {
         public string name { get; set; }
         public float probability { get; set; }
     }
 
-    class AnimationAction
+    public class AnimationAction
     {
         // from XML
         public string name { get; set; }
@@ -35,6 +35,11 @@ namespace MyGame
         public void initialize()
         {
             totalFrames = endFrame - initialFrame + 1;
+        }
+
+        public float getDuration()
+        {
+            return (endFrame - initialFrame) * (1 / FPS);
         }
     }
 }

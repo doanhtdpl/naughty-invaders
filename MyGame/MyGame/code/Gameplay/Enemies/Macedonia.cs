@@ -345,7 +345,7 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     if (CinematicManager.Instance.cinematicToPlay == null)
                     {
-                        StateManager.gameStates.Add(new StateEndLevel());
+                        StateManager.addState(StateManager.tGameState.EndStage);
                     }
                     break;
             }

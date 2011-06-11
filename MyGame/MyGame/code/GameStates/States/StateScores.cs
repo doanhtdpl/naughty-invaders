@@ -12,10 +12,8 @@ namespace MyGame
     {
         public const int TOTAL_SCORE_PAGES = 2;
 
-        //public static TEX mainMenu = new TEX();
         public override void initialize()
         {
-            type = StateManager.tGS.Scores;
         }
 
         public override void loadContent()
@@ -29,11 +27,11 @@ namespace MyGame
 
             if (GamerManager.getMainControls().A_firstPressed())
             {
-                StateManager.dequeueState(1);
+                StateManager.dequeueStates(1);
             }
             if (GamerManager.getMainControls().B_firstPressed())
             {
-                StateManager.dequeueState(1);
+                StateManager.dequeueStates(1);
             }
         }
 

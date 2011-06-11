@@ -46,8 +46,6 @@ namespace MyGame
             menu.menuElements.Add(mb3);
             menu.setCurrentNode(mb1);
 
-            GamerManager.createGamerEntity(PlayerIndex.One, true);
-
             TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
 
             fade = false;
@@ -57,7 +55,6 @@ namespace MyGame
         {
             transitionColor = new Color(10, 10, 10, 255);
             transitionColor *= 0.85f;
-            type = StateManager.tGS.Menu;
             initializeMenu();
             renderAlways = false;
         }

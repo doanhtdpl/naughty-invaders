@@ -52,6 +52,8 @@ namespace MyGame
             Camera2D.projection = Matrix.CreatePerspectiveFieldOfView(Microsoft.Xna.Framework.MathHelper.ToRadians(45), Screen.aspect, 1, 10000000);
             SB.cam.init(800);
 
+            ControlPadManager.Instance.initialize();
+
             base.Initialize();
         }
 
@@ -77,7 +79,7 @@ namespace MyGame
         {
             SB.updateGameTime(gameTime);
 
-            GamerManager.updateInputs();
+            ControlPadManager.Instance.update();
 
             stateManager.update();
             base.Update(gameTime);

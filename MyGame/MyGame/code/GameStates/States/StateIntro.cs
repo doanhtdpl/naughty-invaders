@@ -48,7 +48,7 @@ namespace MyGame
                     StateManager.clearStates();
 
                     //StateManager.gameStates.Add(new StatePrompt());
-                    StateManager.gameStates.Add(new StateMainMenu());
+                    StateManager.addState(StateManager.tGameState.Menu);
                 }
             }
         }

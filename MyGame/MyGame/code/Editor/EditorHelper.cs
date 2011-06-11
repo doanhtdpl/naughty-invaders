@@ -326,6 +326,10 @@ namespace MyGame
         private List<Entity2D> loadLevel(string fileName, bool loadIDs = true)
         {
             // TODO ugly! this must have to be set with the editor and loaded from xml
+            if (GamerManager.getMainPlayer() == null)
+            {
+                GamerManager.createGamerEntity(PlayerIndex.One, true);
+            }
             GamerManager.getMainPlayer().mode = Player.tMode.Arcade;
 
             //fileName = SB.content.RootDirectory + "/xml/levels/" + fileName + ".xml";

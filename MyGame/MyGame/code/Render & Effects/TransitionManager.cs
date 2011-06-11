@@ -36,7 +36,9 @@ namespace MyGame
         // specific for level loading
         string level = null;
         WorldMapLocation.tLocationType locationType;
-        bool loadLevel = false;
+        // specific for changing state
+        StateManager.tGameState state = StateManager.tGameState.None;
+        int clearStates = 0;
 
         public void fadeIn()
         {
@@ -59,7 +61,6 @@ namespace MyGame
         public void loadLevelWithFade(string level, WorldMapLocation.tLocationType locationType, float fadeTime, Color fadeColor)
         {
             this.type = tTransition.FadeIn;
-            this.loadLevel = true;
             this.initialTime = fadeTime;
             this.time = fadeTime;
             this.level = level;
@@ -67,25 +68,44 @@ namespace MyGame
             this.color = fadeColor;
         }
 
-        public void updateLoadLevel()
+        public void changeStateWithFade( StateManager.tGameState state, int clearStates, string level, float fadeTime, Color fadeColor)
+        {
+            this.state = state;
+            this.clearStates = clearStates;
+            this.type = tTransition.FadeIn;
+            this.initialTime = fadeTime;
+            this.time = fadeTime;
+            this.level = level;
+            this.color = fadeColor;
+        }
+
+        public void updateSpecialFade()
         {
             if (time < 0.0f)
             {
-                loadLevel = false;
-
-                StateManager.dequeueState(1);
-                switch (locationType)
+                if (state != StateManager.tGameState.None)
                 {
-                    case WorldMapLocation.tLocationType.Arcade:
-                        StateManager.gameStates.Add(new StateGame(level));
-                        break;
-                    case WorldMapLocation.tLocationType.KingTomato:
-                        StateManager.gameStates.Add(new MinigameKingTomato(level));
-                        break;
-                    case WorldMapLocation.tLocationType.EpilepticMacedonia:
-                        StateManager.gameStates.Add(new MinigameEpilepticMacedonia(level));
-                        break;
+                    StateManager.dequeueStates(clearStates);
+                    StateManager.addState(state, level);
                 }
+                else
+                {
+                    StateManager.dequeueStates(1);
+                    switch (locationType)
+                    {
+                        case WorldMapLocation.tLocationType.Arcade:
+                            StateManager.addState(StateManager.tGameState.Game, level);
+                            break;
+                        case WorldMapLocation.tLocationType.KingTomato:
+                            StateManager.addState(StateManager.tGameState.KingTomato, level);
+                            break;
+                        case WorldMapLocation.tLocationType.EpilepticMacedonia:
+                            StateManager.addState(StateManager.tGameState.EpilepticMacedonia, level);
+                            break;
+                    }
+                }
+                level = null;
+                state = StateManager.tGameState.None;
             }
         }
 
@@ -98,14 +118,13 @@ namespace MyGame
         {
             time -= SB.dt;
 
-            if (loadLevel)
+            if (level != null || state != StateManager.tGameState.None)
             {
-                updateLoadLevel();
+                updateSpecialFade();
             }
 
             if (time > 0.0f)
             {
-                
                 switch (type)
                 {
                     case tTransition.FadeIn:

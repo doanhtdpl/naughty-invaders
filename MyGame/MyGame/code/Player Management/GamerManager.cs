@@ -50,7 +50,9 @@ namespace MyGame
         }
         public static ControlPad getMainControls()
         {
-            if (getSessionOwner() == null) return null;
+            // TODO apaño
+            if (getSessionOwner() == null)
+                return ControlPadManager.Instance.controlPads[(int)PlayerIndex.One];
 
             return getSessionOwner().Controls;
         }
@@ -84,19 +86,12 @@ namespace MyGame
             {
                 ge.Gamer = Gamer.SignedInGamers[playerIndex];
             }
-            ge.Player = new Player(ge, "player", Vector3.Zero, 0);
-            ge.PlayerIndex = playerIndex;
             gamerEntities.Add(ge);
+            ge.Player = new Player(ge, "player", Vector3.Zero, 0);
+            ge.Controls = ControlPadManager.Instance.controlPads[(int)playerIndex];
+            ge.PlayerIndex = playerIndex;
             playerEntities.Add(ge.Player);
             return ge;
-        }
-
-        public static void updateInputs()
-        {
-            foreach (GamerEntity g in gamerEntities)
-            {
-                g.updateInput();
-            }
         }
 
         public static void updatePlayers()

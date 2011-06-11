@@ -17,7 +17,7 @@ namespace MyGame
         public bool gameState = false;
         public bool longLoad = false;
         public bool floating = false;
-        public StateManager.tGS type;
+        public StateManager.tGameState type { get; set; }
         public float timeRunning = 0;
         public Color transitionColor = Color.Black;
 

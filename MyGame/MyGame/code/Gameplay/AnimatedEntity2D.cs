@@ -32,7 +32,7 @@ namespace MyGame
         // to avoid loading every time for the same animated entities the same actions and textures, use a common pool
         static Dictionary<string, AnimatedEntityData> datas = new Dictionary<string, AnimatedEntityData>();
         // ...but keep an instance pointer for the actions and animated textures for easing the use
-        Dictionary<string, AnimationAction> actions;
+        public Dictionary<string, AnimationAction> actions { get; set; }
         List<AnimatedTexture> animatedTextures;
 
         public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)

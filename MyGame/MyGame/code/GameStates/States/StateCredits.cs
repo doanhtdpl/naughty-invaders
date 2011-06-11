@@ -39,7 +39,7 @@ namespace MyGame
 
             if (fade && !TransitionManager.Instance.isFading())
             {
-                StateManager.dequeueState(1);
+                StateManager.dequeueStates(1);
                 TransitionManager.Instance.fadeOut();
             }
         }

@@ -48,7 +48,6 @@ namespace MyGame
         {
             transitionColor = new Color(104, 0, 4, 255);
             transitionColor *= 0.85f;
-            type = StateManager.tGS.Pause;
             initializeMenu();
             renderAlways = false;
             //SoundManager.playSound("pause");
@@ -68,7 +67,7 @@ namespace MyGame
             // unpause with start or B button
             if (GamerManager.getMainControls().Start_firstPressed() || GamerManager.getMainControls().B_firstPressed())
             {
-                StateManager.dequeueState(1);
+                StateManager.dequeueStates(1);
                 //SoundManager.playSound("pause");
             }
         }
