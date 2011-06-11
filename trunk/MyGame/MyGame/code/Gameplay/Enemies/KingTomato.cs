@@ -11,8 +11,8 @@ namespace MyGame
         public enum tState { Commanding, Shitting, Recovering, Commanding2, Dying, Delete }
         public tState state { get; set; }
 
-        const float LIFE = 200.0f;
-        const float LIFE_RETURNS = 200;
+        const float LIFE = 3000.0f;
+        const float LIFE_RETURNS = 700;
         const float RECOVERING_LIFE_SPEED = 500.0f;
         const float SHIT_TIME = 3.0f;
         const float SPAWN_ORB_TIME = 0.05f;

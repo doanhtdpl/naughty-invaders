@@ -19,6 +19,7 @@ namespace MyGame
         int savedFruits = 0;
         float timeAfterLast = 3.0f;
         bool playedEnd = false;
+        bool startedThrowing = false;
 
         const float SPAWN_ORB_TIME = 0.1f;
         float lastOrb = 0.0f;
@@ -158,8 +159,6 @@ namespace MyGame
             macedonia = new MacedoniaMinigame(new Vector3(0.0f, 200.0f, 0), 0.0f);
             loadIntroCinematic();
             CinematicManager.Instance.playCinematic("epilepticMacedoniaIntro");
-
-            
         }
         
         public override void update()
@@ -181,6 +180,12 @@ namespace MyGame
 
             if (CinematicManager.Instance.cinematicToPlay != null) return;
 
+            if (!startedThrowing)
+            {
+                startedThrowing = true;
+                macedonia.playAction("attackShake", false, 1.0f);
+            }
+
             if (spawnedFruits >= FRUITS_TO_SPAWN)
             {
                 timeAfterLast -= SB.dt;
@@ -196,6 +201,7 @@ namespace MyGame
                     nextFruitSpawn = Calc.randomScalar(FRUIT_SPAWN_TIME_MIN - timeModifier, FRUIT_SPAWN_TIME_MAX - timeModifier);
                     nextFruitSpawn = Calc.clamp(nextFruitSpawn, 0.5f, 1000.0f);
                     ++spawnedFruits;
+                    macedonia.playAction("attackShake", false, 1.0f + (1.5f * (spawnedFruits / FRUITS_TO_SPAWN)));
                 }
             }
 

@@ -45,7 +45,6 @@ namespace MyGame
             base.render(selected, flip);
             Vector2 numbersPosition = Screen.getXYfromCenter(position + new Vector2(50, 20));
             StringManager.render(player.data.XP.ToString(), numbersPosition, 1.0f, Color.Gold, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.Brown, 1.0f, new Vector2(1.5f, 1.5f), StringManager.tStyle.Shadowed);
-            StringManager.render(player.data.totalXP.ToString() + " xp", numbersPosition + new Vector2(20, 35), 0.7f, Color.Gold, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.Brown, 1.0f, new Vector2(1.5f, 1.5f), StringManager.tStyle.Shadowed);
         }
     }
 
