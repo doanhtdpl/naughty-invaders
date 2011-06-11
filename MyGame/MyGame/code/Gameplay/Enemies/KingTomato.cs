@@ -38,7 +38,9 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(0.0f, 0.0f), 80);
+            addCollision(new Vector2(0, 0), 80);
+            addCollision(new Vector2(-80, -20), 70);
+            addCollision(new Vector2(80, -20), 70);
         }
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)

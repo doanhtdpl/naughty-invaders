@@ -22,7 +22,7 @@ namespace MyGame
         int TELEPORT_LIMIT_X = 600;
         const int MAX_RAYOS = 3;
 
-        int RAYO_ATTACK_WIDTH = 100;
+        int RAYO_ATTACK_WIDTH = 180;
 
         //Appear/disappear
         float HIDDEN_TIME = 1.0f;
@@ -76,12 +76,16 @@ namespace MyGame
             for(int i=0; i<MAX_RAYOS; i++)
             {
                 rayo[i] = new AnimatedEntity2D("animatedProps", "macedoniaWeaponBody", Vector3.Zero, 0, Color.White);
+                rayo[i].scale = new Vector3(rayo[i].scale.X * 2, rayo[i].scale.Y, rayo[i].scale.Z);
             }
             rayoEnd = new AnimatedEntity2D("animatedProps", "macedoniaWeaponEnd", Vector3.Zero, 0, Color.White);
+            rayoEnd.scale = new Vector3(rayoEnd.scale.X * 2, rayoEnd.scale.Y, rayoEnd.scale.Z);
 
             showRayo(false);
 
             visible = false;
+
+            scale *= 2;
 
             loadIntroCinematic();
             loadEndCinematic();
@@ -117,7 +121,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(-5, 0), 65);
+            addCollision(new Vector2(-10, 0), 120);
         }
 
         public void removeCollisions()
@@ -133,19 +137,22 @@ namespace MyGame
                 life -= ce.damage;
 
                 if (life < 0)
+                {
                     changeState(tMacedoniaBossState.Die);
+                    SoundManager.Instance.playEffect(entityName + "Dies");
+                }
 
                 life = Math.Max(life, 1);
             }
 
-            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position + new Vector3(0, 0, 10), Vector3.Zero, Color.White);
             if (life > 0)
             {
                 SoundManager.Instance.playEffect(entityName + "GotHit");
             }
             else
             {
-                SoundManager.Instance.playEffect(entityName + "Dies");
+                //SoundManager.Instance.playEffect(entityName + "Dies");
             }
             return life > 0;
         }
@@ -366,7 +373,7 @@ namespace MyGame
             {
                 fruit.update();
 
-                if (!fruit.isDead() && !fruit.isDying() && (fruit.position - GamerManager.getMainPlayer().position).Length() < 50)
+                if (!fruit.isDead() && !fruit.isDying() && (fruit.position - GamerManager.getMainPlayer().position).Length() < 100)
                 {
                     GamerManager.getMainPlayer().gotHitAtPart(null, 0);
                     fruit.explode();
@@ -397,12 +404,12 @@ namespace MyGame
 
                 case tMacedoniaBossState.Disappear:
                     playAction("idle");
-                    ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
                     removeCollisions();
                     break;
 
                 case tMacedoniaBossState.Appear:
-                    ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
                     setCollisions();
                     break;
 
@@ -464,6 +471,8 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.Die:
+                    showRayo(false);
+
                     CinematicManager.Instance.playCinematic("macedoniaEnd");
                     playAction("attackShake");
                     break;
@@ -505,7 +514,7 @@ namespace MyGame
 
             bool isPlayerHit = Math.Abs(position.X - GamerManager.getMainPlayer().position.X) < RAYO_ATTACK_WIDTH;
 
-            float length = Math.Abs(position.Y - playerPos.Y - 100) - 15;
+            float length = Math.Abs(position.Y - playerPos.Y - 100) - 15 - 58;
             if (!isPlayerHit)
                 length = 5000;
 
@@ -528,7 +537,7 @@ namespace MyGame
 
                 rayo[i].paintMask = new Vector2(1.0f, factor);
 
-                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y - rayo[i].getFrameSize().Y * 0.5f * factor - 52 , position.Z + 0.1f);
+                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y - rayo[i].getFrameSize().Y * 0.5f * factor - 110 , position.Z + 0.1f);
                 length -= rayo[i].getFrameSize().Y;
             }
 
@@ -537,6 +546,8 @@ namespace MyGame
                 rayoEnd.renderState = tRenderState.Render;
                 rayoEnd.update();
                 rayoEnd.position = new Vector3(position.X, GamerManager.getMainPlayer().position.Y + 100, position.Z + 0.2f);
+
+                GamerManager.getMainPlayer().gotHitAtPart(null, 0);
             }
             else
             {

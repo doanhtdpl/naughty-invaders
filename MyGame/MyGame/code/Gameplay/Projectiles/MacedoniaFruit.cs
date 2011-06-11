@@ -20,7 +20,6 @@ namespace MyGame
             : base("projectiles", name, position, 0, Color.White)
         {
             direction = new Vector3(Calc.randomScalar(-450, 450), 300, 0);
-            scale /= 2;
 
             deadRequest = false;
             dead = false;
