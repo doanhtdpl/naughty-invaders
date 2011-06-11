@@ -2601,16 +2601,18 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
-    <Compile Include="sounds\effects\grapeDies.wav">
+    <None Include="sounds\effects\grapeDies.wav">
       <Name>grapeDies</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="sounds\effects\grapeGotHit.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="sounds\effects\grapeGotHit.wav">
       <Name>grapeGotHit</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
-    </Compile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Compile Include="sounds\effects\menuActivated.wav">
       <Name>menuActivated</Name>
       <Importer>WavImporter</Importer>
