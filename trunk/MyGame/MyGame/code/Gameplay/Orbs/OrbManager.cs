@@ -31,6 +31,8 @@ namespace MyGame
                     instance = new OrbManager();
                     Orb.textures[(int)Orb.tOrb.XP] = TextureManager.Instance.getTexture("particles/OrbXP");
                     Orb.textures[(int)Orb.tOrb.Life] = TextureManager.Instance.getTexture("particles/OrbLife");
+                    Orb.sizes[(int)Orb.tOrb.XP] = 65.0f;
+                    Orb.sizes[(int)Orb.tOrb.Life] = 120.0f;
                 }
                 return instance;
             }
@@ -150,7 +152,7 @@ namespace MyGame
             {
                 if (orbs[i].render)
                 {
-                    Orb.textures[(int)orbs[i].type].render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.SIZE), Color.White);
+                    Orb.textures[(int)orbs[i].type].render(SB.getWorldMatrix(new Vector3(orbs[i].position, 0.0f), 0.0f, Orb.sizes[(int)orbs[i].type]), Color.White);
                 }
             }
         }
