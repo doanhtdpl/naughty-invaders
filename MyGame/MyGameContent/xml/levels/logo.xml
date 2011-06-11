@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<level nextEntityID="184" BGColor="255 255 255 255" CameraMode="None">
+  <staticProps>
+    <staticProp entityName="logo-51" worldMatrix="583 0 0 0 0 557 0 0 0 0 1 0 -43.56358 33.54935 -34.9892 1" id="181" color="255 255 255 255" flipH="False" flipV="False" living="False" />
+  </staticProps>
+  <animatedProps />
+  <groups />
+  <enemies />
+  <enemySpawnZones />
+  <levelCollisions />
+  <camera />
+  <particles />
+  <triggers />
+  <players>
+    <player playerId="0" pos="0 0 0" />
+  </players>
+</level>
