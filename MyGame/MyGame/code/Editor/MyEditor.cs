@@ -647,8 +647,9 @@ namespace MyGame
 
                         flipHorizontalCheck.Checked = ((RenderableEntity2D)ent).flipHorizontal;
                         flipVerticalCheck.Checked = ((RenderableEntity2D)ent).flipVertical;
-                    }
 
+                        livingCheck.Checked = ent.living;
+                    }
                 }
             }
         }
@@ -674,6 +675,19 @@ namespace MyGame
                 foreach (RenderableEntity2D rent in selectedEntities)
                 {
                     rent.flipVertical = flipVerticalCheck.Checked;
+                }
+            }
+
+            myEditorControl.Focus();
+        }
+
+        private void living_CheckedChanged(object sender, EventArgs e)
+        {
+            if (anyEntitySelected())
+            {
+                foreach (Entity2D rent in selectedEntities)
+                {
+                    rent.living = livingCheck.Checked;
                 }
             }
 
