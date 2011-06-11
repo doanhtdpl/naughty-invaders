@@ -114,7 +114,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(0, 0), 40);
+            addCollision(new Vector2(0, 0), 35);
         }
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)

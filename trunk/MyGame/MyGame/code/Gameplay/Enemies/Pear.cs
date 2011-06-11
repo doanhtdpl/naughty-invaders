@@ -36,7 +36,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(0, 20), 40);
+            addCollision(new Vector2(0, 25), 40);
         }
 
         public override void die()
