@@ -32,6 +32,11 @@ namespace MyGame
         public int lifes { get; set; }
         public int lifePortions { get; set; }
         float invulnerableTime;
+
+        Vector2[] LIFE_PORTIONS_POS;
+        Vector2 LIFE_WISH_POS;
+        const float LIFE_WISH_OFFSET = 30.0f;
+        const int MAX_LIFE_PORTIONS = 3;
         
         // actions stuff
         float garlicGunCooldownTime;
@@ -91,6 +96,12 @@ namespace MyGame
             lifes = 3;
             lifePortions = getMaxLifePortions();
             invulnerableTime = 0.0f;
+
+            LIFE_PORTIONS_POS = new Vector2[MAX_LIFE_PORTIONS];
+            LIFE_PORTIONS_POS[0] = Screen.getXYfromCenter(-540, -180);
+            LIFE_PORTIONS_POS[1] = Screen.getXYfromCenter(-540, -180);
+            LIFE_PORTIONS_POS[2] = Screen.getXYfromCenter(-540, -180);
+            LIFE_WISH_POS = Screen.getXYfromCenter(-540, -180);
         }
 
         public void initLevel()
@@ -110,14 +121,22 @@ namespace MyGame
 
             --lifePortions;
             invulnerableTime = INVULNERABLE_TIME;
-            if (lifePortions <= invulnerableTime)
+            if (lifePortions <= 0)
             {
-                invulnerableTime += actions["die"].getDuration();
-                --life;
-                lifePortions = getMaxLifePortions();
+                invulnerableTime += actions["miniDie"].getDuration();
+                --lifes;
+                playAction("miniDie");
+                if (lifes > 0)
+                {
+                    lifePortions = getMaxLifePortions();
+                }
             }
 
-            return lifePortions > 0 || life > 0;
+            if (lifePortions == 0 && life == 0)
+            {
+                int lal = 1;
+            }
+            return lifePortions > 0 || lifes > 0;
         }
 
         public void addLifePortionsToMax()
@@ -369,10 +388,6 @@ namespace MyGame
 #endif
         }
 
-        Vector2 LIFE_PORTION_2_POS = Screen.getXYfromCenter(-300, -300);
-        Vector2 LIFE_PORTION_1_POS = Screen.getXYfromCenter(-400, -350);
-        Vector2 LIFE_WISH_POS = Screen.getXYfromCenter(-350, -350);
-        //Vector2 LIFE_PORTION_3 = new Vector3();
         public void renderGUI()
         {
             if (renderState == tRenderState.NoRender) return;
@@ -382,22 +397,31 @@ namespace MyGame
             //starXP.render2D(projectedPosition.toVector2(), new Vector2(20.0f, 20.0f), Color.White, 0.0f, SpriteEffects.None, 1.0f, false);
             //StringManager.render(owner.data.XP.ToString(), projectedPosition.toVector2() + new Vector2(10, -10), 0.5f, Color.Yellow, StringManager.tTextAlignment.Left, SB.font, 1000, 1000, Color.White, 1.0f, Vector2.Zero, StringManager.tStyle.Normal);
 
+            LIFE_PORTIONS_POS[0] = Screen.getXYfromCenter(-450, -180);
+            LIFE_PORTIONS_POS[1] = Screen.getXYfromCenter(-430, -210);
+            LIFE_PORTIONS_POS[2] = Screen.getXYfromCenter(-430, -245);
+
             switch (mode)
             {
                 case tMode.Arcade:
                 case tMode.GarlicGun:
                     // render lifebars
-                    LIFE_WISH_POS = Screen.getXYfromCenter(-350, -350);
-                    GraphicsManager.Instance.spriteBatch.Draw(wishLife, LIFE_WISH_POS, Color.White);
+                    
                     for (int i = 0; i < lifes; ++i)
                     {
+                        float offset = i * LIFE_WISH_OFFSET;
+                        GraphicsManager.Instance.spriteBatch.Draw(wishLife, LIFE_WISH_POS + new Vector2(offset, 0), null, Color.White, 0, Vector2.Zero, 0.8f, SpriteEffects.None, 0);
                         // if is last life...
                         if (i == lifes - 1)
                         {
-                        }
-                        else
-                        {
-
+                            for (int j = 0; j < MAX_LIFE_PORTIONS; ++j)
+                            {
+                                if (j < lifePortions)
+                                {
+                                    GraphicsManager.Instance.spriteBatch.Draw(wishLifePortion, LIFE_PORTIONS_POS[j] + new Vector2(offset, 0), null, Color.White, 0, Vector2.Zero, 0.8f, SpriteEffects.None, 0);
+                                }
+                                else break;
+                            }
                         }
                     }
                     break;
@@ -435,8 +459,6 @@ namespace MyGame
         public override void requestDelete()
         {
             base.requestDelete();
-            lifes = 3;
-            playAction("idle", true);
         }
     }
 }

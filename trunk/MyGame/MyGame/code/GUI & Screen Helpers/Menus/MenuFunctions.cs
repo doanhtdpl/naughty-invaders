@@ -30,7 +30,7 @@ namespace MyGame
         }
         public static void goToSkillsMenu()
         {
-            StateManager.addState(StateManager.tGameState.Menu);
+            StateManager.addState(StateManager.tGameState.SkillsMenu);
         }
         public static void exitGame()
         {
