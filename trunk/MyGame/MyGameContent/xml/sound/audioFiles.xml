@@ -5,8 +5,6 @@
 
 <audioFiles>
   <audioFile type="song" name="song" />
-  <audioFile type="effect" name="menuSelect" />
-  <audioFile type="effect" name="menuChange" />
   <audioFile type="effect" name="wishFastShot" />
   <audioFile type="effect" name="buySkill" />
   <audioFile type="effect" name="dash" />
