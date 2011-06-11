@@ -243,7 +243,9 @@
     <Compile Include="code\OLD code\SoundManager.cs" />
     <Compile Include="code\Sound\SoundManager.cs" />
     <Compile Include="code\TextKey.Designer.cs" />
-    <Compile Include="code\Editor\GraphicsDeviceControl.cs" />
+    <Compile Include="code\Editor\GraphicsDeviceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="code\Editor\GraphicsDeviceService.cs" />
     <Compile Include="code\Editor\MyEditor.cs">
       <SubType>Form</SubType>

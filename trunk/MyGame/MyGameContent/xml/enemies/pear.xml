@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
   <animatedTexture name="Anim_Pear" frameWidth="180" frameHeight="180" columns="11" rows="6">
-    <action name="attack" initialFrame="20" endFrame="48" FPS="15" loops="false"/>
+    <action name="attack" initialFrame="20" endFrame="48"  loops="false"/>
     <action name="die" initialFrame="49" endFrame="57" loops="false"/>
     <action name="idle" initialFrame="1" endFrame="19"  loops="true"/>
   </animatedTexture>
