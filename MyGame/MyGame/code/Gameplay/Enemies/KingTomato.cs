@@ -14,13 +14,11 @@ namespace MyGame
         const float LIFE = 3000.0f;
         const float LIFE_RETURNS = 700;
         const float RECOVERING_LIFE_SPEED = 500.0f;
-        const float SHIT_TIME = 3.0f;
         const float SPAWN_ORB_TIME = 0.05f;
         const int ORBS_TO_SPAWN = 150;
         public const float SPEED = 100.0f;
 
         Lifebar lifebar;
-        float shitTimer = SHIT_TIME;
 
         
         float lastOrb = 0.0f;
