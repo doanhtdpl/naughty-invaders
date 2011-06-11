@@ -33,9 +33,9 @@ namespace MyGame
         float LAUGH_TIME = 2.0f;
 
         //Talk/Invoke enemies
-        int INVOKE_NUM_ORANGES = 20;
-        float INVOKE_TIME_BETWEEN_ORANGES = 0.2f;
-        int INVOKE_LIMIT_X = 350;
+        int INVOKE_NUM_ORANGES = 10;
+        float INVOKE_TIME_BETWEEN_ORANGES = 0.4f;
+        int INVOKE_LIMIT_X = 500;
         float INVOKE_TIME = 4.0f;
 
         //Shake
@@ -145,7 +145,7 @@ namespace MyGame
                 life = Math.Max(life, 1);
             }
 
-            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position + new Vector3(0, 0, 10), Vector3.Zero, Color.White);
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position + new Vector3(0, -120, 5), Vector3.Zero, Color.White);
             if (life > 0)
             {
                 SoundManager.Instance.playEffect(entityName + "GotHit");
@@ -346,7 +346,7 @@ namespace MyGame
                 case tMacedoniaBossState.Talk:
                     if (stateTime > (invokeCount * INVOKE_TIME_BETWEEN_ORANGES))
                     {
-                        EnemyManager.Instance.addEnemy("orange", invokeFrom + invokeStep * invokeCount);
+                        EnemyManager.Instance.addEnemy("orange", invokeFrom + invokeStep * invokeCount + new Vector3(0, -1000, 0));
                         invokeCount++;
                     }
 
@@ -404,12 +404,12 @@ namespace MyGame
 
                 case tMacedoniaBossState.Disappear:
                     playAction("idle");
-                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -100, 5), Vector3.Zero, Color.White, 2);
                     removeCollisions();
                     break;
 
                 case tMacedoniaBossState.Appear:
-                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -50, 10), Vector3.Zero, Color.White);
+                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -100, 5), Vector3.Zero, Color.White, 2);
                     setCollisions();
                     break;
 
@@ -462,6 +462,10 @@ namespace MyGame
                     invokeRight = Calc.randomBool();
                     invokeFrom = new Vector3(invokeRight ? -INVOKE_LIMIT_X : INVOKE_LIMIT_X, position.Y, position.Z);
                     invokeStep = new Vector3((invokeRight ? INVOKE_LIMIT_X * 2 : -INVOKE_LIMIT_X * 2) / INVOKE_NUM_ORANGES, 0, 0);
+
+                    //invoke watermelon
+                    ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -350, 5), Vector3.Zero, Color.White);
+                    EnemyManager.Instance.addEnemy("watermelon", position + new Vector3(0, -350, 0));
 
                     playAction("attackIdle");
                     break;
