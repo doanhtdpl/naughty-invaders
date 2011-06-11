@@ -2953,16 +2953,6 @@ namespace MyGame
         public System.Windows.Forms.TextBox livingIntensityMax;
         private System.Windows.Forms.Label label50;
         public System.Windows.Forms.TextBox livingIntensityMin;
-
-        private void keyPressedColor(object sender, System.Windows.Forms.KeyPressEventArgs e)
-        {
-
-        }
-
-        private void textChangeColor(object sender, System.EventArgs e)
-        {
-
-        }
     }
 }
 #endif

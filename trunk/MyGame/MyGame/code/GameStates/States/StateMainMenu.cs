@@ -16,7 +16,6 @@ namespace MyGame
     {
         Menu menu;
         Texture2D logo;
-        bool fade;
 
         void initializeMenu()
         {
@@ -47,8 +46,6 @@ namespace MyGame
             menu.setCurrentNode(mb1);
 
             TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
-
-            fade = false;
         }
 
         public override void initialize()
@@ -59,10 +56,13 @@ namespace MyGame
             renderAlways = false;
         }
 
-
         public override void loadContent()
         {
             logo = TextureManager.Instance.getTexture("GUI/menu/logo_NI");
+
+            EditorHelper.Instance.loadNewLevelFromGame("menu");
+            CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
+            GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
 
             loaded = true;
         }
@@ -72,25 +72,23 @@ namespace MyGame
             base.update();
             //GamerManager.updateTrialMessage();
 
-            ControlPad cp = GamerManager.getMainControls();
+            menu.update();
 
-            if (cp.A_firstPressed() && !fade)
-            {
-                TransitionManager.Instance.fadeIn();
-                fade = true;
-            }
+            LevelManager.Instance.update();
+            ParticleManager.Instance.update();
+            CameraManager.Instance.update();
 
-            //if (!TransitionManager.Instance.isFading())
-            {
-                menu.update();
-            }
+            SB.cam.update();
         }
 
         public override void render()
         {
-            GraphicsManager.Instance.spriteBatchBegin();
-            logo.render2D(new Vector2(0, 120), new Vector2(logo.Width/2, logo.Height/2), Color.White);
-            GraphicsManager.Instance.spriteBatchEnd();
+            //GraphicsManager.Instance.spriteBatchBegin();
+            //logo.render2D(new Vector2(0, 120), new Vector2(logo.Width/2, logo.Height/2), Color.White);
+            //GraphicsManager.Instance.spriteBatchEnd();
+
+            EntityManager.Instance.render();
+            LevelManager.Instance.render();
 
             menu.render();
             //GamerManager.renderTrialMessage(new Vector2(0, -190), 1.3f);
