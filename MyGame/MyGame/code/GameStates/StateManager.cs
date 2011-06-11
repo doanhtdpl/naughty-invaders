@@ -103,7 +103,7 @@ namespace MyGame
             }
         }
 
-        public enum tGameState { None, Intro, Prompt, Menu, Options, Credits, Scores, Pause, SkillsMenu, WorldMap, Game, KingTomato, EpilepticMacedonia, EndStage, EndTrial };
+        public enum tGameState { None, Intro, Prompt, Menu, Options, Credits, Scores, Pause, SkillsMenu, GameIntro, WorldMap, Game, KingTomato, EpilepticMacedonia, EndStage, EndTrial };
         public static void addState(tGameState stateType, string level = null)
         {
             GameState gameState;
@@ -132,6 +132,9 @@ namespace MyGame
                     break;
                 case tGameState.SkillsMenu:
                     gameState = new StateSkillsMenu();
+                    break;
+                case tGameState.GameIntro:
+                    gameState = new StateGameIntro();
                     break;
                 case tGameState.WorldMap:
                     gameState = new StateWorldMap();

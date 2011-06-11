@@ -14,7 +14,7 @@ namespace MyGame
     {
         public static void startGame()
         {
-            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.GameIntro, 1, null, 0.5f, Color.Black);
         }
         public static void goToOptions()
         {

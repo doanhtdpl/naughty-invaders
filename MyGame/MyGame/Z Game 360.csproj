@@ -128,6 +128,7 @@
     <Compile Include="code\GameStates\States\MinigameEpilepticMacedonia.cs" />
     <Compile Include="code\GameStates\States\MinigameKingTomato.cs" />
     <Compile Include="code\GameStates\States\StateEndLevel.cs" />
+    <Compile Include="code\GameStates\States\StateGameIntro.cs" />
     <Compile Include="code\GameStates\States\StateSkillsMenu.cs" />
     <Compile Include="code\GameStates\States\StateStageCleared.cs" />
     <Compile Include="code\GameStates\States\StateWorldMap.cs" />

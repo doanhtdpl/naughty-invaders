@@ -44,7 +44,7 @@ namespace MyGame
             NetworkNode<WorldMapLocation> nn2 = locations.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
             WorldMapLocation ml3 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
             NetworkNode<WorldMapLocation> nn3 = locations.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
-            WorldMapLocation ml4 = new WorldMapLocation("level2", WorldMapLocation.tLocationType.Arcade);
+            WorldMapLocation ml4 = new WorldMapLocation("verducity", WorldMapLocation.tLocationType.Arcade);
             NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(175.0f, -100.0f, 200.0f));
             locations.addDoubleLink(nn1, nn2);
             locations.addDoubleLink(nn2, nn3);
