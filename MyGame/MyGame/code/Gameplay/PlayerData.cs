@@ -71,9 +71,7 @@ namespace MyGame
             wishOrbs = 0;
             petOrbs = 0;
 
-#if DEBUG
             initLevelsPassed();
-#endif
             initSkills();
 
             lastLevelPlayed = null;
