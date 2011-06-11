@@ -150,23 +150,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\GUI\menu\logo.png">
-      <Name>logo</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\GUI\menu\menu.png">
-      <Name>menu</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\GUI\menu\trial.png">
-      <Name>trial</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\enemies\Anim_Pear.tga">
       <Name>Anim_Pear</Name>
       <Importer>TextureImporter</Importer>
@@ -204,11 +187,6 @@
     </Compile>
     <Compile Include="textures\particles\Gusyluz.tga">
       <Name>Gusyluz</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\GUI\menu\A.tga">
-      <Name>A</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -2390,6 +2368,102 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\projectiles\blast2-100.png">
+      <Name>blast2-100</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\staticProps\pinya.png">
+      <Name>pinya</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\staticProps\orangeBG.png">
+      <Name>orangeBG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\ingame\macedoniaBack.png">
+      <Name>macedoniaBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\ingame\macedoniaFront.png">
+      <Name>macedoniaFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\menu\logo_NI.png">
+      <Name>logo_NI</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\logo_UG.png">
+      <Name>logo_UG</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\GUI\menu\cerdits-90.png">
+      <Name>cerdits-90</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-91.png">
+      <Name>cerdits-91</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-92.png">
+      <Name>cerdits-92</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-93.png">
+      <Name>cerdits-93</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-94.png">
+      <Name>cerdits-94</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-95.png">
+      <Name>cerdits-95</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-96.png">
+      <Name>cerdits-96</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-97.png">
+      <Name>cerdits-97</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="textures\GUI\menu\cerdits-98.png">
+      <Name>cerdits-98</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="textures\staticProps\cerdits-90.png">
       <Name>cerdits-90</Name>
       <Importer>TextureImporter</Importer>
@@ -2435,31 +2509,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\projectiles\blast2-100.png">
-      <Name>blast2-100</Name>
+    <Compile Include="textures\staticProps\logo_NI.png">
+      <Name>logo_NI</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\staticProps\pinya.png">
-      <Name>pinya</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\staticProps\orangeBG.png">
-      <Name>orangeBG</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\staticProps\artmapab-70.png">
-      <Name>artmapab-70</Name>
+    <Compile Include="textures\staticProps\logo_UG.png">
+      <Name>logo_UG</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

@@ -59,9 +59,9 @@ namespace MyGame
             setCollisions();
 
             // life stuff
-            lifebars[0] = new Lifebar("wish", this, new Vector2(0.25f, 0.25f), new Vector2(0.0f, -80.0f));
-            lifebars[1] = new Lifebar("wish", this, new Vector2(0.34f, 0.34f), new Vector2(0.0f, -93.0f));
-            lifebars[2] = new Lifebar("wish", this, new Vector2(0.43f, 0.43f), new Vector2(0.0f, -110.0f));
+            lifebars[0] = new Lifebar("wish", this, new Vector2(0.25f, 0.25f), new Vector2(0.0f, -80.0f), Color.White);
+            lifebars[1] = new Lifebar("wish", this, new Vector2(0.34f, 0.34f), new Vector2(0.0f, -93.0f), Color.White);
+            lifebars[2] = new Lifebar("wish", this, new Vector2(0.43f, 0.43f), new Vector2(0.0f, -110.0f), Color.White);
             lifes = 2;
             lifeValue = lifes;
             invulnerableTime = 0.0f;

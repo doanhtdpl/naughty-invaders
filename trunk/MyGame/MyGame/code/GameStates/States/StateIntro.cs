@@ -14,10 +14,10 @@ namespace MyGame
 {
     class StateIntro : GameState
     {
-        public static Texture logo;
+        Texture2D logo;
         public float timer = 0;
 
-        public const int introTime = 1000;
+        public const int introTime = 3;
 
         public override void initialize()
         {
@@ -25,26 +25,28 @@ namespace MyGame
 
         public override void loadContent()
         {
-            logo = TextureManager.Instance.getTexture("GUI/menu/logo");
+            logo = TextureManager.Instance.getTexture("GUI/menu/logo_UG");
         }
 
         public override void update()
         {
             timer += SB.dt;
-            if (timer < 3000/*introTime*/)
+            if (timer < introTime)
             {
             }
             else
             {
                 StateManager.clearStates();
-                StateManager.gameStates.Add(new StatePrompt());
+                //StateManager.gameStates.Add(new StatePrompt());
+                StateManager.gameStates.Add(new StateMainMenu());
             }
         }
 
         public override void render()
         {
-            //GraphicsManager.Instance.beginAlphaRender();
-            logo.render(SB.getWorldMatrix(new Vector3(0.0f, 0.0f, 0.0f), 0.0f, 0.0f));
+            GraphicsManager.Instance.spriteBatchBegin();
+            logo.render2D(new Vector2(0,0), new Vector2(583, 557), Color.White);
+            GraphicsManager.Instance.spriteBatchEnd();
         }
 
         public override void dispose()

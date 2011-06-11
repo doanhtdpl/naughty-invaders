@@ -18,12 +18,12 @@ namespace MyGame
         public StateManager()
         {
             // inicializamos el primer estado del juego
-#if ONLY_GAMEPLAY
+//#if ONLY_GAMEPLAY
 #if EDITOR
             gameStates.Add(new StateGame());
-#else
-            gameStates.Add(new StateMainMenu());
-#endif
+//#else
+//            gameStates.Add(new StateMainMenu());
+//#endif
 #else
             gameStates.Add(new StateIntro());
 #endif
