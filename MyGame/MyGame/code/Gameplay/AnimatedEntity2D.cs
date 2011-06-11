@@ -23,6 +23,7 @@ namespace MyGame
         float actionTimer = 0.0f;
         int currentTextureId = 0;
         int currentFrame = 0;
+        public bool avoidDelete { get; set; }
 
         public Vector2 paintMask = Vector2.One;
 
@@ -57,6 +58,7 @@ namespace MyGame
             }
 
             scale2D = getFrameSize();
+            avoidDelete = false;
 
             playAction("idle");
         }
@@ -273,7 +275,14 @@ namespace MyGame
                     // if the animation played was die, delete the entity
                     if (actionState == "die")
                     {
-                        requestDelete();
+                        if (avoidDelete)
+                        {
+                            renderState = tRenderState.NoRender;
+                        }
+                        else
+                        {
+                            requestDelete();
+                        }
                     }
                     else if (action.playAtEnd != null)
                     {
@@ -329,8 +338,10 @@ namespace MyGame
         {
             base.delete();
         }
-        public virtual void requestDelete()
+        public virtual void requestDelete(bool force = false)
         {
+            if (avoidDelete && !force) return;
+
             entityState = tEntityState.ToDelete;
         }
     }

@@ -138,14 +138,17 @@ namespace MyGame
             CinematicManager.Instance.render();
 
 #if !EDITOR
-            if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained
-                && GamerManager.getSessionOwner().data.XP >= GamerManager.getSessionOwner().data.skills["dash1"].cost)
+            if (CinematicManager.Instance.cinematicToPlay == null)
             {
-                if (SB.gameTime.TotalGameTime.Milliseconds < 500)
+                if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained
+                    && GamerManager.getSessionOwner().data.XP >= GamerManager.getSessionOwner().data.skills["dash1"].cost)
                 {
-                    GraphicsManager.Instance.spriteBatchBegin();
-                    "buy new skills! press ::BACK".renderNI(Screen.getXYfromCenter(330, -230), 0.8f);
-                    GraphicsManager.Instance.spriteBatchEnd();
+                    if (SB.gameTime.TotalGameTime.Milliseconds < 500)
+                    {
+                        GraphicsManager.Instance.spriteBatchBegin();
+                        "buy new skills! press ::BACK".renderNI(Screen.getXYfromCenter(330, -230), 0.8f);
+                        GraphicsManager.Instance.spriteBatchEnd();
+                    }
                 }
             }
 #endif

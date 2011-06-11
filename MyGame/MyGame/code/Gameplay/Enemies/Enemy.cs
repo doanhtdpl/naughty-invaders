@@ -80,8 +80,10 @@ namespace MyGame
             EnemyManager.Instance.removeEnemy(this);
             base.delete();
         }
-        public override void requestDelete()
+        public override void requestDelete(bool force = false)
         {
+            if (avoidDelete && !force) return;
+
             base.requestDelete();
             EnemyManager.Instance.requestDeleteOf(this);
         }

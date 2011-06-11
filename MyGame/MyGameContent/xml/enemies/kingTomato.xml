@@ -4,7 +4,7 @@
     <action name="die" initialFrame="1" endFrame="28" FPS="15" loops="false"/>
   </animatedTexture>
   <animatedTexture name="Anim_KingTomato_Idle" frameWidth="320" frameHeight="320" columns="6" rows="6">
-    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="false" playRandom="true" playRandomMin="2" playRandomMax="3">
+    <action name="idle" initialFrame="1" endFrame="31" FPS="15" loops="true" playRandom="true" playRandomMin="2" playRandomMax="3">
       <playRandom name="speaking" probability="1"/>
     </action>
   </animatedTexture>

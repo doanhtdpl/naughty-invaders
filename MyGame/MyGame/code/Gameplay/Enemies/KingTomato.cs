@@ -8,15 +8,15 @@ namespace MyGame
 {
     public class KingTomato : Enemy
     {
-        public enum tState { Commanding, Shitting, Recovering, Commanding2, Dying }
+        public enum tState { Commanding, Shitting, Recovering, Commanding2, Dying, Delete }
         public tState state { get; set; }
 
-        const float LIFE = 3000.0f;
-        const float LIFE_RETURNS = 1000.0f;
+        const float LIFE = 200.0f;
+        const float LIFE_RETURNS = 200;
         const float RECOVERING_LIFE_SPEED = 500.0f;
         const float SHIT_TIME = 3.0f;
-        const float SPAWN_ORB_TIME = 0.1f;
-        const int ORBS_TO_SPAWN = 250;
+        const float SPAWN_ORB_TIME = 0.05f;
+        const int ORBS_TO_SPAWN = 150;
         public const float SPEED = 100.0f;
 
         Lifebar lifebar;
@@ -33,6 +33,7 @@ namespace MyGame
             setCollisions();
             lifebar = new Lifebar("kingTomato", this, new Vector2(0.8f, 0.8f), new Vector2(0.0f, 170.0f), Color.White);
             state = tState.Commanding;
+            avoidDelete = true;
         }
 
         public override void setCollisions()
@@ -69,12 +70,7 @@ namespace MyGame
                     }
                     break;
                 case tState.Shitting:
-                    shitTimer -= SB.dt;
-                    if (shitTimer < 0.0f)
-                    {
-                        CinematicManager.Instance.playCinematic("kingTomatoReturns");
-                        state = tState.Recovering;
-                    }
+                    // TODO super ugly that state is changed in minigame king tomate
                     break;
                 case tState.Recovering:
                     if (life < LIFE_RETURNS)
@@ -90,9 +86,8 @@ namespace MyGame
                     Vector3 directionTo = (GamerManager.getSessionOwner().Player.position - position);
                     directionTo.Normalize();
                     position += directionTo * SPEED * SB.dt;
-                    if (life < 0.0f)
+                    if (life <= 0.0f)
                     {
-                        die();
                         state = tState.Dying;
                     }
                     break;
@@ -104,6 +99,12 @@ namespace MyGame
                         lastOrb = SPAWN_ORB_TIME;
                         orbsToSpawn -= 5;
                     }
+                    if (orbsToSpawn <= 0)
+                    {
+                        state = tState.Delete;
+                    }
+                    break;
+                case tState.Delete:
                     break;
             }
         }
@@ -112,9 +113,12 @@ namespace MyGame
         {
             base.render();
             lifebar.lifePercentage = life / LIFE;
-            GraphicsManager.Instance.spriteBatchBegin();
-            lifebar.render();
-            GraphicsManager.Instance.spriteBatchEnd();
+            if (state != tState.Delete)
+            {
+                GraphicsManager.Instance.spriteBatchBegin();
+                lifebar.render();
+                GraphicsManager.Instance.spriteBatchEnd();
+            }
         }
     }
 }

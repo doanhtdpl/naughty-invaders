@@ -36,16 +36,16 @@ namespace MyGame
 
             MenuElement mbHeader = new MenuElement("smallHeader", new Vector2(0, 250), scale);
             MenuElement mb1 = getBuySkillOption("option1", "dash1",
-                "Press ::A to make a quick dash",
+                "(150) Press ::A to make a quick dash",
                 new Vector2(-350, 140), scale);
             MenuElement mb2 = getBuySkillOption("option2", "plasma",
-                "Improve your main attack with plasma power",
+                "(300) Improve your main attack with plasma power",
                 new Vector2(-350, 70), scale);
             MenuElement mb3 = getBuySkillOption("option3", "powerShot",
-                "Press ::Y to shot a secondary powerful attack. Keep ::Y pressed to charge the attack", 
+                "(250) Press ::Y to shot a secondary powerful attack. Keep ::Y pressed to charge the attack", 
                 new Vector2(-350, 15), new Vector2(scale.X, scale.Y * 0.8f));
             MenuElement mb4 = getBuySkillOption("option1", "life1",
-                "Get an additional permanent life portion to your life bar",
+                "(200) Get an additional permanent life portion to your life bar",
                 new Vector2(-350, -70), scale);
             mb4.setFunction("buySkillAddLife", MenuElement.tInputType.X, new object[3] { "life1", mb4, GamerManager.getMainPlayer() });
             MenuElement mbDescriptionHeader = new MenuElement("largeHeader", new Vector2(150, 80), new Vector2(1.3f, 0.4f));
