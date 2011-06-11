@@ -64,6 +64,8 @@ namespace MyGame
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
 
+            CameraManager.Instance.worldMapPosition = new Vector3(0, 150, -250);
+
             loaded = true;
         }
 
@@ -71,15 +73,15 @@ namespace MyGame
         {
             base.update();
 
-            if (TransitionManager.Instance.isFading()) return;
-
-            menu.update();
-
             LevelManager.Instance.update();
             ParticleManager.Instance.update();
             CameraManager.Instance.update();
 
             SB.cam.update();
+
+            if (TransitionManager.Instance.isFading()) return;
+
+            menu.update();
         }
 
         public override void render()
