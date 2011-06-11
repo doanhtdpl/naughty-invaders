@@ -112,13 +112,13 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BuyGame" xml:space="preserve">
-    <value>::X Buy for 200ms points!</value>
+    <value>BuyGame</value>
   </data>
   <data name="Continue" xml:space="preserve">
     <value>Continue</value>
@@ -127,90 +127,210 @@
     <value>Credits</value>
   </data>
   <data name="CreditsDesc" xml:space="preserve">
-    <value>Wanna see who made this game?</value>
+    <value>CreditsDesc</value>
   </data>
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="ExitDesc" xml:space="preserve">
-    <value>Back to Community Games</value>
+    <value>ExitDesc</value>
   </data>
   <data name="NewGame" xml:space="preserve">
-    <value>New game</value>
+    <value>NewGame</value>
   </data>
   <data name="NewGameDesc" xml:space="preserve">
-    <value>Start a new game</value>
+    <value>NewGameDesc</value>
   </data>
   <data name="OptBack" xml:space="preserve">
-    <value>Back</value>
+    <value>OptBack</value>
   </data>
   <data name="OptBackDesc" xml:space="preserve">
-    <value>Back to main menu</value>
+    <value>OptBackDesc</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
   </data>
   <data name="OptionsDesc" xml:space="preserve">
-    <value>Configure options</value>
+    <value>OptionsDesc</value>
   </data>
   <data name="OptMusicVol" xml:space="preserve">
-    <value>Music volume</value>
+    <value>OptMusicVol</value>
   </data>
   <data name="OptMusicVolDesc" xml:space="preserve">
-    <value>Adjust the music volume</value>
+    <value>OptMusicVolDesc</value>
   </data>
   <data name="OptNo" xml:space="preserve">
-    <value>No</value>
+    <value>OptNo</value>
   </data>
   <data name="OptNoDesc" xml:space="preserve">
-    <value>Nope, I want to save energy</value>
+    <value>OptNoDesc</value>
   </data>
   <data name="OptRumble" xml:space="preserve">
-    <value>Rumble</value>
+    <value>OptRumble</value>
   </data>
   <data name="OptRumbleDesc" xml:space="preserve">
-    <value>Do u wanna rumble?</value>
+    <value>OptRumbleDesc</value>
   </data>
   <data name="OptSoundVol" xml:space="preserve">
-    <value>Sound volume</value>
+    <value>OptSoundVol</value>
   </data>
   <data name="OptSoundVolDesc" xml:space="preserve">
-    <value>Configure the sound volume</value>
+    <value>OptSoundVolDesc</value>
   </data>
   <data name="OptYes" xml:space="preserve">
-    <value>Yes</value>
+    <value>OptYes</value>
   </data>
   <data name="OptYesDesc" xml:space="preserve">
-    <value>Sure!</value>
+    <value>OptYesDesc</value>
   </data>
   <data name="Pause" xml:space="preserve">
-    <value>Paused game</value>
+    <value>Pause</value>
   </data>
   <data name="PressAToStart" xml:space="preserve">
-    <value>Press ::A to start</value>
+    <value>PressAToStart</value>
   </data>
   <data name="PressBToMenu" xml:space="preserve">
-    <value>Press ::B to go to menu</value>
+    <value>PressBToMenu</value>
   </data>
   <data name="PressStartToCont" xml:space="preserve">
-    <value>Press ::START to continue</value>
+    <value>PressStartToCont</value>
   </data>
   <data name="Scores" xml:space="preserve">
-    <value>Awards</value>
+    <value>Scores</value>
   </data>
   <data name="ScoresDesc" xml:space="preserve">
-    <value>See what imaginary awards you have</value>
+    <value>ScoresDesc</value>
   </data>
   <data name="Seconds" xml:space="preserve">
-    <value>seconds</value>
+    <value>Seconds</value>
   </data>
   <data name="Thanks" xml:space="preserve">
-    <value>Thanks text</value>
+    <value>Thanks</value>
   </data>
   <data name="Trial" xml:space="preserve">
-    <value>Trial text</value>
+    <value>Trial</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="DialogBossMacedoniaIntro1" xml:space="preserve">
+    <value>DialogBossMacedoniaIntro1</value>
+  </data>
+  <data name="DialogBossMacedoniaIntro2" xml:space="preserve">
+    <value>DialogBossMacedoniaIntro2</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro1" xml:space="preserve">
+    <value>DialogBossMacedoniaOutro1</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro2" xml:space="preserve">
+    <value>DialogBossMacedoniaOutro2</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro3" xml:space="preserve">
+    <value>DialogBossMacedoniaOutro3</value>
+  </data>
+  <data name="DialogDarkWish1" xml:space="preserve">
+    <value>DialogDarkWish1</value>
+  </data>
+  <data name="DialogDarkWish2" xml:space="preserve">
+    <value>DialogDarkWish2</value>
+  </data>
+  <data name="DialogDarkWish3" xml:space="preserve">
+    <value>DialogDarkWish3</value>
+  </data>
+  <data name="DialogDarkWish4" xml:space="preserve">
+    <value>DialogDarkWish4</value>
+  </data>
+  <data name="DialogDarkWish5" xml:space="preserve">
+    <value>DialogDarkWish5</value>
+  </data>
+  <data name="DialogDarkWish6" xml:space="preserve">
+    <value>DialogDarkWish6</value>
+  </data>
+  <data name="DialogDarkWish7" xml:space="preserve">
+    <value>DialogDarkWish7</value>
+  </data>
+  <data name="DialogDarkWish8" xml:space="preserve">
+    <value>DialogDarkWish8</value>
+  </data>
+  <data name="DialogDarkWishRemind1" xml:space="preserve">
+    <value>DialogDarkWishRemind1</value>
+  </data>
+  <data name="DialogDarkWishRemind2" xml:space="preserve">
+    <value>DialogDarkWishRemind2</value>
+  </data>
+  <data name="DialogEpilepticBad1" xml:space="preserve">
+    <value>DialogEpilepticBad1</value>
+  </data>
+  <data name="DialogEpilepticBad2" xml:space="preserve">
+    <value>DialogEpilepticBad2</value>
+  </data>
+  <data name="DialogEpilepticBad3" xml:space="preserve">
+    <value>DialogEpilepticBad3</value>
+  </data>
+  <data name="DialogEpilepticBadSpecial" xml:space="preserve">
+    <value>DialogEpilepticBadSpecial</value>
+  </data>
+  <data name="DialogEpilepticGood1" xml:space="preserve">
+    <value>DialogEpilepticGood1</value>
+  </data>
+  <data name="DialogEpilepticGood2" xml:space="preserve">
+    <value>DialogEpilepticGood2</value>
+  </data>
+  <data name="DialogEpilepticGoodSpecial" xml:space="preserve">
+    <value>DialogEpilepticGoodSpecial</value>
+  </data>
+  <data name="DialogEpilepticIntro1" xml:space="preserve">
+    <value>DialogEpilepticIntro1</value>
+  </data>
+  <data name="DialogEpilepticIntro2" xml:space="preserve">
+    <value>DialogEpilepticIntro2</value>
+  </data>
+  <data name="DialogEpilepticMedium1" xml:space="preserve">
+    <value>DialogEpilepticMedium1</value>
+  </data>
+  <data name="DialogEpilepticMedium2" xml:space="preserve">
+    <value>DialogEpilepticMedium2</value>
+  </data>
+  <data name="DialogEpilepticMedium3" xml:space="preserve">
+    <value>DialogEpilepticMedium3</value>
+  </data>
+  <data name="DialogEpilepticMediumSpecial" xml:space="preserve">
+    <value>DialogEpilepticMediumSpecial</value>
+  </data>
+  <data name="DialogLearnDash" xml:space="preserve">
+    <value>DialogLearnDash</value>
+  </data>
+  <data name="DialogOnionIntro1" xml:space="preserve">
+    <value>DialogOnionIntro1</value>
+  </data>
+  <data name="DialogOnionIntro2" xml:space="preserve">
+    <value>DialogOnionIntro2</value>
+  </data>
+  <data name="DialogOnionIntro3" xml:space="preserve">
+    <value>DialogOnionIntro3</value>
+  </data>
+  <data name="DialogOnionIntro4" xml:space="preserve">
+    <value>DialogOnionIntro4</value>
+  </data>
+  <data name="DialogOnionIntro5" xml:space="preserve">
+    <value>DialogOnionIntro5</value>
+  </data>
+  <data name="DialogOnionIntro6" xml:space="preserve">
+    <value>DialogOnionIntro6</value>
+  </data>
+  <data name="DialogTomatoAttack1" xml:space="preserve">
+    <value>DialogTomatoAttack1</value>
+  </data>
+  <data name="DialogTomatoComes1" xml:space="preserve">
+    <value>DialogTomatoComes1</value>
+  </data>
+  <data name="DialogTomatoComes2" xml:space="preserve">
+    <value>DialogTomatoComes2</value>
+  </data>
+  <data name="DialogTomatoComes3" xml:space="preserve">
+    <value>DialogTomatoComes3</value>
+  </data>
+  <data name="MessageNewSkills" xml:space="preserve">
+    <value>MessageNewSkills</value>
   </data>
 </root>

@@ -189,7 +189,6 @@
     <Compile Include="code\Render &amp; Effects\TransitionManager.cs" />
     <Compile Include="code\SB.cs" />
     <Compile Include="code\Sound\SoundManager.cs" />
-    <Compile Include="code\TextKey.Designer.cs" />
     <Compile Include="code\Editor\GraphicsDeviceControl.cs" />
     <Compile Include="code\Editor\GraphicsDeviceService.cs" />
     <Compile Include="code\Editor\MyEditor.cs" />
@@ -197,6 +196,7 @@
       <DependentUpon>MyEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="code\Editor\MyEditorControl.cs" />
+    <Compile Include="code\TextKey.Designer.cs" />
     <Compile Include="code\Triggers\ConditionFunctions.cs" />
     <Compile Include="code\Triggers\ConsequenceFunctions.cs" />
     <Compile Include="code\Triggers\Trigger.cs" />
@@ -241,17 +241,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="code\Language.en.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="code\Language.es.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="code\TextKey.resx" />
     <EmbeddedResource Include="code\Editor\MyEditor.resx">
       <DependentUpon>MyEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Language.en.resx" />
+    <EmbeddedResource Include="Language.es.resx" />
+    <EmbeddedResource Include="TextKey.resx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework">

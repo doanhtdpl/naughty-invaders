@@ -72,26 +72,20 @@ namespace MyGame
             ae1.setAt(new Vector3(0.0f, -900.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, -220.0f, 0.0f), 200.0f);
             cinematic.events.Add((CinematicEvent)ae1);
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish,
-                "Hola! Necesito saber como llegar a Ciudad Vegetal");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogOnionIntro1.Translate());
             cinematic.events.Add(de1);
-            DialogEvent de2 = new DialogEvent(tDialogCharacter.OnionElder,
-                "Hey chico, es por ahi. Pero el rey tomate y sus tropas vienen por ese camino. Nos quieren invadir!");
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.OnionElder, TextKey.DialogOnionIntro2.Translate());
             cinematic.events.Add(de2);
-            DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish,
-               "Yo os ayudare, asi podre llegar a Ciudad Vegetal!");
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogOnionIntro3.Translate());
             cinematic.events.Add(de3);
-            DialogEvent de4 = new DialogEvent(tDialogCharacter.OnionElder,
-               "Genial! Te podemos ayudar prestandote el arma legendaria del pueblo: la Garlic Gun!");
+            DialogEvent de4 = new DialogEvent(tDialogCharacter.OnionElder, TextKey.DialogOnionIntro4.Translate());
             cinematic.events.Add(de4);
             ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), false, 0.3f, true, 2.5f);
             ae2.addActorFunction("activateGarlicGun");
             cinematic.events.Add(ae2);
-            DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish,
-               "Wow! parece muy poderosa!");
+            DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogOnionIntro5.Translate());
             cinematic.events.Add(de5);
-            DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder,
-               "Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!");
+            DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder, TextKey.DialogOnionIntro6.Translate());
             cinematic.events.Add(de6);
             ActorEvent ae3 = new ActorEvent(onionElder, false);
             ae3.moveTo(new Vector3(-1070.0f, -490.0f, 0.0f), 300.0f);
@@ -113,9 +107,9 @@ namespace MyGame
             ae3.setAt(new Vector3(1200.0f, 1000.0f, 0.0f));
             ae3.moveTo(new Vector3(600.0f, 360.0f, 0.0f), KingTomato.SPEED);
 
-            DialogEvent de1 = new DialogEvent( tDialogCharacter.KingTomato, "Acabare contigo sucia perra!");
-            DialogEvent de2 = new DialogEvent( tDialogCharacter.Wish, "Tu eres gilipollas");
-            DialogEvent de3 = new DialogEvent( tDialogCharacter.KingTomato, "Adelante tomatinaaaa!!!");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.KingTomato, TextKey.DialogTomatoComes1.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogTomatoComes2.Translate());
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.KingTomato, TextKey.DialogTomatoComes3.Translate());
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)ae2);
@@ -129,7 +123,7 @@ namespace MyGame
         {
             Cinematic cinematic = new Cinematic();
 
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.KingTomato, "Cobardes... no os necesito! Ahora veras! Hahaha");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.KingTomato, TextKey.DialogTomatoAttack1.Translate());
             cinematic.events.Add((CinematicEvent)de1);
             CinematicManager.Instance.addCinematic("kingTomatoReturns", cinematic);
         }

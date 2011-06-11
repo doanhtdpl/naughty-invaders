@@ -43,8 +43,8 @@ namespace MyGame
             ae1.setAt(new Vector3(0.0f, -1000.0f, 0.0f));
             ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 200.0f);
 
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, "Woo macedonia! Yo te ayudare!");
-            DialogEvent de2 = new DialogEvent(tDialogCharacter.Macedonia, "Te lo agradezco Wish, eres una puta de mucho cuidado! :)");
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro1.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro2.Translate());
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);
@@ -52,8 +52,7 @@ namespace MyGame
 
             if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
             {
-                DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia,
-                    "Mejor que aprendas cuanto antes el movimiento dash, mira el menu de skills ahora");
+                DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogLearnDash.Translate());
                 cinematic.events.Add((CinematicEvent)deSpecial);
             }
 
@@ -80,12 +79,10 @@ namespace MyGame
             {
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia,
-                        "Prfff, necesitas aprender el movimiento dash, consulta el menu de skills con ::START");
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBadSpecial.Translate());
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia,
-                    "Es penoso Wish, hay mas frutas en el suelo que en mi cabeza. Me ayudas a fregar?");
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad1.Translate());
                 ActorEvent ae2 = new ActorEvent(player, false);
                 ae2.setOrientation(2.3f);
                 ActorEvent ae3 = new ActorEvent(player, false);
@@ -94,12 +91,10 @@ namespace MyGame
                 ae4.setOrientation(1.1f);
                 ActorEvent ae5 = new ActorEvent(player, false);
                 ae5.setOrientation(0.0f);
-                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish,
-                    "...emm oyes eso? es ese mi nombre! tengo que irme...");
+                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticBad2.Translate());
                 ActorEvent ae6 = new ActorEvent(player, false);
                 ae6.moveTo(new Vector3(player.positionX, -950.0f, 0.0f), 100.0f);
-                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia,
-                    ". . . . . . . . . . . . . . grmf!");
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad3.Translate());
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)ae2);
@@ -112,12 +107,9 @@ namespace MyGame
             }
             else if (savedFruits < 20)
             {
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia,
-                    "No esta mal, con lo que has cogido aun podremos hacer algunos zumos de buena calidad");
-                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish,
-                    "Y si los bebieras tu no estariamos ante un caso de canibalismo?");
-                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia,
-                    "Mmm, cierto");
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium1.Translate());
+                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticMedium2.Translate());
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium3.Translate());
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)de2);
@@ -125,24 +117,20 @@ namespace MyGame
 
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia,
-                        "Lo podras hacer mejor con un dash. Consulta el menu de skills ::START");
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMediumSpecial.Translate());
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
             }
             else
             {
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia,
-                    "Es realmente increible! te mueves rapido como un pepino!");
-                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish,
-                    "Gracias Macedonia, eres muy amable");
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGood1.Translate());
+                DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticGood2.Translate());
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)de2);
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia,
-                        "Con lo ganado deberias adquirir el movimiento dash desde el menu de skills ::START");
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGoodSpecial.Translate());
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
             }
