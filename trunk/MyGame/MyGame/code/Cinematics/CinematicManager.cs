@@ -140,9 +140,12 @@ namespace MyGame
 
         void endCinematic()
         {
-            setUpdatableOnPlayersAndEnemies(true);
-            CameraManager.Instance.updating = true;
-            cinematicToPlay = null;
+            if (cinematicToPlay != null)
+            {
+                setUpdatableOnPlayersAndEnemies(true);
+                CameraManager.Instance.updating = true;
+                cinematicToPlay = null;
+            }
         }
 
         public void update()

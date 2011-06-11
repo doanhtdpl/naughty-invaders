@@ -13,7 +13,6 @@ namespace MyGame
         public static Texture2D texTrial;
         public override void initialize()
         {
-            type = StateManager.tGS.Credits;
         }
 
         public override void loadContent()
@@ -29,8 +28,8 @@ namespace MyGame
             if (GamerManager.getMainControls().B_firstPressed())
             {
                 // dequeue end trial and game states
-                StateManager.dequeueState(2);
-                StateManager.gameStates.Add(new StateMainMenu());
+                StateManager.dequeueStates(2);
+                StateManager.addState(StateManager.tGameState.Menu);
             }
             // if the gamer buys the game, go back to the end of the stage to save his progress
             if (!GamerManager.isTrial())

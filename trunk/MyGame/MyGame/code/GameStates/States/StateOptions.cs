@@ -14,7 +14,6 @@ namespace MyGame
 
         public override void initialize()
         {
-            type = StateManager.tGS.Options;
         }
 
         public override void loadContent()

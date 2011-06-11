@@ -13,7 +13,6 @@ namespace MyGame
         public override void initialize()
         {
             transitionColor = new Color(30, 30, 30, 30);
-            type = StateManager.tGS.EndStage;
             renderAlways = false;
         }
 

@@ -83,7 +83,7 @@ namespace MyGame
                 else if (fade && !TransitionManager.Instance.isFading())
                 {
                     StateManager.clearStates();
-                    StateManager.gameStates.Add(new StateWorldMap());
+                    StateManager.addState(StateManager.tGameState.WorldMap);
                 }
             }
         }

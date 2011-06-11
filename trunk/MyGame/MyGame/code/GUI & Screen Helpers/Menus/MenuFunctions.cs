@@ -14,29 +14,28 @@ namespace MyGame
     {
         public static void startGame()
         {
-            StateManager.dequeueState(1);
-            StateManager.gameStates.Add(new StateWorldMap());
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
         }
         public static void goToOptions()
         {
-            StateManager.gameStates.Add(new StateOptions());
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Credits, 0, null, 0.5f, Color.Black);
         }
         public static void goToCredits()
         {
-            StateManager.gameStates.Add(new StateCredits());
+            StateManager.addState(StateManager.tGameState.Credits);
         }
         public static void unpause()
         {
-            StateManager.dequeueState(1);
+            StateManager.dequeueStates(1);
         }
         public static void goToSkillsMenu()
         {
-            StateManager.gameStates.Add(new StateSkillsMenu());
+            StateManager.addState(StateManager.tGameState.Menu);
         }
         public static void exitGame()
         {
             StateManager.clearStates();
-            StateManager.gameStates.Add(new StateWorldMap());
+            StateManager.addState(StateManager.tGameState.WorldMap);
             //SoundManager.playSound("pause");
         }
         public static void exitToArcade()
@@ -70,7 +69,7 @@ namespace MyGame
                 ps.obtained = true;
                 GamerManager.getSessionOwner().data.XP -= ps.cost;
                 menuElement.drawLinkedElement = true;
-                player.addLifeToMax();
+                player.addLifePortionsToMax();
                 // playsound
             }
             else

@@ -27,7 +27,6 @@ namespace MyGame
 
         public override void initialize()
         {
-            type = StateManager.tGS.Game;
             gameState = true;
             longLoad = true;
 #if DEBUG
@@ -191,11 +190,11 @@ namespace MyGame
             // state changes
             if (GamerManager.getMainControls().Start_firstPressed())
             {
-                StateManager.gameStates.Add(new StatePausedGame());
+                StateManager.addState(StateManager.tGameState.Pause);
             }
             if (GamerManager.getMainControls().Back_firstPressed())
             {
-                StateManager.gameStates.Add(new StateSkillsMenu());
+                StateManager.addState(StateManager.tGameState.SkillsMenu);
             }
 #endif
         }

@@ -11,7 +11,7 @@ namespace MyGame
 {
     public class StateManager
     {
-        public static List<GameState> gameStates = new List<GameState>();
+        static List<GameState> gameStates = new List<GameState>();
 
         public const float TRANSITION_TIME = 0.3f;
 
@@ -89,8 +89,7 @@ namespace MyGame
             return gameStates[gameStates.Count - 1];
         }
 
-        public enum tGS { Intro, Prompt, Menu, Options, Credits, Scores, Pause, SkillsMenu, WorldMap, Game, EndStage, EndTrial };
-        public static void dequeueState(int num)
+        public static void dequeueStates(int num)
         {
             for (int i = 0; i < num; i++)
             {
@@ -103,18 +102,58 @@ namespace MyGame
                     return;
             }
         }
-        public static void dequeueUntil(tGS state)
+
+        public enum tGameState { None, Intro, Prompt, Menu, Options, Credits, Scores, Pause, SkillsMenu, WorldMap, Game, KingTomato, EpilepticMacedonia, EndStage, EndTrial };
+        public static void addState(tGameState stateType, string level = null)
         {
-            while(true)
+            GameState gameState;
+            switch (stateType)
             {
-                if (gameStates[gameStates.Count - 1].type == state)
-                    return;
-                else
-                {
-                    gameStates[gameStates.Count - 1].dispose();
-                    gameStates.RemoveAt(gameStates.Count - 1);
-                }
+                case tGameState.Intro:
+                    gameState = new StateIntro();
+                    break;
+                case tGameState.Prompt:
+                    gameState = new StatePrompt();
+                    break;
+                case tGameState.Menu:
+                    gameState = new StateMainMenu();
+                    break;
+                case tGameState.Options:
+                    gameState = new StateOptions();
+                    break;
+                case tGameState.Credits:
+                    gameState = new StateCredits();
+                    break;
+                case tGameState.Scores:
+                    gameState = new StateScores();
+                    break;
+                case tGameState.Pause:
+                    gameState = new StatePausedGame();
+                    break;
+                case tGameState.SkillsMenu:
+                    gameState = new StateSkillsMenu();
+                    break;
+                case tGameState.WorldMap:
+                    gameState = new StateWorldMap();
+                    break;
+                case tGameState.Game:
+                    gameState = new StateGame(level);
+                    break;
+                case tGameState.KingTomato:
+                    gameState = new MinigameKingTomato(level);
+                    break;
+                case tGameState.EpilepticMacedonia:
+                    gameState = new MinigameEpilepticMacedonia(level);
+                    break;
+                case tGameState.EndStage:
+                    gameState = new StateStageCleared();
+                    break;
+                default:
+                    gameState = new StateIntro();
+                    break;
             }
+            gameState.type = stateType;
+            gameStates.Add(gameState);
         }
     }
 }

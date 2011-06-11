@@ -50,11 +50,6 @@ namespace MyGame
             data.initNewData();
         }
 
-        public void updateInput()
-        {
-            controls.update(playerIndex);
-        }
-
         public void updatePlayer()
         {
             player.update(controls);

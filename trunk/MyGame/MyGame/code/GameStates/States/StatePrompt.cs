@@ -20,7 +20,6 @@ namespace MyGame
 
         public override void initialize()
         {
-            type = StateManager.tGS.Prompt;
             GraphicsManager.Instance.initializeRender();
 
             // si alguien cierra la sesión podemos llegar aquí desde cualquier estado...
@@ -87,7 +86,7 @@ namespace MyGame
                     //SoundManager.initVolumes();
                     initializeAfterLoading();
                     StateManager.clearStates();
-                    StateManager.gameStates.Add(new StateMainMenu());
+                    StateManager.addState(StateManager.tGameState.Menu);
                     break;
             }
         }
