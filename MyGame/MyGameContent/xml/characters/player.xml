@@ -34,6 +34,6 @@ playRandom (inside action):
     <action name="moveBack" initialFrame="2" endFrame="2" loops="true"/>
     <action name="moveLeft" initialFrame="3" endFrame="3"  loops="true"/>
     <action name="moveRight" initialFrame="4" endFrame="4" loops="true"/>
-    <action name="dieEnd" initialFrame="52" endFrame="61"  loops="false"/>
+    <action name="miniDie" initialFrame="52" endFrame="61"  loops="false"/>
   </animatedTexture>
 </animatedEntity>
