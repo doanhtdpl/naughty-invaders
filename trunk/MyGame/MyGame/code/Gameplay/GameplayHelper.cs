@@ -39,7 +39,7 @@ namespace MyGame
             return false;
         }
         // updates the position of an entity within the level lines passed as parameter and in the playable zone
-        public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, bool keepInPlayableZone = false)
+        public void updateEntityPosition(Entity2D entity, Vector2 newPosition, List<Line> levelLines, bool keepInPlayableZone = false, bool arcadeLimitation = false)
         {
             float distanceToLine = 0.0f;
 
@@ -59,6 +59,13 @@ namespace MyGame
             if (keepInPlayableZone)
             {
                 Line[] cameraLines = Camera2D.playableZoneCollisions;
+                if (arcadeLimitation)
+                {
+                    float newTop = Camera2D.position.Y + (Camera2D.screen.Height * 0.2f);
+                    cameraLines[0].p1.Y = newTop;
+                    cameraLines[0].p2.Y = newTop;
+                }
+
                 for (int i = 0; i < 4; ++i)
                 {
                     Vector2 v = cameraLines[i].vectorToPoint(newPosition);
