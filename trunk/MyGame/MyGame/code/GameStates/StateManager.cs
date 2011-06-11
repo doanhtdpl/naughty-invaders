@@ -146,7 +146,7 @@ namespace MyGame
                     gameState = new MinigameEpilepticMacedonia(level);
                     break;
                 case tGameState.EndStage:
-                    gameState = new StateStageCleared();
+                    gameState = new StateEndLevel();
                     break;
                 default:
                     gameState = new StateIntro();
