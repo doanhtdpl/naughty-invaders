@@ -2867,11 +2867,13 @@
       <Name>wishBigShot</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="xml\projectiles\wishFastShot.xml">
       <Name>wishFastShot</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
