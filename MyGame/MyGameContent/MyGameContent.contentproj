@@ -2777,13 +2777,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\projectiles\Blast.png">
-      <Name>Blast</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="textures\staticProps\lock-34.png">
       <Name>lock-34</Name>
       <Importer>TextureImporter</Importer>
@@ -2865,6 +2858,25 @@
   <ItemGroup>
     <Compile Include="textures\staticProps\padre.jpg">
       <Name>padre</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\projectiles\wishBigShot.xml">
+      <Name>wishBigShot</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+    <None Include="xml\projectiles\wishFastShot.xml">
+      <Name>wishFastShot</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="textures\projectiles\wishFastShot.png">
+      <Name>wishFastShot</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
