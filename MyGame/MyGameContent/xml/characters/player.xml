@@ -26,7 +26,7 @@ playRandom (inside action):
 
 <animatedEntity>
   <animatedTexture name="Anim_Wish" frameWidth="160" frameHeight="160" columns="12" rows="8">
-    <action name="attack" initialFrame="5" endFrame="14" loops="false"/>
+    <action name="attack" initialFrame="5" endFrame="14" loops="false" FPS="60"/>
     <action name="attack2" initialFrame="15" endFrame="22" loops="false"/>
     <action name="die" initialFrame="62" endFrame="84"  loops="false"/>
     <action name="idle" initialFrame="23" endFrame="51" loops="true"/>

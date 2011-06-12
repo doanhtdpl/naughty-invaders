@@ -35,12 +35,16 @@ namespace MyGame
             attackRight = Calc.randomScalar() < 0.5f;
 
             playAction("idleProt");
-            setCollisions();
+            setCollisions(false);
         }
 
-        public override void setCollisions()
+        public void setCollisions(bool weak)
         {
-            addCollision(new Vector2(0, 20), 75);
+            parts.Clear();
+            if (weak)
+                addCollision(new Vector2(0, 20), 75);
+            else
+                addCollision(new Vector2(-20, 20), 80);
         }
 
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
@@ -92,6 +96,7 @@ namespace MyGame
                         // prepare move
                         playAction("FromIdleProtToIdle");
                         state = tWatermelonState.ReadyToAttack;
+                        setCollisions(true);
                     }
                     break;
                 case tWatermelonState.ReadyToAttack:
@@ -139,6 +144,8 @@ namespace MyGame
                         attackTimer = 0.0f;
                         projectilesThrown = 0;
                         attackRight = Calc.randomScalar() < 0.5f;
+
+                        setCollisions(false);
                     }
                     break;
             }

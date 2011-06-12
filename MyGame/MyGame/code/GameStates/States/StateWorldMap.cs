@@ -38,27 +38,36 @@ namespace MyGame
 
         public void initializeNetwork()
         {
-            WorldMapLocation ml1 = new WorldMapLocation("final_Level01", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn1 = locations.addNode(ml1, new Vector3(-975.0f, 110.0f, 200.0f));
-            WorldMapLocation ml2 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
-            NetworkNode<WorldMapLocation> nn2 = locations.addNode(ml2, new Vector3(-330.0f, 170.0f, 200.0f));
-            WorldMapLocation ml3 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
-            NetworkNode<WorldMapLocation> nn3 = locations.addNode(ml3, new Vector3(-600.0f, -160.0f, 200.0f));
-            WorldMapLocation ml4 = new WorldMapLocation("verducity", WorldMapLocation.tLocationType.Arcade);
-            NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(175.0f, -100.0f, 200.0f));
+            WorldMapLocation ml1 = new WorldMapLocation("fruitownA", WorldMapLocation.tLocationType.Arcade);
+            NetworkNode<WorldMapLocation> nn1 = locations.addNode(ml1, new Vector3(-1100.0f, 110.0f, 200.0f));
+            WorldMapLocation ml2 = new WorldMapLocation("fruitownB", WorldMapLocation.tLocationType.Arcade);
+            NetworkNode<WorldMapLocation> nn2 = locations.addNode(ml2, new Vector3(-900.0f, 110.0f, 200.0f));
+            WorldMapLocation ml3 = new WorldMapLocation("onionVillage", WorldMapLocation.tLocationType.KingTomato);
+            NetworkNode<WorldMapLocation> nn3 = locations.addNode(ml3, new Vector3(-330.0f, 170.0f, 200.0f));
+            WorldMapLocation ml4 = new WorldMapLocation("macedonia", WorldMapLocation.tLocationType.EpilepticMacedonia);
+            NetworkNode<WorldMapLocation> nn4 = locations.addNode(ml4, new Vector3(-600.0f, -160.0f, 200.0f));
+            WorldMapLocation ml5 = new WorldMapLocation("verducity", WorldMapLocation.tLocationType.Arcade);
+            NetworkNode<WorldMapLocation> nn5 = locations.addNode(ml5, new Vector3(175.0f, -100.0f, 200.0f));
+
             locations.addDoubleLink(nn1, nn2);
             locations.addDoubleLink(nn2, nn3);
-            locations.addDoubleLink(nn2, nn4);
+            locations.addDoubleLink(nn3, nn4);
+            locations.addDoubleLink(nn3, nn5);
 
-            if (!GamerManager.getSessionOwner().data.levelsPassed["final_Level01"])
+            if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownA"])
             {
                 EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn1.position + (nn2.position - nn1.position) / 2, 0, Color.White));
             }
 
-            if (!GamerManager.getSessionOwner().data.levelsPassed["onionVillage"])
+            if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownB"])
             {
                 EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn2.position + (nn3.position - nn2.position) / 2, 0, Color.White));
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn2.position + (nn4.position - nn2.position) / 2, 0, Color.White));
+            }
+
+            if (!GamerManager.getSessionOwner().data.levelsPassed["onionVillage"])
+            {
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn3.position + (nn4.position - nn3.position) / 2, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn3.position + (nn5.position - nn3.position) / 2, 0, Color.White));
             }
 
             currentLocation = nn1;

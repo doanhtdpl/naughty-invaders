@@ -109,7 +109,7 @@ namespace MyGame
             GraphicsManager.Instance.spriteBatch.Draw(dialogBackground, backgroundRectangle, Color.White);
             GraphicsManager.Instance.spriteBatch.Draw(portraits[(int)character], portraitRectangle, Color.White);
 
-            Vector2 position = Screen.getXYfromCenter(new Vector2(-300.0f, -190.0f));
+            Vector2 position = Screen.getXYfromCenter(new Vector2(-300.0f, -185.0f));
             float scale = 0.86f;
             if (textComplete)
             {
