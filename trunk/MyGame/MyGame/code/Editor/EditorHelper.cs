@@ -285,33 +285,33 @@ namespace MyGame
             writer.WriteEndElement();
 
             //triggers
-            writer.WriteStartElement("triggers");
-            foreach (Trigger trigger in TriggerManager.Instance.getTriggers())
-            {
-                writer.WriteStartElement("trigger");
-                writer.WriteAttributeString("position", trigger.position.toXML());
+            //writer.WriteStartElement("triggers");
+            //foreach (Trigger trigger in TriggerManager.Instance.getTriggers())
+            //{
+            //    writer.WriteStartElement("trigger");
+            //    writer.WriteAttributeString("position", trigger.position.toXML());
 
-                writer.WriteStartElement("conditions");
-                foreach (Function func in trigger.conditions)
-                {
-                    writer.WriteStartElement("condition");
-                    writer.WriteAttributeString("functionName", func.functionName);
-                    writer.WriteEndElement();
-                }
-                writer.WriteEndElement();
+            //    writer.WriteStartElement("conditions");
+            //    foreach (Function func in trigger.conditions)
+            //    {
+            //        writer.WriteStartElement("condition");
+            //        writer.WriteAttributeString("functionName", func.functionName);
+            //        writer.WriteEndElement();
+            //    }
+            //    writer.WriteEndElement();
 
-                writer.WriteStartElement("consecuences");
-                foreach (Function func in trigger.executions)
-                {
-                    writer.WriteStartElement("consecuence");
-                    writer.WriteAttributeString("functionName", func.functionName);
-                    writer.WriteEndElement();
-                }
-                writer.WriteEndElement();
+            //    writer.WriteStartElement("consecuences");
+            //    foreach (Function func in trigger.executions)
+            //    {
+            //        writer.WriteStartElement("consecuence");
+            //        writer.WriteAttributeString("functionName", func.functionName);
+            //        writer.WriteEndElement();
+            //    }
+            //    writer.WriteEndElement();
 
-                writer.WriteEndElement();
-            }
-            writer.WriteEndElement();
+            //    writer.WriteEndElement();
+            //}
+            //writer.WriteEndElement();
 
             //triggers
             writer.WriteStartElement("players");
@@ -555,27 +555,27 @@ namespace MyGame
                 }
 
                 //triggers
-                nodes = xml_doc.Descendants("trigger");
-                foreach (XElement node in nodes)
-                {
-                    Vector2 position = node.Attribute("position").Value.toVector2();
-                    Trigger trigger = new Trigger();
-                    trigger.position = position;
+                //nodes = xml_doc.Descendants("trigger");
+                //foreach (XElement node in nodes)
+                //{
+                //    Vector2 position = node.Attribute("position").Value.toVector2();
+                //    Trigger trigger = new Trigger();
+                //    trigger.position = position;
 
-                    IEnumerable<XElement> moreNodes = node.Descendants("condition");
-                    foreach (XElement func in moreNodes)
-                    {
-                        trigger.addFunction(true, func.Attribute("functionName").Value);
-                    }
+                //    IEnumerable<XElement> moreNodes = node.Descendants("condition");
+                //    foreach (XElement func in moreNodes)
+                //    {
+                //        trigger.addFunction(true, func.Attribute("functionName").Value);
+                //    }
 
-                    moreNodes = node.Descendants("consecuence");
-                    foreach (XElement func in moreNodes)
-                    {
-                        trigger.addFunction(false, func.Attribute("functionName").Value);
-                    }
+                //    moreNodes = node.Descendants("consecuence");
+                //    foreach (XElement func in moreNodes)
+                //    {
+                //        trigger.addFunction(false, func.Attribute("functionName").Value);
+                //    }
 
-                    TriggerManager.Instance.addTrigger(trigger);
-                }
+                //    TriggerManager.Instance.addTrigger(trigger);
+                //}
 
                 if (loadIDs)
                 {
