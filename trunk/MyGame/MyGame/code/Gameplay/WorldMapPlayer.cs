@@ -14,6 +14,8 @@ namespace MyGame
             : base("characters", "player", position, 0.0f, Color.White)
         {
             entityState = tEntityState.Active;
+
+            playAction("idle");
         }
 
         public void update(ControlPad controls)

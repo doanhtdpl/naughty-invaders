@@ -119,8 +119,9 @@ namespace MyGame
             GUIManager.Instance.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "::BACK to skills menu".renderNI(Screen.getXYfromCenter(90, -230), 0.8f);
-            "::B back to menu".renderNI(Screen.getXYfromCenter(360, -230), 0.8f);
+            "::A enter map".renderNI(Screen.getXYfromCenter(380, 300), 0.8f, StringManager.tStyle.Shadowed);
+            "::B back to menu".renderNI(Screen.getXYfromCenter(380, 260), 0.8f, StringManager.tStyle.Shadowed);
+            "::BACK skills menu".renderNI(Screen.getXYfromCenter(380, 220), 0.8f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
@@ -128,6 +129,9 @@ namespace MyGame
         public override void update()
         {
             base.update();
+
+            bool canMove = !TransitionManager.Instance.isFading();
+
             ControlPad cp = GamerManager.getMainControls();
 
             // if arrives to a new node
@@ -147,14 +151,14 @@ namespace MyGame
                 {
                     Dictionary<string, bool> levelsPassed = GamerManager.getSessionOwner().data.levelsPassed;
                     NetworkNode<WorldMapLocation> next = currentLocation.getNext(cp.getLS());
-                    if (next != null &&
+                    if (next != null && canMove && 
                         (levelsPassed[currentLocation.value.level]
                         || levelsPassed.ContainsKey(next.value.level) && (levelsPassed[next.value.level])))
                     {
                         lastLocation = currentLocation;
                         currentLocation = next;
                     }
-                    if (cp.A_firstPressed() && !TransitionManager.Instance.isFading())
+                    if (cp.A_firstPressed() && canMove)
                     {
                         currentLocation.value.enter();
                     }
@@ -168,11 +172,11 @@ namespace MyGame
                 player.positionZ = 200.0f;
             }
 
-            if (cp.B_firstPressed())
+            if (cp.B_firstPressed() && canMove)
             {
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 99, null, 0.5f, Color.Black);
             }
-            if (cp.Back_firstPressed())
+            if (cp.Back_firstPressed() && canMove)
             {
                 StateManager.addState(StateManager.tGameState.SkillsMenu);
             }
@@ -184,6 +188,7 @@ namespace MyGame
             CameraManager.Instance.worldMapPosition = player.position;
             CameraManager.Instance.update();
             GUIManager.Instance.update();
+            player.update();
 
             SB.cam.update();
         }

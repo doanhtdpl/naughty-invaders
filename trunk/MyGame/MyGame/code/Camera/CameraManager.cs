@@ -66,6 +66,8 @@ namespace MyGame
         public float worldMapSpeedX { get; set; }
         public float worldMapSpeedY { get; set; }
 
+        float worldMapAnimTime = 0.0f;
+
         // node mode stuff
         NetworkNode<CameraData> currentNode;
         NetworkNode<CameraData> nextNode;
@@ -186,9 +188,9 @@ namespace MyGame
         void updateWorldMapMode()
         {
             Vector3 cameraPosition = worldMapPosition;
-            float time = (float)SB.gameTime.TotalGameTime.TotalMilliseconds * 0.001f;
-            cameraPosition.X += (float)Math.Sin(time * worldMapSpeedX) * worldMapIdleX;
-            cameraPosition.Y += (float)Math.Sin(time * worldMapSpeedY) * worldMapIdleY;
+            worldMapAnimTime += SB.dt;
+            cameraPosition.X += (float)Math.Sin(worldMapAnimTime * worldMapSpeedX) * worldMapIdleX;
+            cameraPosition.Y += (float)Math.Sin(worldMapAnimTime * worldMapSpeedY) * worldMapIdleY;
             cameraPosition.Z += 1400.0f;
             Camera2D.position = cameraPosition;
         }

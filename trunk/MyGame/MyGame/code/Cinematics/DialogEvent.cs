@@ -119,6 +119,12 @@ namespace MyGame
             {
                 text.Substring(0, charactersToShow).renderNIDialog(position, scale, Color.Green);
             }
+
+            if((SB.gameTime.TotalGameTime.TotalSeconds * 2) % 2 < 1)
+                "::A".renderNI(Screen.getXYfromCenter(new Vector2(525, -225)), 1);
+            else
+                "::A".renderNI(Screen.getXYfromCenter(new Vector2(527, -223)), 1.2f);
+
             GraphicsManager.Instance.spriteBatchEnd();
         }
     }
