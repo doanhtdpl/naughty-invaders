@@ -124,10 +124,10 @@ namespace MyGame
             GUIManager.Instance.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "::LS select level".renderNI(Screen.getXYfromCenter(380, 320), 0.8f, StringManager.tStyle.Shadowed);
-            "::A enter level".renderNI(Screen.getXYfromCenter(380, 280), 0.8f, StringManager.tStyle.Shadowed);
-            "::B back to menu".renderNI(Screen.getXYfromCenter(380, 240), 0.8f, StringManager.tStyle.Shadowed);
-            "::BACK skills menu".renderNI(Screen.getXYfromCenter(380, 200), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressLSselectLevel.Translate().renderNI(Screen.getXYfromCenter(380, 320), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressAenterLevel.Translate().renderNI(Screen.getXYfromCenter(380, 280), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressBBackMenu.Translate().renderNI(Screen.getXYfromCenter(380, 240), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressBACKskillsMenu.Translate().renderNI(Screen.getXYfromCenter(380, 200), 0.8f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 

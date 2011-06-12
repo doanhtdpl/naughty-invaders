@@ -53,12 +53,6 @@ namespace MyGame
             mb4.setFunction("buySkillAddLife", MenuElement.tInputType.X, new object[3] { "life1", mb4, GamerManager.getMainPlayer() });
             MenuElement mbDescriptionHeader = new MenuElement("largeHeader", new Vector2(220, 80), new Vector2(1.3f, 0.4f));
 
-            //menu.menuTexts.Add(new MenuText("Dash", new Vector2(-350, 160), 0.8f));
-            //menu.menuTexts.Add(new MenuText("Plasma", new Vector2(-350, 95), 0.8f));
-            //menu.menuTexts.Add(new MenuText("Power Shot", new Vector2(-350, 30), 0.8f));
-            //menu.menuTexts.Add(new MenuText("Life", new Vector2(-350, -30), 0.8f));
-            //menu.menuTexts.Add(new MenuText("::B back", new Vector2(250, -230), 1.0f));
-
             mb1.upNode = mb4;
             mb1.downNode = mb2;
             mb2.upNode = mb1;
@@ -124,14 +118,13 @@ namespace MyGame
             menu.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "Skills".renderNI(Screen.getXYfromCenter(10, 290), 1.5f, StringManager.tStyle.Border);
-            "Dash".renderNI(Screen.getXYfromCenter(-350, 160), 0.8f, StringManager.tStyle.Shadowed);
-            "Plasma".renderNI(Screen.getXYfromCenter(-350, 95), 0.8f, StringManager.tStyle.Shadowed);
-            "Power Shot".renderNI(Screen.getXYfromCenter(-350, 30), 0.8f, StringManager.tStyle.Shadowed);
-            "Life".renderNI(Screen.getXYfromCenter(-350, -32), 0.8f, StringManager.tStyle.Shadowed);
-            "::B back".renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
+            TextKey.skills.Translate().renderNI(Screen.getXYfromCenter(10, 290), 1.5f, StringManager.tStyle.Border);
+            TextKey.skillDash.Translate().renderNI(Screen.getXYfromCenter(-350, 160), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.skillPlasma.Translate().renderNI(Screen.getXYfromCenter(-350, 95), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.skillPowerShot.Translate().renderNI(Screen.getXYfromCenter(-350, 30), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.skillLife.Translate().renderNI(Screen.getXYfromCenter(-350, -32), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressBBack.Translate().renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
-
         }
 
         public override void dispose()

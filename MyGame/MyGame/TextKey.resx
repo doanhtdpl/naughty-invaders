@@ -333,4 +333,46 @@
   <data name="MessageNewSkills" xml:space="preserve">
     <value>MessageNewSkills</value>
   </data>
+  <data name="backToMap" xml:space="preserve">
+    <value>backToMap</value>
+  </data>
+  <data name="continueGame" xml:space="preserve">
+    <value>continueGame</value>
+  </data>
+  <data name="gamePaused" xml:space="preserve">
+    <value>gamePaused</value>
+  </data>
+  <data name="pressAenterLevel" xml:space="preserve">
+    <value>pressAenterLevel</value>
+  </data>
+  <data name="pressBACKskillsMenu" xml:space="preserve">
+    <value>pressBACKskillsMenu</value>
+  </data>
+  <data name="pressBBack" xml:space="preserve">
+    <value>pressBBack</value>
+  </data>
+  <data name="pressBBackMenu" xml:space="preserve">
+    <value>pressBBackMenu</value>
+  </data>
+  <data name="pressBBackToGame" xml:space="preserve">
+    <value>pressBBackToGame</value>
+  </data>
+  <data name="pressLSselectLevel" xml:space="preserve">
+    <value>pressLSselectLevel</value>
+  </data>
+  <data name="skillDash" xml:space="preserve">
+    <value>skillDash</value>
+  </data>
+  <data name="skillLife" xml:space="preserve">
+    <value>skillLife</value>
+  </data>
+  <data name="skillPlasma" xml:space="preserve">
+    <value>skillPlasma</value>
+  </data>
+  <data name="skillPowerShot" xml:space="preserve">
+    <value>skillPowerShot</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>skills</value>
+  </data>
 </root>

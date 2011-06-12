@@ -117,220 +117,277 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="backToMap" xml:space="preserve">
+    <value>Back to map</value>
+  </data>
+  <data name="BuyGame" xml:space="preserve">
+    <value>::X Buy for 200ms points!</value>
+  </data>
   <data name="Continue" xml:space="preserve">
-    <value>Continuar</value>
+    <value>Continue</value>
+  </data>
+  <data name="continueGame" xml:space="preserve">
+    <value>Continue game</value>
   </data>
   <data name="Credits" xml:space="preserve">
-    <value>Creditos</value>
+    <value>Credits</value>
   </data>
   <data name="CreditsDesc" xml:space="preserve">
-    <value>Quieres ver quien ha hecho este juego?</value>
+    <value>Wanna see who made this game?</value>
+  </data>
+  <data name="DialogBossMacedoniaIntro1" xml:space="preserve">
+    <value>This time you are the annoying problem. Im tired of useful wishes...</value>
+  </data>
+  <data name="DialogBossMacedoniaIntro2" xml:space="preserve">
+    <value>Why are all of you trying to kill me?</value>
+  </data>
+  <data name="DialogBossMacedoniaIntro3" xml:space="preserve">
+    <value>Enough talk. My favourite TV show is starting in a few minutes so im gonna defeat you fast</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro1" xml:space="preserve">
+    <value>How is it possible? Are you a real wish? I need to think about it...</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro2" xml:space="preserve">
+    <value>Mmm... maybe. I dont know exactly who I am.</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro3" xml:space="preserve">
+    <value>Wow! Listen, now Im gonna watch the TV show. Do you want to watch it?</value>
+  </data>
+  <data name="DialogDarkWish1" xml:space="preserve">
+    <value>¡...! You must be...</value>
+  </data>
+  <data name="DialogDarkWish2" xml:space="preserve">
+    <value>Where am I? Who am I? Who are you? Why so much colors?</value>
+  </data>
+  <data name="DialogDarkWish3" xml:space="preserve">
+    <value>Hey! you must be Wish! you are someone's creation. You need to escape from this bottle.</value>
+  </data>
+  <data name="DialogDarkWish4" xml:space="preserve">
+    <value>Which bottle?</value>
+  </data>
+  <data name="DialogDarkWish5" xml:space="preserve">
+    <value>No time, this is dangerous. You're mission is to escape in order to cumplirte (como deseo)</value>
+  </data>
+  <data name="DialogDarkWish6" xml:space="preserve">
+    <value>I cant understand but... what can I do?</value>
+  </data>
+  <data name="DialogDarkWish7" xml:space="preserve">
+    <value>You can move with ::LS and shot with ::X. Is all you need.</value>
+  </data>
+  <data name="DialogDarkWish8" xml:space="preserve">
+    <value>Look! they are coming, try to pick up as much orbs as you can!</value>
+  </data>
+  <data name="DialogDarkWishRemind1" xml:space="preserve">
+    <value>Remember, you can move with ::LS and shot with ::X. Is all you need.</value>
+  </data>
+  <data name="DialogDarkWishRemind2" xml:space="preserve">
+    <value>Look! they are coming, try to pick up as much orbs as you can!</value>
+  </data>
+  <data name="DialogEpilepticBad1" xml:space="preserve">
+    <value>Thats bad Wish... there are more fruits on the floor that in my head. Can you help me to get em?</value>
+  </data>
+  <data name="DialogEpilepticBad2" xml:space="preserve">
+    <value>... emm do you hear that. Someone's is looking for me?</value>
+  </data>
+  <data name="DialogEpilepticBad3" xml:space="preserve">
+    <value>I didnt . . . . . . . . . . . . . grmf!</value>
+  </data>
+  <data name="DialogEpilepticBadSpecial" xml:space="preserve">
+    <value>Wish! if you can hear me, buy the dash skill pressing ::BACK</value>
+  </data>
+  <data name="DialogEpilepticGood1" xml:space="preserve">
+    <value>Amazing! how can you move so fasr? incredible!</value>
+  </data>
+  <data name="DialogEpilepticGood2" xml:space="preserve">
+    <value>Thanks Macedonia, you are so kind.</value>
+  </data>
+  <data name="DialogEpilepticGoodSpecial" xml:space="preserve">
+    <value>Maybe, with the orbs you won you can buy the dash skill ::BACK</value>
+  </data>
+  <data name="DialogEpilepticIntro1" xml:space="preserve">
+    <value>Hi Macedonia, how are you doing?</value>
+  </data>
+  <data name="DialogEpilepticIntro2" xml:space="preserve">
+    <value>Hi Wish, Im watching the greatest TV show of all time. But I need your help!</value>
+  </data>
+  <data name="DialogEpilepticIntro3" xml:space="preserve">
+    <value>Ok, what do you need?</value>
+  </data>
+  <data name="DialogEpilepticIntro4" xml:space="preserve">
+    <value>That TV show is so amazing that Ihave some minor epileptic attacks, and my fruits fall.</value>
+  </data>
+  <data name="DialogEpilepticIntro5" xml:space="preserve">
+    <value>Igot it, I will pick as many as I can!</value>
+  </data>
+  <data name="DialogEpilepticIntro6" xml:space="preserve">
+    <value>Oh, is coming!!!</value>
+  </data>
+  <data name="DialogEpilepticMedium1" xml:space="preserve">
+    <value>Not bad. With those fruits we could make some high quality juice!</value>
+  </data>
+  <data name="DialogEpilepticMedium2" xml:space="preserve">
+    <value>Do you like juice? Isn't that some kind of cannibalism?</value>
+  </data>
+  <data name="DialogEpilepticMedium3" xml:space="preserve">
+    <value>Yeah but all people say eat fruit so I do. You know.</value>
+  </data>
+  <data name="DialogEpilepticMediumSpecial" xml:space="preserve">
+    <value>By the way, improve your skills learning dash. Check out the skills menu ::BACK</value>
+  </data>
+  <data name="DialogLearnDash" xml:space="preserve">
+    <value>Better you learn as soon as possible the dash move. Learn it in the skills menu ::BACK</value>
+  </data>
+  <data name="DialogOnionIntro1" xml:space="preserve">
+    <value>Hi onion elder! I need to go to Cucumber Valley!</value>
+  </data>
+  <data name="DialogOnionIntro2" xml:space="preserve">
+    <value>Hey boy, its right there. But king tomato and his troops are trying to invade us!</value>
+  </data>
+  <data name="DialogOnionIntro3" xml:space="preserve">
+    <value>I will help you onion people. What can I do?</value>
+  </data>
+  <data name="DialogOnionIntro4" xml:space="preserve">
+    <value>Great! We can help you with our legendary weapon: the Garlic Gun!</value>
+  </data>
+  <data name="DialogOnionIntro5" xml:space="preserve">
+    <value>Wow! it seems very powerful!</value>
+  </data>
+  <data name="DialogOnionIntro6" xml:space="preserve">
+    <value>Press ::RS to shot in any direction! Stay alert, they are coming!</value>
+  </data>
+  <data name="DialogTomatoAttack1" xml:space="preserve">
+    <value>Cowards, I don't need you! Now you will see the real power of King Tomato's speech!</value>
+  </data>
+  <data name="DialogTomatoComes1" xml:space="preserve">
+    <value>Out of my way! I want to eat some young onions!</value>
+  </data>
+  <data name="DialogTomatoComes2" xml:space="preserve">
+    <value>No way! you are a red dead tomato!</value>
+  </data>
+  <data name="DialogTomatoComes3" xml:space="preserve">
+    <value>What!!!!11!!!1! Insolent, you will die! C'mon tomatoes!!!</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="ExitDesc" xml:space="preserve">
+    <value>Back to Community Games</value>
+  </data>
+  <data name="gamePaused" xml:space="preserve">
+    <value>Game paused</value>
+  </data>
+  <data name="MessageNewSkills" xml:space="preserve">
+    <value>buy new skills! press ::BACK</value>
   </data>
   <data name="NewGame" xml:space="preserve">
-    <value>Nuevo juego</value>
+    <value>New game</value>
   </data>
   <data name="NewGameDesc" xml:space="preserve">
-    <value>Comienza una nueva partida</value>
+    <value>Start a new game</value>
   </data>
   <data name="OptBack" xml:space="preserve">
-    <value>Atras</value>
+    <value>Back</value>
   </data>
   <data name="OptBackDesc" xml:space="preserve">
-    <value>Vuelve al menu principal</value>
+    <value>Back to main menu</value>
   </data>
   <data name="Options" xml:space="preserve">
-    <value>Opciones</value>
+    <value>Options</value>
   </data>
   <data name="OptionsDesc" xml:space="preserve">
-    <value>Configura las opciones</value>
+    <value>Configure options</value>
   </data>
   <data name="OptMusicVol" xml:space="preserve">
-    <value>Volumen de musica</value>
+    <value>Music volume</value>
   </data>
   <data name="OptMusicVolDesc" xml:space="preserve">
-    <value>Aumenta o disminuye el volumen de la musica</value>
+    <value>Adjust the music volume</value>
   </data>
   <data name="OptNo" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="OptNoDesc" xml:space="preserve">
-    <value>Nup que me hace cosquillitas...</value>
+    <value>Nope, I want to save energy</value>
   </data>
   <data name="OptRumble" xml:space="preserve">
-    <value>Vibracion</value>
+    <value>Rumble</value>
   </data>
   <data name="OptRumbleDesc" xml:space="preserve">
-    <value>Quieres vibracion en el mando?</value>
+    <value>Do u wanna rumble?</value>
   </data>
   <data name="OptSoundVol" xml:space="preserve">
-    <value>Volumen de sonido</value>
+    <value>Sound volume</value>
   </data>
   <data name="OptSoundVolDesc" xml:space="preserve">
-    <value>Aumenta o disminuye el volumen de los efectos</value>
+    <value>Configure the sound volume</value>
   </data>
   <data name="OptYes" xml:space="preserve">
-    <value>Si</value>
+    <value>Yes</value>
   </data>
   <data name="OptYesDesc" xml:space="preserve">
-    <value>Claro!</value>
+    <value>Sure!</value>
   </data>
   <data name="Pause" xml:space="preserve">
-    <value>Juego pausado</value>
+    <value>Paused game</value>
+  </data>
+  <data name="pressAenterLevel" xml:space="preserve">
+    <value>::A enter level</value>
+  </data>
+  <data name="PressAToStart" xml:space="preserve">
+    <value>Press ::A to start</value>
+  </data>
+  <data name="pressBACKskillsMenu" xml:space="preserve">
+    <value>::BACK skills menu</value>
+  </data>
+  <data name="pressBBack" xml:space="preserve">
+    <value>::BACK</value>
+  </data>
+  <data name="pressBBackMenu" xml:space="preserve">
+    <value>::B back to menu</value>
+  </data>
+  <data name="pressBBackToGame" xml:space="preserve">
+    <value>::B back to game</value>
   </data>
   <data name="PressBToMenu" xml:space="preserve">
-    <value>Pulsa ::B para ir al menu</value>
+    <value>Press ::B to go to menu</value>
+  </data>
+  <data name="pressLSselectLevel" xml:space="preserve">
+    <value>::LS select level</value>
   </data>
   <data name="PressStartToCont" xml:space="preserve">
-    <value>Pulsa ::START para continuar</value>
+    <value>Press ::START to continue</value>
   </data>
   <data name="Scores" xml:space="preserve">
-    <value>Trofeos</value>
+    <value>Awards</value>
   </data>
   <data name="ScoresDesc" xml:space="preserve">
-    <value>Mira los logros imaginarios que has conseguido</value>
+    <value>See what imaginary awards you have</value>
+  </data>
+  <data name="Seconds" xml:space="preserve">
+    <value>seconds</value>
+  </data>
+  <data name="skillDash" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="skillLife" xml:space="preserve">
+    <value>Life ++</value>
+  </data>
+  <data name="skillPlasma" xml:space="preserve">
+    <value>Plasma</value>
+  </data>
+  <data name="skillPowerShot" xml:space="preserve">
+    <value>Power Shot</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>Skills</value>
   </data>
   <data name="Thanks" xml:space="preserve">
     <value>Thanks text</value>
   </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Bienvenido</value>
-  </data>
-  <data name="BuyGame" xml:space="preserve">
-    <value>::X Compra por 200 puntos!</value>
-  </data>
   <data name="Trial" xml:space="preserve">
     <value>Trial text</value>
   </data>
-  <data name="PressAToStart" xml:space="preserve">
-    <value>Pulsa ::A para empezar</value>
-  </data>
-  <data name="Seconds" xml:space="preserve">
-    <value>segundos</value>
-  </data>
-  <data name="Exit" xml:space="preserve">
-    <value>Salir</value>
-  </data>
-  <data name="ExitDesc" xml:space="preserve">
-    <value>Vuelve a Juegos de la Comunidad</value>
-  </data>
-  <data name="DialogBossMacedoniaIntro1" xml:space="preserve">
-    <value>Te voy a machacar mierda seca!</value>
-  </data>
-  <data name="DialogBossMacedoniaIntro2" xml:space="preserve">
-    <value>"A que te meto..."</value>
-  </data>
-  <data name="DialogDarkWish1" xml:space="preserve">
-    <value>Este debe ser...</value>
-  </data>
-  <data name="DialogDarkWish2" xml:space="preserve">
-    <value>Donde estoy? que es esto? que soy yo?</value>
-  </data>
-  <data name="DialogDarkWish3" xml:space="preserve">
-    <value>Hey! cuidado, es peligroso.</value>
-  </data>
-  <data name="DialogDarkWish4" xml:space="preserve">
-    <value>Y tu... quien eres?</value>
-  </data>
-  <data name="DialogDarkWish5" xml:space="preserve">
-    <value>No hay tiempo. Debe llegar a Cucumber Valley como sea.</value>
-  </data>
-  <data name="DialogDarkWish6" xml:space="preserve">
-    <value>Eh?</value>
-  </data>
-  <data name="DialogDarkWish7" xml:space="preserve">
-    <value>Muevete con ::LS y dispara con ::X. Es todo lo que necesitas</value>
-  </data>
-  <data name="DialogDarkWish8" xml:space="preserve">
-    <value>Ten cuidado, ahi llegan esas malditas frutas!</value>
-  </data>
-  <data name="DialogDarkWishRemind1" xml:space="preserve">
-    <value>Recuerda: muevete con ::LS y dispara con ::X . Es todo lo que necesitas</value>
-  </data>
-  <data name="DialogDarkWishRemind2" xml:space="preserve">
-    <value>Ten cuidado, ahi llegan esas malditas frutas!</value>
-  </data>
-  <data name="DialogEpilepticBad1" xml:space="preserve">
-    <value>Es penoso Wish, hay mas frutas en el suelo que en mi cabeza. Me ayudas a fregar?</value>
-  </data>
-  <data name="DialogEpilepticBad2" xml:space="preserve">
-    <value>...emm oyes eso? es ese mi nombre! tengo que irme...</value>
-  </data>
-  <data name="DialogEpilepticBad3" xml:space="preserve">
-    <value>. . . . . . . . . . . . . . grmf!</value>
-  </data>
-  <data name="DialogEpilepticBadSpecial" xml:space="preserve">
-    <value>Prfff, necesitas aprender el movimiento dash, consulta el menu de skills con ::START</value>
-  </data>
-  <data name="DialogEpilepticGood1" xml:space="preserve">
-    <value>Es realmente increible! te mueves rapido como un pepino!</value>
-  </data>
-  <data name="DialogEpilepticGood2" xml:space="preserve">
-    <value>Gracias Macedonia, eres muy amable</value>
-  </data>
-  <data name="DialogEpilepticGoodSpecial" xml:space="preserve">
-    <value>Con lo ganado deberias adquirir el movimiento dash desde el menu de skills ::START</value>
-  </data>
-  <data name="DialogEpilepticIntro1" xml:space="preserve">
-    <value>Woo macedonia! Yo te ayudare!</value>
-  </data>
-  <data name="DialogEpilepticIntro2" xml:space="preserve">
-    <value>Te lo agradezco Wish, eres una puta de mucho cuidado! :)</value>
-  </data>
-  <data name="DialogEpilepticMedium1" xml:space="preserve">
-    <value>No esta mal, con lo que has cogido aun podremos hacer algunos zumos de buena calidad</value>
-  </data>
-  <data name="DialogEpilepticMedium2" xml:space="preserve">
-    <value>Y si los bebieras tu no estariamos ante un caso de canibalismo?</value>
-  </data>
-  <data name="DialogEpilepticMedium3" xml:space="preserve">
-    <value>Mmm, cierto</value>
-  </data>
-  <data name="DialogEpilepticMediumSpecial" xml:space="preserve">
-    <value>Lo podras hacer mejor con un dash. Consulta el menu de skills ::START</value>
-  </data>
-  <data name="DialogLearnDash" xml:space="preserve">
-    <value>Mejor que aprendas cuanto antes el movimiento dash, mira el menu de skills ahora</value>
-  </data>
-  <data name="DialogOnionIntro1" xml:space="preserve">
-    <value>Hola! Necesito saber como llegar a Ciudad Vegetal</value>
-  </data>
-  <data name="DialogOnionIntro2" xml:space="preserve">
-    <value>Hey chico, es por ahi. Pero el rey tomate y sus tropas vienen por ese camino. Nos quieren invadir!</value>
-  </data>
-  <data name="DialogOnionIntro3" xml:space="preserve">
-    <value>Yo os ayudare, asi podre llegar a Ciudad Vegetal!</value>
-  </data>
-  <data name="DialogOnionIntro4" xml:space="preserve">
-    <value>Genial! Te podemos ayudar prestandote el arma legendaria del pueblo: la Garlic Gun!</value>
-  </data>
-  <data name="DialogOnionIntro5" xml:space="preserve">
-    <value>Wow! parece muy poderosa!</value>
-  </data>
-  <data name="DialogOnionIntro6" xml:space="preserve">
-    <value>Presionando ::RS podras disparar en cualquier direccion! Wo! Ya llegan los tomates!</value>
-  </data>
-  <data name="DialogTomatoAttack1" xml:space="preserve">
-    <value>Cobardes... no os necesito! Ahora veras! Hahaha</value>
-  </data>
-  <data name="DialogTomatoComes1" xml:space="preserve">
-    <value>Acabare contigo sucia perra!</value>
-  </data>
-  <data name="DialogTomatoComes2" xml:space="preserve">
-    <value>Tu eres gilipollas</value>
-  </data>
-  <data name="DialogTomatoComes3" xml:space="preserve">
-    <value>Adelante tomatinaaaa!!!</value>
-  </data>
-  <data name="MessageNewSkills" xml:space="preserve">
-    <value>buy new skills! press ::BACK</value>
-  </data>
-  <data name="DialogBossMacedoniaOutro1" xml:space="preserve">
-    <value>Vaya paliza que me has metido, cabronazo!</value>
-  </data>
-  <data name="DialogBossMacedoniaOutro2" xml:space="preserve">
-    <value>Ja je ji jo ju. Pakete!</value>
-  </data>
-  <data name="DialogBossMacedoniaOutro3" xml:space="preserve">
-    <value>Por que? Por que?</value>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

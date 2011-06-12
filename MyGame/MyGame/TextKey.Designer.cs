@@ -61,6 +61,15 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to backToMap.
+        /// </summary>
+        public static string backToMap {
+            get {
+                return ResourceManager.GetString("backToMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to BuyGame.
         /// </summary>
         public static string BuyGame {
@@ -75,6 +84,15 @@ namespace MyGame {
         public static string Continue {
             get {
                 return ResourceManager.GetString("Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to continueGame.
+        /// </summary>
+        public static string continueGame {
+            get {
+                return ResourceManager.GetString("continueGame", resourceCulture);
             }
         }
         
@@ -466,6 +484,15 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to gamePaused.
+        /// </summary>
+        public static string gamePaused {
+            get {
+                return ResourceManager.GetString("gamePaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MessageNewSkills.
         /// </summary>
         public static string MessageNewSkills {
@@ -628,6 +655,15 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to pressAenterLevel.
+        /// </summary>
+        public static string pressAenterLevel {
+            get {
+                return ResourceManager.GetString("pressAenterLevel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PressAToStart.
         /// </summary>
         public static string PressAToStart {
@@ -637,11 +673,56 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to pressBACKskillsMenu.
+        /// </summary>
+        public static string pressBACKskillsMenu {
+            get {
+                return ResourceManager.GetString("pressBACKskillsMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pressBBack.
+        /// </summary>
+        public static string pressBBack {
+            get {
+                return ResourceManager.GetString("pressBBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pressBBackMenu.
+        /// </summary>
+        public static string pressBBackMenu {
+            get {
+                return ResourceManager.GetString("pressBBackMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pressBBackToGame.
+        /// </summary>
+        public static string pressBBackToGame {
+            get {
+                return ResourceManager.GetString("pressBBackToGame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PressBToMenu.
         /// </summary>
         public static string PressBToMenu {
             get {
                 return ResourceManager.GetString("PressBToMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pressLSselectLevel.
+        /// </summary>
+        public static string pressLSselectLevel {
+            get {
+                return ResourceManager.GetString("pressLSselectLevel", resourceCulture);
             }
         }
         
@@ -678,6 +759,51 @@ namespace MyGame {
         public static string Seconds {
             get {
                 return ResourceManager.GetString("Seconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to skillDash.
+        /// </summary>
+        public static string skillDash {
+            get {
+                return ResourceManager.GetString("skillDash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to skillLife.
+        /// </summary>
+        public static string skillLife {
+            get {
+                return ResourceManager.GetString("skillLife", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to skillPlasma.
+        /// </summary>
+        public static string skillPlasma {
+            get {
+                return ResourceManager.GetString("skillPlasma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to skillPowerShot.
+        /// </summary>
+        public static string skillPowerShot {
+            get {
+                return ResourceManager.GetString("skillPowerShot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to skills.
+        /// </summary>
+        public static string skills {
+            get {
+                return ResourceManager.GetString("skills", resourceCulture);
             }
         }
         
