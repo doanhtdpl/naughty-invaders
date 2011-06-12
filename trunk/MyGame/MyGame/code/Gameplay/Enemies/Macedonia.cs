@@ -89,7 +89,7 @@ namespace MyGame
             scale *= 2;
 
             loadIntroCinematic();
-            loadEndCinematic();
+            //loadEndCinematic();
         }
 
         void loadIntroCinematic()
@@ -115,7 +115,7 @@ namespace MyGame
             ae1.setActionToPlay("idle");
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
             SpecialEvent se1 = new SpecialEvent(this);
-            se1.setPlayEffect("macedoniaAppear", position + new Vector3(80, -100, 5), Vector3.Zero, Color.White, 2);
+            se1.setPlayEffect("macedoniaAppear", position + new Vector3(0, -100, 5), Vector3.Zero, Color.White, 2);
             ActorEvent ae2 = new ActorEvent(this);
             ae2.setRender(false);
 
@@ -499,6 +499,7 @@ namespace MyGame
                             enemy.die();
                     }
 
+                    loadEndCinematic();
                     CinematicManager.Instance.playCinematic("macedoniaEnd");
                     playAction("attackShake");
                     break;
