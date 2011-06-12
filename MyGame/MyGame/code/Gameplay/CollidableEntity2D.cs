@@ -8,19 +8,14 @@ using System.Globalization;
 
 namespace MyGame
 {
-    public struct CollidablePart
+    public class CollidablePart
     {
-        public Vector2 centerOfMass;
-        public float radius;
+        public Vector2 centerOfMass { get; set; }
+        public float radius { get; set; }
 
         public CollidablePart(Vector2 centerOfMass, float radius)
         {
             this.centerOfMass = centerOfMass;
-            this.radius = radius;
-        }
-
-        public void setRadius(float radius)
-        {
             this.radius = radius;
         }
     }

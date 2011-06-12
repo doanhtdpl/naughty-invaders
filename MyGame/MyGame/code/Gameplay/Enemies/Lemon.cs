@@ -10,7 +10,7 @@ namespace MyGame
     {
         const int CHANGE_POSES = 5;
         const int HITS_PER_POSE = 4;
-        const float SCALE_INCREMENT = 0.1f;
+        const float SCALE_INCREMENT = 0.07f;
         int poseChanges = 0;
         int currentHits = 0;
 
@@ -37,7 +37,7 @@ namespace MyGame
             scaling = true;
             scaleTimer = SCALE_TIME;
             backupScale = scale2D;
-            parts[0].setRadius(parts[0].radius * (1 + SCALE_INCREMENT));
+            parts[0].radius = parts[0].radius * (1 + SCALE_INCREMENT);
             playAction("pose" + Calc.randomNatural(1, 4).ToString());
             if (currentHits >= HITS_PER_POSE)
             {
