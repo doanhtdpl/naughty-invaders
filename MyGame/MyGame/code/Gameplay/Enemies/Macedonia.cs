@@ -13,7 +13,7 @@ namespace MyGame
 
         tMacedoniaBossState state;
 
-        float LIFE = 1500;
+        float LIFE = 1;
 
         //rayo
         float RAYO_PREPARE_DURATION = 1.5f;
@@ -72,7 +72,7 @@ namespace MyGame
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
 
-            lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 140.0f), Color.Green);
+            lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 140.0f), Color.White);
 
             for(int i=0; i<MAX_RAYOS; i++)
             {
@@ -99,8 +99,8 @@ namespace MyGame
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate());
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaIntro2.Translate());
 
-            cinematic.events.Add((CinematicEvent)de1);
-            cinematic.events.Add((CinematicEvent)de2);
+            cinematic.events.Add(de1);
+            cinematic.events.Add(de2);
 
             CinematicManager.Instance.addCinematic("macedoniaIntro", cinematic);
         }
@@ -111,11 +111,20 @@ namespace MyGame
 
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate());
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaOutro2.Translate());
+            ActorEvent ae1 = new ActorEvent(this);
+            ae1.setActionToPlay("idle");
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
+            SpecialEvent se1 = new SpecialEvent(this);
+            se1.setPlayEffect("macedoniaAppear", position + new Vector3(50, -100, 5), Vector3.Zero, Color.White, 2);
+            ActorEvent ae2 = new ActorEvent(this);
+            ae2.setRender(false);
 
-            cinematic.events.Add((CinematicEvent)de1);
-            cinematic.events.Add((CinematicEvent)de2);
-            cinematic.events.Add((CinematicEvent)de3);
+            cinematic.events.Add(de1);
+            cinematic.events.Add(de2);
+            cinematic.events.Add(ae1);
+            cinematic.events.Add(de3);
+            cinematic.events.Add(se1);
+            cinematic.events.Add(ae2);
 
             CinematicManager.Instance.addCinematic("macedoniaEnd", cinematic);
         }
@@ -484,6 +493,12 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     showRayo(false);
 
+                    foreach (Enemy enemy in EnemyManager.Instance.getActiveEnemies())
+                    {
+                        if (enemy != null && !(enemy is Macedonia))
+                            enemy.die();
+                    }
+
                     CinematicManager.Instance.playCinematic("macedoniaEnd");
                     playAction("attackShake");
                     break;
@@ -563,10 +578,13 @@ namespace MyGame
             {
                 base.render();
 
-                lifebar.lifePercentage = life / LIFE;
-                GraphicsManager.Instance.spriteBatchBegin();
-                lifebar.render();
-                GraphicsManager.Instance.spriteBatchEnd();
+                if (renderState == tRenderState.Render)
+                {
+                    lifebar.lifePercentage = life / LIFE;
+                    GraphicsManager.Instance.spriteBatchBegin();
+                    lifebar.render();
+                    GraphicsManager.Instance.spriteBatchEnd();
+                }
             }
 
             foreach (RenderableEntity2D fruit in fruits)
