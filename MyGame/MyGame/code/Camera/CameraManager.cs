@@ -155,7 +155,8 @@ namespace MyGame
                 case tCameraMode.WorldMap:
                     break;
                 case tCameraMode.Nodes:
-                    lastPosition = currentNode.position;
+                    if(currentNode != null)
+                        lastPosition = currentNode.position;
                     currentPosition = lastPosition;
                     break;
             }

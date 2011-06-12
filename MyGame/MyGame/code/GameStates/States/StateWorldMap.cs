@@ -56,18 +56,18 @@ namespace MyGame
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownA"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn1.position + (nn2.position - nn1.position) / 2, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn2.position, 0, Color.White));
             }
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownB"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn2.position + (nn3.position - nn2.position) / 2, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn3.position, 0, Color.White));
             }
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["onionVillage"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn3.position + (nn4.position - nn3.position) / 2, 0, Color.White));
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "ced-22", nn3.position + (nn5.position - nn3.position) / 2, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn4.position, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn5.position, 0, Color.White));
             }
 
             currentLocation = nn1;
@@ -119,9 +119,10 @@ namespace MyGame
             GUIManager.Instance.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "::A enter map".renderNI(Screen.getXYfromCenter(380, 300), 0.8f, StringManager.tStyle.Shadowed);
-            "::B back to menu".renderNI(Screen.getXYfromCenter(380, 260), 0.8f, StringManager.tStyle.Shadowed);
-            "::BACK skills menu".renderNI(Screen.getXYfromCenter(380, 220), 0.8f, StringManager.tStyle.Shadowed);
+            "::LS select level".renderNI(Screen.getXYfromCenter(380, 320), 0.8f, StringManager.tStyle.Shadowed);
+            "::A enter level".renderNI(Screen.getXYfromCenter(380, 280), 0.8f, StringManager.tStyle.Shadowed);
+            "::B back to menu".renderNI(Screen.getXYfromCenter(380, 240), 0.8f, StringManager.tStyle.Shadowed);
+            "::BACK skills menu".renderNI(Screen.getXYfromCenter(380, 200), 0.8f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
