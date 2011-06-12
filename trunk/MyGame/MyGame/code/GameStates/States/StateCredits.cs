@@ -17,6 +17,13 @@ namespace MyGame
         {
         }
 
+        public override void initialize()
+        {
+            base.initialize();
+
+            GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
+        }
+
         public override void update()
         {
             base.update();

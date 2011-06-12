@@ -49,6 +49,8 @@ namespace MyGame
 
         public override void initialize()
         {
+            SoundManager.Instance.loadXML();
+
             transitionColor = new Color(10, 10, 10, 255);
             transitionColor *= 0.85f;
             initializeMenu();

@@ -2,14 +2,14 @@
 <level nextEntityID="2510" BGColor="62 0 31 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="ce-74" worldMatrix="882.8245 49.98704 -30.76927 0 -31.71064 472.0513 -142.9506 0 0.01687437 0.2908274 0.9566267 0 -1235.848 2594.382 -515.002 1" id="4" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="cerdits-90" worldMatrix="454.157 130.5948 0 0 -131.1234 455.995 0 0 0 0 1 0 -1178.389 137.6973 -581.9872 1" id="8" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cerdits-90" worldMatrix="454.157 130.5948 0 0 -131.1234 455.995 0 0 0 0 1 0 -1178.389 86.45438 -581.9872 1" id="8" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="cerdits-91" worldMatrix="409.7576 0 0 0 0 495.8209 0 0 0 0 1 0 -1168.908 559.6496 -542.0143 1" id="12" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="cerdits-92" worldMatrix="600.7903 -18.02911 0 0 13.41627 447.075 0 0 0 0 1 0 -1210.617 1935.929 -555.9974 1" id="16" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="cerdits-93" worldMatrix="499.2372 0 0 0 0 681.124 0 0 0 0 1 0 -1269.551 2238.387 -566.995 1" id="20" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cerdits-92" worldMatrix="600.7903 -18.02911 0 0 13.41627 447.075 0 0 0 0 1 0 -1261.71 1854.179 -555.9974 1" id="16" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cerdits-93" worldMatrix="499.2372 0 0 0 0 681.124 0 0 0 0 1 0 -1238.857 2238.387 -566.995 1" id="20" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="verdu-34" worldMatrix="378.6767 0 0 0 0 223.0227 0 0 0 0 1 0 -1835.287 954.0793 -52.99372 1" id="223" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="cerdits-94" worldMatrix="936.5182 20.72471 -414.0602 0 -1.6599 188.8633 5.698717 0 0.404696 -0.02402608 0.9141357 0 -461.0978 176.5412 -660.9981 1" id="320" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cerdits-94" worldMatrix="936.5182 20.72471 -414.0602 0 -1.6599 188.8633 5.698717 0 0.404696 -0.02402608 0.9141357 0 -461.0978 145.5224 -660.9981 1" id="320" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="cerdits-95" worldMatrix="832.3283 108.8447 -545.6167 0 -5.805859 242.9236 39.60391 0 0.555224 -0.1208828 0.8228692 0 -492.3416 488.5368 -740.992 1" id="324" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="cerdits-96" worldMatrix="1576.168 79.6899 -1261.147 0 -26.17498 310.5218 -13.09183 0 0.619863 0.0851391 0.7800778 0 -158.2913 2064.694 -715.9959 1" id="328" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cerdits-96" worldMatrix="1576.168 79.6899 -1261.147 0 -26.17498 310.5218 -13.09183 0 0.619863 0.0851391 0.7800778 0 -179.0973 1950.261 -715.9959 1" id="328" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="cerdits-97" worldMatrix="1087.129 58.98088 -566.0323 0 -13.00113 259.8175 2.102981 0 0.4610816 0.01589109 0.8872155 0 -376.9691 2262.601 -581.0164 1" id="332" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="cerdits-98" worldMatrix="1520.683 0 0 0 0 577.621 0 0 0 0 1 0 -622.936 4677.557 2.010225 1" id="336" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="logo-50" worldMatrix="1142.738 0 0 0 0 912.9365 0 0 0 0 1 0 -423.6051 -3386.12 -505.9892 1" id="382" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -135,12 +135,11 @@
   <enemySpawnZones />
   <levelCollisions />
   <camera>
-    <cameraNode id="0" position="-636.3386 4371.63 2000" target="-636.3386 4371.63 0" isFirst="True" link="1" />
-    <cameraNode id="1" position="-928.1069 1097.188 1400" target="-928.1069 1097.188 0" isFirst="False" link="13" />
-    <cameraNode id="2" position="NaN NaN 1400" target="NaN NaN 0" isFirst="False" />
-    <cameraNode id="13" position="-592.9478 -533.9673 1400" target="-592.9478 -533.9673 0" isFirst="False" link="14" />
-    <cameraNode id="14" position="-839.9995 -1927.479 1400" target="-839.9995 -1927.479 0" isFirst="False" link="15" />
-    <cameraNode id="15" position="-399.9267 -3396.772 1400" target="-399.9267 -3396.772 0" isFirst="False" />
+    <cameraNode id="0" position="-636.3386 4371.63 2000" target="-636.3386 4371.63 0" isFirst="True" link="1" speed="300"/>
+    <cameraNode id="1" position="-928.1069 1097.188 1400" target="-928.1069 1097.188 0" isFirst="False" link="13" speed="300"/>
+    <cameraNode id="13" position="-592.9478 -533.9673 1400" target="-592.9478 -533.9673 0" isFirst="False" link="14" speed="300"/>
+    <cameraNode id="14" position="-839.9995 -1927.479 1400" target="-839.9995 -1927.479 0" isFirst="False" link="15" speed="300"/>
+    <cameraNode id="15" position="-399.9267 -3396.772 1400" target="-399.9267 -3396.772 0" isFirst="False" speed="300"/>
   </camera>
   <particles />
   <players>
