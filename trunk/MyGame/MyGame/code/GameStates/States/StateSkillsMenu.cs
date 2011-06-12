@@ -18,7 +18,7 @@ namespace MyGame
             me.setFunction("buySkill", MenuElement.tInputType.X, new object[2] { skill, me});
             MenuElement meLinked = new MenuElement("botoncito", position + new Vector2(120, 0), scale);
             me.linkedElement = meLinked;
-            me.drawLinkedElement = true;// GamerManager.getSessionOwner().data.skills[skill].obtained;
+            me.drawLinkedElement = GamerManager.getSessionOwner().data.skills[skill].obtained;
 
             me.description = skillDescription;
             me.DescriptionPosition = new Vector2(-35, 140);
