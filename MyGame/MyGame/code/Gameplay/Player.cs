@@ -75,8 +75,6 @@ namespace MyGame
             bigShotCharging = false;
             bigShotCooldownTime = 0.0f;
 
-            avoidDelete = true;
-
             mode = tMode.Arcade;
 
             if (bigShotBall == null) bigShotBall = TextureManager.Instance.getTexture("projectiles/bigShotPlayer");
@@ -85,7 +83,6 @@ namespace MyGame
             if (garlicGunBandTexture == null) garlicGunBandTexture = TextureManager.Instance.getTexture("characters/garlicGunBand");
             if (wishLife == null) wishLife = TextureManager.Instance.getTexture("GUI/ingame/wishLife");
             if (wishLifePortion == null) wishLifePortion = TextureManager.Instance.getTexture("GUI/ingame/wishLifePortion");
-            
         }
 
         public int getMaxLifePortions()
@@ -110,6 +107,9 @@ namespace MyGame
         {
             orientation = 0.0f;
             initializeLifeStuff();
+            updateState = tUpdateState.Update;
+            entityState = tEntityState.Active;
+            playAction("idle", true);
         }
 
         public override void setCollisions()
@@ -123,10 +123,10 @@ namespace MyGame
 
             --lifePortions;
             invulnerableTime = INVULNERABLE_TIME;
-            bool miniDie = false;
+            bool isMiniDie = false;
             if (lifePortions <= 0)
             {
-                miniDie = true;
+                isMiniDie = true;
                 invulnerableTime += actions["miniDie"].getDuration();
                 --lifes;
                 playAction("miniDie");
@@ -140,11 +140,11 @@ namespace MyGame
 
             if (finalDie)
             {
-                SoundManager.Instance.playEffect("wishFinalDie");
+                die();
             }
-            else if (miniDie)
+            else if (isMiniDie)
             {
-                SoundManager.Instance.playEffect("wishMiniDie");
+                miniDie();
             }
             else
             {
@@ -152,6 +152,20 @@ namespace MyGame
             }
 
             return !finalDie;
+        }
+
+        public void miniDie()
+        {
+            playAction("miniDie");
+            SoundManager.Instance.playEffect("wishMiniDie");
+        }
+
+        public override void die()
+        {
+            base.die();
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 2.0f, Color.Black);
+            SoundManager.Instance.playEffect("wishFinalDie");
+
         }
 
         public void addLifePortionsToMax()
@@ -355,7 +369,13 @@ namespace MyGame
         {
             base.update();
 
-            if (updateState == tUpdateState.NoUpdate) return;
+            if (updateState == tUpdateState.NoUpdate|| entityState == tEntityState.Dying) return;
+
+            // TODO as there is no player manager, auto delete. There must be a PlayerManager
+            if (entityState == tEntityState.ToDelete)
+            {
+                delete();
+            }
 
             updateInvulnerableAfterHit();
 
