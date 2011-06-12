@@ -64,8 +64,6 @@ namespace MyGame
             GraphicsManager.Instance.loadContent();
             StringManager.loadContent();
             GUIManager.Instance.loadContent();
-
-            //EditorHelper.Instance.loadNewLevel("final_Level01");
         }
 
         protected override void UnloadContent()

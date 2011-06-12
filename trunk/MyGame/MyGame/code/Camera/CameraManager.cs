@@ -153,7 +153,7 @@ namespace MyGame
                 case tCameraMode.WorldMap:
                     break;
                 case tCameraMode.Nodes:
-                    lastPosition = cameraNodes.getNodes()[0].position;
+                    lastPosition = currentNode.position;
                     currentPosition = lastPosition;
                     break;
             }

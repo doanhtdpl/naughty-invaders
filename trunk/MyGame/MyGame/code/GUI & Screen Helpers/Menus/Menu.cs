@@ -28,13 +28,21 @@ namespace MyGame
         {
             leftCursor.position = position + new Vector2(-selectorDistance, 0);
             rightCursor.position = position + new Vector2(selectorDistance, 0);
-
         }
 
         public void render()
         {
+            float factor = (float)Math.Sin(SB.gameTime.TotalGameTime.TotalMilliseconds * 0.005) * 20;
+            Vector2 leftPos = leftCursor.position;
+            Vector2 rightPos = rightCursor.position;
+            leftCursor.position += new Vector2(-factor, 0);
+            rightCursor.position += new Vector2(factor, 0);
+
             leftCursor.render(false);
             rightCursor.render(false, true);
+
+            leftCursor.position = leftPos;
+            rightCursor.position = rightPos;
         }
     }
 

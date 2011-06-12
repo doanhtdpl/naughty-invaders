@@ -480,10 +480,9 @@ namespace MyGame
 
         public override void requestDelete(bool force = false)
         {
-            if (avoidDelete && !force)
-            {
-                base.requestDelete();
-            }
+            if (avoidDelete && !force) return;
+
+            base.requestDelete();
         }
     }
 }

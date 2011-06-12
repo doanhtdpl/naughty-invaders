@@ -495,6 +495,27 @@ namespace MyGame
                     LevelManager.Instance.addLevelCollision(l);
                 }
 
+                //Camera
+                nodes = xml_doc.Descendants("cameraNode");
+                foreach (XElement node in nodes)
+                {
+                    Vector3 position = node.Attribute("position").Value.toVector3();
+                    Vector3 target = node.Attribute("target").Value.toVector3();
+                    int nodeId = node.Attribute("id").Value.toInt();
+                    bool isFirst = node.Attribute("isFirst").Value.toBool();
+                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(target, nodeId, isFirst), position);
+                    if (node.Attributes("link").Count() > 0)
+                        cameraNode.value.next = node.Attribute("link").Value.toInt();
+
+                    CameraManager.Instance.addNode(cameraNode);
+                }
+                //link camera nodes
+                foreach (NetworkNode<CameraData> cameraNode in CameraManager.Instance.getNodes().getNodes())
+                {
+                    cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
+                }
+                CameraManager.Instance.setupCamera();
+
                 // player
                 if (GamerManager.getMainPlayer() == null)
                 {
@@ -520,27 +541,6 @@ namespace MyGame
                     GamerManager.getMainPlayer().position = GamerManager.getMainPlayer().initPos;
                 }
                 GamerManager.getMainPlayer().initLevel();
-
-                //Camera
-                nodes = xml_doc.Descendants("cameraNode");
-                foreach (XElement node in nodes)
-                {
-                    Vector3 position = node.Attribute("position").Value.toVector3();
-                    Vector3 target = node.Attribute("target").Value.toVector3();
-                    int nodeId = node.Attribute("id").Value.toInt();
-                    bool isFirst = node.Attribute("isFirst").Value.toBool();
-                    NetworkNode<CameraData> cameraNode = new NetworkNode<CameraData>(new CameraData(target, nodeId, isFirst), position);
-                    if(node.Attributes("link").Count() > 0)
-                        cameraNode.value.next = node.Attribute("link").Value.toInt();
-
-                    CameraManager.Instance.addNode(cameraNode);
-                }
-                //link camera nodes
-                foreach(NetworkNode<CameraData> cameraNode in CameraManager.Instance.getNodes().getNodes())
-                {
-                    cameraNode.addLinkedNode(CameraManager.Instance.getNode(cameraNode.value.next));
-                }
-                CameraManager.Instance.setupCamera();
 
                 //particles
                 nodes = xml_doc.Descendants("particle");

@@ -17,7 +17,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(0, 0), 25.0f);
+            addCollision(new Vector2(-10, -9), 10.0f);
         }
     }
 }

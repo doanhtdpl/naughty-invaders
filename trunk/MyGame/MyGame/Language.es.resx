@@ -324,4 +324,13 @@
   <data name="MessageNewSkills" xml:space="preserve">
     <value>buy new skills! press ::BACK</value>
   </data>
+  <data name="DialogBossMacedoniaOutro1" xml:space="preserve">
+    <value>Vaya paliza que me has metido, cabronazo!</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro2" xml:space="preserve">
+    <value>Ja je ji jo ju. Pakete!</value>
+  </data>
+  <data name="DialogBossMacedoniaOutro3" xml:space="preserve">
+    <value>Por que? Por que?</value>
+  </data>
 </root>

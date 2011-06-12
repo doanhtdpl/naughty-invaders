@@ -36,12 +36,14 @@ namespace MyGame
         public void initLevelsPassed()
         {
 #if DEBUG
-            levelsPassed["final_Level01"] = true;
+            levelsPassed["fruitownA"] = true;
+            levelsPassed["fruitownB"] = true;
             levelsPassed["onionVillage"] = true;
             levelsPassed["macedonia"] = true;
             levelsPassed["verducity"] = true;
 #else
-            levelsPassed["final_Level01"] = false;
+            levelsPassed["fruitownA"] = false;
+            levelsPassed["fruitownB"] = false;
             levelsPassed["onionVillage"] = false;
             levelsPassed["macedonia"] = false;
             levelsPassed["verducity"] = false;

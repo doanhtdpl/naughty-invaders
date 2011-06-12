@@ -35,7 +35,7 @@ namespace MyGame
             ParticleManager.Instance.loadXML();
             SoundManager.Instance.loadXML();
 
-            if (level == "final_Level01")
+            if (level == "fruitownA")
             {
                 loadAndPlayIntroCinematic();
             }
@@ -54,7 +54,7 @@ namespace MyGame
             Player player = GamerManager.getMainPlayer();
             Cinematic cinematic = new Cinematic();
 
-            if (GamerManager.getSessionOwner().data.levelsPassed["final_Level01"])
+            if (GamerManager.getSessionOwner().data.levelsPassed["fruitownA"])
             {
                 ActorEvent ae1 = new ActorEvent(player, false);
                 ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 200.0f);

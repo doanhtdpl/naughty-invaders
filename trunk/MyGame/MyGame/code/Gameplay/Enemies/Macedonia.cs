@@ -13,11 +13,12 @@ namespace MyGame
 
         tMacedoniaBossState state;
 
-        float LIFE = 2000;
+        float LIFE = 1500;
 
         //rayo
-        float RAYO_DURATION = 1.5f;
-        int RAYO_LIMIT_X = 700;
+        float RAYO_PREPARE_DURATION = 1.5f;
+        float RAYO_DURATION = 2.0f;
+        int RAYO_LIMIT_X = 650;
 
         int TELEPORT_LIMIT_X = 600;
         const int MAX_RAYOS = 3;
@@ -33,14 +34,14 @@ namespace MyGame
         float LAUGH_TIME = 2.0f;
 
         //Talk/Invoke enemies
-        int INVOKE_NUM_ORANGES = 10;
+        int INVOKE_NUM_ORANGES = 5;
         float INVOKE_TIME_BETWEEN_ORANGES = 0.4f;
         int INVOKE_LIMIT_X = 500;
-        float INVOKE_TIME = 4.0f;
+        float INVOKE_TIME = 2.0f;
 
         //Shake
-        float SHAKE_MIN_TIME_FRUIT = 0.1f;
-        float SHAKE_MAX_TIME_FRUIT = 0.15f;
+        float SHAKE_MIN_TIME_FRUIT = 0.20f;
+        float SHAKE_MAX_TIME_FRUIT = 0.25f;
 
         float SHAKE_TIME_MIN = 1.0f;
         float SHAKE_TIME_MAX = 1.5f;
@@ -293,7 +294,7 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.RayoPrepare:
-                    if (getCurrentAction() != "attack")
+                    if (stateTime > RAYO_PREPARE_DURATION)
                     {
                         changeState(tMacedoniaBossState.RayoAttack);
                     }
@@ -362,7 +363,7 @@ namespace MyGame
                 case tMacedoniaBossState.Die:
                     if (CinematicManager.Instance.cinematicToPlay == null)
                     {
-                        GamerManager.getGamerEntity(0).data.levelsPassed["final_Level01"] = true;
+                        GamerManager.getGamerEntity(0).data.levelsPassed["fruitownB"] = true;
                         StateManager.addState(StateManager.tGameState.EndStage);
                     }
                     break;
@@ -419,27 +420,28 @@ namespace MyGame
                     numHits = 0;
 
                     float rand = Calc.randomScalar();
-                    if (rand <= 0.3)
+                    if (rand <= 0.25)
                         nextAttack = tMacedoniaBossState.RayoPrepare;
                     else if (rand <= 0.5)
                         nextAttack = tMacedoniaBossState.Shake;
                     else if (rand <= 0.7)
                         nextAttack = tMacedoniaBossState.Talk;
-                    else if (rand <= 0.9)
+                    else if (rand <= 0.85)
                         nextAttack = tMacedoniaBossState.Disappear;
                     else
                         nextAttack = tMacedoniaBossState.Laugh;
 
-                    timeToAttack = Calc.randomScalar(0.5f, 1.0f);
+                    timeToAttack = Calc.randomScalar(1.0f, 2.0f);
 
                     break;
 
                 case tMacedoniaBossState.RayoPrepare:
-                    playAction("attack");
+                    playAction("rayoPrepare");
                     rayoInitLives = GamerManager.getMainPlayer().lifes;
                     break;
 
                 case tMacedoniaBossState.RayoAttack:
+                    playAction("rayoAttack");
                     updateRayo();
                     showRayo(true);
                     positionRayoFrom = position;
@@ -465,14 +467,14 @@ namespace MyGame
 
                     //invoke watermelon
                     ParticleManager.Instance.addParticles("macedoniaAppear", position + new Vector3(0, -350, 5), Vector3.Zero, Color.White);
-                    EnemyManager.Instance.addEnemy("watermelon", position + new Vector3(0, -350, 0));
+                    EnemyManager.Instance.addEnemy("lemon", position + new Vector3(0, -350, 0));
 
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(-300, -350, 5), Vector3.Zero, Color.White);
                     EnemyManager.Instance.addEnemy("grape", position + new Vector3(-300, -350, 0));
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(300, -350, 5), Vector3.Zero, Color.White);
                     EnemyManager.Instance.addEnemy("grape", position + new Vector3(300, -350, 0));
 
-                    playAction("attackIdle");
+                    playAction("talk");
                     break;
 
                 case tMacedoniaBossState.Laugh:
