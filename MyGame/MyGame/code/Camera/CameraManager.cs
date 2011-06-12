@@ -61,6 +61,10 @@ namespace MyGame
 
         // world map mode data
         public Vector3 worldMapPosition { get; set; }
+        public float worldMapIdleX { get; set; }
+        public float worldMapIdleY { get; set; }
+        public float worldMapSpeedX { get; set; }
+        public float worldMapSpeedY { get; set; }
 
         // node mode stuff
         NetworkNode<CameraData> currentNode;
@@ -170,14 +174,21 @@ namespace MyGame
         {
             //Vector2 playerPosition = GamerManager.getGamerEntity(PlayerIndex.One).Player.position2D;
         }
-        const float WORLDMAP_IDLE_X = 20.0f;
-        const float WORLDMAP_IDLE_Y = 30.0f;
+
+        public void setWorldMapParams(float idleX = 20.0f, float idleY = 30.0f, float speedX = 0.75f, float speedY = 2.0f)
+        {
+            worldMapIdleX = idleX;
+            worldMapIdleY = idleY;
+            worldMapSpeedX = speedX;
+            worldMapSpeedY = speedY;
+        }
+
         void updateWorldMapMode()
         {
             Vector3 cameraPosition = worldMapPosition;
             float time = (float)SB.gameTime.TotalGameTime.TotalMilliseconds * 0.001f;
-            cameraPosition.X += (float)Math.Sin(time * 0.75f) * WORLDMAP_IDLE_X;
-            cameraPosition.Y += (float)Math.Sin(time * 2.0f) * WORLDMAP_IDLE_Y;
+            cameraPosition.X += (float)Math.Sin(time * worldMapSpeedX) * worldMapIdleX;
+            cameraPosition.Y += (float)Math.Sin(time * worldMapSpeedY) * worldMapIdleY;
             cameraPosition.Z += 1400.0f;
             Camera2D.position = cameraPosition;
         }

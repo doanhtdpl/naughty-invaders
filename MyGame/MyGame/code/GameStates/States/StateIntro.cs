@@ -32,6 +32,7 @@ namespace MyGame
         public override void update()
         {
             timer += SB.dt;
+
             if (timer > introTime && !TransitionManager.Instance.isFading())
             {
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);

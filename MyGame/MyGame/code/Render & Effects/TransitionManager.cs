@@ -28,7 +28,7 @@ namespace MyGame
 
         Color color;
         float value;
-        public enum tTransition { FadeIn, FadeOut }
+        public enum tTransition { FadeIn, FadeOut, None }
         tTransition type;
         float initialTime = 0.0f;
         float time = 0.0f;
@@ -53,16 +53,16 @@ namespace MyGame
         public void addTransition(tTransition type, float transitionTime, Color transitionColor)
         {
             this.type = type;
-            this.initialTime = transitionTime;
             this.time = transitionTime;
+            this.initialTime = this.time;
             this.color = transitionColor;
         }
 
         public void loadLevelWithFade(string level, WorldMapLocation.tLocationType locationType, float fadeTime, Color fadeColor)
         {
             this.type = tTransition.FadeIn;
-            this.initialTime = fadeTime;
             this.time = fadeTime;
+            this.initialTime = this.time;
             this.level = level;
             this.locationType = locationType;
             this.color = fadeColor;
@@ -73,8 +73,8 @@ namespace MyGame
             this.state = state;
             this.clearStates = clearStates;
             this.type = tTransition.FadeIn;
-            this.initialTime = fadeTime;
             this.time = fadeTime;
+            this.initialTime = this.time;
             this.level = level;
             this.color = fadeColor;
         }
@@ -123,40 +123,29 @@ namespace MyGame
                 updateSpecialFade();
             }
 
-            if (time > 0.0f)
+            switch (type)
             {
-                switch (type)
-                {
-                    case tTransition.FadeIn:
-                        value = initialTime - (time / initialTime);
-                        break;
-                    case tTransition.FadeOut:
-                        value = time / initialTime;
-                        break;
-                    default:
-                        break;
-                }
+                case tTransition.FadeIn:
+                    value = Math.Min(1.0f, (initialTime - time) / initialTime);
+                    break;
+                case tTransition.FadeOut:
+                    value = Math.Max(0.0f, time / initialTime);
+                    break;
+                default:
+                    break;
+            }
+
+            if (time < 0.0f)
+            {
+                type = tTransition.None;
             }
         }
 
         public void render()
         {
-            //if (time > 0.0f)
-            {
-                GraphicsManager.Instance.spriteBatch.Begin();
-                switch(type)
-                {
-                    case tTransition.FadeIn:
-                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-1000, -1000, 4000, 4000), color * value);
-                    break;
-                    case tTransition.FadeOut:
-                    GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-1000, -1000, 4000, 4000), color * value);
-                    break;
-                    default:
-                    break;
-                }
-                GraphicsManager.Instance.spriteBatch.End();
-            }
+            GraphicsManager.Instance.spriteBatch.Begin();
+            GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-1000, -1000, 4000, 4000), color * value);
+            GraphicsManager.Instance.spriteBatch.End();
         }
     }
 }

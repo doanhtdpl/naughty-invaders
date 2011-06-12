@@ -84,6 +84,7 @@ namespace MyGame
             SoundManager.Instance.loadXML();
             EditorHelper.Instance.loadNewLevelFromGame("mapa");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
+            CameraManager.Instance.setWorldMapParams(15, 20, 0.75f, 1.2f);
 
             locations = new Network<WorldMapLocation>();
             initializeNetwork();
