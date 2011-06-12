@@ -18,6 +18,8 @@ namespace MyGame
 
         public const int introTime = 3;
 
+        AnimatedEntity2D ashcry;
+
         public override void initialize()
         {
             TransitionManager.Instance.addTransition(TransitionManager.tTransition.FadeOut, 1.0f, Color.Black);
@@ -27,6 +29,10 @@ namespace MyGame
         {
             EditorHelper.Instance.loadNewLevelFromGame("intro");
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
+            GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
+
+            ashcry = new AnimatedEntity2D("intro", "ash_cry", new Vector3(0, 0, 0), 0, Color.White);
+            LevelManager.Instance.addAnimatedProp(ashcry);
         }
 
         public override void update()
@@ -34,12 +40,16 @@ namespace MyGame
             timer += SB.dt;
             if (timer > introTime && !TransitionManager.Instance.isFading())
             {
+                CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
+                CameraManager.Instance.getCurrentNode().value.speed = 1500;
+                CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
             }
 
             LevelManager.Instance.update();
             ParticleManager.Instance.update();
             CameraManager.Instance.update();
+            SB.cam.update();
         }
 
         public override void render()

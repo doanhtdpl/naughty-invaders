@@ -168,6 +168,11 @@ namespace MyGame
             nextNode = node.getNext();
         }
 
+        public NetworkNode<CameraData> getCurrentNode()
+        {
+            return currentNode;
+        }
+
         public bool isIdle()
         {
             return nextNode == null;
