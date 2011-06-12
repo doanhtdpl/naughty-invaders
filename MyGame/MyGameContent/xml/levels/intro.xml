@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<level nextEntityID="11" BGColor="255 255 255 255" CameraMode="Nodes">
+<level nextEntityID="16" BGColor="255 255 255 255" CameraMode="Nodes">
   <staticProps>
-    <staticProp entityName="wish-16" worldMatrix="206.1376 0 0 0 0 258.043 0 0 0 0 1 0 -901.4952 -305.2336 -1158.006 1" id="4" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="wish-17" worldMatrix="844 0 0 0 0 1427 0 0 0 0 1 0 1348.094 87.73734 -1948.982 1" id="8" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="wish-16" worldMatrix="151.9914 0 0 0 0 186.2532 0 0 0 0 1 0 -474.5117 -172.1226 -215 1" id="4" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="padre" worldMatrix="846 0 0 0 0 772 0 0 0 0 1 0 419.082 55.974 -258 1" id="13" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
   </staticProps>
   <animatedProps />
   <groups />
@@ -10,8 +10,8 @@
   <enemySpawnZones />
   <levelCollisions />
   <camera>
-    <cameraNode id="1" position="975.0085 -231.6376 800" target="975.0085 -231.6376 0" isFirst="False" link="2" />
-    <cameraNode id="2" position="-577.3049 -234.5893 800" target="-577.3049 -234.5893 0" isFirst="False" />
+    <cameraNode id="3" position="71.90735 67.78841 689.765" target="71.90735 67.78841 0" isFirst="True" speed="50" />
+    <cameraNode id="4" position="-478.7484 -153.9967 7.347064" target="-478.7484 -153.9967 0" isFirst="False" speed="50" />
   </camera>
   <particles />
   <players>
