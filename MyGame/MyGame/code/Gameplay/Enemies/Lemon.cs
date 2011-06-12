@@ -46,9 +46,13 @@ namespace MyGame
                 OrbManager.Instance.addOrbs(position2D, 2, 0, 0, 0);
                 if (poseChanges >= CHANGE_POSES)
                 {
+                    SoundManager.Instance.playEffect(entityName + "Dies");
                     return false;
+
                 }
             }
+            ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
+            SoundManager.Instance.playEffect(entityName + "GotHit");
             return true;
         }
 
