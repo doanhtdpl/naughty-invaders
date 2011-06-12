@@ -62,6 +62,7 @@ namespace MyGame
             if (avoidDelete && !force) return;
 
             base.requestDelete();
+            ProjectileManager.Instance.requestDeleteOf(this);
         }
     }
 }

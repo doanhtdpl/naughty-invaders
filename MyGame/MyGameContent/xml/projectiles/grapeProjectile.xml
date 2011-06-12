@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
   <animatedTexture name="Anim_GrapeWeapon" frameWidth="27" frameHeight="27" columns="3" rows="4">
-    <action name="start" initialFrame="1" endFrame="10" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="10" loops="true"/>
-    <action name="die" initialFrame="1" endFrame="10" loops="false"/>
+    <action name="start" initialFrame="1" endFrame="2" loops="false"/>
+    <action name="idle" initialFrame="3" endFrame="8" loops="true"/>
+    <action name="die" initialFrame="9" endFrame="10" loops="false"/>
   </animatedTexture>
 </animatedEntity>
