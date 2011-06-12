@@ -491,21 +491,6 @@ namespace MyGame
             state = newState;
         }
 
-        public override bool collidesWith(CollidableEntity2D ce, ref bool entityAlive)
-        {
-            if (state == tMacedoniaBossState.Hidden || state == tMacedoniaBossState.Disappear || state == tMacedoniaBossState.Appear)
-            {
-                return false;
-            }
-
-            if (state == tMacedoniaBossState.RayoAttack && Math.Abs(position.X - GamerManager.getMainPlayer().position.X) < RAYO_ATTACK_WIDTH && position.Y > GamerManager.getMainPlayer().position.Y)
-            {
-                return true;
-            }
-
-            return base.collidesWith(ce, ref entityAlive);
-        }
-
         public void showRayo(bool value)
         {
             for (int i = 0; i < MAX_RAYOS; i++)
@@ -555,12 +540,18 @@ namespace MyGame
                 rayoEnd.renderState = tRenderState.Render;
                 rayoEnd.update();
                 rayoEnd.position = new Vector3(position.X, GamerManager.getMainPlayer().position.Y + 100, position.Z + 0.2f);
-
-                GamerManager.getMainPlayer().gotHitAtPart(null, 0);
             }
             else
             {
                 rayoEnd.renderState = tRenderState.NoRender;
+            }
+
+            if (isPlayerHit)
+            {
+                if (!GamerManager.getMainPlayer().gotHitAtPart(null, 0))
+                {
+                    GamerManager.getMainPlayer().die();
+                }
             }
         }
 
