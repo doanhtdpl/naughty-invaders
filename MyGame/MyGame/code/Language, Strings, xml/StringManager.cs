@@ -234,7 +234,7 @@ namespace MyGame
         }
         public static void renderNIDescription(this String str, Vector2 position, float scale)
         {
-            render(str.ToUpper(), position, scale / 2.5f, Color.BlueViolet, tTextAlignment.Left, SB.font, 500, 60 * scale / 1.45f, Color.Blue, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Normal);
+            render(str.ToUpper(), position, scale / 2.5f, Color.BlueViolet, tTextAlignment.Left, SB.font, 500, 60 * scale / 1.45f, Color.Black, 1.0f, new Vector2(1.5f, 1.5f), tStyle.Shadowed);
         }
 
         private static void updateAlignment(tTextAlignment alignment, int positionX, int sizeX, int first, int last)

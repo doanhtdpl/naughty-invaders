@@ -11,6 +11,7 @@ namespace MyGame
     class StateSkillsMenu : GameState
     {
         Menu menu;
+        Texture2D bg;
 
         MenuElement getBuySkillOption(string buttonTexture, string skill, string skillDescription, Vector2 position, Vector2 scale)
         {
@@ -52,12 +53,11 @@ namespace MyGame
             mb4.setFunction("buySkillAddLife", MenuElement.tInputType.X, new object[3] { "life1", mb4, GamerManager.getMainPlayer() });
             MenuElement mbDescriptionHeader = new MenuElement("largeHeader", new Vector2(220, 80), new Vector2(1.3f, 0.4f));
 
-            menu.menuTexts.Add(new MenuText("Skills", new Vector2(0, 280), 1.2f));
-            menu.menuTexts.Add(new MenuText("Dash", new Vector2(-350, 160), 0.8f));
-            menu.menuTexts.Add(new MenuText("Plasma", new Vector2(-350, 95), 0.8f));
-            menu.menuTexts.Add(new MenuText("Power Shot", new Vector2(-350, 30), 0.8f));
-            menu.menuTexts.Add(new MenuText("Life", new Vector2(-350, -30), 0.8f));
-            menu.menuTexts.Add(new MenuText("Press ::B to go back", new Vector2(250, -230), 1.0f));
+            //menu.menuTexts.Add(new MenuText("Dash", new Vector2(-350, 160), 0.8f));
+            //menu.menuTexts.Add(new MenuText("Plasma", new Vector2(-350, 95), 0.8f));
+            //menu.menuTexts.Add(new MenuText("Power Shot", new Vector2(-350, 30), 0.8f));
+            //menu.menuTexts.Add(new MenuText("Life", new Vector2(-350, -30), 0.8f));
+            //menu.menuTexts.Add(new MenuText("::B back", new Vector2(250, -230), 1.0f));
 
             mb1.upNode = mb4;
             mb1.downNode = mb2;
@@ -80,11 +80,13 @@ namespace MyGame
             // xp counter
             XPCounter xpCounter = new XPCounter(GamerManager.getSessionOwner(), "starXP", new Vector2(-470, -250), new Vector2(1.0f, 1.0f));
             menu.menuElements.Add(xpCounter);
+
+            bg = TextureManager.Instance.getTexture("GUI/menu", "pausescreen-35");
         }
 
         public override void initialize()
         {
-            transitionColor = new Color(10, 10, 10, 255);
+            transitionColor = new Color(10, 10, 10, 0);
             transitionColor *= 0.85f;
             initializeMenu();
             renderAlways = false;
@@ -102,7 +104,7 @@ namespace MyGame
             base.update();
             menu.update();
 
-            if (GamerManager.getMainControls().B_firstPressed() || GamerManager.getMainControls().Start_firstPressed())
+            if (GamerManager.getMainControls().B_firstPressed() || GamerManager.getMainControls().Start_firstPressed() || GamerManager.getMainControls().Back_firstPressed())
             {
                 StateManager.dequeueStates(1);
             }
@@ -110,7 +112,26 @@ namespace MyGame
 
         public override void render()
         {
+            GraphicsManager.Instance.spriteBatchBegin();
+            Color color = Color.White;
+            if (!(StateManager.gameStates[StateManager.gameStates.Count - 2] is StatePausedGame))
+            {
+                color.A = (byte)(255 * Math.Min(1, (timeRunning / 0.5f)));
+            }
+            QuadRenderer.render2D(bg, new Vector2(0, 0), new Vector2(1279, 738), color);
+            GraphicsManager.Instance.spriteBatchEnd();
+
             menu.render();
+
+            GraphicsManager.Instance.spriteBatchBegin();
+            "Skills".renderNI(Screen.getXYfromCenter(10, 290), 1.5f, StringManager.tStyle.Border);
+            "Dash".renderNI(Screen.getXYfromCenter(-350, 160), 0.8f, StringManager.tStyle.Shadowed);
+            "Plasma".renderNI(Screen.getXYfromCenter(-350, 95), 0.8f, StringManager.tStyle.Shadowed);
+            "Power Shot".renderNI(Screen.getXYfromCenter(-350, 30), 0.8f, StringManager.tStyle.Shadowed);
+            "Life".renderNI(Screen.getXYfromCenter(-350, -32), 0.8f, StringManager.tStyle.Shadowed);
+            "::B back".renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
+            GraphicsManager.Instance.spriteBatchEnd();
+
         }
 
         public override void dispose()

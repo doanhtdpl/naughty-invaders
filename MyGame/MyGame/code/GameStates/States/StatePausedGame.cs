@@ -11,6 +11,7 @@ namespace MyGame
     class StatePausedGame : GameState
     {
         Menu menu;
+        Texture2D bg;
 
         void initializeMenu()
         {
@@ -25,11 +26,11 @@ namespace MyGame
             mb3.setFunction("exitGame", MenuElement.tInputType.A);
             mb3.scale = new Vector2(mb3.scale.X, mb3.scale.Y*0.8f);
 
-            menu.menuTexts.Add(new MenuText("Paused game", new Vector2(0, 230), 1.2f));
-            menu.menuTexts.Add(new MenuText("Continue game", new Vector2(20, 70), 1.0f));
-            menu.menuTexts.Add(new MenuText("Skills", new Vector2(15, -25), 1.0f));
-            menu.menuTexts.Add(new MenuText("Exit game", new Vector2(5, -130), 1.0f));
-            menu.menuTexts.Add(new MenuText("Press ::B to go back", new Vector2(250, -230), 1.0f));
+            //menu.menuTexts.Add(new MenuText("Paused game", new Vector2(0, 230), 1.2f));
+            //menu.menuTexts.Add(new MenuText("Continue game", new Vector2(20, 70), 1.0f));
+            //menu.menuTexts.Add(new MenuText("Skills", new Vector2(15, -25), 1.0f));
+            //menu.menuTexts.Add(new MenuText("Exit game", new Vector2(5, -130), 1.0f));
+            //menu.menuTexts.Add(new MenuText("Press ::B to go back", new Vector2(250, -230), 1.0f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;
@@ -42,11 +43,13 @@ namespace MyGame
             menu.menuElements.Add(mb2);
             menu.menuElements.Add(mb3);
             menu.setCurrentNode(mb1);
+
+            bg = TextureManager.Instance.getTexture("GUI/menu", "pausescreen-35");
         }
 
         public override void initialize()
         {
-            transitionColor = new Color(104, 0, 4, 255);
+            transitionColor = new Color(104, 0, 4, 0);
             transitionColor *= 0.85f;
             initializeMenu();
             renderAlways = false;
@@ -74,7 +77,21 @@ namespace MyGame
 
         public override void render()
         {
+            GraphicsManager.Instance.spriteBatchBegin();
+            Color color = Color.White;
+            color.A = (byte)(255 * Math.Min(1, (timeRunning / 0.5f)));
+            QuadRenderer.render2D(bg, new Vector2(0, 0), new Vector2(1279, 738), color);
+            GraphicsManager.Instance.spriteBatchEnd();
+
             menu.render();
+
+            GraphicsManager.Instance.spriteBatchBegin();
+            "Game paused".renderNI(Screen.getXYfromCenter(0, 230), 1.2f, StringManager.tStyle.Border);
+            "Continue game".renderNI(Screen.getXYfromCenter(20, 70), 1.0f, StringManager.tStyle.Shadowed);
+            "Skills".renderNI(Screen.getXYfromCenter(15, -25), 1.0f, StringManager.tStyle.Shadowed);
+            "Back to map".renderNI(Screen.getXYfromCenter(5, -130), 1.0f, StringManager.tStyle.Shadowed);
+            "::B back to game".renderNI(Screen.getXYfromCenter(250, -230), 1.0f, StringManager.tStyle.Shadowed);
+            GraphicsManager.Instance.spriteBatchEnd();
         }
 
         public override void dispose()

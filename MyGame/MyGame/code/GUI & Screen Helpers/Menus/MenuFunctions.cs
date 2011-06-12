@@ -34,9 +34,7 @@ namespace MyGame
         }
         public static void exitGame()
         {
-            StateManager.clearStates();
-            StateManager.addState(StateManager.tGameState.WorldMap);
-            //SoundManager.playSound("pause");
+            TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
         }
         public static void exitToArcade()
         {

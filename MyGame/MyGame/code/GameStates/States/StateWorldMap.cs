@@ -159,7 +159,7 @@ namespace MyGame
                         lastLocation = currentLocation;
                         currentLocation = next;
                     }
-                    if (cp.A_firstPressed() && canMove)
+                    if ((cp.A_firstPressed() || cp.Start_firstPressed()) && canMove)
                     {
                         currentLocation.value.enter();
                     }
