@@ -39,12 +39,12 @@ namespace MyGame
             levelsPassed["final_Level01"] = true;
             levelsPassed["onionVillage"] = true;
             levelsPassed["macedonia"] = true;
-            levelsPassed["level2"] = true;
+            levelsPassed["verducity"] = true;
 #else
             levelsPassed["final_Level01"] = false;
             levelsPassed["onionVillage"] = false;
             levelsPassed["macedonia"] = false;
-            levelsPassed["level2"] = false;
+            levelsPassed["verducity"] = false;
 #endif
 
         }

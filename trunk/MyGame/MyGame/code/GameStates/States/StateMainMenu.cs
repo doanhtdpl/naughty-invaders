@@ -28,9 +28,9 @@ namespace MyGame
             MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -230), scale);
             mb3.setFunction("exitToArcade", MenuElement.tInputType.A);
             
-            menu.menuTexts.Add(new MenuText("start game", new Vector2(0, -70), 1.4f));
-            menu.menuTexts.Add(new MenuText("credits", new Vector2(0, -140), 1.4f));
-            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -210), 1.4f));
+            menu.menuTexts.Add(new MenuText("start game", new Vector2(0, -50), 1.4f));
+            menu.menuTexts.Add(new MenuText("credits", new Vector2(0, -120), 1.4f));
+            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -190), 1.4f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;
@@ -59,6 +59,7 @@ namespace MyGame
         {
             EditorHelper.Instance.loadNewLevelFromGame("menu");
             CameraManager.Instance.cameraMode = CameraManager.tCameraMode.WorldMap;
+            CameraManager.Instance.setWorldMapParams(12, 17, 0.6f, 0.6f);
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
 
             CameraManager.Instance.worldMapPosition = new Vector3(0, 150, -250);
