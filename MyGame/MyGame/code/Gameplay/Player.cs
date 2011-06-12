@@ -204,7 +204,7 @@ namespace MyGame
         void updatePositionNormally(Vector2 direction)
         {
             Vector2 nextPosition = position2D + direction * SB.dt * SPEED;
-            GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true, mode == tMode.Arcade);
+            GameplayHelper.Instance.updateEntityPosition(this, nextPosition, LevelManager.Instance.getLevelCollisions(), true);
         }
         void updateArcadeMode(Vector2 direction, ControlPad controls)
         {
