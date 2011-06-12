@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="wishFastShot" frameWidth="95" frameHeight="90" columns="1" rows="1">
+    <action name="start" initialFrame="1" endFrame="1" loops="false"/>
+    <action name="idle" initialFrame="1" endFrame="1" loops="true"/>
+    <action name="die" initialFrame="1" endFrame="1" loops="false"/>
+  </animatedTexture>
+</animatedEntity>
