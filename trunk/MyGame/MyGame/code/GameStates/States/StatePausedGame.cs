@@ -86,11 +86,11 @@ namespace MyGame
             menu.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "Game paused".renderNI(Screen.getXYfromCenter(0, 230), 1.2f, StringManager.tStyle.Border);
-            "Continue game".renderNI(Screen.getXYfromCenter(20, 70), 1.0f, StringManager.tStyle.Shadowed);
-            "Skills".renderNI(Screen.getXYfromCenter(15, -25), 1.0f, StringManager.tStyle.Shadowed);
-            "Back to map".renderNI(Screen.getXYfromCenter(5, -130), 1.0f, StringManager.tStyle.Shadowed);
-            "::B back to game".renderNI(Screen.getXYfromCenter(250, -230), 1.0f, StringManager.tStyle.Shadowed);
+            TextKey.gamePaused.Translate().renderNI(Screen.getXYfromCenter(0, 230), 1.2f, StringManager.tStyle.Border);
+            TextKey.continueGame.Translate().renderNI(Screen.getXYfromCenter(20, 70), 1.0f, StringManager.tStyle.Shadowed);
+            TextKey.skills.Translate().renderNI(Screen.getXYfromCenter(15, -25), 1.0f, StringManager.tStyle.Shadowed);
+            TextKey.backToMap.Translate().renderNI(Screen.getXYfromCenter(5, -130), 1.0f, StringManager.tStyle.Shadowed);
+            TextKey.pressBBackToGame.Translate().renderNI(Screen.getXYfromCenter(250, -230), 1.0f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
