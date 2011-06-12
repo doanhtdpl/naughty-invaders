@@ -44,7 +44,7 @@ namespace MyGame
         {
             return getTexture(textureFolder + "/" + name);
         }
-
+            
         public Texture2D getColoredTexture(Color color)
         {
             Texture2D tex = new Texture2D(GraphicsManager.Instance.graphicsDevice, 1, 1);
