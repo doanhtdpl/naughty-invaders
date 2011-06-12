@@ -175,7 +175,7 @@ namespace MyGame
 
         public bool isIdle()
         {
-            return nextNode == null;
+            return nextNode == null && (currentPosition - lastPosition).Length() < 0.01f;
         }
 
         void updateFollowPlayerMode()

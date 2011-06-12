@@ -17,6 +17,7 @@ namespace MyGame
         #endif
 
         string level;
+        bool cinematicPlayed = false;
 
         public StateGame(string level)
         {
@@ -46,6 +47,19 @@ namespace MyGame
             {
                 EditorHelper.Instance.loadNewLevelFromGame(level);
             }
+        }
+
+        void loadEndCinematic()
+        {
+            Player player = GamerManager.getMainPlayer();
+            Cinematic cinematic = new Cinematic();
+
+            ActorEvent ae1 = new ActorEvent(player, false);
+            ae1.moveTo(player.position + new Vector3(0, 1000, 0), 500);
+
+            cinematic.events.Add(ae1);
+
+            CinematicManager.Instance.addCinematic("fruitownA_exit", cinematic);
         }
 
         void loadAndPlayIntroCinematic()
@@ -187,6 +201,23 @@ namespace MyGame
                 StateManager.addState(StateManager.tGameState.SkillsMenu);
             }
 #endif
+            //End level
+            if (level == "fruitownA")
+            {
+                if (CameraManager.Instance.isIdle() && EnemyManager.Instance.getEnemies().Count <= 0 && EnemyManager.Instance.getActiveEnemies().Count <= 0)
+                {
+                    if(!cinematicPlayed)
+                    {
+                        loadEndCinematic();
+                        GamerManager.getGamerEntity(0).data.levelsPassed["fruitownA"] = true;
+                        CinematicManager.Instance.playCinematic("fruitownA_exit");
+                        cinematicPlayed = true;
+                    }
+
+                    if(CinematicManager.Instance.cinematicToPlay == null)
+                        StateManager.addState(StateManager.tGameState.EndStage);
+                }
+            }
         }
         
         public override void dispose()

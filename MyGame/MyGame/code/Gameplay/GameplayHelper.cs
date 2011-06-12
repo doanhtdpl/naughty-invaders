@@ -29,6 +29,9 @@ namespace MyGame
         public bool fromToAtSpeed(ref Vector3 position, Vector3 to, float speed)
         {
             Vector3 direction = Vector3.Normalize(to - position);
+            if (direction.AnyNanCoord())
+                return true;
+
             position += direction * speed * SB.dt;
             // see if the new position passed over the destiny
             if ((direction + Vector3.Normalize(to - position)).LengthSquared() < 0.5f )
