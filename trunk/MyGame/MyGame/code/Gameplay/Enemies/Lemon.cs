@@ -10,9 +10,14 @@ namespace MyGame
     {
         const int CHANGE_POSES = 5;
         const int HITS_PER_POSE = 4;
-        const float SCALE_MULTIPLIER = 1.1f;
+        const float SCALE_INCREMENT = 0.1f;
         int poseChanges = 0;
         int currentHits = 0;
+
+        bool scaling = false;
+        const float SCALE_TIME = 0.1f;
+        float scaleTimer = 0.1f;
+        Vector2 backupScale;
 
         public Lemon(Vector3 position, float orientation)
             : base("lemon", position, orientation, 1)
@@ -29,13 +34,15 @@ namespace MyGame
         public override bool gotHitAtPart(CollidableEntity2D ce, int partIndex)
         {
             ++currentHits;
+            scaling = true;
+            scaleTimer = SCALE_TIME;
+            backupScale = scale2D;
+            parts[0].setRadius(parts[0].radius * (1 + SCALE_INCREMENT));
+            playAction("pose" + Calc.randomNatural(1, 4).ToString());
             if (currentHits >= HITS_PER_POSE)
             {
                 currentHits = 0;
                 ++poseChanges;
-                scale *= SCALE_MULTIPLIER;
-                parts[0].setRadius(parts[0].radius * SCALE_MULTIPLIER);
-                playAction("pose" + Calc.randomNatural(1,4).ToString());
                 OrbManager.Instance.addOrbs(position2D, 2, 0, 0, 0);
                 if (poseChanges >= CHANGE_POSES)
                 {
@@ -53,6 +60,22 @@ namespace MyGame
         public override void update()
         {
             base.update();
+
+            scaleTimer -= SB.dt;
+            if (scaling)
+            {
+                if (scaleTimer < 0)
+                {
+                    scale2D = backupScale * (1 + SCALE_INCREMENT);
+                    scaling = false;
+                }
+                else
+                {
+                    float factor = (SCALE_TIME - scaleTimer) / SCALE_TIME;
+                    factor = (float)Math.Sin(factor * (Calc.PI)) * SCALE_INCREMENT;
+                    scale2D = backupScale * (1 + factor);
+                }
+            }
         }
 
         public override void render()
