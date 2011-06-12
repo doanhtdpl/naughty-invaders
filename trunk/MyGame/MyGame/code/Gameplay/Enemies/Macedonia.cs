@@ -13,11 +13,11 @@ namespace MyGame
 
         tMacedoniaBossState state;
 
-        float LIFE = 1;
+        float LIFE = 1500;
 
         //rayo
-        float RAYO_PREPARE_DURATION = 1.5f;
-        float RAYO_DURATION = 2.0f;
+        float RAYO_PREPARE_DURATION = 1.2f;
+        float RAYO_DURATION = 1.8f;
         int RAYO_LIMIT_X = 650;
 
         int TELEPORT_LIMIT_X = 600;
@@ -72,7 +72,7 @@ namespace MyGame
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
 
-            lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 140.0f), Color.White);
+            lifebar = new Lifebar("macedonia", this, new Vector2(0.8f, 0.8f), new Vector2(0.0f, 190.0f), Color.White);
 
             for(int i=0; i<MAX_RAYOS; i++)
             {
@@ -115,7 +115,7 @@ namespace MyGame
             ae1.setActionToPlay("idle");
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
             SpecialEvent se1 = new SpecialEvent(this);
-            se1.setPlayEffect("macedoniaAppear", position + new Vector3(50, -100, 5), Vector3.Zero, Color.White, 2);
+            se1.setPlayEffect("macedoniaAppear", position + new Vector3(80, -100, 5), Vector3.Zero, Color.White, 2);
             ActorEvent ae2 = new ActorEvent(this);
             ae2.setRender(false);
 
