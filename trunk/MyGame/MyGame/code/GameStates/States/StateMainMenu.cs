@@ -28,9 +28,9 @@ namespace MyGame
             MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -250), scale);
             mb3.setFunction("exitToArcade", MenuElement.tInputType.A);
             
-            menu.menuTexts.Add(new MenuText("start game", new Vector2(0, -100), 1.0f));
-            menu.menuTexts.Add(new MenuText("credits", new Vector2(0, -170), 1.0f));
-            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(0, -240), 1.0f));
+            menu.menuTexts.Add(new MenuText("start game", new Vector2(-20, -100), 1.0f));
+            menu.menuTexts.Add(new MenuText("credits", new Vector2(-20, -170), 1.0f));
+            menu.menuTexts.Add(new MenuText("exit to arcade", new Vector2(-20, - 240), 1.0f));
 
             mb1.upNode = mb3;
             mb1.downNode = mb2;

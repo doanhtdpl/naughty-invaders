@@ -11,7 +11,7 @@ namespace MyGame
 {
     public class StateManager
     {
-        static List<GameState> gameStates = new List<GameState>();
+        public static List<GameState> gameStates = new List<GameState>();
 
         public const float TRANSITION_TIME = 0.3f;
 
@@ -27,7 +27,6 @@ namespace MyGame
 #else
             gameStates.Add(new StateIntro());
 #endif
-
         }
 
         public void update()
