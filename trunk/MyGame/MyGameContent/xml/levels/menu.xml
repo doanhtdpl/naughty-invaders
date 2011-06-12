@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="1169" BGColor="0 0 0 255" CameraMode="None">
+<level nextEntityID="1177" BGColor="0 0 0 255" CameraMode="None">
   <staticProps>
     <staticProp entityName="Main4-41" worldMatrix="413.8568 0 0 0 0 409.2546 0 0 0 0 1 0 -726.5575 -247.5165 90.98721 1" id="171" color="212 212 212 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="Main4-41" worldMatrix="597.3256 0 0 0 0 566.151 0 0 0 0 1 0 -533.1293 294.2473 219.0196 1" id="172" color="180 180 180 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -74,7 +74,6 @@
     <staticProp entityName="bg01_struct-32" worldMatrix="72.63396 0 0 0 0 55.46887 0 0 0 0 1 0 -289.7982 -212.9955 0.01263469 1" id="985" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="frutins-73" worldMatrix="546.7527 0 0 0 0 525.2447 0 0 0 0 1 0 -383.0201 717.297 0.006855521 1" id="1007" color="178 178 178 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="frutins-73" worldMatrix="-196.0293 -20.75978 -73.78138 0 25.92366 -197.4148 -13.33006 0 -0.340189 -0.1077498 0.9341636 0 472.4828 278.0043 330.0061 1" id="1011" color="181 181 181 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="logo-50" worldMatrix="1036.032 0 0 0 0 889.9969 0 0 0 0 1 0 -32.71915 276.5002 331.0156 1" id="1049" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 201.963 365.2408 -0.002235025 1" id="1155" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 253.071 303.4853 0.001025331 1" id="1157" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 261.589 539.8599 0.01254291 1" id="1159" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -82,6 +81,7 @@
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -247.3618 -390.7321 -0.006690737 1" id="1163" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="Main4-44" worldMatrix="44 0 0 0 0 37 0 0 0 0 1 0 -211.1602 -245.926 0.003016407 1" id="1165" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="frutins-73" worldMatrix="-32.22124 -206.4445 50.4593 0 193.5091 -28.54416 6.784039 0 0.0009458038 0.2372918 0.971438 0 -572.5997 -15.94832 341.0061 1" id="1168" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="logo-50 2" worldMatrix="1064 0 0 0 0 931 0 0 0 0 1 0 -33.62381 259.2161 361.0054 1" id="1174" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
   </staticProps>
   <animatedProps />
   <groups>
