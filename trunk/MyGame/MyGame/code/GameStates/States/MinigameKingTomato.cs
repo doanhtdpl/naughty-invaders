@@ -88,7 +88,7 @@ namespace MyGame
             DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder, TextKey.DialogOnionIntro6.Translate());
             cinematic.events.Add(de6);
             ActorEvent ae3 = new ActorEvent(onionElder, false);
-            ae3.moveTo(new Vector3(-1070.0f, -490.0f, 0.0f), 300.0f);
+            ae3.moveTo(new Vector3(-1070.0f, -230.0f, 0.0f), 300.0f);
             cinematic.events.Add((CinematicEvent)ae3);
 
             CinematicManager.Instance.addCinematic("kingTomatoIntro", cinematic);
@@ -256,7 +256,7 @@ namespace MyGame
                             ++currentWave;
                             spawnTomatoTimer -= SB.dt;
                             spawnTomatoTime = 0.02f;
-                            tomatoesToSpawn = Calc.randomNatural(25, 35) + 10 * currentWave;
+                            tomatoesToSpawn = Calc.randomNatural(25, 35) + 5 * currentWave;
                             restTime = tomatoesToSpawn * 0.25f;
                             kingTomatoStartedWave = false;
                         }

@@ -61,6 +61,9 @@ namespace MyGame
             skills["life1"] = new PlayerSkill("Life", 200);
 
             XP = 0;
+#if DEBUG
+            XP = 1000;
+#endif
             foreach (PlayerSkill ps in skills.Values)
             {
                 //ps.obtained = true;

@@ -54,7 +54,7 @@ namespace MyGame
                 }
             }
             int life = 0;
-            if (Calc.randomScalar() < 0.05f)
+            if (Calc.randomScalar() < 0.02f * enemyLevel)
             {
                 life = 1;
             }
