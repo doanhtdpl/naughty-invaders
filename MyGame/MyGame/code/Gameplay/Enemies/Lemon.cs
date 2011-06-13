@@ -9,7 +9,7 @@ namespace MyGame
     public class Lemon : Enemy
     {
         const int CHANGE_POSES = 5;
-        const int HITS_PER_POSE = 4;
+        const int HITS_PER_POSE = 3;
         const float SCALE_INCREMENT = 0.07f;
         int poseChanges = 0;
         int currentHits = 0;

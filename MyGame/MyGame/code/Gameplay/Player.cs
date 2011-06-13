@@ -128,7 +128,9 @@ namespace MyGame
             {
                 isMiniDie = true;
                 invulnerableTime += actions["miniDie"].getDuration();
+#if !EDITOR
                 --lifes;
+#endif
                 playAction("miniDie");
                 if (lifes > 0)
                 {
