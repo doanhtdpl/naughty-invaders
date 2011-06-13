@@ -27,6 +27,7 @@ namespace MyGame
 #if !EDITOR
             graphics = new GraphicsDeviceManager(this);
 #endif
+            //SB.content = new NIContentManager(Services, "Content");
             SB.content = new ContentManager(Services, "Content");
             SB.random = new Random();
         }

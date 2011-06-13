@@ -39,6 +39,14 @@ namespace MyGame
         }
         public List<Orb> orbs { get; set; }
 
+        public void loadContent()
+        {
+            Orb.textures[(int)Orb.tOrb.XP] = TextureManager.Instance.getTexture("particles/OrbXP");
+            Orb.textures[(int)Orb.tOrb.Life] = TextureManager.Instance.getTexture("particles/OrbLife");
+            Orb.sizes[(int)Orb.tOrb.XP] = 65.0f;
+            Orb.sizes[(int)Orb.tOrb.Life] = 120.0f;
+        }
+
         public void addRandomOrbs(float enemyLevel, Vector2 position)
         {
             int XP = 0;

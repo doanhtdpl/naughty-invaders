@@ -48,12 +48,12 @@ namespace MyGame
         bool bigShotCharging;
         float bigShotCooldownTime;
 
-        static Texture2D wishLife = null;
-        static Texture2D wishLifePortion = null;
-        static Texture2D starXP = null;
-        static Texture bigShotBall = null;
-        static Texture garlicGunTexture = null;
-        static Texture garlicGunBandTexture = null;
+        Texture2D wishLife = null;
+        Texture2D wishLifePortion = null;
+        Texture2D starXP = null;
+        Texture bigShotBall = null;
+        Texture garlicGunTexture = null;
+        Texture garlicGunBandTexture = null;
 
         public Player( GamerEntity owner, string entityName, Vector3 position, float orientation)
             : base("characters", entityName, position, orientation, Color.White, 0)

@@ -93,6 +93,20 @@ namespace MyGame
 
         public override void initialize()
         {
+            //Unload super hack
+            //AnimatedEntity2D.unload();
+            //StringManager.unloadContent();
+            //SB.content.Unload();
+
+            //SB.loadContent();
+            //GraphicsManager.Instance.loadContent();
+            //StringManager.loadContent();
+            //GUIManager.Instance.loadContent();
+            //GamerManager.createPlayer(GamerManager.getGamerEntity(0));
+            //DialogEvent.initialize();
+            //OrbManager.Instance.loadContent();
+            //Unload super hack END
+
             gameState = true;
             longLoad = true;
             DebugManager.Instance.initialize();

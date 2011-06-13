@@ -259,6 +259,7 @@
     <Compile Include="code\Editor\MyEditorControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NIContentManager.cs" />
     <Compile Include="TextKey.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
