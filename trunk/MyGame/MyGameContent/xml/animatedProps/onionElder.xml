@@ -2,7 +2,6 @@
 <animatedEntity>
   <animatedTexture name="Anim_ElderOnion" frameWidth="280" frameHeight="400" columns="7" rows="3">
     <action name="idle" initialFrame="1" endFrame="19" FPS="15" loops="true"/>
-    <action name="die" initialFrame="1" endFrame="19" FPS="15"/>
-    <action name="attack" initialFrame="1" endFrame="19" FPS="15"/>
+    <action name="speaking" initialFrame="1" endFrame="1" FPS="15"/>
   </animatedTexture>
 </animatedEntity>
