@@ -18,6 +18,7 @@ namespace MyGame
 
         string level;
         bool cinematicPlayed = false;
+        bool bossSongPlayed = false;
 
         public StateGame(string level)
         {
@@ -39,6 +40,25 @@ namespace MyGame
             if (level == "fruitownA")
             {
                 loadAndPlayIntroCinematic();
+
+                SoundManager.Instance.playSong("Naughty_Rock1", true);
+            }
+            else if (level == "fruitownB")
+            {
+                SoundManager.Instance.playSong("Naughty_Rock1", true);
+                //SoundManager.Instance.playSong("Naughty_boss");
+            }
+            else if (level == "onion village")
+            {
+                SoundManager.Instance.playSong("Naughty_jingle", true);
+            }
+            else if (level == "macedonia")
+            {
+                SoundManager.Instance.playSong("Naughty_jingle", true);
+            }
+            else if (level == "verducity")
+            {
+                SoundManager.Instance.playSong("Naughty_Rock1", true);
             }
         }
         public override void loadContent()
@@ -187,6 +207,7 @@ namespace MyGame
                 GUIManager.Instance.update();
                 CinematicManager.Instance.update();
                 TriggerManager.Instance.update();
+                SoundManager.Instance.update();
 #if EDITOR
             }
 #endif
@@ -218,6 +239,14 @@ namespace MyGame
 
                     if(CinematicManager.Instance.cinematicToPlay == null)
                         StateManager.addState(StateManager.tGameState.EndStage);
+                }
+            }
+            if (level == "fruitownB")
+            {
+                if (CameraManager.Instance.getCurrentNode().value.speed > 100 && !bossSongPlayed)
+                {
+                    SoundManager.Instance.playWithTransition("Naughty_boss");
+                    bossSongPlayed = true;
                 }
             }
         }

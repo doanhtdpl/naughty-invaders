@@ -11,6 +11,17 @@ namespace MyGame
 {
     class SoundManager
     {
+        const float STOP_FADE_DURATION = 1.0f;
+
+        bool stopFade = false;
+        float stopFadeTime;
+        float stopFadeDuration;
+
+        Song songPlaying = null;
+
+        string songToPlay = null;
+        bool loopToPlay;
+
         static SoundManager instance = null;
         SoundManager()
         {
@@ -41,14 +52,30 @@ namespace MyGame
             }
 #endif
         }
-        public void playSong(string name)
+        public void playSong(string name, bool loop = false)
         {
 #if !EDITOR
-            if (songs.ContainsKey(name))
+            if (songs.ContainsKey(name) && songPlaying != songs[name])
             {
-                MediaPlayer.Play(songs[name]);
+                MediaPlayer.IsRepeating = loop;
+                if (songPlaying != null)
+                {
+                    songToPlay = name;
+                }
+                else
+                {
+                    MediaPlayer.Play(songs[name]);
+                    songPlaying = songs[name];
+                }
             }
 #endif
+        }
+
+        public void playWithTransition(string songToPlay, bool loopToPlay = false)
+        {
+            stopWithFade();
+            this.songToPlay = songToPlay;
+            this.loopToPlay = loopToPlay;
         }
 
         public void loadXML()
@@ -72,6 +99,40 @@ namespace MyGame
                     string name = af.Attribute("name").Value;
                     effects.Add(name, SB.content.Load<SoundEffect>("sounds\\effects\\" + name));
                 }
+            }
+        }
+
+        public void stopWithFade(float duration = STOP_FADE_DURATION)
+        {
+            stopFade = true;
+            stopFadeTime = duration;
+            stopFadeDuration = duration;
+        }
+
+        public void update()
+        {
+            if (stopFade)
+            {
+                stopFadeTime -= SB.dt;
+
+                MediaPlayer.Volume = Math.Min(Math.Max(stopFadeTime / stopFadeDuration, 0), 1);
+
+                if (stopFadeTime <= 0)
+                {
+                    MediaPlayer.Stop();
+                    stopFade = false;
+                    MediaPlayer.Volume = 1;
+                    songPlaying = null;
+                }
+            }
+            else if (songToPlay != null)
+            {
+                playSong(songToPlay, loopToPlay);
+                songToPlay = null;
+            }
+
+            if (songPlaying != null)
+            {
             }
         }
 

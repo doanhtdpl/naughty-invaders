@@ -114,7 +114,7 @@ namespace MyGame
 
             TransitionManager.Instance.fadeOut();
 
-            //SoundManager.Instance.playSong("song");
+            SoundManager.Instance.playSong("song", true);
         }
 
         public override void loadContent()
@@ -174,6 +174,7 @@ namespace MyGame
                     }
                     if ((cp.A_firstPressed() || cp.Start_firstPressed()) && canMove)
                     {
+                        SoundManager.Instance.stopWithFade();
                         currentLocation.value.enter();
                     }
                 }
@@ -188,6 +189,7 @@ namespace MyGame
 
             if (cp.B_firstPressed() && canMove)
             {
+                SoundManager.Instance.stopWithFade();
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 99, null, 0.5f, Color.Black);
             }
             if (cp.Back_firstPressed() && canMove)
@@ -203,6 +205,7 @@ namespace MyGame
             CameraManager.Instance.update();
             GUIManager.Instance.update();
             player.update();
+            SoundManager.Instance.update();
 
             SB.cam.update();
         }
