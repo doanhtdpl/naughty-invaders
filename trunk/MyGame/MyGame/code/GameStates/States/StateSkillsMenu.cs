@@ -112,7 +112,7 @@ namespace MyGame
             {
                 color.A = (byte)(255 * Math.Min(1, (timeRunning / 0.5f)));
             }
-            QuadRenderer.render2D(bg, new Vector2(0, 0), new Vector2(1279, 738), color);
+            QuadRenderer.render2D(bg, new Vector2(0, 0), new Vector2(1285, 740), color);
             GraphicsManager.Instance.spriteBatchEnd();
 
             menu.render();
