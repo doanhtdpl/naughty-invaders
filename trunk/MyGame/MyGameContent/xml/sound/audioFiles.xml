@@ -5,6 +5,11 @@
 
 <audioFiles>
   <audioFile type="song" name="song" />
+  <audioFile type="song" name="Naughty_boss" />
+  <audioFile type="song" name="Naughty_jingle" />
+  <audioFile type="song" name="Naughty_song_test3" />
+  <audioFile type="song" name="Naughty_Rock1" />
+
   <audioFile type="effect" name="wishFastShot" />
   <audioFile type="effect" name="buySkill" />
   <audioFile type="effect" name="dash" />
@@ -28,7 +33,7 @@
   <audioFile type="effect" name="orangeGotHit" />
   <audioFile type="effect" name="pearGotHit" />
   <audioFile type="effect" name="garlicGunShot" />
-   <audioFile type="effect" name="garlickGunShot" />
+  <audioFile type="effect" name="garlickGunShot" />
   <audioFile type="effect" name="pickMacedoniaFruit" />
   <audioFile type="effect" name="watermelonDies" />
   <audioFile type="effect" name="watermelonGotHit" />

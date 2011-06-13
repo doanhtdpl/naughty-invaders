@@ -55,6 +55,8 @@ namespace MyGame
             transitionColor *= 0.85f;
             initializeMenu();
             renderAlways = false;
+
+            SoundManager.Instance.playSong("Naughty_jingle", true);
         }
 
         public override void loadContent()
@@ -76,6 +78,8 @@ namespace MyGame
             LevelManager.Instance.update();
             ParticleManager.Instance.update();
             CameraManager.Instance.update();
+
+            SoundManager.Instance.update();
 
             SB.cam.update();
 

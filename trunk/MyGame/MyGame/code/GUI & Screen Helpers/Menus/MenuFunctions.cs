@@ -14,6 +14,7 @@ namespace MyGame
     {
         public static void startGame()
         {
+            SoundManager.Instance.stopWithFade(0.5f);
             TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.GameIntro, 1, null, 0.5f, Color.Black);
         }
         public static void goToOptions()
@@ -34,6 +35,7 @@ namespace MyGame
         }
         public static void exitGame()
         {
+            SoundManager.Instance.stopWithFade(0.5f);
             TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
         }
         public static void exitToArcade()

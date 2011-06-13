@@ -68,7 +68,8 @@ namespace MyGame
         public Vector2 getFrameSize()
         {
             return new Vector2(animatedTextures[0].frameWidth, animatedTextures[0].frameHeight);
-        }C:\Documents and Settings\Administrator\Desktop\NAUGHTY\MyGame\MyGameContent\sounds\effects\dash.wav
+        }
+
         public string getCurrentAction()
         {
             return actionState;

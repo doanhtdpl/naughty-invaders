@@ -22,6 +22,8 @@ namespace MyGame
             fade = false;
 
             transitionColor = new Color(0, 0, 0, 1);
+
+            SoundManager.Instance.stopWithFade();
         }
 
         public override void loadContent()

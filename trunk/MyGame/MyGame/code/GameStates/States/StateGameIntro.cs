@@ -41,9 +41,9 @@ namespace MyGame
             if (timer > introTime && !TransitionManager.Instance.isFading())
             {
                 CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
-                CameraManager.Instance.getCurrentNode().value.speed = 1500;
+                CameraManager.Instance.getCurrentNode().value.speed = 1400;
                 CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
-                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.5f, Color.Black);
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
             }
 
             LevelManager.Instance.update();
