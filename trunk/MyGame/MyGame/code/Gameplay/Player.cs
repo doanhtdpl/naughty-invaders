@@ -52,6 +52,7 @@ namespace MyGame
 
         Texture2D wishLife = null;
         Texture2D wishLifePortion = null;
+        Texture2D wishLifePortionEmpty = null;
         Texture2D starXP = null;
         Texture bigShotBall = null;
         Texture garlicGunTexture = null;
@@ -85,6 +86,7 @@ namespace MyGame
             if (garlicGunBandTexture == null) garlicGunBandTexture = TextureManager.Instance.getTexture("characters/garlicGunBand");
             if (wishLife == null) wishLife = TextureManager.Instance.getTexture("GUI/ingame/wishLife");
             if (wishLifePortion == null) wishLifePortion = TextureManager.Instance.getTexture("GUI/ingame/wishLifePortion");
+            if (wishLifePortionEmpty == null) wishLifePortionEmpty = TextureManager.Instance.getTexture("GUI/ingame/wishLifePortionEmpty");
         }
 
         public int getMaxLifePortions()
@@ -511,7 +513,10 @@ namespace MyGame
                                 {
                                     GraphicsManager.Instance.spriteBatch.Draw(wishLifePortion, LIFE_PORTIONS_POS[j] + new Vector2(offset, 0), null, Color.White, 0, Vector2.Zero, 0.8f, SpriteEffects.None, 0);
                                 }
-                                else break;
+                                else
+                                {
+                                    GraphicsManager.Instance.spriteBatch.Draw(wishLifePortionEmpty, LIFE_PORTIONS_POS[j] + new Vector2(offset, 0), null, Color.White, 0, Vector2.Zero, 0.8f, SpriteEffects.None, 0);
+                                }
                             }
                         }
                     }
