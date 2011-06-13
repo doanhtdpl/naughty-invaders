@@ -99,6 +99,7 @@ namespace MyGame
                     }
                     if (orbsToSpawn <= 0)
                     {
+                        ParticleManager.Instance.addParticles("kingTomatoExplode", position, Vector3.Zero, Color.White);
                         state = tState.Delete;
                     }
                     break;
