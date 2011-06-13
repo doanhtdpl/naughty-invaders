@@ -27,6 +27,11 @@
   <audioFile type="effect" name="lemonDies" />
   <audioFile type="effect" name="orangeGotHit" />
   <audioFile type="effect" name="pearGotHit" />
+  <audioFile type="effect" name="garlicGunShot" />
+   <audioFile type="effect" name="garlickGunShot" />
+  <audioFile type="effect" name="pickMacedoniaFruit" />
+  <audioFile type="effect" name="watermelonDies" />
+  <audioFile type="effect" name="watermelonGotHit" />
 </audioFiles>
 
 
