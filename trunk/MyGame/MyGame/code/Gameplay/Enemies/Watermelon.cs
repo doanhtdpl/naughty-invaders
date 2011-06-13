@@ -125,6 +125,7 @@ namespace MyGame
                         }
                         Projectile p = new WatermelonProjectile(position, attackOrientation + (float)Math.PI/2, Calc.angleToDirection(attackOrientation), Calc.randomScalar(400.0f, 450.0f));
                         ProjectileManager.Instance.addProjectile(p);
+                        SoundManager.Instance.playEffect("garlicGunShot");
                         ++projectilesThrown;
                     }
 
