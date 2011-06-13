@@ -17,15 +17,16 @@ namespace MyGame
     {
         public float timer = 0;
 
-        enum tAshState { Cry, Walk, Candy1, Candy2 };
-        tAshState state;
         VideoPlayer player;
         Video video;
         Texture2D videoTexture;
 
-        public const int introTime = 3;
+        public const int introTime = 20;
 
-        AnimatedEntity2D ash;
+        public StateGameIntro()
+        {
+            video = SB.content.Load<Video>("video/intro");
+        }
 
         public override void initialize()
         {
@@ -38,13 +39,7 @@ namespace MyGame
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
-            ash = new AnimatedEntity2D("intro", "ash", new Vector3(0, 0, 0), 0, Color.White);
-            LevelManager.Instance.addAnimatedProp(ash);
-            ash.playAction("idle");
-            state = tAshState.Cry;
-
-            //player = new VideoPlayer();
-            //video = SB.content.Load<Video>("video/Wildlife");
+            player = new VideoPlayer();
         }
 
         public override void update()
@@ -56,40 +51,13 @@ namespace MyGame
             //}
 
             timer += SB.dt;
-            switch (state)
+
+            if (timer > introTime && !TransitionManager.Instance.isFading())
             {
-                case tAshState.Cry:
-                    if (timer > 3)
-                    {
-                        ash.playAction("walk");
-                        timer = 0;
-                        state = tAshState.Walk;
-                    }
-                    break;
-                case tAshState.Walk:
-                    if (timer > 3)
-                    {
-                        ash.playAction("candy1");
-                        timer = 0;
-                        state = tAshState.Candy1;
-                    }
-                    break;
-                case tAshState.Candy1:
-                    if (ash.getCurrentAction() == "candy2")
-                    {
-                        timer = 0;
-                        state = tAshState.Candy2;
-                    }
-                    break;
-                case tAshState.Candy2:
-                    if (timer > introTime && !TransitionManager.Instance.isFading())
-                    {
-                        CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
-                        CameraManager.Instance.getCurrentNode().value.speed = 1400;
-                        CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
-                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
-                    }
-                    break;
+                CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
+                CameraManager.Instance.getCurrentNode().value.speed = 1400;
+                CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
             }
 
             LevelManager.Instance.update();
@@ -105,16 +73,16 @@ namespace MyGame
             EntityManager.Instance.render();
             LevelManager.Instance.render();
 
-            //if (player.State != MediaState.Stopped)
-            //    videoTexture = player.GetTexture();
+            if (player.State != MediaState.Stopped)
+                videoTexture = player.GetTexture();
 
-            //// Draw the video, if we have a texture to draw.
-            //if (videoTexture != null)
-            //{
-            //    GraphicsManager.Instance.spriteBatchBegin();
-            //    videoTexture.render2D(Vector2.Zero, new Vector2(1280, 720), Color.White);
-            //    GraphicsManager.Instance.spriteBatchEnd();
-            //}
+            // Draw the video, if we have a texture to draw.
+            if (videoTexture != null)
+            {
+                GraphicsManager.Instance.spriteBatchBegin();
+                videoTexture.render2D(Vector2.Zero, new Vector2(1280, 720), Color.White);
+                GraphicsManager.Instance.spriteBatchEnd();
+            }
         }
 
         public override void dispose()

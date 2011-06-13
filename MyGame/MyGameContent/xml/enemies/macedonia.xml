@@ -7,7 +7,7 @@
     <action name="talk" initialFrame="1" endFrame="35" loops="true"/>
   </animatedTexture>
   
-  <animatedTexture name="Anim_MacedoniaLaughShakePrepareAttack" frameWidth="350" frameHeight="275" columns="5" rows="7">
+  <animatedTexture name="Anim_MacedoniaLaugh" frameWidth="350" frameHeight="275" columns="5" rows="7">
     <action name="rayoPrepare" initialFrame="18" endFrame="21" loops="false" playAtEnd="rayoPrepareLoop"/>
     <action name="die" initialFrame="36" endFrame="37" FPS="15"/>
     <action name="rayoAttack" initialFrame="22" endFrame="26"  loops="false" playAtEnd="rayoAttackLoop"/>
