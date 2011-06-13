@@ -316,9 +316,6 @@
     <EmbeddedResource Include="Language.en.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Language.es.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="TextKey.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TextKey.Designer.cs</LastGenOutput>

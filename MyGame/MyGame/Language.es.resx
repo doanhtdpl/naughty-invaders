@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="backToMap" xml:space="preserve">
-    <value>Back to map</value>
-  </data>
   <data name="BuyGame" xml:space="preserve">
     <value>::X Buy for 200ms points!</value>
   </data>
