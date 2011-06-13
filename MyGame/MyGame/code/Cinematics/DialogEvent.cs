@@ -20,6 +20,7 @@ namespace MyGame
         public float textSpeed { get; set; }
 
         float nextAudio = 0.0f;
+        int lastDialogPlayed = -1;
 
         public static string[,] characterAudios;
         public static Texture2D[] portraits;
@@ -30,7 +31,7 @@ namespace MyGame
 
         int charactersToShow;
 
-        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float textSpeed = 60.0f, bool skippable = true):base(activationTime)
+        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float textSpeed = 30.0f, bool skippable = true):base(activationTime)
         {
             this.character = character;
             this.text = text;
@@ -86,7 +87,7 @@ namespace MyGame
                 {
                     if (!textComplete)
                     {
-                        textSpeed += 100;
+                        textSpeed += 30;
                     }
                     else
                     {
@@ -95,12 +96,7 @@ namespace MyGame
                 }
             }
 
-            nextAudio -= SB.dt;
-            if (nextAudio < 0.0f)
-            {
-                SoundManager.Instance.playEffect(characterAudios[(int)character, Calc.randomNatural(0,N_DIALOGS-1)]);
-                nextAudio = dialogTimes[(int)character];
-            }
+            
             timer += SB.dt;
 
             if (!textComplete)
@@ -111,6 +107,20 @@ namespace MyGame
                 {
                     charactersToShow = text.Length;
                     textComplete = true;
+                }
+
+                nextAudio -= SB.dt;
+                if (nextAudio < 0.0f)
+                {
+                    int dialogToPlay;
+                    do
+                    {
+                        dialogToPlay = Calc.randomNatural(0, N_DIALOGS-1);
+                    }
+                    while (dialogToPlay == lastDialogPlayed);
+
+                    nextAudio = dialogTimes[(int)character];
+                    SoundManager.Instance.playEffect(characterAudios[(int)character, dialogToPlay);
                 }
             }
 

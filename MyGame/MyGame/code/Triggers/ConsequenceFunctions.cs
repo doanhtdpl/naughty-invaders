@@ -19,7 +19,6 @@ namespace MyGame
         public static bool activateGarlicGun(RenderableEntity2D player)
         {
             ((Player)player).activateGarlicGun();
-            SoundManager.Instance.playEffect("equipGarlicGun");
             return true;
         }
 
