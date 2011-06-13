@@ -77,7 +77,7 @@ namespace MyGame
 
         public void playAction(string newAction, bool forcePlay = false, float animationSpeed = 1.0f)
         {
-            if (actionState == "die" && !forcePlay) return;
+            if ((actionState == "die" || actionState == newAction) && !forcePlay) return;
 
             this.animationSpeed = animationSpeed;
 
