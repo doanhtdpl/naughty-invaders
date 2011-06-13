@@ -50,7 +50,7 @@ namespace MyGame
             pos = Screen.getXYfromCenter(-520, -125);
             portraitRectangle = new Rectangle((int)pos.X, (int)pos.Y, 150, 150);
 
-            string[] characterNames = Enum.GetNames(Type.GetType("MyGame.tDialogCharacter"));
+            string[] characterNames = { "Wish", "DarkWish", "OnionElder", "KingTomato", "Macedonia" };// Enum.GetNames(Type.GetType("MyGame.tDialogCharacter"));
             int numberOfCharacters = characterNames.Length;
 
             DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
