@@ -3168,7 +3168,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sounds\songs\stageCompleted.wav">
+    <Compile Include="sounds\effects\stageCompleted.wav">
       <Name>stageCompleted</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>

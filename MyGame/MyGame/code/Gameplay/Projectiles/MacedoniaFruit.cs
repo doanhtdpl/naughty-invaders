@@ -21,6 +21,8 @@ namespace MyGame
         {
             direction = new Vector3(Calc.randomScalar(-450, 450), 300, 0);
 
+            scale *= 0.7f;
+
             deadRequest = false;
             dead = false;
         }
@@ -67,7 +69,7 @@ namespace MyGame
                 if(epileptic)
                     ParticleManager.Instance.addParticles("getFruit", position + new Vector3(40, -10, 0), Vector3.Zero, Color.White);
                 else
-                    ParticleManager.Instance.addParticles("grape2", position, Vector3.Zero, Color.White);
+                    ParticleManager.Instance.addParticles("getFruit", position, Vector3.Zero, Color.White);
             }
         }
 
