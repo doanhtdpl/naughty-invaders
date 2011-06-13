@@ -23,6 +23,10 @@
   <audioFile type="effect" name="nisperoDies" />
   <audioFile type="effect" name="pearDies" />
   <audioFile type="effect" name="tomatoDies" />
+  <audioFile type="effect" name="lemonGotHit" />
+  <audioFile type="effect" name="lemonDies" />
+  <audioFile type="effect" name="orangeGotHit" />
+  <audioFile type="effect" name="pearGotHit" />
 </audioFiles>
 
 
