@@ -31,7 +31,7 @@ namespace MyGame
 
     class StateWorldMap : GameState
     {
-        Entity2D selector;
+        //Entity2D selector;
 
         WorldMapPlayer player;
         public NetworkNode<WorldMapLocation> lastLocation { get; set; }
@@ -108,9 +108,9 @@ namespace MyGame
             player = new WorldMapPlayer(currentLocation.position);
             player.positionZ += 200.0f;
 
-            selector = new RenderableEntity2D("GUI/ingame", "selector-37", player.position, 0, Color.White);
-            selector.scale2D *= 0.6f;
-            EntityManager.Instance.registerEntity(selector);
+            //selector = new RenderableEntity2D("GUI/ingame", "selector-37", player.position, 0, Color.White);
+            //selector.scale2D *= 0.6f;
+            //EntityManager.Instance.registerEntity(selector);
 
             TransitionManager.Instance.fadeOut();
 
@@ -141,8 +141,8 @@ namespace MyGame
         {
             base.update();
 
-            selector.position = player.position;
-            selector.orientation += SB.dt;
+            //selector.position = player.position;
+            //selector.orientation += SB.dt;
 
             bool canMove = !TransitionManager.Instance.isFading();
 
