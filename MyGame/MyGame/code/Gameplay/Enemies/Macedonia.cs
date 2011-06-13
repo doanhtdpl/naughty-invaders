@@ -100,7 +100,7 @@ namespace MyGame
             Cinematic cinematic = new Cinematic();
 
             ActorEvent ae1 = new ActorEvent(this);
-            ae1.setActionToPlay("talk");
+            ae1.setActionToPlay("speaking");
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate(), this);
             ActorEvent ae2 = new ActorEvent(this);
             ae2.setActionToPlay("idle");
@@ -119,13 +119,13 @@ namespace MyGame
             Cinematic cinematic = new Cinematic();
 
             ActorEvent ae2 = new ActorEvent(this);
-            ae2.setActionToPlay("talk");
+            ae2.setActionToPlay("speaking");
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate(), this);
             ActorEvent ae3 = new ActorEvent(this);
             ae3.setActionToPlay("idle");
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaOutro2.Translate());
             ActorEvent ae1 = new ActorEvent(this);
-            ae1.setActionToPlay("talk");
+            ae1.setActionToPlay("speaking");
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate(), this);
             ActorEvent ae4 = new ActorEvent(this);
             ae4.setActionToPlay("idle");
@@ -537,7 +537,7 @@ namespace MyGame
                     ParticleManager.Instance.addParticles("macedonia2", position + new Vector3(300, -350, 5), Vector3.Zero, Color.White);
                     EnemyManager.Instance.addEnemy("grape", position + new Vector3(300, -350, 0));
 
-                    playAction("talk");
+                    playAction("speaking");
                     break;
 
                 case tMacedoniaBossState.Laugh:
