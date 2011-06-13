@@ -45,7 +45,7 @@ namespace MyGame
                 || ControlPadManager.Instance.controlPads[0].Y_firstPressed())
             {
                 StateManager.clearStates();
-                StateManager.addState(StateManager.tGameState.GameIntro);
+                StateManager.addState(StateManager.tGameState.WorldMap);
             }
 #endif
             LevelManager.Instance.update();
