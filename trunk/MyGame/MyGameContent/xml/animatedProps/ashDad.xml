@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="Ash_Dad" frameWidth="130" frameHeight="130" columns="10" rows="4">
+    <action name="move" initialFrame="1" endFrame="33" FPS="24" loops="true"/>
+    <action name="idle" initialFrame="1" endFrame="1"  loops="true" playRandom="true" playRandomMin="1" playRandomMax="5">
+      <playRandom name="move" />
+    </action>
+  </animatedTexture>
+  
+</animatedEntity>
