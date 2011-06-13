@@ -9,7 +9,7 @@ namespace MyGame
     class WatermelonProjectile : Projectile
     {
         public WatermelonProjectile(Vector3 position, float orientation, Vector2 direction, float speed)
-            : base("grapeProjectile", position, orientation, direction, 10, speed, 1, 0.2f, tTeam.Enemies)
+            : base("watermelonProjectile", position, orientation, direction, 10, speed, 1, 0.2f, tTeam.Enemies)
         {
             playAction("start");
             setCollisions();
