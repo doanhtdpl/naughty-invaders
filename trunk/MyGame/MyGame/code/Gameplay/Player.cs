@@ -316,9 +316,9 @@ namespace MyGame
                     ProjectileManager.Instance.addProjectile(p);
                     Vector3 particlesDirection = (shotDirection.toVector3() * 700.0f) + Calc.randomVector3(new Vector3(30.0f, 30.0f, 30.0f), new Vector3(30.0f, 30.0f, 30.0f));
                     ParticleManager.Instance.addParticles("playerGarlicShot", position + (shotDirection.toVector3() * 100.0f), particlesDirection, Color.White);
-                }
 
-                SoundManager.Instance.playEffect("garlicGunShot");
+                    SoundManager.Instance.playEffect("garlicGunShot");
+                }
             }
         }
         void updateSavingiItemsMode(Vector2 direction, ControlPad controls)
