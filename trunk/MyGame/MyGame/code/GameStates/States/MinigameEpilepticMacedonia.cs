@@ -44,11 +44,11 @@ namespace MyGame
             ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 200.0f);
 
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro1.Translate());
-            DialogEvent de2 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro2.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro2.Translate(), macedonia);
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro3.Translate());
-            DialogEvent de4 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro4.Translate());
+            DialogEvent de4 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro4.Translate(), macedonia);
             DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro5.Translate());
-            DialogEvent de6 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro6.Translate());
+            DialogEvent de6 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro6.Translate(), macedonia);
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);
@@ -95,7 +95,7 @@ namespace MyGame
                     DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBadSpecial.Translate());
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad1.Translate());
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad1.Translate(), macedonia);
                 ActorEvent ae2 = new ActorEvent(player, false);
                 ae2.setOrientation(2.3f);
                 ActorEvent ae3 = new ActorEvent(player, false);
@@ -107,7 +107,7 @@ namespace MyGame
                 DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticBad2.Translate());
                 ActorEvent ae6 = new ActorEvent(player, false);
                 ae6.moveTo(new Vector3(player.positionX, -950.0f, 0.0f), 100.0f);
-                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad3.Translate());
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad3.Translate(), macedonia);
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)ae2);
@@ -120,9 +120,9 @@ namespace MyGame
             }
             else if (savedFruits < 40)
             {
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium1.Translate());
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium1.Translate(), macedonia);
                 DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticMedium2.Translate());
-                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium3.Translate());
+                DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium3.Translate(), macedonia);
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)de2);
@@ -130,20 +130,20 @@ namespace MyGame
 
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMediumSpecial.Translate());
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMediumSpecial.Translate(), macedonia);
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
             }
             else
             {
-                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGood1.Translate());
+                DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGood1.Translate(), macedonia);
                 DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticGood2.Translate());
 
                 cinematic.events.Add((CinematicEvent)de1);
                 cinematic.events.Add((CinematicEvent)de2);
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGoodSpecial.Translate());
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticGoodSpecial.Translate(), macedonia);
                     cinematic.events.Add((CinematicEvent)deSpecial);
                 }
             }

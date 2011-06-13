@@ -18,6 +18,7 @@ namespace MyGame
         public string text { get; set; }
         // text speed at characters per second
         public float textSpeed { get; set; }
+        public AnimatedEntity2D entity = null;
 
         float nextAudio = 0.0f;
         int lastDialogPlayed = -1;
@@ -31,11 +32,12 @@ namespace MyGame
 
         int charactersToShow;
 
-        public DialogEvent(tDialogCharacter character, string text, float activationTime = 0.3f, float textSpeed = 30.0f, bool skippable = true):base(activationTime)
+        public DialogEvent(tDialogCharacter character, string text, AnimatedEntity2D entity = null, float activationTime = 0.3f, float textSpeed = 30.0f, bool skippable = true):base(activationTime)
         {
             this.character = character;
             this.text = text;
             this.textSpeed = textSpeed;
+            this.entity = entity;
 
             this.textComplete = false;
             this.charactersToShow = 0;
@@ -81,6 +83,14 @@ namespace MyGame
         {
             bool keepUpdating = true;
 
+            if (entity != null && !textComplete)
+            {
+                if (entity.getCurrentAction() != "speaking")
+                {
+                    entity.playAction("speaking");
+                }
+            }
+
             if (skippable || forceSkip)
             {
                 if (skip)
@@ -107,6 +117,10 @@ namespace MyGame
                 {
                     charactersToShow = text.Length;
                     textComplete = true;
+                    if (entity != null)
+                    {
+                        entity.playAction("idle");
+                    }
                 }
 
                 nextAudio -= SB.dt;
