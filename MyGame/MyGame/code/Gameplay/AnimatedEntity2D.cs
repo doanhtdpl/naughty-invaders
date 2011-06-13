@@ -46,18 +46,19 @@ namespace MyGame
         public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)
             : base("animated", entityName, position, orientation, color, register, id)
         {
+            string fullName = entityFolder + "/" + entityName;
             // load actions and textures if they havent been readen yet
-            if (!datas.ContainsKey(entityName))
+            if (!datas.ContainsKey(fullName))
             {
                 readXML(entityFolder, entityName);
             }
 
             // assign the pointers for this instance
-            actions = datas[entityName].actions;
-            animatedTextures = datas[entityName].animatedTextures;
+            actions = datas[fullName].actions;
+            animatedTextures = datas[fullName].animatedTextures;
 
             currentFrame = actions["idle"].initialFrame;
-            if (datas[entityName].idleOffset)
+            if (datas[fullName].idleOffset)
             {
                 currentFrame = Calc.randomNatural(actions["idle"].initialFrame, actions["idle"].endFrame);
                 float frameTime = 1.0f / actions["idle"].FPS;
@@ -230,7 +231,7 @@ namespace MyGame
 
                 ++textureNumber;
             }
-            datas[entityName] = data;
+            datas[entityFolder + "/" + entityName] = data;
         }
 
         public virtual void die()
