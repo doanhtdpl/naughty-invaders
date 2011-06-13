@@ -216,6 +216,7 @@ namespace MyGame
         {
             base.update();
 
+            //onionElder.update();
             if (CinematicManager.Instance.cinematicToPlay != null) return;
 
             switch (state)
