@@ -310,7 +310,7 @@
     <value>Look! they are coming, try to pick up as many orbs as you can!</value>
   </data>
   <data name="DialogEpilepticBad1" xml:space="preserve">
-    <value>Too bad Wish... there are more fruits on the floor that in my head. Can you help me get'em?</value>
+    <value>Too bad Wish... there are more fruits on the floor than in my head. Help me get'em!</value>
   </data>
   <data name="DialogEpilepticBad2" xml:space="preserve">
     <value>... emm... do you hear that. Someone's is calling me...</value>
