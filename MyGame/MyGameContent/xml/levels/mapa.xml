@@ -44,7 +44,7 @@
     <staticProp entityName="artsmapa-30" worldMatrix="94.96751 26.22672 2.143665 0 -60.32802 218.3454 1.267901 0 -0.01947747 -0.01118695 0.9997477 0 -713.4781 264.0869 33.98962 1" id="572" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="cucumber-39" worldMatrix="442.962 0 0 0 0 60.81231 0 0 0 0 1 0 -74.29263 26.79382 122.9873 1" id="580" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="epileptic-13" worldMatrix="446.0341 0 0 0 0 59.48809 0 0 0 0 1 0 -725.9991 -103.6761 287.0152 1" id="585" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="artmapa-12" worldMatrix="304.0172 2.218259 27.30296 0 -0.9575025 96.11089 2.85311 0 -0.08918552 -0.03044201 0.9955498 0 -689.236 166.5699 273.0128 1" id="588" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="fruitville" worldMatrix="306.7786 2.238408 27.55096 0 -0.7447709 74.7576 2.219225 0 -0.08918552 -0.03044201 0.9955498 0 -675.5611 170.2994 273.0128 1" id="588" color="245 245 245 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
   </staticProps>
   <animatedProps />
   <groups>
