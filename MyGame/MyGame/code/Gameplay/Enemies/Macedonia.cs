@@ -99,10 +99,16 @@ namespace MyGame
         {
             Cinematic cinematic = new Cinematic();
 
+            ActorEvent ae1 = new ActorEvent(this);
+            ae1.setActionToPlay("talk");
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate());
+            ActorEvent ae2 = new ActorEvent(this);
+            ae2.setActionToPlay("idle");
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaIntro2.Translate());
 
+            cinematic.events.Add(ae1);
             cinematic.events.Add(de1);
+            cinematic.events.Add(ae2);
             cinematic.events.Add(de2);
 
             CinematicManager.Instance.addCinematic("macedoniaIntro", cinematic);
@@ -112,22 +118,31 @@ namespace MyGame
         {
             Cinematic cinematic = new Cinematic();
 
+            ActorEvent ae2 = new ActorEvent(this);
+            ae2.setActionToPlay("talk");
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate());
+            ActorEvent ae3 = new ActorEvent(this);
+            ae3.setActionToPlay("idle");
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaOutro2.Translate());
             ActorEvent ae1 = new ActorEvent(this);
-            ae1.setActionToPlay("idle");
+            ae1.setActionToPlay("talk");
             DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
+            ActorEvent ae4 = new ActorEvent(this);
+            ae4.setActionToPlay("idle");
             SpecialEvent se1 = new SpecialEvent(this);
             se1.setPlayEffect("macedoniaAppear", position + new Vector3(0, -100, 5), Vector3.Zero, Color.White, 2);
-            ActorEvent ae2 = new ActorEvent(this);
-            ae2.setRender(false);
+            ActorEvent ae5 = new ActorEvent(this);
+            ae5.setRender(false);
 
+            cinematic.events.Add(ae2);
             cinematic.events.Add(de1);
+            cinematic.events.Add(ae3);
             cinematic.events.Add(de2);
             cinematic.events.Add(ae1);
             cinematic.events.Add(de3);
+            cinematic.events.Add(ae4);
             cinematic.events.Add(se1);
-            cinematic.events.Add(ae2);
+            cinematic.events.Add(ae5);
 
             CinematicManager.Instance.addCinematic("macedoniaEnd", cinematic);
         }
@@ -177,6 +192,15 @@ namespace MyGame
             changeState(tMacedoniaBossState.Die);
         }
 
+
+        public void updateIdleMove()
+        {
+            idleTime += SB.dt;
+
+            //Idle move
+            float angle = (float)(idleTime * 1000 * (Math.PI / 180));
+            position = initPos + new Vector3(100 * (float)Math.Sin(angle / 10), 30 * (float)Math.Cos(angle / 7), 0.0f);
+        }
 
         //**************************************************
         // Update State
@@ -242,7 +266,6 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.Idle:
-                    idleTime += SB.dt;
                     timeToAttack -= SB.dt;
 
                     if (Keyboard.GetState().IsKeyDown(Keys.A))
@@ -299,9 +322,7 @@ namespace MyGame
                         }
                     }
 
-                    //Idle move
-                    float angle = (float)(idleTime * 1000 * (Math.PI / 180));
-                    position = initPos + new Vector3(100 * (float)Math.Sin(angle / 10), 30 * (float)Math.Cos(angle/ 7), 0.0f);
+                    updateIdleMove();
 
                     break;
 
@@ -309,7 +330,7 @@ namespace MyGame
                     effectStep -= SB.dt;
                     if (effectStep <= 0)
                     {
-                        ParticleManager.Instance.addParticles("zumoPrepare", position + new Vector3(20, -220, 5), Vector3.Zero, Color.White, 0.5f);
+                        ParticleManager.Instance.addParticles("zumoPrepare", position + new Vector3(0, -170, 5), Vector3.Zero, Color.White, 0.5f);
                         effectStep = RAYO_PREPARE_EFFECT_STEP;
                     }
 
@@ -325,7 +346,7 @@ namespace MyGame
                     effectStep -= SB.dt;
                     if (effectStep <= 0)
                     {
-                        ParticleManager.Instance.addParticles("zumoAttack", position + new Vector3(0, -180, 5), Vector3.Zero, Color.White);
+                        ParticleManager.Instance.addParticles("zumoAttack", position + new Vector3(0, -135, 5), Vector3.Zero, Color.White);
                         effectStep = RAYO_ATTACK_EFFECT_STEP;
                     }
 
@@ -379,11 +400,16 @@ namespace MyGame
 
                     if (stateTime > INVOKE_TIME)
                         changeState(tMacedoniaBossState.Laugh);
+
+                    updateIdleMove();
                     break;
 
                 case tMacedoniaBossState.Laugh:
                     if (stateTime > LAUGH_TIME)
                         changeState(tMacedoniaBossState.Idle);
+
+                    updateIdleMove();
+
                     break;
 
                 case tMacedoniaBossState.Die:
@@ -580,7 +606,7 @@ namespace MyGame
                 float magicNum = 1.004f;
                 if (i == 2)
                     magicNum = 1.002f;
-                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y * magicNum - rayo[i].getFrameSize().Y * 0.5f * factor - 75 , position.Z + 0.1f);
+                rayo[i].position = new Vector3(position.X - 6, position.Y - i * rayo[i].getFrameSize().Y * magicNum - rayo[i].getFrameSize().Y * 0.5f * factor - 75 , position.Z + 0.1f);
                 length -= rayo[i].getFrameSize().Y;
             }
 
@@ -588,7 +614,7 @@ namespace MyGame
             {
                 rayoEnd.renderState = tRenderState.Render;
                 rayoEnd.update();
-                rayoEnd.position = new Vector3(position.X, GamerManager.getMainPlayer().position.Y + 100, position.Z + 0.2f);
+                rayoEnd.position = new Vector3(position.X - 6, GamerManager.getMainPlayer().position.Y + 100, position.Z + 0.2f);
             }
             else
             {
