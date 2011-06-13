@@ -277,7 +277,7 @@ namespace MyGame
                         // value that goes from 1 to 3 (minimum and maximum charge)
                         float bigShotValue = (MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) * 0.1f) + 1.0f;
                         // from 0 to 1
-                        float chargeValue = (bigShotValue - 1) * 0.5f;
+                        float chargeValue = MathHelper.Clamp(bigShotChargeTimer, 0.0f, MAX_BIG_SHOT_CHARGE) / MAX_BIG_SHOT_CHARGE;
                         Projectile p = new PlayerBigShot(position, bigShotValue, chargeValue);
                         ProjectileManager.Instance.addProjectile(p);
                         ParticleManager.Instance.addParticles("playerBigShot", position + new Vector3(0, 50, 0), new Vector3(direction, 0.0f), Color.White,
