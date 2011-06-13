@@ -80,8 +80,8 @@ namespace MyGame
 
         public override void initialize()
         {
-            transitionColor = new Color(10, 10, 10, 0);
-            transitionColor *= 0.85f;
+            transitionColor = new Color(0, 0, 0, 200);
+            //transitionColor *= 0.85f;
             initializeMenu();
             renderAlways = false;
             //SoundManager.playSound("pause");

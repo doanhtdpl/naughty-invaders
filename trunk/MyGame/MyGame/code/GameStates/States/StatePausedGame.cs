@@ -49,8 +49,7 @@ namespace MyGame
 
         public override void initialize()
         {
-            transitionColor = new Color(104, 0, 4, 0);
-            transitionColor *= 0.85f;
+            transitionColor = new Color(0, 0, 0, 200);
             initializeMenu();
             renderAlways = false;
             SoundManager.Instance.playEffect("pause");

@@ -49,12 +49,17 @@ namespace MyGame
                 }
                 eventToUpdate.endEvent();
 
+                // TODO shitty code ahead
                 if (events.Count > 0)
                 {
                     events.RemoveAt(0);
                     if (events.Count > 0)
                     {
                         eventToUpdate = events[0];
+                    }
+                    else
+                    {
+                        eventToUpdate = null;
                     }
                 }
                 else

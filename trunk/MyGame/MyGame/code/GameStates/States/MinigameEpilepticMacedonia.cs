@@ -45,10 +45,18 @@ namespace MyGame
 
             DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro1.Translate());
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro2.Translate());
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro3.Translate());
+            DialogEvent de4 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro4.Translate());
+            DialogEvent de5 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticIntro5.Translate());
+            DialogEvent de6 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticIntro6.Translate());
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)de1);
             cinematic.events.Add((CinematicEvent)de2);
+            cinematic.events.Add((CinematicEvent)de3);
+            cinematic.events.Add((CinematicEvent)de4);
+            cinematic.events.Add((CinematicEvent)de5);
+            cinematic.events.Add((CinematicEvent)de6);
 
             if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
             {

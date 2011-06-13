@@ -375,4 +375,16 @@
   <data name="skills" xml:space="preserve">
     <value>skills</value>
   </data>
+  <data name="DialogEpilepticIntro3" xml:space="preserve">
+    <value>DialogEpilepticIntro3</value>
+  </data>
+  <data name="DialogEpilepticIntro4" xml:space="preserve">
+    <value>DialogEpilepticIntro4</value>
+  </data>
+  <data name="DialogEpilepticIntro5" xml:space="preserve">
+    <value>DialogEpilepticIntro5</value>
+  </data>
+  <data name="DialogEpilepticIntro6" xml:space="preserve">
+    <value>DialogEpilepticIntro6</value>
+  </data>
 </root>

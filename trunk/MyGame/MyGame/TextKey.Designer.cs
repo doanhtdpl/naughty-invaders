@@ -331,6 +331,42 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DialogEpilepticIntro3.
+        /// </summary>
+        public static string DialogEpilepticIntro3 {
+            get {
+                return ResourceManager.GetString("DialogEpilepticIntro3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DialogEpilepticIntro4.
+        /// </summary>
+        public static string DialogEpilepticIntro4 {
+            get {
+                return ResourceManager.GetString("DialogEpilepticIntro4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DialogEpilepticIntro5.
+        /// </summary>
+        public static string DialogEpilepticIntro5 {
+            get {
+                return ResourceManager.GetString("DialogEpilepticIntro5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DialogEpilepticIntro6.
+        /// </summary>
+        public static string DialogEpilepticIntro6 {
+            get {
+                return ResourceManager.GetString("DialogEpilepticIntro6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DialogEpilepticMedium1.
         /// </summary>
         public static string DialogEpilepticMedium1 {
