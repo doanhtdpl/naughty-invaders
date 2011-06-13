@@ -36,6 +36,33 @@
   <audioFile type="effect" name="pickMacedoniaFruit" />
   <audioFile type="effect" name="watermelonDies" />
   <audioFile type="effect" name="watermelonGotHit" />
+
+  <audioFile type="effect" name="dialogWish1" />
+  <audioFile type="effect" name="dialogWish2" />
+  <audioFile type="effect" name="dialogWish3" />
+  <audioFile type="effect" name="dialogWish4" />
+  <audioFile type="effect" name="dialogWish5" />
+  <audioFile type="effect" name="dialogKingTomato1" />
+  <audioFile type="effect" name="dialogKingTomato2" />
+  <audioFile type="effect" name="dialogKingTomato3" />
+  <audioFile type="effect" name="dialogKingTomato4" />
+  <audioFile type="effect" name="dialogKingTomato5" />
+  <audioFile type="effect" name="dialogMacedonia1" />
+  <audioFile type="effect" name="dialogMacedonia2" />
+  <audioFile type="effect" name="dialogMacedonia3" />
+  <audioFile type="effect" name="dialogMacedonia4" />
+  <audioFile type="effect" name="dialogMacedonia5" />
+  <audioFile type="effect" name="dialogOnionElder1" />
+  <audioFile type="effect" name="dialogOnionElder2" />
+  <audioFile type="effect" name="dialogOnionElder3" />
+  <audioFile type="effect" name="dialogOnionElder4" />
+  <audioFile type="effect" name="dialogOnionElder5" />
+  <audioFile type="effect" name="dialogDarkWish1" />
+  <audioFile type="effect" name="dialogDarkWish2" />
+  <audioFile type="effect" name="dialogDarkWish3" />
+  <audioFile type="effect" name="dialogDarkWish4" />
+  <audioFile type="effect" name="dialogDarkWish5" />
+  
 </audioFiles>
 
 

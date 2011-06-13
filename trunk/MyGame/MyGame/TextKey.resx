@@ -387,4 +387,13 @@
   <data name="DialogEpilepticIntro6" xml:space="preserve">
     <value>DialogEpilepticIntro6</value>
   </data>
+  <data name="DialogVerducityIntro1" xml:space="preserve">
+    <value>DialogVerducityIntro1</value>
+  </data>
+  <data name="DialogVerducityIntro2" xml:space="preserve">
+    <value>DialogVerducityIntro2</value>
+  </data>
+  <data name="DialogVerducityIntro3" xml:space="preserve">
+    <value>DialogVerducityIntro3</value>
+  </data>
 </root>

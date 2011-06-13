@@ -22,7 +22,7 @@ namespace MyGame
         public const float DASH_VELOCITY = 2000.0f;
         public const float DASH_SPEED_THRESHOLD = 500.0f;
         public const float DASH_PARTICLE_SPAWN_TIME = 0.03f;
-        public const float MAX_BIG_SHOT_CHARGE = 2.0f;
+        public const float MAX_BIG_SHOT_CHARGE = 1.0f;
 
         public Vector3 initPos;
 

@@ -390,4 +390,13 @@
   <data name="skills" xml:space="preserve">
     <value>Skills</value>
   </data>
+  <data name="DialogVerducityIntro1" xml:space="preserve">
+    <value>Wish! take care. Cucumber Valley is the place where Painapple lives.</value>
+  </data>
+  <data name="DialogVerducityIntro2" xml:space="preserve">
+    <value>Painapple? that sounds bad!</value>
+  </data>
+  <data name="DialogVerducityIntro3" xml:space="preserve">
+    <value>It's a terrible monster. You will find it at the end of the valley! Good luck!</value>
+  </data>
 </root>

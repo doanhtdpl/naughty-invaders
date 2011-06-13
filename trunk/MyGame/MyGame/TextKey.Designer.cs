@@ -502,6 +502,33 @@ namespace MyGame {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DialogVerducityIntro1.
+        /// </summary>
+        public static string DialogVerducityIntro1 {
+            get {
+                return ResourceManager.GetString("DialogVerducityIntro1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DialogVerducityIntro2.
+        /// </summary>
+        public static string DialogVerducityIntro2 {
+            get {
+                return ResourceManager.GetString("DialogVerducityIntro2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DialogVerducityIntro3.
+        /// </summary>
+        public static string DialogVerducityIntro3 {
+            get {
+                return ResourceManager.GetString("DialogVerducityIntro3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Exit {

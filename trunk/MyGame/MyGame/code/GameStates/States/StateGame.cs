@@ -40,7 +40,6 @@ namespace MyGame
             if (level == "fruitownA")
             {
                 loadAndPlayIntroCinematic();
-
                 SoundManager.Instance.playSong("Naughty_Rock1", true);
             }
             else if (level == "fruitownB")
@@ -50,6 +49,7 @@ namespace MyGame
             }
             else if (level == "verducity")
             {
+                loadAndPlayVerducityIntroCinematic();
                 SoundManager.Instance.playSong("Naughty_Rock1", true);
             }
         }
@@ -135,6 +135,32 @@ namespace MyGame
             CinematicManager.Instance.playCinematic("fruitownIntro");
         }
 
+        void loadAndPlayVerducityIntroCinematic()
+        {
+
+            Player player = GamerManager.getMainPlayer();
+            Cinematic cinematic = new Cinematic();
+           
+            player.position2D = new Vector2(0, -700);
+
+            ActorEvent ae1 = new ActorEvent(player, false);
+            ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 300.0f);
+            ActorEvent ae12 = new ActorEvent(player, false);
+            ae12.setOrientation(0.0f);
+
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogVerducityIntro1.Translate());
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogVerducityIntro2.Translate());
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.DarkWish, TextKey.DialogVerducityIntro3.Translate());
+
+            cinematic.events.Add((CinematicEvent)ae1);
+            cinematic.events.Add((CinematicEvent)ae12);
+            cinematic.events.Add((CinematicEvent)de1);
+            cinematic.events.Add((CinematicEvent)de2);
+            cinematic.events.Add((CinematicEvent)de3);
+
+            CinematicManager.Instance.addCinematic("verducityIntro", cinematic);
+            CinematicManager.Instance.playCinematic("verducityIntro");
+        }
         public void restartLevel()
         {
         }
