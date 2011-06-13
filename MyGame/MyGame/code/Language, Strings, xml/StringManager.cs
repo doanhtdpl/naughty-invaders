@@ -237,9 +237,9 @@ namespace MyGame
         {
             render(str.ToUpper(), position, scale / 2.5f, Color.White, tTextAlignment.Centered, SB.font, 770, 60 * scale / 1.45f, Color.Black, 1.0f, new Vector2(1.5f, 1.5f), style);
         }
-        public static void renderNI(this String str, Vector2 position, float scale, tStyle style, Color textColor, Color shadowColor)
+        public static void renderNI(this String str, Vector2 position, float scale, tStyle style, Color textColor, Color shadowColor, Vector2 strokeSize)
         {
-            render(str.ToUpper(), position, scale / 2.5f, textColor, tTextAlignment.Centered, SB.font, 770, 60 * scale / 1.45f, shadowColor, 1.0f, new Vector2(1.5f, 1.5f), style);
+            render(str.ToUpper(), position, scale / 2.5f, textColor, tTextAlignment.Centered, SB.font, 770, 60 * scale / 1.45f, shadowColor, 1.0f, new Vector2(3.0f, 3.0f), style);
         }
         public static void renderNIDescription(this String str, Vector2 position, float scale)
         {
