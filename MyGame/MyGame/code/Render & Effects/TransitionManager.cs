@@ -144,7 +144,7 @@ namespace MyGame
         public void render()
         {
             GraphicsManager.Instance.spriteBatch.Begin();
-            GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-1000, -1000, 4000, 4000), color * value);
+            GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-1100, -1100, 4200, 4200), color * value);
             GraphicsManager.Instance.spriteBatch.End();
         }
     }

@@ -10,7 +10,7 @@ namespace MyGame
     public enum SupportedLanguage
     {
         English,
-        Spanish,
+        //Spanish,
         //French,
         //German,
         //Japanese,
@@ -24,7 +24,7 @@ namespace MyGame
         string[] supportedLanguageCultures = new string[] 
         { 
             "en", 
-            "es",
+            //"es",
             //"fr",
             //"ge",
             //"jp",

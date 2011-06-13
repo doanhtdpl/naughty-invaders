@@ -62,7 +62,7 @@ namespace MyGame
                         Color color = gameStates[i].transitionColor;
                         color *= opacy;
                         GraphicsManager.Instance.spriteBatch.Begin();
-                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-2000, -2000, 4000, 4000), color);
+                        GraphicsManager.Instance.spriteBatch.Draw(TextureManager.Instance.getColoredTexture(Color.White), new Rectangle(-100, -100, 2000, 2000), color);
                         GraphicsManager.Instance.spriteBatch.End();
                     }
                     if (i == gameStates.Count -1 || gameStates[i].renderAlways)
