@@ -549,7 +549,7 @@ namespace MyGame
 
                 rayo[i].paintMask = new Vector2(1.0f, factor);
 
-                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y - rayo[i].getFrameSize().Y * 0.5f * factor - 110 , position.Z + 0.1f);
+                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y * 0.99f - rayo[i].getFrameSize().Y * 0.5f * factor - 110 , position.Z + 0.1f);
                 length -= rayo[i].getFrameSize().Y;
             }
 

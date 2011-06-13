@@ -148,7 +148,7 @@ namespace MyGame
             loadIntroCinematic();
             CinematicManager.Instance.playCinematic("epilepticMacedoniaIntro");
 
-            SoundManager.Instance.playSong("Naughty_jingle", true);
+            SoundManager.Instance.playSong("Naughty_song_test3", true);
         }
         
         public override void update()
@@ -206,9 +206,9 @@ namespace MyGame
             Player player = GamerManager.getMainPlayer();
             for(int i=0; i<fruits.Count; ++i)
             {
-                if (!fruits[i].isDead() && !fruits[i].isDying() && (fruits[i].position - player.position).Length() < 50)
+                if (!fruits[i].isDead() && !fruits[i].isDying() && (fruits[i].position - player.position).Length() < 80)
                 {
-                    fruits[i].explode();
+                    fruits[i].explode(true);
                     fruits[i].delete();
                     fruits.RemoveAt(i);
                     --i;
