@@ -58,23 +58,23 @@ namespace MyGame
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownA"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn2.position, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn2.position + Vector3.UnitZ * -50, 0, Color.White));
             }
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["fruitownB"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn3.position, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn3.position + Vector3.UnitZ * -50, 0, Color.White));
             }
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["onionVillage"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn4.position, 0, Color.White));
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn5.position, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn4.position + Vector3.UnitZ * -50, 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", nn5.position + Vector3.UnitZ * -50, 0, Color.White));
             }
 
             if (!GamerManager.getSessionOwner().data.levelsPassed["verducity"])
             {
-                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", new Vector3(620, -30, 200), 0, Color.White));
+                EntityManager.Instance.registerEntity(new RenderableEntity2D("staticProps", "lock-34", new Vector3(620, -30, nn5.position.Z - 50), 0, Color.White));
             }
 
             currentLocation = nn1;
