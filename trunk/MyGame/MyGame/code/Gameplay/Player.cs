@@ -371,28 +371,33 @@ namespace MyGame
 
         void updateMoveAnimations(Vector2 direction)
         {
-            if (direction == Vector2.Zero) return;
-
             if (getCurrentAction() != "attack" && getCurrentAction() != "attack2"
                     && getCurrentAction() != "miniDie" && getCurrentAction() != "die")
             {
-                float directionAngle = Calc.directionToAngle(direction);
-                if (directionAngle < 0) directionAngle += Calc.TwoPi;
-                if (directionAngle < Calc.PiOver4 || directionAngle > Calc.TwoPi - Calc.PiOver4)
+                if (direction != Vector2.Zero)
                 {
-                    playAction("moveRight");
-                }
-                else if (directionAngle < Calc.PiOver4 * 3)
-                {
-                    playAction("moveFront");
-                }
-                else if (directionAngle < Calc.PiOver4 * 5)
-                {
-                    playAction("moveLeft");
+                    float directionAngle = Calc.directionToAngle(direction);
+                    if (directionAngle < 0) directionAngle += Calc.TwoPi;
+                    if (directionAngle < Calc.PiOver4 || directionAngle > Calc.TwoPi - Calc.PiOver4)
+                    {
+                        playAction("moveRight");
+                    }
+                    else if (directionAngle < Calc.PiOver4 * 3)
+                    {
+                        playAction("moveFront");
+                    }
+                    else if (directionAngle < Calc.PiOver4 * 5)
+                    {
+                        playAction("moveLeft");
+                    }
+                    else
+                    {
+                        playAction("moveBack");
+                    }
                 }
                 else
                 {
-                    playAction("moveBack");
+                    playAction("idle");
                 }
             }
 
@@ -434,12 +439,14 @@ namespace MyGame
             {
                 case tMode.Arcade:
                     updateArcadeMode(direction, controls);
+                    updateMoveAnimations(direction);
                     break;
                 case tMode.GarlicGun:
                     updateGarlicGunMode(direction, controls);
                     break;
                 case tMode.SavingItems:
                     updateSavingiItemsMode(direction, controls);
+                    updateMoveAnimations(direction);
                     break;
             }
 
