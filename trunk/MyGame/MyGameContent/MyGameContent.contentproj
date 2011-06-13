@@ -2933,11 +2933,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sounds\effects\lemonDies.mp3">
-      <Name>lemonDies</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-    </Compile>
     <Compile Include="sounds\effects\lemonGotHit.wav">
       <Name>lemonGotHit</Name>
       <Importer>WavImporter</Importer>
@@ -2950,6 +2945,13 @@
     </Compile>
     <Compile Include="sounds\effects\pearGotHit.wav">
       <Name>pearGotHit</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sounds\effects\lemonDies.wav">
+      <Name>lemonDies</Name>
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
     </Compile>
