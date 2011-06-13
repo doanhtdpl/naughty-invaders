@@ -26,14 +26,25 @@ namespace MyGame
 
         public override void update()
         {
-            base.update();
+            GamerManager.updatePlayers();
+            EnemyManager.Instance.update();
+            LevelManager.Instance.update();
+            ProjectileManager.Instance.update();
+            ParticleManager.Instance.update();
+            OrbManager.Instance.update();
+            CameraManager.Instance.update();
+            GUIManager.Instance.update();
+            CinematicManager.Instance.update();
+            TriggerManager.Instance.update();
+            SoundManager.Instance.update();
+            SB.cam.update();
 
             if (CameraManager.Instance.isIdle())
             {
                 time -= SB.dt;
             }
 
-            if ((GamerManager.getMainControls().B_firstPressed() || time < 0) && !TransitionManager.Instance.isFading())
+            if ((GamerManager.getMainControls().B_firstPressed() || GamerManager.getMainControls().Start_firstPressed() || GamerManager.getMainControls().Back_firstPressed() || time < 0) && !TransitionManager.Instance.isFading())
             {
                 TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
             }
