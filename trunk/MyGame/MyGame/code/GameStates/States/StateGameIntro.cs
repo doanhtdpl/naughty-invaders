@@ -16,7 +16,8 @@ namespace MyGame
     {
         public float timer = 0;
 
-        public const int introTime = 3;
+        enum tAshState { Cry, Idle, Candy };
+        tAshState state;
 
         AnimatedEntity2D ash = null, ashTears = null;
 
@@ -40,6 +41,11 @@ namespace MyGame
                 if (ash != null && ashTears != null)
                     break;
             }
+
+            ash.playAction("cry");
+            ashTears.playAction("tearsLoop");
+            ashTears.renderState = RenderableEntity2D.tRenderState.NoRender;
+            state = tAshState.Cry;
         }
 
         public override void update()
@@ -51,13 +57,40 @@ namespace MyGame
             }
 #endif
             timer += SB.dt;
-            if (timer > introTime && !TransitionManager.Instance.isFading())
+            switch(state)
             {
-                CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
-                CameraManager.Instance.getCurrentNode().value.speed = 1400;
-                CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
-                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
+                case tAshState.Cry:
+                    if (timer > 4)
+                    {
+                        state = tAshState.Idle;
+                        ash.playAction("cryEnd");
+                        ashTears.playAction("tearsEnd");
+                        timer = 0;
+                    }
+                    break;
+
+                case tAshState.Idle:
+                    if (timer > 1)
+                    {
+                        state = tAshState.Candy;
+                        ash.playAction("sweet");
+                        ashTears.renderState = RenderableEntity2D.tRenderState.NoRender;
+                        timer = 0;
+                    }
+                    break;
+
+                case tAshState.Candy:
+                    if (timer > 5 && !TransitionManager.Instance.isFading())
+                    {
+                        CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
+                        CameraManager.Instance.getCurrentNode().value.speed = 1400;
+                        CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
+                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
+                    }
+                    break;
             }
+
+
 
             LevelManager.Instance.update();
             ParticleManager.Instance.update();
