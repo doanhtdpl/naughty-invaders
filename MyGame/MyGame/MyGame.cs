@@ -27,8 +27,12 @@ namespace MyGame
 #if !EDITOR
             graphics = new GraphicsDeviceManager(this);
 #endif
-            //SB.content = new NIContentManager(Services, "Content");
+
+#if UNLOAD_HACK
+            SB.content = new NIContentManager(Services, "Content");
+#else
             SB.content = new ContentManager(Services, "Content");
+#endif
             SB.random = new Random();
         }
 
