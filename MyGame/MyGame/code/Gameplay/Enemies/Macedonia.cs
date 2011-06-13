@@ -101,7 +101,7 @@ namespace MyGame
 
             ActorEvent ae1 = new ActorEvent(this);
             ae1.setActionToPlay("talk");
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate());
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaIntro1.Translate(), this);
             ActorEvent ae2 = new ActorEvent(this);
             ae2.setActionToPlay("idle");
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaIntro2.Translate());
@@ -120,13 +120,13 @@ namespace MyGame
 
             ActorEvent ae2 = new ActorEvent(this);
             ae2.setActionToPlay("talk");
-            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate());
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro1.Translate(), this);
             ActorEvent ae3 = new ActorEvent(this);
             ae3.setActionToPlay("idle");
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogBossMacedoniaOutro2.Translate());
             ActorEvent ae1 = new ActorEvent(this);
             ae1.setActionToPlay("talk");
-            DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate());
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogBossMacedoniaOutro3.Translate(), this);
             ActorEvent ae4 = new ActorEvent(this);
             ae4.setActionToPlay("idle");
             SpecialEvent se1 = new SpecialEvent(this);

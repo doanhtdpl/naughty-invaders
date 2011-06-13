@@ -4,7 +4,7 @@
     <action name="idle" initialFrame="1" endFrame="35" loops="true"/>
 </animatedTexture>
   <animatedTexture name="Anim_MacedoniaSpeaking" frameWidth="350" frameHeight="275" columns="5" rows="7">
-    <action name="talk" initialFrame="1" endFrame="35" loops="true"/>
+    <action name="speaking" initialFrame="1" endFrame="35" loops="true"/>
   </animatedTexture>
   
   <animatedTexture name="Anim_MacedoniaLaugh" frameWidth="350" frameHeight="275" columns="5" rows="7">
