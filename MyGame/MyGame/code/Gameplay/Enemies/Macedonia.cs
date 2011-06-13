@@ -16,9 +16,12 @@ namespace MyGame
         float LIFE = 1500;
 
         //rayo
-        float RAYO_PREPARE_DURATION = 1.2f;
-        float RAYO_DURATION = 1.8f;
+        float RAYO_PREPARE_DURATION = 5.0f;//1.2f;
+        float RAYO_DURATION = 10.0f;//1.8f;
         int RAYO_LIMIT_X = 650;
+
+        float RAYO_PREPARE_EFFECT_STEP = 0.05f;
+        float RAYO_ATTACK_EFFECT_STEP = 0.1f;
 
         int TELEPORT_LIMIT_X = 600;
         const int MAX_RAYOS = 3;
@@ -50,7 +53,7 @@ namespace MyGame
 
 
         bool visible = true;
-        float stateTime, idleTime, appearX, shakeNextFruitTime, shakeCount, shakeTime;
+        float stateTime, idleTime, appearX, shakeNextFruitTime, shakeCount, shakeTime, effectStep;
         int numHits, rayoInitLives, invokeCount, shakeTimes;
         Vector3 initPos, positionRayoTo, positionRayoFrom, invokeFrom, invokeStep;
         bool invokeRight;
@@ -303,6 +306,13 @@ namespace MyGame
                     break;
 
                 case tMacedoniaBossState.RayoPrepare:
+                    effectStep -= SB.dt;
+                    if (effectStep <= 0)
+                    {
+                        ParticleManager.Instance.addParticles("zumoPrepare", position + new Vector3(20, -220, 5), Vector3.Zero, Color.White, 0.5f);
+                        effectStep = RAYO_PREPARE_EFFECT_STEP;
+                    }
+
                     if (stateTime > RAYO_PREPARE_DURATION)
                     {
                         changeState(tMacedoniaBossState.RayoAttack);
@@ -311,6 +321,13 @@ namespace MyGame
 
                 case tMacedoniaBossState.RayoAttack:
                     updateRayo();
+
+                    effectStep -= SB.dt;
+                    if (effectStep <= 0)
+                    {
+                        ParticleManager.Instance.addParticles("zumoAttack", position + new Vector3(0, -180, 5), Vector3.Zero, Color.White);
+                        effectStep = RAYO_ATTACK_EFFECT_STEP;
+                    }
 
                     float perc = stateTime / RAYO_DURATION;
                     position = positionRayoFrom + (positionRayoTo - positionRayoFrom) * perc;
