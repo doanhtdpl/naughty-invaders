@@ -8,10 +8,10 @@
   </animatedTexture>
   
   <animatedTexture name="Anim_MacedoniaLaughShakePrepareAttack" frameWidth="350" frameHeight="275" columns="5" rows="7">
-    <action name="rayoPrepare" initialFrame="18" endFrame="21" loops="true" />
-    <action name="die" initialFrame="37" endFrame="37" FPS="15"/>
-    <action name="rayoAttack" initialFrame="22" endFrame="26"  loops="true"/>
-    <action name="rayoAttackLoop" initialFrame="27" endFrame="36"  loops="true"/>
+    <action name="rayoPrepare" initialFrame="18" endFrame="21" loops="false" playAtEnd="rayoPrepareLoop"/>
+    <action name="die" initialFrame="36" endFrame="37" FPS="15"/>
+    <action name="rayoAttack" initialFrame="22" endFrame="26"  loops="false" playAtEnd="rayoAttackLoop"/>
+    <action name="rayoAttackLoop" initialFrame="27" endFrame="31"  loops="true"/>
     <action name="laugh" initialFrame="1" endFrame="9"  loops="true"/>
     <action name="attackShake" initialFrame="10" endFrame="17" loops="true"/>
   </animatedTexture>
