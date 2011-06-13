@@ -135,7 +135,7 @@
   <enemySpawnZones />
   <levelCollisions />
   <camera>
-    <cameraNode id="0" position="-551.9347 4787.395 2000" target="-551.9347 4787.395 0" isFirst="True" speed="300" link="1" />
+    <cameraNode id="0" position="-600.2598 4552.673 2000" target="-600.2598 4552.673 0" isFirst="True" speed="300" link="1" />
     <cameraNode id="1" position="-928.1069 1097.188 1400" target="-928.1069 1097.188 0" isFirst="False" speed="300" link="13" />
     <cameraNode id="13" position="-592.9478 -533.9673 1400" target="-592.9478 -533.9673 0" isFirst="False" speed="300" link="14" />
     <cameraNode id="14" position="-839.9995 -1927.479 1400" target="-839.9995 -1927.479 0" isFirst="False" speed="300" link="15" />
