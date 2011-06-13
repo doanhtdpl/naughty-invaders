@@ -197,7 +197,8 @@ namespace MyGame
 
         public void activateGarlicGun()
         {
-            ParticleManager.Instance.addParticles("newItem", position + new Vector3(0, 0, 0), Vector3.Zero, Color.Red, 2.0f, 100);
+            SoundManager.Instance.playEffect("equipGarlicGun");
+            ParticleManager.Instance.addParticles("equipGarlicGun", position + new Vector3(0, 0, 0), Vector3.Zero, Color.Red, 2.0f, 100);
             shotDirection = Vector2.UnitY;
             mode = tMode.GarlicGun;
         }
