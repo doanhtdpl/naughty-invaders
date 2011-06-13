@@ -70,8 +70,10 @@ namespace MyGame
 
             if (GamerManager.getSessionOwner().data.levelsPassed["fruitownA"])
             {
+                player.position2D = new Vector2(0, -700);
+
                 ActorEvent ae1 = new ActorEvent(player, false);
-                ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 200.0f);
+                ae1.moveTo(new Vector3(0.0f, -200.0f, 0.0f), 300.0f);
                 ActorEvent ae12 = new ActorEvent(player, false);
                 ae12.setOrientation(0.0f);
 

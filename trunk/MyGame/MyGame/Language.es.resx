@@ -136,7 +136,7 @@
     <value>Wanna see who made this game?</value>
   </data>
   <data name="DialogBossMacedoniaIntro1" xml:space="preserve">
-    <value>This time you are the annoying problem. Im tired of useful wishes...</value>
+    <value>This time you are the annoying problem. I'm tired of useful wishes...</value>
   </data>
   <data name="DialogBossMacedoniaIntro2" xml:space="preserve">
     <value>Why are all of you trying to kill me?</value>
@@ -148,55 +148,55 @@
     <value>How is it possible? Are you a real wish? I need to think about it...</value>
   </data>
   <data name="DialogBossMacedoniaOutro2" xml:space="preserve">
-    <value>Mmm... maybe. I dont know exactly who I am.</value>
+    <value>Mmm... maybe. I don't know exactly who I am.</value>
   </data>
   <data name="DialogBossMacedoniaOutro3" xml:space="preserve">
-    <value>Wow! Listen, now Im gonna watch the TV show. Do you want to watch it?</value>
+    <value>Wow! Listen, now I'm gonna watch the TV show. Wanna join me?</value>
   </data>
   <data name="DialogDarkWish1" xml:space="preserve">
-    <value>¡...! You must be...</value>
+    <value>...! You must be...</value>
   </data>
   <data name="DialogDarkWish2" xml:space="preserve">
     <value>Where am I? Who am I? Who are you? Why so much colors?</value>
   </data>
   <data name="DialogDarkWish3" xml:space="preserve">
-    <value>Hey! you must be Wish! you are someone's creation. You need to escape from this bottle.</value>
+    <value>Hey! You must be Wish! You're someone's creation. Now, escape from this bottle!</value>
   </data>
   <data name="DialogDarkWish4" xml:space="preserve">
     <value>Which bottle?</value>
   </data>
   <data name="DialogDarkWish5" xml:space="preserve">
-    <value>No time, this is dangerous. You're mission is to escape in order to cumplirte (como deseo)</value>
+    <value>No time, this is dangerous. Your mission is to escape in order fulfill yourself.</value>
   </data>
   <data name="DialogDarkWish6" xml:space="preserve">
-    <value>I cant understand but... what can I do?</value>
+    <value>I don't understand but... what can I do?</value>
   </data>
   <data name="DialogDarkWish7" xml:space="preserve">
-    <value>You can move with ::LS and shot with ::X . Is all you need.</value>
+    <value>You can move with ::LS and shot with ::X . That's all you need by now.</value>
   </data>
   <data name="DialogDarkWish8" xml:space="preserve">
-    <value>Look! they are coming, try to pick up as much orbs as you can!</value>
+    <value>Look! they are coming, try to pick up as many orbs as you can!</value>
   </data>
   <data name="DialogDarkWishRemind1" xml:space="preserve">
-    <value>Remember, you can move with ::LS and shot with ::X . Is all you need.</value>
+    <value>Remember, you can move with ::LS and shot with ::X . That's all you need by now.</value>
   </data>
   <data name="DialogDarkWishRemind2" xml:space="preserve">
-    <value>Look! they are coming, try to pick up as much orbs as you can!</value>
+    <value>Look! they are coming, try to pick up as many orbs as you can!</value>
   </data>
   <data name="DialogEpilepticBad1" xml:space="preserve">
-    <value>Thats bad Wish... there are more fruits on the floor that in my head. Can you help me to get em?</value>
+    <value>Too bad Wish... there are more fruits on the floor that in my head. Can you help me get'em?</value>
   </data>
   <data name="DialogEpilepticBad2" xml:space="preserve">
     <value>... emm do you hear that. Someone's is looking for me?</value>
   </data>
   <data name="DialogEpilepticBad3" xml:space="preserve">
-    <value>I didnt . . . . . . . . . . . . . grmf!</value>
+    <value>I didn't . . . . . . . . . . . . . grmf!</value>
   </data>
   <data name="DialogEpilepticBadSpecial" xml:space="preserve">
     <value>Wish! if you can hear me, buy the dash skill pressing ::BACK</value>
   </data>
   <data name="DialogEpilepticGood1" xml:space="preserve">
-    <value>Amazing! how can you move so fasr? incredible!</value>
+    <value>Amazing! How can you move so fast? Incredible!</value>
   </data>
   <data name="DialogEpilepticGood2" xml:space="preserve">
     <value>Thanks Macedonia, you are so kind.</value>
@@ -217,25 +217,25 @@
     <value>That TV show is so amazing that Ihave some minor epileptic attacks, and my fruits fall.</value>
   </data>
   <data name="DialogEpilepticIntro5" xml:space="preserve">
-    <value>Igot it, I will pick as many as I can!</value>
+    <value>I got it, I will pick as many as I can!</value>
   </data>
   <data name="DialogEpilepticIntro6" xml:space="preserve">
-    <value>Oh, is coming!!!</value>
+    <value>Oh, it's coming!!!</value>
   </data>
   <data name="DialogEpilepticMedium1" xml:space="preserve">
-    <value>Not bad. With those fruits we could make some high quality juice!</value>
+    <value>Not bad. With those fruits we can still make some high quality juice!</value>
   </data>
   <data name="DialogEpilepticMedium2" xml:space="preserve">
     <value>Do you like juice? Isn't that some kind of cannibalism?</value>
   </data>
   <data name="DialogEpilepticMedium3" xml:space="preserve">
-    <value>Yeah but all people say eat fruit so I do. You know.</value>
+    <value>Yeah but all people say to eat fruit so I do. You know.</value>
   </data>
   <data name="DialogEpilepticMediumSpecial" xml:space="preserve">
     <value>By the way, improve your skills learning dash. Check out the skills menu ::BACK</value>
   </data>
   <data name="DialogLearnDash" xml:space="preserve">
-    <value>Better you learn as soon as possible the dash move. Learn it in the skills menu ::BACK</value>
+    <value>You'd better learn the dash move as soon as possible. Open the skills menu ::BACK</value>
   </data>
   <data name="DialogOnionIntro1" xml:space="preserve">
     <value>Hi onion elder! I need to go to Cucumber Valley!</value>
