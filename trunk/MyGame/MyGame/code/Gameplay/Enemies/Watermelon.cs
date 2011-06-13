@@ -13,10 +13,10 @@ namespace MyGame
         tWatermelonState state;
 
         const float SPEED = -15.0f;
-        const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 1.1f;
-        const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 1.1f;
-        const int NUMBER_OF_PROJECTILES = 10;
-        const float ATTACKING_TIME = 0.9f;
+        const float MIN_SHOT_ANGLE = -Calc.PiOver2 - 1f;
+        const float MAX_SHOT_ANGLE = -Calc.PiOver2 + 1f;
+        const int NUMBER_OF_PROJECTILES = 8;
+        const float ATTACKING_TIME = 1.0f;
 
         bool attackRight = true;
         float attackTimer = 0.0f;
