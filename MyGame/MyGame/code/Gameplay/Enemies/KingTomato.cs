@@ -16,7 +16,7 @@ namespace MyGame
         const float RECOVERING_LIFE_SPEED = 500.0f;
         const float SPAWN_ORB_TIME = 0.05f;
         const int ORBS_TO_SPAWN = 150;
-        public const float SPEED = 100.0f;
+        public const float SPEED = 200.0f;
 
         Lifebar lifebar;
 

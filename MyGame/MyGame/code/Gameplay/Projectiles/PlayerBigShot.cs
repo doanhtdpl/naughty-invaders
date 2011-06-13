@@ -8,7 +8,7 @@ namespace MyGame
 {
     class PlayerBigShot : Projectile
     {
-        const float MINIMUM_DAMAGE = 12.0f;
+        const float MINIMUM_DAMAGE = 15.0f;
         const float MAXIMUM_DAMAGE = 70.0f;
         const float FULL_CHARGE_DAMAGE = 100.0f;
 

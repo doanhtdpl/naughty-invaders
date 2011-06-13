@@ -11,7 +11,7 @@ namespace MyGame
     public enum tDialogCharacter { Wish = 0, DarkWish, OnionElder, KingTomato, Macedonia }
     class DialogEvent : CinematicEvent
     {
-        public const int N_DIALOG_CHARACTERS = 5;
+        public const int N_DIALOGS = 5;
 
         bool textComplete;
         public tDialogCharacter character { get; set; }
@@ -19,11 +19,11 @@ namespace MyGame
         // text speed at characters per second
         public float textSpeed { get; set; }
 
-        public const float AUDIO_TIME = 0.8f;
         float nextAudio = 0.0f;
 
-        public static string[,] characterAudios; 
+        public static string[,] characterAudios;
         public static Texture2D[] portraits;
+        public static float[] dialogTimes;
         public static Texture2D dialogBackground;
         public static Rectangle backgroundRectangle;
         public static Rectangle portraitRectangle;
@@ -49,16 +49,31 @@ namespace MyGame
             pos = Screen.getXYfromCenter(-520, -125);
             portraitRectangle = new Rectangle((int)pos.X, (int)pos.Y, 150, 150);
 
+            string[] characterNames = Enum.GetNames(Type.GetType("MyGame.tDialogCharacter"));
+            int numberOfCharacters = characterNames.Length;
+
             DialogEvent.dialogBackground = TextureManager.Instance.getTexture("GUI/menu/dialogBackground");
-            DialogEvent.portraits = new Texture2D[N_DIALOG_CHARACTERS];
+            DialogEvent.portraits = new Texture2D[numberOfCharacters];
             DialogEvent.portraits[(int)tDialogCharacter.Wish] = TextureManager.Instance.getTexture("GUI/portraits/portraitWish");
             DialogEvent.portraits[(int)tDialogCharacter.DarkWish] = TextureManager.Instance.getTexture("GUI/portraits/mrblack-89");
             DialogEvent.portraits[(int)tDialogCharacter.OnionElder] = TextureManager.Instance.getTexture("GUI/portraits/portraitOnionElder");
             DialogEvent.portraits[(int)tDialogCharacter.KingTomato] = TextureManager.Instance.getTexture("GUI/portraits/portraitKingTomato");
             DialogEvent.portraits[(int)tDialogCharacter.Macedonia] = TextureManager.Instance.getTexture("GUI/portraits/portraitMacedonia");
 
-            DialogEvent.characterAudios = new string[N_DIALOG_CHARACTERS,3];
-            //DialogEvent.characterAudios[(int)tDialogCharacter.Wish, 0] = "wish1";
+            DialogEvent.characterAudios = new string[numberOfCharacters,N_DIALOGS];
+            for (int i = 0; i < characterNames.Length; ++i)
+            {
+                for (int j = 0; j < N_DIALOGS; ++j)
+                {
+                    characterAudios[i,j] = "dialog" + characterNames[i] + (j+1).ToString();
+                }
+            }
+            dialogTimes = new float[numberOfCharacters];
+            dialogTimes[(int)tDialogCharacter.Wish] = 0.8f;
+            dialogTimes[(int)tDialogCharacter.DarkWish] = 0.7f;
+            dialogTimes[(int)tDialogCharacter.OnionElder] = 1.0f;
+            dialogTimes[(int)tDialogCharacter.KingTomato] = 0.5f;
+            dialogTimes[(int)tDialogCharacter.Macedonia] = 0.5f;
         }
 
         public override bool update(bool skip, bool forceSkip = false)
@@ -83,8 +98,8 @@ namespace MyGame
             nextAudio -= SB.dt;
             if (nextAudio < 0.0f)
             {
-                //SoundManager.Instance.playEffect(characterAudios[(int)character, Calc.randomNatural(0,2)]);
-                nextAudio = AUDIO_TIME;
+                SoundManager.Instance.playEffect(characterAudios[(int)character, Calc.randomNatural(0,N_DIALOGS-1)]);
+                nextAudio = dialogTimes[(int)character];
             }
             timer += SB.dt;
 
