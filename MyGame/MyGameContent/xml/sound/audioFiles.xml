@@ -36,6 +36,8 @@
   <audioFile type="effect" name="pickMacedoniaFruit" />
   <audioFile type="effect" name="watermelonDies" />
   <audioFile type="effect" name="watermelonGotHit" />
+  <audioFile type="effect" name="equipGarlicGun" />
+  
 
   <audioFile type="effect" name="dialogWish1" />
   <audioFile type="effect" name="dialogWish2" />
