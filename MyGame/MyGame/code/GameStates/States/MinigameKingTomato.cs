@@ -90,7 +90,7 @@ namespace MyGame
             DialogEvent de6 = new DialogEvent(tDialogCharacter.OnionElder, TextKey.DialogOnionIntro6.Translate(), onionElder);
             cinematic.events.Add(de6);
             ActorEvent ae3 = new ActorEvent(onionElder, false);
-            ae3.moveTo(new Vector3(-1070.0f, -230.0f, 0.0f), 300.0f);
+            ae3.moveTo(new Vector3(-920.0f, -230.0f, 100.0f), 300.0f);
             cinematic.events.Add((CinematicEvent)ae3);
             SpecialEvent music = new SpecialEvent(GamerManager.getMainPlayer());
             music.setPlaySong("Naughty_boss", true);

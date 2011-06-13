@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="500" BGColor="69 47 14 255" CameraMode="Nodes">
+<level nextEntityID="528" BGColor="69 47 14 255" CameraMode="Nodes">
   <staticProps>
     <staticProp entityName="onion-47" worldMatrix="355.2942 256.7059 25.5945 0 -405.9431 568.123 -62.95355 0 -0.09973551 0.03890849 0.994253 0 1114.369 -461.6596 -79.9832 1" id="188" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.1" livingIntensityMax="0.1" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="onion-47" worldMatrix="400.7248 -224.1488 0 0 319.6412 571.4424 0 0 0 0 1 0 -1271.705 -205.9759 -78.9846 1" id="189" color="225 225 225 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -36,7 +36,13 @@
     <staticProp entityName="onion-50" worldMatrix="207.8534 218.3406 0 0 -229.0004 218.0012 0 0 0 0 1 0 929.4952 716.0551 -53.9896 1" id="498" color="255 200 200 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="onion-50" worldMatrix="144.7359 152.0385 0 0 -159.4613 151.8022 0 0 0 0 1 0 811.2786 740.3937 -81.98959 1" id="499" color="255 200 200 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
   </staticProps>
-  <animatedProps />
+  <animatedProps>
+    <animatedProp entityName="littleOnion" worldMatrix="183.4253 7.340924 0 0 -7.843818 195.9909 0 0 0 0 1 0 -1141.546 -222.5211 15.01361 1" id="515" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <animatedProp entityName="littleOnion" worldMatrix="158.2034 23.9101 0 0 -23.9101 158.2034 0 0 0 0 1 0 -1089.991 -150.0338 10.01438 1" id="517" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <animatedProp entityName="littleOnion" worldMatrix="164.3511 0 0 0 0 164.3511 0 0 0 0 1 0 -1180.202 -116.2479 4.998869 1" id="519" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <animatedProp entityName="littleOnion" worldMatrix="244.4587 31.95986 0 0 -31.95986 244.4587 0 0 0 0 1 0 -1115.768 -13.07991 0.01210149 1" id="521" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <animatedProp entityName="littleOnion" worldMatrix="109.1969 0 0 0 0 113.8356 0 0 0 0 1 0 -1043.422 -104.8758 2.01387 1" id="523" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+  </animatedProps>
   <groups>
     <group>
       <entity id="448" />
