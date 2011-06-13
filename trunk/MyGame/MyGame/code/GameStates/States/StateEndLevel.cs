@@ -10,7 +10,7 @@ namespace MyGame
 {
     class StateEndLevel : GameState
     {
-        float TIME = 5;
+        float TIME = 7;
 
         Texture2D level;
         float time, levelFactor;
@@ -24,6 +24,7 @@ namespace MyGame
             transitionColor = new Color(0, 0, 0, 1);
 
             SoundManager.Instance.stopWithFade();
+            SoundManager.Instance.playEffect("stageCompleted");
         }
 
         public override void loadContent()
@@ -88,6 +89,8 @@ namespace MyGame
                     StateManager.addState(StateManager.tGameState.WorldMap);
                 }
             }
+
+            SoundManager.Instance.update();
         }
 
         public override void render()

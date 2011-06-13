@@ -394,7 +394,7 @@ namespace MyGame
                 case tMacedoniaBossState.Talk:
                     if (stateTime > (invokeCount * INVOKE_TIME_BETWEEN_ORANGES))
                     {
-                        EnemyManager.Instance.addEnemy("orange", invokeFrom + invokeStep * invokeCount + new Vector3(0, -1000, 0));
+                        EnemyManager.Instance.addEnemy("orange", invokeFrom + invokeStep * invokeCount + new Vector3(0, -2000, 0));
                         invokeCount++;
                     }
 

@@ -2,7 +2,7 @@
 <animatedEntity>
   <animatedTexture name="Ash_Cry" frameWidth="200" frameHeight="200" columns="10" rows="6">
     <action name="cry" initialFrame="1" endFrame="9" FPS="24" loops="true"/>
-    <action name="cryEnd" initialFrame="25" endFrame="55" FPS="24"/>
+    <action name="cryEnd" initialFrame="25" endFrame="55" FPS="24" playAtEnd="idle"/>
     <action name="idle" initialFrame="55" endFrame="55" FPS="24"/>
   </animatedTexture>
   <animatedTexture name="Ash_Sweet" frameWidth="200" frameHeight="200" columns="10" rows="10">
