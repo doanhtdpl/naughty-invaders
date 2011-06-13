@@ -7,7 +7,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Media;
 using System.Xml;
 using System.IO;
 
@@ -17,16 +16,9 @@ namespace MyGame
     {
         public float timer = 0;
 
-        VideoPlayer player;
-        Video video;
-        Texture2D videoTexture;
+        public const int introTime = 3;
 
-        public const int introTime = 20;
-
-        public StateGameIntro()
-        {
-            video = SB.content.Load<Video>("video/intro");
-        }
+        AnimatedEntity2D ashcry;
 
         public override void initialize()
         {
@@ -39,19 +31,13 @@ namespace MyGame
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
-            player = new VideoPlayer();
+            ashcry = new AnimatedEntity2D("intro", "ash", new Vector3(0, 0, 0), 0, Color.White);
+            LevelManager.Instance.addAnimatedProp(ashcry);
         }
 
         public override void update()
         {
-            //if (player.State == MediaState.Stopped)
-            //{
-            //    player.IsLooped = true;
-            //    player.Play(video);
-            //}
-
             timer += SB.dt;
-
             if (timer > introTime && !TransitionManager.Instance.isFading())
             {
                 CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
@@ -72,17 +58,6 @@ namespace MyGame
 
             EntityManager.Instance.render();
             LevelManager.Instance.render();
-
-            if (player.State != MediaState.Stopped)
-                videoTexture = player.GetTexture();
-
-            // Draw the video, if we have a texture to draw.
-            if (videoTexture != null)
-            {
-                GraphicsManager.Instance.spriteBatchBegin();
-                videoTexture.render2D(Vector2.Zero, new Vector2(1280, 720), Color.White);
-                GraphicsManager.Instance.spriteBatchEnd();
-            }
         }
 
         public override void dispose()
