@@ -90,8 +90,6 @@ namespace MyGame
                     break;
             }
 
-
-
             LevelManager.Instance.update();
             ParticleManager.Instance.update();
             CameraManager.Instance.update();
@@ -104,6 +102,25 @@ namespace MyGame
 
             EntityManager.Instance.render();
             LevelManager.Instance.render();
+
+            if (state == tAshState.Candy)
+            {
+                Color color = Color.Black;
+                if (timer < 1)
+                    color.A = 0;
+                else if (timer < 2)
+                    color.A = (byte)((timer - 1) * 255);
+                else if (timer < 4)
+                    color.A = 255;
+                else if (timer < 5)
+                    color.A = (byte)(Math.Max(0, (5 - timer)) * 255);
+                else
+                    color.A = 0;
+
+                GraphicsManager.Instance.spriteBatchBegin();
+                "i hope my wish comes true".renderNI(Screen.getXYfromCenter(-100, 0), 1.0f, StringManager.tStyle.Normal, color, color);
+                GraphicsManager.Instance.spriteBatchEnd();
+            }
         }
 
         public override void dispose()
