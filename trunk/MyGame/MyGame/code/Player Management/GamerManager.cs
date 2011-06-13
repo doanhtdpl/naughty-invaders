@@ -87,11 +87,16 @@ namespace MyGame
                 ge.Gamer = Gamer.SignedInGamers[playerIndex];
             }
             gamerEntities.Add(ge);
-            ge.Player = new Player(ge, "player", Vector3.Zero, 0);
+            createPlayer(ge);
             ge.Controls = ControlPadManager.Instance.controlPads[(int)playerIndex];
             ge.PlayerIndex = playerIndex;
             playerEntities.Add(ge.Player);
             return ge;
+        }
+
+        public static void createPlayer(GamerEntity ge)
+        {
+            ge.Player = new Player(ge, "player", Vector3.Zero, 0);
         }
 
         public static void updatePlayers()

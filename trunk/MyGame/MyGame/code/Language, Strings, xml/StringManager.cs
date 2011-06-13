@@ -109,6 +109,11 @@ namespace MyGame
             images.Add("GUIDE", new ScaledTexture2D(SB.content.Load<Texture2D>(imagesPath + "GUIDE"), 0.42f));
         }
 
+        public static void unloadContent()
+        {
+            images.Clear();
+        }
+
         // render text functions with multiple headers
         // the text function renders the text with images represented by a string.
         // the string format is to have each word separated by space and each image like that ::ImageNameInDictionary

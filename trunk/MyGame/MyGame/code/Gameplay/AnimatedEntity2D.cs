@@ -38,6 +38,11 @@ namespace MyGame
 
         float animationSpeed = 1.0f;
 
+        public static void unload()
+        {
+            datas.Clear();
+        }
+
         public AnimatedEntity2D(string entityFolder, string entityName, Vector3 position, float orientation, Color color, bool register = true, int id = -1)
             : base("animated", entityName, position, orientation, color, register, id)
         {
