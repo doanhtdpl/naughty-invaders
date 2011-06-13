@@ -115,6 +115,7 @@ namespace MyGame
             if (movingTimer < 0 && nextAttackTimer < 0)
             {
                 playAction("attack");
+                SoundManager.Instance.playEffect("grapeAttack");
                 float attackOrientation = Calc.directionToAngle(GamerManager.getSessionOwner().Player.position2D - position2D);
                 attackOrientation += Calc.randomAngle(-0.3f, +0.3f);
                 // clamp the angle to the grape's shot cone

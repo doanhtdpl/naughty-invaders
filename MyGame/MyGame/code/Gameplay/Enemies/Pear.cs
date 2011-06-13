@@ -75,6 +75,7 @@ namespace MyGame
 
                     if (nextAttackTimer < 0.6f)
                     {
+                        SoundManager.Instance.playEffect("pearAttack");
                         playAction("attack");
                         Vector2 direction = Calc.angleToDirection( FIRST_SHOT_ANGLE );
                         Projectile p = new PearProjectile(position, direction);
