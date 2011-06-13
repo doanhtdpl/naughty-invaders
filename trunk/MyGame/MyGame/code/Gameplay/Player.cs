@@ -23,6 +23,7 @@ namespace MyGame
         public const float DASH_SPEED_THRESHOLD = 500.0f;
         public const float DASH_PARTICLE_SPAWN_TIME = 0.03f;
         public const float MAX_BIG_SHOT_CHARGE = 1.0f;
+        const float BIG_SHOT_PARTICLES_TIME = 0.5f;
 
         public Vector3 initPos;
 
@@ -47,6 +48,7 @@ namespace MyGame
         float bigShotChargeTimer;
         bool bigShotCharging;
         float bigShotCooldownTime;
+        float bigShotParticlesTimer = 0.0f;
 
         Texture2D wishLife = null;
         Texture2D wishLifePortion = null;
@@ -270,6 +272,12 @@ namespace MyGame
                     if (controls.Y_pressed())
                     {
                         bigShotChargeTimer += SB.dt;
+                        bigShotParticlesTimer -= SB.dt;
+                        if (bigShotParticlesTimer < 0.0f)
+                        {
+                            bigShotParticlesTimer = BIG_SHOT_PARTICLES_TIME;
+                            ParticleManager.Instance.addParticles("chargingBigShot", position + new Vector3(0, 50, 0), Vector3.Up, Color.White);
+                        }
                     }
                     else if (controls.Y_released())
                     {
