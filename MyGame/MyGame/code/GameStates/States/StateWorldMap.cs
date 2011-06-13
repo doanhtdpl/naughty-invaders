@@ -164,6 +164,12 @@ namespace MyGame
 
             ControlPad cp = GamerManager.getMainControls();
 
+            if (cp.LB_pressed() && cp.RB_pressed() && cp.LT_pressed() && cp.RT_pressed())
+            {
+                GamerManager.getSessionOwner().data.unlockAllLevels();
+                initializeNetwork();
+            }
+
             // if arrives to a new node
             if ((currentLocation.position - player.position).LengthSquared() < 20.0f)
             {

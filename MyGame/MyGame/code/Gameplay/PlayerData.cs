@@ -48,8 +48,17 @@ namespace MyGame
             levelsPassed["macedonia"] = false;
             levelsPassed["verducity"] = false;
 #endif
-
         }
+
+        public void unlockAllLevels()
+        {
+            levelsPassed["fruitownA"] = true;
+            levelsPassed["fruitownB"] = true;
+            levelsPassed["onionVillage"] = true;
+            levelsPassed["macedonia"] = true;
+            levelsPassed["verducity"] = true;
+        }
+
         // initialize the tree with the costs and links between skills
         public void initSkills()
         {
