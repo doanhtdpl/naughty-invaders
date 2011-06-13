@@ -37,7 +37,11 @@
   <audioFile type="effect" name="watermelonDies" />
   <audioFile type="effect" name="watermelonGotHit" />
   <audioFile type="effect" name="equipGarlicGun" />
+  <audioFile type="effect" name="stageCompleted" />
+
+
   
+
 
   <audioFile type="effect" name="dialogWish1" />
   <audioFile type="effect" name="dialogWish2" />
