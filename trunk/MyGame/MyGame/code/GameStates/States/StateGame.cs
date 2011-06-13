@@ -18,6 +18,7 @@ namespace MyGame
 
         string level;
         bool cinematicPlayed = false;
+        bool transitionDone = false;
         bool bossSongPlayed = false;
 
         public StateGame(string level)
@@ -72,6 +73,23 @@ namespace MyGame
             cinematic.events.Add(ae1);
 
             CinematicManager.Instance.addCinematic("fruitownA_exit", cinematic);
+        }
+
+        void loadEndGameCinematic()
+        {
+            Player player = GamerManager.getMainPlayer();
+            Cinematic cinematic = new Cinematic();
+
+            DialogEvent de1 = new DialogEvent(tDialogCharacter.Wish, "Oh! Painapple seems to be asleep. I wonder when she'll wake up...");
+            cinematic.events.Add(de1);
+
+            DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, "Well, I guess she's waiting for the winner of DREAM-BUILD-PLAY.");
+            cinematic.events.Add(de2);
+
+            DialogEvent de3 = new DialogEvent(tDialogCharacter.Wish, "I hope your wishes also come true!");
+            cinematic.events.Add(de3);
+
+            CinematicManager.Instance.addCinematic("endDemo", cinematic);
         }
 
         void loadAndPlayIntroCinematic()
@@ -265,6 +283,25 @@ namespace MyGame
                 {
                     SoundManager.Instance.playWithTransition("Naughty_boss");
                     bossSongPlayed = true;
+                }
+            }
+            if (level == "verducity")
+            {
+                if (CameraManager.Instance.isIdle() && EnemyManager.Instance.getEnemies().Count <= 0 && EnemyManager.Instance.getActiveEnemies().Count <= 0)
+                {
+                    if (!cinematicPlayed)
+                    {
+                        loadEndGameCinematic();
+                        CinematicManager.Instance.playCinematic("endDemo");
+                        cinematicPlayed = true;
+                    }
+
+                    if (CinematicManager.Instance.cinematicToPlay == null && !transitionDone)
+                    {
+                        transitionDone = true;
+                        SoundManager.Instance.stopWithFade(0.5f);
+                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
+                    }
                 }
             }
         }
