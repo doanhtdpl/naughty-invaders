@@ -16,7 +16,7 @@ namespace MyGame
         float LIFE = 1500;
 
         //rayo
-        float RAYO_PREPARE_DURATION = 5.0f;//1.2f;
+        float RAYO_PREPARE_DURATION = 1.2f;
         float RAYO_DURATION = 10.0f;//1.8f;
         int RAYO_LIMIT_X = 650;
 
@@ -26,7 +26,7 @@ namespace MyGame
         int TELEPORT_LIMIT_X = 600;
         const int MAX_RAYOS = 3;
 
-        int RAYO_ATTACK_WIDTH = 180;
+        int RAYO_ATTACK_WIDTH = 120;
 
         //Appear/disappear
         float HIDDEN_TIME = 1.0f;
@@ -75,21 +75,21 @@ namespace MyGame
             idleTime = 0;
             changeState(tMacedoniaBossState.Init);
 
-            lifebar = new Lifebar("macedonia", this, new Vector2(0.8f, 0.8f), new Vector2(0.0f, 190.0f), Color.White);
+            lifebar = new Lifebar("macedonia", this, new Vector2(0.6f, 0.6f), new Vector2(0.0f, 170.0f), Color.White);
 
             for(int i=0; i<MAX_RAYOS; i++)
             {
                 rayo[i] = new AnimatedEntity2D("animatedProps", "macedoniaWeaponBody", Vector3.Zero, 0, Color.White);
-                rayo[i].scale = new Vector3(rayo[i].scale.X * 2, rayo[i].scale.Y, rayo[i].scale.Z);
+                //rayo[i].scale = new Vector3(rayo[i].scale.X * 2, rayo[i].scale.Y, rayo[i].scale.Z);
             }
             rayoEnd = new AnimatedEntity2D("animatedProps", "macedoniaWeaponEnd", Vector3.Zero, 0, Color.White);
-            rayoEnd.scale = new Vector3(rayoEnd.scale.X * 2, rayoEnd.scale.Y, rayoEnd.scale.Z);
+            //rayoEnd.scale = new Vector3(rayoEnd.scale.X * 2, rayoEnd.scale.Y, rayoEnd.scale.Z);
 
             showRayo(false);
 
             visible = false;
 
-            scale *= 2;
+            //scale *= 2;
 
             loadIntroCinematic();
             //loadEndCinematic();
@@ -134,7 +134,7 @@ namespace MyGame
 
         public override void setCollisions()
         {
-            addCollision(new Vector2(-10, 0), 120);
+            addCollision(new Vector2(-10, 0), 80);
         }
 
         public void removeCollisions()
@@ -554,13 +554,14 @@ namespace MyGame
 
             bool isPlayerHit = Math.Abs(position.X - GamerManager.getMainPlayer().position.X) < RAYO_ATTACK_WIDTH;
 
-            float length = Math.Abs(position.Y - playerPos.Y - 100) - 15 - 58;
+            float length = Math.Abs(position.Y - playerPos.Y - 100) - 15 - 58 + 35;
             if (!isPlayerHit)
                 length = 5000;
 
             for (int i = 0; i < MAX_RAYOS; i++)
             {
                 rayo[i].renderState = tRenderState.NoRender;
+                rayo[i].update();
             }
 
             for (int i = 0; i < MAX_RAYOS; i++)
@@ -570,14 +571,16 @@ namespace MyGame
 
                 rayo[i].renderState = tRenderState.Render;
                     
-                rayo[i].update();
                 float factor = 1.0f;
                 if (length < rayo[i].getFrameSize().Y)
                     factor = length / rayo[i].getFrameSize().Y;
 
                 rayo[i].paintMask = new Vector2(1.0f, factor);
 
-                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y * 0.99f - rayo[i].getFrameSize().Y * 0.5f * factor - 110 , position.Z + 0.1f);
+                float magicNum = 1.004f;
+                if (i == 2)
+                    magicNum = 1.002f;
+                rayo[i].position = new Vector3(position.X, position.Y - i * rayo[i].getFrameSize().Y * magicNum - rayo[i].getFrameSize().Y * 0.5f * factor - 75 , position.Z + 0.1f);
                 length -= rayo[i].getFrameSize().Y;
             }
 

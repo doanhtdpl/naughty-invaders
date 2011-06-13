@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Media;
 using System.Xml;
 using System.IO;
 
@@ -17,7 +18,10 @@ namespace MyGame
         public float timer = 0;
 
         enum tAshState { Cry, Walk, Candy1, Candy2 };
-        tAshState state; 
+        tAshState state;
+        VideoPlayer player;
+        Video video;
+        Texture2D videoTexture;
 
         public const int introTime = 3;
 
@@ -38,10 +42,19 @@ namespace MyGame
             LevelManager.Instance.addAnimatedProp(ash);
             ash.playAction("idle");
             state = tAshState.Cry;
+
+            //player = new VideoPlayer();
+            //video = SB.content.Load<Video>("video/Wildlife");
         }
 
         public override void update()
         {
+            //if (player.State == MediaState.Stopped)
+            //{
+            //    player.IsLooped = true;
+            //    player.Play(video);
+            //}
+
             timer += SB.dt;
             switch (state)
             {
@@ -91,6 +104,17 @@ namespace MyGame
 
             EntityManager.Instance.render();
             LevelManager.Instance.render();
+
+            //if (player.State != MediaState.Stopped)
+            //    videoTexture = player.GetTexture();
+
+            //// Draw the video, if we have a texture to draw.
+            //if (videoTexture != null)
+            //{
+            //    GraphicsManager.Instance.spriteBatchBegin();
+            //    videoTexture.render2D(Vector2.Zero, new Vector2(1280, 720), Color.White);
+            //    GraphicsManager.Instance.spriteBatchEnd();
+            //}
         }
 
         public override void dispose()
