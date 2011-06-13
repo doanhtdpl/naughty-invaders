@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
-  <animatedTexture name="Anim_Lemon" frameWidth="160" frameHeight="160" columns="6" rows="8">
-    <action name="attack" initialFrame="1" endFrame="29"  loops="false"/>
-    <action name="die" initialFrame="30" endFrame="39" loops="false"/>
-    <action name="idle" initialFrame="1" endFrame="29"  loops="true"/>
-    <action name="pose1" initialFrame="40" endFrame="40"  loops="true"/>
-    <action name="pose2" initialFrame="41" endFrame="41"  loops="true"/>
-    <action name="pose3" initialFrame="42" endFrame="42"  loops="true"/>
-    <action name="pose4" initialFrame="43" endFrame="43"  loops="true"/>
+  <animatedTexture name="Anim_Lemon" frameWidth="160" frameHeight="160" columns="6" rows="7">
+    <action name="attack" initialFrame="1" endFrame="22"  loops="false"/>
+    <action name="die" initialFrame="23" endFrame="23" loops="false"/>
+    <action name="idle" initialFrame="1" endFrame="22"  loops="true"/>
+    <action name="pose1" initialFrame="24" endFrame="27"  loops="true"/>
+    <action name="pose2" initialFrame="28" endFrame="31"  loops="true"/>
+    <action name="pose3" initialFrame="32" endFrame="35"  loops="true"/>
+    <action name="pose4" initialFrame="36" endFrame="39"  loops="true"/>
   </animatedTexture>
 </animatedEntity>
