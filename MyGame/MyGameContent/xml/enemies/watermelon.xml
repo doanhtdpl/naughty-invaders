@@ -2,7 +2,7 @@
 <animatedEntity>
   <animatedTexture name="Anim_Watermelon_01" frameWidth="290" frameHeight="290" columns="7" rows="6">
     <action name="idleProt" initialFrame="1" endFrame="29"  loops="true"/>
-    <action name="die" initialFrame="30" endFrame="39"/>
+    <action name="die" initialFrame="30" endFrame="30"/>
   </animatedTexture>
   <animatedTexture name="Anim_Watermelon_02" frameWidth="290" frameHeight="290" columns="7" rows="6">
     <action name="idle" initialFrame="1" endFrame="29" loops="true"/>
