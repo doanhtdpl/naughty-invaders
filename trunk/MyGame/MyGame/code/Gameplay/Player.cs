@@ -432,9 +432,7 @@ namespace MyGame
             bigShotCooldownTime -= SB.dt;
             dashCooldownTime -= SB.dt;
 
-            Vector3 lol = position;
             updateCameraMove();
-            Vector3 lol2 = position;
 
             Vector2 direction = Vector2.Zero;
             if (dashVelocity != Vector2.Zero)
@@ -507,7 +505,7 @@ namespace MyGame
                         // if is last life...
                         if (i == lifes - 1)
                         {
-                            for (int j = 0; j < MAX_LIFE_PORTIONS; ++j)
+                            for (int j = 0; j < getMaxLifePortions(); ++j)
                             {
                                 if (j < lifePortions)
                                 {
