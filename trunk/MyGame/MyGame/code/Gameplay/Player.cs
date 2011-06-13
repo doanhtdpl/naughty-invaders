@@ -368,6 +368,36 @@ namespace MyGame
                 dashVelocity = Vector2.Zero;
             }
         }
+
+        void updateMoveAnimations(Vector2 direction)
+        {
+            if (direction == Vector2.Zero) return;
+
+            if (getCurrentAction() != "attack" && getCurrentAction() != "attack2"
+                    && getCurrentAction() != "miniDie" && getCurrentAction() != "die")
+            {
+                float directionAngle = Calc.directionToAngle(direction);
+                if (directionAngle < 0) directionAngle += Calc.TwoPi;
+                if (directionAngle < Calc.PiOver4 || directionAngle > Calc.TwoPi - Calc.PiOver4)
+                {
+                    playAction("moveRight");
+                }
+                else if (directionAngle < Calc.PiOver4 * 3)
+                {
+                    playAction("moveFront");
+                }
+                else if (directionAngle < Calc.PiOver4 * 5)
+                {
+                    playAction("moveLeft");
+                }
+                else
+                {
+                    playAction("moveBack");
+                }
+            }
+
+        }
+
         public void update(ControlPad controls)
         {
             base.update();

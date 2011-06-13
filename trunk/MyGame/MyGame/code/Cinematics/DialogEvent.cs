@@ -120,7 +120,7 @@ namespace MyGame
                     while (dialogToPlay == lastDialogPlayed);
 
                     nextAudio = dialogTimes[(int)character];
-                    SoundManager.Instance.playEffect(characterAudios[(int)character, dialogToPlay);
+                    SoundManager.Instance.playEffect(characterAudios[(int)character, dialogToPlay]);
                 }
             }
 
