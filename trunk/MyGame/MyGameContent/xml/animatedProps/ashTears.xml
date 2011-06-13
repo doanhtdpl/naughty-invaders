@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animatedEntity>
+  <animatedTexture name="Ash_Tears" frameWidth="200" frameHeight="200" columns="10" rows="3">
+    <action name="tearsStart" initialFrame="11" endFrame="16" FPS="24" />
+    <action name="tearsLoop" initialFrame="10" endFrame="22" FPS="24" loops="true"/>
+    <action name="idle" initialFrame="10" endFrame="22" FPS="24" loops="true"/>
+    <action name="tearsEnd" initialFrame="1" endFrame="9" FPS="24"/>
+  </animatedTexture>
+
+</animatedEntity>
