@@ -63,7 +63,10 @@ namespace MyGame
             ParticleManager.Instance.addParticles(entityName + "GotHit", this.position, Vector3.Zero, Color.White);
             if (life > 0)
             {
-                SoundManager.Instance.playEffect(entityName + "GotHit");
+                if (getCurrentAction() == "idleProt")
+                    SoundManager.Instance.playEffect(entityName + "GotHit");
+                else
+                    SoundManager.Instance.playEffect("lemonDies");
             }
             else
             {
