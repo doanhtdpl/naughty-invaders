@@ -21,11 +21,11 @@ namespace MyGame
             menu = new Menu(300.0f);
             Vector2 scale = new Vector2(1.5f, 0.9f);
 
-            MenuElement mb1 = new MenuElement("", new Vector2(-20.0f, -110), scale);
+            MenuElement mb1 = new MenuElement("", new Vector2(-20.0f, -120), scale);
             mb1.setFunction("startGame", MenuElement.tInputType.A);
             MenuElement mb2 = new MenuElement("", new Vector2(-20.0f, -185), scale);
             mb2.setFunction("goToCredits", MenuElement.tInputType.A);
-            MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -250), scale);
+            MenuElement mb3 = new MenuElement("", new Vector2(-20.0f, -260), scale);
             mb3.setFunction("exitToArcade", MenuElement.tInputType.A);
             
             //menu.menuTexts.Add(new MenuText("start game", new Vector2(-20, -100), 1.0f));
@@ -96,9 +96,9 @@ namespace MyGame
             menu.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "start game".renderNI(Screen.getXYfromCenter(0, -100), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
-            "credits".renderNI(Screen.getXYfromCenter(0, -170), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
-            "exit to arcade".renderNI(Screen.getXYfromCenter(0, -240), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
+            "start game".renderNI(Screen.getXYfromCenter(0, -100), 1.6f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
+            "credits".renderNI(Screen.getXYfromCenter(0, -170), 1.6f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
+            "exit to arcade".renderNI(Screen.getXYfromCenter(0, -240), 1.6f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
             GraphicsManager.Instance.spriteBatchEnd();
         }
 

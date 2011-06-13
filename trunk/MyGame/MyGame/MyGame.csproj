@@ -51,7 +51,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;WINDOWS; ONLY_GAMEPLAY</DefineConstants>
+    <DefineConstants>TRACE;WINDOWS; ONLY_GAMEPLAY; UNLOAD_HACK</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
