@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <level nextEntityID="185" BGColor="255 255 255 255" CameraMode="None">
   <staticProps>
-    <staticProp entityName="logo-51" worldMatrix="573.1892 0 0 0 0 547.3806 0 0 0 0 1 0 794.9257 -314.3827 -542.9892 1" id="181" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.02" livingSpeedMin="5" livingSpeedMax="1.6" />
-    <staticProp entityName="logo-51" worldMatrix="4565.072 0 0 0 0 4275.686 0 0 0 0 1 0 -116.4854 966.9305 -654.9892 1" id="184" color="7 7 7 7" flipH="False" flipV="False" living="True" livingIntensityMin="0.006" livingIntensityMax="0.006" livingSpeedMin="5" livingSpeedMax="1.6" />
+    <staticProp entityName="logo-51" worldMatrix="580.3151 0 0 0 0 542.714 0 0 0 0 1 0 -23.56436 26.50693 -542.9892 1" id="181" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.02" livingSpeedMin="5" livingSpeedMax="1.6" />
+    <staticProp entityName="logo-51" worldMatrix="4590.923 0 0 0 0 4266.546 0 0 0 0 1 0 -112.6768 961.2175 -654.9892 1" id="184" color="7 7 7 7" flipH="False" flipV="False" living="True" livingIntensityMin="0.006" livingIntensityMax="0.006" livingSpeedMin="5" livingSpeedMax="1.6" />
   </staticProps>
   <animatedProps />
   <groups />
