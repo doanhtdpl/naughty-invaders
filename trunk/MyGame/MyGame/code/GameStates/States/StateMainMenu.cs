@@ -86,6 +86,15 @@ namespace MyGame
             if (TransitionManager.Instance.isFading()) return;
 
             menu.update();
+
+            if (menu.currentNode == menu.menuElements[0])
+                menu.setSelectorDistance(300);
+            else if (menu.currentNode == menu.menuElements[1])
+                menu.setSelectorDistance(250);
+            else if (menu.currentNode == menu.menuElements[2])
+                menu.setSelectorDistance(360);
+
+            menu.updateCursor();
         }
 
         public override void render()

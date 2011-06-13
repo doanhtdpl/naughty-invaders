@@ -24,6 +24,11 @@ namespace MyGame
             this.selectorDistance = selectorDistance;
         }
 
+        public void setSelectorDistance(float selectorDistance)
+        {
+            this.selectorDistance = selectorDistance;
+        }
+
         public void updatePositionAndScale(Vector2 position, Vector2 scale)
         {
             leftCursor.position = position + new Vector2(-selectorDistance, 0);
@@ -63,6 +68,16 @@ namespace MyGame
             menuElements = new List<MenuElement>();
             menuTexts = new List<MenuText>();
             selectionCursor = new MenuCursor("Selector", new Vector2(0.4f, 0.4f), selectorDistance);
+        }
+
+        public void setSelectorDistance(float selectorDistance)
+        {
+            selectionCursor.setSelectorDistance(selectorDistance);
+        }
+
+        public void updateCursor()
+        {
+            selectionCursor.updatePositionAndScale(currentNode.position, currentNode.scale);
         }
 
         public void update()
