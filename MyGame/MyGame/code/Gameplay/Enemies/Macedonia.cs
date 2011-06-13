@@ -17,7 +17,7 @@ namespace MyGame
 
         //rayo
         float RAYO_PREPARE_DURATION = 1.2f;
-        float RAYO_DURATION = 10.0f;//1.8f;
+        float RAYO_DURATION = 1.8f;
         int RAYO_LIMIT_X = 650;
 
         float RAYO_PREPARE_EFFECT_STEP = 0.05f;

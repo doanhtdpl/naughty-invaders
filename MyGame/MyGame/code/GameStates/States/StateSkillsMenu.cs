@@ -123,7 +123,10 @@ namespace MyGame
             TextKey.skillPlasma.Translate().renderNI(Screen.getXYfromCenter(-350, 95), 0.8f, StringManager.tStyle.Shadowed);
             TextKey.skillPowerShot.Translate().renderNI(Screen.getXYfromCenter(-350, 30), 0.8f, StringManager.tStyle.Shadowed);
             TextKey.skillLife.Translate().renderNI(Screen.getXYfromCenter(-350, -32), 0.8f, StringManager.tStyle.Shadowed);
-            TextKey.pressBBack.Translate().renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
+            if (StateManager.gameStates[StateManager.gameStates.Count - 2] is StatePausedGame)
+                TextKey.pressBBackMenu.Translate().renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
+            else
+                TextKey.pressBBackToGame.Translate().renderNI(Screen.getXYfromCenter(300, -230), 1.0f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
