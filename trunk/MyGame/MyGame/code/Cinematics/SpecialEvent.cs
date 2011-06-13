@@ -20,6 +20,9 @@ namespace MyGame
         string songToPlay;
         bool loopToPlay;
 
+        bool playSoundEffect;
+        string soundEffect;
+
         public SpecialEvent(RenderableEntity2D actor, bool skippable = true, float activationTime = 0.3f, bool hasDuration = false, float duration = 999.0f)
             : base(activationTime, hasDuration, duration)
         {
@@ -35,12 +38,18 @@ namespace MyGame
             this.effectColor = effectColor;
             this.effectScale = effectScale;
         }
-        
+
         public void setPlaySong(string songToPlay, bool loop)
         {
             this.playSong = true;
             this.songToPlay = songToPlay;
             this.loopToPlay = loop;
+        }
+
+        public void setPlaySound(string sound)
+        {
+            this.playSoundEffect = true;
+            this.soundEffect = sound;
         }
 
         public override void startEvent()
@@ -52,6 +61,10 @@ namespace MyGame
             if (playSong)
             {
                 SoundManager.Instance.playWithTransition(songToPlay, loopToPlay);
+            }
+            if (playSoundEffect)
+            {
+                SoundManager.Instance.playEffect(soundEffect);
             }
         }
     }
