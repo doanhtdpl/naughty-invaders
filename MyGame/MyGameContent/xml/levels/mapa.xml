@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<level nextEntityID="578" BGColor="0 0 0 255" CameraMode="WorldMap">
+<level nextEntityID="588" BGColor="0 0 0 255" CameraMode="WorldMap">
   <staticProps>
     <staticProp entityName="artmapa-04" worldMatrix="325 0 0 0 0 238 0 0 0 0 1 0 -439.4823 33.16757 36.00544 1" id="5" color="202 239 133 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-05" worldMatrix="405 0 0 0 0 297 0 0 0 0 1 0 60.85678 -86.87659 73.98105 1" id="27" color="245 188 236 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -7,7 +7,6 @@
     <staticProp entityName="artmapa-11" worldMatrix="371.8735 14.88288 0 0 -2.745386 68.59805 0 0 0 0 1 0 -145.6858 444.7891 555.9878 1" id="43" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-12" worldMatrix="376.0892 2.74411 33.77556 0 -1.260205 126.4958 3.755107 0 -0.08918552 -0.03044201 0.9955498 0 -946.3536 91.4881 273.0128 1" id="46" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-13" worldMatrix="483.9956 0 0 0 0 102.677 0 0 0 0 1 0 -338.8848 274.8523 240.0019 1" id="49" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="artmapa-14" worldMatrix="699.4579 0 0 0 0 139.6335 0 0 0 0 1 0 -741.2319 -136.9605 239.9984 1" id="52" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-15" worldMatrix="1108 0 0 0 0 187 0 0 0 0 1 0 -45.20972 762.9803 -0.005723479 1" id="55" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-16" worldMatrix="1963.613 157.425 0 0 -24.56831 306.4484 9.225718 0 0.002397081 -0.02989956 0.99955 0 -517.5838 757.9089 87.99361 1" id="58" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artmapa-17" worldMatrix="188 0 0 0 0 382 0 0 0 0 1 0 97.41528 128.0704 45.99767 1" id="61" color="255 255 255 255" flipH="False" flipV="False" living="False" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
@@ -43,7 +42,8 @@
     <staticProp entityName="artsmapa-30" worldMatrix="128.8887 12.86011 2.818303 0 -24.88482 249.0978 1.401185 0 -0.02108933 -0.007730442 0.9997478 0 -602.2614 311.6932 58.98962 1" id="570" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.1" livingIntensityMax="0.1" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artsmapa-30" worldMatrix="99.98977 9.976643 2.186393 0 -21.7852 218.0709 1.226658 0 -0.02108933 -0.007730442 0.9997478 0 -668.1165 305.361 58.98962 1" id="571" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
     <staticProp entityName="artsmapa-30" worldMatrix="92.90383 25.65688 2.097083 0 -58.99413 213.517 1.239861 0 -0.01947747 -0.01118695 0.9997478 0 -713.4781 264.0869 33.98962 1" id="572" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
-    <staticProp entityName="ver-13" worldMatrix="429.922 0 0 0 0 91.19555 0 0 0 0 1 0 14.00415 35.31519 227.0045 1" id="575" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="cucumber-39" worldMatrix="452.1868 0 0 0 0 59.97012 0 0 0 0 1 0 8.753052 46.53888 525.9873 1" id="580" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
+    <staticProp entityName="epileptic-13" worldMatrix="455 0 0 0 0 59 0 0 0 0 1 0 -725.9991 -103.6761 287.0152 1" id="585" color="255 255 255 255" flipH="False" flipV="False" living="True" livingIntensityMin="0.02" livingIntensityMax="0.03" livingSpeedMin="1.25" livingSpeedMax="1.6" />
   </staticProps>
   <animatedProps />
   <groups>
