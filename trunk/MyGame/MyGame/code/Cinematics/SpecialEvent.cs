@@ -16,6 +16,10 @@ namespace MyGame
         Color effectColor;
         float effectScale;
 
+        bool playSong;
+        string songToPlay;
+        bool loopToPlay;
+
         public SpecialEvent(RenderableEntity2D actor, bool skippable = true, float activationTime = 0.3f, bool hasDuration = false, float duration = 999.0f)
             : base(activationTime, hasDuration, duration)
         {
@@ -31,11 +35,23 @@ namespace MyGame
             this.effectColor = effectColor;
             this.effectScale = effectScale;
         }
+        
+        public void setPlaySong(string songToPlay, bool loop)
+        {
+            this.playSong = true;
+            this.songToPlay = songToPlay;
+            this.loopToPlay = loop;
+        }
+
         public override void startEvent()
         {
             if (playEffect)
             {
                 ParticleManager.Instance.addParticles(effectToPlay, effectPosition, effectDirection, effectColor, effectScale);
+            }
+            if (playSong)
+            {
+                SoundManager.Instance.playWithTransition(songToPlay, loopToPlay);
             }
         }
     }

@@ -4,7 +4,6 @@
 -->
 
 <audioFiles>
-  <audioFile type="song" name="song" />
   <audioFile type="song" name="Naughty_boss" />
   <audioFile type="song" name="Naughty_jingle" />
   <audioFile type="song" name="Naughty_song_test3" />
