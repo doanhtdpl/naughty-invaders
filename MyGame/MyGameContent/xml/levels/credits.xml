@@ -135,11 +135,11 @@
   <enemySpawnZones />
   <levelCollisions />
   <camera>
-    <cameraNode id="0" position="-636.3386 4371.63 2000" target="-636.3386 4371.63 0" isFirst="True" link="1" speed="300"/>
-    <cameraNode id="1" position="-928.1069 1097.188 1400" target="-928.1069 1097.188 0" isFirst="False" link="13" speed="300"/>
-    <cameraNode id="13" position="-592.9478 -533.9673 1400" target="-592.9478 -533.9673 0" isFirst="False" link="14" speed="300"/>
-    <cameraNode id="14" position="-839.9995 -1927.479 1400" target="-839.9995 -1927.479 0" isFirst="False" link="15" speed="300"/>
-    <cameraNode id="15" position="-399.9267 -3396.772 1400" target="-399.9267 -3396.772 0" isFirst="False" speed="300"/>
+    <cameraNode id="0" position="-551.9347 4787.395 2000" target="-551.9347 4787.395 0" isFirst="True" speed="300" link="1" />
+    <cameraNode id="1" position="-928.1069 1097.188 1400" target="-928.1069 1097.188 0" isFirst="False" speed="300" link="13" />
+    <cameraNode id="13" position="-592.9478 -533.9673 1400" target="-592.9478 -533.9673 0" isFirst="False" speed="300" link="14" />
+    <cameraNode id="14" position="-839.9995 -1927.479 1400" target="-839.9995 -1927.479 0" isFirst="False" speed="300" link="15" />
+    <cameraNode id="15" position="-399.9267 -3396.772 1400" target="-399.9267 -3396.772 0" isFirst="False" speed="300" />
   </camera>
   <particles />
   <players>
