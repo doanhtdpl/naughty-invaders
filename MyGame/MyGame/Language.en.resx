@@ -328,7 +328,7 @@
     <value>Thanks Macedonia, you are too kind...</value>
   </data>
   <data name="DialogEpilepticGoodSpecial" xml:space="preserve">
-    <value>You should but the dash skill with the orbs you won. (::BACK skills menu)</value>
+    <value>You should but the dash skill with the orbs you won. ::BACK skills menu</value>
   </data>
   <data name="DialogEpilepticIntro1" xml:space="preserve">
     <value>Hi Macedonia, how are you doing?</value>

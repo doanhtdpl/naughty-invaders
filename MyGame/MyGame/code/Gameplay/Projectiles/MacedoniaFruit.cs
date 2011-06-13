@@ -58,13 +58,16 @@ namespace MyGame
                 base.render();
         }
 
-        public void explode()
+        public void explode(bool epileptic = false)
         {
             if (!deadRequest)
             {
                 deadRequest = true;
                 timeToDie = 0.2f;
-                ParticleManager.Instance.addParticles("grape2", position, Vector3.Zero, Color.White);
+                if(epileptic)
+                    ParticleManager.Instance.addParticles("getFruit", position + new Vector3(40, -10, 0), Vector3.Zero, Color.White);
+                else
+                    ParticleManager.Instance.addParticles("grape2", position, Vector3.Zero, Color.White);
             }
         }
 
