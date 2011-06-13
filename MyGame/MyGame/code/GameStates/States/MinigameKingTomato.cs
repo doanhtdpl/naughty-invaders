@@ -63,6 +63,8 @@ namespace MyGame
             loadSpeechCinematic(kingTomato);
             loadReturnsCinematic();
             CinematicManager.Instance.playCinematic("kingTomatoIntro");
+
+            SoundManager.Instance.playSong("Naughty_jingle", true);
         }
 
         void loadIntroCinematic()

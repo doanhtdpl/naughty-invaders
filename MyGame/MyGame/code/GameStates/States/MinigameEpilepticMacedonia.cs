@@ -147,6 +147,8 @@ namespace MyGame
             macedonia = new MacedoniaMinigame(new Vector3(0.0f, 200.0f, 0), 0.0f);
             loadIntroCinematic();
             CinematicManager.Instance.playCinematic("epilepticMacedoniaIntro");
+
+            SoundManager.Instance.playSong("Naughty_jingle", true);
         }
         
         public override void update()

@@ -48,14 +48,6 @@ namespace MyGame
                 SoundManager.Instance.playSong("Naughty_Rock1", true);
                 //SoundManager.Instance.playSong("Naughty_boss");
             }
-            else if (level == "onion village")
-            {
-                SoundManager.Instance.playSong("Naughty_jingle", true);
-            }
-            else if (level == "macedonia")
-            {
-                SoundManager.Instance.playSong("Naughty_jingle", true);
-            }
             else if (level == "verducity")
             {
                 SoundManager.Instance.playSong("Naughty_Rock1", true);
