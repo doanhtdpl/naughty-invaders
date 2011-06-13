@@ -165,6 +165,7 @@ namespace MyGame
         public override void die()
         {
             base.die();
+            SoundManager.Instance.stopWithFade();
             TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 2.0f, Color.Black);
             SoundManager.Instance.playEffect("wishFinalDie");
 

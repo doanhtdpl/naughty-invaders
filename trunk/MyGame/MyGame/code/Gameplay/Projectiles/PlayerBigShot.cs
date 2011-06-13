@@ -28,6 +28,12 @@ namespace MyGame
                 this.damage = (MAXIMUM_DAMAGE - MINIMUM_DAMAGE) * chargeValue + MINIMUM_DAMAGE;
             }
 
+            living = true;
+            livingIntensityMin = 0.2f;
+            livingIntensityMax = 0.3f;
+            livingSpeedMin = 10.25f;
+            livingSpeedMax = 10.6f;
+
             special = tSpecial.BreaksGuard;
         }
 

@@ -11,7 +11,7 @@ namespace MyGame
 {
     class SoundManager
     {
-        const float STOP_FADE_DURATION = 1.0f;
+        const float STOP_FADE_DURATION = 0.5f;
 
         bool stopFade = false;
         float stopFadeTime;
