@@ -31,6 +31,8 @@ namespace MyGame
 
     class StateWorldMap : GameState
     {
+        Entity2D selector;
+
         WorldMapPlayer player;
         public NetworkNode<WorldMapLocation> lastLocation { get; set; }
         public NetworkNode<WorldMapLocation> currentLocation { get; set; }
@@ -106,6 +108,10 @@ namespace MyGame
             player = new WorldMapPlayer(currentLocation.position);
             player.positionZ += 200.0f;
 
+            selector = new RenderableEntity2D("GUI/ingame", "selector-37", player.position, 0, Color.White);
+            selector.scale2D *= 0.6f;
+            EntityManager.Instance.registerEntity(selector);
+
             TransitionManager.Instance.fadeOut();
 
             //SoundManager.Instance.playSong("song");
@@ -113,7 +119,6 @@ namespace MyGame
 
         public override void loadContent()
         {
-
         }
 
         public override void render()
@@ -135,6 +140,9 @@ namespace MyGame
         public override void update()
         {
             base.update();
+
+            selector.position = player.position;
+            selector.orientation += SB.dt;
 
             bool canMove = !TransitionManager.Instance.isFading();
 
