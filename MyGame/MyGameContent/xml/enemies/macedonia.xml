@@ -6,6 +6,7 @@
   <animatedTexture name="Anim_MacedoniaSpeaking" frameWidth="350" frameHeight="275" columns="5" rows="7">
     <action name="talk" initialFrame="1" endFrame="35" loops="true"/>
   </animatedTexture>
+  
   <animatedTexture name="Anim_MacedoniaLaughShakePrepareAttack" frameWidth="350" frameHeight="275" columns="5" rows="7">
     <action name="rayoPrepare" initialFrame="18" endFrame="21" loops="true" />
     <action name="die" initialFrame="37" endFrame="37" FPS="15"/>
@@ -14,7 +15,8 @@
     <action name="laugh" initialFrame="1" endFrame="9"  loops="true"/>
     <action name="attackShake" initialFrame="10" endFrame="17" loops="true"/>
   </animatedTexture>
-  <animatedTexture name="Anim_MacedoniaPrepareLoop" frameWidth="350" frameHeight="275" columns="5" rows="7">
+  
+  <animatedTexture name="Anim_MacedoniaPrepareIdle" frameWidth="350" frameHeight="275" columns="5" rows="7">
     <action name="rayoPrepareLoop" initialFrame="1" endFrame="35" loops="true" />
   </animatedTexture>
 
