@@ -164,6 +164,7 @@ namespace MyGame
         {
             playAction("miniDie");
             SoundManager.Instance.playEffect("wishMiniDie");
+            ParticleManager.Instance.addParticles("wishMiniDie", position, Vector3.Zero, Color.White);
         }
 
         public override void die()
