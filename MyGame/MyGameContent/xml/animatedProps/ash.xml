@@ -6,6 +6,7 @@
     <action name="idle" initialFrame="55" endFrame="55" FPS="24"/>
   </animatedTexture>
   <animatedTexture name="Ash_Sweet" frameWidth="200" frameHeight="200" columns="10" rows="10">
-    <action name="sweet" initialFrame="1" endFrame="100" FPS="24" />
+    <action name="sweet" initialFrame="1" endFrame="100" FPS="24" playAtEnd="sweetEnd"/>
+    <action name="sweetEnd" initialFrame="100" endFrame="100" FPS="24" loops="true"/>
   </animatedTexture>
 </animatedEntity>
