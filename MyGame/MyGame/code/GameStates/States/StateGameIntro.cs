@@ -18,7 +18,7 @@ namespace MyGame
 
         public const int introTime = 3;
 
-        AnimatedEntity2D ashcry;
+        AnimatedEntity2D ash = null, ashTears = null;
 
         public override void initialize()
         {
@@ -31,8 +31,15 @@ namespace MyGame
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
-            ashcry = new AnimatedEntity2D("intro", "ash", new Vector3(0, 0, 0), 0, Color.White);
-            LevelManager.Instance.addAnimatedProp(ashcry);
+            foreach (AnimatedEntity2D ent in LevelManager.Instance.getAnimatedProps())
+            {
+                if (ent.entityName == "ash")
+                    ash = ent;
+                if (ent.entityName == "ashTears")
+                    ashTears = ent;
+                if (ash != null && ashTears != null)
+                    break;
+            }
         }
 
         public override void update()

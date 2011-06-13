@@ -2821,23 +2821,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="textures\intro\ashcry.png">
-      <Name>ashcry</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="xml\animatedProps\ventose.xml">
       <Name>ventose</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="xml\intro\ash.xml">
-      <Name>ash</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -2980,23 +2965,6 @@
     </Compile>
     <Compile Include="textures\staticProps\epileptic-13.png">
       <Name>epileptic-13</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="textures\intro\camina2.png">
-      <Name>camina2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\intro\caramelor.png">
-      <Name>caramelor</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="textures\intro\caramelor2.png">
-      <Name>caramelor2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
