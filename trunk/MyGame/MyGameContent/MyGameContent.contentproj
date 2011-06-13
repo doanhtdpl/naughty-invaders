@@ -3033,6 +3033,133 @@
   <ItemGroup>
     <Folder Include="video\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="sounds\effects\dialogDarkWish1.wav">
+      <Name>dialogDarkWish1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogDarkWish2.wav">
+      <Name>dialogDarkWish2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogDarkWish3.wav">
+      <Name>dialogDarkWish3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogDarkWish4.wav">
+      <Name>dialogDarkWish4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogDarkWish5.wav">
+      <Name>dialogDarkWish5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogKingTomato1.wav">
+      <Name>dialogKingTomato1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogKingTomato2.wav">
+      <Name>dialogKingTomato2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogKingTomato3.wav">
+      <Name>dialogKingTomato3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogKingTomato4.wav">
+      <Name>dialogKingTomato4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogKingTomato5.wav">
+      <Name>dialogKingTomato5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogMacedonia1.wav">
+      <Name>dialogMacedonia1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogMacedonia2.wav">
+      <Name>dialogMacedonia2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogMacedonia3.wav">
+      <Name>dialogMacedonia3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogMacedonia4.wav">
+      <Name>dialogMacedonia4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogMacedonia5.wav">
+      <Name>dialogMacedonia5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogOnionElder1.wav">
+      <Name>dialogOnionElder1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogOnionElder2.wav">
+      <Name>dialogOnionElder2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogOnionElder3.wav">
+      <Name>dialogOnionElder3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogOnionElder4.wav">
+      <Name>dialogOnionElder4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogOnionElder5.wav">
+      <Name>dialogOnionElder5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogWish1.wav">
+      <Name>dialogWish1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogWish2.wav">
+      <Name>dialogWish2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogWish3.wav">
+      <Name>dialogWish3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogWish4.wav">
+      <Name>dialogWish4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="sounds\effects\dialogWish5.wav">
+      <Name>dialogWish5</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
