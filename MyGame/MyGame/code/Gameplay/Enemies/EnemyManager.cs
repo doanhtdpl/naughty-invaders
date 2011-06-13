@@ -140,8 +140,10 @@ namespace MyGame
         public void checkCollisionsWithPlayers()
         {
             bool alive = true;
-            foreach (Player p in GamerManager.getPlayerEntities())
-            {
+            //foreach (Player p in GamerManager.getPlayerEntities())
+            //{
+
+            Player p = GamerManager.getMainPlayer();
                 foreach (Enemy enemy in activeEnemies)
                 {
                     if (enemy.entityState == Entity2D.tEntityState.Dying) continue;
@@ -154,7 +156,7 @@ namespace MyGame
                         }
                     }
                 }
-            }
+            //}
         }
         public void updateEnemySpawnZones()
         {
