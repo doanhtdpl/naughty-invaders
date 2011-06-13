@@ -90,11 +90,6 @@ namespace MyGame
             Player player = GamerManager.getMainPlayer();
             if (savedFruits < 25)
             {
-                if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
-                {
-                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBadSpecial.Translate());
-                    cinematic.events.Add((CinematicEvent)deSpecial);
-                }
                 DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBad1.Translate(), macedonia);
                 ActorEvent ae2 = new ActorEvent(player, false);
                 ae2.setOrientation(2.3f);
@@ -117,6 +112,12 @@ namespace MyGame
                 cinematic.events.Add((CinematicEvent)de2);
                 cinematic.events.Add((CinematicEvent)ae6);
                 cinematic.events.Add((CinematicEvent)de3);
+
+                if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
+                {
+                    DialogEvent deSpecial = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticBadSpecial.Translate());
+                    cinematic.events.Add((CinematicEvent)deSpecial);
+                }
             }
             else if (savedFruits < 40)
             {

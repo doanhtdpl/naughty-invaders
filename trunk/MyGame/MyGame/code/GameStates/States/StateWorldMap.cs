@@ -145,10 +145,10 @@ namespace MyGame
             GUIManager.Instance.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            TextKey.pressLSselectLevel.Translate().renderNI(Screen.getXYfromCenter(380, 320), 0.8f, StringManager.tStyle.Shadowed);
-            TextKey.pressAenterLevel.Translate().renderNI(Screen.getXYfromCenter(380, 280), 0.8f, StringManager.tStyle.Shadowed);
-            TextKey.pressBBackMenu.Translate().renderNI(Screen.getXYfromCenter(380, 240), 0.8f, StringManager.tStyle.Shadowed);
-            TextKey.pressBACKskillsMenu.Translate().renderNI(Screen.getXYfromCenter(380, 200), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressLSselectLevel.Translate().renderNI(Screen.getXYfromCenter(-380, -100), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressAenterLevel.Translate().renderNI(Screen.getXYfromCenter(-380, -140), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressBBackMenu.Translate().renderNI(Screen.getXYfromCenter(-380, -180), 0.8f, StringManager.tStyle.Shadowed);
+            TextKey.pressBACKskillsMenu.Translate().renderNI(Screen.getXYfromCenter(-380, -220), 0.8f, StringManager.tStyle.Shadowed);
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
