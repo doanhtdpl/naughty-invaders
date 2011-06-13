@@ -11,7 +11,7 @@ namespace MyGame
 {
     class MinigameEpilepticMacedonia : StateGame
     {
-        const int FRUITS_TO_SPAWN = 30;
+        const int FRUITS_TO_SPAWN = 50;
         const float FRUIT_SPAWN_TIME_MIN = 1.0f;
         const float FRUIT_SPAWN_TIME_MAX = 2.0f;
         float nextFruitSpawn = 2.0f;
@@ -68,6 +68,11 @@ namespace MyGame
             ae2.moveTo(new Vector3(0.0f, -500.0f, 0.0f), 200.0f);
             cinematic.events.Add((CinematicEvent)ae2);
 
+            ActorEvent ae3 = new ActorEvent(macedonia, false);
+            ae3.setActionToPlay("attackShake");
+            cinematic.events.Add((CinematicEvent)ae3);
+
+
             CinematicManager.Instance.addCinematic("epilepticMacedoniaIntro", cinematic);
         }
 
@@ -83,7 +88,7 @@ namespace MyGame
             cinematic.events.Add((CinematicEvent)ae12);
 
             Player player = GamerManager.getMainPlayer();
-            if (savedFruits < 10)
+            if (savedFruits < 25)
             {
                 if (!GamerManager.getSessionOwner().data.skills["dash1"].obtained)
                 {
@@ -113,7 +118,7 @@ namespace MyGame
                 cinematic.events.Add((CinematicEvent)ae6);
                 cinematic.events.Add((CinematicEvent)de3);
             }
-            else if (savedFruits < 20)
+            else if (savedFruits < 40)
             {
                 DialogEvent de1 = new DialogEvent(tDialogCharacter.Macedonia, TextKey.DialogEpilepticMedium1.Translate());
                 DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogEpilepticMedium2.Translate());
@@ -163,6 +168,7 @@ namespace MyGame
         {
             base.update();
 
+            macedonia.update();
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
             if (orbsToSpawn > 0)
@@ -181,7 +187,7 @@ namespace MyGame
             if (!startedThrowing)
             {
                 startedThrowing = true;
-                macedonia.playAction("attackShake", false, 1.0f);
+                macedonia.playAction("attackShake", false, 0.5f);
             }
 
             if (spawnedFruits >= FRUITS_TO_SPAWN)
@@ -199,7 +205,7 @@ namespace MyGame
                     nextFruitSpawn = Calc.randomScalar(FRUIT_SPAWN_TIME_MIN - timeModifier, FRUIT_SPAWN_TIME_MAX - timeModifier);
                     nextFruitSpawn = Calc.clamp(nextFruitSpawn, 0.5f, 1000.0f);
                     ++spawnedFruits;
-                    macedonia.playAction("attackShake", false, 1.0f + (1.5f * (spawnedFruits / FRUITS_TO_SPAWN)));
+                    macedonia.playAction("attackShake", false, 0.5f + (1.5f * (spawnedFruits / FRUITS_TO_SPAWN)));
                 }
             }
 
@@ -207,6 +213,7 @@ namespace MyGame
             {
                 playedEnd = true;
                 loadEndCinematic();
+                macedonia.playAction("idle");
                 CinematicManager.Instance.playCinematic("endMacedoniaMinigame");
                 orbsToSpawn = savedFruits * 10;
             }
