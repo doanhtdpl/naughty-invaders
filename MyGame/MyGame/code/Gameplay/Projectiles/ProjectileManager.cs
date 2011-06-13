@@ -28,6 +28,11 @@ namespace MyGame
         List<Entity2D> projectiles = new List<Entity2D>();
         List<Projectile> projectilesToDelete = new List<Projectile>();
 
+        public List<Entity2D> getProjectiles()
+        {
+            return projectiles;
+        }
+
         #region ENTITY MANAGEMENT
         public void addProjectile(Projectile p)
         {

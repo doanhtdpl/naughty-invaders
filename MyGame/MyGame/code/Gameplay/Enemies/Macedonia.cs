@@ -383,10 +383,21 @@ namespace MyGame
             {
                 fruit.update();
 
-                if (!fruit.isDead() && !fruit.isDying() && (fruit.position - GamerManager.getMainPlayer().position).Length() < 100)
+                if (!fruit.isDead() && !fruit.isDying())
                 {
-                    GamerManager.getMainPlayer().gotHitAtPart(null, 0);
-                    fruit.explode();
+                    foreach(Projectile p in ProjectileManager.Instance.getProjectiles())
+                    {
+                        if (p.team == Projectile.tTeam.Players && (fruit.position - p.position).Length() < 80)
+                        {
+                            ParticleManager.Instance.addParticles("macedoniaGotHit", p.position, Vector3.Zero, Color.White);
+                            p.die();
+                        }
+                    }
+                    if ((fruit.position - GamerManager.getMainPlayer().position).Length() < 100)
+                    {
+                        GamerManager.getMainPlayer().gotHitAtPart(null, 0);
+                        fruit.explode();
+                    }
                 }
 
                 if (fruit.isDead())
