@@ -96,9 +96,9 @@ namespace MyGame
             menu.render();
 
             GraphicsManager.Instance.spriteBatchBegin();
-            "start game".renderNI(Screen.getXYfromCenter(0, -100), 1.2f, StringManager.tStyle.Border, Color.White, Color.Black);
-            "credits".renderNI(Screen.getXYfromCenter(0, -170), 1.2f, StringManager.tStyle.Border, Color.White, Color.Black);
-            "exit to arcade".renderNI(Screen.getXYfromCenter(0, -240), 1.2f, StringManager.tStyle.Border, Color.White, Color.Black);
+            "start game".renderNI(Screen.getXYfromCenter(0, -100), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
+            "credits".renderNI(Screen.getXYfromCenter(0, -170), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
+            "exit to arcade".renderNI(Screen.getXYfromCenter(0, -240), 1.8f, StringManager.tStyle.Border, new Color(119, 181, 223), new Color(124, 0, 62));
             GraphicsManager.Instance.spriteBatchEnd();
         }
 
