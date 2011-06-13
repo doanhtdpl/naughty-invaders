@@ -246,6 +246,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="code\Copy of Language.en.resx" />
     <EmbeddedResource Include="code\Editor\MyEditor.resx">
       <DependentUpon>MyEditor.cs</DependentUpon>
       <SubType>Designer</SubType>
