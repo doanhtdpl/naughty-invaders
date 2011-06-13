@@ -37,6 +37,12 @@ namespace MyGame
 
         public override void update()
         {
+#if DEBUG
+            if (GamerManager.getMainControls().A_firstPressed())
+            {
+                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.2f, Color.Black);
+            }
+#endif
             timer += SB.dt;
             if (timer > introTime && !TransitionManager.Instance.isFading())
             {
