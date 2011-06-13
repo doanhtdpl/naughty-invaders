@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animatedEntity>
-  <animatedTexture name="Anim_GrapeWeapon" frameWidth="11" frameHeight="35" columns="3" rows="3">
+  <animatedTexture name="Anim_WatermelonWeapon" frameWidth="11" frameHeight="35" columns="3" rows="3">
     <action name="start" initialFrame="1" endFrame="4" loops="false"/>
     <action name="idle" initialFrame="1" endFrame="4" loops="true"/>
     <action name="die" initialFrame="5" endFrame="9" loops="false"/>
