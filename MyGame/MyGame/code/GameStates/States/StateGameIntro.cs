@@ -16,9 +16,12 @@ namespace MyGame
     {
         public float timer = 0;
 
+        enum tAshState { Cry, Walk, Candy1, Candy2 };
+        tAshState state; 
+
         public const int introTime = 3;
 
-        AnimatedEntity2D ashcry;
+        AnimatedEntity2D ash;
 
         public override void initialize()
         {
@@ -31,19 +34,49 @@ namespace MyGame
             GamerManager.getMainPlayer().renderState = RenderableEntity2D.tRenderState.NoRender;
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
 
-            ashcry = new AnimatedEntity2D("intro", "ash_cry", new Vector3(0, 0, 0), 0, Color.White);
-            LevelManager.Instance.addAnimatedProp(ashcry);
+            ash = new AnimatedEntity2D("intro", "ash", new Vector3(0, 0, 0), 0, Color.White);
+            LevelManager.Instance.addAnimatedProp(ash);
+            ash.playAction("idle");
+            state = tAshState.Cry;
         }
 
         public override void update()
         {
             timer += SB.dt;
-            if (timer > introTime && !TransitionManager.Instance.isFading())
+            switch (state)
             {
-                CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
-                CameraManager.Instance.getCurrentNode().value.speed = 1400;
-                CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
-                TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
+                case tAshState.Cry:
+                    if (timer > 3)
+                    {
+                        ash.playAction("walk");
+                        timer = 0;
+                        state = tAshState.Walk;
+                    }
+                    break;
+                case tAshState.Walk:
+                    if (timer > 3)
+                    {
+                        ash.playAction("candy1");
+                        timer = 0;
+                        state = tAshState.Candy1;
+                    }
+                    break;
+                case tAshState.Candy1:
+                    if (ash.getCurrentAction() == "candy2")
+                    {
+                        timer = 0;
+                        state = tAshState.Candy2;
+                    }
+                    break;
+                case tAshState.Candy2:
+                    if (timer > introTime && !TransitionManager.Instance.isFading())
+                    {
+                        CameraManager.Instance.getCurrentNode().setLinkedNode(CameraManager.Instance.getNodes().getNodeAt(1));
+                        CameraManager.Instance.getCurrentNode().value.speed = 1400;
+                        CameraManager.Instance.setCurrentNode(CameraManager.Instance.getCurrentNode());
+                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.WorldMap, 1, null, 0.8f, Color.Black);
+                    }
+                    break;
             }
 
             LevelManager.Instance.update();
