@@ -20,5 +20,9 @@
   <audioFile type="effect" name="pickXPOrb" />
   <audioFile type="effect" name="wishFinalDie" />
   <audioFile type="effect" name="wishMiniDie" />
+  <audioFile type="effect" name="nisperoDies" />
+  <audioFile type="effect" name="pearDies" />
+  <audioFile type="effect" name="tomatoDies" />
 </audioFiles>
+
 
