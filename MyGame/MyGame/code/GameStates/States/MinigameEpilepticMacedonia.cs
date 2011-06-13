@@ -148,7 +148,7 @@ namespace MyGame
             loadIntroCinematic();
             CinematicManager.Instance.playCinematic("epilepticMacedoniaIntro");
 
-            SoundManager.Instance.playSong("Naughty_song_test3", true);
+            SoundManager.Instance.playSong("Naughty_jingle", true);
         }
         
         public override void update()

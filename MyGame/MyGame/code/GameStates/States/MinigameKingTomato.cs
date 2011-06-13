@@ -64,7 +64,7 @@ namespace MyGame
             loadReturnsCinematic();
             CinematicManager.Instance.playCinematic("kingTomatoIntro");
 
-            SoundManager.Instance.playSong("Naughty_jingle", true);
+            SoundManager.Instance.playSong("Naughty_song_test3", true);
         }
 
         void loadIntroCinematic()
@@ -92,6 +92,9 @@ namespace MyGame
             ActorEvent ae3 = new ActorEvent(onionElder, false);
             ae3.moveTo(new Vector3(-1070.0f, -230.0f, 0.0f), 300.0f);
             cinematic.events.Add((CinematicEvent)ae3);
+            SpecialEvent music = new SpecialEvent(GamerManager.getMainPlayer());
+            music.setPlaySong("Naughty_boss", true);
+            cinematic.events.Add(music);
 
             CinematicManager.Instance.addCinematic("kingTomatoIntro", cinematic);
         }

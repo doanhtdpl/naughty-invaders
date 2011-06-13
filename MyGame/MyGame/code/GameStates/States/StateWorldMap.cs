@@ -114,7 +114,7 @@ namespace MyGame
 
             TransitionManager.Instance.fadeOut();
 
-            SoundManager.Instance.playSong("song", true);
+            SoundManager.Instance.playSong("Naughty_song_test3", true);
         }
 
         public override void loadContent()
