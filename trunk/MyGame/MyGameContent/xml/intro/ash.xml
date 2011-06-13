@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animatedEntity>
+  <animatedTexture name="ashcry" frameWidth="300" frameHeight="319" columns="3" rows="3">
+    <action name="idle" initialFrame="1" endFrame="9" loops="true" FPS="20"/>
+  </animatedTexture>
+  
+  <animatedTexture name="camina2" frameWidth="190" frameHeight="339" columns="4" rows="3">
+    <action name="walk" initialFrame="1" endFrame="9" loops="true" FPS="20"/>
+  </animatedTexture>
+  
+  <animatedTexture name="caramelor" frameWidth="169" frameHeight="193" columns="6" rows="5">
+    <action name="candy1" initialFrame="2" endFrame="30" loops="false" FPS="20" playAtEnd="candy2"/>
+  </animatedTexture>
+  
+  <animatedTexture name="caramelor2" frameWidth="147" frameHeight="167" columns="6" rows="6">
+    <action name="candy2" initialFrame="2" endFrame="32" loops="false" FPS="20" playAtEnd="candyIdle"/>
+    <action name="candyIdle" initialFrame="1" endFrame="1" loops="true" FPS="20"/>
+  </animatedTexture>
+</animatedEntity>
