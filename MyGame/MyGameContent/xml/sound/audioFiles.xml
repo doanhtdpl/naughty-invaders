@@ -8,6 +8,7 @@
   <audioFile type="song" name="Naughty_jingle" />
   <audioFile type="song" name="Naughty_song_test3" />
   <audioFile type="song" name="Naughty_Rock1" />
+  <audioFile type="song" name="stageCompleted" />
 
   <audioFile type="effect" name="wishFastShot" />
   <audioFile type="effect" name="buySkill" />

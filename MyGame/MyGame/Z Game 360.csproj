@@ -55,7 +55,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <DefineConstants>TRACE;XBOX;XBOX360;ONLY_GAMEPLAY</DefineConstants>
+    <DefineConstants>TRACE;XBOX;XBOX360;ONLY_GAMEPLAY; UNLOAD_HACK</DefineConstants>
     <XnaCompressContent>true</XnaCompressContent>
     <LangVersion>default</LangVersion>
   </PropertyGroup>

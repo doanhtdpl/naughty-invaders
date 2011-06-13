@@ -93,7 +93,7 @@ namespace MyGame
 
         public override void initialize()
         {
-#if UNLOAD_HACK
+//#if UNLOAD_HACK
             AnimatedEntity2D.unload();
             StringManager.unloadContent();
             SB.content.Unload();
@@ -105,7 +105,9 @@ namespace MyGame
             GamerManager.createPlayer(GamerManager.getGamerEntity(0));
             DialogEvent.initialize();
             OrbManager.Instance.loadContent();
-#endif
+
+            GC.Collect();
+//#endif
 
             gameState = true;
             longLoad = true;
