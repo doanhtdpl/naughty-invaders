@@ -300,7 +300,7 @@ namespace MyGame
                     {
                         transitionDone = true;
                         SoundManager.Instance.stopWithFade(0.5f);
-                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Menu, 1, null, 0.5f, Color.Black);
+                        TransitionManager.Instance.changeStateWithFade(StateManager.tGameState.Credits, 1, null, 0.5f, Color.Black);
                     }
                 }
             }

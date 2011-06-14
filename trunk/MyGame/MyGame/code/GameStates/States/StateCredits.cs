@@ -22,6 +22,8 @@ namespace MyGame
             base.initialize();
 
             GamerManager.getMainPlayer().mode = Player.tMode.SavingItems;
+
+            SoundManager.Instance.playSong("Naughty_jingle", true);
         }
 
         public override void update()
