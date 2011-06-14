@@ -77,7 +77,8 @@ namespace MyGame
                     }
                     else
                     {
-                        state = tState.Commanding2;
+                        if(CinematicManager.Instance.cinematicToPlay == null)
+                            state = tState.Commanding2;
                     }
                     break;
                 case tState.Commanding2:

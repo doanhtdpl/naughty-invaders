@@ -298,13 +298,13 @@
     <value>I don't understand but... what can I do?</value>
   </data>
   <data name="DialogDarkWish7" xml:space="preserve">
-    <value>You can move with ::LS and shot with ::X . That's all you need by now.</value>
+    <value>You can move with ::LS and shoot with ::X . That's all you need by now.</value>
   </data>
   <data name="DialogDarkWish8" xml:space="preserve">
     <value>Look! they are coming, try to pick up as many orbs as you can!</value>
   </data>
   <data name="DialogDarkWishRemind1" xml:space="preserve">
-    <value>Remember, you can move with ::LS and shot with ::X . That's all you need by now.</value>
+    <value>Remember, you can move with ::LS and shoot with ::X . That's all you need by now.</value>
   </data>
   <data name="DialogDarkWishRemind2" xml:space="preserve">
     <value>Look! they are coming, try to pick up as many orbs as you can!</value>

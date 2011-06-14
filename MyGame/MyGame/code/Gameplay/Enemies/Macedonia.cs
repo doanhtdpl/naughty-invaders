@@ -606,7 +606,7 @@ namespace MyGame
                 float magicNum = 1.004f;
                 if (i == 2)
                     magicNum = 1.002f;
-                rayo[i].position = new Vector3(position.X - 6, position.Y - i * rayo[i].getFrameSize().Y * magicNum - rayo[i].getFrameSize().Y * 0.5f * factor - 75 , position.Z + 0.1f);
+                rayo[i].position = new Vector3(position.X - 8, position.Y - i * rayo[i].getFrameSize().Y * magicNum - rayo[i].getFrameSize().Y * 0.5f * factor - 95 , position.Z + 0.1f);
                 length -= rayo[i].getFrameSize().Y;
             }
 

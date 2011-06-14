@@ -108,12 +108,17 @@ namespace MyGame
             ActorEvent ae2 = new ActorEvent(GamerManager.getMainPlayer(), false);
             ae2.setOrientation(-Calc.PiOver4);
 
+            ActorEvent ae3 = new ActorEvent(kingTomato, false);
+            ae3.setAt(new Vector3(1200.0f, 1000.0f, 0.0f));
+            ae3.moveTo(new Vector3(600.0f, 360.0f, 0.0f), KingTomato.SPEED);
+
             DialogEvent de1 = new DialogEvent(tDialogCharacter.KingTomato, TextKey.DialogTomatoComes1.Translate());
             DialogEvent de2 = new DialogEvent(tDialogCharacter.Wish, TextKey.DialogTomatoComes2.Translate());
             DialogEvent de3 = new DialogEvent(tDialogCharacter.KingTomato, TextKey.DialogTomatoComes3.Translate());
 
             cinematic.events.Add((CinematicEvent)ae1);
             cinematic.events.Add((CinematicEvent)ae2);
+            cinematic.events.Add((CinematicEvent)ae3);
             cinematic.events.Add((CinematicEvent)de1);
             cinematic.events.Add((CinematicEvent)de2);
             cinematic.events.Add((CinematicEvent)de3);
